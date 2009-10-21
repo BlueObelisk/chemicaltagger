@@ -1,0 +1,6 @@
+This package is used for marking up experimental sections in chemistry papers:
+
+The class ChemistryPOSTagger takes a sentence and runs it against three taggers:
+ 
+     -OSCAR (for chemical entities)
+     -Regex ()
