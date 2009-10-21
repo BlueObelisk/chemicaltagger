@@ -1,0 +1,157 @@
+#Tags---Pattern---Description
+OSCAR-CD---^(ent-)?BOLD--.*BOLD-----bold numbers (representing chemical names)
+OSCAR-CJ---^Merrifield$|^crude$|^buffer$|^mono$|^(E|e)xcess|(A|a)mphiphilic$|(f|F)unctionalized$|(p|P)ot$|^cyclic$|(H|h)yperbranched$|^insoluble$|^(p|P)ropargyl$|Arm$|^(s|S)tar$|^anhydrous$|^aq(.|ueous)?$|^organic|^(s|S)at(.|urated)?$|^(Di|Tri|di|tri|poly)block$---Chemical Adjectives                              
+
+TM-UNICODE---®---Unicode Characters
+CD-UNICODE---\xc3\x97|\xc3|\xe2|×|&lt---Unicode Cardinal Digits
+CD---^(\d|-)?\d+\.?\d*$--- Cardinal Digits
+
+# Prepositions
+IN-AS---^as$---The preposition 'AS'
+IN-BEFORE---^before$---The preposition 'BEFORE'
+IN-AFTER---^after$---The preposition 'AFTER'
+IN-IN---^in$---The preposition 'IN'
+IN-INTO---^into$---The preposition 'IN'
+IN-WITH---^with$---The preposition 'WITH'
+IN-WITHOUT---^without$---The preposition 'WITHOUT'
+IN-BY---^by$---The preposition 'BY'
+IN-VIA---^via$---The preposition 'VIA'
+IN-OF---^of$---The preposition 'OF'
+IN-ON---^on$---The preposition 'ON'
+IN-FOR---^for$---The preposition 'FOR'
+IN-FROM---^from$---The preposition 'FROM'
+IN-UNDER---^under$---The preposition 'UNDER'
+IN-OVER---^over$---The preposition 'UNDER'
+
+IN-OFF---^off$---The preposition 'OFF'
+TO---^to$|^To$---The preposition 'TO'
+
+#Nouns
+NN-STATE---powder|glass|liquid|oil|solid|gas|syrup|crystal|gum|needle|prisms---Physical States
+NN-TIME---^period(s)?$|^min(utes|.)?$|^hour(s)?|^seconds$|^d$|^h$|^days$|.*night|hr(s)?---Time Token
+NN-GRAM---(m|k|\xce\xbc)?g$|cm3---Grams
+NN-MOL---(^M|m|k|\xce\xbc)?mol(s)?$|^M$---Mols
+NN-ATMOSPHERE---(a|A)tmosphere(s)?$---Atmosphere
+NN-EQ---^eq\.$---Equivalence
+NN-VOL---(m|k|\xce\xbc|µ)?(l|L)$|cm3---Volume
+NN-CHEMENTITY---poly|^resin$|^salt$|^product$|^oligomers$|^(M|m)acroinitiator$|^nanotubes$|^(s|S)eptum$|^(i|I)nitiator$|(M|m)onomer$|^ice$|^petroleum|metal|^eluent$|(co|Co)?polymer(s)?$|generation|solution|solvent|complex|layer|residue|gel|plug|catalyst|compound(s)?|.+®|^Å$---Chemical entities not marked up by OSCAR
+NN-TEMP---room|temperature|\xc2|\xcb|°|°C|rt|RT|-?\d+°C|\d*ºC|^oC---Temperature Token
+NN-FLASH---^flash$---Flash
+NN-GENERAL---^(G|g)eneral$---General term
+NN-METHOD---^(P|p)rocedure(s)?$|(t|T)echnique(s)?$|(m|M)ethod(s)?$---Method token       
+NN-AMOUNT---^weighed$|^amount|^total$---Amount
+NN-PRESSURE---^pressure$---Pressure Token
+NN-COLUMN---^(c|C)?olumn$---Column Token 
+NN-CHROMATOGRAPHY---^(c|C)?hromatography$---Chromatography Token 
+NN-VACUUM---^(v|V)?acuum$|^(v|V)?acuo$---Vacuum Token                   
+NN-CYCLE---^(c|C)?ycle(s)?$---Column Token                    
+NN-TIMES---^(t|T)?ime(s)?$---Times Token
+
+#Not really chementities or Oscar-cm.. but need to be fixed
+NN-CHEMENTITY---^b$|^m$---will be removed
+OSCAR-CM---^p$|^n$|^Cl$---Oscar Entity will be removed later
+
+
+#Verbs
+VB-USE---^using---Use Verb in the Present Term
+VB-CHANGE---^changed---Change Verb in the Present Term
+VB-SUBMERGE---^submerge(d)?$---Submerges verb
+VB-SUBJECT---^subject(ed)?---Subject Verb in past form
+
+#Adjective
+JJ---^round$|^bottom|^green$|^yellow$|^brown$|^thaw$|^orange$---Adjectives
+
+
+#Add Tokens
+NN-ADD---^addition$---Add Noun
+NN-MIXTURE---^mixture$|^suspension$---Mixture Noun
+VB-ADD---^(pre|re)?(add|mix|pour|dispers|dilut)(e|s|ed|ing)?$---Add Verb
+VB-CHARGE---^charge(d)?$---Charge Verb
+VB-CONTAIN---^containing$---Contain Verb
+VB-DROP---^dropped?$---Drop Verb
+VB-FILL---^(re)?filled?$---Fill Verb
+VB-SUSPEND---(^suspend|^plac)(e|s|ed|ing)?$---Suspend Verb
+VB-TREAT---^treat(e|s|ed|ing)?$---Treat Verb
+                    
+#Apparatus Tokens
+VB-APPARATUS---(^equip|^seal|clos|^cap|^fitt)(ped|ed|e)?$---Apparatus Verb
+NN-APPARATUS---^neck$|^valve$|^adapter$|^inlet$|^outlet$|^condenser$|^stirrer$|^reactor$|^syringe$|^bath$|^oven$|^vessel$|^glove|^box$|^bar$|^tube$|^(S|s)chlenk$|^(F|f)lask(s)?$|^desiccator(s)?$---Apparatus Nouns
+#Concentrate Tokens
+VB-CONCENTRATE---(^concentrat|^saturat)(ed|e|ing)?---Concentrate Verb
+NN-CONCENTRATE---^concentration---Concentrate Noun
+
+#Cool Tokens
+VB-COOL---^(cool|chill|frozen)(ed|e|ing)?---Cool Verb
+
+#Degass Tokens
+VB-DEGASS---(de)?(gass|oxginat|evacuat|under|purg|bubbl)(ed|e|d|ing)?---Degass Verb
+
+#Dissolve Tokens
+VB-DISSOLVE---^dissolv(ed|e|ing)?---Dissolve Verb
+
+#Dry Tokens
+VB-DRY---^(freeze|re)?dr(y|ied|ying)?$---Dry Verb
+NN-DRY---^dryness$---Dry Noun
+#Extract Tokens
+VB-EXTRACT---extract(ed|ing)?---Extract Verb
+NN-EXTRACT---extraction---Extract Noun
+
+#Filter Tokens
+VB-FILTER---filter(ed|ing)?$|^filtrated$---Filter Verb
+NN-FILTER---filtration---Filter Noun
+
+#Heat Tokens
+VB-HEAT---(heat|warm|reflux|^flam|^maintain)(ed|ing)?---Heat Verb
+VB-INCREASE---(increas|rais)(e|ed|ing)?---Increase Verb
+
+#Partition Tokens
+VB-PARTITION---(partition|separat|split)(e|ed|ing|ting)?---Partition Verb
+
+#Precipitate Tokens
+VB-PRECIPITATE---(re)?(precipitat|crystaliz|crystalis)(e|ed|ing)?$---Precipitate Verb
+NN-PRECIPITATE---(re)?(precipitat|crystaliz|crystalis)(ation|ion)?$---Precipitate Noun
+
+#Purify Tokens
+
+VB-PURIFY---(re)?(purif|dialis|dialyz|dializ|distill)(ed|e|y|ied|ying|ing)?$---Purify Verb
+NN-PURIFY---(re)?(distill|purific|dialysis)(ation)?$---Purify Noun
+
+#Quench Tokens
+VB-QUENCH---(quench|terminat)(e|ed|ing)?$---Quench Verb
+
+#Recover Tokens
+VB-RECOVER---(recover|collect)(ed)?$---Recover Verb
+
+#Remove Tokens
+VB-REMOVE---(pre|re)?(remov|evaporat|decant|absorb|withdraw)(n|e|ed|ing)?$---Remove Verb
+NN-REMOVE---(pre|re)?(removal|evaporation|evaporator)$---Remove Noun
+
+#Stir Tokens
+VB-STIR---(pre|re)?(stir)(red|ring)?---Stir Verb
+
+#Synthesize Tokens
+VB-SYNTHESIZE---(pre|re)?(react|synthesize|synthesise|polymerize|polymerise|prepare)(d|ed)?$---Synthesize Verb
+NN-SYNTHESIZE---(pre|re|co|(p|P)oly)?(condens|synthesiz|synthesis|polymeris|polymeriz|prepar|reaction)(ation|e|ed|ing)?$---Synthesize Noun
+
+#Wait Tokens
+VB-WAIT---(wait|left)(ing)?---Wait Verb
+
+#Wash Tokens
+VB-WASH---^(wash|elut|rins)(ed|e|ing)?---Wait Verb
+
+#Yield Tokens
+VB-YIELD---^(yield|afford|result|provid|obtain|give|gave|isolat|leav|giv)(ed|e|ing)?---Yield Verb
+
+
+#Misc Tokens mainly to replace characters that are not markup friendly
+RB---.*wise$|.*ly$---Adverbs like dropwise
+CD---\d+(\.|\:)?\d*--- Numbers
+COLON---^:---Colon           
+COMMA---^,---Comma           
+APOST---^\'|^\'\'$---Apostrophe          
+NEG---^not$---Negation
+DASH---^(\\|\/|\-)$---Dash
+STOP---^(\.|\?|\!|\;)$---Full stops,SemiColons, Exclamation and Question Marks
+NN-PERCENT---^\%$---Percent Sign
+LSQB---^\[$---Left Square Brackets
+RSQB---^\]$---Right Square Brackets

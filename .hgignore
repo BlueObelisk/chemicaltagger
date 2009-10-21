@@ -1,0 +1,4 @@
+glob:.classpath
+glob:.deployment
+glob:.project
+glob:.target
