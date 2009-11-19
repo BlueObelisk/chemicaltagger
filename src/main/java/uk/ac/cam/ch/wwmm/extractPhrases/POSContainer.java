@@ -22,10 +22,25 @@ public class POSContainer {
 	public List<WWMMTag> brownTagList = new ArrayList<WWMMTag>();
 	private List<WWMMTag> combinedTagsList = new ArrayList<WWMMTag>();
 	private final Logger LOG = Logger.getLogger(POSContainer.class);
-
+        private static String SPACE = " ";
 	public POSContainer() {
 		
 	}
+
+        public String getTokenTagTupleAsString(){
+             StringBuilder tokenTagTupleString = new StringBuilder();
+
+             for (int i = 0; i < wordTokenList.size(); i++) {
+                  tokenTagTupleString.append(combinedTagsList.get(i).POS);
+                  tokenTagTupleString.append(SPACE);
+                  tokenTagTupleString.append(wordTokenList.get(i));
+                  tokenTagTupleString.append(SPACE);
+             }
+
+             System.out.print(tokenTagTupleString.toString().trim());
+             return tokenTagTupleString.toString().trim();
+
+        }
 
 	public void addToTokenList(String token) {
 		wordTokenList.add(token);
@@ -74,17 +89,18 @@ public class POSContainer {
 	
 	public void printOutTags() {
 
-		LOG.debug("Token List is " + this.wordTokenList);
+		System.out.println("Token List is " + this.wordTokenList);
 		for (int i = 0; i < wordTokenList.size(); i++) {
-			LOG.info("WORD:" + wordTokenList.get(i));
-			LOG.info("\t>>OSCAR TAG: " + oscarTagList.get(i).POS);
-			LOG.info("\t>>REGEX TAG: " + regexTagList.get(i).POS);
-			LOG.info("\t>>OPENNLP TAG: " + brownTagList.get(i).POS);
-			LOG.info("\t>>COMBINED TAG: " + combinedTagsList.get(i).POS);
+			System.out.println("WORD:" + wordTokenList.get(i));
+			System.out.println("\t>>OSCAR TAG: " + oscarTagList.get(i).POS);
+			System.out.println("\t>>REGEX TAG: " + regexTagList.get(i).POS);
+			System.out.println("\t>>OPENNLP TAG: " + brownTagList.get(i).POS);
+			System.out.println("\t>>COMBINED TAG: " + combinedTagsList.get(i).POS);
 
 		}
 
 	}
+
 
 	
 

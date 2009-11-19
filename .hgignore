@@ -2,3 +2,14 @@ glob:.classpath
 glob:.deployment
 glob:.project
 glob:.target
+glob:classes
+glob:target
+glob:.hgignore~
+glob:Properties.dat
+glob:cInChI-1
+
+\.orig\..*$
+\.orig$
+\.chg\..*$
+\.rej$
+\.conflict\~$

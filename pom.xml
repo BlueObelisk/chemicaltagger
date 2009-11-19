@@ -14,6 +14,28 @@
    </repositories>
    <build>
       <plugins>
+                   <plugin>
+            <groupId>org.antlr</groupId>
+            <artifactId>antlr3-maven-plugin</artifactId>
+            <version>3.2</version>
+            <executions>
+                <execution>
+                <goals>
+                    <goal>antlr</goal>
+                </goals>
+             <configuration>
+                <sourceDirectory>src/main/antlr3</sourceDirectory>
+                <conversionTimeout>10000</conversionTimeout>
+                <libDirectory>src/main/antlr3/imports</libDirectory>
+                <messageFormat>antlr</messageFormat>
+                <outputDirectory>target/generated-sources/antlr3</outputDirectory>
+               <verbose>true</verbose>
+                <grammars>*.g</grammars>
+            </configuration>
+
+                </execution>
+            </executions>
+         </plugin>
          <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-compiler-plugin</artifactId>
@@ -31,7 +53,12 @@
          <artifactId>apache-log4j-extras</artifactId>
          <version>1.0</version>
       </dependency>
-
+        <dependency>
+            <groupId>org.antlr</groupId>
+            <artifactId>antlr-runtime</artifactId>
+            <version>3.2</version>
+            <type>jar</type>
+        </dependency>
       <dependency>
          <groupId>commons-configuration</groupId>
          <artifactId>commons-configuration</artifactId>
