@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 12:02:23 /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g 2009-11-20 17:14:06
+// $ANTLR 3.2 Sep 23, 2009 12:02:23 /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g 2009-11-20 17:40:53
 
     package uk.ac.cam.ch.wwmm.extractPhrases.antlr;
  
@@ -15,11 +15,13 @@ import org.antlr.runtime.tree.*;
 
 public class ChemicalChunkerParser extends DebugParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "WS", "NEWLINE", "ACHAR", "DIGIT", "TOKEN", "'CD'", "'CJ'", "'TM-UNICODE'", "'CD-UNICODE'", "'IN-AS'", "'IN-BEFORE'", "'IN-AFTER'", "'IN-IN'", "'IN-INTO'", "'IN-WITH'", "'IN-WITHOUT'", "'IN-BY'", "'IN-VIA'", "'IN-OF'", "'IN-ON'", "'IN-FOR'", "'IN-FROM'", "'IN-UNDER'", "'IN-OVER'", "'IN-OFF'", "'NN-STATE'", "'NN-TIME'", "'NN-GRAM'", "'NN-MOL'", "'NN-ATMOSPHERE'", "'NN-EQ'", "'NN-VOL'", "'NN-CHEMENTITY'", "'NN-TEMP'", "'NN-FLASH'", "'NN-GENERAL'", "'NN-METHOD'", "'NN-AMOUNT'", "'NN-PRESSURE'", "'NN-COLUMN'", "'NN-CHROMATOGRAPHY'", "'NN-VACUUM'", "'NN-CYCLE'", "'NN-TIMES'", "'CM'", "'VB-USE'", "'VB-CHANGE'", "'VB-SUBMERGE'", "'VB-SUBJECT'", "'NN-ADD'", "'NN-MIXTURE'", "'VB-ADD'", "'VB-CHARGE'", "'VB-CONTAIN'", "'VB-DROP'", "'VB-FILL'", "'VB-SUSPEND'", "'VB-TREAT'", "'VB-APPARATUS'", "'NN-APPARATUS'", "'VB-CONCENTRATE'", "'NN-CONCENTRATE'", "'VB-COOL'", "'VB-DEGASS'", "'VB-DISSOLVE'", "'VB-DRY'", "'NN-DRY'", "'VB-EXTRACT'", "'NN-EXTRACT'", "'VB-FILTER'", "'NN-FILTER'", "'VB-HEAT'", "'VB-INCREASE'", "'VB-PARTITION'", "'VB-PRECIPITATE'", "'NN-PRECIPITATE'", "'VB-PURIFY'", "'NN-PURIFY'", "'VB-QUENCH'", "'VB-RECOVER'", "'VB-REMOVE'", "'NN-REMOVE'", "'VB-STIR'", "'VB-SYNTHESIZE'", "'NN-SYNTHESIZE'", "'VB-WAIT'", "'VB-WASH'", "'VB-YIELD'", "'COLON'", "'COMMA'", "'APOST'", "'NEG'", "'DASH'", "'STOP'", "'NN-PERCENT'", "'LSQB'", "'RSQB'", "'LRB'", "'RRB'", "'ABL'", "'ABN'", "'ABX'", "'AP'", "'AT'", "'BE'", "'BED'", "'BEDZ'", "'BEG'", "'BEM'", "'BEN'", "'BER'", "'BEZ'", "'CC'", "'DT'", "'IN'", "'JJ'", "'NN'", "'NNS'", "'RB'", "'TO'", "'VBD'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "WS", "NEWLINE", "ACHAR", "DIGIT", "TOKEN", "'CD'", "'CJ'", "'TM-UNICODE'", "'CD-UNICODE'", "'IN-AS'", "'IN-BEFORE'", "'IN-AFTER'", "'IN-IN'", "'IN-INTO'", "'IN-WITH'", "'IN-WITHOUT'", "'IN-BY'", "'IN-VIA'", "'IN-OF'", "'IN-ON'", "'IN-FOR'", "'IN-FROM'", "'IN-UNDER'", "'IN-OVER'", "'IN-OFF'", "'NN-STATE'", "'NN-TIME'", "'NN-GRAM'", "'NN-MOL'", "'NN-ATMOSPHERE'", "'NN-EQ'", "'NN-VOL'", "'NN-CHEMENTITY'", "'NN-TEMP'", "'NN-FLASH'", "'NN-GENERAL'", "'NN-METHOD'", "'NN-AMOUNT'", "'NN-PRESSURE'", "'NN-COLUMN'", "'NN-CHROMATOGRAPHY'", "'NN-VACUUM'", "'NN-CYCLE'", "'NN-TIMES'", "'CM'", "'VB-USE'", "'VB-CHANGE'", "'VB-SUBMERGE'", "'VB-SUBJECT'", "'NN-ADD'", "'NN-MIXTURE'", "'VB-ADD'", "'VB-CHARGE'", "'VB-CONTAIN'", "'VB-DROP'", "'VB-FILL'", "'VB-SUSPEND'", "'VB-TREAT'", "'VB-APPARATUS'", "'NN-APPARATUS'", "'VB-CONCENTRATE'", "'NN-CONCENTRATE'", "'VB-COOL'", "'VB-DEGASS'", "'VB-DISSOLVE'", "'VB-DRY'", "'NN-DRY'", "'VB-EXTRACT'", "'NN-EXTRACT'", "'VB-FILTER'", "'NN-FILTER'", "'VB-HEAT'", "'VB-INCREASE'", "'VB-PARTITION'", "'VB-PRECIPITATE'", "'NN-PRECIPITATE'", "'VB-PURIFY'", "'NN-PURIFY'", "'VB-QUENCH'", "'VB-RECOVER'", "'VB-REMOVE'", "'NN-REMOVE'", "'VB-STIR'", "'VB-SYNTHESIZE'", "'NN-SYNTHESIZE'", "'VB-WAIT'", "'VB-WASH'", "'VB-YIELD'", "'COLON'", "'COMMA'", "'APOST'", "'NEG'", "'DASH'", "'STOP'", "'NN-PERCENT'", "'LSQB'", "'RSQB'", "'LRB'", "'RRB'", "'ABL'", "'ABN'", "'ABX'", "'AP'", "'AT'", "'BE'", "'BED'", "'BEDZ'", "'BEG'", "'BEM'", "'BEN'", "'BER'", "'BEZ'", "'CC'", "'DT'", "'IN'", "'DTI'", "'DTS'", "'DTX'", "'EX'", "'FW'", "'HV'", "'HVD'", "'HVG'", "'HVN'", "'JJR'", "'JJS'", "'JJT'", "'MD'", "'NC'", "'WP$'", "'WPO'", "'WPS'", "'WQL'", "'WRB'", "'UH'", "'VB'", "'VBG'", "'VBN'", "'VBZ'", "'WDT'", "'RBR'", "'RBT'", "'RN'", "'RP'", "'PN'", "'PN$'", "'PP$'", "'PP$$'", "'PPL'", "'PPLS'", "'PPO'", "'PPS'", "'PPSS'", "'QL'", "'QLP'", "'NN$'", "'NNS$'", "'NP'", "'NP$'", "'NPS'", "'NPS$'", "'NR'", "'OD'", "'CS'", "'DO'", "'DOD'", "'DOZ'", "'JJ'", "'NN'", "'NNS'", "'RB'", "'TO'", "'VBD'"
     };
     public static final int T__29=29;
     public static final int T__28=28;
+    public static final int T__159=159;
     public static final int T__27=27;
+    public static final int T__158=158;
     public static final int T__26=26;
     public static final int T__25=25;
     public static final int T__24=24;
@@ -27,49 +29,91 @@ public class ChemicalChunkerParser extends DebugParser {
     public static final int T__22=22;
     public static final int T__21=21;
     public static final int T__20=20;
+    public static final int T__160=160;
+    public static final int T__167=167;
+    public static final int T__168=168;
     public static final int EOF=-1;
+    public static final int T__165=165;
     public static final int T__9=9;
+    public static final int T__166=166;
+    public static final int T__163=163;
+    public static final int T__164=164;
+    public static final int T__161=161;
     public static final int TOKEN=8;
+    public static final int T__162=162;
     public static final int T__93=93;
     public static final int T__19=19;
     public static final int T__94=94;
     public static final int T__91=91;
     public static final int T__92=92;
+    public static final int T__148=148;
     public static final int T__16=16;
+    public static final int T__147=147;
     public static final int T__15=15;
     public static final int T__90=90;
     public static final int T__18=18;
+    public static final int T__149=149;
     public static final int T__17=17;
     public static final int T__12=12;
     public static final int T__11=11;
     public static final int T__14=14;
     public static final int T__13=13;
     public static final int T__10=10;
+    public static final int T__154=154;
+    public static final int T__155=155;
+    public static final int T__156=156;
+    public static final int T__157=157;
     public static final int T__99=99;
+    public static final int T__150=150;
     public static final int T__98=98;
+    public static final int T__151=151;
     public static final int T__97=97;
+    public static final int T__152=152;
     public static final int T__96=96;
+    public static final int T__153=153;
     public static final int T__95=95;
+    public static final int T__139=139;
+    public static final int T__138=138;
+    public static final int T__137=137;
+    public static final int T__136=136;
     public static final int T__80=80;
     public static final int T__81=81;
     public static final int T__82=82;
     public static final int T__83=83;
+    public static final int T__141=141;
     public static final int T__85=85;
+    public static final int T__142=142;
     public static final int T__84=84;
     public static final int T__87=87;
+    public static final int T__140=140;
     public static final int T__86=86;
+    public static final int T__145=145;
     public static final int T__89=89;
+    public static final int T__146=146;
     public static final int T__88=88;
+    public static final int T__143=143;
+    public static final int T__144=144;
+    public static final int T__126=126;
+    public static final int T__125=125;
+    public static final int T__128=128;
+    public static final int T__127=127;
     public static final int WS=4;
     public static final int T__71=71;
+    public static final int T__129=129;
     public static final int T__72=72;
     public static final int T__70=70;
     public static final int T__76=76;
     public static final int T__75=75;
+    public static final int T__130=130;
     public static final int T__74=74;
+    public static final int T__131=131;
     public static final int T__73=73;
+    public static final int T__132=132;
+    public static final int T__133=133;
     public static final int T__79=79;
+    public static final int T__134=134;
     public static final int T__78=78;
+    public static final int T__135=135;
     public static final int T__77=77;
     public static final int T__68=68;
     public static final int T__69=69;
@@ -127,43 +171,57 @@ public class ChemicalChunkerParser extends DebugParser {
     public static final int T__102=102;
     public static final int T__101=101;
     public static final int T__100=100;
+    public static final int T__175=175;
+    public static final int T__174=174;
     public static final int T__30=30;
+    public static final int T__173=173;
     public static final int T__31=31;
+    public static final int T__172=172;
     public static final int T__32=32;
     public static final int T__33=33;
     public static final int ACHAR=6;
     public static final int T__34=34;
     public static final int NEWLINE=5;
     public static final int T__35=35;
+    public static final int T__176=176;
     public static final int T__36=36;
     public static final int T__37=37;
     public static final int T__38=38;
     public static final int T__39=39;
+    public static final int T__171=171;
+    public static final int T__170=170;
+    public static final int T__169=169;
 
     // delegates
     // delegators
 
     public static final String[] ruleNames = new String[] {
-        "invalidRule", "rsqb", "vbdry", "gram", "be", "nnatmosphere", "vbpartition", 
-        "vbremove", "vbwait", "inwith", "vbadd", "rb", "beg", "mol", "nnflash", 
-        "nnpressure", "vbincrease", "to", "nnmol", "comma", "molecule", 
-        "cdunicode", "bem", "nncycle", "vbextract", "vbcharge", "in", "nnmethod", 
-        "vbrecover", "vbsubject", "apost", "inas", "nnadd", "nnamount", 
-        "stop", "nnprecipitate", "prepphrase", "nnextract", "bez", "dash", 
-        "nounphrase", "nngram", "inof", "jj", "tmunicode", "vbcontain", 
-        "nnchementity", "ininto", "vbdegass", "cc", "nnconcentrate", "nnapparatus", 
-        "bed", "nntime", "vbtreat", "vbyield", "inwithout", "inunder", "lsqb", 
-        "oscarcd", "sentence", "vbquench", "nnvacuum", "molecules", "oscarcm", 
-        "nnfilter", "nn", "vbcool", "vbwash", "infor", "abn", "inover", 
-        "inafter", "vbheat", "nntimes", "rrb", "vbfilter", "amount", "nnsynthesize", 
-        "nnremove", "nneq", "vbsubmerge", "vbfill", "lrb", "cd", "vbuse", 
-        "vbdrop", "nndry", "vbprecipitate", "nns", "at", "vbchange", "colon", 
-        "abx", "nngeneral", "nnpurify", "ben", "abl", "nnpercent", "inbefore", 
-        "nncolumn", "vbconcentrate", "ber", "vbstir", "vbdissolve", "dt", 
-        "infrom", "nnmixture", "nnvol", "inby", "nnchromatography", "neg", 
-        "inon", "nnstate", "vbsuspend", "vbapparatus", "ap", "oscarcj", 
-        "vbsynthesize", "inoff", "document", "vbd", "nntemp", "invia", "vbpurify", 
-        "bedz", "verbphraseADD", "inin"
+        "invalidRule", "fw", "vbcharge", "nns", "verbphraseADD", "inbefore", 
+        "oscarcm", "nnfilter", "lrb", "wpo", "inin", "npdollar", "document", 
+        "infrom", "vbfilter", "rn", "vbsubject", "rrb", "ppl", "dts", "nnmethod", 
+        "to", "hvn", "nnconcentrate", "bez", "nnchromatography", "md", "jjt", 
+        "abn", "abx", "nnvol", "cs", "vbg", "vbyield", "vbremove", "npsdollar", 
+        "vbsubmerge", "vbincrease", "nntemp", "nnmol", "inwithout", "colon", 
+        "ppss", "uh", "ppdollar", "nngeneral", "vbwait", "nnadd", "nncolumn", 
+        "vbheat", "abl", "inon", "nntimes", "nnvacuum", "nnremove", "lsqb", 
+        "ber", "wql", "nnpurify", "inunder", "rp", "in", "vbstir", "nnflash", 
+        "vbchange", "vbpartition", "cdunicode", "bedz", "vbcool", "bem", 
+        "beg", "vbrecover", "cd", "vbprecipitate", "gram", "jjr", "vbdry", 
+        "vbtreat", "inoff", "wpdollar", "inwith", "amount", "ininto", "neg", 
+        "rbr", "nc", "nnsdollar", "nnstate", "ap", "dotoken", "wps", "vbcontain", 
+        "vbpurify", "vbdissolve", "invia", "vbwash", "nr", "oscarcj", "nnpressure", 
+        "wdt", "at", "nntime", "prepphrase", "vbadd", "vbextract", "nndry", 
+        "nnmixture", "wrb", "vbdrop", "nn", "dash", "mol", "pn", "rsqb", 
+        "vbconcentrate", "ql", "ppls", "dtx", "qlp", "hvg", "infor", "cc", 
+        "bed", "stop", "inafter", "inof", "dti", "vbsynthesize", "pps", 
+        "inby", "vbz", "molecule", "comma", "dt", "nnchementity", "pndollar", 
+        "vbuse", "jj", "nnextract", "hv", "molecules", "nnprecipitate", 
+        "inover", "tmunicode", "vbn", "hvd", "jjs", "apost", "nnatmosphere", 
+        "oscarcd", "dod", "vbd", "ben", "vbapparatus", "np", "vbsuspend", 
+        "rbt", "vb", "sentence", "nnsynthesize", "nps", "ex", "vbquench", 
+        "nngram", "nounphrase", "doz", "nndollar", "be", "rb", "vbdegass", 
+        "nncycle", "inas", "vbfill", "nnpercent", "ppo", "nnamount", "od", 
+        "ppdollardollar", "nneq", "nnapparatus"
     };
      
         public int ruleLevel = 0;
@@ -595,7 +653,7 @@ public class ChemicalChunkerParser extends DebugParser {
 
                 int LA2_0 = input.LA(1);
 
-                if ( (LA2_0==124) ) {
+                if ( (LA2_0==176) ) {
                     alt2=1;
                 }
 
@@ -9154,15 +9212,15 @@ public class ChemicalChunkerParser extends DebugParser {
     }
     // $ANTLR end "in"
 
-    public static class jj_return extends ParserRuleReturnScope {
+    public static class dti_return extends ParserRuleReturnScope {
         Object tree;
         public Object getTree() { return tree; }
     };
 
-    // $ANTLR start "jj"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:253:1: jj : 'JJ' TOKEN ;
-    public final ChemicalChunkerParser.jj_return jj() throws RecognitionException {
-        ChemicalChunkerParser.jj_return retval = new ChemicalChunkerParser.jj_return();
+    // $ANTLR start "dti"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:252:1: dti : 'DTI' TOKEN ;
+    public final ChemicalChunkerParser.dti_return dti() throws RecognitionException {
+        ChemicalChunkerParser.dti_return retval = new ChemicalChunkerParser.dti_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
@@ -9173,26 +9231,26 @@ public class ChemicalChunkerParser extends DebugParser {
         Object string_literal247_tree=null;
         Object TOKEN248_tree=null;
 
-        try { dbg.enterRule(getGrammarFileName(), "jj");
+        try { dbg.enterRule(getGrammarFileName(), "dti");
         if ( getRuleLevel()==0 ) {dbg.commence();}
         incRuleLevel();
-        dbg.location(253, 1);
+        dbg.location(252, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:253:3: ( 'JJ' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:255:4: ( 'DTI' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:253:4: 'JJ' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:255:5: 'DTI' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
-            dbg.location(253,4);
-            string_literal247=(Token)match(input,119,FOLLOW_119_in_jj1149); 
+            dbg.location(255,5);
+            string_literal247=(Token)match(input,119,FOLLOW_119_in_dti1152); 
             string_literal247_tree = (Object)adaptor.create(string_literal247);
             adaptor.addChild(root_0, string_literal247_tree);
 
-            dbg.location(253,9);
-            TOKEN248=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_jj1151); 
+            dbg.location(255,11);
+            TOKEN248=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_dti1154); 
             TOKEN248_tree = (Object)adaptor.create(TOKEN248);
             adaptor.addChild(root_0, TOKEN248_tree);
 
@@ -9213,28 +9271,28 @@ public class ChemicalChunkerParser extends DebugParser {
         }
         finally {
         }
-        dbg.location(253, 14);
+        dbg.location(255, 16);
 
         }
         finally {
-            dbg.exitRule(getGrammarFileName(), "jj");
+            dbg.exitRule(getGrammarFileName(), "dti");
             decRuleLevel();
             if ( getRuleLevel()==0 ) {dbg.terminate();}
         }
 
         return retval;
     }
-    // $ANTLR end "jj"
+    // $ANTLR end "dti"
 
-    public static class nn_return extends ParserRuleReturnScope {
+    public static class dts_return extends ParserRuleReturnScope {
         Object tree;
         public Object getTree() { return tree; }
     };
 
-    // $ANTLR start "nn"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:258:1: nn : 'NN' TOKEN ;
-    public final ChemicalChunkerParser.nn_return nn() throws RecognitionException {
-        ChemicalChunkerParser.nn_return retval = new ChemicalChunkerParser.nn_return();
+    // $ANTLR start "dts"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:258:1: dts : 'DTS' TOKEN ;
+    public final ChemicalChunkerParser.dts_return dts() throws RecognitionException {
+        ChemicalChunkerParser.dts_return retval = new ChemicalChunkerParser.dts_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
@@ -9245,26 +9303,26 @@ public class ChemicalChunkerParser extends DebugParser {
         Object string_literal249_tree=null;
         Object TOKEN250_tree=null;
 
-        try { dbg.enterRule(getGrammarFileName(), "nn");
+        try { dbg.enterRule(getGrammarFileName(), "dts");
         if ( getRuleLevel()==0 ) {dbg.commence();}
         incRuleLevel();
         dbg.location(258, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:258:3: ( 'NN' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:258:4: ( 'DTS' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:258:4: 'NN' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:258:5: 'DTS' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
-            dbg.location(258,4);
-            string_literal249=(Token)match(input,120,FOLLOW_120_in_nn1160); 
+            dbg.location(258,5);
+            string_literal249=(Token)match(input,120,FOLLOW_120_in_dts1161); 
             string_literal249_tree = (Object)adaptor.create(string_literal249);
             adaptor.addChild(root_0, string_literal249_tree);
 
-            dbg.location(258,9);
-            TOKEN250=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_nn1162); 
+            dbg.location(258,11);
+            TOKEN250=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_dts1163); 
             TOKEN250_tree = (Object)adaptor.create(TOKEN250);
             adaptor.addChild(root_0, TOKEN250_tree);
 
@@ -9285,28 +9343,28 @@ public class ChemicalChunkerParser extends DebugParser {
         }
         finally {
         }
-        dbg.location(258, 14);
+        dbg.location(258, 16);
 
         }
         finally {
-            dbg.exitRule(getGrammarFileName(), "nn");
+            dbg.exitRule(getGrammarFileName(), "dts");
             decRuleLevel();
             if ( getRuleLevel()==0 ) {dbg.terminate();}
         }
 
         return retval;
     }
-    // $ANTLR end "nn"
+    // $ANTLR end "dts"
 
-    public static class nns_return extends ParserRuleReturnScope {
+    public static class dtx_return extends ParserRuleReturnScope {
         Object tree;
         public Object getTree() { return tree; }
     };
 
-    // $ANTLR start "nns"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:261:1: nns : 'NNS' TOKEN ;
-    public final ChemicalChunkerParser.nns_return nns() throws RecognitionException {
-        ChemicalChunkerParser.nns_return retval = new ChemicalChunkerParser.nns_return();
+    // $ANTLR start "dtx"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:261:1: dtx : 'DTX' TOKEN ;
+    public final ChemicalChunkerParser.dtx_return dtx() throws RecognitionException {
+        ChemicalChunkerParser.dtx_return retval = new ChemicalChunkerParser.dtx_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
@@ -9317,26 +9375,26 @@ public class ChemicalChunkerParser extends DebugParser {
         Object string_literal251_tree=null;
         Object TOKEN252_tree=null;
 
-        try { dbg.enterRule(getGrammarFileName(), "nns");
+        try { dbg.enterRule(getGrammarFileName(), "dtx");
         if ( getRuleLevel()==0 ) {dbg.commence();}
         incRuleLevel();
         dbg.location(261, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:261:4: ( 'NNS' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:261:4: ( 'DTX' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:261:5: 'NNS' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:261:5: 'DTX' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
             dbg.location(261,5);
-            string_literal251=(Token)match(input,121,FOLLOW_121_in_nns1169); 
+            string_literal251=(Token)match(input,121,FOLLOW_121_in_dtx1170); 
             string_literal251_tree = (Object)adaptor.create(string_literal251);
             adaptor.addChild(root_0, string_literal251_tree);
 
             dbg.location(261,11);
-            TOKEN252=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_nns1171); 
+            TOKEN252=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_dtx1172); 
             TOKEN252_tree = (Object)adaptor.create(TOKEN252);
             adaptor.addChild(root_0, TOKEN252_tree);
 
@@ -9361,24 +9419,24 @@ public class ChemicalChunkerParser extends DebugParser {
 
         }
         finally {
-            dbg.exitRule(getGrammarFileName(), "nns");
+            dbg.exitRule(getGrammarFileName(), "dtx");
             decRuleLevel();
             if ( getRuleLevel()==0 ) {dbg.terminate();}
         }
 
         return retval;
     }
-    // $ANTLR end "nns"
+    // $ANTLR end "dtx"
 
-    public static class rb_return extends ParserRuleReturnScope {
+    public static class ex_return extends ParserRuleReturnScope {
         Object tree;
         public Object getTree() { return tree; }
     };
 
-    // $ANTLR start "rb"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:264:1: rb : 'RB' TOKEN ;
-    public final ChemicalChunkerParser.rb_return rb() throws RecognitionException {
-        ChemicalChunkerParser.rb_return retval = new ChemicalChunkerParser.rb_return();
+    // $ANTLR start "ex"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:264:1: ex : 'EX' TOKEN ;
+    public final ChemicalChunkerParser.ex_return ex() throws RecognitionException {
+        ChemicalChunkerParser.ex_return retval = new ChemicalChunkerParser.ex_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
@@ -9389,26 +9447,26 @@ public class ChemicalChunkerParser extends DebugParser {
         Object string_literal253_tree=null;
         Object TOKEN254_tree=null;
 
-        try { dbg.enterRule(getGrammarFileName(), "rb");
+        try { dbg.enterRule(getGrammarFileName(), "ex");
         if ( getRuleLevel()==0 ) {dbg.commence();}
         incRuleLevel();
         dbg.location(264, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:264:3: ( 'RB' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:264:3: ( 'EX' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:264:4: 'RB' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:264:4: 'EX' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
             dbg.location(264,4);
-            string_literal253=(Token)match(input,122,FOLLOW_122_in_rb1178); 
+            string_literal253=(Token)match(input,122,FOLLOW_122_in_ex1179); 
             string_literal253_tree = (Object)adaptor.create(string_literal253);
             adaptor.addChild(root_0, string_literal253_tree);
 
             dbg.location(264,9);
-            TOKEN254=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_rb1180); 
+            TOKEN254=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_ex1181); 
             TOKEN254_tree = (Object)adaptor.create(TOKEN254);
             adaptor.addChild(root_0, TOKEN254_tree);
 
@@ -9433,24 +9491,24 @@ public class ChemicalChunkerParser extends DebugParser {
 
         }
         finally {
-            dbg.exitRule(getGrammarFileName(), "rb");
+            dbg.exitRule(getGrammarFileName(), "ex");
             decRuleLevel();
             if ( getRuleLevel()==0 ) {dbg.terminate();}
         }
 
         return retval;
     }
-    // $ANTLR end "rb"
+    // $ANTLR end "ex"
 
-    public static class to_return extends ParserRuleReturnScope {
+    public static class fw_return extends ParserRuleReturnScope {
         Object tree;
         public Object getTree() { return tree; }
     };
 
-    // $ANTLR start "to"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:268:1: to : 'TO' TOKEN ;
-    public final ChemicalChunkerParser.to_return to() throws RecognitionException {
-        ChemicalChunkerParser.to_return retval = new ChemicalChunkerParser.to_return();
+    // $ANTLR start "fw"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:267:1: fw : 'FW' TOKEN ;
+    public final ChemicalChunkerParser.fw_return fw() throws RecognitionException {
+        ChemicalChunkerParser.fw_return retval = new ChemicalChunkerParser.fw_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
@@ -9461,26 +9519,26 @@ public class ChemicalChunkerParser extends DebugParser {
         Object string_literal255_tree=null;
         Object TOKEN256_tree=null;
 
-        try { dbg.enterRule(getGrammarFileName(), "to");
+        try { dbg.enterRule(getGrammarFileName(), "fw");
         if ( getRuleLevel()==0 ) {dbg.commence();}
         incRuleLevel();
-        dbg.location(268, 1);
+        dbg.location(267, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:268:3: ( 'TO' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:267:3: ( 'FW' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:268:4: 'TO' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:267:4: 'FW' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
-            dbg.location(268,4);
-            string_literal255=(Token)match(input,123,FOLLOW_123_in_to1188); 
+            dbg.location(267,4);
+            string_literal255=(Token)match(input,123,FOLLOW_123_in_fw1188); 
             string_literal255_tree = (Object)adaptor.create(string_literal255);
             adaptor.addChild(root_0, string_literal255_tree);
 
-            dbg.location(268,9);
-            TOKEN256=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_to1190); 
+            dbg.location(267,9);
+            TOKEN256=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_fw1190); 
             TOKEN256_tree = (Object)adaptor.create(TOKEN256);
             adaptor.addChild(root_0, TOKEN256_tree);
 
@@ -9501,28 +9559,28 @@ public class ChemicalChunkerParser extends DebugParser {
         }
         finally {
         }
-        dbg.location(268, 14);
+        dbg.location(267, 14);
 
         }
         finally {
-            dbg.exitRule(getGrammarFileName(), "to");
+            dbg.exitRule(getGrammarFileName(), "fw");
             decRuleLevel();
             if ( getRuleLevel()==0 ) {dbg.terminate();}
         }
 
         return retval;
     }
-    // $ANTLR end "to"
+    // $ANTLR end "fw"
 
-    public static class vbd_return extends ParserRuleReturnScope {
+    public static class hv_return extends ParserRuleReturnScope {
         Object tree;
         public Object getTree() { return tree; }
     };
 
-    // $ANTLR start "vbd"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:272:1: vbd : 'VBD' TOKEN ;
-    public final ChemicalChunkerParser.vbd_return vbd() throws RecognitionException {
-        ChemicalChunkerParser.vbd_return retval = new ChemicalChunkerParser.vbd_return();
+    // $ANTLR start "hv"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:270:1: hv : 'HV' TOKEN ;
+    public final ChemicalChunkerParser.hv_return hv() throws RecognitionException {
+        ChemicalChunkerParser.hv_return retval = new ChemicalChunkerParser.hv_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
@@ -9533,26 +9591,26 @@ public class ChemicalChunkerParser extends DebugParser {
         Object string_literal257_tree=null;
         Object TOKEN258_tree=null;
 
-        try { dbg.enterRule(getGrammarFileName(), "vbd");
+        try { dbg.enterRule(getGrammarFileName(), "hv");
         if ( getRuleLevel()==0 ) {dbg.commence();}
         incRuleLevel();
-        dbg.location(272, 1);
+        dbg.location(270, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:272:4: ( 'VBD' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:270:3: ( 'HV' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:272:5: 'VBD' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:270:4: 'HV' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
-            dbg.location(272,5);
-            string_literal257=(Token)match(input,124,FOLLOW_124_in_vbd1198); 
+            dbg.location(270,4);
+            string_literal257=(Token)match(input,124,FOLLOW_124_in_hv1197); 
             string_literal257_tree = (Object)adaptor.create(string_literal257);
             adaptor.addChild(root_0, string_literal257_tree);
 
-            dbg.location(272,11);
-            TOKEN258=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_vbd1200); 
+            dbg.location(270,9);
+            TOKEN258=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_hv1199); 
             TOKEN258_tree = (Object)adaptor.create(TOKEN258);
             adaptor.addChild(root_0, TOKEN258_tree);
 
@@ -9573,7 +9631,3751 @@ public class ChemicalChunkerParser extends DebugParser {
         }
         finally {
         }
-        dbg.location(272, 16);
+        dbg.location(270, 14);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "hv");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "hv"
+
+    public static class hvd_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "hvd"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:273:1: hvd : 'HVD' TOKEN ;
+    public final ChemicalChunkerParser.hvd_return hvd() throws RecognitionException {
+        ChemicalChunkerParser.hvd_return retval = new ChemicalChunkerParser.hvd_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal259=null;
+        Token TOKEN260=null;
+
+        Object string_literal259_tree=null;
+        Object TOKEN260_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "hvd");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(273, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:273:4: ( 'HVD' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:273:5: 'HVD' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(273,5);
+            string_literal259=(Token)match(input,125,FOLLOW_125_in_hvd1206); 
+            string_literal259_tree = (Object)adaptor.create(string_literal259);
+            adaptor.addChild(root_0, string_literal259_tree);
+
+            dbg.location(273,11);
+            TOKEN260=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_hvd1208); 
+            TOKEN260_tree = (Object)adaptor.create(TOKEN260);
+            adaptor.addChild(root_0, TOKEN260_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(273, 16);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "hvd");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "hvd"
+
+    public static class hvg_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "hvg"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:276:1: hvg : 'HVG' TOKEN ;
+    public final ChemicalChunkerParser.hvg_return hvg() throws RecognitionException {
+        ChemicalChunkerParser.hvg_return retval = new ChemicalChunkerParser.hvg_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal261=null;
+        Token TOKEN262=null;
+
+        Object string_literal261_tree=null;
+        Object TOKEN262_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "hvg");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(276, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:276:4: ( 'HVG' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:276:5: 'HVG' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(276,5);
+            string_literal261=(Token)match(input,126,FOLLOW_126_in_hvg1215); 
+            string_literal261_tree = (Object)adaptor.create(string_literal261);
+            adaptor.addChild(root_0, string_literal261_tree);
+
+            dbg.location(276,11);
+            TOKEN262=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_hvg1217); 
+            TOKEN262_tree = (Object)adaptor.create(TOKEN262);
+            adaptor.addChild(root_0, TOKEN262_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(276, 16);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "hvg");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "hvg"
+
+    public static class hvn_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "hvn"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:279:1: hvn : 'HVN' TOKEN ;
+    public final ChemicalChunkerParser.hvn_return hvn() throws RecognitionException {
+        ChemicalChunkerParser.hvn_return retval = new ChemicalChunkerParser.hvn_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal263=null;
+        Token TOKEN264=null;
+
+        Object string_literal263_tree=null;
+        Object TOKEN264_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "hvn");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(279, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:279:4: ( 'HVN' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:279:5: 'HVN' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(279,5);
+            string_literal263=(Token)match(input,127,FOLLOW_127_in_hvn1224); 
+            string_literal263_tree = (Object)adaptor.create(string_literal263);
+            adaptor.addChild(root_0, string_literal263_tree);
+
+            dbg.location(279,11);
+            TOKEN264=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_hvn1226); 
+            TOKEN264_tree = (Object)adaptor.create(TOKEN264);
+            adaptor.addChild(root_0, TOKEN264_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(279, 16);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "hvn");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "hvn"
+
+    public static class jjr_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "jjr"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:283:1: jjr : 'JJR' TOKEN ;
+    public final ChemicalChunkerParser.jjr_return jjr() throws RecognitionException {
+        ChemicalChunkerParser.jjr_return retval = new ChemicalChunkerParser.jjr_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal265=null;
+        Token TOKEN266=null;
+
+        Object string_literal265_tree=null;
+        Object TOKEN266_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "jjr");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(283, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:283:4: ( 'JJR' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:283:5: 'JJR' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(283,5);
+            string_literal265=(Token)match(input,128,FOLLOW_128_in_jjr1234); 
+            string_literal265_tree = (Object)adaptor.create(string_literal265);
+            adaptor.addChild(root_0, string_literal265_tree);
+
+            dbg.location(283,11);
+            TOKEN266=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_jjr1236); 
+            TOKEN266_tree = (Object)adaptor.create(TOKEN266);
+            adaptor.addChild(root_0, TOKEN266_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(283, 16);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "jjr");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "jjr"
+
+    public static class jjs_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "jjs"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:286:1: jjs : 'JJS' TOKEN ;
+    public final ChemicalChunkerParser.jjs_return jjs() throws RecognitionException {
+        ChemicalChunkerParser.jjs_return retval = new ChemicalChunkerParser.jjs_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal267=null;
+        Token TOKEN268=null;
+
+        Object string_literal267_tree=null;
+        Object TOKEN268_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "jjs");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(286, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:286:4: ( 'JJS' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:286:5: 'JJS' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(286,5);
+            string_literal267=(Token)match(input,129,FOLLOW_129_in_jjs1243); 
+            string_literal267_tree = (Object)adaptor.create(string_literal267);
+            adaptor.addChild(root_0, string_literal267_tree);
+
+            dbg.location(286,11);
+            TOKEN268=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_jjs1245); 
+            TOKEN268_tree = (Object)adaptor.create(TOKEN268);
+            adaptor.addChild(root_0, TOKEN268_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(286, 16);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "jjs");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "jjs"
+
+    public static class jjt_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "jjt"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:289:1: jjt : 'JJT' TOKEN ;
+    public final ChemicalChunkerParser.jjt_return jjt() throws RecognitionException {
+        ChemicalChunkerParser.jjt_return retval = new ChemicalChunkerParser.jjt_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal269=null;
+        Token TOKEN270=null;
+
+        Object string_literal269_tree=null;
+        Object TOKEN270_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "jjt");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(289, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:289:4: ( 'JJT' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:289:5: 'JJT' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(289,5);
+            string_literal269=(Token)match(input,130,FOLLOW_130_in_jjt1252); 
+            string_literal269_tree = (Object)adaptor.create(string_literal269);
+            adaptor.addChild(root_0, string_literal269_tree);
+
+            dbg.location(289,11);
+            TOKEN270=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_jjt1254); 
+            TOKEN270_tree = (Object)adaptor.create(TOKEN270);
+            adaptor.addChild(root_0, TOKEN270_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(289, 16);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "jjt");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "jjt"
+
+    public static class md_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "md"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:292:1: md : 'MD' TOKEN ;
+    public final ChemicalChunkerParser.md_return md() throws RecognitionException {
+        ChemicalChunkerParser.md_return retval = new ChemicalChunkerParser.md_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal271=null;
+        Token TOKEN272=null;
+
+        Object string_literal271_tree=null;
+        Object TOKEN272_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "md");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(292, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:292:3: ( 'MD' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:292:4: 'MD' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(292,4);
+            string_literal271=(Token)match(input,131,FOLLOW_131_in_md1261); 
+            string_literal271_tree = (Object)adaptor.create(string_literal271);
+            adaptor.addChild(root_0, string_literal271_tree);
+
+            dbg.location(292,9);
+            TOKEN272=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_md1263); 
+            TOKEN272_tree = (Object)adaptor.create(TOKEN272);
+            adaptor.addChild(root_0, TOKEN272_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(292, 14);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "md");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "md"
+
+    public static class nc_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "nc"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:295:1: nc : 'NC' TOKEN ;
+    public final ChemicalChunkerParser.nc_return nc() throws RecognitionException {
+        ChemicalChunkerParser.nc_return retval = new ChemicalChunkerParser.nc_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal273=null;
+        Token TOKEN274=null;
+
+        Object string_literal273_tree=null;
+        Object TOKEN274_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "nc");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(295, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:295:3: ( 'NC' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:295:4: 'NC' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(295,4);
+            string_literal273=(Token)match(input,132,FOLLOW_132_in_nc1270); 
+            string_literal273_tree = (Object)adaptor.create(string_literal273);
+            adaptor.addChild(root_0, string_literal273_tree);
+
+            dbg.location(295,9);
+            TOKEN274=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_nc1272); 
+            TOKEN274_tree = (Object)adaptor.create(TOKEN274);
+            adaptor.addChild(root_0, TOKEN274_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(295, 14);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "nc");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "nc"
+
+    public static class wpdollar_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "wpdollar"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:298:1: wpdollar : 'WP$' TOKEN ;
+    public final ChemicalChunkerParser.wpdollar_return wpdollar() throws RecognitionException {
+        ChemicalChunkerParser.wpdollar_return retval = new ChemicalChunkerParser.wpdollar_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal275=null;
+        Token TOKEN276=null;
+
+        Object string_literal275_tree=null;
+        Object TOKEN276_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "wpdollar");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(298, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:298:9: ( 'WP$' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:298:10: 'WP$' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(298,10);
+            string_literal275=(Token)match(input,133,FOLLOW_133_in_wpdollar1279); 
+            string_literal275_tree = (Object)adaptor.create(string_literal275);
+            adaptor.addChild(root_0, string_literal275_tree);
+
+            dbg.location(298,16);
+            TOKEN276=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_wpdollar1281); 
+            TOKEN276_tree = (Object)adaptor.create(TOKEN276);
+            adaptor.addChild(root_0, TOKEN276_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(298, 21);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "wpdollar");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "wpdollar"
+
+    public static class wpo_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "wpo"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:301:1: wpo : 'WPO' TOKEN ;
+    public final ChemicalChunkerParser.wpo_return wpo() throws RecognitionException {
+        ChemicalChunkerParser.wpo_return retval = new ChemicalChunkerParser.wpo_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal277=null;
+        Token TOKEN278=null;
+
+        Object string_literal277_tree=null;
+        Object TOKEN278_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "wpo");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(301, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:301:4: ( 'WPO' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:301:5: 'WPO' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(301,5);
+            string_literal277=(Token)match(input,134,FOLLOW_134_in_wpo1288); 
+            string_literal277_tree = (Object)adaptor.create(string_literal277);
+            adaptor.addChild(root_0, string_literal277_tree);
+
+            dbg.location(301,11);
+            TOKEN278=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_wpo1290); 
+            TOKEN278_tree = (Object)adaptor.create(TOKEN278);
+            adaptor.addChild(root_0, TOKEN278_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(301, 16);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "wpo");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "wpo"
+
+    public static class wps_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "wps"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:304:1: wps : 'WPS' TOKEN ;
+    public final ChemicalChunkerParser.wps_return wps() throws RecognitionException {
+        ChemicalChunkerParser.wps_return retval = new ChemicalChunkerParser.wps_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal279=null;
+        Token TOKEN280=null;
+
+        Object string_literal279_tree=null;
+        Object TOKEN280_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "wps");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(304, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:304:4: ( 'WPS' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:304:5: 'WPS' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(304,5);
+            string_literal279=(Token)match(input,135,FOLLOW_135_in_wps1297); 
+            string_literal279_tree = (Object)adaptor.create(string_literal279);
+            adaptor.addChild(root_0, string_literal279_tree);
+
+            dbg.location(304,11);
+            TOKEN280=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_wps1299); 
+            TOKEN280_tree = (Object)adaptor.create(TOKEN280);
+            adaptor.addChild(root_0, TOKEN280_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(304, 16);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "wps");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "wps"
+
+    public static class wql_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "wql"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:307:1: wql : 'WQL' TOKEN ;
+    public final ChemicalChunkerParser.wql_return wql() throws RecognitionException {
+        ChemicalChunkerParser.wql_return retval = new ChemicalChunkerParser.wql_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal281=null;
+        Token TOKEN282=null;
+
+        Object string_literal281_tree=null;
+        Object TOKEN282_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "wql");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(307, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:307:4: ( 'WQL' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:307:5: 'WQL' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(307,5);
+            string_literal281=(Token)match(input,136,FOLLOW_136_in_wql1306); 
+            string_literal281_tree = (Object)adaptor.create(string_literal281);
+            adaptor.addChild(root_0, string_literal281_tree);
+
+            dbg.location(307,11);
+            TOKEN282=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_wql1308); 
+            TOKEN282_tree = (Object)adaptor.create(TOKEN282);
+            adaptor.addChild(root_0, TOKEN282_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(307, 16);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "wql");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "wql"
+
+    public static class wrb_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "wrb"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:310:1: wrb : 'WRB' TOKEN ;
+    public final ChemicalChunkerParser.wrb_return wrb() throws RecognitionException {
+        ChemicalChunkerParser.wrb_return retval = new ChemicalChunkerParser.wrb_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal283=null;
+        Token TOKEN284=null;
+
+        Object string_literal283_tree=null;
+        Object TOKEN284_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "wrb");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(310, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:310:4: ( 'WRB' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:310:5: 'WRB' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(310,5);
+            string_literal283=(Token)match(input,137,FOLLOW_137_in_wrb1315); 
+            string_literal283_tree = (Object)adaptor.create(string_literal283);
+            adaptor.addChild(root_0, string_literal283_tree);
+
+            dbg.location(310,11);
+            TOKEN284=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_wrb1317); 
+            TOKEN284_tree = (Object)adaptor.create(TOKEN284);
+            adaptor.addChild(root_0, TOKEN284_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(310, 16);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "wrb");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "wrb"
+
+    public static class uh_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "uh"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:314:1: uh : 'UH' TOKEN ;
+    public final ChemicalChunkerParser.uh_return uh() throws RecognitionException {
+        ChemicalChunkerParser.uh_return retval = new ChemicalChunkerParser.uh_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal285=null;
+        Token TOKEN286=null;
+
+        Object string_literal285_tree=null;
+        Object TOKEN286_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "uh");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(314, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:314:3: ( 'UH' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:314:4: 'UH' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(314,4);
+            string_literal285=(Token)match(input,138,FOLLOW_138_in_uh1325); 
+            string_literal285_tree = (Object)adaptor.create(string_literal285);
+            adaptor.addChild(root_0, string_literal285_tree);
+
+            dbg.location(314,9);
+            TOKEN286=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_uh1327); 
+            TOKEN286_tree = (Object)adaptor.create(TOKEN286);
+            adaptor.addChild(root_0, TOKEN286_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(314, 14);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "uh");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "uh"
+
+    public static class vb_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "vb"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:317:1: vb : 'VB' TOKEN ;
+    public final ChemicalChunkerParser.vb_return vb() throws RecognitionException {
+        ChemicalChunkerParser.vb_return retval = new ChemicalChunkerParser.vb_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal287=null;
+        Token TOKEN288=null;
+
+        Object string_literal287_tree=null;
+        Object TOKEN288_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "vb");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(317, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:317:3: ( 'VB' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:317:4: 'VB' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(317,4);
+            string_literal287=(Token)match(input,139,FOLLOW_139_in_vb1334); 
+            string_literal287_tree = (Object)adaptor.create(string_literal287);
+            adaptor.addChild(root_0, string_literal287_tree);
+
+            dbg.location(317,9);
+            TOKEN288=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_vb1336); 
+            TOKEN288_tree = (Object)adaptor.create(TOKEN288);
+            adaptor.addChild(root_0, TOKEN288_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(317, 14);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "vb");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "vb"
+
+    public static class vbg_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "vbg"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:320:1: vbg : 'VBG' TOKEN ;
+    public final ChemicalChunkerParser.vbg_return vbg() throws RecognitionException {
+        ChemicalChunkerParser.vbg_return retval = new ChemicalChunkerParser.vbg_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal289=null;
+        Token TOKEN290=null;
+
+        Object string_literal289_tree=null;
+        Object TOKEN290_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "vbg");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(320, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:320:4: ( 'VBG' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:320:5: 'VBG' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(320,5);
+            string_literal289=(Token)match(input,140,FOLLOW_140_in_vbg1343); 
+            string_literal289_tree = (Object)adaptor.create(string_literal289);
+            adaptor.addChild(root_0, string_literal289_tree);
+
+            dbg.location(320,11);
+            TOKEN290=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_vbg1345); 
+            TOKEN290_tree = (Object)adaptor.create(TOKEN290);
+            adaptor.addChild(root_0, TOKEN290_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(320, 16);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "vbg");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "vbg"
+
+    public static class vbn_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "vbn"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:323:1: vbn : 'VBN' TOKEN ;
+    public final ChemicalChunkerParser.vbn_return vbn() throws RecognitionException {
+        ChemicalChunkerParser.vbn_return retval = new ChemicalChunkerParser.vbn_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal291=null;
+        Token TOKEN292=null;
+
+        Object string_literal291_tree=null;
+        Object TOKEN292_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "vbn");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(323, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:323:4: ( 'VBN' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:323:5: 'VBN' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(323,5);
+            string_literal291=(Token)match(input,141,FOLLOW_141_in_vbn1352); 
+            string_literal291_tree = (Object)adaptor.create(string_literal291);
+            adaptor.addChild(root_0, string_literal291_tree);
+
+            dbg.location(323,11);
+            TOKEN292=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_vbn1354); 
+            TOKEN292_tree = (Object)adaptor.create(TOKEN292);
+            adaptor.addChild(root_0, TOKEN292_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(323, 16);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "vbn");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "vbn"
+
+    public static class vbz_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "vbz"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:326:1: vbz : 'VBZ' TOKEN ;
+    public final ChemicalChunkerParser.vbz_return vbz() throws RecognitionException {
+        ChemicalChunkerParser.vbz_return retval = new ChemicalChunkerParser.vbz_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal293=null;
+        Token TOKEN294=null;
+
+        Object string_literal293_tree=null;
+        Object TOKEN294_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "vbz");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(326, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:326:4: ( 'VBZ' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:326:5: 'VBZ' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(326,5);
+            string_literal293=(Token)match(input,142,FOLLOW_142_in_vbz1361); 
+            string_literal293_tree = (Object)adaptor.create(string_literal293);
+            adaptor.addChild(root_0, string_literal293_tree);
+
+            dbg.location(326,11);
+            TOKEN294=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_vbz1363); 
+            TOKEN294_tree = (Object)adaptor.create(TOKEN294);
+            adaptor.addChild(root_0, TOKEN294_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(326, 16);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "vbz");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "vbz"
+
+    public static class wdt_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "wdt"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:329:1: wdt : 'WDT' TOKEN ;
+    public final ChemicalChunkerParser.wdt_return wdt() throws RecognitionException {
+        ChemicalChunkerParser.wdt_return retval = new ChemicalChunkerParser.wdt_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal295=null;
+        Token TOKEN296=null;
+
+        Object string_literal295_tree=null;
+        Object TOKEN296_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "wdt");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(329, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:329:4: ( 'WDT' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:329:5: 'WDT' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(329,5);
+            string_literal295=(Token)match(input,143,FOLLOW_143_in_wdt1370); 
+            string_literal295_tree = (Object)adaptor.create(string_literal295);
+            adaptor.addChild(root_0, string_literal295_tree);
+
+            dbg.location(329,11);
+            TOKEN296=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_wdt1372); 
+            TOKEN296_tree = (Object)adaptor.create(TOKEN296);
+            adaptor.addChild(root_0, TOKEN296_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(329, 16);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "wdt");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "wdt"
+
+    public static class rbr_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "rbr"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:333:1: rbr : 'RBR' TOKEN ;
+    public final ChemicalChunkerParser.rbr_return rbr() throws RecognitionException {
+        ChemicalChunkerParser.rbr_return retval = new ChemicalChunkerParser.rbr_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal297=null;
+        Token TOKEN298=null;
+
+        Object string_literal297_tree=null;
+        Object TOKEN298_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "rbr");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(333, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:333:4: ( 'RBR' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:333:5: 'RBR' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(333,5);
+            string_literal297=(Token)match(input,144,FOLLOW_144_in_rbr1380); 
+            string_literal297_tree = (Object)adaptor.create(string_literal297);
+            adaptor.addChild(root_0, string_literal297_tree);
+
+            dbg.location(333,11);
+            TOKEN298=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_rbr1382); 
+            TOKEN298_tree = (Object)adaptor.create(TOKEN298);
+            adaptor.addChild(root_0, TOKEN298_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(333, 16);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "rbr");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "rbr"
+
+    public static class rbt_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "rbt"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:336:1: rbt : 'RBT' TOKEN ;
+    public final ChemicalChunkerParser.rbt_return rbt() throws RecognitionException {
+        ChemicalChunkerParser.rbt_return retval = new ChemicalChunkerParser.rbt_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal299=null;
+        Token TOKEN300=null;
+
+        Object string_literal299_tree=null;
+        Object TOKEN300_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "rbt");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(336, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:336:4: ( 'RBT' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:336:5: 'RBT' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(336,5);
+            string_literal299=(Token)match(input,145,FOLLOW_145_in_rbt1389); 
+            string_literal299_tree = (Object)adaptor.create(string_literal299);
+            adaptor.addChild(root_0, string_literal299_tree);
+
+            dbg.location(336,11);
+            TOKEN300=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_rbt1391); 
+            TOKEN300_tree = (Object)adaptor.create(TOKEN300);
+            adaptor.addChild(root_0, TOKEN300_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(336, 16);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "rbt");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "rbt"
+
+    public static class rn_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "rn"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:339:1: rn : 'RN' TOKEN ;
+    public final ChemicalChunkerParser.rn_return rn() throws RecognitionException {
+        ChemicalChunkerParser.rn_return retval = new ChemicalChunkerParser.rn_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal301=null;
+        Token TOKEN302=null;
+
+        Object string_literal301_tree=null;
+        Object TOKEN302_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "rn");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(339, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:339:3: ( 'RN' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:339:4: 'RN' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(339,4);
+            string_literal301=(Token)match(input,146,FOLLOW_146_in_rn1398); 
+            string_literal301_tree = (Object)adaptor.create(string_literal301);
+            adaptor.addChild(root_0, string_literal301_tree);
+
+            dbg.location(339,9);
+            TOKEN302=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_rn1400); 
+            TOKEN302_tree = (Object)adaptor.create(TOKEN302);
+            adaptor.addChild(root_0, TOKEN302_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(339, 14);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "rn");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "rn"
+
+    public static class rp_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "rp"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:342:1: rp : 'RP' TOKEN ;
+    public final ChemicalChunkerParser.rp_return rp() throws RecognitionException {
+        ChemicalChunkerParser.rp_return retval = new ChemicalChunkerParser.rp_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal303=null;
+        Token TOKEN304=null;
+
+        Object string_literal303_tree=null;
+        Object TOKEN304_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "rp");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(342, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:342:3: ( 'RP' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:342:4: 'RP' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(342,4);
+            string_literal303=(Token)match(input,147,FOLLOW_147_in_rp1407); 
+            string_literal303_tree = (Object)adaptor.create(string_literal303);
+            adaptor.addChild(root_0, string_literal303_tree);
+
+            dbg.location(342,9);
+            TOKEN304=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_rp1409); 
+            TOKEN304_tree = (Object)adaptor.create(TOKEN304);
+            adaptor.addChild(root_0, TOKEN304_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(342, 14);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "rp");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "rp"
+
+    public static class pn_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "pn"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:347:1: pn : 'PN' TOKEN ;
+    public final ChemicalChunkerParser.pn_return pn() throws RecognitionException {
+        ChemicalChunkerParser.pn_return retval = new ChemicalChunkerParser.pn_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal305=null;
+        Token TOKEN306=null;
+
+        Object string_literal305_tree=null;
+        Object TOKEN306_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "pn");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(347, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:347:3: ( 'PN' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:347:4: 'PN' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(347,4);
+            string_literal305=(Token)match(input,148,FOLLOW_148_in_pn1418); 
+            string_literal305_tree = (Object)adaptor.create(string_literal305);
+            adaptor.addChild(root_0, string_literal305_tree);
+
+            dbg.location(347,9);
+            TOKEN306=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_pn1420); 
+            TOKEN306_tree = (Object)adaptor.create(TOKEN306);
+            adaptor.addChild(root_0, TOKEN306_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(347, 14);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "pn");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "pn"
+
+    public static class pndollar_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "pndollar"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:350:1: pndollar : 'PN$' TOKEN ;
+    public final ChemicalChunkerParser.pndollar_return pndollar() throws RecognitionException {
+        ChemicalChunkerParser.pndollar_return retval = new ChemicalChunkerParser.pndollar_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal307=null;
+        Token TOKEN308=null;
+
+        Object string_literal307_tree=null;
+        Object TOKEN308_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "pndollar");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(350, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:350:9: ( 'PN$' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:350:10: 'PN$' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(350,10);
+            string_literal307=(Token)match(input,149,FOLLOW_149_in_pndollar1427); 
+            string_literal307_tree = (Object)adaptor.create(string_literal307);
+            adaptor.addChild(root_0, string_literal307_tree);
+
+            dbg.location(350,16);
+            TOKEN308=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_pndollar1429); 
+            TOKEN308_tree = (Object)adaptor.create(TOKEN308);
+            adaptor.addChild(root_0, TOKEN308_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(350, 21);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "pndollar");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "pndollar"
+
+    public static class ppdollar_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "ppdollar"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:353:1: ppdollar : 'PP$' TOKEN ;
+    public final ChemicalChunkerParser.ppdollar_return ppdollar() throws RecognitionException {
+        ChemicalChunkerParser.ppdollar_return retval = new ChemicalChunkerParser.ppdollar_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal309=null;
+        Token TOKEN310=null;
+
+        Object string_literal309_tree=null;
+        Object TOKEN310_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "ppdollar");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(353, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:353:9: ( 'PP$' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:353:10: 'PP$' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(353,10);
+            string_literal309=(Token)match(input,150,FOLLOW_150_in_ppdollar1436); 
+            string_literal309_tree = (Object)adaptor.create(string_literal309);
+            adaptor.addChild(root_0, string_literal309_tree);
+
+            dbg.location(353,16);
+            TOKEN310=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_ppdollar1438); 
+            TOKEN310_tree = (Object)adaptor.create(TOKEN310);
+            adaptor.addChild(root_0, TOKEN310_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(353, 21);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "ppdollar");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "ppdollar"
+
+    public static class ppdollardollar_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "ppdollardollar"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:356:1: ppdollardollar : 'PP$$' TOKEN ;
+    public final ChemicalChunkerParser.ppdollardollar_return ppdollardollar() throws RecognitionException {
+        ChemicalChunkerParser.ppdollardollar_return retval = new ChemicalChunkerParser.ppdollardollar_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal311=null;
+        Token TOKEN312=null;
+
+        Object string_literal311_tree=null;
+        Object TOKEN312_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "ppdollardollar");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(356, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:356:15: ( 'PP$$' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:356:16: 'PP$$' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(356,16);
+            string_literal311=(Token)match(input,151,FOLLOW_151_in_ppdollardollar1445); 
+            string_literal311_tree = (Object)adaptor.create(string_literal311);
+            adaptor.addChild(root_0, string_literal311_tree);
+
+            dbg.location(356,23);
+            TOKEN312=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_ppdollardollar1447); 
+            TOKEN312_tree = (Object)adaptor.create(TOKEN312);
+            adaptor.addChild(root_0, TOKEN312_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(356, 28);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "ppdollardollar");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "ppdollardollar"
+
+    public static class ppl_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "ppl"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:359:1: ppl : 'PPL' TOKEN ;
+    public final ChemicalChunkerParser.ppl_return ppl() throws RecognitionException {
+        ChemicalChunkerParser.ppl_return retval = new ChemicalChunkerParser.ppl_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal313=null;
+        Token TOKEN314=null;
+
+        Object string_literal313_tree=null;
+        Object TOKEN314_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "ppl");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(359, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:359:4: ( 'PPL' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:359:5: 'PPL' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(359,5);
+            string_literal313=(Token)match(input,152,FOLLOW_152_in_ppl1454); 
+            string_literal313_tree = (Object)adaptor.create(string_literal313);
+            adaptor.addChild(root_0, string_literal313_tree);
+
+            dbg.location(359,11);
+            TOKEN314=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_ppl1456); 
+            TOKEN314_tree = (Object)adaptor.create(TOKEN314);
+            adaptor.addChild(root_0, TOKEN314_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(359, 16);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "ppl");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "ppl"
+
+    public static class ppls_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "ppls"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:362:1: ppls : 'PPLS' TOKEN ;
+    public final ChemicalChunkerParser.ppls_return ppls() throws RecognitionException {
+        ChemicalChunkerParser.ppls_return retval = new ChemicalChunkerParser.ppls_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal315=null;
+        Token TOKEN316=null;
+
+        Object string_literal315_tree=null;
+        Object TOKEN316_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "ppls");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(362, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:362:5: ( 'PPLS' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:362:6: 'PPLS' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(362,6);
+            string_literal315=(Token)match(input,153,FOLLOW_153_in_ppls1463); 
+            string_literal315_tree = (Object)adaptor.create(string_literal315);
+            adaptor.addChild(root_0, string_literal315_tree);
+
+            dbg.location(362,13);
+            TOKEN316=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_ppls1465); 
+            TOKEN316_tree = (Object)adaptor.create(TOKEN316);
+            adaptor.addChild(root_0, TOKEN316_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(362, 18);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "ppls");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "ppls"
+
+    public static class ppo_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "ppo"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:365:1: ppo : 'PPO' TOKEN ;
+    public final ChemicalChunkerParser.ppo_return ppo() throws RecognitionException {
+        ChemicalChunkerParser.ppo_return retval = new ChemicalChunkerParser.ppo_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal317=null;
+        Token TOKEN318=null;
+
+        Object string_literal317_tree=null;
+        Object TOKEN318_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "ppo");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(365, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:365:4: ( 'PPO' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:365:5: 'PPO' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(365,5);
+            string_literal317=(Token)match(input,154,FOLLOW_154_in_ppo1472); 
+            string_literal317_tree = (Object)adaptor.create(string_literal317);
+            adaptor.addChild(root_0, string_literal317_tree);
+
+            dbg.location(365,11);
+            TOKEN318=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_ppo1474); 
+            TOKEN318_tree = (Object)adaptor.create(TOKEN318);
+            adaptor.addChild(root_0, TOKEN318_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(365, 16);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "ppo");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "ppo"
+
+    public static class pps_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "pps"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:368:1: pps : 'PPS' TOKEN ;
+    public final ChemicalChunkerParser.pps_return pps() throws RecognitionException {
+        ChemicalChunkerParser.pps_return retval = new ChemicalChunkerParser.pps_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal319=null;
+        Token TOKEN320=null;
+
+        Object string_literal319_tree=null;
+        Object TOKEN320_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "pps");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(368, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:368:4: ( 'PPS' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:368:5: 'PPS' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(368,5);
+            string_literal319=(Token)match(input,155,FOLLOW_155_in_pps1481); 
+            string_literal319_tree = (Object)adaptor.create(string_literal319);
+            adaptor.addChild(root_0, string_literal319_tree);
+
+            dbg.location(368,11);
+            TOKEN320=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_pps1483); 
+            TOKEN320_tree = (Object)adaptor.create(TOKEN320);
+            adaptor.addChild(root_0, TOKEN320_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(368, 16);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "pps");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "pps"
+
+    public static class ppss_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "ppss"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:371:1: ppss : 'PPSS' TOKEN ;
+    public final ChemicalChunkerParser.ppss_return ppss() throws RecognitionException {
+        ChemicalChunkerParser.ppss_return retval = new ChemicalChunkerParser.ppss_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal321=null;
+        Token TOKEN322=null;
+
+        Object string_literal321_tree=null;
+        Object TOKEN322_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "ppss");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(371, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:371:5: ( 'PPSS' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:371:6: 'PPSS' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(371,6);
+            string_literal321=(Token)match(input,156,FOLLOW_156_in_ppss1490); 
+            string_literal321_tree = (Object)adaptor.create(string_literal321);
+            adaptor.addChild(root_0, string_literal321_tree);
+
+            dbg.location(371,13);
+            TOKEN322=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_ppss1492); 
+            TOKEN322_tree = (Object)adaptor.create(TOKEN322);
+            adaptor.addChild(root_0, TOKEN322_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(371, 18);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "ppss");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "ppss"
+
+    public static class ql_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "ql"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:374:1: ql : 'QL' TOKEN ;
+    public final ChemicalChunkerParser.ql_return ql() throws RecognitionException {
+        ChemicalChunkerParser.ql_return retval = new ChemicalChunkerParser.ql_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal323=null;
+        Token TOKEN324=null;
+
+        Object string_literal323_tree=null;
+        Object TOKEN324_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "ql");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(374, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:374:3: ( 'QL' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:374:4: 'QL' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(374,4);
+            string_literal323=(Token)match(input,157,FOLLOW_157_in_ql1499); 
+            string_literal323_tree = (Object)adaptor.create(string_literal323);
+            adaptor.addChild(root_0, string_literal323_tree);
+
+            dbg.location(374,9);
+            TOKEN324=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_ql1501); 
+            TOKEN324_tree = (Object)adaptor.create(TOKEN324);
+            adaptor.addChild(root_0, TOKEN324_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(374, 14);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "ql");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "ql"
+
+    public static class qlp_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "qlp"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:377:1: qlp : 'QLP' TOKEN ;
+    public final ChemicalChunkerParser.qlp_return qlp() throws RecognitionException {
+        ChemicalChunkerParser.qlp_return retval = new ChemicalChunkerParser.qlp_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal325=null;
+        Token TOKEN326=null;
+
+        Object string_literal325_tree=null;
+        Object TOKEN326_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "qlp");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(377, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:377:4: ( 'QLP' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:377:5: 'QLP' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(377,5);
+            string_literal325=(Token)match(input,158,FOLLOW_158_in_qlp1508); 
+            string_literal325_tree = (Object)adaptor.create(string_literal325);
+            adaptor.addChild(root_0, string_literal325_tree);
+
+            dbg.location(377,11);
+            TOKEN326=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_qlp1510); 
+            TOKEN326_tree = (Object)adaptor.create(TOKEN326);
+            adaptor.addChild(root_0, TOKEN326_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(377, 16);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "qlp");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "qlp"
+
+    public static class nndollar_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "nndollar"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:381:1: nndollar : 'NN$' TOKEN ;
+    public final ChemicalChunkerParser.nndollar_return nndollar() throws RecognitionException {
+        ChemicalChunkerParser.nndollar_return retval = new ChemicalChunkerParser.nndollar_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal327=null;
+        Token TOKEN328=null;
+
+        Object string_literal327_tree=null;
+        Object TOKEN328_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "nndollar");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(381, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:381:9: ( 'NN$' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:381:10: 'NN$' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(381,10);
+            string_literal327=(Token)match(input,159,FOLLOW_159_in_nndollar1518); 
+            string_literal327_tree = (Object)adaptor.create(string_literal327);
+            adaptor.addChild(root_0, string_literal327_tree);
+
+            dbg.location(381,16);
+            TOKEN328=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_nndollar1520); 
+            TOKEN328_tree = (Object)adaptor.create(TOKEN328);
+            adaptor.addChild(root_0, TOKEN328_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(381, 21);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "nndollar");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "nndollar"
+
+    public static class nnsdollar_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "nnsdollar"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:384:1: nnsdollar : 'NNS$' TOKEN ;
+    public final ChemicalChunkerParser.nnsdollar_return nnsdollar() throws RecognitionException {
+        ChemicalChunkerParser.nnsdollar_return retval = new ChemicalChunkerParser.nnsdollar_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal329=null;
+        Token TOKEN330=null;
+
+        Object string_literal329_tree=null;
+        Object TOKEN330_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "nnsdollar");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(384, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:384:10: ( 'NNS$' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:384:11: 'NNS$' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(384,11);
+            string_literal329=(Token)match(input,160,FOLLOW_160_in_nnsdollar1527); 
+            string_literal329_tree = (Object)adaptor.create(string_literal329);
+            adaptor.addChild(root_0, string_literal329_tree);
+
+            dbg.location(384,18);
+            TOKEN330=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_nnsdollar1529); 
+            TOKEN330_tree = (Object)adaptor.create(TOKEN330);
+            adaptor.addChild(root_0, TOKEN330_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(384, 23);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "nnsdollar");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "nnsdollar"
+
+    public static class np_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "np"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:387:1: np : 'NP' TOKEN ;
+    public final ChemicalChunkerParser.np_return np() throws RecognitionException {
+        ChemicalChunkerParser.np_return retval = new ChemicalChunkerParser.np_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal331=null;
+        Token TOKEN332=null;
+
+        Object string_literal331_tree=null;
+        Object TOKEN332_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "np");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(387, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:387:3: ( 'NP' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:387:4: 'NP' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(387,4);
+            string_literal331=(Token)match(input,161,FOLLOW_161_in_np1536); 
+            string_literal331_tree = (Object)adaptor.create(string_literal331);
+            adaptor.addChild(root_0, string_literal331_tree);
+
+            dbg.location(387,9);
+            TOKEN332=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_np1538); 
+            TOKEN332_tree = (Object)adaptor.create(TOKEN332);
+            adaptor.addChild(root_0, TOKEN332_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(387, 14);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "np");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "np"
+
+    public static class npdollar_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "npdollar"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:390:1: npdollar : 'NP$' TOKEN ;
+    public final ChemicalChunkerParser.npdollar_return npdollar() throws RecognitionException {
+        ChemicalChunkerParser.npdollar_return retval = new ChemicalChunkerParser.npdollar_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal333=null;
+        Token TOKEN334=null;
+
+        Object string_literal333_tree=null;
+        Object TOKEN334_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "npdollar");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(390, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:390:9: ( 'NP$' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:390:10: 'NP$' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(390,10);
+            string_literal333=(Token)match(input,162,FOLLOW_162_in_npdollar1545); 
+            string_literal333_tree = (Object)adaptor.create(string_literal333);
+            adaptor.addChild(root_0, string_literal333_tree);
+
+            dbg.location(390,16);
+            TOKEN334=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_npdollar1547); 
+            TOKEN334_tree = (Object)adaptor.create(TOKEN334);
+            adaptor.addChild(root_0, TOKEN334_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(390, 21);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "npdollar");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "npdollar"
+
+    public static class nps_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "nps"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:393:1: nps : 'NPS' TOKEN ;
+    public final ChemicalChunkerParser.nps_return nps() throws RecognitionException {
+        ChemicalChunkerParser.nps_return retval = new ChemicalChunkerParser.nps_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal335=null;
+        Token TOKEN336=null;
+
+        Object string_literal335_tree=null;
+        Object TOKEN336_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "nps");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(393, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:393:4: ( 'NPS' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:393:5: 'NPS' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(393,5);
+            string_literal335=(Token)match(input,163,FOLLOW_163_in_nps1554); 
+            string_literal335_tree = (Object)adaptor.create(string_literal335);
+            adaptor.addChild(root_0, string_literal335_tree);
+
+            dbg.location(393,11);
+            TOKEN336=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_nps1556); 
+            TOKEN336_tree = (Object)adaptor.create(TOKEN336);
+            adaptor.addChild(root_0, TOKEN336_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(393, 16);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "nps");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "nps"
+
+    public static class npsdollar_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "npsdollar"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:396:1: npsdollar : 'NPS$' TOKEN ;
+    public final ChemicalChunkerParser.npsdollar_return npsdollar() throws RecognitionException {
+        ChemicalChunkerParser.npsdollar_return retval = new ChemicalChunkerParser.npsdollar_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal337=null;
+        Token TOKEN338=null;
+
+        Object string_literal337_tree=null;
+        Object TOKEN338_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "npsdollar");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(396, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:396:10: ( 'NPS$' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:396:11: 'NPS$' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(396,11);
+            string_literal337=(Token)match(input,164,FOLLOW_164_in_npsdollar1563); 
+            string_literal337_tree = (Object)adaptor.create(string_literal337);
+            adaptor.addChild(root_0, string_literal337_tree);
+
+            dbg.location(396,18);
+            TOKEN338=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_npsdollar1565); 
+            TOKEN338_tree = (Object)adaptor.create(TOKEN338);
+            adaptor.addChild(root_0, TOKEN338_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(396, 23);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "npsdollar");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "npsdollar"
+
+    public static class nr_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "nr"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:399:1: nr : 'NR' TOKEN ;
+    public final ChemicalChunkerParser.nr_return nr() throws RecognitionException {
+        ChemicalChunkerParser.nr_return retval = new ChemicalChunkerParser.nr_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal339=null;
+        Token TOKEN340=null;
+
+        Object string_literal339_tree=null;
+        Object TOKEN340_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "nr");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(399, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:399:3: ( 'NR' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:399:4: 'NR' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(399,4);
+            string_literal339=(Token)match(input,165,FOLLOW_165_in_nr1572); 
+            string_literal339_tree = (Object)adaptor.create(string_literal339);
+            adaptor.addChild(root_0, string_literal339_tree);
+
+            dbg.location(399,9);
+            TOKEN340=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_nr1574); 
+            TOKEN340_tree = (Object)adaptor.create(TOKEN340);
+            adaptor.addChild(root_0, TOKEN340_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(399, 14);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "nr");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "nr"
+
+    public static class od_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "od"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:402:1: od : 'OD' TOKEN ;
+    public final ChemicalChunkerParser.od_return od() throws RecognitionException {
+        ChemicalChunkerParser.od_return retval = new ChemicalChunkerParser.od_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal341=null;
+        Token TOKEN342=null;
+
+        Object string_literal341_tree=null;
+        Object TOKEN342_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "od");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(402, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:402:3: ( 'OD' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:402:4: 'OD' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(402,4);
+            string_literal341=(Token)match(input,166,FOLLOW_166_in_od1581); 
+            string_literal341_tree = (Object)adaptor.create(string_literal341);
+            adaptor.addChild(root_0, string_literal341_tree);
+
+            dbg.location(402,9);
+            TOKEN342=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_od1583); 
+            TOKEN342_tree = (Object)adaptor.create(TOKEN342);
+            adaptor.addChild(root_0, TOKEN342_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(402, 14);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "od");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "od"
+
+    public static class cs_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "cs"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:405:1: cs : 'CS' TOKEN ;
+    public final ChemicalChunkerParser.cs_return cs() throws RecognitionException {
+        ChemicalChunkerParser.cs_return retval = new ChemicalChunkerParser.cs_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal343=null;
+        Token TOKEN344=null;
+
+        Object string_literal343_tree=null;
+        Object TOKEN344_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "cs");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(405, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:405:3: ( 'CS' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:405:4: 'CS' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(405,4);
+            string_literal343=(Token)match(input,167,FOLLOW_167_in_cs1590); 
+            string_literal343_tree = (Object)adaptor.create(string_literal343);
+            adaptor.addChild(root_0, string_literal343_tree);
+
+            dbg.location(405,9);
+            TOKEN344=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_cs1592); 
+            TOKEN344_tree = (Object)adaptor.create(TOKEN344);
+            adaptor.addChild(root_0, TOKEN344_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(405, 14);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "cs");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "cs"
+
+    public static class dotoken_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "dotoken"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:408:1: dotoken : 'DO' TOKEN ;
+    public final ChemicalChunkerParser.dotoken_return dotoken() throws RecognitionException {
+        ChemicalChunkerParser.dotoken_return retval = new ChemicalChunkerParser.dotoken_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal345=null;
+        Token TOKEN346=null;
+
+        Object string_literal345_tree=null;
+        Object TOKEN346_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "dotoken");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(408, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:408:8: ( 'DO' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:408:9: 'DO' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(408,9);
+            string_literal345=(Token)match(input,168,FOLLOW_168_in_dotoken1599); 
+            string_literal345_tree = (Object)adaptor.create(string_literal345);
+            adaptor.addChild(root_0, string_literal345_tree);
+
+            dbg.location(408,14);
+            TOKEN346=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_dotoken1601); 
+            TOKEN346_tree = (Object)adaptor.create(TOKEN346);
+            adaptor.addChild(root_0, TOKEN346_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(408, 19);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "dotoken");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "dotoken"
+
+    public static class dod_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "dod"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:411:1: dod : 'DOD' TOKEN ;
+    public final ChemicalChunkerParser.dod_return dod() throws RecognitionException {
+        ChemicalChunkerParser.dod_return retval = new ChemicalChunkerParser.dod_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal347=null;
+        Token TOKEN348=null;
+
+        Object string_literal347_tree=null;
+        Object TOKEN348_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "dod");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(411, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:411:4: ( 'DOD' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:411:5: 'DOD' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(411,5);
+            string_literal347=(Token)match(input,169,FOLLOW_169_in_dod1608); 
+            string_literal347_tree = (Object)adaptor.create(string_literal347);
+            adaptor.addChild(root_0, string_literal347_tree);
+
+            dbg.location(411,11);
+            TOKEN348=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_dod1610); 
+            TOKEN348_tree = (Object)adaptor.create(TOKEN348);
+            adaptor.addChild(root_0, TOKEN348_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(411, 16);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "dod");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "dod"
+
+    public static class doz_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "doz"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:414:1: doz : 'DOZ' TOKEN ;
+    public final ChemicalChunkerParser.doz_return doz() throws RecognitionException {
+        ChemicalChunkerParser.doz_return retval = new ChemicalChunkerParser.doz_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal349=null;
+        Token TOKEN350=null;
+
+        Object string_literal349_tree=null;
+        Object TOKEN350_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "doz");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(414, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:414:4: ( 'DOZ' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:414:5: 'DOZ' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(414,5);
+            string_literal349=(Token)match(input,170,FOLLOW_170_in_doz1617); 
+            string_literal349_tree = (Object)adaptor.create(string_literal349);
+            adaptor.addChild(root_0, string_literal349_tree);
+
+            dbg.location(414,11);
+            TOKEN350=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_doz1619); 
+            TOKEN350_tree = (Object)adaptor.create(TOKEN350);
+            adaptor.addChild(root_0, TOKEN350_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(414, 16);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "doz");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "doz"
+
+    public static class jj_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "jj"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:416:1: jj : 'JJ' TOKEN ;
+    public final ChemicalChunkerParser.jj_return jj() throws RecognitionException {
+        ChemicalChunkerParser.jj_return retval = new ChemicalChunkerParser.jj_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal351=null;
+        Token TOKEN352=null;
+
+        Object string_literal351_tree=null;
+        Object TOKEN352_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "jj");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(416, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:418:3: ( 'JJ' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:418:4: 'JJ' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(418,4);
+            string_literal351=(Token)match(input,171,FOLLOW_171_in_jj1630); 
+            string_literal351_tree = (Object)adaptor.create(string_literal351);
+            adaptor.addChild(root_0, string_literal351_tree);
+
+            dbg.location(418,9);
+            TOKEN352=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_jj1632); 
+            TOKEN352_tree = (Object)adaptor.create(TOKEN352);
+            adaptor.addChild(root_0, TOKEN352_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(418, 14);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "jj");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "jj"
+
+    public static class nn_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "nn"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:423:1: nn : 'NN' TOKEN ;
+    public final ChemicalChunkerParser.nn_return nn() throws RecognitionException {
+        ChemicalChunkerParser.nn_return retval = new ChemicalChunkerParser.nn_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal353=null;
+        Token TOKEN354=null;
+
+        Object string_literal353_tree=null;
+        Object TOKEN354_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "nn");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(423, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:423:3: ( 'NN' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:423:4: 'NN' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(423,4);
+            string_literal353=(Token)match(input,172,FOLLOW_172_in_nn1641); 
+            string_literal353_tree = (Object)adaptor.create(string_literal353);
+            adaptor.addChild(root_0, string_literal353_tree);
+
+            dbg.location(423,9);
+            TOKEN354=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_nn1643); 
+            TOKEN354_tree = (Object)adaptor.create(TOKEN354);
+            adaptor.addChild(root_0, TOKEN354_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(423, 14);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "nn");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "nn"
+
+    public static class nns_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "nns"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:426:1: nns : 'NNS' TOKEN ;
+    public final ChemicalChunkerParser.nns_return nns() throws RecognitionException {
+        ChemicalChunkerParser.nns_return retval = new ChemicalChunkerParser.nns_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal355=null;
+        Token TOKEN356=null;
+
+        Object string_literal355_tree=null;
+        Object TOKEN356_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "nns");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(426, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:426:4: ( 'NNS' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:426:5: 'NNS' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(426,5);
+            string_literal355=(Token)match(input,173,FOLLOW_173_in_nns1650); 
+            string_literal355_tree = (Object)adaptor.create(string_literal355);
+            adaptor.addChild(root_0, string_literal355_tree);
+
+            dbg.location(426,11);
+            TOKEN356=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_nns1652); 
+            TOKEN356_tree = (Object)adaptor.create(TOKEN356);
+            adaptor.addChild(root_0, TOKEN356_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(426, 16);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "nns");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "nns"
+
+    public static class rb_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "rb"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:429:1: rb : 'RB' TOKEN ;
+    public final ChemicalChunkerParser.rb_return rb() throws RecognitionException {
+        ChemicalChunkerParser.rb_return retval = new ChemicalChunkerParser.rb_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal357=null;
+        Token TOKEN358=null;
+
+        Object string_literal357_tree=null;
+        Object TOKEN358_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "rb");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(429, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:429:3: ( 'RB' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:429:4: 'RB' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(429,4);
+            string_literal357=(Token)match(input,174,FOLLOW_174_in_rb1659); 
+            string_literal357_tree = (Object)adaptor.create(string_literal357);
+            adaptor.addChild(root_0, string_literal357_tree);
+
+            dbg.location(429,9);
+            TOKEN358=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_rb1661); 
+            TOKEN358_tree = (Object)adaptor.create(TOKEN358);
+            adaptor.addChild(root_0, TOKEN358_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(429, 14);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "rb");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "rb"
+
+    public static class to_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "to"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:433:1: to : 'TO' TOKEN ;
+    public final ChemicalChunkerParser.to_return to() throws RecognitionException {
+        ChemicalChunkerParser.to_return retval = new ChemicalChunkerParser.to_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal359=null;
+        Token TOKEN360=null;
+
+        Object string_literal359_tree=null;
+        Object TOKEN360_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "to");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(433, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:433:3: ( 'TO' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:433:4: 'TO' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(433,4);
+            string_literal359=(Token)match(input,175,FOLLOW_175_in_to1669); 
+            string_literal359_tree = (Object)adaptor.create(string_literal359);
+            adaptor.addChild(root_0, string_literal359_tree);
+
+            dbg.location(433,9);
+            TOKEN360=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_to1671); 
+            TOKEN360_tree = (Object)adaptor.create(TOKEN360);
+            adaptor.addChild(root_0, TOKEN360_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(433, 14);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "to");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "to"
+
+    public static class vbd_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "vbd"
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:437:1: vbd : 'VBD' TOKEN ;
+    public final ChemicalChunkerParser.vbd_return vbd() throws RecognitionException {
+        ChemicalChunkerParser.vbd_return retval = new ChemicalChunkerParser.vbd_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token string_literal361=null;
+        Token TOKEN362=null;
+
+        Object string_literal361_tree=null;
+        Object TOKEN362_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "vbd");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(437, 1);
+
+        try {
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:437:4: ( 'VBD' TOKEN )
+            dbg.enterAlt(1);
+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/java/uk/ac/cam/ch/wwmm/extractPhrases/antlr/ChemicalChunker.g:437:5: 'VBD' TOKEN
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(437,5);
+            string_literal361=(Token)match(input,176,FOLLOW_176_in_vbd1679); 
+            string_literal361_tree = (Object)adaptor.create(string_literal361);
+            adaptor.addChild(root_0, string_literal361_tree);
+
+            dbg.location(437,11);
+            TOKEN362=(Token)match(input,TOKEN,FOLLOW_TOKEN_in_vbd1681); 
+            TOKEN362_tree = (Object)adaptor.create(TOKEN362);
+            adaptor.addChild(root_0, TOKEN362_tree);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(437, 16);
 
         }
         finally {
@@ -9594,11 +13396,11 @@ public class ChemicalChunkerParser extends DebugParser {
     public static final BitSet FOLLOW_sentence_in_document135 = new BitSet(new long[]{0x0001000000000002L,0x0020000000000000L});
     public static final BitSet FOLLOW_cd_in_mol144 = new BitSet(new long[]{0x0000000100000000L});
     public static final BitSet FOLLOW_nnmol_in_mol146 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_nounphrase_in_sentence156 = new BitSet(new long[]{0x0080000000000000L,0x1000000000000000L});
-    public static final BitSet FOLLOW_verbphraseADD_in_sentence158 = new BitSet(new long[]{0x0000000000000000L,0x0800000000000000L});
+    public static final BitSet FOLLOW_nounphrase_in_sentence156 = new BitSet(new long[]{0x0080000000000000L,0x0000000000000000L,0x0001000000000000L});
+    public static final BitSet FOLLOW_verbphraseADD_in_sentence158 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000800000000000L});
     public static final BitSet FOLLOW_prepphrase_in_sentence160 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_molecules_in_nounphrase169 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_vbd_in_verbphraseADD183 = new BitSet(new long[]{0x0080000000000000L,0x1000000000000000L});
+    public static final BitSet FOLLOW_vbd_in_verbphraseADD183 = new BitSet(new long[]{0x0080000000000000L,0x0000000000000000L,0x0001000000000000L});
     public static final BitSet FOLLOW_vbadd_in_verbphraseADD186 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_to_in_prepphrase197 = new BitSet(new long[]{0x0001000000000000L,0x0020000000000000L});
     public static final BitSet FOLLOW_molecule_in_prepphrase199 = new BitSet(new long[]{0x0000000000000002L});
@@ -9837,17 +13639,121 @@ public class ChemicalChunkerParser extends DebugParser {
     public static final BitSet FOLLOW_TOKEN_in_dt1132 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_118_in_in1140 = new BitSet(new long[]{0x0000000000000100L});
     public static final BitSet FOLLOW_TOKEN_in_in1142 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_119_in_jj1149 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_TOKEN_in_jj1151 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_120_in_nn1160 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_TOKEN_in_nn1162 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_121_in_nns1169 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_TOKEN_in_nns1171 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_122_in_rb1178 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_TOKEN_in_rb1180 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_123_in_to1188 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_TOKEN_in_to1190 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_124_in_vbd1198 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_TOKEN_in_vbd1200 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_119_in_dti1152 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_dti1154 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_120_in_dts1161 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_dts1163 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_121_in_dtx1170 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_dtx1172 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_122_in_ex1179 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_ex1181 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_123_in_fw1188 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_fw1190 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_124_in_hv1197 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_hv1199 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_125_in_hvd1206 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_hvd1208 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_126_in_hvg1215 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_hvg1217 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_127_in_hvn1224 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_hvn1226 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_128_in_jjr1234 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_jjr1236 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_129_in_jjs1243 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_jjs1245 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_130_in_jjt1252 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_jjt1254 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_131_in_md1261 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_md1263 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_132_in_nc1270 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_nc1272 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_133_in_wpdollar1279 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_wpdollar1281 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_134_in_wpo1288 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_wpo1290 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_135_in_wps1297 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_wps1299 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_136_in_wql1306 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_wql1308 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_137_in_wrb1315 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_wrb1317 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_138_in_uh1325 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_uh1327 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_139_in_vb1334 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_vb1336 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_140_in_vbg1343 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_vbg1345 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_141_in_vbn1352 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_vbn1354 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_142_in_vbz1361 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_vbz1363 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_143_in_wdt1370 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_wdt1372 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_144_in_rbr1380 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_rbr1382 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_145_in_rbt1389 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_rbt1391 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_146_in_rn1398 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_rn1400 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_147_in_rp1407 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_rp1409 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_148_in_pn1418 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_pn1420 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_149_in_pndollar1427 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_pndollar1429 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_150_in_ppdollar1436 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_ppdollar1438 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_151_in_ppdollardollar1445 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_ppdollardollar1447 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_152_in_ppl1454 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_ppl1456 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_153_in_ppls1463 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_ppls1465 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_154_in_ppo1472 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_ppo1474 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_155_in_pps1481 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_pps1483 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_156_in_ppss1490 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_ppss1492 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_157_in_ql1499 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_ql1501 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_158_in_qlp1508 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_qlp1510 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_159_in_nndollar1518 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_nndollar1520 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_160_in_nnsdollar1527 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_nnsdollar1529 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_161_in_np1536 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_np1538 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_162_in_npdollar1545 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_npdollar1547 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_163_in_nps1554 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_nps1556 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_164_in_npsdollar1563 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_npsdollar1565 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_165_in_nr1572 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_nr1574 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_166_in_od1581 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_od1583 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_167_in_cs1590 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_cs1592 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_168_in_dotoken1599 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_dotoken1601 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_169_in_dod1608 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_dod1610 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_170_in_doz1617 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_doz1619 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_171_in_jj1630 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_jj1632 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_172_in_nn1641 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_nn1643 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_173_in_nns1650 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_nns1652 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_174_in_rb1659 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_rb1661 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_175_in_to1669 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_to1671 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_176_in_vbd1679 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_TOKEN_in_vbd1681 = new BitSet(new long[]{0x0000000000000002L});
 
 }

@@ -249,6 +249,171 @@ dt:'DT' TOKEN;
 // Preposition
 in:'IN' TOKEN;
 
+/***********************/
+
+// Singular or plural determiner/quantifier (some, any)
+dti:'DTI' TOKEN;
+
+// Plural determiner (these, those)
+dts:'DTS' TOKEN;
+
+// Determiner/double conjunction (either)
+dtx:'DTX' TOKEN;
+
+// Existential there
+ex:'EX' TOKEN;
+
+// Foreign word (hyphenated before regular tag)
+fw:'FW' TOKEN;
+
+// Have
+hv:'HV' TOKEN;
+
+// Had (past tense)
+hvd:'HVD' TOKEN;
+
+// Having
+hvg:'HVG' TOKEN;
+
+// Had (past participle)
+hvn:'HVN' TOKEN;
+
+
+// Comparative adjective
+jjr:'JJR' TOKEN;
+
+// Semantically superlative adjective (chief, top)
+jjs:'JJS' TOKEN;
+
+// Morphologically superlative adjective (biggest)
+jjt:'JJT' TOKEN;
+
+// Modal auxiliary (can, should, will)
+md:'MD' TOKEN;
+
+// Cited word (hyphenated after regular tag)
+nc:'NC' TOKEN;
+
+// Possessive wh- pronoun (whose)
+wpdollar:'WP$' TOKEN;
+
+// Objective wh- pronoun (whom, which, that)
+wpo:'WPO' TOKEN;
+
+// Nominative wh- pronoun (who, which, that)
+wps:'WPS' TOKEN;
+
+// Wh- qualifier (how)
+wql:'WQL' TOKEN;
+
+// Wh- adverb (how, where, when)
+wrb:'WRB' TOKEN;
+
+
+// Interjection, exclamation
+uh:'UH' TOKEN;
+
+// Verb, base form
+vb:'VB' TOKEN;
+
+// Verb, present participle/gerund
+vbg:'VBG' TOKEN;
+
+// Verb, past participle
+vbn:'VBN' TOKEN;
+
+// Verb, 3rd. singular present
+vbz:'VBZ' TOKEN;
+
+// Wh- determiner (what, which)
+wdt:'WDT' TOKEN;
+
+
+// Comparative adverb
+rbr:'RBR' TOKEN;
+
+// Superlative adverb
+rbt:'RBT' TOKEN;
+
+// Nominal adverb (here, then, indoors)
+rn:'RN' TOKEN;
+
+// Adverb/particle (about, off, up)
+rp:'RP' TOKEN;
+
+
+
+// Nominal pronoun (everybody, nothing)
+pn:'PN' TOKEN;
+
+// Possessive nominal pronoun
+pndollar:'PN$' TOKEN;
+
+// Possessive personal pronoun (my, our)
+ppdollar:'PP$' TOKEN;
+
+// Second (nominal) possessive pronoun (mine, ours)
+ppdollardollar:'PP$$' TOKEN;
+
+// Singular reflexive/intensive personal pronoun (myself)
+ppl:'PPL' TOKEN;
+
+// Plural reflexive/intensive personal pronoun (ourselves)
+ppls:'PPLS' TOKEN;
+
+// Objective personal pronoun (me, him, it, them)
+ppo:'PPO' TOKEN;
+
+// 3rd. singular nominative pronoun (he, she, it, one)
+pps:'PPS' TOKEN;
+
+// Other nominative personal pronoun (i, we, they, you)
+ppss:'PPSS' TOKEN;
+
+// Qualifier (very, fairly)
+ql:'QL' TOKEN;
+
+// Post-qualifier (enough, indeed)
+qlp:'QLP' TOKEN;
+
+
+// Possessive singular noun
+nndollar:'NN$' TOKEN;
+
+// Possessive plural noun
+nnsdollar:'NNS$' TOKEN;
+
+// Proper noun or part of name phrase
+np:'NP' TOKEN;
+
+// Possessive proper noun
+npdollar:'NP$' TOKEN;
+
+// Plural proper noun
+nps:'NPS' TOKEN;
+
+// Possessive plural proper noun
+npsdollar:'NPS$' TOKEN;
+
+// Adverbial noun (home, today, west)
+nr:'NR' TOKEN;
+
+// Ordinal numeral (first, 2nd)
+od:'OD' TOKEN;
+
+// Subordinating conjunction (if, although)
+cs:'CS' TOKEN;
+
+// Do
+dotoken:'DO' TOKEN;
+
+// Did
+dod:'DOD' TOKEN;
+
+// Does
+doz:'DOZ' TOKEN;
+
+/*******************************/		
 // Adjective
 jj:'JJ' TOKEN;
 
