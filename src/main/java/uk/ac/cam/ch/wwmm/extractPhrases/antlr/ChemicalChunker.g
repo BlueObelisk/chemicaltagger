@@ -46,7 +46,7 @@ molecule
 amount 	: lrb gram comma  mol rrb;
 
 //Tags---Pattern---Description
-oscarcd:'OSCAR-CD' TOKEN;
+oscarcd:'CD' TOKEN;
 oscarcj:'CJ' TOKEN;
 tmunicode:'TM-UNICODE' TOKEN;
 cdunicode:'CD-UNICODE' TOKEN;
@@ -74,8 +74,23 @@ nnstate:'NN-STATE' TOKEN;
 nntime:'NN-TIME' TOKEN;
 nngram:'NN-GRAM' TOKEN;
 nnmol:'NN-MOL' TOKEN;
+nnatmosphere:'NN-ATMOSPHERE' TOKEN;
+nneq:'NN-EQ' TOKEN;
+nnvol:'NN-VOL' TOKEN;
+nnchementity:'NN-CHEMENTITY' TOKEN;
+nntemp:'NN-TEMP' TOKEN;
+nnflash:'NN-FLASH' TOKEN;
+nngeneral:'NN-GENERAL' TOKEN;
+nnmethod:'NN-METHOD' TOKEN;
+nnamount:'NN-AMOUNT' TOKEN;
+nnpressure:'NN-PRESSURE' TOKEN;
+nncolumn:'NN-COLUMN' TOKEN;
+nnchromatography:'NN-CHROMATOGRAPHY' TOKEN;
+nnvacuum:'NN-VACUUM' TOKEN;
+nncycle:'NN-CYCLE' TOKEN;
+nntimes:'NN-TIMES' TOKEN;
 
-//Not really Oscar-cm.. but need to be fixed
+//Not really cm.. but need to be fixed
 oscarcm:'CM' TOKEN;
 
 //Verbs
@@ -175,9 +190,49 @@ stop:'STOP' TOKEN;
 nnpercent:'NN-PERCENT' TOKEN;
 lsqb:'LSQB' TOKEN;
 rsqb:'RSQB' TOKEN;
-lrb:'-LRB-' TOKEN;
-rrb:'-RRB-' TOKEN;
+lrb:'LRB' TOKEN;
+rrb:'RRB' TOKEN;
 
+//Brown Corpus Tokens
+
+// Pre-qualifier (quite, rather)
+abl:'ABL' TOKEN;
+
+// Pre-quantifier (half, all)
+abn:'ABN' TOKEN;
+
+// Pre-quantifier (both)
+abx:'ABX' TOKEN;
+
+// Post-determiner (many, several, next)
+ap:'AP' TOKEN;
+
+// Article (a, the, no)
+at:'AT' TOKEN;
+
+// Be
+be:'BE' TOKEN;
+
+// Were
+bed:'BED' TOKEN;
+
+// Was
+bedz:'BEDZ' TOKEN;
+
+// Being
+beg:'BEG' TOKEN;
+
+// Am
+bem:'BEM' TOKEN;
+
+// Been
+ben:'BEN' TOKEN;
+
+// Are, art
+ber:'BER' TOKEN;
+
+// Is
+bez:'BEZ' TOKEN;
 
 // Coordinating conjunction (and, or)
 cc:'CC' TOKEN;
@@ -186,20 +241,33 @@ cc:'CC' TOKEN;
 cd:'CD' TOKEN;
 
 
+
 // Singular determiner/quantifier (this, that)
 dt:'DT' TOKEN;
 
 
+// Preposition
+in:'IN' TOKEN;
+
 // Adjective
 jj:'JJ' TOKEN;
+
+
+
 // Singular or mass noun
 nn:'NN' TOKEN;
 
+// Plural noun
+nns:'NNS' TOKEN;
 
 // Adverb
 rb:'RB' TOKEN;
 
-//To Token
-to: 'TO' TOKEN;
+
+// Infinitive marker to
+to:'TO' TOKEN;
+
+
 // Verb, past tense
 vbd:'VBD' TOKEN;
+
