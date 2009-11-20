@@ -2,11 +2,12 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package uk.ac.cam.ch.wwmm.extractPhrases;
+package uk.ac.cam.ch.wwmm.extractPhrases.antlr;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
+import org.apache.commons.lang.time.StopWatch;
 
 import org.antlr.runtime.ANTLRInputStream;
 import org.antlr.runtime.CommonTokenStream;
@@ -30,7 +31,7 @@ public class ChemicalChunkerMain {
             processInput(instream);
         }
         else{
-            String filename = "/home/lezan/NetBeansProjects/chemicaltagger/src/main/resources/antlr/chemicalInput.txt";
+            String filename = "src/main/resources/antlr/chemicalInput.txt";
             File file = new File(filename);
             System.out.println("File input " + file.getAbsolutePath());
             instream = new FileInputStream(file);
@@ -45,15 +46,23 @@ public class ChemicalChunkerMain {
     private static void processInput(InputStream instream) {
         try {
             System.err.println("-----------");
+            StopWatch stopWatch = new StopWatch();
             ANTLRInputStream input = new ANTLRInputStream(instream);
             ChemicalChunkerLexer lexer = new ChemicalChunkerLexer(input);
             
 
+            stopWatch.start();
             CommonTokenStream tokens = new CommonTokenStream(lexer);
-            System.err.println("tokens");
+
+            stopWatch.stop();
+            System.out.println("Tokens processed in "+stopWatch.getTime());
+            stopWatch.reset();
+            stopWatch.start();
             ChemicalChunkerParser parser = new ChemicalChunkerParser(tokens);
 
-            System.err.println("parser");
+
+            stopWatch.stop();
+            System.out.println("Parsing done in "+stopWatch.getTime());
         } catch (Exception e) {
             throw new RuntimeException("read parse fail", e);
         }

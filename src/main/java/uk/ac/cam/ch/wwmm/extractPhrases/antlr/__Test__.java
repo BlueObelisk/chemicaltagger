@@ -2,13 +2,13 @@ import java.io.*;
 import org.antlr.runtime.*;
 import org.antlr.runtime.debug.DebugEventSocketProxy;
 
-import uk.ac.cam.ch.wwmm.extractPhrases.*;
+import uk.ac.cam.ch.wwmm.extractPhrases.antlr.*;
 
 
 public class __Test__ {
 
     public static void main(String args[]) throws Exception {
-        ChemicalChunkerLexer lex = new ChemicalChunkerLexer(new ANTLRFileStream("/home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr/grammar/__Test___input.txt"));
+        ChemicalChunkerLexer lex = new ChemicalChunkerLexer(new ANTLRFileStream("/home/lezan/NetBeansProjects/chemicaltagger/src/main/resources/antlr/chemicalInput.txt"));
         CommonTokenStream tokens = new CommonTokenStream(lex);
 
         ChemicalChunkerParser g = new ChemicalChunkerParser(tokens, 49100, null);
