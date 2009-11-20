@@ -1,12 +1,14 @@
 grammar ChemicalChunker;
-
+options {
+    output = AST;
+}
 @header {
-    package uk.ac.cam.ch.wwmm.extractPhrases;
+    package uk.ac.cam.ch.wwmm.extractPhrases.antlr;
     import java.util.HashMap;
     import nu.xom.Attribute;
     import nu.xom.Element;
 }
-@lexer::header {package uk.ac.cam.ch.wwmm.extractPhrases;}
+@lexer::header {package uk.ac.cam.ch.wwmm.extractPhrases.antlr;}
 @members {
   HashMap<String, Object> objectMap = new HashMap<String, Object>();
     Element rootElement = new Element("root");
@@ -61,12 +63,14 @@ sentence
 
 nounphrase 
 	:molecules ;
+
 verbphraseADD    
 	: vbd* vbadd;
 
 
 prepphrase 
 	: totok molecule;			
+
 gram	: cd nngram;
 
 molecules  
