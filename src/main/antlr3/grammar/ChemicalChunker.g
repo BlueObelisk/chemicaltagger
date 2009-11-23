@@ -4,9 +4,9 @@ options {
     output = AST;
 }
 @header {
-    package uk.ac.cam.ch.wwmm.extractPhrases.antlr;
+    package uk.ac.cam.ch.wwmm.extractPhrases;
  }
-@lexer::header {package uk.ac.cam.ch.wwmm.extractPhrases.antlr;}
+@lexer::header {package uk.ac.cam.ch.wwmm.extractPhrases;}
 
 
 WS	:	 (' '|'\t')+ {skip();};

@@ -2,7 +2,7 @@ import java.io.*;
 import org.antlr.runtime.*;
 import org.antlr.runtime.debug.DebugEventSocketProxy;
 
-import uk.ac.cam.ch.wwmm.extractPhrases.antlr.*;
+import uk.ac.cam.ch.wwmm.extractPhrases.*;
 
 
 public class __Test__ {
