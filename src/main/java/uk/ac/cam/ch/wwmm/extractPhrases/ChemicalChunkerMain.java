@@ -11,6 +11,7 @@ import org.apache.commons.lang.time.StopWatch;
 
 import org.antlr.runtime.ANTLRInputStream;
 import org.antlr.runtime.CommonTokenStream;
+import org.antlr.runtime.tree.Tree;
 
 /**
  *
@@ -59,8 +60,9 @@ public class ChemicalChunkerMain {
             stopWatch.reset();
             stopWatch.start();
             ChemicalChunkerParser parser = new ChemicalChunkerParser(tokens);
-
-
+            ChemicalChunkerParser.document_return result = parser.document();
+            Tree t = (Tree) result.getTree();
+            System.out.println(t.toStringTree());
             stopWatch.stop();
             System.out.println("Parsing done in "+stopWatch.getTime());
         } catch (Exception e) {
