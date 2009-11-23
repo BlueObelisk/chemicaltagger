@@ -7,6 +7,10 @@ glob:target
 glob:.hgignore~
 glob:Properties.dat
 glob:cInChI-1
+glob:__Test__*
+glob:*.tokens
+glob:*Lexer.java
+glob:*Parser.java
 
 \.orig\..*$
 \.orig$
