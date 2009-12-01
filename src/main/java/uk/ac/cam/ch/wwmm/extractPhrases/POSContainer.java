@@ -51,11 +51,13 @@ public class POSContainer {
 	}
 
 	public void addToOSCARList(String oscarTag) {
-		oscarTagList.add(new WWMMTag(oscarTag));
+                    oscarTagList.add(new WWMMTag("OSCAR-"+oscarTag));
+                
+                
 	}
 
 	public void addToOSCARList(String oscarTag, Enum type) {
-		oscarTagList.add(new WWMMTag(oscarTag, (TagType) type));
+		oscarTagList.add(new WWMMTag("OSCAR-"+oscarTag, (TagType) type));
 	}
 
 	public void addToRegexList(String regexTag) {
@@ -76,7 +78,7 @@ public class POSContainer {
 
 	public void combineTaggers() {
 		for (int i = 0; i < oscarTagList.size(); i++) {
-			if (!oscarTagList.get(i).getPOS().equals("nil")) {
+			if (!oscarTagList.get(i).getPOS().toLowerCase().equals("oscar-nil")) {
 				combinedTagsList.add(oscarTagList.get(i));
 			} else if (!regexTagList.get(i).getPOS().equals("nil")) {
 				combinedTagsList.add(regexTagList.get(i));

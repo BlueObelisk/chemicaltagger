@@ -23,31 +23,74 @@ TOKEN	:	(ACHAR| '_'|',' |'.'|')'|'('|'-'|DIGIT)+;
 
 document:	sentence+;
 
-mol	: cd nnmol;
+
 sentence 
-	:	 nounphrase verbphraseADD prepphrase;
+	:nounphrase+ verbphrase* stop?;
 
 nounphrase 
-	:molecules ;
+	:dt? adj* noun+ (cc|comma noun)* prepphraseOf*;
 
-verbphraseADD    
-	: vbd* vbadd;
+verbphrase    
+	: adv* vbd* verb adv* prepphrase;
 
+verb
+ :
+ vbuse|vbchange|vbsubmerge|vbsubject|vbadd|vbcharge|vbcontain|vbdrop|vbfill|vbsuspend|vbtreat|vbapparatus|vbconcentrate|vbcool|vbdegass|vbdissolve|vbdry|vbextract|vbfilter
+ |vbheat|vbincrease|vbpartition|vbprecipitate|vbpurify|vbquench|vbrecover|vbremove|vbstir|vbsynthesize|vbwait|vbwash|vbyield;
+number           
+	: cd|oscarcd;	
+noun	:	
+unnamedmolecule|molecule|nnstate|nntime|nnatmosphere|nneq|nnchementity|nntemp|nnflash|nngeneral|nnmethod|nnamount|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnapparatus|
+nnconcentrate|wdt|wp_poss|wpo|wps|nnsynthesize|oscaront|nnmixture;
 
+//noun	:	 molecule;
+adj	:	jj|jjr|jjs|jjt|oscarcj;
+
+adv	:	rb|rbr|rbt;
+// Different PrepPhrases
 prepphrase 
-	: to molecule;			
+	:	prepphraseOther|prepphraseTemp|prepphraseTime;
 
+ prepphraseOther
+	: inAll  nounphrase;
+prepphraseOf 
+	: inof  nounphrase;
+	
+prepphraseTime:
+	inAll? dt? jj? cd nntime;
+
+prepphraseTemp:
+	inAll? dt? jj? cd nntemp;
+
+	
+
+inAll	: in|inafter|inas|inbefore|inby|infor|infrom|inin|ininto|inof|inoff|inon|inover|inunder|invia|inwith|inwithout	;
+
+
+			
+mmol	: cd nnmol;
 gram	: cd nngram;
+percent	: cd nnpercent;
+volume	: cd nnvol;
 
-molecules  
-	: molecule cc molecule ;	
+measurements
+	:mmol|gram|percent|volume;	
+
+	
 molecule          
-	:  dt* oscarcm+ amount;	
-amount 	: lrb gram comma  mol rrb;
+	:   oscarcm+ amount;	
+unnamedmolecule 
+	: oscarcd+ amount*;	
+		
+amount 	: lrb measurements comma  measurements  rrb;
+//amount 	: lrb gram comma  mmol  rrb;     
+method:
+    (nngeneral|nn)? nnmethod (oscarcd|cd)? ;
 
 //Tags---Pattern---Description
-oscarcd:'CD' TOKEN;
-oscarcj:'CJ' TOKEN;
+oscarcd:'OSCAR-CD' TOKEN;
+oscarcj:'OSCAR-CJ' TOKEN;
+oscaront:	'OSCAR-ONT' TOKEN;
 tmunicode:'TM-UNICODE' TOKEN;
 cdunicode:'CD-UNICODE' TOKEN;
 
@@ -90,8 +133,8 @@ nnvacuum:'NN-VACUUM' TOKEN;
 nncycle:'NN-CYCLE' TOKEN;
 nntimes:'NN-TIMES' TOKEN;
 
-//Not really cm.. but need to be fixed
-oscarcm:'CM' TOKEN;
+//Not really Oscar-cm.. but need to be fixed
+oscarcm:'OSCAR-CM' TOKEN;
 
 //Verbs
 vbuse:'VB-USE' TOKEN;
@@ -190,8 +233,8 @@ stop:'STOP' TOKEN;
 nnpercent:'NN-PERCENT' TOKEN;
 lsqb:'LSQB' TOKEN;
 rsqb:'RSQB' TOKEN;
-lrb:'LRB' TOKEN;
-rrb:'RRB' TOKEN;
+lrb:'-LRB-' TOKEN;
+rrb:'-RRB-' TOKEN;
 
 //Brown Corpus Tokens
 
@@ -240,16 +283,20 @@ cc:'CC' TOKEN;
 // Cardinal numeral (one, two, 2, etc.)
 cd:'CD' TOKEN;
 
+// Subordinating conjunction (if, although)
+cs:'CS' TOKEN;
 
+// Do
+dotok :'DO' TOKEN;
+
+// Did
+dod:'DOD' TOKEN;
+
+// Does
+doz:'DOZ' TOKEN;
 
 // Singular determiner/quantifier (this, that)
 dt:'DT' TOKEN;
-
-
-// Preposition
-in:'IN' TOKEN;
-
-/***********************/
 
 // Singular or plural determiner/quantifier (some, any)
 dti:'DTI' TOKEN;
@@ -278,6 +325,11 @@ hvg:'HVG' TOKEN;
 // Had (past participle)
 hvn:'HVN' TOKEN;
 
+// Preposition
+in:'IN' TOKEN;
+
+// Adjective
+jj:'JJ' TOKEN;
 
 // Comparative adjective
 jjr:'JJR' TOKEN;
@@ -294,66 +346,47 @@ md:'MD' TOKEN;
 // Cited word (hyphenated after regular tag)
 nc:'NC' TOKEN;
 
-// Possessive wh- pronoun (whose)
-wpdollar:'WP$' TOKEN;
+// Singular or mass noun
+nn:'NN' TOKEN;
 
-// Objective wh- pronoun (whom, which, that)
-wpo:'WPO' TOKEN;
+// Possessive singular noun
+nn_poss:'NN$' TOKEN;
 
-// Nominative wh- pronoun (who, which, that)
-wps:'WPS' TOKEN;
+// Plural noun
+nns:'NNS' TOKEN;
 
-// Wh- qualifier (how)
-wql:'WQL' TOKEN;
+// Possessive plural noun
+nns_poss:'NNS$' TOKEN;
 
-// Wh- adverb (how, where, when)
-wrb:'WRB' TOKEN;
+// Proper noun or part of name phrase
+np:'NP' TOKEN;
 
+// Possessive proper noun
+np_poss:'NP$' TOKEN;
 
-// Interjection, exclamation
-uh:'UH' TOKEN;
+// Plural proper noun
+nps:'NPS' TOKEN;
 
-// Verb, base form
-vb:'VB' TOKEN;
+// Possessive plural proper noun
+nps_poss:'NPS$' TOKEN;
 
-// Verb, present participle/gerund
-vbg:'VBG' TOKEN;
+// Adverbial noun (home, today, west)
+nr:'NR' TOKEN;
 
-// Verb, past participle
-vbn:'VBN' TOKEN;
-
-// Verb, 3rd. singular present
-vbz:'VBZ' TOKEN;
-
-// Wh- determiner (what, which)
-wdt:'WDT' TOKEN;
-
-
-// Comparative adverb
-rbr:'RBR' TOKEN;
-
-// Superlative adverb
-rbt:'RBT' TOKEN;
-
-// Nominal adverb (here, then, indoors)
-rn:'RN' TOKEN;
-
-// Adverb/particle (about, off, up)
-rp:'RP' TOKEN;
-
-
+// Ordinal numeral (first, 2nd)
+od:'OD' TOKEN;
 
 // Nominal pronoun (everybody, nothing)
 pn:'PN' TOKEN;
 
 // Possessive nominal pronoun
-pndollar:'PN$' TOKEN;
+pn_poss:'PN$' TOKEN;
 
 // Possessive personal pronoun (my, our)
-ppdollar:'PP$' TOKEN;
+pp_poss:'PP$' TOKEN;
 
 // Second (nominal) possessive pronoun (mine, ours)
-ppdollardollar:'PP$$' TOKEN;
+pp_poss_poss:'PP$$' TOKEN;
 
 // Singular reflexive/intensive personal pronoun (myself)
 ppl:'PPL' TOKEN;
@@ -376,63 +409,56 @@ ql:'QL' TOKEN;
 // Post-qualifier (enough, indeed)
 qlp:'QLP' TOKEN;
 
-
-// Possessive singular noun
-nndollar:'NN$' TOKEN;
-
-// Possessive plural noun
-nnsdollar:'NNS$' TOKEN;
-
-// Proper noun or part of name phrase
-np:'NP' TOKEN;
-
-// Possessive proper noun
-npdollar:'NP$' TOKEN;
-
-// Plural proper noun
-nps:'NPS' TOKEN;
-
-// Possessive plural proper noun
-npsdollar:'NPS$' TOKEN;
-
-// Adverbial noun (home, today, west)
-nr:'NR' TOKEN;
-
-// Ordinal numeral (first, 2nd)
-od:'OD' TOKEN;
-
-// Subordinating conjunction (if, although)
-cs:'CS' TOKEN;
-
-// Do
-dotoken:'DO' TOKEN;
-
-// Did
-dod:'DOD' TOKEN;
-
-// Does
-doz:'DOZ' TOKEN;
-
-/*******************************/		
-// Adjective
-jj:'JJ' TOKEN;
-
-
-
-// Singular or mass noun
-nn:'NN' TOKEN;
-
-// Plural noun
-nns:'NNS' TOKEN;
-
 // Adverb
 rb:'RB' TOKEN;
 
+// Comparative adverb
+rbr:'RBR' TOKEN;
+
+// Superlative adverb
+rbt:'RBT' TOKEN;
+
+// Nominal adverb (here, then, indoors)
+rn:'RN' TOKEN;
+
+// Adverb/particle (about, off, up)
+rp:'RP' TOKEN;
 
 // Infinitive marker to
 to:'TO' TOKEN;
 
+// Interjection, exclamation
+uh:'UH' TOKEN;
+
+// Verb, base form
+vb:'VB' TOKEN;
 
 // Verb, past tense
 vbd:'VBD' TOKEN;
 
+// Verb, present participle/gerund
+vbg:'VBG' TOKEN;
+
+// Verb, past participle
+vbn:'VBN' TOKEN;
+
+// Verb, 3rd. singular present
+vbz:'VBZ' TOKEN;
+
+// Wh- determiner (what, which)
+wdt:'WDT' TOKEN;
+
+// Possessive wh- pronoun (whose)
+wp_poss:'WP$' TOKEN;
+
+// Objective wh- pronoun (whom, which, that)
+wpo:'WPO' TOKEN;
+
+// Nominative wh- pronoun (who, which, that)
+wps:'WPS' TOKEN;
+
+// Wh- qualifier (how)
+wql:'WQL' TOKEN;
+
+// Wh- adverb (how, where, when)
+wrb:'WRB' TOKEN;
