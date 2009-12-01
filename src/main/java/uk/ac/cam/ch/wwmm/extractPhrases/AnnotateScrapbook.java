@@ -120,7 +120,7 @@ public class AnnotateScrapbook {
 		StringBuilder contents = new StringBuilder();
 		File annotationDirectory = new File(path);
 		String[] manualAnnotationDir = annotationDirectory.list();
-		String outputDir = "/home/lh359/EnglishDict/machineAnnotations/";
+		String outputDir = "/home/lezan/EnglishDict/machineAnnotations/";
 
 		try {
 			for (String fileToAnnotate : manualAnnotationDir) {
@@ -222,7 +222,7 @@ public class AnnotateScrapbook {
 	}
 
 	public static void main(String[] args) {
-		String folderName = "/home/lh359/manualAnnotations/Nico/scrapbook/";
+		String folderName = "/home/lezan/manualAnnotations/Nico/scrapbook/";
 		String patentFolder = "/home/lh359/polymerPatents/lezan/";
 		String outputDir = folderName;// +"/taggedCorpus/" ;
 		AnnotateScrapbook corpus = new AnnotateScrapbook();
@@ -232,7 +232,7 @@ public class AnnotateScrapbook {
 		
 		//corpus.runScrapbook(folderName);
 		//corpus.run(folderName);
-		 corpus.runOnPatents(patentFolder);
+		// corpus.runOnPatents(patentFolder);
 		taggedString = taggedString + corpus.run(folderName);
 
 		// for (String filename : dirFiles) {
