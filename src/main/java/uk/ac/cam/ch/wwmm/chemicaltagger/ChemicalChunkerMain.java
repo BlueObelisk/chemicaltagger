@@ -28,7 +28,7 @@ public class ChemicalChunkerMain {
         if (args.length > 0) {
             filename = args[0];
         } else {
-            filename = "src/main/resources/antlr/chemicalInput2.txt";
+            filename = "src/main/resources/antlr/chemicalInput.txt";
         }
         File file = new File(filename);
         System.out.println("File input " + file.getAbsolutePath());
