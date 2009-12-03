@@ -28,7 +28,7 @@ sentence
 	:nounphrase+ verbphrase* stop?;
 
 nounphrase 
-	:dt? adj* noun+ (cc|comma noun)* prepphraseOf*;
+	:dt? adj* noun+ (cc|comma noun)* prepphraseOf* prepphraseIN?;
 
 verbphrase    
 	: adv* vbd* verb adv* prepphrase;
@@ -55,6 +55,10 @@ prepphrase
 	: inAll  nounphrase;
 prepphraseOf 
 	: inof  nounphrase;
+
+prepphraseIN 
+	:	 inin molecule;
+
 	
 prepphraseTime:
 	inAll? dt? jj? cd nntime;
