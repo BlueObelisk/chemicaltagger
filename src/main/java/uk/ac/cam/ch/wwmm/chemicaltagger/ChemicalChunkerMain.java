@@ -23,22 +23,18 @@ public class ChemicalChunkerMain {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws Exception {
+        String filename = null;
         InputStream instream = System.in;
         if (args.length > 0) {
-            String filename = args[0];
-            File file = new File(filename);
-            System.out.println("F " + file.getAbsolutePath());
-            instream = new FileInputStream(file);
-            processInput(instream);
+            filename = args[0];
+        } else {
+            filename = "src/main/resources/antlr/chemicalInput2.txt";
         }
-        else{
-            String filename = "src/main/resources/antlr/chemicalInput.txt";
-            File file = new File(filename);
-            System.out.println("File input " + file.getAbsolutePath());
-            instream = new FileInputStream(file);
-            processInput(instream);
+        File file = new File(filename);
+        System.out.println("File input " + file.getAbsolutePath());
+        instream = new FileInputStream(file);
+        processInput(instream);
 
-        }
 
         // TODO code application logic here
     }
@@ -62,7 +58,7 @@ public class ChemicalChunkerMain {
             ChemicalChunkerParser parser = new ChemicalChunkerParser(tokens);
             ChemicalChunkerParser.document_return result = parser.document();
             Tree t = (Tree) result.getTree();
-            System.out.println(t.toStringTree());
+            System.out.println("@@@@@@@@@@@@@@@@@@"+t.toStringTree());
             stopWatch.stop();
             System.out.println("Parsing done in "+stopWatch.getTime());
         } catch (Exception e) {

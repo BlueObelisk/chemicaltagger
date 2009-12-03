@@ -3,6 +3,7 @@ options {
     language=Java;
     output = AST;
 }
+
 @header {
     package uk.ac.cam.ch.wwmm.chemicaltagger;
  }
@@ -25,7 +26,7 @@ document:	sentence+;
 
 
 sentence 
-	:prepphrase? nounphrase+ verbphrase* stop?;
+	:prepphrase^? nounphrase^+ verbphrase^* stop^?;
 
 nounphrase 
 	:dt? adj* noun+ (cc|comma noun)* prepphraseOf* prepphraseIN?;
