@@ -1,4 +1,4 @@
-package uk.ac.cam.ch.wwmm.extractPhrases;
+package uk.ac.cam.ch.wwmm.chemicaltagger;
 
 import java.io.File;
 import java.util.ArrayList;

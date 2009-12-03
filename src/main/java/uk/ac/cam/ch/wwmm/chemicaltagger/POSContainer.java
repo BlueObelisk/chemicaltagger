@@ -1,4 +1,4 @@
-package uk.ac.cam.ch.wwmm.extractPhrases;
+package uk.ac.cam.ch.wwmm.chemicaltagger;
 
 /********************************************
  * A container class that stores the grammatical
@@ -12,7 +12,7 @@ import java.util.List;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
-import uk.ac.cam.ch.wwmm.extractPhrases.WWMMTag.TagType;
+import uk.ac.cam.ch.wwmm.chemicaltagger.WWMMTag.TagType;
 
 public class POSContainer {
 
