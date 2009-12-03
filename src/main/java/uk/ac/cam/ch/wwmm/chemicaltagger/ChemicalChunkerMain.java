@@ -4,7 +4,6 @@
  */
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
-import uk.ac.cam.ch.wwmm.extractPhrases.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
