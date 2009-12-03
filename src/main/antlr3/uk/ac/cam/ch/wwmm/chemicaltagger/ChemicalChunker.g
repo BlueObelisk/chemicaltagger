@@ -4,9 +4,9 @@ options {
     output = AST;
 }
 @header {
-    package uk.ac.cam.ch.wwmm.extractPhrases;
+    package uk.ac.cam.ch.wwmm.chemicaltagger;
  }
-@lexer::header {package uk.ac.cam.ch.wwmm.extractPhrases;}
+@lexer::header {package uk.ac.cam.ch.wwmm.chemicaltagger;}
 
 
 WS	:	 (' '|'\t')+ {skip();};

@@ -1,6 +1,6 @@
-// $ANTLR 3.2 Sep 23, 2009 12:02:23 /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g 2009-12-03 11:53:16
+// $ANTLR 3.2 Sep 23, 2009 12:02:23 /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g 2009-12-03 14:57:45
 
-    package uk.ac.cam.ch.wwmm.extractPhrases;
+    package uk.ac.cam.ch.wwmm.chemicaltagger;
  
 
 import org.antlr.runtime.*;
@@ -198,35 +198,34 @@ public class ChemicalChunkerParser extends DebugParser {
     // delegators
 
     public static final String[] ruleNames = new String[] {
-        "invalidRule", "nncolumn", "rbt", "measurements", "dts", "vbcool", 
-        "nnamount", "vbz", "inon", "doz", "beg", "nnsynthesize", "vbrecover", 
-        "wdt", "vbapparatus", "vbpurify", "pn_poss", "dti", "infrom", "molecule", 
-        "bed", "verbphrase", "fw", "hvg", "oscarcj", "od", "nns_poss", "vbcharge", 
-        "ber", "jjs", "vbyield", "nc", "vbsuspend", "bedz", "pp_poss_poss", 
-        "dod", "pps", "vbsubmerge", "at", "vb", "ppl", "vbfilter", "vbstir", 
-        "abx", "ppss", "inas", "nnmethod", "vbdry", "stop", "jj", "rp", 
-        "nns", "nngram", "nr", "number", "oscarcd", "invia", "nneq", "cdunicode", 
-        "rrb", "rsqb", "in", "dt", "adv", "tmunicode", "nnpressure", "unnamedmolecule", 
-        "vbdrop", "inover", "hv", "nnapparatus", "vbg", "percent", "ex", 
-        "rn", "sentence", "cs", "amount", "inAll", "nnconcentrate", "cd", 
-        "inof", "md", "method", "vbheat", "oscarcm", "nnvacuum", "inafter", 
-        "comma", "hvn", "nntemp", "nnatmosphere", "vbn", "qlp", "vbwait", 
-        "ininto", "wpo", "nndry", "nnremove", "dash", "vbsubject", "mmol", 
-        "nntime", "nngeneral", "nn", "to", "abl", "prepphraseOf", "np", 
-        "nnchromatography", "vbtreat", "jjr", "cc", "nps_poss", "vbuse", 
-        "pp_poss", "wrb", "vbremove", "neg", "ben", "vbextract", "bez", 
-        "nnadd", "be", "oscaront", "vbwash", "vbquench", "np_poss", "inwithout", 
-        "nnmol", "lsqb", "pn", "inin", "prepphraseIN", "vbd", "noun", "inwith", 
-        "vbcontain", "nnvol", "dotok", "adj", "nncycle", "nnprecipitate", 
-        "ppo", "vbpartition", "inbefore", "prepphraseTemp", "vbdegass", 
-        "verb", "wp_poss", "vbincrease", "rbr", "vbchange", "nn_poss", "abn", 
-        "ppls", "uh", "nntimes", "volume", "wps", "document", "gram", "ap", 
-        "inby", "nnfilter", "vbfill", "inoff", "vbconcentrate", "nnflash", 
-        "prepphrase", "vbdissolve", "nnextract", "nps", "inunder", "hvd", 
-        "nnpercent", "wql", "prepphraseTime", "nnchementity", "prepphraseOther", 
-        "nounphrase", "vbadd", "jjt", "bem", "ql", "vbsynthesize", "lrb", 
-        "apost", "vbprecipitate", "colon", "nnmixture", "rb", "nnpurify", 
-        "dtx", "infor", "nnstate"
+        "invalidRule", "sentence", "hvg", "document", "inof", "inafter", 
+        "vbprecipitate", "adv", "vbsubmerge", "inwithout", "vbquench", "colon", 
+        "nnvacuum", "nnremove", "bedz", "wql", "pps", "rbt", "prepphrase", 
+        "ex", "nntime", "pp_poss_poss", "vbcontain", "nnpercent", "prepphraseOf", 
+        "amount", "nnextract", "vbwash", "to", "wdt", "at", "wrb", "rbr", 
+        "wps", "qlp", "vbfill", "abx", "nps_poss", "nndry", "nn_poss", "vbextract", 
+        "inwith", "vbcool", "nnmol", "abn", "wpo", "verb", "oscaront", "nr", 
+        "od", "dotok", "vbyield", "ppo", "nngram", "lsqb", "nneq", "rsqb", 
+        "dod", "nn", "inon", "ppls", "vbsubject", "ininto", "infor", "nnmethod", 
+        "dti", "nnfilter", "molecule", "inin", "inoff", "inunder", "ppss", 
+        "nnapparatus", "rb", "nngeneral", "in", "infrom", "vbincrease", 
+        "ben", "ap", "vbdrop", "nps", "vbsynthesize", "inas", "tmunicode", 
+        "hvd", "nnflash", "nnstate", "cd", "prepphraseTime", "bez", "nnsynthesize", 
+        "bed", "hvn", "comma", "nncolumn", "wp_poss", "nns_poss", "vbcharge", 
+        "verbphrase", "adj", "nnadd", "oscarcd", "volume", "jjt", "prepphraseOther", 
+        "vbadd", "vbconcentrate", "nntemp", "vbpurify", "vbstir", "jjr", 
+        "nnpurify", "vbremove", "vbdissolve", "lrb", "beg", "vbuse", "nntimes", 
+        "fw", "pp_poss", "nnchromatography", "nnchementity", "nnamount", 
+        "inby", "inAll", "vbchange", "method", "vbdegass", "dt", "np_poss", 
+        "vbd", "vbheat", "gram", "nnpressure", "oscarcm", "unnamedmolecule", 
+        "ql", "hv", "rrb", "inover", "rp", "vbrecover", "rn", "vbwait", 
+        "vbdry", "pn_poss", "vbapparatus", "md", "dash", "percent", "nncycle", 
+        "cc", "be", "dts", "doz", "nnatmosphere", "invia", "stop", "nnconcentrate", 
+        "cs", "vbtreat", "apost", "jj", "vbfilter", "ppl", "inbefore", "noun", 
+        "oscarcj", "ber", "cdunicode", "bem", "pn", "vbn", "abl", "nounphrase", 
+        "vbz", "neg", "vbpartition", "nnvol", "nns", "jjs", "dtx", "uh", 
+        "nc", "vbg", "prepphraseTemp", "number", "np", "nnmixture", "measurements", 
+        "vb", "prepphraseIN", "vbsuspend", "mmol", "nnprecipitate"
     };
      
         public int ruleLevel = 0;
@@ -276,7 +275,7 @@ public class ChemicalChunkerParser extends DebugParser {
 
 
     public String[] getTokenNames() { return ChemicalChunkerParser.tokenNames; }
-    public String getGrammarFileName() { return "/home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g"; }
+    public String getGrammarFileName() { return "/home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g"; }
 
 
     public static class document_return extends ParserRuleReturnScope {
@@ -285,7 +284,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "document"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:24:1: document : ( sentence )+ ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:24:1: document : ( sentence )+ ;
     public final ChemicalChunkerParser.document_return document() throws RecognitionException {
         ChemicalChunkerParser.document_return retval = new ChemicalChunkerParser.document_return();
         retval.start = input.LT(1);
@@ -302,15 +301,15 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(24, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:24:9: ( ( sentence )+ )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:24:9: ( ( sentence )+ )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:24:11: ( sentence )+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:24:11: ( sentence )+
             {
             root_0 = (Object)adaptor.nil();
 
             dbg.location(24,11);
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:24:11: ( sentence )+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:24:11: ( sentence )+
             int cnt1=0;
             try { dbg.enterSubRule(1);
 
@@ -332,7 +331,7 @@ public class ChemicalChunkerParser extends DebugParser {
             	case 1 :
             	    dbg.enterAlt(1);
 
-            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:24:11: sentence
+            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:24:11: sentence
             	    {
             	    dbg.location(24,11);
             	    pushFollow(FOLLOW_sentence_in_document135);
@@ -393,7 +392,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "sentence"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:27:1: sentence : ( prepphrase )? ( nounphrase )+ ( verbphrase )* ( stop )? ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:27:1: sentence : ( prepphrase )? ( nounphrase )+ ( verbphrase )* ( stop )? ;
     public final ChemicalChunkerParser.sentence_return sentence() throws RecognitionException {
         ChemicalChunkerParser.sentence_return retval = new ChemicalChunkerParser.sentence_return();
         retval.start = input.LT(1);
@@ -416,15 +415,15 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(27, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:28:2: ( ( prepphrase )? ( nounphrase )+ ( verbphrase )* ( stop )? )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:28:2: ( ( prepphrase )? ( nounphrase )+ ( verbphrase )* ( stop )? )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:28:3: ( prepphrase )? ( nounphrase )+ ( verbphrase )* ( stop )?
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:28:3: ( prepphrase )? ( nounphrase )+ ( verbphrase )* ( stop )?
             {
             root_0 = (Object)adaptor.nil();
 
             dbg.location(28,3);
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:28:3: ( prepphrase )?
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:28:3: ( prepphrase )?
             int alt2=2;
             try { dbg.enterSubRule(2);
             try { dbg.enterDecision(2);
@@ -497,7 +496,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 1 :
                     dbg.enterAlt(1);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:28:3: prepphrase
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:28:3: prepphrase
                     {
                     dbg.location(28,3);
                     pushFollow(FOLLOW_prepphrase_in_sentence146);
@@ -514,7 +513,7 @@ public class ChemicalChunkerParser extends DebugParser {
             } finally {dbg.exitSubRule(2);}
 
             dbg.location(28,15);
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:28:15: ( nounphrase )+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:28:15: ( nounphrase )+
             int cnt3=0;
             try { dbg.enterSubRule(3);
 
@@ -537,7 +536,7 @@ public class ChemicalChunkerParser extends DebugParser {
             	case 1 :
             	    dbg.enterAlt(1);
 
-            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:28:15: nounphrase
+            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:28:15: nounphrase
             	    {
             	    dbg.location(28,15);
             	    pushFollow(FOLLOW_nounphrase_in_sentence149);
@@ -563,7 +562,7 @@ public class ChemicalChunkerParser extends DebugParser {
             } finally {dbg.exitSubRule(3);}
 
             dbg.location(28,27);
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:28:27: ( verbphrase )*
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:28:27: ( verbphrase )*
             try { dbg.enterSubRule(4);
 
             loop4:
@@ -584,7 +583,7 @@ public class ChemicalChunkerParser extends DebugParser {
             	case 1 :
             	    dbg.enterAlt(1);
 
-            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:28:27: verbphrase
+            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:28:27: verbphrase
             	    {
             	    dbg.location(28,27);
             	    pushFollow(FOLLOW_verbphrase_in_sentence152);
@@ -604,7 +603,7 @@ public class ChemicalChunkerParser extends DebugParser {
             } finally {dbg.exitSubRule(4);}
 
             dbg.location(28,39);
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:28:39: ( stop )?
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:28:39: ( stop )?
             int alt5=2;
             try { dbg.enterSubRule(5);
             try { dbg.enterDecision(5);
@@ -620,7 +619,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 1 :
                     dbg.enterAlt(1);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:28:39: stop
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:28:39: stop
                     {
                     dbg.location(28,39);
                     pushFollow(FOLLOW_stop_in_sentence155);
@@ -672,7 +671,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "nounphrase"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:30:1: nounphrase : ( dt )? ( adj )* ( noun )+ ( cc | comma noun )* ( prepphraseOf )* ( prepphraseIN )? ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:30:1: nounphrase : ( dt )? ( adj )* ( noun )+ ( cc | comma noun )* ( prepphraseOf )* ( prepphraseIN )? ;
     public final ChemicalChunkerParser.nounphrase_return nounphrase() throws RecognitionException {
         ChemicalChunkerParser.nounphrase_return retval = new ChemicalChunkerParser.nounphrase_return();
         retval.start = input.LT(1);
@@ -703,15 +702,15 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(30, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:31:2: ( ( dt )? ( adj )* ( noun )+ ( cc | comma noun )* ( prepphraseOf )* ( prepphraseIN )? )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:31:2: ( ( dt )? ( adj )* ( noun )+ ( cc | comma noun )* ( prepphraseOf )* ( prepphraseIN )? )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:31:3: ( dt )? ( adj )* ( noun )+ ( cc | comma noun )* ( prepphraseOf )* ( prepphraseIN )?
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:31:3: ( dt )? ( adj )* ( noun )+ ( cc | comma noun )* ( prepphraseOf )* ( prepphraseIN )?
             {
             root_0 = (Object)adaptor.nil();
 
             dbg.location(31,3);
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:31:3: ( dt )?
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:31:3: ( dt )?
             int alt6=2;
             try { dbg.enterSubRule(6);
             try { dbg.enterDecision(6);
@@ -727,7 +726,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 1 :
                     dbg.enterAlt(1);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:31:3: dt
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:31:3: dt
                     {
                     dbg.location(31,3);
                     pushFollow(FOLLOW_dt_in_nounphrase165);
@@ -744,7 +743,7 @@ public class ChemicalChunkerParser extends DebugParser {
             } finally {dbg.exitSubRule(6);}
 
             dbg.location(31,7);
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:31:7: ( adj )*
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:31:7: ( adj )*
             try { dbg.enterSubRule(7);
 
             loop7:
@@ -765,7 +764,7 @@ public class ChemicalChunkerParser extends DebugParser {
             	case 1 :
             	    dbg.enterAlt(1);
 
-            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:31:7: adj
+            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:31:7: adj
             	    {
             	    dbg.location(31,7);
             	    pushFollow(FOLLOW_adj_in_nounphrase168);
@@ -785,7 +784,7 @@ public class ChemicalChunkerParser extends DebugParser {
             } finally {dbg.exitSubRule(7);}
 
             dbg.location(31,12);
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:31:12: ( noun )+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:31:12: ( noun )+
             int cnt8=0;
             try { dbg.enterSubRule(8);
 
@@ -808,7 +807,7 @@ public class ChemicalChunkerParser extends DebugParser {
             	case 1 :
             	    dbg.enterAlt(1);
 
-            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:31:12: noun
+            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:31:12: noun
             	    {
             	    dbg.location(31,12);
             	    pushFollow(FOLLOW_noun_in_nounphrase171);
@@ -834,7 +833,7 @@ public class ChemicalChunkerParser extends DebugParser {
             } finally {dbg.exitSubRule(8);}
 
             dbg.location(31,18);
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:31:18: ( cc | comma noun )*
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:31:18: ( cc | comma noun )*
             try { dbg.enterSubRule(9);
 
             loop9:
@@ -858,7 +857,7 @@ public class ChemicalChunkerParser extends DebugParser {
             	case 1 :
             	    dbg.enterAlt(1);
 
-            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:31:19: cc
+            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:31:19: cc
             	    {
             	    dbg.location(31,19);
             	    pushFollow(FOLLOW_cc_in_nounphrase175);
@@ -873,7 +872,7 @@ public class ChemicalChunkerParser extends DebugParser {
             	case 2 :
             	    dbg.enterAlt(2);
 
-            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:31:22: comma noun
+            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:31:22: comma noun
             	    {
             	    dbg.location(31,22);
             	    pushFollow(FOLLOW_comma_in_nounphrase177);
@@ -900,7 +899,7 @@ public class ChemicalChunkerParser extends DebugParser {
             } finally {dbg.exitSubRule(9);}
 
             dbg.location(31,35);
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:31:35: ( prepphraseOf )*
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:31:35: ( prepphraseOf )*
             try { dbg.enterSubRule(10);
 
             loop10:
@@ -921,7 +920,7 @@ public class ChemicalChunkerParser extends DebugParser {
             	case 1 :
             	    dbg.enterAlt(1);
 
-            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:31:35: prepphraseOf
+            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:31:35: prepphraseOf
             	    {
             	    dbg.location(31,35);
             	    pushFollow(FOLLOW_prepphraseOf_in_nounphrase183);
@@ -941,7 +940,7 @@ public class ChemicalChunkerParser extends DebugParser {
             } finally {dbg.exitSubRule(10);}
 
             dbg.location(31,49);
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:31:49: ( prepphraseIN )?
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:31:49: ( prepphraseIN )?
             int alt11=2;
             try { dbg.enterSubRule(11);
             try { dbg.enterDecision(11);
@@ -957,7 +956,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 1 :
                     dbg.enterAlt(1);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:31:49: prepphraseIN
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:31:49: prepphraseIN
                     {
                     dbg.location(31,49);
                     pushFollow(FOLLOW_prepphraseIN_in_nounphrase186);
@@ -1009,7 +1008,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "verbphrase"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:33:1: verbphrase : ( adv )* ( vbd )* verb ( adv )* ( prepphrase )* ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:33:1: verbphrase : ( adv )* ( vbd )* verb ( adv )* ( prepphrase )* ;
     public final ChemicalChunkerParser.verbphrase_return verbphrase() throws RecognitionException {
         ChemicalChunkerParser.verbphrase_return retval = new ChemicalChunkerParser.verbphrase_return();
         retval.start = input.LT(1);
@@ -1034,15 +1033,15 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(33, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:34:2: ( ( adv )* ( vbd )* verb ( adv )* ( prepphrase )* )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:34:2: ( ( adv )* ( vbd )* verb ( adv )* ( prepphrase )* )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:34:4: ( adv )* ( vbd )* verb ( adv )* ( prepphrase )*
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:34:4: ( adv )* ( vbd )* verb ( adv )* ( prepphrase )*
             {
             root_0 = (Object)adaptor.nil();
 
             dbg.location(34,4);
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:34:4: ( adv )*
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:34:4: ( adv )*
             try { dbg.enterSubRule(12);
 
             loop12:
@@ -1063,7 +1062,7 @@ public class ChemicalChunkerParser extends DebugParser {
             	case 1 :
             	    dbg.enterAlt(1);
 
-            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:34:4: adv
+            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:34:4: adv
             	    {
             	    dbg.location(34,4);
             	    pushFollow(FOLLOW_adv_in_verbphrase200);
@@ -1083,7 +1082,7 @@ public class ChemicalChunkerParser extends DebugParser {
             } finally {dbg.exitSubRule(12);}
 
             dbg.location(34,9);
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:34:9: ( vbd )*
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:34:9: ( vbd )*
             try { dbg.enterSubRule(13);
 
             loop13:
@@ -1104,7 +1103,7 @@ public class ChemicalChunkerParser extends DebugParser {
             	case 1 :
             	    dbg.enterAlt(1);
 
-            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:34:9: vbd
+            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:34:9: vbd
             	    {
             	    dbg.location(34,9);
             	    pushFollow(FOLLOW_vbd_in_verbphrase203);
@@ -1131,7 +1130,7 @@ public class ChemicalChunkerParser extends DebugParser {
 
             adaptor.addChild(root_0, verb16.getTree());
             dbg.location(34,19);
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:34:19: ( adv )*
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:34:19: ( adv )*
             try { dbg.enterSubRule(14);
 
             loop14:
@@ -1182,7 +1181,7 @@ public class ChemicalChunkerParser extends DebugParser {
             	case 1 :
             	    dbg.enterAlt(1);
 
-            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:34:19: adv
+            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:34:19: adv
             	    {
             	    dbg.location(34,19);
             	    pushFollow(FOLLOW_adv_in_verbphrase208);
@@ -1202,7 +1201,7 @@ public class ChemicalChunkerParser extends DebugParser {
             } finally {dbg.exitSubRule(14);}
 
             dbg.location(34,24);
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:34:24: ( prepphrase )*
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:34:24: ( prepphrase )*
             try { dbg.enterSubRule(15);
 
             loop15:
@@ -1224,7 +1223,7 @@ public class ChemicalChunkerParser extends DebugParser {
             	case 1 :
             	    dbg.enterAlt(1);
 
-            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:34:24: prepphrase
+            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:34:24: prepphrase
             	    {
             	    dbg.location(34,24);
             	    pushFollow(FOLLOW_prepphrase_in_verbphrase211);
@@ -1279,7 +1278,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "verb"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:36:1: verb : ( vbuse | vbchange | vbsubmerge | vbsubject | vbadd | vbcharge | vbcontain | vbdrop | vbfill | vbsuspend | vbtreat | vbapparatus | vbconcentrate | vbcool | vbdegass | vbdissolve | vbdry | vbextract | vbfilter | vbheat | vbincrease | vbpartition | vbprecipitate | vbpurify | vbquench | vbrecover | vbremove | vbstir | vbsynthesize | vbwait | vbwash | vbyield );
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:36:1: verb : ( vbuse | vbchange | vbsubmerge | vbsubject | vbadd | vbcharge | vbcontain | vbdrop | vbfill | vbsuspend | vbtreat | vbapparatus | vbconcentrate | vbcool | vbdegass | vbdissolve | vbdry | vbextract | vbfilter | vbheat | vbincrease | vbpartition | vbprecipitate | vbpurify | vbquench | vbrecover | vbremove | vbstir | vbsynthesize | vbwait | vbwash | vbyield );
     public final ChemicalChunkerParser.verb_return verb() throws RecognitionException {
         ChemicalChunkerParser.verb_return retval = new ChemicalChunkerParser.verb_return();
         retval.start = input.LT(1);
@@ -1358,7 +1357,7 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(36, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:37:2: ( vbuse | vbchange | vbsubmerge | vbsubject | vbadd | vbcharge | vbcontain | vbdrop | vbfill | vbsuspend | vbtreat | vbapparatus | vbconcentrate | vbcool | vbdegass | vbdissolve | vbdry | vbextract | vbfilter | vbheat | vbincrease | vbpartition | vbprecipitate | vbpurify | vbquench | vbrecover | vbremove | vbstir | vbsynthesize | vbwait | vbwash | vbyield )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:37:2: ( vbuse | vbchange | vbsubmerge | vbsubject | vbadd | vbcharge | vbcontain | vbdrop | vbfill | vbsuspend | vbtreat | vbapparatus | vbconcentrate | vbcool | vbdegass | vbdissolve | vbdry | vbextract | vbfilter | vbheat | vbincrease | vbpartition | vbprecipitate | vbpurify | vbquench | vbrecover | vbremove | vbstir | vbsynthesize | vbwait | vbwash | vbyield )
             int alt16=32;
             try { dbg.enterDecision(16);
 
@@ -1537,7 +1536,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 1 :
                     dbg.enterAlt(1);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:38:2: vbuse
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:38:2: vbuse
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -1554,7 +1553,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 2 :
                     dbg.enterAlt(2);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:38:8: vbchange
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:38:8: vbchange
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -1571,7 +1570,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 3 :
                     dbg.enterAlt(3);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:38:17: vbsubmerge
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:38:17: vbsubmerge
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -1588,7 +1587,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 4 :
                     dbg.enterAlt(4);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:38:28: vbsubject
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:38:28: vbsubject
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -1605,7 +1604,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 5 :
                     dbg.enterAlt(5);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:38:38: vbadd
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:38:38: vbadd
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -1622,7 +1621,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 6 :
                     dbg.enterAlt(6);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:38:44: vbcharge
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:38:44: vbcharge
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -1639,7 +1638,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 7 :
                     dbg.enterAlt(7);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:38:53: vbcontain
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:38:53: vbcontain
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -1656,7 +1655,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 8 :
                     dbg.enterAlt(8);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:38:63: vbdrop
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:38:63: vbdrop
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -1673,7 +1672,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 9 :
                     dbg.enterAlt(9);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:38:70: vbfill
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:38:70: vbfill
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -1690,7 +1689,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 10 :
                     dbg.enterAlt(10);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:38:77: vbsuspend
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:38:77: vbsuspend
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -1707,7 +1706,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 11 :
                     dbg.enterAlt(11);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:38:87: vbtreat
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:38:87: vbtreat
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -1724,7 +1723,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 12 :
                     dbg.enterAlt(12);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:38:95: vbapparatus
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:38:95: vbapparatus
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -1741,7 +1740,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 13 :
                     dbg.enterAlt(13);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:38:107: vbconcentrate
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:38:107: vbconcentrate
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -1758,7 +1757,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 14 :
                     dbg.enterAlt(14);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:38:121: vbcool
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:38:121: vbcool
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -1775,7 +1774,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 15 :
                     dbg.enterAlt(15);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:38:128: vbdegass
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:38:128: vbdegass
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -1792,7 +1791,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 16 :
                     dbg.enterAlt(16);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:38:137: vbdissolve
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:38:137: vbdissolve
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -1809,7 +1808,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 17 :
                     dbg.enterAlt(17);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:38:148: vbdry
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:38:148: vbdry
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -1826,7 +1825,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 18 :
                     dbg.enterAlt(18);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:38:154: vbextract
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:38:154: vbextract
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -1843,7 +1842,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 19 :
                     dbg.enterAlt(19);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:38:164: vbfilter
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:38:164: vbfilter
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -1860,7 +1859,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 20 :
                     dbg.enterAlt(20);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:39:3: vbheat
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:39:3: vbheat
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -1877,7 +1876,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 21 :
                     dbg.enterAlt(21);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:39:10: vbincrease
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:39:10: vbincrease
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -1894,7 +1893,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 22 :
                     dbg.enterAlt(22);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:39:21: vbpartition
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:39:21: vbpartition
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -1911,7 +1910,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 23 :
                     dbg.enterAlt(23);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:39:33: vbprecipitate
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:39:33: vbprecipitate
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -1928,7 +1927,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 24 :
                     dbg.enterAlt(24);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:39:47: vbpurify
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:39:47: vbpurify
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -1945,7 +1944,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 25 :
                     dbg.enterAlt(25);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:39:56: vbquench
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:39:56: vbquench
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -1962,7 +1961,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 26 :
                     dbg.enterAlt(26);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:39:65: vbrecover
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:39:65: vbrecover
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -1979,7 +1978,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 27 :
                     dbg.enterAlt(27);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:39:75: vbremove
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:39:75: vbremove
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -1996,7 +1995,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 28 :
                     dbg.enterAlt(28);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:39:84: vbstir
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:39:84: vbstir
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -2013,7 +2012,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 29 :
                     dbg.enterAlt(29);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:39:91: vbsynthesize
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:39:91: vbsynthesize
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -2030,7 +2029,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 30 :
                     dbg.enterAlt(30);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:39:104: vbwait
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:39:104: vbwait
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -2047,7 +2046,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 31 :
                     dbg.enterAlt(31);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:39:111: vbwash
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:39:111: vbwash
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -2064,7 +2063,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 32 :
                     dbg.enterAlt(32);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:39:118: vbyield
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:39:118: vbyield
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -2113,7 +2112,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "number"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:40:1: number : ( cd | oscarcd );
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:40:1: number : ( cd | oscarcd );
     public final ChemicalChunkerParser.number_return number() throws RecognitionException {
         ChemicalChunkerParser.number_return retval = new ChemicalChunkerParser.number_return();
         retval.start = input.LT(1);
@@ -2132,7 +2131,7 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(40, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:41:2: ( cd | oscarcd )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:41:2: ( cd | oscarcd )
             int alt17=2;
             try { dbg.enterDecision(17);
 
@@ -2157,7 +2156,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 1 :
                     dbg.enterAlt(1);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:41:4: cd
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:41:4: cd
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -2174,7 +2173,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 2 :
                     dbg.enterAlt(2);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:41:7: oscarcd
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:41:7: oscarcd
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -2223,7 +2222,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "noun"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:42:1: noun : ( unnamedmolecule | molecule | nnstate | nntime | nnatmosphere | nneq | nnchementity | nntemp | nnflash | nngeneral | nnmethod | nnamount | nnpressure | nncolumn | nnchromatography | nnvacuum | nncycle | nntimes | nnapparatus | nnconcentrate | wdt | wp_poss | wpo | wps | nnsynthesize | oscaront | nnmixture );
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:42:1: noun : ( unnamedmolecule | molecule | nnstate | nntime | nnatmosphere | nneq | nnchementity | nntemp | nnflash | nngeneral | nnmethod | nnamount | nnpressure | nncolumn | nnchromatography | nnvacuum | nncycle | nntimes | nnapparatus | nnconcentrate | wdt | wp_poss | wpo | wps | nnsynthesize | oscaront | nnmixture );
     public final ChemicalChunkerParser.noun_return noun() throws RecognitionException {
         ChemicalChunkerParser.noun_return retval = new ChemicalChunkerParser.noun_return();
         retval.start = input.LT(1);
@@ -2292,7 +2291,7 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(42, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:42:6: ( unnamedmolecule | molecule | nnstate | nntime | nnatmosphere | nneq | nnchementity | nntemp | nnflash | nngeneral | nnmethod | nnamount | nnpressure | nncolumn | nnchromatography | nnvacuum | nncycle | nntimes | nnapparatus | nnconcentrate | wdt | wp_poss | wpo | wps | nnsynthesize | oscaront | nnmixture )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:42:6: ( unnamedmolecule | molecule | nnstate | nntime | nnatmosphere | nneq | nnchementity | nntemp | nnflash | nngeneral | nnmethod | nnamount | nnpressure | nncolumn | nnchromatography | nnvacuum | nncycle | nntimes | nnapparatus | nnconcentrate | wdt | wp_poss | wpo | wps | nnsynthesize | oscaront | nnmixture )
             int alt18=27;
             try { dbg.enterDecision(18);
 
@@ -2446,7 +2445,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 1 :
                     dbg.enterAlt(1);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:43:1: unnamedmolecule
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:43:1: unnamedmolecule
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -2463,7 +2462,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 2 :
                     dbg.enterAlt(2);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:43:17: molecule
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:43:17: molecule
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -2480,7 +2479,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 3 :
                     dbg.enterAlt(3);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:43:26: nnstate
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:43:26: nnstate
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -2497,7 +2496,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 4 :
                     dbg.enterAlt(4);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:43:34: nntime
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:43:34: nntime
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -2514,7 +2513,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 5 :
                     dbg.enterAlt(5);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:43:41: nnatmosphere
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:43:41: nnatmosphere
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -2531,7 +2530,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 6 :
                     dbg.enterAlt(6);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:43:54: nneq
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:43:54: nneq
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -2548,7 +2547,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 7 :
                     dbg.enterAlt(7);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:43:59: nnchementity
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:43:59: nnchementity
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -2565,7 +2564,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 8 :
                     dbg.enterAlt(8);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:43:72: nntemp
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:43:72: nntemp
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -2582,7 +2581,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 9 :
                     dbg.enterAlt(9);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:43:79: nnflash
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:43:79: nnflash
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -2599,7 +2598,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 10 :
                     dbg.enterAlt(10);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:43:87: nngeneral
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:43:87: nngeneral
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -2616,7 +2615,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 11 :
                     dbg.enterAlt(11);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:43:97: nnmethod
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:43:97: nnmethod
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -2633,7 +2632,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 12 :
                     dbg.enterAlt(12);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:43:106: nnamount
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:43:106: nnamount
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -2650,7 +2649,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 13 :
                     dbg.enterAlt(13);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:43:115: nnpressure
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:43:115: nnpressure
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -2667,7 +2666,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 14 :
                     dbg.enterAlt(14);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:43:126: nncolumn
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:43:126: nncolumn
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -2684,7 +2683,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 15 :
                     dbg.enterAlt(15);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:43:135: nnchromatography
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:43:135: nnchromatography
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -2701,7 +2700,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 16 :
                     dbg.enterAlt(16);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:43:152: nnvacuum
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:43:152: nnvacuum
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -2718,7 +2717,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 17 :
                     dbg.enterAlt(17);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:43:161: nncycle
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:43:161: nncycle
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -2735,7 +2734,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 18 :
                     dbg.enterAlt(18);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:43:169: nntimes
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:43:169: nntimes
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -2752,7 +2751,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 19 :
                     dbg.enterAlt(19);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:43:177: nnapparatus
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:43:177: nnapparatus
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -2769,7 +2768,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 20 :
                     dbg.enterAlt(20);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:44:1: nnconcentrate
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:44:1: nnconcentrate
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -2786,7 +2785,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 21 :
                     dbg.enterAlt(21);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:44:15: wdt
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:44:15: wdt
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -2803,7 +2802,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 22 :
                     dbg.enterAlt(22);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:44:19: wp_poss
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:44:19: wp_poss
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -2820,7 +2819,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 23 :
                     dbg.enterAlt(23);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:44:27: wpo
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:44:27: wpo
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -2837,7 +2836,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 24 :
                     dbg.enterAlt(24);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:44:31: wps
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:44:31: wps
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -2854,7 +2853,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 25 :
                     dbg.enterAlt(25);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:44:35: nnsynthesize
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:44:35: nnsynthesize
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -2871,7 +2870,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 26 :
                     dbg.enterAlt(26);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:44:48: oscaront
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:44:48: oscaront
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -2888,7 +2887,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 27 :
                     dbg.enterAlt(27);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:44:57: nnmixture
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:44:57: nnmixture
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -2937,7 +2936,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "adj"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:47:1: adj : ( jj | jjr | jjs | jjt | oscarcj );
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:47:1: adj : ( jj | jjr | jjs | jjt | oscarcj );
     public final ChemicalChunkerParser.adj_return adj() throws RecognitionException {
         ChemicalChunkerParser.adj_return retval = new ChemicalChunkerParser.adj_return();
         retval.start = input.LT(1);
@@ -2962,7 +2961,7 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(47, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:47:5: ( jj | jjr | jjs | jjt | oscarcj )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:47:5: ( jj | jjr | jjs | jjt | oscarcj )
             int alt19=5;
             try { dbg.enterDecision(19);
 
@@ -3006,7 +3005,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 1 :
                     dbg.enterAlt(1);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:47:7: jj
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:47:7: jj
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -3023,7 +3022,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 2 :
                     dbg.enterAlt(2);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:47:10: jjr
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:47:10: jjr
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -3040,7 +3039,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 3 :
                     dbg.enterAlt(3);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:47:14: jjs
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:47:14: jjs
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -3057,7 +3056,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 4 :
                     dbg.enterAlt(4);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:47:18: jjt
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:47:18: jjt
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -3074,7 +3073,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 5 :
                     dbg.enterAlt(5);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:47:22: oscarcj
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:47:22: oscarcj
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -3123,7 +3122,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "adv"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:49:1: adv : ( rb | rbr | rbt );
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:49:1: adv : ( rb | rbr | rbt );
     public final ChemicalChunkerParser.adv_return adv() throws RecognitionException {
         ChemicalChunkerParser.adv_return retval = new ChemicalChunkerParser.adv_return();
         retval.start = input.LT(1);
@@ -3144,7 +3143,7 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(49, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:49:5: ( rb | rbr | rbt )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:49:5: ( rb | rbr | rbt )
             int alt20=3;
             try { dbg.enterDecision(20);
 
@@ -3178,7 +3177,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 1 :
                     dbg.enterAlt(1);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:49:7: rb
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:49:7: rb
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -3195,7 +3194,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 2 :
                     dbg.enterAlt(2);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:49:10: rbr
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:49:10: rbr
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -3212,7 +3211,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 3 :
                     dbg.enterAlt(3);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:49:14: rbt
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:49:14: rbt
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -3261,7 +3260,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "prepphrase"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:51:1: prepphrase : ( prepphraseOther | prepphraseTemp | prepphraseTime );
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:51:1: prepphrase : ( prepphraseOther | prepphraseTemp | prepphraseTime );
     public final ChemicalChunkerParser.prepphrase_return prepphrase() throws RecognitionException {
         ChemicalChunkerParser.prepphrase_return retval = new ChemicalChunkerParser.prepphrase_return();
         retval.start = input.LT(1);
@@ -3282,7 +3281,7 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(51, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:52:2: ( prepphraseOther | prepphraseTemp | prepphraseTime )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:52:2: ( prepphraseOther | prepphraseTemp | prepphraseTime )
             int alt21=3;
             try { dbg.enterDecision(21);
 
@@ -3300,7 +3299,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 1 :
                     dbg.enterAlt(1);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:52:4: prepphraseOther
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:52:4: prepphraseOther
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -3317,7 +3316,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 2 :
                     dbg.enterAlt(2);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:52:20: prepphraseTemp
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:52:20: prepphraseTemp
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -3334,7 +3333,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 3 :
                     dbg.enterAlt(3);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:52:35: prepphraseTime
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:52:35: prepphraseTime
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -3383,7 +3382,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "prepphraseOther"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:54:2: prepphraseOther : inAll nounphrase ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:54:2: prepphraseOther : inAll nounphrase ;
     public final ChemicalChunkerParser.prepphraseOther_return prepphraseOther() throws RecognitionException {
         ChemicalChunkerParser.prepphraseOther_return retval = new ChemicalChunkerParser.prepphraseOther_return();
         retval.start = input.LT(1);
@@ -3402,10 +3401,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(54, 2);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:55:2: ( inAll nounphrase )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:55:2: ( inAll nounphrase )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:55:4: inAll nounphrase
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:55:4: inAll nounphrase
             {
             root_0 = (Object)adaptor.nil();
 
@@ -3459,7 +3458,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "prepphraseOf"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:56:1: prepphraseOf : inof nounphrase ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:56:1: prepphraseOf : inof nounphrase ;
     public final ChemicalChunkerParser.prepphraseOf_return prepphraseOf() throws RecognitionException {
         ChemicalChunkerParser.prepphraseOf_return retval = new ChemicalChunkerParser.prepphraseOf_return();
         retval.start = input.LT(1);
@@ -3478,10 +3477,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(56, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:57:2: ( inof nounphrase )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:57:2: ( inof nounphrase )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:57:4: inof nounphrase
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:57:4: inof nounphrase
             {
             root_0 = (Object)adaptor.nil();
 
@@ -3535,7 +3534,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "prepphraseIN"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:59:1: prepphraseIN : inin molecule ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:59:1: prepphraseIN : inin molecule ;
     public final ChemicalChunkerParser.prepphraseIN_return prepphraseIN() throws RecognitionException {
         ChemicalChunkerParser.prepphraseIN_return retval = new ChemicalChunkerParser.prepphraseIN_return();
         retval.start = input.LT(1);
@@ -3554,10 +3553,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(59, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:60:2: ( inin molecule )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:60:2: ( inin molecule )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:60:5: inin molecule
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:60:5: inin molecule
             {
             root_0 = (Object)adaptor.nil();
 
@@ -3611,7 +3610,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "prepphraseTime"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:63:1: prepphraseTime : ( inAll )? ( dt )? ( jj )? cd nntime ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:63:1: prepphraseTime : ( inAll )? ( dt )? ( jj )? cd nntime ;
     public final ChemicalChunkerParser.prepphraseTime_return prepphraseTime() throws RecognitionException {
         ChemicalChunkerParser.prepphraseTime_return retval = new ChemicalChunkerParser.prepphraseTime_return();
         retval.start = input.LT(1);
@@ -3636,15 +3635,15 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(63, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:63:15: ( ( inAll )? ( dt )? ( jj )? cd nntime )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:63:15: ( ( inAll )? ( dt )? ( jj )? cd nntime )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:64:2: ( inAll )? ( dt )? ( jj )? cd nntime
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:64:2: ( inAll )? ( dt )? ( jj )? cd nntime
             {
             root_0 = (Object)adaptor.nil();
 
             dbg.location(64,2);
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:64:2: ( inAll )?
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:64:2: ( inAll )?
             int alt22=2;
             try { dbg.enterSubRule(22);
             try { dbg.enterDecision(22);
@@ -3660,7 +3659,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 1 :
                     dbg.enterAlt(1);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:64:2: inAll
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:64:2: inAll
                     {
                     dbg.location(64,2);
                     pushFollow(FOLLOW_inAll_in_prepphraseTime460);
@@ -3677,7 +3676,7 @@ public class ChemicalChunkerParser extends DebugParser {
             } finally {dbg.exitSubRule(22);}
 
             dbg.location(64,9);
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:64:9: ( dt )?
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:64:9: ( dt )?
             int alt23=2;
             try { dbg.enterSubRule(23);
             try { dbg.enterDecision(23);
@@ -3693,7 +3692,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 1 :
                     dbg.enterAlt(1);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:64:9: dt
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:64:9: dt
                     {
                     dbg.location(64,9);
                     pushFollow(FOLLOW_dt_in_prepphraseTime463);
@@ -3710,7 +3709,7 @@ public class ChemicalChunkerParser extends DebugParser {
             } finally {dbg.exitSubRule(23);}
 
             dbg.location(64,13);
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:64:13: ( jj )?
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:64:13: ( jj )?
             int alt24=2;
             try { dbg.enterSubRule(24);
             try { dbg.enterDecision(24);
@@ -3726,7 +3725,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 1 :
                     dbg.enterAlt(1);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:64:13: jj
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:64:13: jj
                     {
                     dbg.location(64,13);
                     pushFollow(FOLLOW_jj_in_prepphraseTime466);
@@ -3792,7 +3791,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "prepphraseTemp"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:66:1: prepphraseTemp : ( inAll )? ( dt )? ( jj )? cd nntemp ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:66:1: prepphraseTemp : ( inAll )? ( dt )? ( jj )? cd nntemp ;
     public final ChemicalChunkerParser.prepphraseTemp_return prepphraseTemp() throws RecognitionException {
         ChemicalChunkerParser.prepphraseTemp_return retval = new ChemicalChunkerParser.prepphraseTemp_return();
         retval.start = input.LT(1);
@@ -3817,15 +3816,15 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(66, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:66:15: ( ( inAll )? ( dt )? ( jj )? cd nntemp )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:66:15: ( ( inAll )? ( dt )? ( jj )? cd nntemp )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:67:2: ( inAll )? ( dt )? ( jj )? cd nntemp
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:67:2: ( inAll )? ( dt )? ( jj )? cd nntemp
             {
             root_0 = (Object)adaptor.nil();
 
             dbg.location(67,2);
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:67:2: ( inAll )?
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:67:2: ( inAll )?
             int alt25=2;
             try { dbg.enterSubRule(25);
             try { dbg.enterDecision(25);
@@ -3841,7 +3840,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 1 :
                     dbg.enterAlt(1);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:67:2: inAll
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:67:2: inAll
                     {
                     dbg.location(67,2);
                     pushFollow(FOLLOW_inAll_in_prepphraseTemp479);
@@ -3858,7 +3857,7 @@ public class ChemicalChunkerParser extends DebugParser {
             } finally {dbg.exitSubRule(25);}
 
             dbg.location(67,9);
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:67:9: ( dt )?
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:67:9: ( dt )?
             int alt26=2;
             try { dbg.enterSubRule(26);
             try { dbg.enterDecision(26);
@@ -3874,7 +3873,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 1 :
                     dbg.enterAlt(1);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:67:9: dt
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:67:9: dt
                     {
                     dbg.location(67,9);
                     pushFollow(FOLLOW_dt_in_prepphraseTemp482);
@@ -3891,7 +3890,7 @@ public class ChemicalChunkerParser extends DebugParser {
             } finally {dbg.exitSubRule(26);}
 
             dbg.location(67,13);
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:67:13: ( jj )?
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:67:13: ( jj )?
             int alt27=2;
             try { dbg.enterSubRule(27);
             try { dbg.enterDecision(27);
@@ -3907,7 +3906,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 1 :
                     dbg.enterAlt(1);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:67:13: jj
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:67:13: jj
                     {
                     dbg.location(67,13);
                     pushFollow(FOLLOW_jj_in_prepphraseTemp485);
@@ -3973,7 +3972,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "inAll"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:71:1: inAll : ( in | inafter | inas | inbefore | inby | infor | infrom | inin | ininto | inof | inoff | inon | inover | inunder | invia | inwith | inwithout );
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:71:1: inAll : ( in | inafter | inas | inbefore | inby | infor | infrom | inin | ininto | inof | inoff | inon | inover | inunder | invia | inwith | inwithout );
     public final ChemicalChunkerParser.inAll_return inAll() throws RecognitionException {
         ChemicalChunkerParser.inAll_return retval = new ChemicalChunkerParser.inAll_return();
         retval.start = input.LT(1);
@@ -4022,7 +4021,7 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(71, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:71:7: ( in | inafter | inas | inbefore | inby | infor | infrom | inin | ininto | inof | inoff | inon | inover | inunder | invia | inwith | inwithout )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:71:7: ( in | inafter | inas | inbefore | inby | infor | infrom | inin | ininto | inof | inoff | inon | inover | inunder | invia | inwith | inwithout )
             int alt28=17;
             try { dbg.enterDecision(28);
 
@@ -4126,7 +4125,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 1 :
                     dbg.enterAlt(1);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:71:9: in
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:71:9: in
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -4143,7 +4142,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 2 :
                     dbg.enterAlt(2);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:71:12: inafter
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:71:12: inafter
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -4160,7 +4159,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 3 :
                     dbg.enterAlt(3);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:71:20: inas
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:71:20: inas
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -4177,7 +4176,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 4 :
                     dbg.enterAlt(4);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:71:25: inbefore
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:71:25: inbefore
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -4194,7 +4193,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 5 :
                     dbg.enterAlt(5);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:71:34: inby
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:71:34: inby
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -4211,7 +4210,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 6 :
                     dbg.enterAlt(6);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:71:39: infor
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:71:39: infor
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -4228,7 +4227,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 7 :
                     dbg.enterAlt(7);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:71:45: infrom
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:71:45: infrom
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -4245,7 +4244,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 8 :
                     dbg.enterAlt(8);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:71:52: inin
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:71:52: inin
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -4262,7 +4261,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 9 :
                     dbg.enterAlt(9);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:71:57: ininto
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:71:57: ininto
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -4279,7 +4278,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 10 :
                     dbg.enterAlt(10);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:71:64: inof
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:71:64: inof
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -4296,7 +4295,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 11 :
                     dbg.enterAlt(11);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:71:69: inoff
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:71:69: inoff
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -4313,7 +4312,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 12 :
                     dbg.enterAlt(12);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:71:75: inon
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:71:75: inon
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -4330,7 +4329,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 13 :
                     dbg.enterAlt(13);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:71:80: inover
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:71:80: inover
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -4347,7 +4346,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 14 :
                     dbg.enterAlt(14);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:71:87: inunder
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:71:87: inunder
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -4364,7 +4363,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 15 :
                     dbg.enterAlt(15);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:71:95: invia
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:71:95: invia
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -4381,7 +4380,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 16 :
                     dbg.enterAlt(16);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:71:101: inwith
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:71:101: inwith
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -4398,7 +4397,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 17 :
                     dbg.enterAlt(17);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:71:108: inwithout
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:71:108: inwithout
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -4447,7 +4446,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "mmol"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:75:1: mmol : cd nnmol ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:75:1: mmol : cd nnmol ;
     public final ChemicalChunkerParser.mmol_return mmol() throws RecognitionException {
         ChemicalChunkerParser.mmol_return retval = new ChemicalChunkerParser.mmol_return();
         retval.start = input.LT(1);
@@ -4466,10 +4465,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(75, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:75:6: ( cd nnmol )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:75:6: ( cd nnmol )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:75:8: cd nnmol
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:75:8: cd nnmol
             {
             root_0 = (Object)adaptor.nil();
 
@@ -4523,7 +4522,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "gram"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:76:1: gram : cd nngram ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:76:1: gram : cd nngram ;
     public final ChemicalChunkerParser.gram_return gram() throws RecognitionException {
         ChemicalChunkerParser.gram_return retval = new ChemicalChunkerParser.gram_return();
         retval.start = input.LT(1);
@@ -4542,10 +4541,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(76, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:76:6: ( cd nngram )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:76:6: ( cd nngram )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:76:8: cd nngram
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:76:8: cd nngram
             {
             root_0 = (Object)adaptor.nil();
 
@@ -4599,7 +4598,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "percent"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:77:1: percent : cd nnpercent ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:77:1: percent : cd nnpercent ;
     public final ChemicalChunkerParser.percent_return percent() throws RecognitionException {
         ChemicalChunkerParser.percent_return retval = new ChemicalChunkerParser.percent_return();
         retval.start = input.LT(1);
@@ -4618,10 +4617,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(77, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:77:9: ( cd nnpercent )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:77:9: ( cd nnpercent )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:77:11: cd nnpercent
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:77:11: cd nnpercent
             {
             root_0 = (Object)adaptor.nil();
 
@@ -4675,7 +4674,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "volume"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:78:1: volume : cd nnvol ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:78:1: volume : cd nnvol ;
     public final ChemicalChunkerParser.volume_return volume() throws RecognitionException {
         ChemicalChunkerParser.volume_return retval = new ChemicalChunkerParser.volume_return();
         retval.start = input.LT(1);
@@ -4694,10 +4693,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(78, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:78:8: ( cd nnvol )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:78:8: ( cd nnvol )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:78:10: cd nnvol
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:78:10: cd nnvol
             {
             root_0 = (Object)adaptor.nil();
 
@@ -4751,7 +4750,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "measurements"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:80:1: measurements : ( mmol | gram | percent | volume );
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:80:1: measurements : ( mmol | gram | percent | volume );
     public final ChemicalChunkerParser.measurements_return measurements() throws RecognitionException {
         ChemicalChunkerParser.measurements_return retval = new ChemicalChunkerParser.measurements_return();
         retval.start = input.LT(1);
@@ -4774,7 +4773,7 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(80, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:81:2: ( mmol | gram | percent | volume )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:81:2: ( mmol | gram | percent | volume )
             int alt29=4;
             try { dbg.enterDecision(29);
 
@@ -4835,7 +4834,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 1 :
                     dbg.enterAlt(1);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:81:3: mmol
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:81:3: mmol
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -4852,7 +4851,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 2 :
                     dbg.enterAlt(2);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:81:8: gram
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:81:8: gram
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -4869,7 +4868,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 3 :
                     dbg.enterAlt(3);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:81:13: percent
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:81:13: percent
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -4886,7 +4885,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 4 :
                     dbg.enterAlt(4);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:81:21: volume
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:81:21: volume
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -4935,7 +4934,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "molecule"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:84:1: molecule : ( oscarcm )+ amount ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:84:1: molecule : ( oscarcm )+ amount ;
     public final ChemicalChunkerParser.molecule_return molecule() throws RecognitionException {
         ChemicalChunkerParser.molecule_return retval = new ChemicalChunkerParser.molecule_return();
         retval.start = input.LT(1);
@@ -4954,15 +4953,15 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(84, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:85:2: ( ( oscarcm )+ amount )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:85:2: ( ( oscarcm )+ amount )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:85:6: ( oscarcm )+ amount
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:85:6: ( oscarcm )+ amount
             {
             root_0 = (Object)adaptor.nil();
 
             dbg.location(85,6);
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:85:6: ( oscarcm )+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:85:6: ( oscarcm )+
             int cnt30=0;
             try { dbg.enterSubRule(30);
 
@@ -4984,7 +4983,7 @@ public class ChemicalChunkerParser extends DebugParser {
             	case 1 :
             	    dbg.enterAlt(1);
 
-            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:85:6: oscarcm
+            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:85:6: oscarcm
             	    {
             	    dbg.location(85,6);
             	    pushFollow(FOLLOW_oscarcm_in_molecule614);
@@ -5052,7 +5051,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "unnamedmolecule"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:86:1: unnamedmolecule : ( oscarcd )+ ( amount )* ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:86:1: unnamedmolecule : ( oscarcd )+ ( amount )* ;
     public final ChemicalChunkerParser.unnamedmolecule_return unnamedmolecule() throws RecognitionException {
         ChemicalChunkerParser.unnamedmolecule_return retval = new ChemicalChunkerParser.unnamedmolecule_return();
         retval.start = input.LT(1);
@@ -5071,15 +5070,15 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(86, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:87:2: ( ( oscarcd )+ ( amount )* )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:87:2: ( ( oscarcd )+ ( amount )* )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:87:4: ( oscarcd )+ ( amount )*
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:87:4: ( oscarcd )+ ( amount )*
             {
             root_0 = (Object)adaptor.nil();
 
             dbg.location(87,4);
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:87:4: ( oscarcd )+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:87:4: ( oscarcd )+
             int cnt31=0;
             try { dbg.enterSubRule(31);
 
@@ -5101,7 +5100,7 @@ public class ChemicalChunkerParser extends DebugParser {
             	case 1 :
             	    dbg.enterAlt(1);
 
-            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:87:4: oscarcd
+            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:87:4: oscarcd
             	    {
             	    dbg.location(87,4);
             	    pushFollow(FOLLOW_oscarcd_in_unnamedmolecule627);
@@ -5127,7 +5126,7 @@ public class ChemicalChunkerParser extends DebugParser {
             } finally {dbg.exitSubRule(31);}
 
             dbg.location(87,13);
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:87:13: ( amount )*
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:87:13: ( amount )*
             try { dbg.enterSubRule(32);
 
             loop32:
@@ -5148,7 +5147,7 @@ public class ChemicalChunkerParser extends DebugParser {
             	case 1 :
             	    dbg.enterAlt(1);
 
-            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:87:13: amount
+            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:87:13: amount
             	    {
             	    dbg.location(87,13);
             	    pushFollow(FOLLOW_amount_in_unnamedmolecule630);
@@ -5203,7 +5202,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "amount"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:89:1: amount : lrb measurements comma measurements rrb ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:89:1: amount : lrb measurements comma measurements rrb ;
     public final ChemicalChunkerParser.amount_return amount() throws RecognitionException {
         ChemicalChunkerParser.amount_return retval = new ChemicalChunkerParser.amount_return();
         retval.start = input.LT(1);
@@ -5228,10 +5227,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(89, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:89:9: ( lrb measurements comma measurements rrb )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:89:9: ( lrb measurements comma measurements rrb )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:89:11: lrb measurements comma measurements rrb
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:89:11: lrb measurements comma measurements rrb
             {
             root_0 = (Object)adaptor.nil();
 
@@ -5306,7 +5305,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "method"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:91:1: method : ( nngeneral | nn )? nnmethod ( oscarcd | cd )? ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:91:1: method : ( nngeneral | nn )? nnmethod ( oscarcd | cd )? ;
     public final ChemicalChunkerParser.method_return method() throws RecognitionException {
         ChemicalChunkerParser.method_return retval = new ChemicalChunkerParser.method_return();
         retval.start = input.LT(1);
@@ -5331,15 +5330,15 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(91, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:91:7: ( ( nngeneral | nn )? nnmethod ( oscarcd | cd )? )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:91:7: ( ( nngeneral | nn )? nnmethod ( oscarcd | cd )? )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:92:5: ( nngeneral | nn )? nnmethod ( oscarcd | cd )?
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:92:5: ( nngeneral | nn )? nnmethod ( oscarcd | cd )?
             {
             root_0 = (Object)adaptor.nil();
 
             dbg.location(92,5);
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:92:5: ( nngeneral | nn )?
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:92:5: ( nngeneral | nn )?
             int alt33=3;
             try { dbg.enterSubRule(33);
             try { dbg.enterDecision(33);
@@ -5358,7 +5357,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 1 :
                     dbg.enterAlt(1);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:92:6: nngeneral
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:92:6: nngeneral
                     {
                     dbg.location(92,6);
                     pushFollow(FOLLOW_nngeneral_in_method665);
@@ -5373,7 +5372,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 2 :
                     dbg.enterAlt(2);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:92:16: nn
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:92:16: nn
                     {
                     dbg.location(92,16);
                     pushFollow(FOLLOW_nn_in_method667);
@@ -5397,7 +5396,7 @@ public class ChemicalChunkerParser extends DebugParser {
 
             adaptor.addChild(root_0, nnmethod147.getTree());
             dbg.location(92,30);
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:92:30: ( oscarcd | cd )?
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:92:30: ( oscarcd | cd )?
             int alt34=3;
             try { dbg.enterSubRule(34);
             try { dbg.enterDecision(34);
@@ -5416,7 +5415,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 1 :
                     dbg.enterAlt(1);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:92:31: oscarcd
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:92:31: oscarcd
                     {
                     dbg.location(92,31);
                     pushFollow(FOLLOW_oscarcd_in_method674);
@@ -5431,7 +5430,7 @@ public class ChemicalChunkerParser extends DebugParser {
                 case 2 :
                     dbg.enterAlt(2);
 
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:92:39: cd
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:92:39: cd
                     {
                     dbg.location(92,39);
                     pushFollow(FOLLOW_cd_in_method676);
@@ -5483,7 +5482,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "oscarcd"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:95:1: oscarcd : 'OSCAR-CD' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:95:1: oscarcd : 'OSCAR-CD' TOKEN ;
     public final ChemicalChunkerParser.oscarcd_return oscarcd() throws RecognitionException {
         ChemicalChunkerParser.oscarcd_return retval = new ChemicalChunkerParser.oscarcd_return();
         retval.start = input.LT(1);
@@ -5502,10 +5501,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(95, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:95:8: ( 'OSCAR-CD' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:95:8: ( 'OSCAR-CD' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:95:9: 'OSCAR-CD' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:95:9: 'OSCAR-CD' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -5555,7 +5554,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "oscarcj"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:96:1: oscarcj : 'OSCAR-CJ' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:96:1: oscarcj : 'OSCAR-CJ' TOKEN ;
     public final ChemicalChunkerParser.oscarcj_return oscarcj() throws RecognitionException {
         ChemicalChunkerParser.oscarcj_return retval = new ChemicalChunkerParser.oscarcj_return();
         retval.start = input.LT(1);
@@ -5574,10 +5573,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(96, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:96:8: ( 'OSCAR-CJ' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:96:8: ( 'OSCAR-CJ' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:96:9: 'OSCAR-CJ' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:96:9: 'OSCAR-CJ' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -5627,7 +5626,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "oscaront"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:97:1: oscaront : 'OSCAR-ONT' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:97:1: oscaront : 'OSCAR-ONT' TOKEN ;
     public final ChemicalChunkerParser.oscaront_return oscaront() throws RecognitionException {
         ChemicalChunkerParser.oscaront_return retval = new ChemicalChunkerParser.oscaront_return();
         retval.start = input.LT(1);
@@ -5646,10 +5645,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(97, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:97:9: ( 'OSCAR-ONT' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:97:9: ( 'OSCAR-ONT' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:97:11: 'OSCAR-ONT' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:97:11: 'OSCAR-ONT' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -5699,7 +5698,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "tmunicode"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:98:1: tmunicode : 'TM-UNICODE' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:98:1: tmunicode : 'TM-UNICODE' TOKEN ;
     public final ChemicalChunkerParser.tmunicode_return tmunicode() throws RecognitionException {
         ChemicalChunkerParser.tmunicode_return retval = new ChemicalChunkerParser.tmunicode_return();
         retval.start = input.LT(1);
@@ -5718,10 +5717,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(98, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:98:10: ( 'TM-UNICODE' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:98:10: ( 'TM-UNICODE' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:98:11: 'TM-UNICODE' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:98:11: 'TM-UNICODE' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -5771,7 +5770,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "cdunicode"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:99:1: cdunicode : 'CD-UNICODE' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:99:1: cdunicode : 'CD-UNICODE' TOKEN ;
     public final ChemicalChunkerParser.cdunicode_return cdunicode() throws RecognitionException {
         ChemicalChunkerParser.cdunicode_return retval = new ChemicalChunkerParser.cdunicode_return();
         retval.start = input.LT(1);
@@ -5790,10 +5789,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(99, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:99:10: ( 'CD-UNICODE' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:99:10: ( 'CD-UNICODE' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:99:11: 'CD-UNICODE' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:99:11: 'CD-UNICODE' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -5843,7 +5842,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "inas"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:102:1: inas : 'IN-AS' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:102:1: inas : 'IN-AS' TOKEN ;
     public final ChemicalChunkerParser.inas_return inas() throws RecognitionException {
         ChemicalChunkerParser.inas_return retval = new ChemicalChunkerParser.inas_return();
         retval.start = input.LT(1);
@@ -5862,10 +5861,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(102, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:102:5: ( 'IN-AS' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:102:5: ( 'IN-AS' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:102:6: 'IN-AS' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:102:6: 'IN-AS' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -5915,7 +5914,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "inbefore"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:103:1: inbefore : 'IN-BEFORE' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:103:1: inbefore : 'IN-BEFORE' TOKEN ;
     public final ChemicalChunkerParser.inbefore_return inbefore() throws RecognitionException {
         ChemicalChunkerParser.inbefore_return retval = new ChemicalChunkerParser.inbefore_return();
         retval.start = input.LT(1);
@@ -5934,10 +5933,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(103, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:103:9: ( 'IN-BEFORE' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:103:9: ( 'IN-BEFORE' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:103:10: 'IN-BEFORE' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:103:10: 'IN-BEFORE' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -5987,7 +5986,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "inafter"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:104:1: inafter : 'IN-AFTER' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:104:1: inafter : 'IN-AFTER' TOKEN ;
     public final ChemicalChunkerParser.inafter_return inafter() throws RecognitionException {
         ChemicalChunkerParser.inafter_return retval = new ChemicalChunkerParser.inafter_return();
         retval.start = input.LT(1);
@@ -6006,10 +6005,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(104, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:104:8: ( 'IN-AFTER' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:104:8: ( 'IN-AFTER' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:104:9: 'IN-AFTER' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:104:9: 'IN-AFTER' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -6059,7 +6058,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "inin"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:105:1: inin : 'IN-IN' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:105:1: inin : 'IN-IN' TOKEN ;
     public final ChemicalChunkerParser.inin_return inin() throws RecognitionException {
         ChemicalChunkerParser.inin_return retval = new ChemicalChunkerParser.inin_return();
         retval.start = input.LT(1);
@@ -6078,10 +6077,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(105, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:105:5: ( 'IN-IN' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:105:5: ( 'IN-IN' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:105:6: 'IN-IN' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:105:6: 'IN-IN' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -6131,7 +6130,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "ininto"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:106:1: ininto : 'IN-INTO' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:106:1: ininto : 'IN-INTO' TOKEN ;
     public final ChemicalChunkerParser.ininto_return ininto() throws RecognitionException {
         ChemicalChunkerParser.ininto_return retval = new ChemicalChunkerParser.ininto_return();
         retval.start = input.LT(1);
@@ -6150,10 +6149,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(106, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:106:7: ( 'IN-INTO' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:106:7: ( 'IN-INTO' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:106:8: 'IN-INTO' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:106:8: 'IN-INTO' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -6203,7 +6202,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "inwith"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:107:1: inwith : 'IN-WITH' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:107:1: inwith : 'IN-WITH' TOKEN ;
     public final ChemicalChunkerParser.inwith_return inwith() throws RecognitionException {
         ChemicalChunkerParser.inwith_return retval = new ChemicalChunkerParser.inwith_return();
         retval.start = input.LT(1);
@@ -6222,10 +6221,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(107, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:107:7: ( 'IN-WITH' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:107:7: ( 'IN-WITH' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:107:8: 'IN-WITH' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:107:8: 'IN-WITH' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -6275,7 +6274,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "inwithout"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:108:1: inwithout : 'IN-WITHOUT' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:108:1: inwithout : 'IN-WITHOUT' TOKEN ;
     public final ChemicalChunkerParser.inwithout_return inwithout() throws RecognitionException {
         ChemicalChunkerParser.inwithout_return retval = new ChemicalChunkerParser.inwithout_return();
         retval.start = input.LT(1);
@@ -6294,10 +6293,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(108, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:108:10: ( 'IN-WITHOUT' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:108:10: ( 'IN-WITHOUT' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:108:11: 'IN-WITHOUT' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:108:11: 'IN-WITHOUT' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -6347,7 +6346,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "inby"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:109:1: inby : 'IN-BY' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:109:1: inby : 'IN-BY' TOKEN ;
     public final ChemicalChunkerParser.inby_return inby() throws RecognitionException {
         ChemicalChunkerParser.inby_return retval = new ChemicalChunkerParser.inby_return();
         retval.start = input.LT(1);
@@ -6366,10 +6365,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(109, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:109:5: ( 'IN-BY' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:109:5: ( 'IN-BY' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:109:6: 'IN-BY' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:109:6: 'IN-BY' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -6419,7 +6418,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "invia"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:110:1: invia : 'IN-VIA' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:110:1: invia : 'IN-VIA' TOKEN ;
     public final ChemicalChunkerParser.invia_return invia() throws RecognitionException {
         ChemicalChunkerParser.invia_return retval = new ChemicalChunkerParser.invia_return();
         retval.start = input.LT(1);
@@ -6438,10 +6437,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(110, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:110:6: ( 'IN-VIA' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:110:6: ( 'IN-VIA' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:110:7: 'IN-VIA' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:110:7: 'IN-VIA' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -6491,7 +6490,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "inof"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:111:1: inof : 'IN-OF' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:111:1: inof : 'IN-OF' TOKEN ;
     public final ChemicalChunkerParser.inof_return inof() throws RecognitionException {
         ChemicalChunkerParser.inof_return retval = new ChemicalChunkerParser.inof_return();
         retval.start = input.LT(1);
@@ -6510,10 +6509,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(111, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:111:5: ( 'IN-OF' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:111:5: ( 'IN-OF' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:111:6: 'IN-OF' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:111:6: 'IN-OF' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -6563,7 +6562,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "inon"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:112:1: inon : 'IN-ON' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:112:1: inon : 'IN-ON' TOKEN ;
     public final ChemicalChunkerParser.inon_return inon() throws RecognitionException {
         ChemicalChunkerParser.inon_return retval = new ChemicalChunkerParser.inon_return();
         retval.start = input.LT(1);
@@ -6582,10 +6581,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(112, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:112:5: ( 'IN-ON' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:112:5: ( 'IN-ON' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:112:6: 'IN-ON' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:112:6: 'IN-ON' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -6635,7 +6634,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "infor"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:113:1: infor : 'IN-FOR' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:113:1: infor : 'IN-FOR' TOKEN ;
     public final ChemicalChunkerParser.infor_return infor() throws RecognitionException {
         ChemicalChunkerParser.infor_return retval = new ChemicalChunkerParser.infor_return();
         retval.start = input.LT(1);
@@ -6654,10 +6653,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(113, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:113:6: ( 'IN-FOR' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:113:6: ( 'IN-FOR' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:113:7: 'IN-FOR' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:113:7: 'IN-FOR' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -6707,7 +6706,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "infrom"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:114:1: infrom : 'IN-FROM' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:114:1: infrom : 'IN-FROM' TOKEN ;
     public final ChemicalChunkerParser.infrom_return infrom() throws RecognitionException {
         ChemicalChunkerParser.infrom_return retval = new ChemicalChunkerParser.infrom_return();
         retval.start = input.LT(1);
@@ -6726,10 +6725,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(114, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:114:7: ( 'IN-FROM' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:114:7: ( 'IN-FROM' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:114:8: 'IN-FROM' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:114:8: 'IN-FROM' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -6779,7 +6778,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "inunder"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:115:1: inunder : 'IN-UNDER' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:115:1: inunder : 'IN-UNDER' TOKEN ;
     public final ChemicalChunkerParser.inunder_return inunder() throws RecognitionException {
         ChemicalChunkerParser.inunder_return retval = new ChemicalChunkerParser.inunder_return();
         retval.start = input.LT(1);
@@ -6798,10 +6797,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(115, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:115:8: ( 'IN-UNDER' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:115:8: ( 'IN-UNDER' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:115:9: 'IN-UNDER' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:115:9: 'IN-UNDER' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -6851,7 +6850,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "inover"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:116:1: inover : 'IN-OVER' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:116:1: inover : 'IN-OVER' TOKEN ;
     public final ChemicalChunkerParser.inover_return inover() throws RecognitionException {
         ChemicalChunkerParser.inover_return retval = new ChemicalChunkerParser.inover_return();
         retval.start = input.LT(1);
@@ -6870,10 +6869,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(116, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:116:7: ( 'IN-OVER' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:116:7: ( 'IN-OVER' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:116:8: 'IN-OVER' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:116:8: 'IN-OVER' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -6923,7 +6922,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "inoff"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:117:1: inoff : 'IN-OFF' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:117:1: inoff : 'IN-OFF' TOKEN ;
     public final ChemicalChunkerParser.inoff_return inoff() throws RecognitionException {
         ChemicalChunkerParser.inoff_return retval = new ChemicalChunkerParser.inoff_return();
         retval.start = input.LT(1);
@@ -6942,10 +6941,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(117, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:117:6: ( 'IN-OFF' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:117:6: ( 'IN-OFF' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:117:7: 'IN-OFF' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:117:7: 'IN-OFF' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -6995,7 +6994,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "nnstate"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:120:1: nnstate : 'NN-STATE' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:120:1: nnstate : 'NN-STATE' TOKEN ;
     public final ChemicalChunkerParser.nnstate_return nnstate() throws RecognitionException {
         ChemicalChunkerParser.nnstate_return retval = new ChemicalChunkerParser.nnstate_return();
         retval.start = input.LT(1);
@@ -7014,10 +7013,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(120, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:120:8: ( 'NN-STATE' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:120:8: ( 'NN-STATE' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:120:9: 'NN-STATE' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:120:9: 'NN-STATE' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -7067,7 +7066,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "nntime"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:121:1: nntime : 'NN-TIME' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:121:1: nntime : 'NN-TIME' TOKEN ;
     public final ChemicalChunkerParser.nntime_return nntime() throws RecognitionException {
         ChemicalChunkerParser.nntime_return retval = new ChemicalChunkerParser.nntime_return();
         retval.start = input.LT(1);
@@ -7086,10 +7085,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(121, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:121:7: ( 'NN-TIME' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:121:7: ( 'NN-TIME' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:121:8: 'NN-TIME' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:121:8: 'NN-TIME' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -7139,7 +7138,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "nngram"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:122:1: nngram : 'NN-GRAM' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:122:1: nngram : 'NN-GRAM' TOKEN ;
     public final ChemicalChunkerParser.nngram_return nngram() throws RecognitionException {
         ChemicalChunkerParser.nngram_return retval = new ChemicalChunkerParser.nngram_return();
         retval.start = input.LT(1);
@@ -7158,10 +7157,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(122, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:122:7: ( 'NN-GRAM' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:122:7: ( 'NN-GRAM' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:122:8: 'NN-GRAM' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:122:8: 'NN-GRAM' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -7211,7 +7210,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "nnmol"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:123:1: nnmol : 'NN-MOL' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:123:1: nnmol : 'NN-MOL' TOKEN ;
     public final ChemicalChunkerParser.nnmol_return nnmol() throws RecognitionException {
         ChemicalChunkerParser.nnmol_return retval = new ChemicalChunkerParser.nnmol_return();
         retval.start = input.LT(1);
@@ -7230,10 +7229,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(123, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:123:6: ( 'NN-MOL' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:123:6: ( 'NN-MOL' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:123:7: 'NN-MOL' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:123:7: 'NN-MOL' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -7283,7 +7282,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "nnatmosphere"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:124:1: nnatmosphere : 'NN-ATMOSPHERE' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:124:1: nnatmosphere : 'NN-ATMOSPHERE' TOKEN ;
     public final ChemicalChunkerParser.nnatmosphere_return nnatmosphere() throws RecognitionException {
         ChemicalChunkerParser.nnatmosphere_return retval = new ChemicalChunkerParser.nnatmosphere_return();
         retval.start = input.LT(1);
@@ -7302,10 +7301,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(124, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:124:13: ( 'NN-ATMOSPHERE' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:124:13: ( 'NN-ATMOSPHERE' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:124:14: 'NN-ATMOSPHERE' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:124:14: 'NN-ATMOSPHERE' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -7355,7 +7354,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "nneq"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:125:1: nneq : 'NN-EQ' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:125:1: nneq : 'NN-EQ' TOKEN ;
     public final ChemicalChunkerParser.nneq_return nneq() throws RecognitionException {
         ChemicalChunkerParser.nneq_return retval = new ChemicalChunkerParser.nneq_return();
         retval.start = input.LT(1);
@@ -7374,10 +7373,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(125, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:125:5: ( 'NN-EQ' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:125:5: ( 'NN-EQ' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:125:6: 'NN-EQ' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:125:6: 'NN-EQ' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -7427,7 +7426,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "nnvol"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:126:1: nnvol : 'NN-VOL' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:126:1: nnvol : 'NN-VOL' TOKEN ;
     public final ChemicalChunkerParser.nnvol_return nnvol() throws RecognitionException {
         ChemicalChunkerParser.nnvol_return retval = new ChemicalChunkerParser.nnvol_return();
         retval.start = input.LT(1);
@@ -7446,10 +7445,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(126, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:126:6: ( 'NN-VOL' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:126:6: ( 'NN-VOL' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:126:7: 'NN-VOL' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:126:7: 'NN-VOL' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -7499,7 +7498,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "nnchementity"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:127:1: nnchementity : 'NN-CHEMENTITY' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:127:1: nnchementity : 'NN-CHEMENTITY' TOKEN ;
     public final ChemicalChunkerParser.nnchementity_return nnchementity() throws RecognitionException {
         ChemicalChunkerParser.nnchementity_return retval = new ChemicalChunkerParser.nnchementity_return();
         retval.start = input.LT(1);
@@ -7518,10 +7517,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(127, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:127:13: ( 'NN-CHEMENTITY' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:127:13: ( 'NN-CHEMENTITY' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:127:14: 'NN-CHEMENTITY' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:127:14: 'NN-CHEMENTITY' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -7571,7 +7570,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "nntemp"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:128:1: nntemp : 'NN-TEMP' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:128:1: nntemp : 'NN-TEMP' TOKEN ;
     public final ChemicalChunkerParser.nntemp_return nntemp() throws RecognitionException {
         ChemicalChunkerParser.nntemp_return retval = new ChemicalChunkerParser.nntemp_return();
         retval.start = input.LT(1);
@@ -7590,10 +7589,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(128, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:128:7: ( 'NN-TEMP' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:128:7: ( 'NN-TEMP' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:128:8: 'NN-TEMP' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:128:8: 'NN-TEMP' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -7643,7 +7642,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "nnflash"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:129:1: nnflash : 'NN-FLASH' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:129:1: nnflash : 'NN-FLASH' TOKEN ;
     public final ChemicalChunkerParser.nnflash_return nnflash() throws RecognitionException {
         ChemicalChunkerParser.nnflash_return retval = new ChemicalChunkerParser.nnflash_return();
         retval.start = input.LT(1);
@@ -7662,10 +7661,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(129, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:129:8: ( 'NN-FLASH' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:129:8: ( 'NN-FLASH' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:129:9: 'NN-FLASH' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:129:9: 'NN-FLASH' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -7715,7 +7714,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "nngeneral"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:130:1: nngeneral : 'NN-GENERAL' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:130:1: nngeneral : 'NN-GENERAL' TOKEN ;
     public final ChemicalChunkerParser.nngeneral_return nngeneral() throws RecognitionException {
         ChemicalChunkerParser.nngeneral_return retval = new ChemicalChunkerParser.nngeneral_return();
         retval.start = input.LT(1);
@@ -7734,10 +7733,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(130, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:130:10: ( 'NN-GENERAL' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:130:10: ( 'NN-GENERAL' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:130:11: 'NN-GENERAL' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:130:11: 'NN-GENERAL' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -7787,7 +7786,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "nnmethod"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:131:1: nnmethod : 'NN-METHOD' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:131:1: nnmethod : 'NN-METHOD' TOKEN ;
     public final ChemicalChunkerParser.nnmethod_return nnmethod() throws RecognitionException {
         ChemicalChunkerParser.nnmethod_return retval = new ChemicalChunkerParser.nnmethod_return();
         retval.start = input.LT(1);
@@ -7806,10 +7805,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(131, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:131:9: ( 'NN-METHOD' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:131:9: ( 'NN-METHOD' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:131:10: 'NN-METHOD' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:131:10: 'NN-METHOD' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -7859,7 +7858,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "nnamount"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:132:1: nnamount : 'NN-AMOUNT' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:132:1: nnamount : 'NN-AMOUNT' TOKEN ;
     public final ChemicalChunkerParser.nnamount_return nnamount() throws RecognitionException {
         ChemicalChunkerParser.nnamount_return retval = new ChemicalChunkerParser.nnamount_return();
         retval.start = input.LT(1);
@@ -7878,10 +7877,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(132, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:132:9: ( 'NN-AMOUNT' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:132:9: ( 'NN-AMOUNT' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:132:10: 'NN-AMOUNT' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:132:10: 'NN-AMOUNT' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -7931,7 +7930,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "nnpressure"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:133:1: nnpressure : 'NN-PRESSURE' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:133:1: nnpressure : 'NN-PRESSURE' TOKEN ;
     public final ChemicalChunkerParser.nnpressure_return nnpressure() throws RecognitionException {
         ChemicalChunkerParser.nnpressure_return retval = new ChemicalChunkerParser.nnpressure_return();
         retval.start = input.LT(1);
@@ -7950,10 +7949,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(133, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:133:11: ( 'NN-PRESSURE' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:133:11: ( 'NN-PRESSURE' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:133:12: 'NN-PRESSURE' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:133:12: 'NN-PRESSURE' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -8003,7 +8002,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "nncolumn"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:134:1: nncolumn : 'NN-COLUMN' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:134:1: nncolumn : 'NN-COLUMN' TOKEN ;
     public final ChemicalChunkerParser.nncolumn_return nncolumn() throws RecognitionException {
         ChemicalChunkerParser.nncolumn_return retval = new ChemicalChunkerParser.nncolumn_return();
         retval.start = input.LT(1);
@@ -8022,10 +8021,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(134, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:134:9: ( 'NN-COLUMN' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:134:9: ( 'NN-COLUMN' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:134:10: 'NN-COLUMN' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:134:10: 'NN-COLUMN' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -8075,7 +8074,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "nnchromatography"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:135:1: nnchromatography : 'NN-CHROMATOGRAPHY' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:135:1: nnchromatography : 'NN-CHROMATOGRAPHY' TOKEN ;
     public final ChemicalChunkerParser.nnchromatography_return nnchromatography() throws RecognitionException {
         ChemicalChunkerParser.nnchromatography_return retval = new ChemicalChunkerParser.nnchromatography_return();
         retval.start = input.LT(1);
@@ -8094,10 +8093,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(135, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:135:17: ( 'NN-CHROMATOGRAPHY' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:135:17: ( 'NN-CHROMATOGRAPHY' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:135:18: 'NN-CHROMATOGRAPHY' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:135:18: 'NN-CHROMATOGRAPHY' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -8147,7 +8146,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "nnvacuum"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:136:1: nnvacuum : 'NN-VACUUM' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:136:1: nnvacuum : 'NN-VACUUM' TOKEN ;
     public final ChemicalChunkerParser.nnvacuum_return nnvacuum() throws RecognitionException {
         ChemicalChunkerParser.nnvacuum_return retval = new ChemicalChunkerParser.nnvacuum_return();
         retval.start = input.LT(1);
@@ -8166,10 +8165,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(136, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:136:9: ( 'NN-VACUUM' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:136:9: ( 'NN-VACUUM' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:136:10: 'NN-VACUUM' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:136:10: 'NN-VACUUM' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -8219,7 +8218,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "nncycle"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:137:1: nncycle : 'NN-CYCLE' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:137:1: nncycle : 'NN-CYCLE' TOKEN ;
     public final ChemicalChunkerParser.nncycle_return nncycle() throws RecognitionException {
         ChemicalChunkerParser.nncycle_return retval = new ChemicalChunkerParser.nncycle_return();
         retval.start = input.LT(1);
@@ -8238,10 +8237,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(137, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:137:8: ( 'NN-CYCLE' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:137:8: ( 'NN-CYCLE' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:137:9: 'NN-CYCLE' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:137:9: 'NN-CYCLE' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -8291,7 +8290,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "nntimes"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:138:1: nntimes : 'NN-TIMES' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:138:1: nntimes : 'NN-TIMES' TOKEN ;
     public final ChemicalChunkerParser.nntimes_return nntimes() throws RecognitionException {
         ChemicalChunkerParser.nntimes_return retval = new ChemicalChunkerParser.nntimes_return();
         retval.start = input.LT(1);
@@ -8310,10 +8309,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(138, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:138:8: ( 'NN-TIMES' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:138:8: ( 'NN-TIMES' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:138:9: 'NN-TIMES' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:138:9: 'NN-TIMES' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -8363,7 +8362,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "oscarcm"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:141:1: oscarcm : 'OSCAR-CM' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:141:1: oscarcm : 'OSCAR-CM' TOKEN ;
     public final ChemicalChunkerParser.oscarcm_return oscarcm() throws RecognitionException {
         ChemicalChunkerParser.oscarcm_return retval = new ChemicalChunkerParser.oscarcm_return();
         retval.start = input.LT(1);
@@ -8382,10 +8381,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(141, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:141:8: ( 'OSCAR-CM' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:141:8: ( 'OSCAR-CM' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:141:9: 'OSCAR-CM' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:141:9: 'OSCAR-CM' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -8435,7 +8434,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "vbuse"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:144:1: vbuse : 'VB-USE' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:144:1: vbuse : 'VB-USE' TOKEN ;
     public final ChemicalChunkerParser.vbuse_return vbuse() throws RecognitionException {
         ChemicalChunkerParser.vbuse_return retval = new ChemicalChunkerParser.vbuse_return();
         retval.start = input.LT(1);
@@ -8454,10 +8453,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(144, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:144:6: ( 'VB-USE' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:144:6: ( 'VB-USE' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:144:7: 'VB-USE' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:144:7: 'VB-USE' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -8507,7 +8506,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "vbchange"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:145:1: vbchange : 'VB-CHANGE' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:145:1: vbchange : 'VB-CHANGE' TOKEN ;
     public final ChemicalChunkerParser.vbchange_return vbchange() throws RecognitionException {
         ChemicalChunkerParser.vbchange_return retval = new ChemicalChunkerParser.vbchange_return();
         retval.start = input.LT(1);
@@ -8526,10 +8525,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(145, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:145:9: ( 'VB-CHANGE' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:145:9: ( 'VB-CHANGE' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:145:10: 'VB-CHANGE' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:145:10: 'VB-CHANGE' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -8579,7 +8578,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "vbsubmerge"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:146:1: vbsubmerge : 'VB-SUBMERGE' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:146:1: vbsubmerge : 'VB-SUBMERGE' TOKEN ;
     public final ChemicalChunkerParser.vbsubmerge_return vbsubmerge() throws RecognitionException {
         ChemicalChunkerParser.vbsubmerge_return retval = new ChemicalChunkerParser.vbsubmerge_return();
         retval.start = input.LT(1);
@@ -8598,10 +8597,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(146, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:146:11: ( 'VB-SUBMERGE' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:146:11: ( 'VB-SUBMERGE' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:146:12: 'VB-SUBMERGE' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:146:12: 'VB-SUBMERGE' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -8651,7 +8650,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "vbsubject"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:147:1: vbsubject : 'VB-SUBJECT' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:147:1: vbsubject : 'VB-SUBJECT' TOKEN ;
     public final ChemicalChunkerParser.vbsubject_return vbsubject() throws RecognitionException {
         ChemicalChunkerParser.vbsubject_return retval = new ChemicalChunkerParser.vbsubject_return();
         retval.start = input.LT(1);
@@ -8670,10 +8669,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(147, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:147:10: ( 'VB-SUBJECT' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:147:10: ( 'VB-SUBJECT' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:147:11: 'VB-SUBJECT' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:147:11: 'VB-SUBJECT' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -8723,7 +8722,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "nnadd"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:150:1: nnadd : 'NN-ADD' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:150:1: nnadd : 'NN-ADD' TOKEN ;
     public final ChemicalChunkerParser.nnadd_return nnadd() throws RecognitionException {
         ChemicalChunkerParser.nnadd_return retval = new ChemicalChunkerParser.nnadd_return();
         retval.start = input.LT(1);
@@ -8742,10 +8741,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(150, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:150:6: ( 'NN-ADD' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:150:6: ( 'NN-ADD' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:150:7: 'NN-ADD' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:150:7: 'NN-ADD' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -8795,7 +8794,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "nnmixture"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:151:1: nnmixture : 'NN-MIXTURE' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:151:1: nnmixture : 'NN-MIXTURE' TOKEN ;
     public final ChemicalChunkerParser.nnmixture_return nnmixture() throws RecognitionException {
         ChemicalChunkerParser.nnmixture_return retval = new ChemicalChunkerParser.nnmixture_return();
         retval.start = input.LT(1);
@@ -8814,10 +8813,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(151, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:151:10: ( 'NN-MIXTURE' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:151:10: ( 'NN-MIXTURE' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:151:11: 'NN-MIXTURE' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:151:11: 'NN-MIXTURE' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -8867,7 +8866,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "vbadd"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:152:1: vbadd : 'VB-ADD' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:152:1: vbadd : 'VB-ADD' TOKEN ;
     public final ChemicalChunkerParser.vbadd_return vbadd() throws RecognitionException {
         ChemicalChunkerParser.vbadd_return retval = new ChemicalChunkerParser.vbadd_return();
         retval.start = input.LT(1);
@@ -8886,10 +8885,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(152, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:152:6: ( 'VB-ADD' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:152:6: ( 'VB-ADD' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:152:7: 'VB-ADD' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:152:7: 'VB-ADD' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -8939,7 +8938,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "vbcharge"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:153:1: vbcharge : 'VB-CHARGE' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:153:1: vbcharge : 'VB-CHARGE' TOKEN ;
     public final ChemicalChunkerParser.vbcharge_return vbcharge() throws RecognitionException {
         ChemicalChunkerParser.vbcharge_return retval = new ChemicalChunkerParser.vbcharge_return();
         retval.start = input.LT(1);
@@ -8958,10 +8957,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(153, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:153:9: ( 'VB-CHARGE' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:153:9: ( 'VB-CHARGE' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:153:10: 'VB-CHARGE' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:153:10: 'VB-CHARGE' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -9011,7 +9010,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "vbcontain"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:154:1: vbcontain : 'VB-CONTAIN' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:154:1: vbcontain : 'VB-CONTAIN' TOKEN ;
     public final ChemicalChunkerParser.vbcontain_return vbcontain() throws RecognitionException {
         ChemicalChunkerParser.vbcontain_return retval = new ChemicalChunkerParser.vbcontain_return();
         retval.start = input.LT(1);
@@ -9030,10 +9029,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(154, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:154:10: ( 'VB-CONTAIN' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:154:10: ( 'VB-CONTAIN' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:154:11: 'VB-CONTAIN' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:154:11: 'VB-CONTAIN' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -9083,7 +9082,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "vbdrop"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:155:1: vbdrop : 'VB-DROP' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:155:1: vbdrop : 'VB-DROP' TOKEN ;
     public final ChemicalChunkerParser.vbdrop_return vbdrop() throws RecognitionException {
         ChemicalChunkerParser.vbdrop_return retval = new ChemicalChunkerParser.vbdrop_return();
         retval.start = input.LT(1);
@@ -9102,10 +9101,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(155, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:155:7: ( 'VB-DROP' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:155:7: ( 'VB-DROP' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:155:8: 'VB-DROP' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:155:8: 'VB-DROP' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -9155,7 +9154,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "vbfill"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:156:1: vbfill : 'VB-FILL' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:156:1: vbfill : 'VB-FILL' TOKEN ;
     public final ChemicalChunkerParser.vbfill_return vbfill() throws RecognitionException {
         ChemicalChunkerParser.vbfill_return retval = new ChemicalChunkerParser.vbfill_return();
         retval.start = input.LT(1);
@@ -9174,10 +9173,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(156, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:156:7: ( 'VB-FILL' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:156:7: ( 'VB-FILL' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:156:8: 'VB-FILL' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:156:8: 'VB-FILL' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -9227,7 +9226,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "vbsuspend"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:157:1: vbsuspend : 'VB-SUSPEND' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:157:1: vbsuspend : 'VB-SUSPEND' TOKEN ;
     public final ChemicalChunkerParser.vbsuspend_return vbsuspend() throws RecognitionException {
         ChemicalChunkerParser.vbsuspend_return retval = new ChemicalChunkerParser.vbsuspend_return();
         retval.start = input.LT(1);
@@ -9246,10 +9245,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(157, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:157:10: ( 'VB-SUSPEND' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:157:10: ( 'VB-SUSPEND' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:157:11: 'VB-SUSPEND' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:157:11: 'VB-SUSPEND' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -9299,7 +9298,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "vbtreat"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:158:1: vbtreat : 'VB-TREAT' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:158:1: vbtreat : 'VB-TREAT' TOKEN ;
     public final ChemicalChunkerParser.vbtreat_return vbtreat() throws RecognitionException {
         ChemicalChunkerParser.vbtreat_return retval = new ChemicalChunkerParser.vbtreat_return();
         retval.start = input.LT(1);
@@ -9318,10 +9317,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(158, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:158:8: ( 'VB-TREAT' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:158:8: ( 'VB-TREAT' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:158:9: 'VB-TREAT' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:158:9: 'VB-TREAT' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -9371,7 +9370,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "vbapparatus"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:161:1: vbapparatus : 'VB-APPARATUS' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:161:1: vbapparatus : 'VB-APPARATUS' TOKEN ;
     public final ChemicalChunkerParser.vbapparatus_return vbapparatus() throws RecognitionException {
         ChemicalChunkerParser.vbapparatus_return retval = new ChemicalChunkerParser.vbapparatus_return();
         retval.start = input.LT(1);
@@ -9390,10 +9389,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(161, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:161:12: ( 'VB-APPARATUS' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:161:12: ( 'VB-APPARATUS' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:161:13: 'VB-APPARATUS' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:161:13: 'VB-APPARATUS' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -9443,7 +9442,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "nnapparatus"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:162:1: nnapparatus : 'NN-APPARATUS' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:162:1: nnapparatus : 'NN-APPARATUS' TOKEN ;
     public final ChemicalChunkerParser.nnapparatus_return nnapparatus() throws RecognitionException {
         ChemicalChunkerParser.nnapparatus_return retval = new ChemicalChunkerParser.nnapparatus_return();
         retval.start = input.LT(1);
@@ -9462,10 +9461,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(162, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:162:12: ( 'NN-APPARATUS' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:162:12: ( 'NN-APPARATUS' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:162:13: 'NN-APPARATUS' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:162:13: 'NN-APPARATUS' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -9515,7 +9514,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "vbconcentrate"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:165:1: vbconcentrate : 'VB-CONCENTRATE' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:165:1: vbconcentrate : 'VB-CONCENTRATE' TOKEN ;
     public final ChemicalChunkerParser.vbconcentrate_return vbconcentrate() throws RecognitionException {
         ChemicalChunkerParser.vbconcentrate_return retval = new ChemicalChunkerParser.vbconcentrate_return();
         retval.start = input.LT(1);
@@ -9534,10 +9533,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(165, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:165:14: ( 'VB-CONCENTRATE' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:165:14: ( 'VB-CONCENTRATE' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:165:15: 'VB-CONCENTRATE' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:165:15: 'VB-CONCENTRATE' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -9587,7 +9586,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "nnconcentrate"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:166:1: nnconcentrate : 'NN-CONCENTRATE' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:166:1: nnconcentrate : 'NN-CONCENTRATE' TOKEN ;
     public final ChemicalChunkerParser.nnconcentrate_return nnconcentrate() throws RecognitionException {
         ChemicalChunkerParser.nnconcentrate_return retval = new ChemicalChunkerParser.nnconcentrate_return();
         retval.start = input.LT(1);
@@ -9606,10 +9605,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(166, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:166:14: ( 'NN-CONCENTRATE' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:166:14: ( 'NN-CONCENTRATE' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:166:15: 'NN-CONCENTRATE' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:166:15: 'NN-CONCENTRATE' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -9659,7 +9658,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "vbcool"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:169:1: vbcool : 'VB-COOL' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:169:1: vbcool : 'VB-COOL' TOKEN ;
     public final ChemicalChunkerParser.vbcool_return vbcool() throws RecognitionException {
         ChemicalChunkerParser.vbcool_return retval = new ChemicalChunkerParser.vbcool_return();
         retval.start = input.LT(1);
@@ -9678,10 +9677,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(169, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:169:7: ( 'VB-COOL' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:169:7: ( 'VB-COOL' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:169:8: 'VB-COOL' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:169:8: 'VB-COOL' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -9731,7 +9730,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "vbdegass"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:172:1: vbdegass : 'VB-DEGASS' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:172:1: vbdegass : 'VB-DEGASS' TOKEN ;
     public final ChemicalChunkerParser.vbdegass_return vbdegass() throws RecognitionException {
         ChemicalChunkerParser.vbdegass_return retval = new ChemicalChunkerParser.vbdegass_return();
         retval.start = input.LT(1);
@@ -9750,10 +9749,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(172, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:172:9: ( 'VB-DEGASS' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:172:9: ( 'VB-DEGASS' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:172:10: 'VB-DEGASS' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:172:10: 'VB-DEGASS' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -9803,7 +9802,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "vbdissolve"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:175:1: vbdissolve : 'VB-DISSOLVE' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:175:1: vbdissolve : 'VB-DISSOLVE' TOKEN ;
     public final ChemicalChunkerParser.vbdissolve_return vbdissolve() throws RecognitionException {
         ChemicalChunkerParser.vbdissolve_return retval = new ChemicalChunkerParser.vbdissolve_return();
         retval.start = input.LT(1);
@@ -9822,10 +9821,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(175, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:175:11: ( 'VB-DISSOLVE' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:175:11: ( 'VB-DISSOLVE' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:175:12: 'VB-DISSOLVE' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:175:12: 'VB-DISSOLVE' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -9875,7 +9874,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "vbdry"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:178:1: vbdry : 'VB-DRY' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:178:1: vbdry : 'VB-DRY' TOKEN ;
     public final ChemicalChunkerParser.vbdry_return vbdry() throws RecognitionException {
         ChemicalChunkerParser.vbdry_return retval = new ChemicalChunkerParser.vbdry_return();
         retval.start = input.LT(1);
@@ -9894,10 +9893,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(178, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:178:6: ( 'VB-DRY' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:178:6: ( 'VB-DRY' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:178:7: 'VB-DRY' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:178:7: 'VB-DRY' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -9947,7 +9946,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "nndry"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:179:1: nndry : 'NN-DRY' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:179:1: nndry : 'NN-DRY' TOKEN ;
     public final ChemicalChunkerParser.nndry_return nndry() throws RecognitionException {
         ChemicalChunkerParser.nndry_return retval = new ChemicalChunkerParser.nndry_return();
         retval.start = input.LT(1);
@@ -9966,10 +9965,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(179, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:179:6: ( 'NN-DRY' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:179:6: ( 'NN-DRY' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:179:7: 'NN-DRY' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:179:7: 'NN-DRY' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -10019,7 +10018,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "vbextract"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:182:1: vbextract : 'VB-EXTRACT' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:182:1: vbextract : 'VB-EXTRACT' TOKEN ;
     public final ChemicalChunkerParser.vbextract_return vbextract() throws RecognitionException {
         ChemicalChunkerParser.vbextract_return retval = new ChemicalChunkerParser.vbextract_return();
         retval.start = input.LT(1);
@@ -10038,10 +10037,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(182, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:182:10: ( 'VB-EXTRACT' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:182:10: ( 'VB-EXTRACT' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:182:11: 'VB-EXTRACT' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:182:11: 'VB-EXTRACT' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -10091,7 +10090,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "nnextract"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:183:1: nnextract : 'NN-EXTRACT' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:183:1: nnextract : 'NN-EXTRACT' TOKEN ;
     public final ChemicalChunkerParser.nnextract_return nnextract() throws RecognitionException {
         ChemicalChunkerParser.nnextract_return retval = new ChemicalChunkerParser.nnextract_return();
         retval.start = input.LT(1);
@@ -10110,10 +10109,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(183, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:183:10: ( 'NN-EXTRACT' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:183:10: ( 'NN-EXTRACT' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:183:11: 'NN-EXTRACT' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:183:11: 'NN-EXTRACT' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -10163,7 +10162,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "vbfilter"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:186:1: vbfilter : 'VB-FILTER' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:186:1: vbfilter : 'VB-FILTER' TOKEN ;
     public final ChemicalChunkerParser.vbfilter_return vbfilter() throws RecognitionException {
         ChemicalChunkerParser.vbfilter_return retval = new ChemicalChunkerParser.vbfilter_return();
         retval.start = input.LT(1);
@@ -10182,10 +10181,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(186, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:186:9: ( 'VB-FILTER' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:186:9: ( 'VB-FILTER' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:186:10: 'VB-FILTER' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:186:10: 'VB-FILTER' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -10235,7 +10234,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "nnfilter"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:187:1: nnfilter : 'NN-FILTER' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:187:1: nnfilter : 'NN-FILTER' TOKEN ;
     public final ChemicalChunkerParser.nnfilter_return nnfilter() throws RecognitionException {
         ChemicalChunkerParser.nnfilter_return retval = new ChemicalChunkerParser.nnfilter_return();
         retval.start = input.LT(1);
@@ -10254,10 +10253,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(187, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:187:9: ( 'NN-FILTER' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:187:9: ( 'NN-FILTER' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:187:10: 'NN-FILTER' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:187:10: 'NN-FILTER' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -10307,7 +10306,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "vbheat"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:190:1: vbheat : 'VB-HEAT' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:190:1: vbheat : 'VB-HEAT' TOKEN ;
     public final ChemicalChunkerParser.vbheat_return vbheat() throws RecognitionException {
         ChemicalChunkerParser.vbheat_return retval = new ChemicalChunkerParser.vbheat_return();
         retval.start = input.LT(1);
@@ -10326,10 +10325,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(190, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:190:7: ( 'VB-HEAT' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:190:7: ( 'VB-HEAT' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:190:8: 'VB-HEAT' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:190:8: 'VB-HEAT' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -10379,7 +10378,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "vbincrease"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:191:1: vbincrease : 'VB-INCREASE' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:191:1: vbincrease : 'VB-INCREASE' TOKEN ;
     public final ChemicalChunkerParser.vbincrease_return vbincrease() throws RecognitionException {
         ChemicalChunkerParser.vbincrease_return retval = new ChemicalChunkerParser.vbincrease_return();
         retval.start = input.LT(1);
@@ -10398,10 +10397,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(191, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:191:11: ( 'VB-INCREASE' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:191:11: ( 'VB-INCREASE' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:191:12: 'VB-INCREASE' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:191:12: 'VB-INCREASE' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -10451,7 +10450,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "vbpartition"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:194:1: vbpartition : 'VB-PARTITION' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:194:1: vbpartition : 'VB-PARTITION' TOKEN ;
     public final ChemicalChunkerParser.vbpartition_return vbpartition() throws RecognitionException {
         ChemicalChunkerParser.vbpartition_return retval = new ChemicalChunkerParser.vbpartition_return();
         retval.start = input.LT(1);
@@ -10470,10 +10469,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(194, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:194:12: ( 'VB-PARTITION' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:194:12: ( 'VB-PARTITION' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:194:13: 'VB-PARTITION' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:194:13: 'VB-PARTITION' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -10523,7 +10522,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "vbprecipitate"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:197:1: vbprecipitate : 'VB-PRECIPITATE' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:197:1: vbprecipitate : 'VB-PRECIPITATE' TOKEN ;
     public final ChemicalChunkerParser.vbprecipitate_return vbprecipitate() throws RecognitionException {
         ChemicalChunkerParser.vbprecipitate_return retval = new ChemicalChunkerParser.vbprecipitate_return();
         retval.start = input.LT(1);
@@ -10542,10 +10541,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(197, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:197:14: ( 'VB-PRECIPITATE' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:197:14: ( 'VB-PRECIPITATE' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:197:15: 'VB-PRECIPITATE' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:197:15: 'VB-PRECIPITATE' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -10595,7 +10594,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "nnprecipitate"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:198:1: nnprecipitate : 'NN-PRECIPITATE' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:198:1: nnprecipitate : 'NN-PRECIPITATE' TOKEN ;
     public final ChemicalChunkerParser.nnprecipitate_return nnprecipitate() throws RecognitionException {
         ChemicalChunkerParser.nnprecipitate_return retval = new ChemicalChunkerParser.nnprecipitate_return();
         retval.start = input.LT(1);
@@ -10614,10 +10613,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(198, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:198:14: ( 'NN-PRECIPITATE' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:198:14: ( 'NN-PRECIPITATE' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:198:15: 'NN-PRECIPITATE' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:198:15: 'NN-PRECIPITATE' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -10667,7 +10666,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "vbpurify"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:201:1: vbpurify : 'VB-PURIFY' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:201:1: vbpurify : 'VB-PURIFY' TOKEN ;
     public final ChemicalChunkerParser.vbpurify_return vbpurify() throws RecognitionException {
         ChemicalChunkerParser.vbpurify_return retval = new ChemicalChunkerParser.vbpurify_return();
         retval.start = input.LT(1);
@@ -10686,10 +10685,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(201, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:201:9: ( 'VB-PURIFY' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:201:9: ( 'VB-PURIFY' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:201:10: 'VB-PURIFY' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:201:10: 'VB-PURIFY' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -10739,7 +10738,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "nnpurify"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:202:1: nnpurify : 'NN-PURIFY' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:202:1: nnpurify : 'NN-PURIFY' TOKEN ;
     public final ChemicalChunkerParser.nnpurify_return nnpurify() throws RecognitionException {
         ChemicalChunkerParser.nnpurify_return retval = new ChemicalChunkerParser.nnpurify_return();
         retval.start = input.LT(1);
@@ -10758,10 +10757,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(202, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:202:9: ( 'NN-PURIFY' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:202:9: ( 'NN-PURIFY' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:202:10: 'NN-PURIFY' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:202:10: 'NN-PURIFY' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -10811,7 +10810,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "vbquench"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:205:1: vbquench : 'VB-QUENCH' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:205:1: vbquench : 'VB-QUENCH' TOKEN ;
     public final ChemicalChunkerParser.vbquench_return vbquench() throws RecognitionException {
         ChemicalChunkerParser.vbquench_return retval = new ChemicalChunkerParser.vbquench_return();
         retval.start = input.LT(1);
@@ -10830,10 +10829,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(205, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:205:9: ( 'VB-QUENCH' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:205:9: ( 'VB-QUENCH' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:205:10: 'VB-QUENCH' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:205:10: 'VB-QUENCH' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -10883,7 +10882,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "vbrecover"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:208:1: vbrecover : 'VB-RECOVER' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:208:1: vbrecover : 'VB-RECOVER' TOKEN ;
     public final ChemicalChunkerParser.vbrecover_return vbrecover() throws RecognitionException {
         ChemicalChunkerParser.vbrecover_return retval = new ChemicalChunkerParser.vbrecover_return();
         retval.start = input.LT(1);
@@ -10902,10 +10901,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(208, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:208:10: ( 'VB-RECOVER' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:208:10: ( 'VB-RECOVER' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:208:11: 'VB-RECOVER' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:208:11: 'VB-RECOVER' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -10955,7 +10954,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "vbremove"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:211:1: vbremove : 'VB-REMOVE' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:211:1: vbremove : 'VB-REMOVE' TOKEN ;
     public final ChemicalChunkerParser.vbremove_return vbremove() throws RecognitionException {
         ChemicalChunkerParser.vbremove_return retval = new ChemicalChunkerParser.vbremove_return();
         retval.start = input.LT(1);
@@ -10974,10 +10973,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(211, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:211:9: ( 'VB-REMOVE' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:211:9: ( 'VB-REMOVE' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:211:10: 'VB-REMOVE' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:211:10: 'VB-REMOVE' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -11027,7 +11026,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "nnremove"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:212:1: nnremove : 'NN-REMOVE' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:212:1: nnremove : 'NN-REMOVE' TOKEN ;
     public final ChemicalChunkerParser.nnremove_return nnremove() throws RecognitionException {
         ChemicalChunkerParser.nnremove_return retval = new ChemicalChunkerParser.nnremove_return();
         retval.start = input.LT(1);
@@ -11046,10 +11045,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(212, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:212:9: ( 'NN-REMOVE' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:212:9: ( 'NN-REMOVE' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:212:10: 'NN-REMOVE' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:212:10: 'NN-REMOVE' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -11099,7 +11098,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "vbstir"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:215:1: vbstir : 'VB-STIR' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:215:1: vbstir : 'VB-STIR' TOKEN ;
     public final ChemicalChunkerParser.vbstir_return vbstir() throws RecognitionException {
         ChemicalChunkerParser.vbstir_return retval = new ChemicalChunkerParser.vbstir_return();
         retval.start = input.LT(1);
@@ -11118,10 +11117,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(215, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:215:7: ( 'VB-STIR' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:215:7: ( 'VB-STIR' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:215:8: 'VB-STIR' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:215:8: 'VB-STIR' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -11171,7 +11170,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "vbsynthesize"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:218:1: vbsynthesize : 'VB-SYNTHESIZE' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:218:1: vbsynthesize : 'VB-SYNTHESIZE' TOKEN ;
     public final ChemicalChunkerParser.vbsynthesize_return vbsynthesize() throws RecognitionException {
         ChemicalChunkerParser.vbsynthesize_return retval = new ChemicalChunkerParser.vbsynthesize_return();
         retval.start = input.LT(1);
@@ -11190,10 +11189,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(218, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:218:13: ( 'VB-SYNTHESIZE' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:218:13: ( 'VB-SYNTHESIZE' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:218:14: 'VB-SYNTHESIZE' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:218:14: 'VB-SYNTHESIZE' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -11243,7 +11242,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "nnsynthesize"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:219:1: nnsynthesize : 'NN-SYNTHESIZE' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:219:1: nnsynthesize : 'NN-SYNTHESIZE' TOKEN ;
     public final ChemicalChunkerParser.nnsynthesize_return nnsynthesize() throws RecognitionException {
         ChemicalChunkerParser.nnsynthesize_return retval = new ChemicalChunkerParser.nnsynthesize_return();
         retval.start = input.LT(1);
@@ -11262,10 +11261,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(219, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:219:13: ( 'NN-SYNTHESIZE' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:219:13: ( 'NN-SYNTHESIZE' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:219:14: 'NN-SYNTHESIZE' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:219:14: 'NN-SYNTHESIZE' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -11315,7 +11314,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "vbwait"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:222:1: vbwait : 'VB-WAIT' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:222:1: vbwait : 'VB-WAIT' TOKEN ;
     public final ChemicalChunkerParser.vbwait_return vbwait() throws RecognitionException {
         ChemicalChunkerParser.vbwait_return retval = new ChemicalChunkerParser.vbwait_return();
         retval.start = input.LT(1);
@@ -11334,10 +11333,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(222, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:222:7: ( 'VB-WAIT' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:222:7: ( 'VB-WAIT' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:222:8: 'VB-WAIT' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:222:8: 'VB-WAIT' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -11387,7 +11386,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "vbwash"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:225:1: vbwash : 'VB-WASH' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:225:1: vbwash : 'VB-WASH' TOKEN ;
     public final ChemicalChunkerParser.vbwash_return vbwash() throws RecognitionException {
         ChemicalChunkerParser.vbwash_return retval = new ChemicalChunkerParser.vbwash_return();
         retval.start = input.LT(1);
@@ -11406,10 +11405,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(225, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:225:7: ( 'VB-WASH' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:225:7: ( 'VB-WASH' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:225:8: 'VB-WASH' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:225:8: 'VB-WASH' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -11459,7 +11458,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "vbyield"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:228:1: vbyield : 'VB-YIELD' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:228:1: vbyield : 'VB-YIELD' TOKEN ;
     public final ChemicalChunkerParser.vbyield_return vbyield() throws RecognitionException {
         ChemicalChunkerParser.vbyield_return retval = new ChemicalChunkerParser.vbyield_return();
         retval.start = input.LT(1);
@@ -11478,10 +11477,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(228, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:228:8: ( 'VB-YIELD' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:228:8: ( 'VB-YIELD' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:228:9: 'VB-YIELD' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:228:9: 'VB-YIELD' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -11531,7 +11530,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "colon"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:231:1: colon : 'COLON' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:231:1: colon : 'COLON' TOKEN ;
     public final ChemicalChunkerParser.colon_return colon() throws RecognitionException {
         ChemicalChunkerParser.colon_return retval = new ChemicalChunkerParser.colon_return();
         retval.start = input.LT(1);
@@ -11550,10 +11549,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(231, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:231:6: ( 'COLON' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:231:6: ( 'COLON' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:231:7: 'COLON' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:231:7: 'COLON' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -11603,7 +11602,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "comma"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:232:1: comma : 'COMMA' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:232:1: comma : 'COMMA' TOKEN ;
     public final ChemicalChunkerParser.comma_return comma() throws RecognitionException {
         ChemicalChunkerParser.comma_return retval = new ChemicalChunkerParser.comma_return();
         retval.start = input.LT(1);
@@ -11622,10 +11621,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(232, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:232:6: ( 'COMMA' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:232:6: ( 'COMMA' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:232:7: 'COMMA' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:232:7: 'COMMA' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -11675,7 +11674,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "apost"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:233:1: apost : 'APOST' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:233:1: apost : 'APOST' TOKEN ;
     public final ChemicalChunkerParser.apost_return apost() throws RecognitionException {
         ChemicalChunkerParser.apost_return retval = new ChemicalChunkerParser.apost_return();
         retval.start = input.LT(1);
@@ -11694,10 +11693,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(233, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:233:6: ( 'APOST' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:233:6: ( 'APOST' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:233:7: 'APOST' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:233:7: 'APOST' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -11747,7 +11746,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "neg"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:234:1: neg : 'NEG' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:234:1: neg : 'NEG' TOKEN ;
     public final ChemicalChunkerParser.neg_return neg() throws RecognitionException {
         ChemicalChunkerParser.neg_return retval = new ChemicalChunkerParser.neg_return();
         retval.start = input.LT(1);
@@ -11766,10 +11765,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(234, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:234:4: ( 'NEG' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:234:4: ( 'NEG' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:234:5: 'NEG' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:234:5: 'NEG' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -11819,7 +11818,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "dash"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:235:1: dash : 'DASH' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:235:1: dash : 'DASH' TOKEN ;
     public final ChemicalChunkerParser.dash_return dash() throws RecognitionException {
         ChemicalChunkerParser.dash_return retval = new ChemicalChunkerParser.dash_return();
         retval.start = input.LT(1);
@@ -11838,10 +11837,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(235, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:235:5: ( 'DASH' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:235:5: ( 'DASH' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:235:6: 'DASH' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:235:6: 'DASH' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -11891,7 +11890,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "stop"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:236:1: stop : 'STOP' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:236:1: stop : 'STOP' TOKEN ;
     public final ChemicalChunkerParser.stop_return stop() throws RecognitionException {
         ChemicalChunkerParser.stop_return retval = new ChemicalChunkerParser.stop_return();
         retval.start = input.LT(1);
@@ -11910,10 +11909,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(236, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:236:5: ( 'STOP' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:236:5: ( 'STOP' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:236:6: 'STOP' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:236:6: 'STOP' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -11963,7 +11962,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "nnpercent"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:237:1: nnpercent : 'NN-PERCENT' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:237:1: nnpercent : 'NN-PERCENT' TOKEN ;
     public final ChemicalChunkerParser.nnpercent_return nnpercent() throws RecognitionException {
         ChemicalChunkerParser.nnpercent_return retval = new ChemicalChunkerParser.nnpercent_return();
         retval.start = input.LT(1);
@@ -11982,10 +11981,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(237, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:237:10: ( 'NN-PERCENT' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:237:10: ( 'NN-PERCENT' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:237:11: 'NN-PERCENT' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:237:11: 'NN-PERCENT' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -12035,7 +12034,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "lsqb"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:238:1: lsqb : 'LSQB' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:238:1: lsqb : 'LSQB' TOKEN ;
     public final ChemicalChunkerParser.lsqb_return lsqb() throws RecognitionException {
         ChemicalChunkerParser.lsqb_return retval = new ChemicalChunkerParser.lsqb_return();
         retval.start = input.LT(1);
@@ -12054,10 +12053,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(238, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:238:5: ( 'LSQB' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:238:5: ( 'LSQB' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:238:6: 'LSQB' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:238:6: 'LSQB' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -12107,7 +12106,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "rsqb"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:239:1: rsqb : 'RSQB' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:239:1: rsqb : 'RSQB' TOKEN ;
     public final ChemicalChunkerParser.rsqb_return rsqb() throws RecognitionException {
         ChemicalChunkerParser.rsqb_return retval = new ChemicalChunkerParser.rsqb_return();
         retval.start = input.LT(1);
@@ -12126,10 +12125,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(239, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:239:5: ( 'RSQB' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:239:5: ( 'RSQB' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:239:6: 'RSQB' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:239:6: 'RSQB' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -12179,7 +12178,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "lrb"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:240:1: lrb : '-LRB-' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:240:1: lrb : '-LRB-' TOKEN ;
     public final ChemicalChunkerParser.lrb_return lrb() throws RecognitionException {
         ChemicalChunkerParser.lrb_return retval = new ChemicalChunkerParser.lrb_return();
         retval.start = input.LT(1);
@@ -12198,10 +12197,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(240, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:240:4: ( '-LRB-' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:240:4: ( '-LRB-' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:240:5: '-LRB-' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:240:5: '-LRB-' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -12251,7 +12250,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "rrb"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:241:1: rrb : '-RRB-' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:241:1: rrb : '-RRB-' TOKEN ;
     public final ChemicalChunkerParser.rrb_return rrb() throws RecognitionException {
         ChemicalChunkerParser.rrb_return retval = new ChemicalChunkerParser.rrb_return();
         retval.start = input.LT(1);
@@ -12270,10 +12269,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(241, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:241:4: ( '-RRB-' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:241:4: ( '-RRB-' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:241:5: '-RRB-' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:241:5: '-RRB-' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -12323,7 +12322,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "abl"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:246:1: abl : 'ABL' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:246:1: abl : 'ABL' TOKEN ;
     public final ChemicalChunkerParser.abl_return abl() throws RecognitionException {
         ChemicalChunkerParser.abl_return retval = new ChemicalChunkerParser.abl_return();
         retval.start = input.LT(1);
@@ -12342,10 +12341,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(246, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:246:4: ( 'ABL' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:246:4: ( 'ABL' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:246:5: 'ABL' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:246:5: 'ABL' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -12395,7 +12394,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "abn"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:249:1: abn : 'ABN' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:249:1: abn : 'ABN' TOKEN ;
     public final ChemicalChunkerParser.abn_return abn() throws RecognitionException {
         ChemicalChunkerParser.abn_return retval = new ChemicalChunkerParser.abn_return();
         retval.start = input.LT(1);
@@ -12414,10 +12413,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(249, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:249:4: ( 'ABN' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:249:4: ( 'ABN' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:249:5: 'ABN' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:249:5: 'ABN' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -12467,7 +12466,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "abx"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:252:1: abx : 'ABX' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:252:1: abx : 'ABX' TOKEN ;
     public final ChemicalChunkerParser.abx_return abx() throws RecognitionException {
         ChemicalChunkerParser.abx_return retval = new ChemicalChunkerParser.abx_return();
         retval.start = input.LT(1);
@@ -12486,10 +12485,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(252, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:252:4: ( 'ABX' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:252:4: ( 'ABX' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:252:5: 'ABX' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:252:5: 'ABX' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -12539,7 +12538,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "ap"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:255:1: ap : 'AP' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:255:1: ap : 'AP' TOKEN ;
     public final ChemicalChunkerParser.ap_return ap() throws RecognitionException {
         ChemicalChunkerParser.ap_return retval = new ChemicalChunkerParser.ap_return();
         retval.start = input.LT(1);
@@ -12558,10 +12557,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(255, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:255:3: ( 'AP' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:255:3: ( 'AP' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:255:4: 'AP' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:255:4: 'AP' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -12611,7 +12610,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "at"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:258:1: at : 'AT' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:258:1: at : 'AT' TOKEN ;
     public final ChemicalChunkerParser.at_return at() throws RecognitionException {
         ChemicalChunkerParser.at_return retval = new ChemicalChunkerParser.at_return();
         retval.start = input.LT(1);
@@ -12630,10 +12629,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(258, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:258:3: ( 'AT' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:258:3: ( 'AT' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:258:4: 'AT' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:258:4: 'AT' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -12683,7 +12682,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "be"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:261:1: be : 'BE' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:261:1: be : 'BE' TOKEN ;
     public final ChemicalChunkerParser.be_return be() throws RecognitionException {
         ChemicalChunkerParser.be_return retval = new ChemicalChunkerParser.be_return();
         retval.start = input.LT(1);
@@ -12702,10 +12701,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(261, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:261:3: ( 'BE' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:261:3: ( 'BE' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:261:4: 'BE' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:261:4: 'BE' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -12755,7 +12754,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "bed"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:264:1: bed : 'BED' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:264:1: bed : 'BED' TOKEN ;
     public final ChemicalChunkerParser.bed_return bed() throws RecognitionException {
         ChemicalChunkerParser.bed_return retval = new ChemicalChunkerParser.bed_return();
         retval.start = input.LT(1);
@@ -12774,10 +12773,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(264, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:264:4: ( 'BED' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:264:4: ( 'BED' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:264:5: 'BED' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:264:5: 'BED' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -12827,7 +12826,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "bedz"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:267:1: bedz : 'BEDZ' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:267:1: bedz : 'BEDZ' TOKEN ;
     public final ChemicalChunkerParser.bedz_return bedz() throws RecognitionException {
         ChemicalChunkerParser.bedz_return retval = new ChemicalChunkerParser.bedz_return();
         retval.start = input.LT(1);
@@ -12846,10 +12845,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(267, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:267:5: ( 'BEDZ' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:267:5: ( 'BEDZ' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:267:6: 'BEDZ' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:267:6: 'BEDZ' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -12899,7 +12898,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "beg"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:270:1: beg : 'BEG' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:270:1: beg : 'BEG' TOKEN ;
     public final ChemicalChunkerParser.beg_return beg() throws RecognitionException {
         ChemicalChunkerParser.beg_return retval = new ChemicalChunkerParser.beg_return();
         retval.start = input.LT(1);
@@ -12918,10 +12917,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(270, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:270:4: ( 'BEG' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:270:4: ( 'BEG' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:270:5: 'BEG' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:270:5: 'BEG' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -12971,7 +12970,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "bem"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:273:1: bem : 'BEM' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:273:1: bem : 'BEM' TOKEN ;
     public final ChemicalChunkerParser.bem_return bem() throws RecognitionException {
         ChemicalChunkerParser.bem_return retval = new ChemicalChunkerParser.bem_return();
         retval.start = input.LT(1);
@@ -12990,10 +12989,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(273, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:273:4: ( 'BEM' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:273:4: ( 'BEM' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:273:5: 'BEM' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:273:5: 'BEM' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -13043,7 +13042,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "ben"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:276:1: ben : 'BEN' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:276:1: ben : 'BEN' TOKEN ;
     public final ChemicalChunkerParser.ben_return ben() throws RecognitionException {
         ChemicalChunkerParser.ben_return retval = new ChemicalChunkerParser.ben_return();
         retval.start = input.LT(1);
@@ -13062,10 +13061,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(276, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:276:4: ( 'BEN' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:276:4: ( 'BEN' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:276:5: 'BEN' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:276:5: 'BEN' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -13115,7 +13114,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "ber"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:279:1: ber : 'BER' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:279:1: ber : 'BER' TOKEN ;
     public final ChemicalChunkerParser.ber_return ber() throws RecognitionException {
         ChemicalChunkerParser.ber_return retval = new ChemicalChunkerParser.ber_return();
         retval.start = input.LT(1);
@@ -13134,10 +13133,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(279, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:279:4: ( 'BER' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:279:4: ( 'BER' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:279:5: 'BER' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:279:5: 'BER' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -13187,7 +13186,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "bez"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:282:1: bez : 'BEZ' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:282:1: bez : 'BEZ' TOKEN ;
     public final ChemicalChunkerParser.bez_return bez() throws RecognitionException {
         ChemicalChunkerParser.bez_return retval = new ChemicalChunkerParser.bez_return();
         retval.start = input.LT(1);
@@ -13206,10 +13205,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(282, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:282:4: ( 'BEZ' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:282:4: ( 'BEZ' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:282:5: 'BEZ' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:282:5: 'BEZ' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -13259,7 +13258,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "cc"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:285:1: cc : 'CC' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:285:1: cc : 'CC' TOKEN ;
     public final ChemicalChunkerParser.cc_return cc() throws RecognitionException {
         ChemicalChunkerParser.cc_return retval = new ChemicalChunkerParser.cc_return();
         retval.start = input.LT(1);
@@ -13278,10 +13277,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(285, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:285:3: ( 'CC' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:285:3: ( 'CC' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:285:4: 'CC' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:285:4: 'CC' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -13331,7 +13330,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "cd"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:288:1: cd : 'CD' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:288:1: cd : 'CD' TOKEN ;
     public final ChemicalChunkerParser.cd_return cd() throws RecognitionException {
         ChemicalChunkerParser.cd_return retval = new ChemicalChunkerParser.cd_return();
         retval.start = input.LT(1);
@@ -13350,10 +13349,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(288, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:288:3: ( 'CD' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:288:3: ( 'CD' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:288:4: 'CD' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:288:4: 'CD' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -13403,7 +13402,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "cs"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:291:1: cs : 'CS' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:291:1: cs : 'CS' TOKEN ;
     public final ChemicalChunkerParser.cs_return cs() throws RecognitionException {
         ChemicalChunkerParser.cs_return retval = new ChemicalChunkerParser.cs_return();
         retval.start = input.LT(1);
@@ -13422,10 +13421,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(291, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:291:3: ( 'CS' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:291:3: ( 'CS' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:291:4: 'CS' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:291:4: 'CS' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -13475,7 +13474,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "dotok"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:294:1: dotok : 'DO' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:294:1: dotok : 'DO' TOKEN ;
     public final ChemicalChunkerParser.dotok_return dotok() throws RecognitionException {
         ChemicalChunkerParser.dotok_return retval = new ChemicalChunkerParser.dotok_return();
         retval.start = input.LT(1);
@@ -13494,10 +13493,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(294, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:294:7: ( 'DO' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:294:7: ( 'DO' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:294:8: 'DO' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:294:8: 'DO' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -13547,7 +13546,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "dod"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:297:1: dod : 'DOD' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:297:1: dod : 'DOD' TOKEN ;
     public final ChemicalChunkerParser.dod_return dod() throws RecognitionException {
         ChemicalChunkerParser.dod_return retval = new ChemicalChunkerParser.dod_return();
         retval.start = input.LT(1);
@@ -13566,10 +13565,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(297, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:297:4: ( 'DOD' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:297:4: ( 'DOD' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:297:5: 'DOD' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:297:5: 'DOD' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -13619,7 +13618,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "doz"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:300:1: doz : 'DOZ' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:300:1: doz : 'DOZ' TOKEN ;
     public final ChemicalChunkerParser.doz_return doz() throws RecognitionException {
         ChemicalChunkerParser.doz_return retval = new ChemicalChunkerParser.doz_return();
         retval.start = input.LT(1);
@@ -13638,10 +13637,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(300, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:300:4: ( 'DOZ' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:300:4: ( 'DOZ' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:300:5: 'DOZ' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:300:5: 'DOZ' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -13691,7 +13690,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "dt"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:303:1: dt : 'DT' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:303:1: dt : 'DT' TOKEN ;
     public final ChemicalChunkerParser.dt_return dt() throws RecognitionException {
         ChemicalChunkerParser.dt_return retval = new ChemicalChunkerParser.dt_return();
         retval.start = input.LT(1);
@@ -13710,10 +13709,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(303, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:303:3: ( 'DT' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:303:3: ( 'DT' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:303:4: 'DT' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:303:4: 'DT' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -13763,7 +13762,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "dti"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:306:1: dti : 'DTI' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:306:1: dti : 'DTI' TOKEN ;
     public final ChemicalChunkerParser.dti_return dti() throws RecognitionException {
         ChemicalChunkerParser.dti_return retval = new ChemicalChunkerParser.dti_return();
         retval.start = input.LT(1);
@@ -13782,10 +13781,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(306, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:306:4: ( 'DTI' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:306:4: ( 'DTI' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:306:5: 'DTI' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:306:5: 'DTI' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -13835,7 +13834,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "dts"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:309:1: dts : 'DTS' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:309:1: dts : 'DTS' TOKEN ;
     public final ChemicalChunkerParser.dts_return dts() throws RecognitionException {
         ChemicalChunkerParser.dts_return retval = new ChemicalChunkerParser.dts_return();
         retval.start = input.LT(1);
@@ -13854,10 +13853,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(309, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:309:4: ( 'DTS' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:309:4: ( 'DTS' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:309:5: 'DTS' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:309:5: 'DTS' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -13907,7 +13906,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "dtx"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:312:1: dtx : 'DTX' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:312:1: dtx : 'DTX' TOKEN ;
     public final ChemicalChunkerParser.dtx_return dtx() throws RecognitionException {
         ChemicalChunkerParser.dtx_return retval = new ChemicalChunkerParser.dtx_return();
         retval.start = input.LT(1);
@@ -13926,10 +13925,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(312, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:312:4: ( 'DTX' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:312:4: ( 'DTX' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:312:5: 'DTX' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:312:5: 'DTX' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -13979,7 +13978,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "ex"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:315:1: ex : 'EX' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:315:1: ex : 'EX' TOKEN ;
     public final ChemicalChunkerParser.ex_return ex() throws RecognitionException {
         ChemicalChunkerParser.ex_return retval = new ChemicalChunkerParser.ex_return();
         retval.start = input.LT(1);
@@ -13998,10 +13997,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(315, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:315:3: ( 'EX' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:315:3: ( 'EX' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:315:4: 'EX' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:315:4: 'EX' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -14051,7 +14050,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "fw"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:318:1: fw : 'FW' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:318:1: fw : 'FW' TOKEN ;
     public final ChemicalChunkerParser.fw_return fw() throws RecognitionException {
         ChemicalChunkerParser.fw_return retval = new ChemicalChunkerParser.fw_return();
         retval.start = input.LT(1);
@@ -14070,10 +14069,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(318, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:318:3: ( 'FW' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:318:3: ( 'FW' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:318:4: 'FW' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:318:4: 'FW' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -14123,7 +14122,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "hv"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:321:1: hv : 'HV' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:321:1: hv : 'HV' TOKEN ;
     public final ChemicalChunkerParser.hv_return hv() throws RecognitionException {
         ChemicalChunkerParser.hv_return retval = new ChemicalChunkerParser.hv_return();
         retval.start = input.LT(1);
@@ -14142,10 +14141,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(321, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:321:3: ( 'HV' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:321:3: ( 'HV' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:321:4: 'HV' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:321:4: 'HV' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -14195,7 +14194,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "hvd"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:324:1: hvd : 'HVD' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:324:1: hvd : 'HVD' TOKEN ;
     public final ChemicalChunkerParser.hvd_return hvd() throws RecognitionException {
         ChemicalChunkerParser.hvd_return retval = new ChemicalChunkerParser.hvd_return();
         retval.start = input.LT(1);
@@ -14214,10 +14213,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(324, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:324:4: ( 'HVD' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:324:4: ( 'HVD' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:324:5: 'HVD' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:324:5: 'HVD' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -14267,7 +14266,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "hvg"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:327:1: hvg : 'HVG' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:327:1: hvg : 'HVG' TOKEN ;
     public final ChemicalChunkerParser.hvg_return hvg() throws RecognitionException {
         ChemicalChunkerParser.hvg_return retval = new ChemicalChunkerParser.hvg_return();
         retval.start = input.LT(1);
@@ -14286,10 +14285,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(327, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:327:4: ( 'HVG' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:327:4: ( 'HVG' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:327:5: 'HVG' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:327:5: 'HVG' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -14339,7 +14338,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "hvn"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:330:1: hvn : 'HVN' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:330:1: hvn : 'HVN' TOKEN ;
     public final ChemicalChunkerParser.hvn_return hvn() throws RecognitionException {
         ChemicalChunkerParser.hvn_return retval = new ChemicalChunkerParser.hvn_return();
         retval.start = input.LT(1);
@@ -14358,10 +14357,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(330, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:330:4: ( 'HVN' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:330:4: ( 'HVN' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:330:5: 'HVN' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:330:5: 'HVN' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -14411,7 +14410,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "in"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:333:1: in : 'IN' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:333:1: in : 'IN' TOKEN ;
     public final ChemicalChunkerParser.in_return in() throws RecognitionException {
         ChemicalChunkerParser.in_return retval = new ChemicalChunkerParser.in_return();
         retval.start = input.LT(1);
@@ -14430,10 +14429,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(333, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:333:3: ( 'IN' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:333:3: ( 'IN' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:333:4: 'IN' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:333:4: 'IN' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -14483,7 +14482,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "jj"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:336:1: jj : 'JJ' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:336:1: jj : 'JJ' TOKEN ;
     public final ChemicalChunkerParser.jj_return jj() throws RecognitionException {
         ChemicalChunkerParser.jj_return retval = new ChemicalChunkerParser.jj_return();
         retval.start = input.LT(1);
@@ -14502,10 +14501,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(336, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:336:3: ( 'JJ' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:336:3: ( 'JJ' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:336:4: 'JJ' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:336:4: 'JJ' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -14555,7 +14554,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "jjr"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:339:1: jjr : 'JJR' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:339:1: jjr : 'JJR' TOKEN ;
     public final ChemicalChunkerParser.jjr_return jjr() throws RecognitionException {
         ChemicalChunkerParser.jjr_return retval = new ChemicalChunkerParser.jjr_return();
         retval.start = input.LT(1);
@@ -14574,10 +14573,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(339, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:339:4: ( 'JJR' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:339:4: ( 'JJR' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:339:5: 'JJR' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:339:5: 'JJR' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -14627,7 +14626,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "jjs"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:342:1: jjs : 'JJS' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:342:1: jjs : 'JJS' TOKEN ;
     public final ChemicalChunkerParser.jjs_return jjs() throws RecognitionException {
         ChemicalChunkerParser.jjs_return retval = new ChemicalChunkerParser.jjs_return();
         retval.start = input.LT(1);
@@ -14646,10 +14645,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(342, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:342:4: ( 'JJS' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:342:4: ( 'JJS' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:342:5: 'JJS' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:342:5: 'JJS' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -14699,7 +14698,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "jjt"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:345:1: jjt : 'JJT' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:345:1: jjt : 'JJT' TOKEN ;
     public final ChemicalChunkerParser.jjt_return jjt() throws RecognitionException {
         ChemicalChunkerParser.jjt_return retval = new ChemicalChunkerParser.jjt_return();
         retval.start = input.LT(1);
@@ -14718,10 +14717,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(345, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:345:4: ( 'JJT' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:345:4: ( 'JJT' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:345:5: 'JJT' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:345:5: 'JJT' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -14771,7 +14770,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "md"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:348:1: md : 'MD' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:348:1: md : 'MD' TOKEN ;
     public final ChemicalChunkerParser.md_return md() throws RecognitionException {
         ChemicalChunkerParser.md_return retval = new ChemicalChunkerParser.md_return();
         retval.start = input.LT(1);
@@ -14790,10 +14789,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(348, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:348:3: ( 'MD' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:348:3: ( 'MD' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:348:4: 'MD' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:348:4: 'MD' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -14843,7 +14842,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "nc"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:351:1: nc : 'NC' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:351:1: nc : 'NC' TOKEN ;
     public final ChemicalChunkerParser.nc_return nc() throws RecognitionException {
         ChemicalChunkerParser.nc_return retval = new ChemicalChunkerParser.nc_return();
         retval.start = input.LT(1);
@@ -14862,10 +14861,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(351, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:351:3: ( 'NC' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:351:3: ( 'NC' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:351:4: 'NC' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:351:4: 'NC' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -14915,7 +14914,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "nn"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:354:1: nn : 'NN' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:354:1: nn : 'NN' TOKEN ;
     public final ChemicalChunkerParser.nn_return nn() throws RecognitionException {
         ChemicalChunkerParser.nn_return retval = new ChemicalChunkerParser.nn_return();
         retval.start = input.LT(1);
@@ -14934,10 +14933,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(354, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:354:3: ( 'NN' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:354:3: ( 'NN' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:354:4: 'NN' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:354:4: 'NN' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -14987,7 +14986,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "nn_poss"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:357:1: nn_poss : 'NN$' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:357:1: nn_poss : 'NN$' TOKEN ;
     public final ChemicalChunkerParser.nn_poss_return nn_poss() throws RecognitionException {
         ChemicalChunkerParser.nn_poss_return retval = new ChemicalChunkerParser.nn_poss_return();
         retval.start = input.LT(1);
@@ -15006,10 +15005,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(357, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:357:8: ( 'NN$' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:357:8: ( 'NN$' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:357:9: 'NN$' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:357:9: 'NN$' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -15059,7 +15058,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "nns"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:360:1: nns : 'NNS' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:360:1: nns : 'NNS' TOKEN ;
     public final ChemicalChunkerParser.nns_return nns() throws RecognitionException {
         ChemicalChunkerParser.nns_return retval = new ChemicalChunkerParser.nns_return();
         retval.start = input.LT(1);
@@ -15078,10 +15077,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(360, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:360:4: ( 'NNS' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:360:4: ( 'NNS' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:360:5: 'NNS' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:360:5: 'NNS' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -15131,7 +15130,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "nns_poss"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:363:1: nns_poss : 'NNS$' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:363:1: nns_poss : 'NNS$' TOKEN ;
     public final ChemicalChunkerParser.nns_poss_return nns_poss() throws RecognitionException {
         ChemicalChunkerParser.nns_poss_return retval = new ChemicalChunkerParser.nns_poss_return();
         retval.start = input.LT(1);
@@ -15150,10 +15149,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(363, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:363:9: ( 'NNS$' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:363:9: ( 'NNS$' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:363:10: 'NNS$' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:363:10: 'NNS$' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -15203,7 +15202,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "np"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:366:1: np : 'NP' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:366:1: np : 'NP' TOKEN ;
     public final ChemicalChunkerParser.np_return np() throws RecognitionException {
         ChemicalChunkerParser.np_return retval = new ChemicalChunkerParser.np_return();
         retval.start = input.LT(1);
@@ -15222,10 +15221,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(366, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:366:3: ( 'NP' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:366:3: ( 'NP' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:366:4: 'NP' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:366:4: 'NP' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -15275,7 +15274,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "np_poss"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:369:1: np_poss : 'NP$' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:369:1: np_poss : 'NP$' TOKEN ;
     public final ChemicalChunkerParser.np_poss_return np_poss() throws RecognitionException {
         ChemicalChunkerParser.np_poss_return retval = new ChemicalChunkerParser.np_poss_return();
         retval.start = input.LT(1);
@@ -15294,10 +15293,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(369, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:369:8: ( 'NP$' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:369:8: ( 'NP$' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:369:9: 'NP$' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:369:9: 'NP$' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -15347,7 +15346,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "nps"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:372:1: nps : 'NPS' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:372:1: nps : 'NPS' TOKEN ;
     public final ChemicalChunkerParser.nps_return nps() throws RecognitionException {
         ChemicalChunkerParser.nps_return retval = new ChemicalChunkerParser.nps_return();
         retval.start = input.LT(1);
@@ -15366,10 +15365,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(372, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:372:4: ( 'NPS' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:372:4: ( 'NPS' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:372:5: 'NPS' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:372:5: 'NPS' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -15419,7 +15418,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "nps_poss"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:375:1: nps_poss : 'NPS$' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:375:1: nps_poss : 'NPS$' TOKEN ;
     public final ChemicalChunkerParser.nps_poss_return nps_poss() throws RecognitionException {
         ChemicalChunkerParser.nps_poss_return retval = new ChemicalChunkerParser.nps_poss_return();
         retval.start = input.LT(1);
@@ -15438,10 +15437,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(375, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:375:9: ( 'NPS$' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:375:9: ( 'NPS$' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:375:10: 'NPS$' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:375:10: 'NPS$' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -15491,7 +15490,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "nr"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:378:1: nr : 'NR' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:378:1: nr : 'NR' TOKEN ;
     public final ChemicalChunkerParser.nr_return nr() throws RecognitionException {
         ChemicalChunkerParser.nr_return retval = new ChemicalChunkerParser.nr_return();
         retval.start = input.LT(1);
@@ -15510,10 +15509,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(378, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:378:3: ( 'NR' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:378:3: ( 'NR' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:378:4: 'NR' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:378:4: 'NR' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -15563,7 +15562,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "od"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:381:1: od : 'OD' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:381:1: od : 'OD' TOKEN ;
     public final ChemicalChunkerParser.od_return od() throws RecognitionException {
         ChemicalChunkerParser.od_return retval = new ChemicalChunkerParser.od_return();
         retval.start = input.LT(1);
@@ -15582,10 +15581,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(381, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:381:3: ( 'OD' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:381:3: ( 'OD' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:381:4: 'OD' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:381:4: 'OD' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -15635,7 +15634,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "pn"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:384:1: pn : 'PN' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:384:1: pn : 'PN' TOKEN ;
     public final ChemicalChunkerParser.pn_return pn() throws RecognitionException {
         ChemicalChunkerParser.pn_return retval = new ChemicalChunkerParser.pn_return();
         retval.start = input.LT(1);
@@ -15654,10 +15653,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(384, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:384:3: ( 'PN' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:384:3: ( 'PN' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:384:4: 'PN' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:384:4: 'PN' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -15707,7 +15706,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "pn_poss"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:387:1: pn_poss : 'PN$' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:387:1: pn_poss : 'PN$' TOKEN ;
     public final ChemicalChunkerParser.pn_poss_return pn_poss() throws RecognitionException {
         ChemicalChunkerParser.pn_poss_return retval = new ChemicalChunkerParser.pn_poss_return();
         retval.start = input.LT(1);
@@ -15726,10 +15725,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(387, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:387:8: ( 'PN$' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:387:8: ( 'PN$' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:387:9: 'PN$' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:387:9: 'PN$' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -15779,7 +15778,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "pp_poss"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:390:1: pp_poss : 'PP$' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:390:1: pp_poss : 'PP$' TOKEN ;
     public final ChemicalChunkerParser.pp_poss_return pp_poss() throws RecognitionException {
         ChemicalChunkerParser.pp_poss_return retval = new ChemicalChunkerParser.pp_poss_return();
         retval.start = input.LT(1);
@@ -15798,10 +15797,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(390, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:390:8: ( 'PP$' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:390:8: ( 'PP$' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:390:9: 'PP$' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:390:9: 'PP$' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -15851,7 +15850,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "pp_poss_poss"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:393:1: pp_poss_poss : 'PP$$' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:393:1: pp_poss_poss : 'PP$$' TOKEN ;
     public final ChemicalChunkerParser.pp_poss_poss_return pp_poss_poss() throws RecognitionException {
         ChemicalChunkerParser.pp_poss_poss_return retval = new ChemicalChunkerParser.pp_poss_poss_return();
         retval.start = input.LT(1);
@@ -15870,10 +15869,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(393, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:393:13: ( 'PP$$' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:393:13: ( 'PP$$' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:393:14: 'PP$$' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:393:14: 'PP$$' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -15923,7 +15922,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "ppl"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:396:1: ppl : 'PPL' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:396:1: ppl : 'PPL' TOKEN ;
     public final ChemicalChunkerParser.ppl_return ppl() throws RecognitionException {
         ChemicalChunkerParser.ppl_return retval = new ChemicalChunkerParser.ppl_return();
         retval.start = input.LT(1);
@@ -15942,10 +15941,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(396, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:396:4: ( 'PPL' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:396:4: ( 'PPL' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:396:5: 'PPL' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:396:5: 'PPL' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -15995,7 +15994,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "ppls"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:399:1: ppls : 'PPLS' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:399:1: ppls : 'PPLS' TOKEN ;
     public final ChemicalChunkerParser.ppls_return ppls() throws RecognitionException {
         ChemicalChunkerParser.ppls_return retval = new ChemicalChunkerParser.ppls_return();
         retval.start = input.LT(1);
@@ -16014,10 +16013,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(399, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:399:5: ( 'PPLS' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:399:5: ( 'PPLS' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:399:6: 'PPLS' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:399:6: 'PPLS' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -16067,7 +16066,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "ppo"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:402:1: ppo : 'PPO' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:402:1: ppo : 'PPO' TOKEN ;
     public final ChemicalChunkerParser.ppo_return ppo() throws RecognitionException {
         ChemicalChunkerParser.ppo_return retval = new ChemicalChunkerParser.ppo_return();
         retval.start = input.LT(1);
@@ -16086,10 +16085,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(402, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:402:4: ( 'PPO' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:402:4: ( 'PPO' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:402:5: 'PPO' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:402:5: 'PPO' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -16139,7 +16138,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "pps"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:405:1: pps : 'PPS' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:405:1: pps : 'PPS' TOKEN ;
     public final ChemicalChunkerParser.pps_return pps() throws RecognitionException {
         ChemicalChunkerParser.pps_return retval = new ChemicalChunkerParser.pps_return();
         retval.start = input.LT(1);
@@ -16158,10 +16157,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(405, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:405:4: ( 'PPS' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:405:4: ( 'PPS' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:405:5: 'PPS' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:405:5: 'PPS' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -16211,7 +16210,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "ppss"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:408:1: ppss : 'PPSS' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:408:1: ppss : 'PPSS' TOKEN ;
     public final ChemicalChunkerParser.ppss_return ppss() throws RecognitionException {
         ChemicalChunkerParser.ppss_return retval = new ChemicalChunkerParser.ppss_return();
         retval.start = input.LT(1);
@@ -16230,10 +16229,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(408, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:408:5: ( 'PPSS' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:408:5: ( 'PPSS' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:408:6: 'PPSS' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:408:6: 'PPSS' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -16283,7 +16282,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "ql"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:411:1: ql : 'QL' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:411:1: ql : 'QL' TOKEN ;
     public final ChemicalChunkerParser.ql_return ql() throws RecognitionException {
         ChemicalChunkerParser.ql_return retval = new ChemicalChunkerParser.ql_return();
         retval.start = input.LT(1);
@@ -16302,10 +16301,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(411, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:411:3: ( 'QL' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:411:3: ( 'QL' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:411:4: 'QL' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:411:4: 'QL' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -16355,7 +16354,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "qlp"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:414:1: qlp : 'QLP' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:414:1: qlp : 'QLP' TOKEN ;
     public final ChemicalChunkerParser.qlp_return qlp() throws RecognitionException {
         ChemicalChunkerParser.qlp_return retval = new ChemicalChunkerParser.qlp_return();
         retval.start = input.LT(1);
@@ -16374,10 +16373,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(414, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:414:4: ( 'QLP' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:414:4: ( 'QLP' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:414:5: 'QLP' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:414:5: 'QLP' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -16427,7 +16426,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "rb"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:417:1: rb : 'RB' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:417:1: rb : 'RB' TOKEN ;
     public final ChemicalChunkerParser.rb_return rb() throws RecognitionException {
         ChemicalChunkerParser.rb_return retval = new ChemicalChunkerParser.rb_return();
         retval.start = input.LT(1);
@@ -16446,10 +16445,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(417, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:417:3: ( 'RB' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:417:3: ( 'RB' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:417:4: 'RB' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:417:4: 'RB' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -16499,7 +16498,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "rbr"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:420:1: rbr : 'RBR' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:420:1: rbr : 'RBR' TOKEN ;
     public final ChemicalChunkerParser.rbr_return rbr() throws RecognitionException {
         ChemicalChunkerParser.rbr_return retval = new ChemicalChunkerParser.rbr_return();
         retval.start = input.LT(1);
@@ -16518,10 +16517,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(420, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:420:4: ( 'RBR' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:420:4: ( 'RBR' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:420:5: 'RBR' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:420:5: 'RBR' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -16571,7 +16570,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "rbt"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:423:1: rbt : 'RBT' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:423:1: rbt : 'RBT' TOKEN ;
     public final ChemicalChunkerParser.rbt_return rbt() throws RecognitionException {
         ChemicalChunkerParser.rbt_return retval = new ChemicalChunkerParser.rbt_return();
         retval.start = input.LT(1);
@@ -16590,10 +16589,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(423, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:423:4: ( 'RBT' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:423:4: ( 'RBT' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:423:5: 'RBT' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:423:5: 'RBT' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -16643,7 +16642,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "rn"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:426:1: rn : 'RN' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:426:1: rn : 'RN' TOKEN ;
     public final ChemicalChunkerParser.rn_return rn() throws RecognitionException {
         ChemicalChunkerParser.rn_return retval = new ChemicalChunkerParser.rn_return();
         retval.start = input.LT(1);
@@ -16662,10 +16661,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(426, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:426:3: ( 'RN' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:426:3: ( 'RN' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:426:4: 'RN' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:426:4: 'RN' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -16715,7 +16714,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "rp"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:429:1: rp : 'RP' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:429:1: rp : 'RP' TOKEN ;
     public final ChemicalChunkerParser.rp_return rp() throws RecognitionException {
         ChemicalChunkerParser.rp_return retval = new ChemicalChunkerParser.rp_return();
         retval.start = input.LT(1);
@@ -16734,10 +16733,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(429, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:429:3: ( 'RP' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:429:3: ( 'RP' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:429:4: 'RP' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:429:4: 'RP' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -16787,7 +16786,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "to"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:432:1: to : 'TO' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:432:1: to : 'TO' TOKEN ;
     public final ChemicalChunkerParser.to_return to() throws RecognitionException {
         ChemicalChunkerParser.to_return retval = new ChemicalChunkerParser.to_return();
         retval.start = input.LT(1);
@@ -16806,10 +16805,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(432, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:432:3: ( 'TO' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:432:3: ( 'TO' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:432:4: 'TO' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:432:4: 'TO' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -16859,7 +16858,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "uh"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:435:1: uh : 'UH' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:435:1: uh : 'UH' TOKEN ;
     public final ChemicalChunkerParser.uh_return uh() throws RecognitionException {
         ChemicalChunkerParser.uh_return retval = new ChemicalChunkerParser.uh_return();
         retval.start = input.LT(1);
@@ -16878,10 +16877,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(435, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:435:3: ( 'UH' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:435:3: ( 'UH' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:435:4: 'UH' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:435:4: 'UH' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -16931,7 +16930,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "vb"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:438:1: vb : 'VB' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:438:1: vb : 'VB' TOKEN ;
     public final ChemicalChunkerParser.vb_return vb() throws RecognitionException {
         ChemicalChunkerParser.vb_return retval = new ChemicalChunkerParser.vb_return();
         retval.start = input.LT(1);
@@ -16950,10 +16949,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(438, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:438:3: ( 'VB' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:438:3: ( 'VB' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:438:4: 'VB' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:438:4: 'VB' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -17003,7 +17002,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "vbd"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:441:1: vbd : 'VBD' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:441:1: vbd : 'VBD' TOKEN ;
     public final ChemicalChunkerParser.vbd_return vbd() throws RecognitionException {
         ChemicalChunkerParser.vbd_return retval = new ChemicalChunkerParser.vbd_return();
         retval.start = input.LT(1);
@@ -17022,10 +17021,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(441, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:441:4: ( 'VBD' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:441:4: ( 'VBD' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:441:5: 'VBD' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:441:5: 'VBD' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -17075,7 +17074,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "vbg"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:444:1: vbg : 'VBG' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:444:1: vbg : 'VBG' TOKEN ;
     public final ChemicalChunkerParser.vbg_return vbg() throws RecognitionException {
         ChemicalChunkerParser.vbg_return retval = new ChemicalChunkerParser.vbg_return();
         retval.start = input.LT(1);
@@ -17094,10 +17093,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(444, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:444:4: ( 'VBG' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:444:4: ( 'VBG' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:444:5: 'VBG' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:444:5: 'VBG' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -17147,7 +17146,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "vbn"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:447:1: vbn : 'VBN' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:447:1: vbn : 'VBN' TOKEN ;
     public final ChemicalChunkerParser.vbn_return vbn() throws RecognitionException {
         ChemicalChunkerParser.vbn_return retval = new ChemicalChunkerParser.vbn_return();
         retval.start = input.LT(1);
@@ -17166,10 +17165,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(447, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:447:4: ( 'VBN' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:447:4: ( 'VBN' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:447:5: 'VBN' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:447:5: 'VBN' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -17219,7 +17218,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "vbz"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:450:1: vbz : 'VBZ' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:450:1: vbz : 'VBZ' TOKEN ;
     public final ChemicalChunkerParser.vbz_return vbz() throws RecognitionException {
         ChemicalChunkerParser.vbz_return retval = new ChemicalChunkerParser.vbz_return();
         retval.start = input.LT(1);
@@ -17238,10 +17237,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(450, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:450:4: ( 'VBZ' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:450:4: ( 'VBZ' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:450:5: 'VBZ' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:450:5: 'VBZ' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -17291,7 +17290,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "wdt"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:453:1: wdt : 'WDT' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:453:1: wdt : 'WDT' TOKEN ;
     public final ChemicalChunkerParser.wdt_return wdt() throws RecognitionException {
         ChemicalChunkerParser.wdt_return retval = new ChemicalChunkerParser.wdt_return();
         retval.start = input.LT(1);
@@ -17310,10 +17309,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(453, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:453:4: ( 'WDT' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:453:4: ( 'WDT' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:453:5: 'WDT' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:453:5: 'WDT' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -17363,7 +17362,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "wp_poss"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:456:1: wp_poss : 'WP$' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:456:1: wp_poss : 'WP$' TOKEN ;
     public final ChemicalChunkerParser.wp_poss_return wp_poss() throws RecognitionException {
         ChemicalChunkerParser.wp_poss_return retval = new ChemicalChunkerParser.wp_poss_return();
         retval.start = input.LT(1);
@@ -17382,10 +17381,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(456, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:456:8: ( 'WP$' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:456:8: ( 'WP$' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:456:9: 'WP$' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:456:9: 'WP$' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -17435,7 +17434,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "wpo"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:459:1: wpo : 'WPO' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:459:1: wpo : 'WPO' TOKEN ;
     public final ChemicalChunkerParser.wpo_return wpo() throws RecognitionException {
         ChemicalChunkerParser.wpo_return retval = new ChemicalChunkerParser.wpo_return();
         retval.start = input.LT(1);
@@ -17454,10 +17453,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(459, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:459:4: ( 'WPO' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:459:4: ( 'WPO' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:459:5: 'WPO' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:459:5: 'WPO' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -17507,7 +17506,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "wps"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:462:1: wps : 'WPS' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:462:1: wps : 'WPS' TOKEN ;
     public final ChemicalChunkerParser.wps_return wps() throws RecognitionException {
         ChemicalChunkerParser.wps_return retval = new ChemicalChunkerParser.wps_return();
         retval.start = input.LT(1);
@@ -17526,10 +17525,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(462, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:462:4: ( 'WPS' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:462:4: ( 'WPS' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:462:5: 'WPS' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:462:5: 'WPS' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -17579,7 +17578,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "wql"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:465:1: wql : 'WQL' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:465:1: wql : 'WQL' TOKEN ;
     public final ChemicalChunkerParser.wql_return wql() throws RecognitionException {
         ChemicalChunkerParser.wql_return retval = new ChemicalChunkerParser.wql_return();
         retval.start = input.LT(1);
@@ -17598,10 +17597,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(465, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:465:4: ( 'WQL' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:465:4: ( 'WQL' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:465:5: 'WQL' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:465:5: 'WQL' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
@@ -17651,7 +17650,7 @@ public class ChemicalChunkerParser extends DebugParser {
     };
 
     // $ANTLR start "wrb"
-    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:468:1: wrb : 'WRB' TOKEN ;
+    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:468:1: wrb : 'WRB' TOKEN ;
     public final ChemicalChunkerParser.wrb_return wrb() throws RecognitionException {
         ChemicalChunkerParser.wrb_return retval = new ChemicalChunkerParser.wrb_return();
         retval.start = input.LT(1);
@@ -17670,10 +17669,10 @@ public class ChemicalChunkerParser extends DebugParser {
         dbg.location(468, 1);
 
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:468:4: ( 'WRB' TOKEN )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:468:4: ( 'WRB' TOKEN )
             dbg.enterAlt(1);
 
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/extractPhrases/ChemicalChunker.g:468:5: 'WRB' TOKEN
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:468:5: 'WRB' TOKEN
             {
             root_0 = (Object)adaptor.nil();
 
