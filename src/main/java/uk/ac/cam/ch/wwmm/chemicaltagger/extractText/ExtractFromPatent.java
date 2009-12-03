@@ -66,7 +66,6 @@ public class ExtractFromPatent {
             String resourcePath = path+file;
             ExtractFromPatent extract = new ExtractFromPatent();
             DocumentContainer docContainer = extract.getContent(resourcePath);
-            System.err.println("+++++++++++"+docContainer.getContent());
             docs.add(docContainer);
 
         }

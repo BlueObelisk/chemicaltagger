@@ -222,7 +222,7 @@ public class ChemistryPOSTagger {
      * @author dmj30, lh359
      *****************************************************/
     private POSContainer runOSCARTagger(POSContainer posContainer) {
-
+        System.out.println("***&&&&&&&&&&&&&& Sentence:"+sentence);
         Document doc = TextToSciXML.textToSciXML(sentence);
         OscarFlow oscarFlow = new OscarFlow(doc);
         try {
@@ -232,6 +232,7 @@ public class ChemistryPOSTagger {
             throw new RuntimeException();
         }
         Document parsed = oscarFlow.getInlineXML();
+        System.out.println(parsed.toXML());
         Node paragraph = parsed.query("//P").get(0);
 
         for (int i = 0; i < paragraph.getChildCount(); i++) {
