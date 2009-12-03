@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 12:02:23 /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g 2009-12-03 14:57:45
+// $ANTLR 3.2 Sep 23, 2009 12:02:23 C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g 2009-12-03 16:28:41
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
 import org.antlr.runtime.*;
@@ -195,15 +195,15 @@ public class ChemicalChunkerLexer extends Lexer {
         super(input,state);
 
     }
-    public String getGrammarFileName() { return "/home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g"; }
+    public String getGrammarFileName() { return "C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g"; }
 
     // $ANTLR start "T__9"
     public final void mT__9() throws RecognitionException {
         try {
             int _type = T__9;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:9:6: ( 'OSCAR-CD' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:9:8: 'OSCAR-CD'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:9:6: ( 'OSCAR-CD' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:9:8: 'OSCAR-CD'
             {
             match("OSCAR-CD"); 
 
@@ -223,8 +223,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__10;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:10:7: ( 'OSCAR-CJ' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:10:9: 'OSCAR-CJ'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:10:7: ( 'OSCAR-CJ' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:10:9: 'OSCAR-CJ'
             {
             match("OSCAR-CJ"); 
 
@@ -244,8 +244,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__11;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:11:7: ( 'OSCAR-ONT' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:11:9: 'OSCAR-ONT'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:11:7: ( 'OSCAR-ONT' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:11:9: 'OSCAR-ONT'
             {
             match("OSCAR-ONT"); 
 
@@ -265,8 +265,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__12;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:12:7: ( 'TM-UNICODE' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:12:9: 'TM-UNICODE'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:12:7: ( 'TM-UNICODE' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:12:9: 'TM-UNICODE'
             {
             match("TM-UNICODE"); 
 
@@ -286,8 +286,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:13:7: ( 'CD-UNICODE' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:13:9: 'CD-UNICODE'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:13:7: ( 'CD-UNICODE' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:13:9: 'CD-UNICODE'
             {
             match("CD-UNICODE"); 
 
@@ -307,8 +307,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:14:7: ( 'IN-AS' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:14:9: 'IN-AS'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:14:7: ( 'IN-AS' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:14:9: 'IN-AS'
             {
             match("IN-AS"); 
 
@@ -328,8 +328,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:15:7: ( 'IN-BEFORE' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:15:9: 'IN-BEFORE'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:15:7: ( 'IN-BEFORE' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:15:9: 'IN-BEFORE'
             {
             match("IN-BEFORE"); 
 
@@ -349,8 +349,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:16:7: ( 'IN-AFTER' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:16:9: 'IN-AFTER'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:16:7: ( 'IN-AFTER' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:16:9: 'IN-AFTER'
             {
             match("IN-AFTER"); 
 
@@ -370,8 +370,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:17:7: ( 'IN-IN' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:17:9: 'IN-IN'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:17:7: ( 'IN-IN' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:17:9: 'IN-IN'
             {
             match("IN-IN"); 
 
@@ -391,8 +391,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:18:7: ( 'IN-INTO' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:18:9: 'IN-INTO'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:18:7: ( 'IN-INTO' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:18:9: 'IN-INTO'
             {
             match("IN-INTO"); 
 
@@ -412,8 +412,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:19:7: ( 'IN-WITH' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:19:9: 'IN-WITH'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:19:7: ( 'IN-WITH' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:19:9: 'IN-WITH'
             {
             match("IN-WITH"); 
 
@@ -433,8 +433,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:20:7: ( 'IN-WITHOUT' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:20:9: 'IN-WITHOUT'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:20:7: ( 'IN-WITHOUT' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:20:9: 'IN-WITHOUT'
             {
             match("IN-WITHOUT"); 
 
@@ -454,8 +454,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:21:7: ( 'IN-BY' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:21:9: 'IN-BY'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:21:7: ( 'IN-BY' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:21:9: 'IN-BY'
             {
             match("IN-BY"); 
 
@@ -475,8 +475,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:22:7: ( 'IN-VIA' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:22:9: 'IN-VIA'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:22:7: ( 'IN-VIA' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:22:9: 'IN-VIA'
             {
             match("IN-VIA"); 
 
@@ -496,8 +496,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:23:7: ( 'IN-OF' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:23:9: 'IN-OF'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:23:7: ( 'IN-OF' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:23:9: 'IN-OF'
             {
             match("IN-OF"); 
 
@@ -517,8 +517,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:24:7: ( 'IN-ON' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:24:9: 'IN-ON'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:24:7: ( 'IN-ON' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:24:9: 'IN-ON'
             {
             match("IN-ON"); 
 
@@ -538,8 +538,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:25:7: ( 'IN-FOR' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:25:9: 'IN-FOR'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:25:7: ( 'IN-FOR' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:25:9: 'IN-FOR'
             {
             match("IN-FOR"); 
 
@@ -559,8 +559,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:26:7: ( 'IN-FROM' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:26:9: 'IN-FROM'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:26:7: ( 'IN-FROM' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:26:9: 'IN-FROM'
             {
             match("IN-FROM"); 
 
@@ -580,8 +580,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:27:7: ( 'IN-UNDER' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:27:9: 'IN-UNDER'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:27:7: ( 'IN-UNDER' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:27:9: 'IN-UNDER'
             {
             match("IN-UNDER"); 
 
@@ -601,8 +601,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:28:7: ( 'IN-OVER' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:28:9: 'IN-OVER'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:28:7: ( 'IN-OVER' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:28:9: 'IN-OVER'
             {
             match("IN-OVER"); 
 
@@ -622,8 +622,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:29:7: ( 'IN-OFF' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:29:9: 'IN-OFF'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:29:7: ( 'IN-OFF' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:29:9: 'IN-OFF'
             {
             match("IN-OFF"); 
 
@@ -643,8 +643,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:30:7: ( 'NN-STATE' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:30:9: 'NN-STATE'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:30:7: ( 'NN-STATE' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:30:9: 'NN-STATE'
             {
             match("NN-STATE"); 
 
@@ -664,8 +664,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:31:7: ( 'NN-TIME' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:31:9: 'NN-TIME'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:31:7: ( 'NN-TIME' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:31:9: 'NN-TIME'
             {
             match("NN-TIME"); 
 
@@ -685,8 +685,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:32:7: ( 'NN-GRAM' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:32:9: 'NN-GRAM'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:32:7: ( 'NN-GRAM' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:32:9: 'NN-GRAM'
             {
             match("NN-GRAM"); 
 
@@ -706,8 +706,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:33:7: ( 'NN-MOL' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:33:9: 'NN-MOL'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:33:7: ( 'NN-MOL' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:33:9: 'NN-MOL'
             {
             match("NN-MOL"); 
 
@@ -727,8 +727,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:34:7: ( 'NN-ATMOSPHERE' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:34:9: 'NN-ATMOSPHERE'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:34:7: ( 'NN-ATMOSPHERE' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:34:9: 'NN-ATMOSPHERE'
             {
             match("NN-ATMOSPHERE"); 
 
@@ -748,8 +748,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:35:7: ( 'NN-EQ' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:35:9: 'NN-EQ'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:35:7: ( 'NN-EQ' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:35:9: 'NN-EQ'
             {
             match("NN-EQ"); 
 
@@ -769,8 +769,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:36:7: ( 'NN-VOL' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:36:9: 'NN-VOL'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:36:7: ( 'NN-VOL' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:36:9: 'NN-VOL'
             {
             match("NN-VOL"); 
 
@@ -790,8 +790,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:37:7: ( 'NN-CHEMENTITY' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:37:9: 'NN-CHEMENTITY'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:37:7: ( 'NN-CHEMENTITY' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:37:9: 'NN-CHEMENTITY'
             {
             match("NN-CHEMENTITY"); 
 
@@ -811,8 +811,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__38;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:38:7: ( 'NN-TEMP' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:38:9: 'NN-TEMP'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:38:7: ( 'NN-TEMP' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:38:9: 'NN-TEMP'
             {
             match("NN-TEMP"); 
 
@@ -832,8 +832,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__39;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:39:7: ( 'NN-FLASH' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:39:9: 'NN-FLASH'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:39:7: ( 'NN-FLASH' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:39:9: 'NN-FLASH'
             {
             match("NN-FLASH"); 
 
@@ -853,8 +853,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__40;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:40:7: ( 'NN-GENERAL' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:40:9: 'NN-GENERAL'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:40:7: ( 'NN-GENERAL' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:40:9: 'NN-GENERAL'
             {
             match("NN-GENERAL"); 
 
@@ -874,8 +874,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__41;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:41:7: ( 'NN-METHOD' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:41:9: 'NN-METHOD'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:41:7: ( 'NN-METHOD' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:41:9: 'NN-METHOD'
             {
             match("NN-METHOD"); 
 
@@ -895,8 +895,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__42;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:42:7: ( 'NN-AMOUNT' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:42:9: 'NN-AMOUNT'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:42:7: ( 'NN-AMOUNT' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:42:9: 'NN-AMOUNT'
             {
             match("NN-AMOUNT"); 
 
@@ -916,8 +916,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__43;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:43:7: ( 'NN-PRESSURE' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:43:9: 'NN-PRESSURE'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:43:7: ( 'NN-PRESSURE' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:43:9: 'NN-PRESSURE'
             {
             match("NN-PRESSURE"); 
 
@@ -937,8 +937,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__44;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:44:7: ( 'NN-COLUMN' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:44:9: 'NN-COLUMN'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:44:7: ( 'NN-COLUMN' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:44:9: 'NN-COLUMN'
             {
             match("NN-COLUMN"); 
 
@@ -958,8 +958,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__45;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:45:7: ( 'NN-CHROMATOGRAPHY' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:45:9: 'NN-CHROMATOGRAPHY'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:45:7: ( 'NN-CHROMATOGRAPHY' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:45:9: 'NN-CHROMATOGRAPHY'
             {
             match("NN-CHROMATOGRAPHY"); 
 
@@ -979,8 +979,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__46;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:46:7: ( 'NN-VACUUM' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:46:9: 'NN-VACUUM'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:46:7: ( 'NN-VACUUM' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:46:9: 'NN-VACUUM'
             {
             match("NN-VACUUM"); 
 
@@ -1000,8 +1000,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__47;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:47:7: ( 'NN-CYCLE' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:47:9: 'NN-CYCLE'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:47:7: ( 'NN-CYCLE' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:47:9: 'NN-CYCLE'
             {
             match("NN-CYCLE"); 
 
@@ -1021,8 +1021,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__48;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:48:7: ( 'NN-TIMES' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:48:9: 'NN-TIMES'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:48:7: ( 'NN-TIMES' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:48:9: 'NN-TIMES'
             {
             match("NN-TIMES"); 
 
@@ -1042,8 +1042,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__49;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:49:7: ( 'OSCAR-CM' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:49:9: 'OSCAR-CM'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:49:7: ( 'OSCAR-CM' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:49:9: 'OSCAR-CM'
             {
             match("OSCAR-CM"); 
 
@@ -1063,8 +1063,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__50;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:50:7: ( 'VB-USE' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:50:9: 'VB-USE'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:50:7: ( 'VB-USE' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:50:9: 'VB-USE'
             {
             match("VB-USE"); 
 
@@ -1084,8 +1084,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__51;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:51:7: ( 'VB-CHANGE' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:51:9: 'VB-CHANGE'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:51:7: ( 'VB-CHANGE' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:51:9: 'VB-CHANGE'
             {
             match("VB-CHANGE"); 
 
@@ -1105,8 +1105,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__52;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:52:7: ( 'VB-SUBMERGE' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:52:9: 'VB-SUBMERGE'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:52:7: ( 'VB-SUBMERGE' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:52:9: 'VB-SUBMERGE'
             {
             match("VB-SUBMERGE"); 
 
@@ -1126,8 +1126,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__53;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:53:7: ( 'VB-SUBJECT' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:53:9: 'VB-SUBJECT'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:53:7: ( 'VB-SUBJECT' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:53:9: 'VB-SUBJECT'
             {
             match("VB-SUBJECT"); 
 
@@ -1147,8 +1147,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__54;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:54:7: ( 'NN-ADD' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:54:9: 'NN-ADD'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:54:7: ( 'NN-ADD' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:54:9: 'NN-ADD'
             {
             match("NN-ADD"); 
 
@@ -1168,8 +1168,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__55;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:55:7: ( 'NN-MIXTURE' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:55:9: 'NN-MIXTURE'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:55:7: ( 'NN-MIXTURE' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:55:9: 'NN-MIXTURE'
             {
             match("NN-MIXTURE"); 
 
@@ -1189,8 +1189,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__56;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:56:7: ( 'VB-ADD' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:56:9: 'VB-ADD'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:56:7: ( 'VB-ADD' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:56:9: 'VB-ADD'
             {
             match("VB-ADD"); 
 
@@ -1210,8 +1210,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__57;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:57:7: ( 'VB-CHARGE' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:57:9: 'VB-CHARGE'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:57:7: ( 'VB-CHARGE' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:57:9: 'VB-CHARGE'
             {
             match("VB-CHARGE"); 
 
@@ -1231,8 +1231,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__58;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:58:7: ( 'VB-CONTAIN' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:58:9: 'VB-CONTAIN'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:58:7: ( 'VB-CONTAIN' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:58:9: 'VB-CONTAIN'
             {
             match("VB-CONTAIN"); 
 
@@ -1252,8 +1252,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__59;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:59:7: ( 'VB-DROP' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:59:9: 'VB-DROP'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:59:7: ( 'VB-DROP' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:59:9: 'VB-DROP'
             {
             match("VB-DROP"); 
 
@@ -1273,8 +1273,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__60;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:60:7: ( 'VB-FILL' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:60:9: 'VB-FILL'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:60:7: ( 'VB-FILL' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:60:9: 'VB-FILL'
             {
             match("VB-FILL"); 
 
@@ -1294,8 +1294,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__61;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:61:7: ( 'VB-SUSPEND' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:61:9: 'VB-SUSPEND'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:61:7: ( 'VB-SUSPEND' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:61:9: 'VB-SUSPEND'
             {
             match("VB-SUSPEND"); 
 
@@ -1315,8 +1315,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__62;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:62:7: ( 'VB-TREAT' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:62:9: 'VB-TREAT'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:62:7: ( 'VB-TREAT' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:62:9: 'VB-TREAT'
             {
             match("VB-TREAT"); 
 
@@ -1336,8 +1336,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__63;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:63:7: ( 'VB-APPARATUS' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:63:9: 'VB-APPARATUS'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:63:7: ( 'VB-APPARATUS' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:63:9: 'VB-APPARATUS'
             {
             match("VB-APPARATUS"); 
 
@@ -1357,8 +1357,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__64;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:64:7: ( 'NN-APPARATUS' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:64:9: 'NN-APPARATUS'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:64:7: ( 'NN-APPARATUS' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:64:9: 'NN-APPARATUS'
             {
             match("NN-APPARATUS"); 
 
@@ -1378,8 +1378,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__65;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:65:7: ( 'VB-CONCENTRATE' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:65:9: 'VB-CONCENTRATE'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:65:7: ( 'VB-CONCENTRATE' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:65:9: 'VB-CONCENTRATE'
             {
             match("VB-CONCENTRATE"); 
 
@@ -1399,8 +1399,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__66;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:66:7: ( 'NN-CONCENTRATE' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:66:9: 'NN-CONCENTRATE'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:66:7: ( 'NN-CONCENTRATE' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:66:9: 'NN-CONCENTRATE'
             {
             match("NN-CONCENTRATE"); 
 
@@ -1420,8 +1420,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__67;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:67:7: ( 'VB-COOL' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:67:9: 'VB-COOL'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:67:7: ( 'VB-COOL' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:67:9: 'VB-COOL'
             {
             match("VB-COOL"); 
 
@@ -1441,8 +1441,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__68;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:68:7: ( 'VB-DEGASS' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:68:9: 'VB-DEGASS'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:68:7: ( 'VB-DEGASS' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:68:9: 'VB-DEGASS'
             {
             match("VB-DEGASS"); 
 
@@ -1462,8 +1462,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__69;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:69:7: ( 'VB-DISSOLVE' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:69:9: 'VB-DISSOLVE'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:69:7: ( 'VB-DISSOLVE' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:69:9: 'VB-DISSOLVE'
             {
             match("VB-DISSOLVE"); 
 
@@ -1483,8 +1483,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__70;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:70:7: ( 'VB-DRY' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:70:9: 'VB-DRY'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:70:7: ( 'VB-DRY' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:70:9: 'VB-DRY'
             {
             match("VB-DRY"); 
 
@@ -1504,8 +1504,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__71;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:71:7: ( 'NN-DRY' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:71:9: 'NN-DRY'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:71:7: ( 'NN-DRY' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:71:9: 'NN-DRY'
             {
             match("NN-DRY"); 
 
@@ -1525,8 +1525,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__72;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:72:7: ( 'VB-EXTRACT' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:72:9: 'VB-EXTRACT'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:72:7: ( 'VB-EXTRACT' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:72:9: 'VB-EXTRACT'
             {
             match("VB-EXTRACT"); 
 
@@ -1546,8 +1546,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__73;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:73:7: ( 'NN-EXTRACT' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:73:9: 'NN-EXTRACT'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:73:7: ( 'NN-EXTRACT' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:73:9: 'NN-EXTRACT'
             {
             match("NN-EXTRACT"); 
 
@@ -1567,8 +1567,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__74;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:74:7: ( 'VB-FILTER' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:74:9: 'VB-FILTER'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:74:7: ( 'VB-FILTER' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:74:9: 'VB-FILTER'
             {
             match("VB-FILTER"); 
 
@@ -1588,8 +1588,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__75;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:75:7: ( 'NN-FILTER' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:75:9: 'NN-FILTER'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:75:7: ( 'NN-FILTER' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:75:9: 'NN-FILTER'
             {
             match("NN-FILTER"); 
 
@@ -1609,8 +1609,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__76;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:76:7: ( 'VB-HEAT' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:76:9: 'VB-HEAT'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:76:7: ( 'VB-HEAT' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:76:9: 'VB-HEAT'
             {
             match("VB-HEAT"); 
 
@@ -1630,8 +1630,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__77;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:77:7: ( 'VB-INCREASE' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:77:9: 'VB-INCREASE'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:77:7: ( 'VB-INCREASE' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:77:9: 'VB-INCREASE'
             {
             match("VB-INCREASE"); 
 
@@ -1651,8 +1651,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__78;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:78:7: ( 'VB-PARTITION' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:78:9: 'VB-PARTITION'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:78:7: ( 'VB-PARTITION' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:78:9: 'VB-PARTITION'
             {
             match("VB-PARTITION"); 
 
@@ -1672,8 +1672,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__79;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:79:7: ( 'VB-PRECIPITATE' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:79:9: 'VB-PRECIPITATE'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:79:7: ( 'VB-PRECIPITATE' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:79:9: 'VB-PRECIPITATE'
             {
             match("VB-PRECIPITATE"); 
 
@@ -1693,8 +1693,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__80;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:80:7: ( 'NN-PRECIPITATE' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:80:9: 'NN-PRECIPITATE'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:80:7: ( 'NN-PRECIPITATE' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:80:9: 'NN-PRECIPITATE'
             {
             match("NN-PRECIPITATE"); 
 
@@ -1714,8 +1714,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__81;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:81:7: ( 'VB-PURIFY' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:81:9: 'VB-PURIFY'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:81:7: ( 'VB-PURIFY' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:81:9: 'VB-PURIFY'
             {
             match("VB-PURIFY"); 
 
@@ -1735,8 +1735,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__82;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:82:7: ( 'NN-PURIFY' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:82:9: 'NN-PURIFY'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:82:7: ( 'NN-PURIFY' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:82:9: 'NN-PURIFY'
             {
             match("NN-PURIFY"); 
 
@@ -1756,8 +1756,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__83;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:83:7: ( 'VB-QUENCH' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:83:9: 'VB-QUENCH'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:83:7: ( 'VB-QUENCH' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:83:9: 'VB-QUENCH'
             {
             match("VB-QUENCH"); 
 
@@ -1777,8 +1777,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__84;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:84:7: ( 'VB-RECOVER' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:84:9: 'VB-RECOVER'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:84:7: ( 'VB-RECOVER' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:84:9: 'VB-RECOVER'
             {
             match("VB-RECOVER"); 
 
@@ -1798,8 +1798,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__85;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:85:7: ( 'VB-REMOVE' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:85:9: 'VB-REMOVE'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:85:7: ( 'VB-REMOVE' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:85:9: 'VB-REMOVE'
             {
             match("VB-REMOVE"); 
 
@@ -1819,8 +1819,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__86;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:86:7: ( 'NN-REMOVE' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:86:9: 'NN-REMOVE'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:86:7: ( 'NN-REMOVE' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:86:9: 'NN-REMOVE'
             {
             match("NN-REMOVE"); 
 
@@ -1840,8 +1840,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__87;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:87:7: ( 'VB-STIR' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:87:9: 'VB-STIR'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:87:7: ( 'VB-STIR' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:87:9: 'VB-STIR'
             {
             match("VB-STIR"); 
 
@@ -1861,8 +1861,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__88;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:88:7: ( 'VB-SYNTHESIZE' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:88:9: 'VB-SYNTHESIZE'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:88:7: ( 'VB-SYNTHESIZE' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:88:9: 'VB-SYNTHESIZE'
             {
             match("VB-SYNTHESIZE"); 
 
@@ -1882,8 +1882,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__89;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:89:7: ( 'NN-SYNTHESIZE' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:89:9: 'NN-SYNTHESIZE'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:89:7: ( 'NN-SYNTHESIZE' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:89:9: 'NN-SYNTHESIZE'
             {
             match("NN-SYNTHESIZE"); 
 
@@ -1903,8 +1903,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__90;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:90:7: ( 'VB-WAIT' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:90:9: 'VB-WAIT'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:90:7: ( 'VB-WAIT' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:90:9: 'VB-WAIT'
             {
             match("VB-WAIT"); 
 
@@ -1924,8 +1924,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__91;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:91:7: ( 'VB-WASH' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:91:9: 'VB-WASH'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:91:7: ( 'VB-WASH' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:91:9: 'VB-WASH'
             {
             match("VB-WASH"); 
 
@@ -1945,8 +1945,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__92;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:92:7: ( 'VB-YIELD' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:92:9: 'VB-YIELD'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:92:7: ( 'VB-YIELD' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:92:9: 'VB-YIELD'
             {
             match("VB-YIELD"); 
 
@@ -1966,8 +1966,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__93;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:93:7: ( 'COLON' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:93:9: 'COLON'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:93:7: ( 'COLON' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:93:9: 'COLON'
             {
             match("COLON"); 
 
@@ -1987,8 +1987,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__94;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:94:7: ( 'COMMA' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:94:9: 'COMMA'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:94:7: ( 'COMMA' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:94:9: 'COMMA'
             {
             match("COMMA"); 
 
@@ -2008,8 +2008,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__95;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:95:7: ( 'APOST' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:95:9: 'APOST'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:95:7: ( 'APOST' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:95:9: 'APOST'
             {
             match("APOST"); 
 
@@ -2029,8 +2029,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__96;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:96:7: ( 'NEG' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:96:9: 'NEG'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:96:7: ( 'NEG' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:96:9: 'NEG'
             {
             match("NEG"); 
 
@@ -2050,8 +2050,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__97;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:97:7: ( 'DASH' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:97:9: 'DASH'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:97:7: ( 'DASH' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:97:9: 'DASH'
             {
             match("DASH"); 
 
@@ -2071,8 +2071,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__98;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:98:7: ( 'STOP' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:98:9: 'STOP'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:98:7: ( 'STOP' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:98:9: 'STOP'
             {
             match("STOP"); 
 
@@ -2092,8 +2092,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__99;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:99:7: ( 'NN-PERCENT' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:99:9: 'NN-PERCENT'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:99:7: ( 'NN-PERCENT' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:99:9: 'NN-PERCENT'
             {
             match("NN-PERCENT"); 
 
@@ -2113,8 +2113,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__100;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:100:8: ( 'LSQB' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:100:10: 'LSQB'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:100:8: ( 'LSQB' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:100:10: 'LSQB'
             {
             match("LSQB"); 
 
@@ -2134,8 +2134,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__101;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:101:8: ( 'RSQB' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:101:10: 'RSQB'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:101:8: ( 'RSQB' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:101:10: 'RSQB'
             {
             match("RSQB"); 
 
@@ -2155,8 +2155,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__102;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:102:8: ( '-LRB-' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:102:10: '-LRB-'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:102:8: ( '-LRB-' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:102:10: '-LRB-'
             {
             match("-LRB-"); 
 
@@ -2176,8 +2176,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__103;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:103:8: ( '-RRB-' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:103:10: '-RRB-'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:103:8: ( '-RRB-' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:103:10: '-RRB-'
             {
             match("-RRB-"); 
 
@@ -2197,8 +2197,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__104;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:104:8: ( 'ABL' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:104:10: 'ABL'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:104:8: ( 'ABL' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:104:10: 'ABL'
             {
             match("ABL"); 
 
@@ -2218,8 +2218,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__105;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:105:8: ( 'ABN' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:105:10: 'ABN'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:105:8: ( 'ABN' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:105:10: 'ABN'
             {
             match("ABN"); 
 
@@ -2239,8 +2239,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__106;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:106:8: ( 'ABX' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:106:10: 'ABX'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:106:8: ( 'ABX' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:106:10: 'ABX'
             {
             match("ABX"); 
 
@@ -2260,8 +2260,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__107;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:107:8: ( 'AP' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:107:10: 'AP'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:107:8: ( 'AP' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:107:10: 'AP'
             {
             match("AP"); 
 
@@ -2281,8 +2281,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__108;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:108:8: ( 'AT' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:108:10: 'AT'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:108:8: ( 'AT' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:108:10: 'AT'
             {
             match("AT"); 
 
@@ -2302,8 +2302,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__109;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:109:8: ( 'BE' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:109:10: 'BE'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:109:8: ( 'BE' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:109:10: 'BE'
             {
             match("BE"); 
 
@@ -2323,8 +2323,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__110;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:110:8: ( 'BED' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:110:10: 'BED'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:110:8: ( 'BED' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:110:10: 'BED'
             {
             match("BED"); 
 
@@ -2344,8 +2344,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__111;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:111:8: ( 'BEDZ' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:111:10: 'BEDZ'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:111:8: ( 'BEDZ' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:111:10: 'BEDZ'
             {
             match("BEDZ"); 
 
@@ -2365,8 +2365,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__112;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:112:8: ( 'BEG' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:112:10: 'BEG'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:112:8: ( 'BEG' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:112:10: 'BEG'
             {
             match("BEG"); 
 
@@ -2386,8 +2386,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__113;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:113:8: ( 'BEM' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:113:10: 'BEM'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:113:8: ( 'BEM' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:113:10: 'BEM'
             {
             match("BEM"); 
 
@@ -2407,8 +2407,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__114;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:114:8: ( 'BEN' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:114:10: 'BEN'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:114:8: ( 'BEN' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:114:10: 'BEN'
             {
             match("BEN"); 
 
@@ -2428,8 +2428,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__115;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:115:8: ( 'BER' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:115:10: 'BER'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:115:8: ( 'BER' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:115:10: 'BER'
             {
             match("BER"); 
 
@@ -2449,8 +2449,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__116;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:116:8: ( 'BEZ' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:116:10: 'BEZ'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:116:8: ( 'BEZ' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:116:10: 'BEZ'
             {
             match("BEZ"); 
 
@@ -2470,8 +2470,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__117;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:117:8: ( 'CC' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:117:10: 'CC'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:117:8: ( 'CC' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:117:10: 'CC'
             {
             match("CC"); 
 
@@ -2491,8 +2491,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__118;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:118:8: ( 'CD' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:118:10: 'CD'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:118:8: ( 'CD' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:118:10: 'CD'
             {
             match("CD"); 
 
@@ -2512,8 +2512,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__119;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:119:8: ( 'CS' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:119:10: 'CS'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:119:8: ( 'CS' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:119:10: 'CS'
             {
             match("CS"); 
 
@@ -2533,8 +2533,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__120;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:120:8: ( 'DO' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:120:10: 'DO'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:120:8: ( 'DO' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:120:10: 'DO'
             {
             match("DO"); 
 
@@ -2554,8 +2554,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__121;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:121:8: ( 'DOD' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:121:10: 'DOD'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:121:8: ( 'DOD' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:121:10: 'DOD'
             {
             match("DOD"); 
 
@@ -2575,8 +2575,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__122;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:122:8: ( 'DOZ' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:122:10: 'DOZ'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:122:8: ( 'DOZ' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:122:10: 'DOZ'
             {
             match("DOZ"); 
 
@@ -2596,8 +2596,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__123;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:123:8: ( 'DT' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:123:10: 'DT'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:123:8: ( 'DT' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:123:10: 'DT'
             {
             match("DT"); 
 
@@ -2617,8 +2617,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__124;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:124:8: ( 'DTI' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:124:10: 'DTI'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:124:8: ( 'DTI' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:124:10: 'DTI'
             {
             match("DTI"); 
 
@@ -2638,8 +2638,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__125;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:125:8: ( 'DTS' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:125:10: 'DTS'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:125:8: ( 'DTS' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:125:10: 'DTS'
             {
             match("DTS"); 
 
@@ -2659,8 +2659,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__126;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:126:8: ( 'DTX' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:126:10: 'DTX'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:126:8: ( 'DTX' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:126:10: 'DTX'
             {
             match("DTX"); 
 
@@ -2680,8 +2680,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__127;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:127:8: ( 'EX' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:127:10: 'EX'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:127:8: ( 'EX' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:127:10: 'EX'
             {
             match("EX"); 
 
@@ -2701,8 +2701,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__128;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:128:8: ( 'FW' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:128:10: 'FW'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:128:8: ( 'FW' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:128:10: 'FW'
             {
             match("FW"); 
 
@@ -2722,8 +2722,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__129;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:129:8: ( 'HV' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:129:10: 'HV'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:129:8: ( 'HV' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:129:10: 'HV'
             {
             match("HV"); 
 
@@ -2743,8 +2743,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__130;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:130:8: ( 'HVD' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:130:10: 'HVD'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:130:8: ( 'HVD' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:130:10: 'HVD'
             {
             match("HVD"); 
 
@@ -2764,8 +2764,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__131;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:131:8: ( 'HVG' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:131:10: 'HVG'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:131:8: ( 'HVG' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:131:10: 'HVG'
             {
             match("HVG"); 
 
@@ -2785,8 +2785,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__132;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:132:8: ( 'HVN' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:132:10: 'HVN'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:132:8: ( 'HVN' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:132:10: 'HVN'
             {
             match("HVN"); 
 
@@ -2806,8 +2806,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__133;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:133:8: ( 'IN' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:133:10: 'IN'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:133:8: ( 'IN' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:133:10: 'IN'
             {
             match("IN"); 
 
@@ -2827,8 +2827,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__134;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:134:8: ( 'JJ' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:134:10: 'JJ'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:134:8: ( 'JJ' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:134:10: 'JJ'
             {
             match("JJ"); 
 
@@ -2848,8 +2848,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__135;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:135:8: ( 'JJR' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:135:10: 'JJR'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:135:8: ( 'JJR' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:135:10: 'JJR'
             {
             match("JJR"); 
 
@@ -2869,8 +2869,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__136;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:136:8: ( 'JJS' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:136:10: 'JJS'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:136:8: ( 'JJS' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:136:10: 'JJS'
             {
             match("JJS"); 
 
@@ -2890,8 +2890,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__137;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:137:8: ( 'JJT' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:137:10: 'JJT'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:137:8: ( 'JJT' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:137:10: 'JJT'
             {
             match("JJT"); 
 
@@ -2911,8 +2911,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__138;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:138:8: ( 'MD' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:138:10: 'MD'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:138:8: ( 'MD' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:138:10: 'MD'
             {
             match("MD"); 
 
@@ -2932,8 +2932,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__139;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:139:8: ( 'NC' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:139:10: 'NC'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:139:8: ( 'NC' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:139:10: 'NC'
             {
             match("NC"); 
 
@@ -2953,8 +2953,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__140;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:140:8: ( 'NN' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:140:10: 'NN'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:140:8: ( 'NN' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:140:10: 'NN'
             {
             match("NN"); 
 
@@ -2974,8 +2974,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__141;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:141:8: ( 'NN$' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:141:10: 'NN$'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:141:8: ( 'NN$' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:141:10: 'NN$'
             {
             match("NN$"); 
 
@@ -2995,8 +2995,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__142;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:142:8: ( 'NNS' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:142:10: 'NNS'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:142:8: ( 'NNS' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:142:10: 'NNS'
             {
             match("NNS"); 
 
@@ -3016,8 +3016,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__143;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:143:8: ( 'NNS$' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:143:10: 'NNS$'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:143:8: ( 'NNS$' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:143:10: 'NNS$'
             {
             match("NNS$"); 
 
@@ -3037,8 +3037,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__144;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:144:8: ( 'NP' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:144:10: 'NP'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:144:8: ( 'NP' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:144:10: 'NP'
             {
             match("NP"); 
 
@@ -3058,8 +3058,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__145;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:145:8: ( 'NP$' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:145:10: 'NP$'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:145:8: ( 'NP$' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:145:10: 'NP$'
             {
             match("NP$"); 
 
@@ -3079,8 +3079,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__146;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:146:8: ( 'NPS' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:146:10: 'NPS'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:146:8: ( 'NPS' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:146:10: 'NPS'
             {
             match("NPS"); 
 
@@ -3100,8 +3100,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__147;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:147:8: ( 'NPS$' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:147:10: 'NPS$'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:147:8: ( 'NPS$' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:147:10: 'NPS$'
             {
             match("NPS$"); 
 
@@ -3121,8 +3121,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__148;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:148:8: ( 'NR' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:148:10: 'NR'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:148:8: ( 'NR' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:148:10: 'NR'
             {
             match("NR"); 
 
@@ -3142,8 +3142,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__149;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:149:8: ( 'OD' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:149:10: 'OD'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:149:8: ( 'OD' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:149:10: 'OD'
             {
             match("OD"); 
 
@@ -3163,8 +3163,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__150;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:150:8: ( 'PN' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:150:10: 'PN'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:150:8: ( 'PN' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:150:10: 'PN'
             {
             match("PN"); 
 
@@ -3184,8 +3184,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__151;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:151:8: ( 'PN$' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:151:10: 'PN$'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:151:8: ( 'PN$' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:151:10: 'PN$'
             {
             match("PN$"); 
 
@@ -3205,8 +3205,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__152;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:152:8: ( 'PP$' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:152:10: 'PP$'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:152:8: ( 'PP$' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:152:10: 'PP$'
             {
             match("PP$"); 
 
@@ -3226,8 +3226,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__153;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:153:8: ( 'PP$$' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:153:10: 'PP$$'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:153:8: ( 'PP$$' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:153:10: 'PP$$'
             {
             match("PP$$"); 
 
@@ -3247,8 +3247,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__154;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:154:8: ( 'PPL' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:154:10: 'PPL'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:154:8: ( 'PPL' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:154:10: 'PPL'
             {
             match("PPL"); 
 
@@ -3268,8 +3268,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__155;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:155:8: ( 'PPLS' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:155:10: 'PPLS'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:155:8: ( 'PPLS' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:155:10: 'PPLS'
             {
             match("PPLS"); 
 
@@ -3289,8 +3289,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__156;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:156:8: ( 'PPO' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:156:10: 'PPO'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:156:8: ( 'PPO' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:156:10: 'PPO'
             {
             match("PPO"); 
 
@@ -3310,8 +3310,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__157;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:157:8: ( 'PPS' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:157:10: 'PPS'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:157:8: ( 'PPS' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:157:10: 'PPS'
             {
             match("PPS"); 
 
@@ -3331,8 +3331,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__158;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:158:8: ( 'PPSS' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:158:10: 'PPSS'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:158:8: ( 'PPSS' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:158:10: 'PPSS'
             {
             match("PPSS"); 
 
@@ -3352,8 +3352,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__159;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:159:8: ( 'QL' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:159:10: 'QL'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:159:8: ( 'QL' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:159:10: 'QL'
             {
             match("QL"); 
 
@@ -3373,8 +3373,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__160;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:160:8: ( 'QLP' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:160:10: 'QLP'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:160:8: ( 'QLP' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:160:10: 'QLP'
             {
             match("QLP"); 
 
@@ -3394,8 +3394,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__161;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:161:8: ( 'RB' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:161:10: 'RB'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:161:8: ( 'RB' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:161:10: 'RB'
             {
             match("RB"); 
 
@@ -3415,8 +3415,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__162;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:162:8: ( 'RBR' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:162:10: 'RBR'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:162:8: ( 'RBR' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:162:10: 'RBR'
             {
             match("RBR"); 
 
@@ -3436,8 +3436,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__163;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:163:8: ( 'RBT' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:163:10: 'RBT'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:163:8: ( 'RBT' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:163:10: 'RBT'
             {
             match("RBT"); 
 
@@ -3457,8 +3457,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__164;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:164:8: ( 'RN' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:164:10: 'RN'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:164:8: ( 'RN' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:164:10: 'RN'
             {
             match("RN"); 
 
@@ -3478,8 +3478,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__165;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:165:8: ( 'RP' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:165:10: 'RP'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:165:8: ( 'RP' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:165:10: 'RP'
             {
             match("RP"); 
 
@@ -3499,8 +3499,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__166;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:166:8: ( 'TO' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:166:10: 'TO'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:166:8: ( 'TO' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:166:10: 'TO'
             {
             match("TO"); 
 
@@ -3520,8 +3520,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__167;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:167:8: ( 'UH' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:167:10: 'UH'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:167:8: ( 'UH' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:167:10: 'UH'
             {
             match("UH"); 
 
@@ -3541,8 +3541,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__168;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:168:8: ( 'VB' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:168:10: 'VB'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:168:8: ( 'VB' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:168:10: 'VB'
             {
             match("VB"); 
 
@@ -3562,8 +3562,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__169;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:169:8: ( 'VBD' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:169:10: 'VBD'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:169:8: ( 'VBD' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:169:10: 'VBD'
             {
             match("VBD"); 
 
@@ -3583,8 +3583,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__170;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:170:8: ( 'VBG' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:170:10: 'VBG'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:170:8: ( 'VBG' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:170:10: 'VBG'
             {
             match("VBG"); 
 
@@ -3604,8 +3604,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__171;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:171:8: ( 'VBN' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:171:10: 'VBN'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:171:8: ( 'VBN' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:171:10: 'VBN'
             {
             match("VBN"); 
 
@@ -3625,8 +3625,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__172;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:172:8: ( 'VBZ' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:172:10: 'VBZ'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:172:8: ( 'VBZ' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:172:10: 'VBZ'
             {
             match("VBZ"); 
 
@@ -3646,8 +3646,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__173;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:173:8: ( 'WDT' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:173:10: 'WDT'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:173:8: ( 'WDT' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:173:10: 'WDT'
             {
             match("WDT"); 
 
@@ -3667,8 +3667,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__174;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:174:8: ( 'WP$' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:174:10: 'WP$'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:174:8: ( 'WP$' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:174:10: 'WP$'
             {
             match("WP$"); 
 
@@ -3688,8 +3688,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__175;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:175:8: ( 'WPO' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:175:10: 'WPO'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:175:8: ( 'WPO' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:175:10: 'WPO'
             {
             match("WPO"); 
 
@@ -3709,8 +3709,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__176;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:176:8: ( 'WPS' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:176:10: 'WPS'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:176:8: ( 'WPS' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:176:10: 'WPS'
             {
             match("WPS"); 
 
@@ -3730,8 +3730,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__177;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:177:8: ( 'WQL' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:177:10: 'WQL'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:177:8: ( 'WQL' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:177:10: 'WQL'
             {
             match("WQL"); 
 
@@ -3751,8 +3751,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__178;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:178:8: ( 'WRB' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:178:10: 'WRB'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:178:8: ( 'WRB' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:178:10: 'WRB'
             {
             match("WRB"); 
 
@@ -3772,10 +3772,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:12:4: ( ( ' ' | '\\t' )+ )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:12:7: ( ' ' | '\\t' )+
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:13:4: ( ( ' ' | '\\t' )+ )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:13:7: ( ' ' | '\\t' )+
             {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:12:7: ( ' ' | '\\t' )+
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:13:7: ( ' ' | '\\t' )+
             int cnt1=0;
             loop1:
             do {
@@ -3789,7 +3789,7 @@ public class ChemicalChunkerLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:
+            	    // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:
             	    {
             	    if ( input.LA(1)=='\t'||input.LA(1)==' ' ) {
             	        input.consume();
@@ -3830,10 +3830,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = NEWLINE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:13:9: ( ( '\\r' )? '\\n' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:13:11: ( '\\r' )? '\\n'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:14:9: ( ( '\\r' )? '\\n' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:14:11: ( '\\r' )? '\\n'
             {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:13:11: ( '\\r' )?
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:14:11: ( '\\r' )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -3842,7 +3842,7 @@ public class ChemicalChunkerLexer extends Lexer {
             }
             switch (alt2) {
                 case 1 :
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:13:11: '\\r'
+                    // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:14:11: '\\r'
                     {
                     match('\r'); 
 
@@ -3868,7 +3868,7 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = ACHAR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:16:7: ( ( 'A' .. 'Z' ) | ( 'a' .. 'z' ) )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:17:7: ( ( 'A' .. 'Z' ) | ( 'a' .. 'z' ) )
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -3886,10 +3886,10 @@ public class ChemicalChunkerLexer extends Lexer {
             }
             switch (alt3) {
                 case 1 :
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:16:9: ( 'A' .. 'Z' )
+                    // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:17:9: ( 'A' .. 'Z' )
                     {
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:16:9: ( 'A' .. 'Z' )
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:16:10: 'A' .. 'Z'
+                    // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:17:9: ( 'A' .. 'Z' )
+                    // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:17:10: 'A' .. 'Z'
                     {
                     matchRange('A','Z'); 
 
@@ -3899,10 +3899,10 @@ public class ChemicalChunkerLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:16:22: ( 'a' .. 'z' )
+                    // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:17:22: ( 'a' .. 'z' )
                     {
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:16:22: ( 'a' .. 'z' )
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:16:23: 'a' .. 'z'
+                    // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:17:22: ( 'a' .. 'z' )
+                    // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:17:23: 'a' .. 'z'
                     {
                     matchRange('a','z'); 
 
@@ -3926,11 +3926,11 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = DIGIT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:19:7: ( ( '0' .. '9' ) )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:19:9: ( '0' .. '9' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:20:7: ( ( '0' .. '9' ) )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:20:9: ( '0' .. '9' )
             {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:19:9: ( '0' .. '9' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:19:10: '0' .. '9'
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:20:9: ( '0' .. '9' )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:20:10: '0' .. '9'
             {
             matchRange('0','9'); 
 
@@ -3952,10 +3952,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:21:7: ( ( ACHAR | '_' | ',' | '.' | ')' | '(' | '-' | DIGIT )+ )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:21:9: ( ACHAR | '_' | ',' | '.' | ')' | '(' | '-' | DIGIT )+
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:22:7: ( ( ACHAR | '_' | ',' | '.' | ')' | '(' | '-' | DIGIT )+ )
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:22:9: ( ACHAR | '_' | ',' | '.' | ')' | '(' | '-' | DIGIT )+
             {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:21:9: ( ACHAR | '_' | ',' | '.' | ')' | '(' | '-' | DIGIT )+
+            // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:22:9: ( ACHAR | '_' | ',' | '.' | ')' | '(' | '-' | DIGIT )+
             int cnt4=0;
             loop4:
             do {
@@ -3963,56 +3963,56 @@ public class ChemicalChunkerLexer extends Lexer {
                 alt4 = dfa4.predict(input);
                 switch (alt4) {
             	case 1 :
-            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:21:10: ACHAR
+            	    // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:22:10: ACHAR
             	    {
             	    mACHAR(); 
 
             	    }
             	    break;
             	case 2 :
-            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:21:17: '_'
+            	    // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:22:17: '_'
             	    {
             	    match('_'); 
 
             	    }
             	    break;
             	case 3 :
-            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:21:21: ','
+            	    // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:22:21: ','
             	    {
             	    match(','); 
 
             	    }
             	    break;
             	case 4 :
-            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:21:26: '.'
+            	    // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:22:26: '.'
             	    {
             	    match('.'); 
 
             	    }
             	    break;
             	case 5 :
-            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:21:30: ')'
+            	    // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:22:30: ')'
             	    {
             	    match(')'); 
 
             	    }
             	    break;
             	case 6 :
-            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:21:34: '('
+            	    // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:22:34: '('
             	    {
             	    match('('); 
 
             	    }
             	    break;
             	case 7 :
-            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:21:38: '-'
+            	    // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:22:38: '-'
             	    {
             	    match('-'); 
 
             	    }
             	    break;
             	case 8 :
-            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:21:42: DIGIT
+            	    // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:22:42: DIGIT
             	    {
             	    mDIGIT(); 
 
@@ -4040,1230 +4040,1230 @@ public class ChemicalChunkerLexer extends Lexer {
     // $ANTLR end "TOKEN"
 
     public void mTokens() throws RecognitionException {
-        // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:8: ( T__9 | T__10 | T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | T__112 | T__113 | T__114 | T__115 | T__116 | T__117 | T__118 | T__119 | T__120 | T__121 | T__122 | T__123 | T__124 | T__125 | T__126 | T__127 | T__128 | T__129 | T__130 | T__131 | T__132 | T__133 | T__134 | T__135 | T__136 | T__137 | T__138 | T__139 | T__140 | T__141 | T__142 | T__143 | T__144 | T__145 | T__146 | T__147 | T__148 | T__149 | T__150 | T__151 | T__152 | T__153 | T__154 | T__155 | T__156 | T__157 | T__158 | T__159 | T__160 | T__161 | T__162 | T__163 | T__164 | T__165 | T__166 | T__167 | T__168 | T__169 | T__170 | T__171 | T__172 | T__173 | T__174 | T__175 | T__176 | T__177 | T__178 | WS | NEWLINE | ACHAR | DIGIT | TOKEN )
+        // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:8: ( T__9 | T__10 | T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | T__112 | T__113 | T__114 | T__115 | T__116 | T__117 | T__118 | T__119 | T__120 | T__121 | T__122 | T__123 | T__124 | T__125 | T__126 | T__127 | T__128 | T__129 | T__130 | T__131 | T__132 | T__133 | T__134 | T__135 | T__136 | T__137 | T__138 | T__139 | T__140 | T__141 | T__142 | T__143 | T__144 | T__145 | T__146 | T__147 | T__148 | T__149 | T__150 | T__151 | T__152 | T__153 | T__154 | T__155 | T__156 | T__157 | T__158 | T__159 | T__160 | T__161 | T__162 | T__163 | T__164 | T__165 | T__166 | T__167 | T__168 | T__169 | T__170 | T__171 | T__172 | T__173 | T__174 | T__175 | T__176 | T__177 | T__178 | WS | NEWLINE | ACHAR | DIGIT | TOKEN )
         int alt5=175;
         alt5 = dfa5.predict(input);
         switch (alt5) {
             case 1 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:10: T__9
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:10: T__9
                 {
                 mT__9(); 
 
                 }
                 break;
             case 2 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:15: T__10
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:15: T__10
                 {
                 mT__10(); 
 
                 }
                 break;
             case 3 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:21: T__11
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:21: T__11
                 {
                 mT__11(); 
 
                 }
                 break;
             case 4 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:27: T__12
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:27: T__12
                 {
                 mT__12(); 
 
                 }
                 break;
             case 5 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:33: T__13
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:33: T__13
                 {
                 mT__13(); 
 
                 }
                 break;
             case 6 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:39: T__14
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:39: T__14
                 {
                 mT__14(); 
 
                 }
                 break;
             case 7 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:45: T__15
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:45: T__15
                 {
                 mT__15(); 
 
                 }
                 break;
             case 8 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:51: T__16
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:51: T__16
                 {
                 mT__16(); 
 
                 }
                 break;
             case 9 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:57: T__17
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:57: T__17
                 {
                 mT__17(); 
 
                 }
                 break;
             case 10 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:63: T__18
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:63: T__18
                 {
                 mT__18(); 
 
                 }
                 break;
             case 11 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:69: T__19
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:69: T__19
                 {
                 mT__19(); 
 
                 }
                 break;
             case 12 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:75: T__20
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:75: T__20
                 {
                 mT__20(); 
 
                 }
                 break;
             case 13 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:81: T__21
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:81: T__21
                 {
                 mT__21(); 
 
                 }
                 break;
             case 14 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:87: T__22
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:87: T__22
                 {
                 mT__22(); 
 
                 }
                 break;
             case 15 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:93: T__23
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:93: T__23
                 {
                 mT__23(); 
 
                 }
                 break;
             case 16 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:99: T__24
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:99: T__24
                 {
                 mT__24(); 
 
                 }
                 break;
             case 17 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:105: T__25
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:105: T__25
                 {
                 mT__25(); 
 
                 }
                 break;
             case 18 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:111: T__26
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:111: T__26
                 {
                 mT__26(); 
 
                 }
                 break;
             case 19 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:117: T__27
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:117: T__27
                 {
                 mT__27(); 
 
                 }
                 break;
             case 20 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:123: T__28
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:123: T__28
                 {
                 mT__28(); 
 
                 }
                 break;
             case 21 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:129: T__29
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:129: T__29
                 {
                 mT__29(); 
 
                 }
                 break;
             case 22 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:135: T__30
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:135: T__30
                 {
                 mT__30(); 
 
                 }
                 break;
             case 23 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:141: T__31
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:141: T__31
                 {
                 mT__31(); 
 
                 }
                 break;
             case 24 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:147: T__32
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:147: T__32
                 {
                 mT__32(); 
 
                 }
                 break;
             case 25 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:153: T__33
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:153: T__33
                 {
                 mT__33(); 
 
                 }
                 break;
             case 26 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:159: T__34
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:159: T__34
                 {
                 mT__34(); 
 
                 }
                 break;
             case 27 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:165: T__35
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:165: T__35
                 {
                 mT__35(); 
 
                 }
                 break;
             case 28 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:171: T__36
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:171: T__36
                 {
                 mT__36(); 
 
                 }
                 break;
             case 29 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:177: T__37
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:177: T__37
                 {
                 mT__37(); 
 
                 }
                 break;
             case 30 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:183: T__38
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:183: T__38
                 {
                 mT__38(); 
 
                 }
                 break;
             case 31 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:189: T__39
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:189: T__39
                 {
                 mT__39(); 
 
                 }
                 break;
             case 32 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:195: T__40
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:195: T__40
                 {
                 mT__40(); 
 
                 }
                 break;
             case 33 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:201: T__41
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:201: T__41
                 {
                 mT__41(); 
 
                 }
                 break;
             case 34 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:207: T__42
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:207: T__42
                 {
                 mT__42(); 
 
                 }
                 break;
             case 35 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:213: T__43
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:213: T__43
                 {
                 mT__43(); 
 
                 }
                 break;
             case 36 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:219: T__44
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:219: T__44
                 {
                 mT__44(); 
 
                 }
                 break;
             case 37 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:225: T__45
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:225: T__45
                 {
                 mT__45(); 
 
                 }
                 break;
             case 38 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:231: T__46
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:231: T__46
                 {
                 mT__46(); 
 
                 }
                 break;
             case 39 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:237: T__47
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:237: T__47
                 {
                 mT__47(); 
 
                 }
                 break;
             case 40 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:243: T__48
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:243: T__48
                 {
                 mT__48(); 
 
                 }
                 break;
             case 41 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:249: T__49
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:249: T__49
                 {
                 mT__49(); 
 
                 }
                 break;
             case 42 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:255: T__50
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:255: T__50
                 {
                 mT__50(); 
 
                 }
                 break;
             case 43 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:261: T__51
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:261: T__51
                 {
                 mT__51(); 
 
                 }
                 break;
             case 44 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:267: T__52
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:267: T__52
                 {
                 mT__52(); 
 
                 }
                 break;
             case 45 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:273: T__53
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:273: T__53
                 {
                 mT__53(); 
 
                 }
                 break;
             case 46 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:279: T__54
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:279: T__54
                 {
                 mT__54(); 
 
                 }
                 break;
             case 47 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:285: T__55
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:285: T__55
                 {
                 mT__55(); 
 
                 }
                 break;
             case 48 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:291: T__56
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:291: T__56
                 {
                 mT__56(); 
 
                 }
                 break;
             case 49 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:297: T__57
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:297: T__57
                 {
                 mT__57(); 
 
                 }
                 break;
             case 50 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:303: T__58
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:303: T__58
                 {
                 mT__58(); 
 
                 }
                 break;
             case 51 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:309: T__59
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:309: T__59
                 {
                 mT__59(); 
 
                 }
                 break;
             case 52 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:315: T__60
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:315: T__60
                 {
                 mT__60(); 
 
                 }
                 break;
             case 53 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:321: T__61
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:321: T__61
                 {
                 mT__61(); 
 
                 }
                 break;
             case 54 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:327: T__62
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:327: T__62
                 {
                 mT__62(); 
 
                 }
                 break;
             case 55 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:333: T__63
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:333: T__63
                 {
                 mT__63(); 
 
                 }
                 break;
             case 56 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:339: T__64
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:339: T__64
                 {
                 mT__64(); 
 
                 }
                 break;
             case 57 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:345: T__65
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:345: T__65
                 {
                 mT__65(); 
 
                 }
                 break;
             case 58 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:351: T__66
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:351: T__66
                 {
                 mT__66(); 
 
                 }
                 break;
             case 59 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:357: T__67
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:357: T__67
                 {
                 mT__67(); 
 
                 }
                 break;
             case 60 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:363: T__68
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:363: T__68
                 {
                 mT__68(); 
 
                 }
                 break;
             case 61 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:369: T__69
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:369: T__69
                 {
                 mT__69(); 
 
                 }
                 break;
             case 62 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:375: T__70
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:375: T__70
                 {
                 mT__70(); 
 
                 }
                 break;
             case 63 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:381: T__71
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:381: T__71
                 {
                 mT__71(); 
 
                 }
                 break;
             case 64 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:387: T__72
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:387: T__72
                 {
                 mT__72(); 
 
                 }
                 break;
             case 65 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:393: T__73
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:393: T__73
                 {
                 mT__73(); 
 
                 }
                 break;
             case 66 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:399: T__74
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:399: T__74
                 {
                 mT__74(); 
 
                 }
                 break;
             case 67 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:405: T__75
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:405: T__75
                 {
                 mT__75(); 
 
                 }
                 break;
             case 68 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:411: T__76
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:411: T__76
                 {
                 mT__76(); 
 
                 }
                 break;
             case 69 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:417: T__77
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:417: T__77
                 {
                 mT__77(); 
 
                 }
                 break;
             case 70 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:423: T__78
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:423: T__78
                 {
                 mT__78(); 
 
                 }
                 break;
             case 71 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:429: T__79
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:429: T__79
                 {
                 mT__79(); 
 
                 }
                 break;
             case 72 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:435: T__80
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:435: T__80
                 {
                 mT__80(); 
 
                 }
                 break;
             case 73 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:441: T__81
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:441: T__81
                 {
                 mT__81(); 
 
                 }
                 break;
             case 74 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:447: T__82
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:447: T__82
                 {
                 mT__82(); 
 
                 }
                 break;
             case 75 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:453: T__83
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:453: T__83
                 {
                 mT__83(); 
 
                 }
                 break;
             case 76 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:459: T__84
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:459: T__84
                 {
                 mT__84(); 
 
                 }
                 break;
             case 77 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:465: T__85
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:465: T__85
                 {
                 mT__85(); 
 
                 }
                 break;
             case 78 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:471: T__86
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:471: T__86
                 {
                 mT__86(); 
 
                 }
                 break;
             case 79 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:477: T__87
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:477: T__87
                 {
                 mT__87(); 
 
                 }
                 break;
             case 80 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:483: T__88
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:483: T__88
                 {
                 mT__88(); 
 
                 }
                 break;
             case 81 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:489: T__89
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:489: T__89
                 {
                 mT__89(); 
 
                 }
                 break;
             case 82 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:495: T__90
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:495: T__90
                 {
                 mT__90(); 
 
                 }
                 break;
             case 83 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:501: T__91
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:501: T__91
                 {
                 mT__91(); 
 
                 }
                 break;
             case 84 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:507: T__92
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:507: T__92
                 {
                 mT__92(); 
 
                 }
                 break;
             case 85 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:513: T__93
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:513: T__93
                 {
                 mT__93(); 
 
                 }
                 break;
             case 86 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:519: T__94
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:519: T__94
                 {
                 mT__94(); 
 
                 }
                 break;
             case 87 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:525: T__95
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:525: T__95
                 {
                 mT__95(); 
 
                 }
                 break;
             case 88 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:531: T__96
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:531: T__96
                 {
                 mT__96(); 
 
                 }
                 break;
             case 89 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:537: T__97
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:537: T__97
                 {
                 mT__97(); 
 
                 }
                 break;
             case 90 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:543: T__98
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:543: T__98
                 {
                 mT__98(); 
 
                 }
                 break;
             case 91 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:549: T__99
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:549: T__99
                 {
                 mT__99(); 
 
                 }
                 break;
             case 92 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:555: T__100
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:555: T__100
                 {
                 mT__100(); 
 
                 }
                 break;
             case 93 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:562: T__101
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:562: T__101
                 {
                 mT__101(); 
 
                 }
                 break;
             case 94 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:569: T__102
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:569: T__102
                 {
                 mT__102(); 
 
                 }
                 break;
             case 95 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:576: T__103
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:576: T__103
                 {
                 mT__103(); 
 
                 }
                 break;
             case 96 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:583: T__104
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:583: T__104
                 {
                 mT__104(); 
 
                 }
                 break;
             case 97 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:590: T__105
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:590: T__105
                 {
                 mT__105(); 
 
                 }
                 break;
             case 98 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:597: T__106
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:597: T__106
                 {
                 mT__106(); 
 
                 }
                 break;
             case 99 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:604: T__107
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:604: T__107
                 {
                 mT__107(); 
 
                 }
                 break;
             case 100 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:611: T__108
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:611: T__108
                 {
                 mT__108(); 
 
                 }
                 break;
             case 101 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:618: T__109
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:618: T__109
                 {
                 mT__109(); 
 
                 }
                 break;
             case 102 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:625: T__110
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:625: T__110
                 {
                 mT__110(); 
 
                 }
                 break;
             case 103 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:632: T__111
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:632: T__111
                 {
                 mT__111(); 
 
                 }
                 break;
             case 104 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:639: T__112
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:639: T__112
                 {
                 mT__112(); 
 
                 }
                 break;
             case 105 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:646: T__113
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:646: T__113
                 {
                 mT__113(); 
 
                 }
                 break;
             case 106 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:653: T__114
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:653: T__114
                 {
                 mT__114(); 
 
                 }
                 break;
             case 107 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:660: T__115
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:660: T__115
                 {
                 mT__115(); 
 
                 }
                 break;
             case 108 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:667: T__116
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:667: T__116
                 {
                 mT__116(); 
 
                 }
                 break;
             case 109 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:674: T__117
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:674: T__117
                 {
                 mT__117(); 
 
                 }
                 break;
             case 110 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:681: T__118
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:681: T__118
                 {
                 mT__118(); 
 
                 }
                 break;
             case 111 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:688: T__119
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:688: T__119
                 {
                 mT__119(); 
 
                 }
                 break;
             case 112 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:695: T__120
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:695: T__120
                 {
                 mT__120(); 
 
                 }
                 break;
             case 113 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:702: T__121
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:702: T__121
                 {
                 mT__121(); 
 
                 }
                 break;
             case 114 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:709: T__122
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:709: T__122
                 {
                 mT__122(); 
 
                 }
                 break;
             case 115 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:716: T__123
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:716: T__123
                 {
                 mT__123(); 
 
                 }
                 break;
             case 116 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:723: T__124
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:723: T__124
                 {
                 mT__124(); 
 
                 }
                 break;
             case 117 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:730: T__125
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:730: T__125
                 {
                 mT__125(); 
 
                 }
                 break;
             case 118 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:737: T__126
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:737: T__126
                 {
                 mT__126(); 
 
                 }
                 break;
             case 119 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:744: T__127
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:744: T__127
                 {
                 mT__127(); 
 
                 }
                 break;
             case 120 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:751: T__128
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:751: T__128
                 {
                 mT__128(); 
 
                 }
                 break;
             case 121 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:758: T__129
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:758: T__129
                 {
                 mT__129(); 
 
                 }
                 break;
             case 122 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:765: T__130
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:765: T__130
                 {
                 mT__130(); 
 
                 }
                 break;
             case 123 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:772: T__131
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:772: T__131
                 {
                 mT__131(); 
 
                 }
                 break;
             case 124 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:779: T__132
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:779: T__132
                 {
                 mT__132(); 
 
                 }
                 break;
             case 125 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:786: T__133
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:786: T__133
                 {
                 mT__133(); 
 
                 }
                 break;
             case 126 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:793: T__134
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:793: T__134
                 {
                 mT__134(); 
 
                 }
                 break;
             case 127 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:800: T__135
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:800: T__135
                 {
                 mT__135(); 
 
                 }
                 break;
             case 128 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:807: T__136
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:807: T__136
                 {
                 mT__136(); 
 
                 }
                 break;
             case 129 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:814: T__137
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:814: T__137
                 {
                 mT__137(); 
 
                 }
                 break;
             case 130 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:821: T__138
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:821: T__138
                 {
                 mT__138(); 
 
                 }
                 break;
             case 131 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:828: T__139
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:828: T__139
                 {
                 mT__139(); 
 
                 }
                 break;
             case 132 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:835: T__140
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:835: T__140
                 {
                 mT__140(); 
 
                 }
                 break;
             case 133 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:842: T__141
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:842: T__141
                 {
                 mT__141(); 
 
                 }
                 break;
             case 134 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:849: T__142
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:849: T__142
                 {
                 mT__142(); 
 
                 }
                 break;
             case 135 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:856: T__143
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:856: T__143
                 {
                 mT__143(); 
 
                 }
                 break;
             case 136 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:863: T__144
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:863: T__144
                 {
                 mT__144(); 
 
                 }
                 break;
             case 137 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:870: T__145
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:870: T__145
                 {
                 mT__145(); 
 
                 }
                 break;
             case 138 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:877: T__146
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:877: T__146
                 {
                 mT__146(); 
 
                 }
                 break;
             case 139 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:884: T__147
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:884: T__147
                 {
                 mT__147(); 
 
                 }
                 break;
             case 140 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:891: T__148
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:891: T__148
                 {
                 mT__148(); 
 
                 }
                 break;
             case 141 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:898: T__149
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:898: T__149
                 {
                 mT__149(); 
 
                 }
                 break;
             case 142 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:905: T__150
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:905: T__150
                 {
                 mT__150(); 
 
                 }
                 break;
             case 143 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:912: T__151
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:912: T__151
                 {
                 mT__151(); 
 
                 }
                 break;
             case 144 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:919: T__152
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:919: T__152
                 {
                 mT__152(); 
 
                 }
                 break;
             case 145 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:926: T__153
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:926: T__153
                 {
                 mT__153(); 
 
                 }
                 break;
             case 146 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:933: T__154
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:933: T__154
                 {
                 mT__154(); 
 
                 }
                 break;
             case 147 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:940: T__155
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:940: T__155
                 {
                 mT__155(); 
 
                 }
                 break;
             case 148 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:947: T__156
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:947: T__156
                 {
                 mT__156(); 
 
                 }
                 break;
             case 149 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:954: T__157
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:954: T__157
                 {
                 mT__157(); 
 
                 }
                 break;
             case 150 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:961: T__158
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:961: T__158
                 {
                 mT__158(); 
 
                 }
                 break;
             case 151 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:968: T__159
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:968: T__159
                 {
                 mT__159(); 
 
                 }
                 break;
             case 152 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:975: T__160
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:975: T__160
                 {
                 mT__160(); 
 
                 }
                 break;
             case 153 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:982: T__161
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:982: T__161
                 {
                 mT__161(); 
 
                 }
                 break;
             case 154 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:989: T__162
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:989: T__162
                 {
                 mT__162(); 
 
                 }
                 break;
             case 155 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:996: T__163
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:996: T__163
                 {
                 mT__163(); 
 
                 }
                 break;
             case 156 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:1003: T__164
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:1003: T__164
                 {
                 mT__164(); 
 
                 }
                 break;
             case 157 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:1010: T__165
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:1010: T__165
                 {
                 mT__165(); 
 
                 }
                 break;
             case 158 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:1017: T__166
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:1017: T__166
                 {
                 mT__166(); 
 
                 }
                 break;
             case 159 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:1024: T__167
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:1024: T__167
                 {
                 mT__167(); 
 
                 }
                 break;
             case 160 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:1031: T__168
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:1031: T__168
                 {
                 mT__168(); 
 
                 }
                 break;
             case 161 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:1038: T__169
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:1038: T__169
                 {
                 mT__169(); 
 
                 }
                 break;
             case 162 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:1045: T__170
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:1045: T__170
                 {
                 mT__170(); 
 
                 }
                 break;
             case 163 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:1052: T__171
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:1052: T__171
                 {
                 mT__171(); 
 
                 }
                 break;
             case 164 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:1059: T__172
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:1059: T__172
                 {
                 mT__172(); 
 
                 }
                 break;
             case 165 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:1066: T__173
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:1066: T__173
                 {
                 mT__173(); 
 
                 }
                 break;
             case 166 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:1073: T__174
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:1073: T__174
                 {
                 mT__174(); 
 
                 }
                 break;
             case 167 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:1080: T__175
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:1080: T__175
                 {
                 mT__175(); 
 
                 }
                 break;
             case 168 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:1087: T__176
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:1087: T__176
                 {
                 mT__176(); 
 
                 }
                 break;
             case 169 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:1094: T__177
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:1094: T__177
                 {
                 mT__177(); 
 
                 }
                 break;
             case 170 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:1101: T__178
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:1101: T__178
                 {
                 mT__178(); 
 
                 }
                 break;
             case 171 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:1108: WS
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:1108: WS
                 {
                 mWS(); 
 
                 }
                 break;
             case 172 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:1111: NEWLINE
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:1111: NEWLINE
                 {
                 mNEWLINE(); 
 
                 }
                 break;
             case 173 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:1119: ACHAR
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:1119: ACHAR
                 {
                 mACHAR(); 
 
                 }
                 break;
             case 174 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:1125: DIGIT
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:1125: DIGIT
                 {
                 mDIGIT(); 
 
                 }
                 break;
             case 175 :
-                // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:1131: TOKEN
+                // C:\\Users\\pm286\\workspace\\chemicaltagger\\src\\main\\antlr3\\uk\\ac\\cam\\ch\\wwmm\\chemicaltagger\\ChemicalChunker.g:1:1131: TOKEN
                 {
                 mTOKEN(); 
 
@@ -5290,8 +5290,8 @@ public class ChemicalChunkerLexer extends Lexer {
     static final String DFA4_specialS =
         "\12\uffff}>";
     static final String[] DFA4_transitionS = {
-            "\1\7\1\6\2\uffff\1\4\1\10\1\5\1\uffff\12\11\7\uffff\32\2\4\uffff"+
-            "\1\3\1\uffff\32\2",
+            "\1\7\1\6\2\uffff\1\4\1\10\1\5\1\uffff\12\11\7\uffff\32\2\4"+
+            "\uffff\1\3\1\uffff\32\2",
             "",
             "",
             "",
@@ -5333,7 +5333,7 @@ public class ChemicalChunkerLexer extends Lexer {
             this.transition = DFA4_transition;
         }
         public String getDescription() {
-            return "()+ loopback of 21:9: ( ACHAR | '_' | ',' | '.' | ')' | '(' | '-' | DIGIT )+";
+            return "()+ loopback of 22:9: ( ACHAR | '_' | ',' | '.' | ')' | '(' | '-' | DIGIT )+";
         }
     }
     static final String DFA5_eotS =
@@ -5432,8 +5432,8 @@ public class ChemicalChunkerLexer extends Lexer {
         "\1\50\1\101\3\105\1\50\2\uffff\1\105\3\uffff\1\120\3\50\1\uffff"+
         "\1\50\1\110\4\uffff\1\131\1\50\1\uffff";
     static final String DFA5_maxS =
-        "\14\172\1\122\12\172\2\uffff\3\172\1\uffff\1\103\1\172\1\uffff\1"+
-        "\55\2\172\1\115\4\172\1\107\5\172\1\130\1\172\1\123\2\172\1\117"+
+        "\14\172\1\122\12\172\2\uffff\3\172\1\uffff\1\103\1\172\1\uffff"+
+        "\1\55\2\172\1\115\4\172\1\107\5\172\1\130\1\172\1\123\2\172\1\117"+
         "\2\121\3\172\2\122\7\172\1\123\2\172\1\124\1\123\1\114\1\102\1\uffff"+
         "\1\101\1\uffff\1\125\1\uffff\1\125\1\uffff\1\117\1\115\2\uffff\1"+
         "\127\1\uffff\1\126\1\uffff\1\172\1\uffff\1\172\2\uffff\1\172\2\uffff"+
@@ -5516,21 +5516,21 @@ public class ChemicalChunkerLexer extends Lexer {
     static final String DFA5_specialS =
         "\u02d5\uffff}>";
     static final String[] DFA5_transitionS = {
-            "\1\27\1\30\2\uffff\1\30\22\uffff\1\27\7\uffff\2\34\2\uffff\1"+
-            "\34\1\14\1\34\1\uffff\12\33\7\uffff\1\7\1\15\1\3\1\10\1\16\1"+
-            "\17\1\31\1\20\1\4\1\21\1\31\1\12\1\22\1\5\1\1\1\23\1\24\1\13"+
-            "\1\11\1\2\1\25\1\6\1\26\3\31\4\uffff\1\34\1\uffff\32\32",
+            "\1\27\1\30\2\uffff\1\30\22\uffff\1\27\7\uffff\2\34\2\uffff"+
+            "\1\34\1\14\1\34\1\uffff\12\33\7\uffff\1\7\1\15\1\3\1\10\1\16"+
+            "\1\17\1\31\1\20\1\4\1\21\1\31\1\12\1\22\1\5\1\1\1\23\1\24\1"+
+            "\13\1\11\1\2\1\25\1\6\1\26\3\31\4\uffff\1\34\1\uffff\32\32",
             "\2\34\2\uffff\3\34\1\uffff\12\34\7\uffff\3\34\1\36\16\34\1"+
             "\35\7\34\4\uffff\1\34\1\uffff\32\34",
             "\2\34\2\uffff\3\34\1\uffff\12\34\7\uffff\14\34\1\40\1\34\1"+
             "\41\13\34\4\uffff\1\34\1\uffff\32\34",
             "\2\34\2\uffff\3\34\1\uffff\12\34\7\uffff\2\34\1\44\1\42\12"+
             "\34\1\43\3\34\1\45\7\34\4\uffff\1\34\1\uffff\32\34",
-            "\2\34\2\uffff\3\34\1\uffff\12\34\7\uffff\15\34\1\46\14\34\4"+
-            "\uffff\1\34\1\uffff\32\34",
-            "\2\34\2\uffff\3\34\1\uffff\12\34\7\uffff\2\34\1\51\1\34\1\50"+
-            "\10\34\1\47\1\34\1\52\1\34\1\53\10\34\4\uffff\1\34\1\uffff\32"+
-            "\34",
+            "\2\34\2\uffff\3\34\1\uffff\12\34\7\uffff\15\34\1\46\14\34"+
+            "\4\uffff\1\34\1\uffff\32\34",
+            "\2\34\2\uffff\3\34\1\uffff\12\34\7\uffff\2\34\1\51\1\34\1"+
+            "\50\10\34\1\47\1\34\1\52\1\34\1\53\10\34\4\uffff\1\34\1\uffff"+
+            "\32\34",
             "\2\34\2\uffff\3\34\1\uffff\12\34\7\uffff\1\34\1\54\30\34\4"+
             "\uffff\1\34\1\uffff\32\34",
             "\2\34\2\uffff\3\34\1\uffff\12\34\7\uffff\1\34\1\56\15\34\1"+
@@ -5552,18 +5552,18 @@ public class ChemicalChunkerLexer extends Lexer {
             "\uffff\1\34\1\uffff\32\34",
             "\2\34\2\uffff\3\34\1\uffff\12\34\7\uffff\25\34\1\76\4\34\4"+
             "\uffff\1\34\1\uffff\32\34",
-            "\2\34\2\uffff\3\34\1\uffff\12\34\7\uffff\11\34\1\77\20\34\4"+
-            "\uffff\1\34\1\uffff\32\34",
-            "\2\34\2\uffff\3\34\1\uffff\12\34\7\uffff\3\34\1\100\26\34\4"+
-            "\uffff\1\34\1\uffff\32\34",
-            "\2\34\2\uffff\3\34\1\uffff\12\34\7\uffff\15\34\1\101\1\34\1"+
-            "\102\12\34\4\uffff\1\34\1\uffff\32\34",
+            "\2\34\2\uffff\3\34\1\uffff\12\34\7\uffff\11\34\1\77\20\34"+
+            "\4\uffff\1\34\1\uffff\32\34",
+            "\2\34\2\uffff\3\34\1\uffff\12\34\7\uffff\3\34\1\100\26\34"+
+            "\4\uffff\1\34\1\uffff\32\34",
+            "\2\34\2\uffff\3\34\1\uffff\12\34\7\uffff\15\34\1\101\1\34"+
+            "\1\102\12\34\4\uffff\1\34\1\uffff\32\34",
             "\2\34\2\uffff\3\34\1\uffff\12\34\7\uffff\13\34\1\103\16\34"+
             "\4\uffff\1\34\1\uffff\32\34",
-            "\2\34\2\uffff\3\34\1\uffff\12\34\7\uffff\7\34\1\104\22\34\4"+
-            "\uffff\1\34\1\uffff\32\34",
-            "\2\34\2\uffff\3\34\1\uffff\12\34\7\uffff\3\34\1\105\13\34\1"+
-            "\106\1\107\1\110\10\34\4\uffff\1\34\1\uffff\32\34",
+            "\2\34\2\uffff\3\34\1\uffff\12\34\7\uffff\7\34\1\104\22\34"+
+            "\4\uffff\1\34\1\uffff\32\34",
+            "\2\34\2\uffff\3\34\1\uffff\12\34\7\uffff\3\34\1\105\13\34"+
+            "\1\106\1\107\1\110\10\34\4\uffff\1\34\1\uffff\32\34",
             "",
             "",
             "\2\34\2\uffff\3\34\1\uffff\12\34\7\uffff\32\34\4\uffff\1\34"+
@@ -5580,22 +5580,22 @@ public class ChemicalChunkerLexer extends Lexer {
             "\1\114",
             "\2\34\2\uffff\3\34\1\uffff\12\34\7\uffff\32\34\4\uffff\1\34"+
             "\1\uffff\32\34",
-            "\2\34\2\uffff\1\34\1\116\1\34\1\uffff\12\34\7\uffff\32\34\4"+
-            "\uffff\1\34\1\uffff\32\34",
+            "\2\34\2\uffff\1\34\1\116\1\34\1\uffff\12\34\7\uffff\32\34"+
+            "\4\uffff\1\34\1\uffff\32\34",
             "\1\120\1\121",
             "\2\34\2\uffff\3\34\1\uffff\12\34\7\uffff\32\34\4\uffff\1\34"+
             "\1\uffff\32\34",
             "\2\34\2\uffff\3\34\1\uffff\12\34\7\uffff\32\34\4\uffff\1\34"+
             "\1\uffff\32\34",
-            "\2\34\2\uffff\1\34\1\124\1\34\1\uffff\12\34\7\uffff\32\34\4"+
-            "\uffff\1\34\1\uffff\32\34",
-            "\1\127\3\uffff\2\34\2\uffff\1\34\1\126\1\34\1\uffff\12\34\7"+
-            "\uffff\22\34\1\130\7\34\4\uffff\1\34\1\uffff\32\34",
+            "\2\34\2\uffff\1\34\1\124\1\34\1\uffff\12\34\7\uffff\32\34"+
+            "\4\uffff\1\34\1\uffff\32\34",
+            "\1\127\3\uffff\2\34\2\uffff\1\34\1\126\1\34\1\uffff\12\34"+
+            "\7\uffff\22\34\1\130\7\34\4\uffff\1\34\1\uffff\32\34",
             "\1\132",
             "\2\34\2\uffff\3\34\1\uffff\12\34\7\uffff\32\34\4\uffff\1\34"+
             "\1\uffff\32\34",
-            "\1\134\3\uffff\2\34\2\uffff\3\34\1\uffff\12\34\7\uffff\22\34"+
-            "\1\135\7\34\4\uffff\1\34\1\uffff\32\34",
+            "\1\134\3\uffff\2\34\2\uffff\3\34\1\uffff\12\34\7\uffff\22"+
+            "\34\1\135\7\34\4\uffff\1\34\1\uffff\32\34",
             "\2\34\2\uffff\3\34\1\uffff\12\34\7\uffff\32\34\4\uffff\1\34"+
             "\1\uffff\32\34",
             "\2\34\2\uffff\1\34\1\140\1\34\1\uffff\12\34\7\uffff\3\34\1"+
@@ -5607,15 +5607,15 @@ public class ChemicalChunkerLexer extends Lexer {
             "\2\34\2\uffff\3\34\1\uffff\12\34\7\uffff\32\34\4\uffff\1\34"+
             "\1\uffff\32\34",
             "\1\154",
-            "\2\34\2\uffff\3\34\1\uffff\12\34\7\uffff\3\34\1\155\25\34\1"+
-            "\156\4\uffff\1\34\1\uffff\32\34",
+            "\2\34\2\uffff\3\34\1\uffff\12\34\7\uffff\3\34\1\155\25\34"+
+            "\1\156\4\uffff\1\34\1\uffff\32\34",
             "\2\34\2\uffff\3\34\1\uffff\12\34\7\uffff\10\34\1\160\11\34"+
             "\1\161\4\34\1\162\2\34\4\uffff\1\34\1\uffff\32\34",
             "\1\164",
             "\1\165",
             "\1\166",
-            "\2\34\2\uffff\3\34\1\uffff\12\34\7\uffff\21\34\1\167\1\34\1"+
-            "\170\6\34\4\uffff\1\34\1\uffff\32\34",
+            "\2\34\2\uffff\3\34\1\uffff\12\34\7\uffff\21\34\1\167\1\34"+
+            "\1\170\6\34\4\uffff\1\34\1\uffff\32\34",
             "\2\34\2\uffff\3\34\1\uffff\12\34\7\uffff\32\34\4\uffff\1\34"+
             "\1\uffff\32\34",
             "\2\34\2\uffff\3\34\1\uffff\12\34\7\uffff\32\34\4\uffff\1\34"+
@@ -5638,8 +5638,8 @@ public class ChemicalChunkerLexer extends Lexer {
             "\1\u0090\3\uffff\2\34\2\uffff\3\34\1\uffff\12\34\7\uffff\32"+
             "\34\4\uffff\1\34\1\uffff\32\34",
             "\1\u0092\47\uffff\1\u0093\2\uffff\1\u0094\3\uffff\1\u0095",
-            "\2\34\2\uffff\3\34\1\uffff\12\34\7\uffff\17\34\1\u0096\12\34"+
-            "\4\uffff\1\34\1\uffff\32\34",
+            "\2\34\2\uffff\3\34\1\uffff\12\34\7\uffff\17\34\1\u0096\12"+
+            "\34\4\uffff\1\34\1\uffff\32\34",
             "\2\34\2\uffff\3\34\1\uffff\12\34\7\uffff\32\34\4\uffff\1\34"+
             "\1\uffff\32\34",
             "\1\u0099",
@@ -6061,8 +6061,8 @@ public class ChemicalChunkerLexer extends Lexer {
             "\1\u01eb",
             "\2\34\2\uffff\3\34\1\uffff\12\34\7\uffff\32\34\4\uffff\1\34"+
             "\1\uffff\32\34",
-            "\2\34\2\uffff\3\34\1\uffff\12\34\7\uffff\16\34\1\u01ed\13\34"+
-            "\4\uffff\1\34\1\uffff\32\34",
+            "\2\34\2\uffff\3\34\1\uffff\12\34\7\uffff\16\34\1\u01ed\13"+
+            "\34\4\uffff\1\34\1\uffff\32\34",
             "",
             "",
             "\2\34\2\uffff\3\34\1\uffff\12\34\7\uffff\32\34\4\uffff\1\34"+
