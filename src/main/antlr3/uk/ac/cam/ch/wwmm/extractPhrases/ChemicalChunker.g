@@ -25,13 +25,13 @@ document:	sentence+;
 
 
 sentence 
-	:nounphrase+ verbphrase* stop?;
+	:prepphrase? nounphrase+ verbphrase* stop?;
 
 nounphrase 
 	:dt? adj* noun+ (cc|comma noun)* prepphraseOf* prepphraseIN?;
 
 verbphrase    
-	: adv* vbd* verb adv* prepphrase;
+	: adv* vbd* verb adv* prepphrase*;
 
 verb
  :
