@@ -46,8 +46,6 @@ public class ChemicalChunkerMain {
             StopWatch stopWatch = new StopWatch();
             ANTLRInputStream input = new ANTLRInputStream(instream);
             ChemicalChunkerLexer lexer = new ChemicalChunkerLexer(input);
-
-
             stopWatch.start();
             CommonTokenStream tokens = new CommonTokenStream(lexer);
 

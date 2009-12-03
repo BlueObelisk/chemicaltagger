@@ -3,6 +3,9 @@ options {
     language=Java;
     output = AST;
 }
+tokens{
+ NODE;
+}
 
 @header {
     package uk.ac.cam.ch.wwmm.chemicaltagger;
@@ -14,22 +17,22 @@ WS	:	 (' '|'\t')+ {skip();};
 NEWLINE	:	'\r'? '\n';
 
 
-ACHAR	:	('A'..'Z') | ('a'..'z');
+fragment ACHAR	:	('A'..'Z') | ('a'..'z');
 
 //ACHAR : ~('\\'|'"') ; 
-DIGIT	:	('0'..'9');
+fragment DIGIT	:	('0'..'9');
 
 TOKEN	:	(ACHAR| '_'|',' |'.'|')'|'('|'-'|DIGIT)+;
+ 
 
-
-document:	sentence+;
+document:	sentence+ -> ^(NODE["Sentence"]  sentence )+;
 
 
 sentence 
-	:prepphrase^? nounphrase^+ verbphrase^* stop^?;
+	:prepphrase? nounphrase+ verbphrase* stop? -> ^(NODE["PrepPhrase"]  prepphrase)?  ^(NODE["NounPhrase"]  nounphrase)+  ^(NODE["VerbPhrase"]  verbphrase)*;
 
 nounphrase 
-	:dt? adj* noun+ (cc|comma noun)* prepphraseOf* prepphraseIN?;
+	:dt? adj* noun+ (comma noun)* (cc noun)* prepphraseOf* prepphraseIN?;
 
 verbphrase    
 	: adv* vbd* verb adv* prepphrase*;
@@ -50,22 +53,22 @@ adj	:	jj|jjr|jjs|jjt|oscarcj;
 adv	:	rb|rbr|rbt;
 // Different PrepPhrases
 prepphrase 
-	:	prepphraseOther|prepphraseTemp|prepphraseTime;
+	: 	prepphraseOther|prepphraseTemp|prepphraseTime  ;
 
  prepphraseOther
-	: inAll  nounphrase;
+	: inAll  nounphrase ->  ^(NODE["PrepPhrase"]  inAll  nounphrase);
 prepphraseOf 
-	: inof  nounphrase;
+	: inof  nounphrase->  ^(NODE["PrepPhrase"]  inof  nounphrase);
 
 prepphraseIN 
-	:	 inin molecule;
+	:	 inin molecule ->  ^(NODE["INMolecule"]  inin  molecule);
 
 	
 prepphraseTime:
-	inAll? dt? jj? cd nntime;
+	inAll? dt? jj? cd nntime ->  ^(NODE["TimePhrase"]  inAll? dt? jj? cd nntime);
 
 prepphraseTemp:
-	inAll? dt? jj? cd nntemp;
+	inAll? dt? jj? cd nntemp ->  ^(NODE["TempPhrase"]  inAll? dt? jj? cd nntemp);
 
 	
 
@@ -87,10 +90,10 @@ molecule
 unnamedmolecule 
 	: oscarcd+ amount*;	
 		
-amount 	: lrb measurements comma  measurements  rrb;
+amount 	: lrb measurements (comma  measurements)*  rrb ->   ^(NODE["AMOUNT"]  lrb measurements (comma  measurements)*  rrb);
 //amount 	: lrb gram comma  mmol  rrb;     
 method:
-    (nngeneral|nn)? nnmethod (oscarcd|cd)? ;
+    (nngeneral|nn)? nnmethod (oscarcd|cd)?  ;
 
 //Tags---Pattern---Description
 oscarcd:'OSCAR-CD' TOKEN;
