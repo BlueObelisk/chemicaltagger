@@ -11,8 +11,8 @@ glob:__Test__*
 glob:*.tokens
 glob:patent*
 glob:taggedPatents*
-glob:*Lexer.java
-glob:*Parser.java
+glob:*Lexer*
+glob:*Parser*
 \.orig\..*$
 \.orig$
 \.chg\..*$
