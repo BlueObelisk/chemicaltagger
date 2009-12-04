@@ -22,7 +22,7 @@ fragment ACHAR	:	('A'..'Z') | ('a'..'z');
 //ACHAR : ~('\\'|'"') ; 
 fragment DIGIT	:	('0'..'9');
 
-TOKEN	:	(ACHAR| '_'|',' |'.'|')'|'('|'-'|DIGIT)+;
+TOKEN	:	(ACHAR| '_'|',' |'.'|')'|'('|'/'|'-'|DIGIT)+;
  
 
 document:	sentence+ -> ^(NODE["Sentence"]  sentence )+;
@@ -48,6 +48,7 @@ number
 noun	:	
 unnamedmolecule|molecule|nnstate|nntime|nnatmosphere|nneq|nnchementity|nntemp|nnflash|nngeneral|nnmethod|nnamount|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnapparatus|
 nnconcentrate|wdt|wp_poss|wpo|wps|nnsynthesize|oscaront|nnmixture;
+mixture	:  lrb oscarCompound dash oscarCompound sym cd rrb;	
 
 //noun	:	 molecule;
 adj	:	jj|jjr|jjs|jjt|oscarcj;
@@ -86,13 +87,13 @@ volume	: cd nnvol -> ^(NODE["VOLUME"]   cd nnvol );
 measurements
 	:mmol|gram|percent|volume;	
 
-oscarCM :	oscarcm+ -> ^(NODE["OSCARCM"]  oscarcm+);
+oscarCompound :	oscarcm+ -> ^(NODE["OSCARCM"]  oscarcm+);
 
 
 moleculeamount1
-	:measurements inof oscarCM;	
+	:measurements inof oscarCompound;	
 moleculeamount2
-	:oscarCM amount*;		
+	:oscarCompound amount*;		
 moleculeamount
 	:moleculeamount1 | moleculeamount2 ;	
 molecule          
@@ -450,6 +451,9 @@ rn:'RN' TOKEN;
 
 // Adverb/particle (about, off, up)
 rp:'RP' TOKEN;
+
+
+sym	:	'SYM' TOKEN;
 
 // Infinitive marker to
 to:'TO' TOKEN;
