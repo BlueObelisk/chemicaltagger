@@ -29,7 +29,9 @@ document:	sentence+ -> ^(NODE["Sentence"]  sentence )+;
 
 
 sentence 
-	:prepphrase? nounphrase+ verbphrase* stop? -> ^(NODE["PrepPhrase"]  prepphrase)?  ^(NODE["NounPhrase"]  nounphrase)+  ^(NODE["VerbPhrase"]  verbphrase)*;
+:  (nounphrase|verbphrase)+ (comma|cc|stop)* -> ^(NODE["NounPhrase"]  nounphrase)*  ^(NODE["VerbPhrase"]  verbphrase)*;
+	//:prepphrase? (nounphrase|verbphrase)+ (comma|cc|stop)* -> ^(NODE["PrepPhrase"]  prepphrase)?  ^(NODE["NounPhrase"]  nounphrase)*  ^(NODE["VerbPhrase"]  verbphrase)*;
+	
 
 nounphrase 
 	:dt? adj* noun+ (comma noun)* (cc noun)* prepphraseOf* prepphraseIN?;
@@ -76,19 +78,36 @@ inAll	: in|inafter|inas|inbefore|inby|infor|infrom|inin|ininto|inof|inoff|inon|i
 
 
 			
-mmol	: cd nnmol;
-gram	: cd nngram;
-percent	: cd nnpercent;
-volume	: cd nnvol;
+mmol	: cd nnmol -> ^(NODE["MMOL"]   cd nnmol );
+gram	: cd nngram-> ^(NODE["GRAM"]   cd nngram ); 
+percent	: cd nnpercent -> ^(NODE["PERCENT"]   cd nnpercent );
+volume	: cd nnvol -> ^(NODE["VOLUME"]   cd nnvol );
 
 measurements
 	:mmol|gram|percent|volume;	
 
-	
+oscarCM :	oscarcm+ -> ^(NODE["OSCARCM"]  oscarcm+);
+
+
+moleculeamount1
+	:measurements inof oscarCM;	
+moleculeamount2
+	:oscarCM amount*;		
+moleculeamount
+	:moleculeamount1 | moleculeamount2 ;	
 molecule          
-	:   oscarcm+ amount;	
+	:  moleculeamount-> ^(NODE["MOLECULE"]  moleculeamount );	
+
+unnamedmoleculeamount1
+	:measurements inof oscarcd;	
+unnamedmoleculeamount2
+	:oscarcd amount*;		
+unnamedmoleculeamount
+	:unnamedmoleculeamount1 | unnamedmoleculeamount2 ;	
+
+
 unnamedmolecule 
-	: oscarcd+ amount*;	
+	: unnamedmoleculeamount -> ^(NODE["UNNAMEDMOLECULE"] unnamedmoleculeamount);	
 		
 amount 	: lrb measurements (comma  measurements)*  rrb ->   ^(NODE["AMOUNT"]  lrb measurements (comma  measurements)*  rrb);
 //amount 	: lrb gram comma  mmol  rrb;     
