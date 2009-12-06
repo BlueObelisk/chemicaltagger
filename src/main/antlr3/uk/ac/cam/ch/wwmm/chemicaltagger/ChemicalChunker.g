@@ -2,6 +2,7 @@ grammar ChemicalChunker;
 options {
     language=Java;
     output = AST;
+   backtrack= true;
 }
 tokens{
  NODE;
@@ -22,7 +23,7 @@ fragment ACHAR	:	('A'..'Z') | ('a'..'z');
 //ACHAR : ~('\\'|'"') ; 
 fragment DIGIT	:	('0'..'9');
 
-TOKEN	:	(ACHAR| '_'|',' |'.'|')'|'('|'/'|'-'|DIGIT)+;
+TOKEN	:	(ACHAR| '%'|'_'|',' |'.'|')'|'('|'/'|'-'|'='|DIGIT)+;
  
 
 document:	sentence+ -> ^(NODE["Sentence"]  sentence )+;
@@ -37,7 +38,7 @@ nounphrase
 	:dt? adj* noun+ (comma noun)* (cc noun)* prepphraseOf* prepphraseIN?;
 
 verbphrase    
-	: adv* vbd* verb adv* prepphrase*;
+	: to? adv* vbd* verb adv* prepphrase*;
 
 verb
  :
@@ -47,7 +48,7 @@ number
 	: cd|oscarcd;	
 noun	:	
 unnamedmolecule|molecule|nnstate|nntime|nnatmosphere|nneq|nnchementity|nntemp|nnflash|nngeneral|nnmethod|nnamount|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnapparatus|
-nnconcentrate|wdt|wp_poss|wpo|wps|nnsynthesize|oscaront|nnmixture;
+nnconcentrate|wdt|wp_poss|wpo|wps|nnsynthesize|oscaront|nnmixture|mixture|amount|cd;
 mixture	:  lrb oscarCompound dash oscarCompound sym cd rrb;	
 
 //noun	:	 molecule;
@@ -59,7 +60,7 @@ prepphrase
 	: 	prepphraseOther|prepphraseTemp|prepphraseTime  ;
 
  prepphraseOther
-	: inAll  nounphrase ->  ^(NODE["PrepPhrase"]  inAll  nounphrase);
+	: inAll+  nounphrase ->  ^(NODE["PrepPhrase"]  inAll  nounphrase);
 prepphraseOf 
 	: inof  nounphrase->  ^(NODE["PrepPhrase"]  inof  nounphrase);
 
@@ -75,7 +76,7 @@ prepphraseTemp:
 
 	
 
-inAll	: in|inafter|inas|inbefore|inby|infor|infrom|inin|ininto|inof|inoff|inon|inover|inunder|invia|inwith|inwithout	;
+inAll	: in|inafter|inas|inbefore|inby|infor|infrom|inin|ininto|inof|inoff|inon|inover|inunder|invia|inwith|inwithout|to;
 
 
 			
