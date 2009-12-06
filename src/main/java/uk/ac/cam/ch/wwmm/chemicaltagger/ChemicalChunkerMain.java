@@ -6,12 +6,14 @@ package uk.ac.cam.ch.wwmm.chemicaltagger;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.InputStream;
 import org.apache.commons.lang.time.StopWatch;
 
 import org.antlr.runtime.ANTLRInputStream;
 import org.antlr.runtime.CommonTokenStream;
 import org.antlr.runtime.tree.Tree;
+import org.apache.log4j.Logger;
 
 /**
  *
@@ -19,49 +21,83 @@ import org.antlr.runtime.tree.Tree;
  */
 public class ChemicalChunkerMain {
 
+    private InputStream taggedTokenInStream = null;
+    private final Logger LOG = Logger.getLogger(ChemicalChunkerMain.class);
+
+    public ChemicalChunkerMain(String taggedTokenInputFilename) {
+
+        File file = new File(taggedTokenInputFilename);
+        try {
+            this.taggedTokenInStream = new FileInputStream(file);
+        } catch (FileNotFoundException ex) {
+
+            LOG.debug("Exception : " + ex.getMessage());
+        }
+
+    }
+
+    public ChemicalChunkerMain(InputStream taggedTokenInStream) {
+        this.taggedTokenInStream = taggedTokenInStream;
+    }
+
+    /*********************
+     * 
+     * @param inputFilename
+     * @param outputFilename
+     *********************/
+    public void processTags(String outputFilename) {
+        try {
+
+
+            StopWatch stopWatch = new StopWatch();
+            /**************************
+             * Pass File to Antlr
+             *************************/
+            ANTLRInputStream input = new ANTLRInputStream(taggedTokenInStream);
+            ChemicalChunkerLexer lexer = new ChemicalChunkerLexer(input);
+            stopWatch.start();
+            CommonTokenStream tokens = new CommonTokenStream(lexer);
+            stopWatch.stop();
+            System.out.println("Tokens processed in " + stopWatch.getTime());
+            stopWatch.reset();
+            stopWatch.start();
+            ChemicalChunkerParser parser = new ChemicalChunkerParser(tokens);
+
+
+            /*****************************************
+             * Pass parser to Tree and Convert to XML
+             *****************************************/
+            ChemicalChunkerParser.document_return result = parser.document();
+            Tree t = (Tree) result.getTree();
+            ASTtoXML astToXML = new ASTtoXML();
+            astToXML.convert(t, outputFilename);
+            stopWatch.stop();
+            System.out.println("Parsing done in " + stopWatch.getTime());
+
+        } catch (Exception e) {
+            throw new RuntimeException("read parse fail", e);
+        }
+
+    }
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) throws Exception {
-        String filename = null;
-        InputStream instream = System.in;
-        if (args.length > 0) {
-            filename = args[0];
+        String taggedTokenInputFilename = null;
+        String outputXMLFilename = null;
+
+        if (args.length > 1) {
+            taggedTokenInputFilename = args[0];
+            outputXMLFilename = args[1];
+
         } else {
-            filename = "src/main/resources/antlr/chemicalInput.txt";
+            taggedTokenInputFilename = "src/main/resources/antlr/chemicalInput.txt";
+            outputXMLFilename = "target/astTree.xml";
+
         }
-        File file = new File(filename);
-        System.out.println("File input " + file.getAbsolutePath());
-        instream = new FileInputStream(file);
-        processInput(instream);
+        ChemicalChunkerMain chemicalChunkerMain = new ChemicalChunkerMain(taggedTokenInputFilename);
+        chemicalChunkerMain.processTags(outputXMLFilename);
 
-
-        // TODO code application logic here
-    }
-
-
-    private static void processInput(InputStream instream) {
-        try {
-            System.err.println("-----------");
-            StopWatch stopWatch = new StopWatch();
-            ANTLRInputStream input = new ANTLRInputStream(instream);
-            ChemicalChunkerLexer lexer = new ChemicalChunkerLexer(input);
-            stopWatch.start();
-            CommonTokenStream tokens = new CommonTokenStream(lexer);
-
-            stopWatch.stop();
-            System.out.println("Tokens processed in "+stopWatch.getTime());
-            stopWatch.reset();
-            stopWatch.start();
-            ChemicalChunkerParser parser = new ChemicalChunkerParser(tokens);
-            ChemicalChunkerParser.document_return result = parser.document();
-            Tree t = (Tree) result.getTree();
-            System.out.println("@@@@@@@@@@@@@@@@@@"+t.toStringTree());
-            stopWatch.stop();
-            System.out.println("Parsing done in "+stopWatch.getTime());
-        } catch (Exception e) {
-            throw new RuntimeException("read parse fail", e);
-        }
-        // TODO code application logic here
     }
 }

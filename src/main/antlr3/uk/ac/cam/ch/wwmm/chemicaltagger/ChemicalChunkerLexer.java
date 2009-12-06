@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 12:02:23 /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g 2009-12-04 11:22:35
+// $ANTLR 3.2 Sep 23, 2009 12:02:23 /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g 2009-12-04 14:08:00
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
 import org.antlr.runtime.*;
@@ -3795,10 +3795,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:16:4: ( ( ' ' | '\\t' )+ )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:16:7: ( ' ' | '\\t' )+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:17:4: ( ( ' ' | '\\t' )+ )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:17:7: ( ' ' | '\\t' )+
             {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:16:7: ( ' ' | '\\t' )+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:17:7: ( ' ' | '\\t' )+
             int cnt1=0;
             loop1:
             do {
@@ -3853,10 +3853,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = NEWLINE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:17:9: ( ( '\\r' )? '\\n' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:17:11: ( '\\r' )? '\\n'
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:18:9: ( ( '\\r' )? '\\n' )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:18:11: ( '\\r' )? '\\n'
             {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:17:11: ( '\\r' )?
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:18:11: ( '\\r' )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -3865,7 +3865,7 @@ public class ChemicalChunkerLexer extends Lexer {
             }
             switch (alt2) {
                 case 1 :
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:17:11: '\\r'
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:18:11: '\\r'
                     {
                     match('\r'); 
 
@@ -3889,7 +3889,7 @@ public class ChemicalChunkerLexer extends Lexer {
     // $ANTLR start "ACHAR"
     public final void mACHAR() throws RecognitionException {
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:20:16: ( ( 'A' .. 'Z' ) | ( 'a' .. 'z' ) )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:21:16: ( ( 'A' .. 'Z' ) | ( 'a' .. 'z' ) )
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -3907,10 +3907,10 @@ public class ChemicalChunkerLexer extends Lexer {
             }
             switch (alt3) {
                 case 1 :
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:20:18: ( 'A' .. 'Z' )
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:21:18: ( 'A' .. 'Z' )
                     {
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:20:18: ( 'A' .. 'Z' )
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:20:19: 'A' .. 'Z'
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:21:18: ( 'A' .. 'Z' )
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:21:19: 'A' .. 'Z'
                     {
                     matchRange('A','Z'); 
 
@@ -3920,10 +3920,10 @@ public class ChemicalChunkerLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:20:31: ( 'a' .. 'z' )
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:21:31: ( 'a' .. 'z' )
                     {
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:20:31: ( 'a' .. 'z' )
-                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:20:32: 'a' .. 'z'
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:21:31: ( 'a' .. 'z' )
+                    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:21:32: 'a' .. 'z'
                     {
                     matchRange('a','z'); 
 
@@ -3943,11 +3943,11 @@ public class ChemicalChunkerLexer extends Lexer {
     // $ANTLR start "DIGIT"
     public final void mDIGIT() throws RecognitionException {
         try {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:23:16: ( ( '0' .. '9' ) )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:23:18: ( '0' .. '9' )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:24:16: ( ( '0' .. '9' ) )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:24:18: ( '0' .. '9' )
             {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:23:18: ( '0' .. '9' )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:23:19: '0' .. '9'
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:24:18: ( '0' .. '9' )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:24:19: '0' .. '9'
             {
             matchRange('0','9'); 
 
@@ -3967,74 +3967,88 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:25:7: ( ( ACHAR | '_' | ',' | '.' | ')' | '(' | '/' | '-' | DIGIT )+ )
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:25:9: ( ACHAR | '_' | ',' | '.' | ')' | '(' | '/' | '-' | DIGIT )+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:26:7: ( ( ACHAR | '%' | '_' | ',' | '.' | ')' | '(' | '/' | '-' | '=' | DIGIT )+ )
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:26:9: ( ACHAR | '%' | '_' | ',' | '.' | ')' | '(' | '/' | '-' | '=' | DIGIT )+
             {
-            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:25:9: ( ACHAR | '_' | ',' | '.' | ')' | '(' | '/' | '-' | DIGIT )+
+            // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:26:9: ( ACHAR | '%' | '_' | ',' | '.' | ')' | '(' | '/' | '-' | '=' | DIGIT )+
             int cnt4=0;
             loop4:
             do {
-                int alt4=10;
+                int alt4=12;
                 alt4 = dfa4.predict(input);
                 switch (alt4) {
             	case 1 :
-            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:25:10: ACHAR
+            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:26:10: ACHAR
             	    {
             	    mACHAR(); 
 
             	    }
             	    break;
             	case 2 :
-            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:25:17: '_'
+            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:26:17: '%'
+            	    {
+            	    match('%'); 
+
+            	    }
+            	    break;
+            	case 3 :
+            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:26:21: '_'
             	    {
             	    match('_'); 
 
             	    }
             	    break;
-            	case 3 :
-            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:25:21: ','
+            	case 4 :
+            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:26:25: ','
             	    {
             	    match(','); 
 
             	    }
             	    break;
-            	case 4 :
-            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:25:26: '.'
+            	case 5 :
+            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:26:30: '.'
             	    {
             	    match('.'); 
 
             	    }
             	    break;
-            	case 5 :
-            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:25:30: ')'
+            	case 6 :
+            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:26:34: ')'
             	    {
             	    match(')'); 
 
             	    }
             	    break;
-            	case 6 :
-            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:25:34: '('
+            	case 7 :
+            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:26:38: '('
             	    {
             	    match('('); 
 
             	    }
             	    break;
-            	case 7 :
-            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:25:38: '/'
+            	case 8 :
+            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:26:42: '/'
             	    {
             	    match('/'); 
 
             	    }
             	    break;
-            	case 8 :
-            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:25:42: '-'
+            	case 9 :
+            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:26:46: '-'
             	    {
             	    match('-'); 
 
             	    }
             	    break;
-            	case 9 :
-            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:25:46: DIGIT
+            	case 10 :
+            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:26:50: '='
+            	    {
+            	    match('='); 
+
+            	    }
+            	    break;
+            	case 11 :
+            	    // /home/lezan/NetBeansProjects/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:26:54: DIGIT
             	    {
             	    mDIGIT(); 
 
@@ -5293,20 +5307,22 @@ public class ChemicalChunkerLexer extends Lexer {
     protected DFA4 dfa4 = new DFA4(this);
     protected DFA5 dfa5 = new DFA5(this);
     static final String DFA4_eotS =
-        "\1\1\12\uffff";
+        "\1\1\14\uffff";
     static final String DFA4_eofS =
-        "\13\uffff";
+        "\15\uffff";
     static final String DFA4_minS =
-        "\1\50\12\uffff";
+        "\1\45\14\uffff";
     static final String DFA4_maxS =
-        "\1\172\12\uffff";
+        "\1\172\14\uffff";
     static final String DFA4_acceptS =
-        "\1\uffff\1\12\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11";
+        "\1\uffff\1\14\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13";
     static final String DFA4_specialS =
-        "\13\uffff}>";
+        "\15\uffff}>";
     static final String[] DFA4_transitionS = {
-            "\1\7\1\6\2\uffff\1\4\1\11\1\5\1\10\12\12\7\uffff\32\2\4\uffff"+
-            "\1\3\1\uffff\32\2",
+            "\1\3\2\uffff\1\10\1\7\2\uffff\1\5\1\12\1\6\1\11\12\14\3\uffff"+
+            "\1\13\3\uffff\32\2\4\uffff\1\4\1\uffff\32\2",
+            "",
+            "",
             "",
             "",
             "",
@@ -5349,7 +5365,7 @@ public class ChemicalChunkerLexer extends Lexer {
             this.transition = DFA4_transition;
         }
         public String getDescription() {
-            return "()+ loopback of 25:9: ( ACHAR | '_' | ',' | '.' | ')' | '(' | '/' | '-' | DIGIT )+";
+            return "()+ loopback of 26:9: ( ACHAR | '%' | '_' | ',' | '.' | ')' | '(' | '/' | '-' | '=' | DIGIT )+";
         }
     }
     static final String DFA5_eotS =
@@ -5398,55 +5414,55 @@ public class ChemicalChunkerLexer extends Lexer {
     static final String DFA5_minS =
         "\1\11\1\104\1\115\1\103\1\116\1\103\2\102\1\101\1\124\1\123\1\102"+
         "\1\114\1\105\1\130\1\127\1\126\1\112\1\104\1\116\1\114\1\110\1\104"+
-        "\3\uffff\1\103\1\50\1\55\2\50\1\114\3\50\1\44\1\107\1\50\1\44\3"+
-        "\50\1\114\1\50\1\123\2\50\1\117\1\115\2\121\3\50\2\122\6\50\2\44"+
-        "\2\50\1\124\1\44\1\114\1\102\1\101\1\uffff\1\125\1\uffff\1\125\1"+
+        "\3\uffff\1\103\1\45\1\55\2\45\1\114\3\45\1\44\1\107\1\45\1\44\3"+
+        "\45\1\114\1\45\1\123\2\45\1\117\1\115\2\121\3\45\2\122\6\45\2\44"+
+        "\2\45\1\124\1\44\1\114\1\102\1\101\1\uffff\1\125\1\uffff\1\125\1"+
         "\uffff\1\117\1\115\2\uffff\1\101\1\uffff\1\101\1\uffff\1\44\1\uffff"+
-        "\1\50\2\uffff\1\44\2\uffff\1\101\4\50\1\uffff\1\123\1\uffff\3\50"+
-        "\1\uffff\1\110\2\50\1\uffff\3\50\1\uffff\1\120\1\50\2\102\2\50\3"+
-        "\uffff\2\102\6\50\3\uffff\3\50\1\uffff\3\50\4\uffff\1\44\4\50\2"+
-        "\uffff\1\50\1\uffff\4\50\1\122\3\116\1\101\1\106\1\105\1\116\2\111"+
+        "\1\45\2\uffff\1\44\2\uffff\1\101\4\45\1\uffff\1\123\1\uffff\3\45"+
+        "\1\uffff\1\110\2\45\1\uffff\3\45\1\uffff\1\120\1\45\2\102\2\45\3"+
+        "\uffff\2\102\6\45\3\uffff\3\45\1\uffff\3\45\4\uffff\1\44\4\45\2"+
+        "\uffff\1\45\1\uffff\4\45\1\122\3\116\1\101\1\106\1\105\1\116\2\111"+
         "\1\106\1\117\1\116\1\124\3\105\1\104\1\121\1\101\1\110\1\111\1\105"+
         "\1\122\1\105\5\uffff\1\123\1\110\1\124\1\104\1\105\1\111\1\122\1"+
         "\130\1\105\1\116\1\101\1\125\1\105\1\101\1\111\4\uffff\1\124\3\uffff"+
-        "\1\50\5\uffff\1\50\1\uffff\2\50\2\uffff\2\55\1\50\16\uffff\1\50"+
-        "\2\uffff\1\50\7\uffff\1\55\2\111\3\50\1\124\1\106\2\50\1\124\1\101"+
-        "\2\50\1\105\1\122\1\117\1\104\1\101\1\116\2\115\1\101\1\116\1\114"+
-        "\1\124\1\130\1\115\1\117\1\104\1\120\1\50\1\124\1\114\1\103\1\105"+
+        "\1\45\5\uffff\1\45\1\uffff\2\45\2\uffff\2\55\1\45\16\uffff\1\45"+
+        "\2\uffff\1\45\7\uffff\1\55\2\111\3\45\1\124\1\106\2\45\1\124\1\101"+
+        "\2\45\1\105\1\122\1\117\1\104\1\101\1\116\2\115\1\101\1\116\1\114"+
+        "\1\124\1\130\1\115\1\117\1\104\1\120\1\45\1\124\1\114\1\103\1\105"+
         "\1\114\1\103\1\101\1\114\1\105\2\122\1\131\1\115\1\105\1\101\1\116"+
         "\1\102\1\111\1\116\1\104\1\120\1\117\1\107\1\123\1\114\1\105\1\124"+
-        "\1\101\1\103\1\122\1\105\1\122\1\105\1\103\1\111\1\105\1\50\4\uffff"+
-        "\2\50\3\uffff\3\103\3\uffff\1\105\1\117\1\uffff\1\117\1\uffff\1"+
-        "\110\2\50\2\uffff\1\122\1\50\1\115\1\105\2\124\1\105\1\120\1\115"+
-        "\1\105\1\50\1\110\1\124\1\117\1\125\1\50\1\101\1\uffff\1\122\1\50"+
+        "\1\101\1\103\1\122\1\105\1\122\1\105\1\103\1\111\1\105\1\45\4\uffff"+
+        "\2\45\3\uffff\3\103\3\uffff\1\105\1\117\1\uffff\1\117\1\uffff\1"+
+        "\110\2\45\2\uffff\1\122\1\45\1\115\1\105\2\124\1\105\1\120\1\115"+
+        "\1\105\1\45\1\110\1\124\1\117\1\125\1\45\1\101\1\uffff\1\122\1\45"+
         "\1\125\1\115\1\117\1\125\1\103\1\114\1\123\1\124\1\103\1\111\1\103"+
-        "\1\50\1\117\1\50\1\116\1\103\1\114\1\112\1\120\1\122\1\124\1\50"+
-        "\1\101\1\120\1\50\1\101\1\123\1\114\1\101\1\122\1\124\1\122\1\124"+
+        "\1\45\1\117\1\45\1\116\1\103\1\114\1\112\1\120\1\122\1\124\1\45"+
+        "\1\101\1\120\1\45\1\101\1\123\1\114\1\101\1\122\1\124\1\122\1\124"+
         "\1\103\1\111\1\116\2\117\1\124\1\110\1\114\3\uffff\1\104\1\116\2"+
-        "\117\2\122\2\50\2\uffff\1\50\1\uffff\1\50\1\122\1\105\1\110\3\50"+
+        "\117\2\122\2\45\2\uffff\1\45\1\uffff\1\45\1\122\1\105\1\110\3\45"+
         "\1\122\1\uffff\1\117\1\125\1\123\1\116\1\uffff\1\122\1\101\1\uffff"+
         "\1\125\1\105\2\115\2\105\1\110\1\105\1\123\1\111\1\106\1\105\1\uffff"+
-        "\1\126\1\uffff\2\107\1\101\1\105\1\50\3\105\1\50\1\110\1\uffff\1"+
-        "\122\1\50\1\uffff\1\123\1\117\1\50\1\105\1\124\1\101\1\50\1\105"+
-        "\2\111\1\106\1\103\2\126\2\50\1\104\3\50\1\124\2\104\1\50\1\105"+
-        "\1\uffff\1\125\3\uffff\2\50\1\105\1\50\3\uffff\1\101\1\104\1\122"+
-        "\1\120\1\124\1\101\1\103\1\115\1\116\1\101\2\116\2\50\1\122\1\125"+
+        "\1\126\1\uffff\2\107\1\101\1\105\1\45\3\105\1\45\1\110\1\uffff\1"+
+        "\122\1\45\1\uffff\1\123\1\117\1\45\1\105\1\124\1\101\1\45\1\105"+
+        "\2\111\1\106\1\103\2\126\2\45\1\104\3\45\1\124\2\104\1\45\1\105"+
+        "\1\uffff\1\125\3\uffff\2\45\1\105\1\45\3\uffff\1\101\1\104\1\122"+
+        "\1\120\1\124\1\101\1\103\1\115\1\116\1\101\2\116\2\45\1\122\1\125"+
         "\1\120\1\131\1\116\3\105\1\111\1\116\1\uffff\1\122\1\103\1\116\1"+
-        "\uffff\1\105\1\101\1\uffff\1\123\1\114\1\uffff\1\122\1\50\1\103"+
-        "\1\uffff\1\101\1\124\1\120\1\131\1\110\2\105\2\uffff\1\50\3\uffff"+
-        "\1\50\2\105\1\uffff\1\50\1\124\2\uffff\1\123\1\uffff\1\114\1\50"+
-        "\1\105\1\110\1\50\2\124\1\50\2\124\1\50\1\124\2\uffff\1\50\1\122"+
-        "\1\111\1\50\1\124\3\50\1\116\1\124\1\107\1\124\1\104\1\123\1\124"+
-        "\1\50\1\126\1\50\1\uffff\1\124\1\123\2\111\2\50\1\122\1\50\2\uffff"+
-        "\2\50\1\uffff\1\50\1\111\1\50\1\uffff\1\50\1\105\1\uffff\1\125\1"+
-        "\50\1\uffff\1\111\1\117\1\uffff\1\122\1\uffff\1\105\1\124\1\uffff"+
-        "\1\50\3\uffff\1\50\1\122\1\105\2\50\1\111\1\125\1\uffff\1\105\1"+
-        "\uffff\1\50\1\105\1\117\1\124\2\uffff\1\50\4\uffff\1\132\2\uffff"+
-        "\1\122\1\123\1\uffff\1\124\1\107\1\101\1\50\1\101\2\uffff\1\101"+
-        "\1\50\2\uffff\1\132\1\123\1\50\1\uffff\1\50\1\116\1\101\1\uffff"+
-        "\2\105\1\50\1\131\1\122\1\124\1\uffff\2\124\1\uffff\1\105\1\50\2"+
-        "\uffff\1\50\1\124\2\50\1\uffff\1\50\1\101\3\105\1\50\2\uffff\1\105"+
-        "\3\uffff\1\120\3\50\1\uffff\1\50\1\110\4\uffff\1\131\1\50\1\uffff";
+        "\uffff\1\105\1\101\1\uffff\1\123\1\114\1\uffff\1\122\1\45\1\103"+
+        "\1\uffff\1\101\1\124\1\120\1\131\1\110\2\105\2\uffff\1\45\3\uffff"+
+        "\1\45\2\105\1\uffff\1\45\1\124\2\uffff\1\123\1\uffff\1\114\1\45"+
+        "\1\105\1\110\1\45\2\124\1\45\2\124\1\45\1\124\2\uffff\1\45\1\122"+
+        "\1\111\1\45\1\124\3\45\1\116\1\124\1\107\1\124\1\104\1\123\1\124"+
+        "\1\45\1\126\1\45\1\uffff\1\124\1\123\2\111\2\45\1\122\1\45\2\uffff"+
+        "\2\45\1\uffff\1\45\1\111\1\45\1\uffff\1\45\1\105\1\uffff\1\125\1"+
+        "\45\1\uffff\1\111\1\117\1\uffff\1\122\1\uffff\1\105\1\124\1\uffff"+
+        "\1\45\3\uffff\1\45\1\122\1\105\2\45\1\111\1\125\1\uffff\1\105\1"+
+        "\uffff\1\45\1\105\1\117\1\124\2\uffff\1\45\4\uffff\1\132\2\uffff"+
+        "\1\122\1\123\1\uffff\1\124\1\107\1\101\1\45\1\101\2\uffff\1\101"+
+        "\1\45\2\uffff\1\132\1\123\1\45\1\uffff\1\45\1\116\1\101\1\uffff"+
+        "\2\105\1\45\1\131\1\122\1\124\1\uffff\2\124\1\uffff\1\105\1\45\2"+
+        "\uffff\1\45\1\124\2\45\1\uffff\1\45\1\101\3\105\1\45\2\uffff\1\105"+
+        "\3\uffff\1\120\3\45\1\uffff\1\45\1\110\4\uffff\1\131\1\45\1\uffff";
     static final String DFA5_maxS =
         "\1\172\1\123\1\117\1\123\1\116\1\122\1\102\2\124\1\131\2\123\1\122"+
         "\1\105\1\130\1\127\1\126\1\112\1\104\1\120\1\114\1\110\1\122\3\uffff"+
@@ -5533,10 +5549,11 @@ public class ChemicalChunkerLexer extends Lexer {
     static final String DFA5_specialS =
         "\u02d3\uffff}>";
     static final String[] DFA5_transitionS = {
-            "\1\27\1\30\2\uffff\1\30\22\uffff\1\27\7\uffff\2\31\2\uffff\1"+
-            "\31\1\14\14\31\7\uffff\1\7\1\15\1\3\1\10\1\16\1\17\1\31\1\20"+
-            "\1\4\1\21\1\31\1\12\1\22\1\5\1\1\1\23\1\24\1\13\1\11\1\2\1\25"+
-            "\1\6\1\26\3\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\27\1\30\2\uffff\1\30\22\uffff\1\27\4\uffff\1\31\2\uffff\2"+
+            "\31\2\uffff\1\31\1\14\14\31\3\uffff\1\31\3\uffff\1\7\1\15\1"+
+            "\3\1\10\1\16\1\17\1\31\1\20\1\4\1\21\1\31\1\12\1\22\1\5\1\1"+
+            "\1\23\1\24\1\13\1\11\1\2\1\25\1\6\1\26\3\31\4\uffff\1\31\1\uffff"+
+            "\32\31",
             "\1\33\16\uffff\1\32",
             "\1\34\1\uffff\1\35",
             "\1\40\1\36\12\uffff\1\37\3\uffff\1\41",
@@ -5563,59 +5580,75 @@ public class ChemicalChunkerLexer extends Lexer {
             "",
             "",
             "\1\106",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\1\110",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\1\31\1\112\14\31\7\uffff\32\31\4\uffff\1\31\1"+
-            "\uffff\32\31",
-            "\1\114\1\115",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\1\31\1\120\14\31\7\uffff\32\31\4\uffff\1\31\1"+
-            "\uffff\32\31",
-            "\1\123\3\uffff\2\31\2\uffff\1\31\1\122\14\31\7\uffff\22\31"+
-            "\1\124\7\31\4\uffff\1\31\1\uffff\32\31",
-            "\1\126",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\1\130\3\uffff\2\31\2\uffff\16\31\7\uffff\22\31\1\131\7\31"+
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
             "\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\1\31\1\134\14\31\7\uffff\3\31\1\135\2\31\1\136"+
-            "\6\31\1\137\13\31\1\140\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\16\31\1\142\13\31\4\uffff\1\31"+
-            "\1\uffff\32\31",
-            "\1\144\1\uffff\1\145\11\uffff\1\146",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\1\150",
-            "\2\31\2\uffff\16\31\7\uffff\3\31\1\151\25\31\1\152\4\uffff"+
+            "\1\110",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\1\31\1\112\14\31\3\uffff\1\31\3"+
+            "\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\114\1\115",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\1\31\1\120\14\31\3\uffff\1\31\3"+
+            "\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\123\1\31\2\uffff\2\31\2\uffff\1\31\1\122\14\31\3\uffff\1"+
+            "\31\3\uffff\22\31\1\124\7\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\126",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\130\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff"+
+            "\22\31\1\131\7\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\1\31\1\134\14\31\3\uffff\1\31\3"+
+            "\uffff\3\31\1\135\2\31\1\136\6\31\1\137\13\31\1\140\4\uffff"+
             "\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\10\31\1\154\11\31\1\155\4\31\1"+
-            "\156\2\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\16\31"+
+            "\1\142\13\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\144\1\uffff\1\145\11\uffff\1\146",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\150",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\3\31"+
+            "\1\151\25\31\1\152\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\10\31"+
+            "\1\154\11\31\1\155\4\31\1\156\2\31\4\uffff\1\31\1\uffff\32\31",
             "\1\160",
             "\1\161",
             "\1\162",
             "\1\163",
-            "\2\31\2\uffff\16\31\7\uffff\21\31\1\164\1\31\1\165\6\31\4\uffff"+
-            "\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\21\31"+
+            "\1\164\1\31\1\165\6\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\171",
             "\1\172",
-            "\2\31\2\uffff\16\31\7\uffff\3\31\1\173\2\31\1\174\5\31\1\175"+
-            "\1\176\3\31\1\177\7\31\1\u0080\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\3\31\1\u0084\2\31\1\u0085\6\31"+
-            "\1\u0086\14\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\21\31\1\u0088\1\u0089\1\u008a\6"+
-            "\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\1\u008d\3\uffff\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1"+
-            "\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\3\31"+
+            "\1\173\2\31\1\174\5\31\1\175\1\176\3\31\1\177\7\31\1\u0080\4"+
+            "\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\3\31"+
+            "\1\u0084\2\31\1\u0085\6\31\1\u0086\14\31\4\uffff\1\31\1\uffff"+
+            "\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\21\31"+
+            "\1\u0088\1\u0089\1\u008a\6\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\u008d\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff"+
+            "\32\31\4\uffff\1\31\1\uffff\32\31",
             "\1\u008f\47\uffff\1\u0090\2\uffff\1\u0091\3\uffff\1\u0092",
-            "\2\31\2\uffff\16\31\7\uffff\17\31\1\u0093\12\31\4\uffff\1\31"+
-            "\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\17\31"+
+            "\1\u0093\12\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u0096",
             "\1\u0097\52\uffff\1\u0098\3\uffff\1\u0099",
             "\1\u009a",
@@ -5637,85 +5670,119 @@ public class ChemicalChunkerLexer extends Lexer {
             "\uffff\1\u00ac\2\uffff\1\u00b2\1\uffff\1\u00b4\1\u00a9\1\u00aa"+
             "\1\uffff\1\u00af",
             "",
-            "\1\u00b5\3\uffff\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1"+
-            "\31\1\uffff\32\31",
+            "\1\u00b5\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff"+
+            "\32\31\4\uffff\1\31\1\uffff\32\31",
             "",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "",
             "",
-            "\1\u00b8\3\uffff\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1"+
-            "\31\1\uffff\32\31",
+            "\1\u00b8\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff"+
+            "\32\31\4\uffff\1\31\1\uffff\32\31",
             "",
             "",
             "\1\u00bd\1\uffff\1\u00bb\1\u00be\1\u00c1\1\u00bf\1\uffff\1"+
             "\u00c2\1\u00c3\6\uffff\1\u00c4\1\u00c5\1\u00c6\1\u00bc\1\u00c0"+
             "\1\u00ba\1\uffff\1\u00c7\1\uffff\1\u00c8",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "",
             "\1\u00cd",
             "",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "",
             "\1\u00d1",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "",
             "\1\u00d7",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u00d9",
             "\1\u00da",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "",
             "",
             "",
             "\1\u00dd",
             "\1\u00de",
-            "\2\31\2\uffff\16\31\7\uffff\31\31\1\u00df\4\uffff\1\31\1\uffff"+
-            "\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\31\31"+
+            "\1\u00df\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "",
             "",
             "",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "",
             "",
             "",
             "",
             "\1\u00ec",
-            "\2\31\2\uffff\16\31\7\uffff\22\31\1\u00ee\7\31\4\uffff\1\31"+
-            "\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\22\31\1\u00f1\7\31\4\uffff\1\31"+
-            "\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\22\31"+
+            "\1\u00ee\7\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\22\31"+
+            "\1\u00f1\7\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "",
             "",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u00f9",
             "\1\u00fa",
             "\1\u00fb",
@@ -5769,21 +5836,26 @@ public class ChemicalChunkerLexer extends Lexer {
             "",
             "",
             "",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "",
             "",
             "",
             "",
             "",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "",
             "",
             "\1\u0142",
             "\1\u0143",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "",
             "",
             "",
@@ -5798,10 +5870,12 @@ public class ChemicalChunkerLexer extends Lexer {
             "",
             "",
             "",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "",
             "",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "",
             "",
             "",
@@ -5812,19 +5886,24 @@ public class ChemicalChunkerLexer extends Lexer {
             "\1\u0147",
             "\1\u0148",
             "\1\u0149",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u014d",
             "\1\u014e",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\23\31\1\u0150\6\31\4\uffff\1\31"+
-            "\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\23\31"+
+            "\1\u0150\6\31\4\uffff\1\31\1\uffff\32\31",
             "\1\u0152",
             "\1\u0153",
-            "\2\31\2\uffff\16\31\7\uffff\5\31\1\u0154\24\31\4\uffff\1\31"+
-            "\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\5\31"+
+            "\1\u0154\24\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u0157",
             "\1\u0158",
             "\1\u0159",
@@ -5842,7 +5921,8 @@ public class ChemicalChunkerLexer extends Lexer {
             "\1\u0165",
             "\1\u0166",
             "\1\u0167",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u0169",
             "\1\u016a",
             "\1\u016b",
@@ -5879,13 +5959,16 @@ public class ChemicalChunkerLexer extends Lexer {
             "\1\u018f\11\uffff\1\u0190",
             "\1\u0191\11\uffff\1\u0192",
             "\1\u0193",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "",
             "",
             "",
             "",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "",
             "",
             "",
@@ -5901,12 +5984,15 @@ public class ChemicalChunkerLexer extends Lexer {
             "\1\u019d",
             "",
             "\1\u019e",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "",
             "",
             "\1\u01a1",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u01a3",
             "\1\u01a4",
             "\1\u01a5",
@@ -5915,16 +6001,19 @@ public class ChemicalChunkerLexer extends Lexer {
             "\1\u01a8",
             "\1\u01a9",
             "\1\u01aa",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u01ac",
             "\1\u01ad",
             "\1\u01ae",
             "\1\u01af",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u01b1",
             "",
             "\1\u01b2",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u01b4",
             "\1\u01b5",
             "\1\u01b6",
@@ -5936,9 +6025,11 @@ public class ChemicalChunkerLexer extends Lexer {
             "\1\u01bd\17\uffff\1\u01bc",
             "\1\u01be",
             "\1\u01bf",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u01c1",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u01c3\3\uffff\1\u01c4",
             "\1\u01c6\20\uffff\1\u01c5",
             "\1\u01c7",
@@ -5946,10 +6037,12 @@ public class ChemicalChunkerLexer extends Lexer {
             "\1\u01ca",
             "\1\u01cb",
             "\1\u01cc",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u01ce",
             "\1\u01cf",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u01d1",
             "\1\u01d2",
             "\1\u01d3\7\uffff\1\u01d4",
@@ -5975,21 +6068,26 @@ public class ChemicalChunkerLexer extends Lexer {
             "\1\u01e7",
             "\1\u01e8",
             "\1\u01e9",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\16\31\1\u01eb\13\31\4\uffff\1\31"+
-            "\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\16\31"+
+            "\1\u01eb\13\31\4\uffff\1\31\1\uffff\32\31",
             "",
             "",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u01ef",
             "\1\u01f0",
             "\1\u01f1",
-            "\2\31\2\uffff\16\31\7\uffff\22\31\1\u01f2\7\31\4\uffff\1\31"+
-            "\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\22\31"+
+            "\1\u01f2\7\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u01f6",
             "",
             "\1\u01f7",
@@ -6019,23 +6117,28 @@ public class ChemicalChunkerLexer extends Lexer {
             "\1\u020b",
             "\1\u020c",
             "\1\u020d",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u020f",
             "\1\u0210",
             "\1\u0211",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u0213",
             "",
             "\1\u0214",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "",
             "\1\u0216",
             "\1\u0217",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u0219",
             "\1\u021a",
             "\1\u021b",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u021d",
             "\1\u021e",
             "\1\u021f",
@@ -6043,26 +6146,35 @@ public class ChemicalChunkerLexer extends Lexer {
             "\1\u0221",
             "\1\u0222",
             "\1\u0223",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u0226",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u022a",
             "\1\u022b",
             "\1\u022c",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u022e",
             "",
             "\1\u022f",
             "",
             "",
             "",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u0232",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "",
             "",
             "",
@@ -6078,8 +6190,10 @@ public class ChemicalChunkerLexer extends Lexer {
             "\1\u023d",
             "\1\u023e",
             "\1\u023f",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u0242",
             "\1\u0243",
             "\1\u0244",
@@ -6102,7 +6216,8 @@ public class ChemicalChunkerLexer extends Lexer {
             "\1\u0252",
             "",
             "\1\u0253",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u0255",
             "",
             "\1\u0256",
@@ -6114,42 +6229,54 @@ public class ChemicalChunkerLexer extends Lexer {
             "\1\u025c",
             "",
             "",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "",
             "",
             "",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u025f",
             "\1\u0260",
             "",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u0262",
             "",
             "",
             "\1\u0263",
             "",
             "\1\u0264",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u0266",
             "\1\u0267",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u0269",
             "\1\u026a",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u026c",
             "\1\u026d",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u026f",
             "",
             "",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u0271",
             "\1\u0272",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u0274",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u0278",
             "\1\u0279",
             "\1\u027a",
@@ -6157,32 +6284,43 @@ public class ChemicalChunkerLexer extends Lexer {
             "\1\u027c",
             "\1\u027d",
             "\1\u027e",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u0280",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "",
             "\1\u0282",
             "\1\u0283",
             "\1\u0284",
             "\1\u0285",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u0288",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "",
             "",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u028d",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u0290",
             "",
             "\1\u0291",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "",
             "\1\u0293",
             "\1\u0294",
@@ -6192,27 +6330,33 @@ public class ChemicalChunkerLexer extends Lexer {
             "\1\u0296",
             "\1\u0297",
             "",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "",
             "",
             "",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u029a",
             "\1\u029b",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u029e",
             "\1\u029f",
             "",
             "\1\u02a0",
             "",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u02a2",
             "\1\u02a3",
             "\1\u02a4",
             "",
             "",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "",
             "",
             "",
@@ -6226,25 +6370,30 @@ public class ChemicalChunkerLexer extends Lexer {
             "\1\u02a9",
             "\1\u02aa",
             "\1\u02ab",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u02ad",
             "",
             "",
             "\1\u02ae",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "",
             "",
             "\1\u02b0",
             "\1\u02b1",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u02b4",
             "\1\u02b5",
             "",
             "\1\u02b6",
             "\1\u02b7",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u02b9",
             "\1\u02ba",
             "\1\u02bb",
@@ -6253,20 +6402,26 @@ public class ChemicalChunkerLexer extends Lexer {
             "\1\u02bd",
             "",
             "\1\u02be",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "",
             "",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u02c1",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u02c5",
             "\1\u02c6",
             "\1\u02c7",
             "\1\u02c8",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "",
             "",
             "\1\u02ca",
@@ -6274,18 +6429,23 @@ public class ChemicalChunkerLexer extends Lexer {
             "",
             "",
             "\1\u02cb",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             "\1\u02d0",
             "",
             "",
             "",
             "",
             "\1\u02d1",
-            "\2\31\2\uffff\16\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\31\2\uffff\2\31\2\uffff\16\31\3\uffff\1\31\3\uffff\32\31"+
+            "\4\uffff\1\31\1\uffff\32\31",
             ""
     };
 
