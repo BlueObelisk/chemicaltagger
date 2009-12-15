@@ -16,7 +16,7 @@ import org.junit.Test;
  */
 public class ChemistryPOSTaggerTest {
    
-   @Test
+   
    public void setUp(){
        ChemistryPOSTagger posTagger = new ChemistryPOSTagger();
    }
