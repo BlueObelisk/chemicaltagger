@@ -1,7 +1,3 @@
-/*
- *
- * Test Skeleton will fill in later
- */
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
 import java.io.ByteArrayInputStream;
@@ -9,22 +5,18 @@ import java.io.File;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
-import junit.framework.Assert;
-import org.junit.Test;
-import junit.framework.TestCase;
 import uk.ac.cam.ch.wwmm.chemicaltagger.extractText.DocumentContainer;
 import uk.ac.cam.ch.wwmm.chemicaltagger.extractText.ExtractFromPatent;
 
-/**
- *
- * @author lh359
- */
-public class PatentTest extends TestCase {
+public class ParsePatents {
 
-    @Test
-    public void runOnPatents() {
-        List docs = new ArrayList<DocumentContainer>();
+    public ParsePatents() {
+    }
+
+    public static void main(String[] args) {
+    List docs = new ArrayList<DocumentContainer>();
         String path = "src/test/resources/patents/";
+
         File patentDirectory = new File(path);
         String[] patentDir = patentDirectory.list();
         ChemistryPOSTagger posTagger = new ChemistryPOSTagger();
@@ -62,12 +54,12 @@ public class PatentTest extends TestCase {
                 taggedInputStream = new ByteArrayInputStream(docContainer.getTaggedContent().getBytes());
 
             } catch (Exception e) {//Catch exception if any
-                fail("Can not Parse");
+                System.out.println("exception "+e.getMessage());
             }
 
             ChemicalChunkerMain chemicalChunkerMain = new ChemicalChunkerMain(taggedInputStream);
             chemicalChunkerMain.processTags(outputXMLFilename);
-           
+
 
         }
     }
