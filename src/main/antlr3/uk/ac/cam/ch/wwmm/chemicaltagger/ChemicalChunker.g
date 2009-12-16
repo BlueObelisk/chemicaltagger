@@ -23,7 +23,7 @@ fragment ACHAR	:	('A'..'Z') | ('a'..'z');
 //ACHAR : ~('\\'|'"') ; 
 fragment DIGIT	:	('0'..'9');
 
-TOKEN	:	(ACHAR| '%'|'_'|',' |'.'|')'|'('|'/'|'-'|'='|DIGIT)+;
+TOKEN	:	(ACHAR|':'|'%'|'_'|',' |'.'|')'|'('|'/'|'-'|'='|DIGIT)+;
  
 
 document:	sentence+ -> ^(NODE["Sentence"]  sentence )+;
