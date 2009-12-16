@@ -1,8 +1,9 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -21,8 +22,8 @@ import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.PropertiesConfiguration;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
-
 import org.xmlcml.euclid.Util;
+
 import uk.ac.cam.ch.wwmm.oscar3.Oscar3Props;
 import uk.ac.cam.ch.wwmm.oscar3.flow.OscarFlow;
 import uk.ac.cam.ch.wwmm.ptclib.scixml.TextToSciXML;
@@ -30,10 +31,12 @@ import uk.ac.cam.ch.wwmm.ptclib.scixml.TextToSciXML;
 public class ChemistryPOSTagger {
 
     public String sentence;
-    public String tagFile = "src/main/resources/dictionary/tags.txt";
+//    public String tagFile = "src/main/resources/dictionary/tags.txt";
+    public String tagFile1 = "dictionary/tags.txt";
     private Configuration config = null;
     private List<Rule> rules;
-    private String config_filename = "src/main/resources/textmining.properties";
+//    private String config_filename = "src/main/resources/textmining.properties";
+    private String config_filename1 = "textmining.properties";
     private final Logger LOG = Logger.getLogger(ChemistryPOSTagger.class);
     private static final String FLOW_COMMAND = "recognise inline";
 
@@ -84,7 +87,10 @@ public class ChemistryPOSTagger {
         String line;
         try {
 
-            BufferedReader in = new BufferedReader(new FileReader(tagFile));
+//            BufferedReader in = new BufferedReader(new FileReader(tagFile));
+// PMR
+        	InputStream is = this.getClass().getClassLoader().getResourceAsStream(tagFile1);
+            BufferedReader in = new BufferedReader(new InputStreamReader(is));
 
             if (!in.ready()) {
                 throw new IOException();
@@ -117,8 +123,8 @@ public class ChemistryPOSTagger {
      *****************************************************/
     private void initialiseOSCAR() {
         try {
-            config = new PropertiesConfiguration(config_filename);
-            System.err.println(config_filename);
+            config = new PropertiesConfiguration(config_filename1);
+            System.err.println(config_filename1);
         } catch (ConfigurationException e1) {
             e1.printStackTrace();
         }
@@ -321,6 +327,7 @@ public class ChemistryPOSTagger {
         }
         try {
 
+        	// TODO this needs jar-ifying
             tagDict = new POSDictionary(
                     "src/main/resources/openNlpResources/tagdict");
             PosTagger posTagger = new PosTagger(

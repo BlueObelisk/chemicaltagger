@@ -8,11 +8,14 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
-import org.apache.commons.lang.time.StopWatch;
+
+import nu.xom.Document;
+import nu.xom.Element;
 
 import org.antlr.runtime.ANTLRInputStream;
 import org.antlr.runtime.CommonTokenStream;
 import org.antlr.runtime.tree.Tree;
+import org.apache.commons.lang.time.StopWatch;
 import org.apache.log4j.Logger;
 
 /**
@@ -42,7 +45,6 @@ public class ChemicalChunkerMain {
 
     /*********************
      * 
-     * @param inputFilename
      * @param outputFilename
      *********************/
     public void processTags(String outputFilename) {
@@ -79,6 +81,27 @@ public class ChemicalChunkerMain {
         }
 
     }
+
+    /*********************
+     * 
+     * @param outputFilename
+     *********************/
+    public Document processTagsToDocument() {
+    	Document doc = null;
+        try {
+            ANTLRInputStream input = new ANTLRInputStream(taggedTokenInStream);
+            ChemicalChunkerLexer lexer = new ChemicalChunkerLexer(input);
+            CommonTokenStream tokens = new CommonTokenStream(lexer);
+            ChemicalChunkerParser parser = new ChemicalChunkerParser(tokens);
+            ChemicalChunkerParser.document_return result = parser.document();
+            Tree t = (Tree) result.getTree();
+            doc = new ASTtoXML().convert(t);
+         } catch (Exception e) {
+            throw new RuntimeException("read parse fail", e);
+        }
+         return doc;
+    }
+    
 
     /**
      * @param args the command line arguments
