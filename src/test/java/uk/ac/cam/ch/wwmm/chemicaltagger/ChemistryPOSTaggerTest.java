@@ -1,54 +1,34 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
+import static org.junit.Assert.*;
 
-
-
-
+import org.junit.Before;
 import org.junit.Test;
 
-
-/***********************
- *
- * @author lh359
- *
- * Test case for POSTagger,
- * will fill in later.
- */
 public class ChemistryPOSTaggerTest {
-   
-   
-   public void setUp(){
-       ChemistryPOSTagger posTagger = new ChemistryPOSTagger();
-   }
 
+	@Before
+	public void setUp() throws Exception {
+	}
 
-   @Test
-   public void testCleanSentence(String sentence) {
+	@Test
+	public void testSetSentence() {
+		fail("Not yet implemented");
+	}
 
-   }
+	@Test
+	public void testRunTaggers() {
+		fail("Not yet implemented");
+	}
 
+	@Test
+	public void testRunOpenNLPTagger() {
+		fail("Not yet implemented");
+	}
 
+	@Test
+	public void testRunRegexTagger() {
+		fail("Not yet implemented");
+	}
 
-   @Test
-   private void runOSCARTagger(POSContainer posContainer) {
-
-   }
-   @Test
-   public void testRunRegexTagger(POSContainer posContainer) {
-
-   }
-
-   @Test
-   public void testRunOpenNLPTagger(POSContainer posContainer) {
-
-   }
-   @Test
-   public void testRunTaggers(String sentence) {
-
-   }
-
-
-   @Test
-   private void correctCombinedTagsList(POSContainer posContainer) {
-   }
 }
