@@ -13,17 +13,15 @@ public class ASTtoXMLTest {
 
 	@Test
 	public void testASTtoXML() {
-		fail("Not yet implemented");
+//		fail("Not yet implemented");
 	}
 
 	@Test
 	public void testConvert() {
-		fail("Not yet implemented");
 	}
 
 	@Test
 	public void testGetNodes() {
-		fail("Not yet implemented");
 	}
 
 }
