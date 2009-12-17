@@ -1,0 +1,88 @@
+Synthesis of ethyl benzocoumarin-3- carboxylate (2). A mixture of 2-hydroxy-1-
+naphthaldehyde (2.9 mmol) 1, an equivalent amount of diethyl malonate (2.9 mmol), and
+catalytic amount of piperidine in ethanol (30 mL) was refluxed for 30 minutes on water bath14.
+After the reaction was complete, the reaction mixture was cooled to room temperature and
+poured into crushed ice with stirring. The precipitate obtained was then filtered, washed with
+water, dried and recrystallised using ethanol to get pure 2.
+Ethyl benzocoumarin-3- carboxylate (2). White Yellow Crystalline Solid. Yield 90%. m.p.
+115–116 º C (117–118 º C Reported. Ref-14 & 16) (ethanol); 1H NMR (400 MHz, CDCl3) d
+(ppm): 1.4 (s, 3H, CH3), 4.4 (q, 2H, H2), 7.4 (m, 6H, ArH ), 9.2 (s, 1H, CH) : 13C NMR (300
+MHz, CDCl3) d (ppm): 163 (C=O ester), 160 (C=O pyrone), 150.4, 149.7, 148.7, 130.6, 126.6,
+124.2, 124.0, 121.2, 121, 120, 114.5, 115, 58.8, 26: IR (KBr) ? (cm-1): 1765 (s) (C=O), 1750 (s)
+(C=O ester): MS (m/z): 269 (M+1).
+Synthesis of benzocoumarin-3-carbohydrazide (3). A mixture of ethyl benzocoumarin-3-
+carboxylate 2 (3.8 mmol) and hydrazine hydrate (3.8 mmol) was dissolved in ethanol and
+refluxed on waterbath for 2 hr. After the reaction was complete, the reaction mixture was cooled
+to room temperature and poured into crushed ice with stirring. The separated solid was filtered,
+washed with water, dried and recrystallised with ethanol to get pure yellow compound 3.
+Benzocoumarin-3-carbohydrazide (3). Yellow Crystalline Solid. Yield 95%; m.p.260-262 ºC
+(chloroform); 1H NMR (400 MHz, DMSO-d6) d (ppm): 4.7 (s, 2H, NH2), 7.7 (t, 2H, J = 7.9 Hz),
+7.8 (m, 1H, J = 1.2 Hz), 8.1 (d, 1H, J = 8.1 Hz) , 8.3 (d, 1H, J = 9.1 Hz), 8.63 (d, 1H, J = 8.5 Hz
+), 9.4 (s, 1H, CH), 9.9 (s, 1H, NH): 13C NMR (400 MHz, DMSO-d6) d (ppm): 166 (s), 162 (s),
+152 (d), 150.5 (s), 145 (d), 136 (d), 130.8 (s) 130 (d), 129.8 (d), 129.8 (s), 127.8 (d), 117 (d),
+114.5 (s), 112 (s) (: IR (KBr) ? (cm-1): 1765 (s) (C=O pyrone), 3020 (m) (NH2), 1605 (s) (C=O):
+General Papers ARKIVOC 2009 (ii) 11-19
+ISSN 1551-7012 Page 17 ©ARKAT USA, Inc.
+MS (m/z): 255 (M+1). Anal. Calcd. For C14H10N2O3: C, 66.14; H, 3.96; N 11.02. Found: C,
+66.03; H, 3.83; N10.86.
+Synthesis of 3-Benzocoumarin- 5- (undecanyl) – 1, 3, 4 oxadiazole (4a). To the mixture of
+benzocoumarin-3-carbohydrazide 3 (2.0 mmol), lauric acid (2.0 mmol) 10ml of phosphorous
+oxychloride was added and then it was refluxed for about 12-15 hr on water bath and cooled to
+room temperature.The mixture was poured into crushed ice with stirring and it was neutralized
+by using saturated sodium bicarbonate solution. The yellow precipitate obtained was filtered,
+washed with water, dried and purified through column chromatography by using ethyl acetate
+and petroleum ether (1:9) as the elutent. Similarly the compounds 4b-e were synthesized.
+3-Benzocoumarin- 5- (undecanyl) – 1, 3, 4 oxadiazole (4a). Yellow Solid. Yield 60%; m.p.71-
+73 ºC (ethyl acetate); 1H NMR (300 MHz, DMSO-d6) d (ppm): 9.44 (s, 1H, CH), 8.68 (d, 1H, J =
+8.2 Hz), 8.33 (d, 1H, J = 9.2 Hz), 8.10 (d, 1H, J = 7.4 Hz), 7.77 (d, 1H, J = 7.2 H), 7.68 (t, 2H, J
+= 8.5 Hz), 2.95 (t, 2H, J = 7.1 Hz,), 1.7 (s, 2H, CH2), 1.2 (s, 16H, -CH2- protons), 0.81 (s, 3H,
+CH3): 13CNMR (400 MHz, DMSO-d6) d (ppm): 167.8 (s), 160.6 (s), 156.0 (s), 154.6 (s), 141.3
+(d), 136.0 (d), 130.4 (s), 129.4 (d), 129.4 (d), 129.3 (s), 126.8 (d), 122.1 (d), 116.6 (d), 112.6 (s),
+111.1 (s), 31.2 (t), 29.4 (t), 29.4 (t), 29.3 (t), 29.3 (t), 28.6 (t), 28.5 (t), 26.1 (t), 24.8 (t), 22.5 (t),
+14.1 (q): IR (KBr) ? (cm-1): 1765 (s) (C=O pyrone), 1592 (s) (C=N); MS (m/z): 419 (M+1).
+Anal. Calcd. For C26H30N2O3: C, 74.61; H, 7.22; N, 6.69. Found: C, 74.67; H, 7.04; N 6.66.
+3-Benzocoumarin- 5- (tridecanyl)–1, 3, 4-oxadiazole (4b). Yellow Solid. Yield 50%; m.p.86-
+88 ºC (ethyl acetate); 1H NMR (400 MHz, CDCl3) d (ppm): 9.41 (s, 1H, CH), 8.4 (d, 1H, J = 8.5
+Hz), 8.14 (d, 1H, J = 9.0 Hz), 7.98 (d, 1H, J = 8.1 Hz), 7.80 (t, 1H, J = 7.2 Hz), 7.67 (t, 1H, J =
+7.5 Hz), 7.55 (d, 1H, J = 9.0 Hz), 3.02 (t, 2H, J = 7.7 Hz), 1.92 (m, 2H, J = 7.4 Hz), 1.46 (t, 2H,
+J = 7.7 Hz), 1.2 (s, 18H, -CH2- protons), 0.90 (t, 3H, J = 6.3 Hz): 13CNMR (400MHz, DMSO-d6)
+d (ppm): 167.8 (s), 161 (s), 156.4 (s), 154.9 (s), 141.5 (d), 136 (d), 130.4 (s), 129.5 (d), 129.4 (d),
+129.3 (s), 127 (d), 122 (d), 117 (d), 112.8 (s), 111.4 (s), 31.7 (t), 29.5 (t), 29.4 (t), 29.4 (t), 29.4
+(t), 29.3 (t), 29.1 (t), 28.9 (t), 28.7 (t), 26.3 (t), 25 (t), 22.5 (t), 14.4 (q): IR (KBr) ? (cm-1): 1765
+(s) (C=O pyrone), 1602 (s) (C=N); MS (m/z): 447.5 (M+1). Anal. Calcd. For C28H34N2O3: C,
+75.31; H, 7.67; N, 6.27. Found: C, 75.19; H, 7.56; N 6.40.
+3-Benzocoumarin-5- (pentadecanyl) – 1, 3, 4-oxadiazole (4c). Yellow Solid. Yield 60%;
+m.p.90-92 ºC (ethyl acetate); 1H NMR (400 MHz, DMSO-d6) d (ppm): 9.49 (s, 1H, CH), 8.71 (d,
+1H, J = 8.5 Hz), 8.35 (d, 1H, J = 8.9 Hz), 8.12 (d, 1H, J = 8.1 Hz), 7.82 (d, 1H, J = 7.7 Hz), 7.70
+(m, 2H, J = 8.3 Hz), 2.90 (2H, t, CH2), 1.22 (d, 26H, J = 10.2 Hz,), 0.84 ( t, 3H, J = 6.0 Hz): 13C
+NMR (400 MHz, DMSO-d6) d (ppm): 167.8 (s), 161.1(s), 156.8 (s), 155.2 (s), 141.5 (d), 136 (d),
+130.5 (s), 129.5 (d), 129.4 (d), 129.4 (s), 127.4 (d), 122.1 (d), 117.3 (d), 112.8 (s), 114. (s), 31 (t),
+29.5 (t), 29.5 (t), 29.5 (t), 29.4 (t), 29.4 (t), 29.3 (t), 29.1 (t), 29 (t), 29 (t), 28.8 (t), 26.6 (t), 25.4
+(t), 22.5 (t), 14.4 (q): IR (KBr) ? (cm-1): 1765 (s) (C=O pyrone), 1612 (s) (C=N); MS (m/z):
+475.6 (M+1). Anal. Calcd. For C30H38N2O3: C, 75.92; H, 8.07; N, 5.9. Found: C, 75.83; H, 7.94;
+N 6.02.
+3-Benzocoumarin- 5- (heptadecanyl) – 1, 3, 4-oxadiazole (4d). Yellow Solid. Yield 50%;
+m.p.75-77 ºC (ethyl acetate); 1H NMR (300 MHz, CDCl3) d (ppm): 9.4 (s, 1H, CH), 8.39 (d, 1H,
+General Papers ARKIVOC 2009 (ii) 11-19
+ISSN 1551-7012 Page 18 ©ARKAT USA, Inc.
+J = 8.4 Hz), 8.14 (d, 1H, J = 9.0 Hz), 7.97 (d, 1H, J = 8.9 Hz), 7.80 (t, 1H, J = 7.3 Hz), 7.66 (t,
+1H, J = 7.4 Hz), 7.54 (d, 1H, J = 9.0 Hz), 3.02 (t, 2H, J = 7.6 Hz), 2.37 (t, 2H, J = 7.5 Hz), 1.92
+(t, 2H, J = 6.8 Hz), 1.4 (s, 2H, CH2), 1.2 (s, 24H, CH2 protons), 0.88 (t, 3H, J = 6.5 Hz);
+13CNMR (400M Hz, DMSO-d6) d (ppm): 167.8 (s), 161 (s), 156.9 (s), 155.5 (s), 141.5 (d), 136.2
+(d), 130.5 (s), 129.6 (d), 129.4 (d), 129.4 (s), 127.5 (d), 122.1 (d), 117.3 (d), 112.8 (s), 111.8 (s),
+31.7 (t), 29.8 (t), 29.5 (t), 29.4 (t), 29.4 (t), 29.4 (t), 29.4 (t), 29.4 (t), 29.3 (t), 29.1 (t), 28.9 (t),
+28.7 (t), 28.6 (t), 26.6 (t), 25.3 (t), 22.9 (t), 14.6 (q): IR (KBr) ? (cm-1): 1765 (s) (C=O pyrone),
+1602 (s) (C=N); MS (m/z): 503 (M+1). Anal. Calcd. For C32H42N2O3: C, 76.46; H, 8.42; N, 5.57.
+Found: C,76.35; H, 8.38; N 5.36.
+3-Benzocoumarin-5-( nona- 9,10-decenyl) -1, 3, 4-oxadiazole (4e). Yellow Semi Solid. Yield
+50% (ethyl acetate); 1H NMR (400 MHz, CDCl3) d (ppm): 9.41 (s, 1H, CH), 8.40 (d, 1H, J = 8.4
+Hz), 8.14 (d, 1H, J = 9.0 Hz), 7.98 (d, 2H, J = 8.0 Hz), 7.80 (t, 2H, J = 7.2 Hz), 7.60 (t, 1H, J =
+7.5 Hz), 7.54 (d, 1H, J = 9.0 Hz), 7.14 (m, 1H, J = 6.1 Hz), 5.38 (m, 2H, CH2), 3.02 (t, 2H, J =
+7.8), 1.97 (s, 4H, CH2), 1.92 (t, 2H, J = 7.4 Hz), 1.46 (m, 4H, J = 6.5 Hz,), 1.34 (m, 6H, CH2-
+protons), 1.29 (m, 10H, J = 12.4 Hz), 0.88 ( t, 3H, J = 6.5 Hz,): 13C NMR (400 MHz, DMSO-d6)
+d (ppm): 167.4 (s), 161 (s), 156.4 (s), 155.3 (s), 141.2 (d), 136.2 (d), 130.5 (s), 129.6 (d), 129.4
+(d), 129.4 (s), 127.5 (d), 127.1 (d), 117.3 (d), 112.8 (s), 111.8 (s), 36.6 (d), 36.6 (d), 31.9 (d),
+29.8 (t), 29.5 (t), 29.4 (t), 29.4 (t), 29.4 (t), 29.3 (t), 29.1 (t), 28.9 (t), 28.8 (t), 28.6 (t), 26.7 (t),
+25.3 (t), 22.9 (t), 14.6 (q): IR (KBr) ? (cm-1; 1765 (s) (C=O pyrone), 1624 (s) (C=N); MS (m/z):
+501.13 (M+1). Anal. Calcd. For C32H40N2O3: C, 76.77; H, 8.05; N, 5.6. Found: C, 76.59; H,
+7.76; N 5.46.

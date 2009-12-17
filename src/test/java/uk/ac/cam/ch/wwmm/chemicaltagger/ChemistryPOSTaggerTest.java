@@ -53,7 +53,6 @@ public class ChemistryPOSTaggerTest {
    }
 
    @Test
-   
    public void sentence2() {
         String sentence = "The resulting viscous mixture was slowly added to vigorously stirred MeOH ( ca . 30 mL ) to give a white precipitate of diblock copolymer PNBE- -PSt ";
         posTagger.runTaggers(sentence);

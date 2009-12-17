@@ -20,3 +20,4 @@ glob:.settings/org.maven.ide.eclipse.prefs
 \.chg\..*$
 \.rej$
 \.conflict\~$
+glob:nbactions.xml
