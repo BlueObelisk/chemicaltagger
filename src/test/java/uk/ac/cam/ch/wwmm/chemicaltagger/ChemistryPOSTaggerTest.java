@@ -131,7 +131,7 @@ public class ChemistryPOSTaggerTest {
     		"OSCAR-CJ anhydrous OSCAR-CM Na2SO4 STOP . DT The NN-CHEMENTITY solvent VBD was VB-REMOVE removed IN-IN in " +
     		"NN-VACUUM vacuo COMMA , CC and DT the NN-CHEMENTITY residue VBD was VB-PURIFY purified IN-BY by " +
     		"NN-FLASH flash NN-COLUMN column NN-CHROMATOGRAPHY chromatography IN-ON on OSCAR-CM silica " +
-    		"NN-CHEMENTITY gel -LRB- ( OSCAR-CM hexane DASH / OSCAR-CM Et2OÃ NNP ‚ JJ =Ã‚ CD 2/1 -RRB- ) TO to " +
+    		"NN-CHEMENTITY gel -LRB- ( OSCAR-CM hexane DASH / OSCAR-CM Et2Oï¿½ NNP ï¿½ JJ =Ã‚ CD 2/1 -RRB- ) TO to " +
     		"VB-YIELD give CD 0.97 NN-GRAM g IN-OF of CD 3 IN-AS as DT a JJ pale JJ yellow JJ viscous NN-STATE liquid " +
     		"-LRB- ( CD 95 NN-PERCENT % -RRB- ) STOP .",
         		posContainer.getTokenTagTupleAsString().trim());

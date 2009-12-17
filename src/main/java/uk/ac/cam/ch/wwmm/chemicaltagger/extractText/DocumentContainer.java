@@ -8,7 +8,7 @@ public class DocumentContainer {
     private String Content = "";
     private String TaggedContent = "";
     private String NMR = "";
-
+    private String TLC ="";
     public String getContent() {
         return Content;
     }
@@ -56,4 +56,14 @@ public class DocumentContainer {
     public void setTitle(String Title) {
         this.Title = Title;
     }
+
+	public String getTLC() {
+		// TODO Auto-generated method stub
+		return TLC;
+	}
+
+	public void setTLC(String tlc) {
+		this.TLC = tlc;
+		
+	}
 }
