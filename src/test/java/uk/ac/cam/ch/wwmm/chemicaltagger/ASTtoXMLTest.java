@@ -11,10 +11,6 @@ public class ASTtoXMLTest {
 	public void setUp() throws Exception {
 	}
 
-	@Test
-	public void testASTtoXML() {
-//		fail("Not yet implemented");
-	}
 
 	@Test
 	public void testConvert() {
