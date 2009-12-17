@@ -46,6 +46,5 @@ public class ExtractFromPatentTest {
 
 		String actualPatentNMR = docContainer.getNMR().replace(" ", "").trim();
 		Assert.assertEquals(expectedPatentNMR, actualPatentNMR);
-
 	}
 }
