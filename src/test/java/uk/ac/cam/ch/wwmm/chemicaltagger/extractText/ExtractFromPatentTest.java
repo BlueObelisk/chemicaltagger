@@ -38,7 +38,6 @@ public class ExtractFromPatentTest {
 
 		String actualPatentTLC = docContainer.getTLC().replace(" ", "").trim();
 		Assert.assertEquals(expectedPatentTLC, actualPatentTLC);
-
 	}
 
 	@Test
