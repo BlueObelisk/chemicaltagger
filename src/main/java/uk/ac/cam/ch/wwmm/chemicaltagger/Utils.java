@@ -1,8 +1,13 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import nu.xom.Document;
+import nu.xom.Serializer;
 
 import org.xmlcml.cml.base.CMLConstants;
 
@@ -43,6 +48,19 @@ public class Utils {
 			text = text.replaceAll("[^A-Za-z0-9_.-]", CMLConstants.S_UNDER);
 		}
 		return text;
+	}
+
+	public static void writeXMLToFile(Document doc, String xmlFilename) {
+	
+	    try {
+	        Serializer serializer = new Serializer(new FileOutputStream(xmlFilename));
+	        serializer.write(doc);
+	        serializer.flush();
+	    } catch (IOException ex) {
+	        System.err.println("error"+ ex);
+	    }
+	
+	
 	}
 
 }
