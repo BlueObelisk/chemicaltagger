@@ -72,7 +72,8 @@ public class ChemicalChunkerMain {
             ChemicalChunkerParser.document_return result = parser.document();
             Tree t = (Tree) result.getTree();
             ASTtoXML astToXML = new ASTtoXML();
-            astToXML.convert(t, outputFilename);
+            Document doc = astToXML.convert(t);
+            Utils.writeXMLToFile(doc, outputFilename);
             stopWatch.stop();
             System.out.println("Parsing done in " + stopWatch.getTime());
 
