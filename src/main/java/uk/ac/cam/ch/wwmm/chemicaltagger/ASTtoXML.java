@@ -43,7 +43,7 @@ public class ASTtoXML {
                 newNode.appendChild(text);
             } else {
 //            	text = CMLUtil.makeNCName(text);
-            	text = Util.makeNCName(text);
+            	text = Utils.makeNCName(text);
                 try {
                     newNode = new Element(text);
                     node.appendChild(newNode);
