@@ -10,7 +10,6 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 
 import nu.xom.Document;
-import nu.xom.Element;
 
 import org.antlr.runtime.ANTLRInputStream;
 import org.antlr.runtime.CommonTokenStream;
