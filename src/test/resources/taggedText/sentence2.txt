@@ -1,0 +1,1 @@
+DT The NN-CHEMENTITY resulting JJ viscous NN-CHEMENTITY mixture VBD was RB slowly VB-ADD added TO to RB vigorously VB-STIR stirred OSCAR-CM MeOH -LRB- ( MD ca STOP . CD 30 NN-VOL mL -RRB- ) TO to VB-YIELD give DT a JJ white NN-CHEMENTITY precipitate IN-OF of OSCAR-CJ diblock NN-CHEMENTITY copolymer OSCAR-CM PNBE DASH - OSCAR-CM -PSt
