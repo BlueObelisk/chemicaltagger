@@ -464,24 +464,24 @@ public class ChemistryPOSTagger {
 			}
 
 			if (currentTag.toLowerCase().startsWith("vb-")) {
-				if (!currentTag.toLowerCase().startsWith("vb-use")) {
+				if (!currentTag.toLowerCase().startsWith("vb-use") && !currentTag.toLowerCase().startsWith("vb-add")) {
 					List afterList = Utils
 							.addToList("oscar-cj oscar-cm nns nn-chementity");
 					List notList = Utils.addToList("rb in-after");
 					if (stringafter(afterList, i, combinedTags)
 							&& !stringbefore(notList, i, combinedTags)) {
-						newTag = "oscar-cj";
+						newTag = "OSCAR-CJ";
 					}
 				}
 			}
 			if (currentTag.toLowerCase().startsWith("vbn")
 					|| currentTag.toLowerCase().startsWith("vbg")) {
 
-				List afterList = Utils.addToList("oscar-cm nns nn-chementity");
+				List afterList = Utils.addToList("oscar-cm nns nn-chementity oscar-cj");
 				List beforeList = Utils.addToList("dt");
 				if (stringafter(afterList, i, combinedTags)
 						&& stringbefore(beforeList, i, combinedTags)) {
-					newTag = "oscar-cj";
+					newTag = "OSCAR-CJ";
 				}
 
 			}

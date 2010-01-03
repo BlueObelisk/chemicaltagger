@@ -7,7 +7,7 @@ options {
 tokens{
  NODE;
 }
-
+	
 @header {
     package uk.ac.cam.ch.wwmm.chemicaltagger;
  }
@@ -21,63 +21,54 @@ NEWLINE	:	'\r'? '\n';
 fragment ACHAR	:	('A'..'Z') | ('a'..'z');
 
 //ACHAR : ~('\\'|'"') ; 
-fragment DIGIT	:	('0'..'9');
+fragment DIGIT	: ('0'..'9');
 
-TOKEN	:	(ACHAR|':'|'%'|'_'|',' |'.'|')'|'('|'/'|'-'|'='|'°'|DIGIT)+;
- 
-
-document:	sentence+ -> ^(NODE["Sentence"]  sentence )+;
+//TOKEN	:	(ACHAR|':'|'%'|'_'|',' |'.'|')'|'('|'/'|'-'|'='|'°'|DIGIT)+;
+TOKEN : (ACHAR| '_'|',' |'.'|')'|'('|'/'|'-'|'='|'°'|':'|'%'|DIGIT)+;
 
 
-sentence 
-:  (nounphrase|verbphrase)+ (comma|cc|stop)* -> ^(NODE["NounPhrase"]  nounphrase)*  ^(NODE["VerbPhrase"]  verbphrase)*;
-	//:prepphrase? (nounphrase|verbphrase)+ (comma|cc|stop)* -> ^(NODE["PrepPhrase"]  prepphrase)?  ^(NODE["NounPhrase"]  nounphrase)*  ^(NODE["VerbPhrase"]  verbphrase)*;
-	
+document: sentence+ -> ^(NODE["Sentence"]  sentence )+ ;
 
-nounphrase 
-	:dt? adj* noun+ (comma noun)* (cc noun)* prepphraseOf* prepphraseIN?;
+sentence:  (sentence1|sentence2|sentence3)+   (comma|cc|stop|adv)* ;
+sentence1
+	: nounphrase+ verbphrase* prepphrase*-> ^(NODE["NounPhrase"]  nounphrase)+  ^(NODE["VerbPhrase"]  verbphrase)*  prepphrase*;	
+sentence2
+	: verbphrase+ nounphrase* prepphrase*-> ^(NODE["VerbPhrase"]  verbphrase)+  ^(NODE["NounPhrase"]  nounphrase)*  prepphrase*;	
+sentence3
+	: prepphrase+ (nounphrase|verbphrase)+ ->  prepphrase+  ^(NODE["NounPhrase"]  nounphrase)* ^(NODE["VerbPhrase"]  verbphrase)+;	
 
-verbphrase    
-	: to? adv* vbd* verb adv* prepphrase*;
+nounphrase : dt? (adj|adv)*  noun+ (cc? comma? cc?  adj+ noun )*   (prepphraseOf| prepphraseIN)*  ;
+//sentence: noun;
 
-verb
- :
- vbuse|vbchange|vbsubmerge|vbsubject|vbadd|vbcharge|vbcontain|vbdrop|vbfill|vbsuspend|vbtreat|vbapparatus|vbconcentrate|vbcool|vbdegass|vbdissolve|vbdry|vbextract|vbfilter
+verbphrase :  to? inAll? inafter? (adv* adj? verb+ adv* adj?)+ (cc? comma? prepphrase)* ;
+verb : vbd|vbz|vbn|vbuse|vbchange|vbsubmerge|vbsubject|vbadd|vbcharge|vbcontain|vbdrop|vbfill|vbsuspend|vbtreat|vbapparatus|vbconcentrate|vbcool|vbdegass|vbdissolve|vbdry|vbextract|vbfilter
  |vbheat|vbincrease|vbpartition|vbprecipitate|vbpurify|vbquench|vbrecover|vbremove|vbstir|vbsynthesize|vbwait|vbwash|vbyield;
-number           
-	: cd|oscarcd;	
-noun	:	
-unnamedmolecule|molecule|nnstate|nntime|nnatmosphere|nneq|nnchementity|nntemp|nnflash|nngeneral|nnmethod|nnamount|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnapparatus|
-nnconcentrate|wdt|wp_poss|wpo|wps|nnsynthesize|oscaront|nnmixture|mixture|amount|cd;
-mixture	:  lrb oscarCompound dash oscarCompound sym cd rrb;	
+number : cd|oscarcd;	
+noun :  md|unnamedmolecule|molecule|nnstate|nn|nns|nntime|apparatus|nnatmosphere|nneq|nnchementity|measurements|nntemp|nnflash|nngeneral|nnmethod|nnamount|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnapparatus|
+nnconcentrate|wdt|wp_poss|wpo|wps|nnsynthesize|oscaront|nnmixture|amount|cd|nnp|nnadd|mixture|oscarCompound;
 
-//noun	:	 molecule;
-adj	:	jj|jjr|jjs|jjt|oscarcj;
+mixture:  lrb (measurements|md|stop|oscarCompound|molecule|unnamedmolecule|dash|sym|cd|noun|inof|cd|comma|adj)+ rrb;
+//mixture:  lrb (sentence)+ rrb;
+adj	:	jj|jjr|jjs|jjt|oscarcj|oscarrn;
 
 adv	:	rb|rbr|rbt;
 // Different PrepPhrases
 prepphrase 
 	: 	prepphraseOther|prepphraseTemp|prepphraseTime  ;
 
- prepphraseOther
-	: inAll+  nounphrase ->  ^(NODE["PrepPhrase"]  inAll  nounphrase);
+prepphraseOther
+	: (adv|adj)? inAll+  nounphrase ->  ^(NODE["PrepPhrase"]  adv? adj? inAll+  nounphrase);
 prepphraseOf 
 	: inof  nounphrase->  ^(NODE["PrepPhrase"]  inof  nounphrase);
 
+prepphraseTime 
+	:(adv|adj)? inAll?  dt? (adv|adj)? cd nntime ->  ^(NODE["TimePhrase"]  adv? adj? inAll? dt? adv? adj? cd nntime);
 prepphraseIN 
-	:	 inin molecule ->  ^(NODE["INMolecule"]  inin  molecule);
+	:inin molecule ->  ^(NODE["INMolecule"]  inin  molecule);
 
-	
-prepphraseTime:
-	inAll? dt? jj? cd nntime ->  ^(NODE["TimePhrase"]  inAll? dt? jj? cd nntime);
-
-prepphraseTemp:
-	inAll? dt? jj? cd nntemp ->  ^(NODE["TempPhrase"]  inAll? dt? jj? cd nntemp);
-
-	
 
 inAll	: in|inafter|inas|inbefore|inby|infor|infrom|inin|ininto|inof|inoff|inon|inover|inunder|invia|inwith|inwithout|to;
-
+prepphraseTemp:  (adv|adj)? inAll? dt? (adv|adj)? cd nntemp ->  ^(NODE["TempPhrase"]  adv? adj?  inAll?  dt? adv? adj? cd nntemp);
 
 			
 mmol	: cd nnmol -> ^(NODE["MMOL"]   cd nnmol );
@@ -85,27 +76,33 @@ gram	: cd nngram-> ^(NODE["GRAM"]   cd nngram );
 percent	: cd nnpercent -> ^(NODE["PERCENT"]   cd nnpercent );
 volume	: cd nnvol -> ^(NODE["VOLUME"]   cd nnvol );
 
+apparatus
+	:	(measurements|adj|jj|nn)+ nnapparatus+-> ^(NODE["APPARATUS"]   measurements? adj? nn? nnapparatus+ );
 measurements
 	:mmol|gram|percent|volume;	
 
-oscarCompound :	oscarcm+ -> ^(NODE["OSCARCM"]  oscarcm+);
-
-
+// The RRB at the end is for leftover brackets from chemicals that didn't parse properly
+oscarCompound : (oscarCompound1|oscarCompound2|oscarCompound3|oscarcm) rrb?;
+oscarCompound3 :	oscarcm dash oscarcm -> ^(NODE["OSCARCM"]  oscarcm dash oscarcm);
+oscarCompound2 :	oscarcm oscarcm+ -> ^(NODE["OSCARCM"]  oscarcm oscarcm+);
+oscarCompound1 :	oscarcm jj oscarcm -> ^(NODE["OSCARCM"]  oscarcm jj oscarcm);
 moleculeamount1
-	:measurements inof oscarCompound;	
+	:measurements amount? inof oscarCompound;	
 moleculeamount2
-	:oscarCompound amount*;		
-moleculeamount
-	:moleculeamount1 | moleculeamount2 ;	
+	:oscarCompound  amount* ;	
+moleculeamount : moleculeamount1 | moleculeamount2 ;	
 molecule          
 	:  moleculeamount-> ^(NODE["MOLECULE"]  moleculeamount );	
 
 unnamedmoleculeamount1
-	:measurements inof oscarcd;	
+	:measurements amount? inof (oscarcd|cd);	
 unnamedmoleculeamount2
 	:oscarcd amount*;		
+unnamedmoleculeamount3
+	:measurements amount? inof (jj? noun)+;	
+
 unnamedmoleculeamount
-	:unnamedmoleculeamount1 | unnamedmoleculeamount2 ;	
+	:unnamedmoleculeamount1 | unnamedmoleculeamount2 | unnamedmoleculeamount3 ;	
 
 
 unnamedmolecule 
@@ -119,6 +116,7 @@ method:
 //Tags---Pattern---Description
 oscarcd:'OSCAR-CD' TOKEN;
 oscarcj:'OSCAR-CJ' TOKEN;
+oscarrn:'OSCAR-RN' TOKEN;
 oscaront:	'OSCAR-ONT' TOKEN;
 tmunicode:'TM-UNICODE' TOKEN;
 cdunicode:'CD-UNICODE' TOKEN;
@@ -390,6 +388,11 @@ nns_poss:'NNS$' TOKEN;
 // Proper noun or part of name phrase
 np:'NP' TOKEN;
 
+
+// Proper noun or part of name phrase
+nnp:'NNP' TOKEN;
+
+
 // Possessive proper noun
 np_poss:'NP$' TOKEN;
 
@@ -483,11 +486,13 @@ wdt:'WDT' TOKEN;
 // Possessive wh- pronoun (whose)
 wp_poss:'WP$' TOKEN;
 
+
 // Objective wh- pronoun (whom, which, that)
 wpo:'WPO' TOKEN;
 
 // Nominative wh- pronoun (who, which, that)
 wps:'WPS' TOKEN;
+
 
 // Wh- qualifier (how)
 wql:'WQL' TOKEN;
