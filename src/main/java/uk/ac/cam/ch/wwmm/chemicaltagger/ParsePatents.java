@@ -58,8 +58,8 @@ public class ParsePatents {
                 System.out.println("exception "+e.getMessage());
             }
 
-            ChemicalChunkParser chemicalChunkParser = new ChemicalChunkParser(taggedInputStream);
-            chemicalChunkParser.parseTagsToXMLFile(outputXMLFilename);
+            ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(taggedInputStream);
+            chemistrySentenceParser.parseTagsToXMLFile(outputXMLFilename);
 
 
         }
