@@ -12,7 +12,7 @@ glob:*.tokens
 glob:patent*
 glob:taggedPatents*
 glob:*Lexer*
-glob:*Parser*
+glob:*ChunkerParser*
 glob:.settings/org.eclipse.jdt.core.prefs
 glob:.settings/org.maven.ide.eclipse.prefs
 \.orig\..*$
