@@ -4,23 +4,27 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-/***********************
+/*****************************
+ * 
+ * Test case for POSTagger.
+ * Passes sentences to the POSTagger
+ * and checks whether the outputs match.
+ * As well as checking that all 3 taggers
+ * produce the same amount of tokens
  * 
  * @author lh359
- * 
- *         Test case for POSTagger, will fill in later.
- */
+ *****************************/
 public class ChemistryPOSTaggerTest {
 
-	private ChemistryPOSTagger posTagger= new ChemistryPOSTagger();;
+	private ChemistryPOSTagger posTagger;
 	private POSContainer posContainer;
 
-//	@Before
-//	public void setUp() {
-//		if (posTagger == null) {
-//			posTagger = new ChemistryPOSTagger();
-//		}
-//	}
+	@Before
+	public void setUp() {
+		if (posTagger == null) {
+			posTagger = new ChemistryPOSTagger();
+		}
+	}
 
 	@Test
 	public void sentence1() {

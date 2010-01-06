@@ -1,5 +1,10 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger;
-
+/********************************************
+ * A container class that stores the information
+ * about OSCAR tags .
+ * 
+ * @author lh359
+ ********************************************/
 public class WWMMTag {
 	public enum TagType{
 		START_END,

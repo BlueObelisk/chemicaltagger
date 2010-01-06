@@ -6,6 +6,14 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
+/*****************************
+ * Passes xml files and tests
+ * whether the correct sections
+ * are extracted.
+ *  
+ * @author lh359 
+ *****************************/
+
 public class ExtractFromPatentTest {
 	public static String expectedPatentOutput = "To a methanol (3 mL) solution of the compound (550 mg) synthesized in Example 3, an aqueous 2N-sodium hydroxide solution (1.5 mL) was added and the reaction solution was stirred at room temperature for one hour. To the reaction solution, 2N-hydrochloric acid (1.5 mL) was added. The reaction solution was conentrated under reduced pressure. The residue was dissolved in ethanol and an insoluble substance was removed by filtration. The filtrate was conentrated under reduced pressure to obtain the title compound having the following physical properties (522 mg)."
 			.replace(" ", "");

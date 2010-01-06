@@ -54,7 +54,7 @@ public class ParsePatents {
             try {
                 taggedInputStream = new ByteArrayInputStream(docContainer.getTaggedContent().getBytes());
 
-            } catch (Exception e) {//Catch exception if any
+            } catch (Exception e) {
                 System.out.println("exception "+e.getMessage());
             }
 

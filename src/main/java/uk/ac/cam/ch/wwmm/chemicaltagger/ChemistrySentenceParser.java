@@ -7,26 +7,34 @@ package uk.ac.cam.ch.wwmm.chemicaltagger;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
 
 import nu.xom.Document;
 
 import org.antlr.runtime.ANTLRInputStream;
 import org.antlr.runtime.CommonTokenStream;
+import org.antlr.runtime.RecognitionException;
 import org.antlr.runtime.tree.Tree;
-import org.apache.commons.lang.time.StopWatch;
 import org.apache.log4j.Logger;
 
-/**
+/*****************************************
+ * Passes Tagged Sentences to the
+ * antlr chunker. And can convert the
+ * output to XML Documents.
  * 
- * @author pm286
- */
+ * @author pm286, lh359
+ *****************************************/
 public class ChemistrySentenceParser {
 
 	private InputStream taggedTokenInStream = null;
 	private final Logger LOG = Logger.getLogger(ChemistrySentenceParser.class);
 	private Document doc = null;
 
+	/*********************************
+	 * Constructor Class.
+	 * @param  taggedTokenInputFilename (String)
+	 *********************************/
 	public ChemistrySentenceParser(String taggedTokenInputFilename) {
 
 		File file = new File(taggedTokenInputFilename);
@@ -34,49 +42,57 @@ public class ChemistrySentenceParser {
 			this.taggedTokenInStream = new FileInputStream(file);
 		} catch (FileNotFoundException ex) {
 
-			LOG.debug("Exception : " + ex.getMessage());
+			LOG.debug("File not found exception : " + ex.getMessage());
 		}
 
 	}
-
+    /*******************************************
+     * Constructor Class.
+     * @param taggedTokenInStream (InputStream)
+     *******************************************/
 	public ChemistrySentenceParser(InputStream taggedTokenInStream) {
 		this.taggedTokenInStream = taggedTokenInStream;
 	}
 
-	/*********************
-	 * 
-	 * @param outputFilename
-	 *********************/
-	public void parseTagsToXMLFile(String outputFilename) {
-		Document doc = parseTagsToDocument();
-		Utils.writeXMLToFile(doc, outputFilename);
-
-	}
-
+	
+	/********************************************
+	 * Main Function
+	 * Pass inputStream to Antlr and produces an
+	 * astTree as output.
+	 * @return astTree (Tree)
+	 *******************************************/
 	public Tree parseTags() {
+		ChemicalChunkerLexer lexer = null;
 
+		ANTLRInputStream input;
 		try {
-			/**************************
-			 * Pass File to Antlr
-			 *************************/
-
-			ANTLRInputStream input = new ANTLRInputStream(taggedTokenInStream);
-			ChemicalChunkerLexer lexer = new ChemicalChunkerLexer(input);
-			CommonTokenStream tokens = new CommonTokenStream(lexer);
-			ChemicalChunkerParser parser = new ChemicalChunkerParser(tokens);
-			ChemicalChunkerParser.document_return result = parser.document();
-			Tree t = (Tree) result.getTree();
-			return t;
-		} catch (Exception e) {
-			throw new RuntimeException("read parse fail", e);
-
+			input = new ANTLRInputStream(taggedTokenInStream);
+		} catch (IOException ioexception) {
+			throw new RuntimeException("Antlr input Stream Error: "
+					+ ioexception.getMessage());
 		}
 
+		lexer = new ChemicalChunkerLexer(input);
+		CommonTokenStream tokens = new CommonTokenStream(lexer);
+		ChemicalChunkerParser parser = new ChemicalChunkerParser(tokens);
+		ChemicalChunkerParser.document_return result = null;
+		try {
+			result = parser.document();
+		} catch (RecognitionException e) {
+			throw new RuntimeException("Antlr input Stream Error: "
+					+ e.getMessage());
+
+		}
+		Tree t = (Tree) result.getTree();
+		return t;
+
 	}
 
-	/*****************************************
-	 * Pass parser to Tree and Convert to XML
-	 *****************************************/
+	/************************************
+	 * Produces the output of the AntlrParse
+	 * as an XML Document.
+	 * @return doc (Document)
+	 ************************************/
 	public Document parseTagsToDocument() {
 		Tree t = parseTags();
 		doc = new ASTtoXML().convert(t);
@@ -84,10 +100,16 @@ public class ChemistrySentenceParser {
 		return doc;
 	}
 
-	/**
-	 * @param args
-	 *            the command line arguments
-	 */
+	/************************************
+	 * Saves the output of the AntlrParse
+	 * as an XML file.
+	 ************************************/
+	public void parseTagsToXMLFile(String outputFilename) {
+		Document doc = parseTagsToDocument();
+		Utils.writeXMLToFile(doc, outputFilename);
+
+	}
+
 	public static void main(String[] args) throws Exception {
 		String taggedTokenInputFilename = null;
 		String outputXMLFilename = null;

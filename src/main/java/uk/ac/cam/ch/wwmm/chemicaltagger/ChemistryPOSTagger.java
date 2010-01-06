@@ -28,6 +28,16 @@ import uk.ac.cam.ch.wwmm.oscar3.Oscar3Props;
 import uk.ac.cam.ch.wwmm.oscar3.flow.OscarFlow;
 import uk.ac.cam.ch.wwmm.ptclib.scixml.TextToSciXML;
 
+/**************************************************************
+ * 
+ * Runs 3 taggers against the sentence: 
+      - OSCAR: for recognising chemical entities. 
+      - Regex: for recognising chemistry related words that are not recognised by OSCAR .
+      - OpenNLP Brown fo recognising common english words .
+ * It then combines the output of all 3 taggers and performs some simple corrections
+ * 
+ * @author lh359, dmj30,jat45
+ ***************************************************************/
 public class ChemistryPOSTagger {
 
 	public String sentence;
@@ -46,17 +56,6 @@ public class ChemistryPOSTagger {
 		initialiseOSCAR();
 	}
 
-	private boolean isNumeric(String input) {
-		boolean flag = false;
-
-		try {
-			Integer.parseInt(input);
-			return true;
-		} catch (Exception e) {
-			return false;
-		}
-
-	}
 
 	/**************************************************************
 	 * The Rule class . Compiles regex rules. Used later for the regex tagger.
@@ -143,14 +142,13 @@ public class ChemistryPOSTagger {
 		}
 	}
 
+
+	
+	
 	/*****************************************************
 	 * Main Module.
 	 * 
-	 * Initialises POSContainer. Runs 3 taggers against the sentence: - OSCAR
-	 * for recognising chemical entities. - Regex for recognising chemistry
-	 * related words that are not recognised by OSCAR - OpenNLP Brown for
-	 * recognising common english words It then combines the output of all 3
-	 * taggers and performs some simple corrections
+	 * Initialises POSContainer. 
 	 * 
 	 *****************************************************/
 	public POSContainer runTaggers(String sentence) {
@@ -173,14 +171,13 @@ public class ChemistryPOSTagger {
 	 * 
 	 * @param sentence
 	 * @return newSentence
-	 */
+	 *************************************/
 	private String cleanSentence(String sentence) {
 		StringBuilder newSentence = new StringBuilder();
 		sentence = sentence.replace("%", " %").replace(";", " ;");
 		String[] words = sentence.split(" ");
 
 		for (String string : words) {
-			// System.err.println("Word ="+string+"--- ends with )="+string.endsWith(")"));
 			String prefix = " ";
 			String suffix = " ";
 			if (string.endsWith(".")) {

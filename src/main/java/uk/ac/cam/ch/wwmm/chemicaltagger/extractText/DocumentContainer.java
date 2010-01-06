@@ -1,5 +1,12 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger.extractText;
 
+
+/********************************************
+ * A container class to store information
+ * for an XML Patent.
+ * 
+ * @author lh359
+ ********************************************/
 public class DocumentContainer {
 
     private String Id = "";

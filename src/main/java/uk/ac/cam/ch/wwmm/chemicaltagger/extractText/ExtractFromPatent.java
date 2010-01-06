@@ -1,6 +1,7 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger.extractText;
 
 import java.io.File;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,10 +15,23 @@ import nu.xom.Text;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
+/********************************************
+ * Extracts text from XML Patents
+ * 
+ * @author lh359
+ ********************************************/
 public class ExtractFromPatent {
 
 	private final Logger LOG = Logger.getLogger(ExtractFromPatent.class);
 
+	
+	/****************************************
+	 * Parses an XML files and saves the output
+	 * into DocumentContainer
+	 * 
+	 * @param sourceFile (String)
+	 * @return docContainer (DocumentContainer)
+	 ****************************************/
 	public DocumentContainer getContent(String sourceFile) {
 		Builder builder = new Builder();
 		Document doc = null;
