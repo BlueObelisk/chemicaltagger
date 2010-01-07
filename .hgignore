@@ -1,6 +1,7 @@
 glob:.classpath
 glob:.deployment
 glob:.project
+glob:*.settings*
 glob:.target
 glob:classes
 glob:target
