@@ -34,13 +34,70 @@ public class ChemistryPOSTaggerTest {
 	@Test
 	public void sentence1() {
 
-		String sentence = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/test1.txt");
+		String sentence = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/tagTest/test1.txt");
 		posContainer = posTagger.runTaggers(sentence);
-		String ref = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/ref1.txt");
+		String ref = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/tagTest/ref1.txt");
 		Assert.assertEquals(ref, posContainer.getTokenTagTupleAsString());
 		checkLengthofTags();
 	}
 
+
+	@Test
+	public void sentence2() {
+		String sentence = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/tagTest/test2.txt");
+		posContainer = posTagger.runTaggers(sentence);
+		String ref = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/tagTest/ref2.txt");
+		Assert.assertEquals(ref, posContainer.getTokenTagTupleAsString());
+		checkLengthofTags();
+	}
+
+	@Test
+	public void sentence3() {
+		String sentence = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/tagTest/test3.txt");
+		posContainer = posTagger.runTaggers(sentence);
+		String ref = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/tagTest/ref3.txt");
+		Assert.assertEquals(ref, posContainer.getTokenTagTupleAsString());
+		checkLengthofTags();
+	}
+
+	@Test
+	public void sentence4() {
+		String sentence = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/tagTest/test4.txt");
+		posContainer = posTagger.runTaggers(sentence);
+		String ref = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/tagTest/ref4.txt");
+		Assert.assertEquals(ref, posContainer.getTokenTagTupleAsString());
+		checkLengthofTags();
+	}
+
+	@Test
+	public void sentence5() {
+		String sentence = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/tagTest/test5.txt");
+		posContainer = posTagger.runTaggers(sentence);
+		String ref = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/tagTest/ref5.txt");
+		Assert.assertEquals(ref, posContainer.getTokenTagTupleAsString());
+		checkLengthofTags();
+
+	}
+	
+	@Test
+	public void sentence6() {
+		String sentence = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/tagTest/test6.txt");
+		posContainer = posTagger.runTaggers(sentence);
+		String ref = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/tagTest/ref6.txt");
+		Assert.assertEquals(ref, posContainer.getTokenTagTupleAsString());
+		checkLengthofTags();
+
+	}
+
+
+	private void checkLengthofTags() {
+		Assert.assertEquals(posContainer.wordTokenList.size(),
+				posContainer.oscarTagList.size());
+		Assert.assertEquals(posContainer.oscarTagList.size(),
+				posContainer.regexTagList.size());
+		Assert.assertEquals(posContainer.regexTagList.size(),
+				posContainer.brownTagList.size());
+	}
 	private String readSentence(String resourceName) {
 		// requires sentence with no newlines except possibly at end 
 		String sentence = null;
@@ -53,99 +110,6 @@ public class ChemistryPOSTaggerTest {
 		}
 		Assert.assertNotNull(sentence);
 		return sentence.trim();
-	}
-
-	@Test
-	public void sentence2() {
-		String sentence = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/test2.txt");
-		posContainer = posTagger.runTaggers(sentence);
-		String ref = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/ref2.txt");
-		Assert.assertEquals(ref, posContainer.getTokenTagTupleAsString());
-		checkLengthofTags();
-	}
-
-	@Test
-	public void sentence3() {
-		String sentence = "Potassium carbonate ( 0.63 g , 4.56 mmol ) and thiophenol ( 0.19 g , 1.69 mmol) were added to the 2-nitrobenzene sulfonamide ( 0.50 g , 1.302)";
-		posContainer = posTagger.runTaggers(sentence);
-		Assert
-				.assertEquals(
-						"OSCAR-CM Potassium OSCAR-CM carbonate -LRB- ( CD 0.63 NN-GRAM g COMMA , CD 4.56 NN-MOL mmol "
-								+ "-RRB- ) CC and OSCAR-CM thiophenol -LRB- ( CD 0.19 NN-GRAM g COMMA , CD 1.69 NN-MOL mmol -RRB- ) "
-								+ "VBD were VB-ADD added TO to DT the OSCAR-CM 2-nitrobenzene OSCAR-CM sulfonamide -LRB- ( CD 0.50 "
-								+ "NN-GRAM g COMMA , CD 1.302 -RRB- )",
-						posContainer.getTokenTagTupleAsString());
-		checkLengthofTags();
-	}
-
-	@Test
-	public void sentence4() {
-		String sentence = "Preparation of Sulfonated Poly(phthalazinone ether ether ketone) 7a. To a 25 mL three-necked round-bottomed flask fitted with a Dean-stark trap, a condenser, a nitrogen inlet/outlet, and magnetic stirrer was added bisphthalazinone monomer 4 (0.6267 g, 1 mmol), sulfonated difluoride ketone 5 (0.4223 g, 1 mmol), anhydrous potassium carbonate (0.1935 g, 1.4 mmol), 5 mL of DMSO, and 6 mL of toluene. Nitrogen was purged through the reaction mixture with stirring for 10 min, and then the mixture was slowly heated to 140 °C and kept stirring for 2 h. After water generated was azoetroped off with toluene. The temperature was slowly increased to 175 °C. The temperature was maintained for 20 h, and the viscous solution was cooled to 100 °C followed by diluting with 2 mL of DMSO and, thereafter, precipitated into 100 mL of 1:  1 (v/v) methanol/water. The precipitates were filtered and washed with water for three times. The fibrous residues were collected and dried at 110 °C under vacuum for 24 h. A total of 0.9423 g of polymer 7a was obtained in high yield of 93%.";
-		posContainer = posTagger.runTaggers(sentence);
-		Assert.assertEquals(
-						"NN-SYNTHESIZE Preparation IN-OF of OSCAR-RN Sulfonated NN-CHEMENTITY Poly(phthalazinone "
-								+ "NN ether JJ ether OSCAR-CM ketone -RRB- ) OSCAR-CD 7a STOP . TO To DT a CD 25 NN-VOL mL JJ three-necked "
-								+ "JJ round-bottomed NN-APPARATUS flask VB-APPARATUS fitted IN-WITH with DT a NN-CHEMENTITY Dean-stark "
-								+ "NN trap COMMA , DT a NN-APPARATUS condenser COMMA , DT a OSCAR-CM nitrogen NN inlet/outlet COMMA , "
-								+ "CC and JJ magnetic NN-APPARATUS stirrer VBD was VB-ADD added OSCAR-CM bisphthalazinone "
-								+ "NN-CHEMENTITY monomer OSCAR-CD 4 -LRB- ( CD 0.6267 NN-GRAM g COMMA , CD 1 NN-MOL mmol -RRB- ) COMMA , "
-								+ "OSCAR-CM sulfonated OSCAR-CM difluoride OSCAR-CM ketone OSCAR-CD 5 -LRB- ( CD 0.4223 NN-GRAM g COMMA , "
-								+ "CD 1 NN-MOL mmol -RRB- ) COMMA , OSCAR-CJ anhydrous OSCAR-CM potassium OSCAR-CM carbonate -LRB- ( "
-								+ "CD 0.1935 NN-GRAM g COMMA , CD 1.4 NN-MOL mmol -RRB- ) COMMA , CD 5 NN-VOL mL IN-OF of OSCAR-CM DMSO "
-								+ "COMMA , CC and CD 6 NN-VOL mL IN-OF of OSCAR-CM toluene STOP . OSCAR-CM Nitrogen VBD was VB-DEGASS purged "
-								+ "IN through DT the NN-CHEMENTITY reaction NN-MIXTURE mixture IN-WITH with VB-STIR stirring IN-FOR for "
-								+ "CD 10 NN-TIME min COMMA , CC and RB then DT the NN-CHEMENTITY mixture VBD was RB slowly VB-HEAT heated "
-								+ "TO to CD 140 NN-TEMP °C CC and VBD kept VB-STIR stirring IN-FOR for CD 2 NN-TIME h STOP . "
-								+ "IN-AFTER After OSCAR-CM water VBD generated VBD was VBN azoetroped IN-OFF off IN-WITH with "
-								+ "OSCAR-CM toluene STOP . DT The NN-TEMP temperature VBD was RB slowly VB-INCREASE increased TO to CD 175 "
-								+ "NN-TEMP °C STOP . DT The NN-TEMP temperature VBD was VB-HEAT maintained IN-FOR for CD 20 NN-TIME h "
-								+ "COMMA , CC and DT the JJ viscous NN-CHEMENTITY solution VBD was VB-COOL cooled TO to CD 100 "
-								+ "NN-TEMP °C VBN followed IN-BY by VB-ADD diluting IN-WITH with CD 2 NN-VOL mL IN-OF of OSCAR-CM DMSO "
-								+ "CC and COMMA , RB thereafter COMMA , VB-PRECIPITATE precipitated IN-INTO into CD 100 NN-VOL mL IN-OF of "
-								+ "CD 1: OSCAR-CD 1 -LRB- ( NN v/v) OSCAR-CM methanol DASH / OSCAR-CM water STOP . DT The "
-								+ "NN-CHEMENTITY precipitates VBD were VB-FILTER filtered CC and VB-WASH washed IN-WITH with OSCAR-CM water "
-								+ "IN-FOR for CD three NN-TIMES times STOP . DT The JJ fibrous NN-CHEMENTITY residues VBD were "
-								+ "VB-RECOVER collected CC and VB-DRY dried IN at CD 110 NN-TEMP °C IN-UNDER under NN-VACUUM vacuum "
-								+ "IN-FOR for CD 24 NN-TIME h STOP . DT A NN-AMOUNT total IN-OF of CD 0.9423 NN-GRAM g IN-OF of "
-								+ "NN-CHEMENTITY polymer OSCAR-CD 7a VBD was VB-YIELD obtained IN-IN in JJ high VB-YIELD yield IN-OF of CD 93 "
-								+ "NN-PERCENT % STOP .", posContainer
-								.getTokenTagTupleAsString());
-		checkLengthofTags();
-	}
-
-	@Test
-	public void sentence5() {
-		String sentence = "Synthesis of 3 . A mixture of 2 (1.1 g, 3.6 mmol), zinc oxide (0.160 g, 0.196 mmol) and acetic anhydride (0.37 g, 3.6 mmol) in acetic acid (4.3 g, 72 mmol) was stirred at 30°C for 2 d. The reaction was quenched with saturated NaHCO3, and the mixture was extracted with Et2O. The combined organic layer was washed with H2O and dried over anhydrous Na2SO4. The solvent was removed in vacuo, and the residue was purified by flash column chromatography on silica gel (hexane/Et2OÂ =Â 2/1) to give 0.97 g of 3 as a pale yellow viscous liquid (95%).";
-		posContainer = posTagger.runTaggers(sentence);
-		Assert
-				.assertEquals(
-						"NN-SYNTHESIZE Synthesis IN-OF of OSCAR-CD 3 STOP . DT A NN-MIXTURE mixture IN-OF of "
-								+ "OSCAR-CD 2 -LRB- ( CD 1.1 NN-GRAM g COMMA , CD 3.6 NN-MOL mmol -RRB- ) COMMA , OSCAR-CM zinc "
-								+ "OSCAR-CM oxide -LRB- ( CD 0.160 NN-GRAM g COMMA , CD 0.196 NN-MOL mmol -RRB- ) CC and OSCAR-CM acetic "
-								+ "OSCAR-CM anhydride -LRB- ( CD 0.37 NN-GRAM g COMMA , CD 3.6 NN-MOL mmol -RRB- ) IN-IN in OSCAR-CM acetic "
-								+ "OSCAR-CM acid -LRB- ( CD 4.3 NN-GRAM g COMMA , CD 72 NN-MOL mmol -RRB- ) VBD was VB-STIR stirred IN at "
-								+ "NN-TEMP 30°C IN-FOR for CD 2 NN-TIME d STOP . DT The NN-CHEMENTITY reaction VBD was VB-QUENCH quenched "
-								+ "IN-WITH with OSCAR-CJ saturated OSCAR-CM NaHCO3 COMMA , CC and DT the NN-CHEMENTITY mixture VBD was "
-								+ "VB-EXTRACT extracted IN-WITH with OSCAR-CM Et2O STOP . DT The OSCAR-CJ combined OSCAR-CJ organic "
-								+ "NN-CHEMENTITY layer VBD was VB-WASH washed IN-WITH with OSCAR-CM H2O CC and VB-DRY dried IN-OVER over "
-								+ "OSCAR-CJ anhydrous OSCAR-CM Na2SO4 STOP . DT The NN-CHEMENTITY solvent VBD was VB-REMOVE removed IN-IN in "
-								+ "NN-VACUUM vacuo COMMA , CC and DT the NN-CHEMENTITY residue VBD was VB-PURIFY purified IN-BY by "
-								+ "NN-FLASH flash NN-COLUMN column NN-CHROMATOGRAPHY chromatography IN-ON on OSCAR-CM silica "
-								+ "NN-CHEMENTITY gel -LRB- ( OSCAR-CM hexane DASH / OSCAR-CM Et2OÂ JJ =Â CD 2/1 -RRB- ) TO to "
-								+ "VB-YIELD give CD 0.97 NN-GRAM g IN-OF of CD 3 IN-AS as DT a JJ pale JJ yellow JJ viscous NN-STATE liquid "
-								+ "-LRB- ( CD 95 NN-PERCENT % -RRB- ) STOP .",
-						posContainer.getTokenTagTupleAsString());
-		checkLengthofTags();
-
-	}
-
-	private void checkLengthofTags() {
-		Assert.assertEquals(posContainer.wordTokenList.size(),
-				posContainer.oscarTagList.size());
-		Assert.assertEquals(posContainer.oscarTagList.size(),
-				posContainer.regexTagList.size());
-		Assert.assertEquals(posContainer.regexTagList.size(),
-				posContainer.brownTagList.size());
 	}
 
 }

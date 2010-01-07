@@ -4,7 +4,7 @@ OSCAR-CD---^\d+[a-z]-----non-html oscar digits (representing chemical names)
 OSCAR-CJ---^Merrifield$|^crude$|^buffer$|^mono$|^(E|e)xcess|(A|a)mphiphilic$|(f|F)unctionalized$|(p|P)ot$|^cyclic$|(H|h)yperbranched$|^insoluble$|^(p|P)ropargyl$|Arm$|^(s|S)tar$|^anhydrous$|^aq(.|ueous)?$|^organic|^(s|S)at(.|urated)?$|^(Di|Tri|di|tri|poly)block$---Chemical Adjectives                              
 
 TM-UNICODE---®---Unicode Characters
-CD-UNICODE---\xc3\x97|\xc3|\xe2|×|&lt---Unicode Cardinal Digits
+CD-UNICODE---×|&lt---Unicode Cardinal Digits
 CD---^(\d|-)?\d+\.?\d*$--- Cardinal Digits
 
 # Prepositions
@@ -36,7 +36,8 @@ NN-ATMOSPHERE---(a|A)tmosphere(s)?$---Atmosphere
 NN-EQ---^eq\.$---Equivalence
 NN-VOL---(m|k|\xce\xbc|µ)?(l|L)$|cm3---Volume
 NN-CHEMENTITY---poly|^resin$|^salt$|^product$|^oligomers$|^(M|m)acroinitiator$|^nanotubes$|^(s|S)eptum$|^(i|I)nitiator$|(M|m)onomer$|^ice$|^petroleum|metal|^eluent$|(co|Co)?polymer(s)?$|generation|solution|solvent|complex|layer|residue|gel|plug|catalyst|compound(s)?|.+®|^Å$---Chemical entities not marked up by OSCAR
-NN-TEMP---\d+°(C|c)|room|temperature|\xc2|\xcb|°|°C|rt|RT|-?\d+°C|\d*ºC|^oC---Temperature Token
+#NN-TEMP---\d+&#0176(C|c)|room|temperature|\xc2|\xcb|°|°C|rt|RT|-?\d+°C|\d*ºC|^oC---Temperature Token
+NN-TEMP---\d*(\xc2|\xcb|&#0176|\xc3\x97|\xc3|\xe2|°|o|º)(C|c)|room|temperature|rt|RT---Temperature Token
 NN-FLASH---^flash$---Flash
 NN-GENERAL---^(G|g)eneral$---General term
 NN-METHOD---^(P|p)rocedure(s)?$|(t|T)echnique(s)?$|(m|M)ethod(s)?$---Method token       
@@ -146,7 +147,6 @@ VB-YIELD---^(yield|afford|result|provid|obtain|give|gave|isolat|leav|giv)(ed|e|i
 
 #Misc Tokens mainly to replace characters that are not markup friendly
 RB---.*wise$|.*ly$---Adverbs like dropwise
-#CD---\d+(\.|\:)?\d*--- Numbers
 COLON---^:---Colon           
 COMMA---^,---Comma           
 APOST---^\'|^\'\'$---Apostrophe          
