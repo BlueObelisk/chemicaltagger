@@ -41,8 +41,7 @@ nounphrase : dt? (adj|adv)*  noun+ (cc? comma? cc?  adj+ noun )*   (prepphraseOf
 //sentence: noun;
 
 verbphrase :  to? inAll? inafter? (adv* adj? verb+ adv* adj?)+ (cc? comma? prepphrase)* ;
-verb : vbd|vbz|vbn|vbuse|vbchange|vbsubmerge|vbsubject|vbadd|vbcharge|vbcontain|vbdrop|vbfill|vbsuspend|vbtreat|vbapparatus|vbconcentrate|vbcool|vbdegass|vbdissolve|vbdry|vbextract|vbfilter
- |vbheat|vbincrease|vbpartition|vbprecipitate|vbpurify|vbquench|vbrecover|vbremove|vbstir|vbsynthesize|vbwait|vbwash|vbyield;
+verb : vbg|vbd|vbz|vbn|vbuse|vbsubmerge|vbsubject|vbadd|vbcharge|vbcontain|vbdrop|vbfill|vbsuspend|vbtreat|vbapparatus|vbconcentrate|vbcool|vbdegass|vbdissolve|vbdry|vbextract|vbfilter |vbheat|vbincrease|vbpartition|vbprecipitate|vbpurify|vbquench|vbrecover|vbremove|vbstir|vbsynthesize|vbwait|vbwash|vbyield;
 number : cd|oscarcd;	
 noun :  md|unnamedmolecule|molecule|nnstate|nn|nns|nntime|apparatus|nnatmosphere|nneq|nnchementity|measurements|nntemp|nnflash|nngeneral|nnmethod|nnamount|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnapparatus|
 nnconcentrate|wdt|wp_poss|wpo|wps|nnsynthesize|oscaront|nnmixture|amount|cd|nnp|nnadd|mixture|oscarCompound;
@@ -82,7 +81,8 @@ measurements
 	:mmol|gram|percent|volume;	
 
 // The RRB at the end is for leftover brackets from chemicals that didn't parse properly
-oscarCompound : (oscarCompound1|oscarCompound2|oscarCompound3|oscarcm) rrb?;
+oscarCompound :  (oscarCompound1|oscarCompound2|oscarCompound3|oscarcm) rrb?;
+
 oscarCompound3 :	oscarcm dash oscarcm -> ^(NODE["OSCARCM"]  oscarcm dash oscarcm);
 oscarCompound2 :	oscarcm oscarcm+ -> ^(NODE["OSCARCM"]  oscarcm oscarcm+);
 oscarCompound1 :	oscarcm jj oscarcm -> ^(NODE["OSCARCM"]  oscarcm jj oscarcm);

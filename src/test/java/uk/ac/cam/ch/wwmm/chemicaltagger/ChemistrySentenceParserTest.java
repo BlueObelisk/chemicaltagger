@@ -1,5 +1,7 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
+import java.io.InputStream;
+
 import junit.framework.Assert;
 import org.antlr.runtime.tree.Tree;
 import org.junit.Test;
@@ -20,9 +22,10 @@ public class ChemistrySentenceParserTest {
 
 	@Test	
 	public void testSentence1() {
-		String sentenceFilename = "src/test/resources/taggedText/sentence1.txt";
+		InputStream taggedStream = getInputStream("uk/ac/cam/ch/wwmm/chemicaltagger/parseTest/sentence1.txt");
+		
 		ChemistrySentenceParser chemChunkParser = new ChemistrySentenceParser(
-				sentenceFilename);
+				taggedStream);
 		Tree t = chemChunkParser.parseTags();
 		checkNodes(t);
 
@@ -30,9 +33,9 @@ public class ChemistrySentenceParserTest {
 
 	@Test	
 	public void testSentence2() {
-		String sentenceFilename = "src/test/resources/taggedText/sentence2.txt";
+		InputStream taggedStream = getInputStream("uk/ac/cam/ch/wwmm/chemicaltagger/parseTest/sentence2.txt");
 		ChemistrySentenceParser chemChunkParser = new ChemistrySentenceParser(
-				sentenceFilename);
+				taggedStream);
 		Tree t = chemChunkParser.parseTags();
 		checkNodes(t);
 
@@ -40,18 +43,18 @@ public class ChemistrySentenceParserTest {
 
 	@Test	
 	public void testSentence3() {
-		String sentenceFilename = "src/test/resources/taggedText/sentence3.txt";
+		InputStream taggedStream = getInputStream("uk/ac/cam/ch/wwmm/chemicaltagger/parseTest/sentence3.txt");
 		ChemistrySentenceParser chemChunkParser = new ChemistrySentenceParser(
-				sentenceFilename);
+				taggedStream);
 		Tree t = chemChunkParser.parseTags();
 		checkNodes(t);
 
 	}
 	@Test	
 	public void testSentence4() {
-		String sentenceFilename = "src/test/resources/taggedText/sentence4.txt";
+		InputStream taggedStream = getInputStream("uk/ac/cam/ch/wwmm/chemicaltagger/parseTest/sentence4.txt");
 		ChemistrySentenceParser chemChunkParser = new ChemistrySentenceParser(
-				sentenceFilename);
+				taggedStream);
 		Tree t = chemChunkParser.parseTags();
 		checkNodes(t);
 
@@ -59,13 +62,26 @@ public class ChemistrySentenceParserTest {
 	
 	@Test	
 	public void testSentence5() {
-		String sentenceFilename = "src/test/resources/taggedText/sentence5.txt";
+		InputStream taggedStream = getInputStream("uk/ac/cam/ch/wwmm/chemicaltagger/parseTest/sentence5.txt");
 		ChemistrySentenceParser chemChunkParser = new ChemistrySentenceParser(
-				sentenceFilename);
+				taggedStream);
 		Tree t = chemChunkParser.parseTags();
 		checkNodes(t);
 
 	}	
+	@Test	
+	public void testSentence6() {
+		InputStream taggedStream = getInputStream("uk/ac/cam/ch/wwmm/chemicaltagger/parseTest/sentence6.txt");
+		ChemistrySentenceParser chemChunkParser = new ChemistrySentenceParser(
+				taggedStream);
+		Tree t = chemChunkParser.parseTags();
+		checkNodes(t);
+
+	}	
+	private InputStream getInputStream(String resourceName){
+		InputStream inStream = this.getClass().getClassLoader().getResourceAsStream(resourceName);
+		return inStream;
+	}
 	/*****************************
 	 * CheckNodes(Tree astTree)
 	 * 
