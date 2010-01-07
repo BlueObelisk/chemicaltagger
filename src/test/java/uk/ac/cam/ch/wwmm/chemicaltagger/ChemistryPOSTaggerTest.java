@@ -1,5 +1,10 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -29,41 +34,33 @@ public class ChemistryPOSTaggerTest {
 	@Test
 	public void sentence1() {
 
-		String sentence = "Synthesis of the brown dropwise Hyperbranched Macroligands via Michael Addition of Butyl or Ethyl Acrylate with HPEI. The synthetic procedure for partially EA- or BA-modified HPEI is exemplified for HPEI25K-EA0.79: 1.00 g of HPEI25K (Mn = 2.50 x 104, 23.3 mmol of amine groups) was dissolved in 5.00 mL of THF, and then 2.52 mL (23.3 mmol) of EA was added. The mixture was stirred at room temperature for 24 h and subsequently at 50 °C for another 24 h.";
+		String sentence = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/test1.txt");
 		posContainer = posTagger.runTaggers(sentence);
-		Assert
-				.assertEquals(
-						"NN-SYNTHESIZE Synthesis IN-OF of DT the JJ brown "
-								+ "RB dropwise OSCAR-CJ Hyperbranched NNP Macroligands IN-VIA via "
-								+ "NNP Michael NN-ADD Addition IN-OF of OSCAR-CM Butyl CC or "
-								+ "OSCAR-CM Ethyl OSCAR-CM Acrylate IN-WITH with OSCAR-CM HPEI STOP . "
-								+ "DT The JJ synthetic NN-METHOD procedure IN-FOR for RB partially "
-								+ "NNP EA- CC or OSCAR-CM BA JJ -modified OSCAR-CM HPEI VBZ is "
-								+ "VBN exemplified IN-FOR for JJ HPEI25K-EA0.79: CD 1.00 NN-GRAM g "
-								+ "IN-OF of OSCAR-CM HPEI25K -LRB- ( OSCAR-CM Mn SYM = CD 2.50 NN x "
-								+ "OSCAR-CD 104 COMMA , CD 23.3 NN-MOL mmol IN-OF of JJ amine NNS groups -RRB- ) "
-								+ "VBD was VB-DISSOLVE dissolved IN-IN in CD 5.00 NN-VOL mL IN-OF of "
-								+ "OSCAR-CM THF COMMA , CC and RB then CD 2.52 NN-VOL mL -LRB- ( "
-								+ "CD 23.3 NN-MOL mmol -RRB- ) IN-OF of NN EA VBD was VB-ADD added STOP . "
-								+ "DT The NN-CHEMENTITY mixture VBD was VB-STIR stirred IN at NN-TEMP room "
-								+ "NN-TEMP temperature IN-FOR for CD 24 NN-TIME h CC and RB subsequently "
-								+ "IN at CD 50 NN-TEMP °C IN-FOR for DT another CD 24 NN-TIME h STOP .",
-						posContainer.getTokenTagTupleAsString());
+		String ref = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/ref1.txt");
+		Assert.assertEquals(ref, posContainer.getTokenTagTupleAsString());
 		checkLengthofTags();
+	}
+
+	private String readSentence(String resourceName) {
+		// requires sentence with no newlines except possibly at end 
+		String sentence = null;
+		try {
+			InputStream refStream = this.getClass().getClassLoader().getResourceAsStream(resourceName);
+			BufferedReader br = new BufferedReader(new InputStreamReader(refStream));
+			sentence = br.readLine();
+		} catch (IOException e) {
+			throw new RuntimeException("Cannot read sentence: "+resourceName);
+		}
+		Assert.assertNotNull(sentence);
+		return sentence.trim();
 	}
 
 	@Test
 	public void sentence2() {
-		String sentence = "The resulting viscous mixture was slowly added to vigorously stirred MeOH ( ca . 30 mL ) to give a white precipitate of diblock copolymer PNBE- -PSt ";
-
+		String sentence = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/test2.txt");
 		posContainer = posTagger.runTaggers(sentence);
-		Assert
-				.assertEquals(
-						"DT The NN-CHEMENTITY resulting JJ viscous NN-CHEMENTITY mixture VBD was RB slowly "
-								+ "VB-ADD added TO to RB vigorously VB-STIR stirred OSCAR-CM MeOH -LRB- ( MD ca STOP . CD 30 NN-VOL mL "
-								+ "-RRB- ) TO to VB-YIELD give DT a JJ white NN-CHEMENTITY precipitate IN-OF of OSCAR-CJ diblock "
-								+ "NN-CHEMENTITY copolymer OSCAR-CM PNBE DASH - OSCAR-CM -PSt",
-						posContainer.getTokenTagTupleAsString());
+		String ref = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/ref2.txt");
+		Assert.assertEquals(ref, posContainer.getTokenTagTupleAsString());
 		checkLengthofTags();
 	}
 
@@ -85,8 +82,7 @@ public class ChemistryPOSTaggerTest {
 	public void sentence4() {
 		String sentence = "Preparation of Sulfonated Poly(phthalazinone ether ether ketone) 7a. To a 25 mL three-necked round-bottomed flask fitted with a Dean-stark trap, a condenser, a nitrogen inlet/outlet, and magnetic stirrer was added bisphthalazinone monomer 4 (0.6267 g, 1 mmol), sulfonated difluoride ketone 5 (0.4223 g, 1 mmol), anhydrous potassium carbonate (0.1935 g, 1.4 mmol), 5 mL of DMSO, and 6 mL of toluene. Nitrogen was purged through the reaction mixture with stirring for 10 min, and then the mixture was slowly heated to 140 °C and kept stirring for 2 h. After water generated was azoetroped off with toluene. The temperature was slowly increased to 175 °C. The temperature was maintained for 20 h, and the viscous solution was cooled to 100 °C followed by diluting with 2 mL of DMSO and, thereafter, precipitated into 100 mL of 1:  1 (v/v) methanol/water. The precipitates were filtered and washed with water for three times. The fibrous residues were collected and dried at 110 °C under vacuum for 24 h. A total of 0.9423 g of polymer 7a was obtained in high yield of 93%.";
 		posContainer = posTagger.runTaggers(sentence);
-		Assert
-				.assertEquals(
+		Assert.assertEquals(
 						"NN-SYNTHESIZE Preparation IN-OF of OSCAR-RN Sulfonated NN-CHEMENTITY Poly(phthalazinone "
 								+ "NN ether JJ ether OSCAR-CM ketone -RRB- ) OSCAR-CD 7a STOP . TO To DT a CD 25 NN-VOL mL JJ three-necked "
 								+ "JJ round-bottomed NN-APPARATUS flask VB-APPARATUS fitted IN-WITH with DT a NN-CHEMENTITY Dean-stark "
