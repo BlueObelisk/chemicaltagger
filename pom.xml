@@ -46,12 +46,12 @@
 				</configuration>
 			</plugin>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
+				<groupId>org.apache.maven.plugins</groupId> 
 				<artifactId>maven-surefire-plugin</artifactId>
 				<configuration>
 					<testFailureIgnore>false</testFailureIgnore>
-					<forkMode>pertest</forkMode>
-					<argLine>-Xms512m -Xmx1024m</argLine>
+<!--					<forkMode>pertest</forkMode>-->
+					<argLine>-Xms512m -Xmx1024m -verbose:gc</argLine>
 					<skip>false</skip>
 				</configuration>
 			</plugin>
