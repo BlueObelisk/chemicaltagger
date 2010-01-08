@@ -1,14 +1,19 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
 import nu.xom.Document;
 import nu.xom.Serializer;
 
+import org.junit.Assert;
 import org.xmlcml.cml.base.CMLConstants;
 import org.xmlcml.euclid.Util;
 
@@ -129,6 +134,27 @@ public class Utils {
 		}
 
 		return newSentence.toString().replace("  ", " ").trim();
+	}
+
+	
+	/**
+	 * 
+	 * loads a "sentence" file consisting of a single line of text
+	 * 
+	 * @param resourceName qualified file name e.g. uk/ac/cam/ch/wwmm/foo.txt
+	 * @return
+	 */
+	public static String readSentence(String resourceName) {
+		// requires sentence with no newlines except possibly at end 
+		String sentence = null;
+		try {
+			InputStream refStream = ClassLoader.getSystemResourceAsStream(resourceName);
+			BufferedReader br = new BufferedReader(new InputStreamReader(refStream, Charset.forName("UTF-8")));
+			sentence = br.readLine();
+		} catch (IOException e) {
+			throw new RuntimeException("Cannot read sentence: "+resourceName);
+		}
+		return sentence.trim();
 	}
 
 }

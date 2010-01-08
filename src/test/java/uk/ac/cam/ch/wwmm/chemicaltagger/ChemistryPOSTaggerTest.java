@@ -1,14 +1,9 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.nio.charset.Charset;
+import static uk.ac.cam.ch.wwmm.chemicaltagger.Utils.readSentence;
 
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 /*****************************
@@ -100,19 +95,6 @@ public class ChemistryPOSTaggerTest {
 				posContainer.regexTagList.size());
 		Assert.assertEquals(posContainer.regexTagList.size(),
 				posContainer.brownTagList.size());
-	}
-	private String readSentence(String resourceName) {
-		// requires sentence with no newlines except possibly at end 
-		String sentence = null;
-		try {
-			InputStream refStream = this.getClass().getClassLoader().getResourceAsStream(resourceName);
-			BufferedReader br = new BufferedReader(new InputStreamReader(refStream, Charset.forName("UTF-8")));
-			sentence = br.readLine();
-		} catch (IOException e) {
-			throw new RuntimeException("Cannot read sentence: "+resourceName);
-		}
-		Assert.assertNotNull(sentence);
-		return sentence.trim();
 	}
 
 }
