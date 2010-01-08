@@ -10,6 +10,9 @@ import nu.xom.Document;
 import nu.xom.Serializer;
 
 import org.xmlcml.cml.base.CMLConstants;
+import org.xmlcml.euclid.Util;
+
+import weka.gui.SysErrLog;
 
 /********************************************
  * A Utils class.
@@ -66,6 +69,7 @@ public class Utils {
 			System.err.println("error" + ex);
 		}
 	}
+
 	private boolean isNumeric(String input) {
 		boolean flag = false;
 
@@ -76,6 +80,55 @@ public class Utils {
 			return false;
 		}
 
+	}
+
+	/************************************
+	 * First attempt at tidying up sentences. Separates words conjealed together
+	 * 
+	 * @param sentence
+	 * @return newSentence
+	 *************************************/
+	public static String formatSentence(String sentence) {
+		StringBuilder newSentence = new StringBuilder();
+		sentence = sentence.replace("%", " %").replace(";", " ;");
+		String[] words = sentence.split(" ");
+
+		for (String string : words) {
+			String prefix = " ";
+			String suffix = " ";
+			if (string.endsWith(".")) {
+				string = string.substring(0, string.length() - 1);
+				suffix = " ." + suffix;
+			}
+			if (string.endsWith(",")) {
+				string = string.substring(0, string.length() - 1);
+				suffix = " ," + suffix;
+			}
+
+			if (string.startsWith("(")) {
+				String subString = string.substring(1, string.length());
+				int i = Util.indexOfBalancedBracket('(', string);
+
+				if (i < 0) {
+					string = subString;
+					prefix = prefix + "( ";
+				}
+
+			} else if (string.trim().endsWith(")")) {
+				String subString = string.substring(0, string.length() - 1);
+				int i = Util.indexOfBalancedBracket('(', string);
+				if (i < 0) {
+
+					string = subString;
+					suffix = " )" + suffix;
+				}
+
+			}
+
+			newSentence.append(prefix + string + suffix);
+		}
+
+		return newSentence.toString().replace("  ", " ").trim();
 	}
 
 }

@@ -36,114 +36,34 @@ import uk.ac.cam.ch.wwmm.ptclib.scixml.TextToSciXML;
       - OpenNLP Brown fo recognising common english words .
  * It then combines the output of all 3 taggers and performs some simple corrections
  * 
- * @author lh359, dmj30,jat45
+ * @author lh359
  ***************************************************************/
 public class ChemistryPOSTagger {
 
 	public String sentence;
-	public String tagFile = "dictionary/tags.txt";
 	private Configuration config = null;
-	private List<Rule> rules;
 	private String config_filename = "textmining.properties";
 	private final Logger LOG = Logger.getLogger(ChemistryPOSTagger.class);
 	private static final String FLOW_COMMAND = "recognise inline";
-
+    
+	public OscarTagger oscarTagger;
+	public RegexTagger regexTagger;
+	public OpenNLPTagger openNLPTagger;
 	/****************************
 	 * Public Constructor
 	 ***************************/
 	public ChemistryPOSTagger() {
-		initializeRules();
-		initialiseOSCAR();
+		oscarTagger = new OscarTagger();
+		regexTagger = new RegexTagger();
+	    openNLPTagger = new OpenNLPTagger();	
 	}
 
-
-	/**************************************************************
-	 * The Rule class . Compiles regex rules. Used later for the regex tagger.
-	 ***************************************************************/
-	static class Rule {
-
-		final String name;
-		final Pattern pattern;
-
-		Rule(String name, String regex) {
-			this.name = name;
-			pattern = Pattern.compile(regex);
-		}
-	}
 
 	public void setSentence(String sentence) {
 		this.sentence = sentence;
 	}
 
-	/**************************************************************
-	 * Initialises the rules for the regular expression tagger
-	 ***************************************************************/
-	private void initializeRules() {
-		rules = new ArrayList<Rule>();
-		String line;
-		try {
 
-			// BufferedReader in = new BufferedReader(new FileReader(tagFile));
-			// PMR
-			InputStream is = this.getClass().getClassLoader()
-					.getResourceAsStream(tagFile);
-			BufferedReader in = new BufferedReader(new InputStreamReader(is));
-
-			if (!in.ready()) {
-				throw new IOException();
-			}
-
-			while ((line = in.readLine()) != null) {
-				if (!line.startsWith("#") && !StringUtils.isEmpty(line)) {
-					try {
-						String[] lineTokens = line.split("---");
-						rules.add(new Rule(lineTokens[0], lineTokens[1]));
-					} catch (Exception e) {
-						LOG.debug("Ignoring line--> " + line);
-					}
-				}
-
-			}
-			in.close();
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		LOG.debug("Rules length-->" + rules.size());
-	}
-
-	/*****************************************************
-	 * Creates the OSCAR workspace Taken from the Spectra-T textmining modules
-	 * 
-	 * @author jat45
-	 *****************************************************/
-	private void initialiseOSCAR() {
-		try {
-			config = new PropertiesConfiguration(config_filename);
-			System.err.println(config_filename);
-		} catch (ConfigurationException e1) {
-			e1.printStackTrace();
-		}
-		Oscar3Props.getInstance();
-		Iterator<String> iterator = config.getKeys();
-		while (iterator.hasNext()) {
-			String name = iterator.next();
-			String value = config.getString(name);
-			Oscar3Props.setProperty(name, value);
-		}
-		try {
-			Oscar3Props.configureWorkspace();
-			System.out.println("workspace configured");
-		} catch (Exception e) {
-			LOG.error("Problem setting up OSCAR3: " + e.getMessage());
-			throw new RuntimeException("Problem setting up OSCAR3: "
-					+ e.getMessage(), e);
-		}
-	}
-
-
-	
 	
 	/*****************************************************
 	 * Main Module.
@@ -151,13 +71,13 @@ public class ChemistryPOSTagger {
 	 * Initialises POSContainer. 
 	 * 
 	 *****************************************************/
-	public POSContainer runTaggers(String sentence) {
+	public POSContainer runTaggers(String inputSentence) {
 
 		POSContainer posContainer = new POSContainer();
-		this.sentence = cleanSentence(sentence);
-		posContainer = runOSCARTagger(posContainer);
-		posContainer = runRegexTagger(posContainer);
-		posContainer = runOpenNLPTagger(posContainer);
+		inputSentence = Utils.formatSentence(inputSentence);
+		posContainer = oscarTagger.runTagger(posContainer,inputSentence);
+		posContainer = regexTagger.runTagger(posContainer);
+		posContainer = openNLPTagger.runTagger(posContainer);
 
 		posContainer.combineTaggers();
 		posContainer = correctCombinedTagsList(posContainer);
@@ -166,210 +86,9 @@ public class ChemistryPOSTagger {
 		return posContainer;
 	}
 
-	/************************************
-	 * First attempt at tidying up sentences Separates words conjealed together
-	 * 
-	 * @param sentence
-	 * @return newSentence
-	 *************************************/
-	private String cleanSentence(String sentence) {
-		StringBuilder newSentence = new StringBuilder();
-		sentence = sentence.replace("%", " %").replace(";", " ;");
-		String[] words = sentence.split(" ");
 
-		for (String string : words) {
-			String prefix = " ";
-			String suffix = " ";
-			if (string.endsWith(".")) {
-				string = string.substring(0, string.length() - 1);
-				suffix = " ." + suffix;
-			}
-			if (string.endsWith(",")) {
-				string = string.substring(0, string.length() - 1);
-				suffix = " ," + suffix;
-			}
 
-			if (string.startsWith("(")) {
-				String subString = string.substring(1, string.length());
-				int i = Util.indexOfBalancedBracket(')', string);
-				if (i == -1) {
 
-					string = subString;
-					prefix = prefix + "( ";
-				}
-
-			} else if (string.trim().endsWith(")")) {
-				String subString = string.substring(0, string.length() - 1);
-				int i = Util.indexOfBalancedBracket('(', string);
-				if (i == -1) {
-
-					string = subString;
-					suffix = " )" + suffix;
-				}
-
-			}
-
-			newSentence.append(prefix + string + suffix);
-		}
-
-		return newSentence.toString();
-	}
-
-	/*****************************************************
-	 * 
-	 * Runs OSCAR over a string and process the XML output Stores the tokens and
-	 * tags to the POSContainer class which is returned
-	 * 
-	 * @author dmj30, lh359
-	 *****************************************************/
-	private POSContainer runOSCARTagger(POSContainer posContainer) {
-
-		Document doc = TextToSciXML.textToSciXML(sentence);
-		OscarFlow oscarFlow = new OscarFlow(doc);
-		try {
-			oscarFlow.runFlow(FLOW_COMMAND);
-		} catch (Exception e) {
-			e.printStackTrace();
-			throw new RuntimeException();
-		}
-		Document parsed = oscarFlow.getInlineXML();
-		Node paragraph = parsed.query("//P").get(0);
-
-		for (int i = 0; i < paragraph.getChildCount(); i++) {
-
-			if (paragraph.getChild(i) instanceof Text) {
-				Text textnode = (Text) paragraph.getChild(i);
-				String textContent = textnode.getValue().toString().trim();
-				processOSCARTextNodes(posContainer, textContent.split(" "));
-			} else if (paragraph.getChild(i) instanceof Element) {
-				Element ne = (Element) paragraph.getChild(i);
-				processOSCARNENodes(posContainer, ne);
-			}
-		}
-
-		return posContainer;
-	}
-
-	/*****************************************************
-	 * Converts XML NE nodes into POS Tags and Tokens which are then stored in
-	 * POSContainer
-	 *****************************************************/
-	private void processOSCARNENodes(POSContainer posContainer, Element ne) {
-
-		if (ne.getAttributeValue("type") != null
-				&& ne.getAttributeValue("surface") != null) {
-
-			String surface = ne.getAttributeValue("surface").trim();
-			String type = ne.getAttributeValue("type").trim();
-			String[] surfaceTokens = surface.split(" ");
-			if (surfaceTokens.length == 1) {
-				posContainer.wordTokenList.add(surface);
-				posContainer.addToOSCARList(type);
-
-			} else if (surfaceTokens.length > 1) {
-				for (int i = 0; i < surfaceTokens.length; i++) {
-					String surfaceToken = surfaceTokens[i];
-					posContainer.wordTokenList.add(surfaceToken);
-					if (i == 0) {
-						posContainer
-								.addToOSCARList(type, WWMMTag.TagType.START);
-					} else if (i == surfaceTokens.length - 1) {
-						posContainer.addToOSCARList(type, WWMMTag.TagType.END);
-					} else {
-						posContainer.addToOSCARList(type,
-								WWMMTag.TagType.MIDDLE);
-					}
-
-				}
-
-			}
-
-		}
-
-	}
-
-	/*****************************************************
-	 * Converts XML textNodes into POS Tags and Tokens which are then stored in
-	 * POSContainer
-	 *****************************************************/
-	private void processOSCARTextNodes(POSContainer posContainer,
-			String[] textString) {
-		for (String string : textString) {
-			if (!StringUtils.isEmpty(string)) {
-				try {
-					posContainer.addToTokenList(string);
-					posContainer.addToOSCARList("nil");
-				} catch (Exception e) {
-					LOG.debug(e.getMessage());
-					e.printStackTrace();
-				}
-			}
-		}
-
-	}
-
-	/*****************************************************
-	 * Runs the OpenNLP brown tagger against the text and stores the tags in
-	 * POSContainer
-	 *****************************************************/
-	public POSContainer runOpenNLPTagger(POSContainer posContainer) {
-		POSDictionary tagDict;
-		String[] tags = null;
-		List<String> tokenList = posContainer.getTokenList();
-
-		String[] token = new String[tokenList.size()];
-		for (int i = 0; i < tokenList.size(); i++) {
-			token[i] = tokenList.get(i);
-		}
-		try {
-
-			// TODO this needs jar-ifying
-			tagDict = new POSDictionary(
-					"src/main/resources/openNlpResources/tagdict");
-			PosTagger posTagger = new PosTagger(
-					"src/main/resources/openNlpResources/tag.bin", tagDict);
-
-			tags = posTagger.tag(token);
-			posContainer.addToBrownListFromStringArray(tags);
-
-		} catch (Exception e) {
-			LOG.error("Exception " + e.getMessage());
-			e.printStackTrace();
-			throw new RuntimeException(e);
-		}
-
-		return posContainer;
-
-	}
-
-	/*****************************************************
-	 * Runs the regular expression tagger against the text and stores the tags
-	 * in POSContainer
-	 *****************************************************/
-	public POSContainer runRegexTagger(POSContainer posContainer) {
-
-		List<String> tokenList = posContainer.getTokenList();
-		for (String token : tokenList) {
-			try {
-				token = token.toLowerCase();
-				Matcher m = Pattern.compile("dummy").matcher(token);
-
-				String tag = "nil";
-				for (Rule r : rules) {
-					if (m.usePattern(r.pattern).lookingAt()) {
-						tag = r.name;
-						break;
-					}
-				}
-				posContainer.addToRegexList(tag);
-
-			} catch (Exception e) {
-				LOG.debug("Null pointer right there" + tokenList);
-
-			}
-		}
-		return posContainer;
-	}
 
 	/**************************************************
 	 * Corrects MisNamed Tags
