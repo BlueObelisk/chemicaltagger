@@ -4,9 +4,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.Charset;
 
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 /*****************************
@@ -29,6 +31,17 @@ public class ChemistryPOSTaggerTest {
 		if (posTagger == null) {
 			posTagger = new ChemistryPOSTagger();
 		}
+	}
+	
+	@Ignore
+	@Test
+	public void encodingCheck() {
+		String sentence = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/tagTest/characterEncoding.txt");
+		System.out.println(sentence);
+		
+		System.out.println(sentence.length());
+		
+		System.exit(0);
 	}
 
 	@Test
@@ -103,7 +116,7 @@ public class ChemistryPOSTaggerTest {
 		String sentence = null;
 		try {
 			InputStream refStream = this.getClass().getClassLoader().getResourceAsStream(resourceName);
-			BufferedReader br = new BufferedReader(new InputStreamReader(refStream));
+			BufferedReader br = new BufferedReader(new InputStreamReader(refStream, Charset.forName("UTF-8")));
 			sentence = br.readLine();
 		} catch (IOException e) {
 			throw new RuntimeException("Cannot read sentence: "+resourceName);
