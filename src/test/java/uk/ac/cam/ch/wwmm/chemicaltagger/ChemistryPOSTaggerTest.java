@@ -33,16 +33,6 @@ public class ChemistryPOSTaggerTest {
 		}
 	}
 	
-	@Ignore
-	@Test
-	public void encodingCheck() {
-		String sentence = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/tagTest/characterEncoding.txt");
-		System.out.println(sentence);
-		
-		System.out.println(sentence.length());
-		
-		System.exit(0);
-	}
 
 	@Test
 	public void sentence1() {
