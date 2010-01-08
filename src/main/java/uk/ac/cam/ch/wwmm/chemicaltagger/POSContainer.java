@@ -32,6 +32,13 @@ public class POSContainer {
 		wordTokenList.add(token);
 	}
 
+	public void addToTokenListFromSentenceString(String sentence) {
+		for (String token : sentence.split(" ")) {
+			wordTokenList.add(token);
+		}
+		
+	}
+	
 	public List<String> getTokenList() {
 		return wordTokenList;
 	}
