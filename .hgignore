@@ -9,11 +9,8 @@ glob:.hgignore~
 glob:Properties.dat
 glob:cInChI-1
 glob:__Test__*
-glob:*.tokens
 glob:patent*
 glob:taggedPatents*
-glob:*Lexer*
-glob:*ChunkerParser*
 glob:.settings/org.eclipse.jdt.core.prefs
 glob:.settings/org.maven.ide.eclipse.prefs
 \.orig\..*$
