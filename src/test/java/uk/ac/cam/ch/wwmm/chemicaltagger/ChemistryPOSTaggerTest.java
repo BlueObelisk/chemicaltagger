@@ -4,6 +4,7 @@ import static uk.ac.cam.ch.wwmm.chemicaltagger.Utils.readSentence;
 
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 /*****************************
@@ -86,6 +87,7 @@ public class ChemistryPOSTaggerTest {
 		checkLengthofTags();
 
 	}
+    
 
 
 	private void checkLengthofTags() {
