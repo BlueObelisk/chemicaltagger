@@ -27,15 +27,18 @@ fragment DIGIT	: ('0'..'9');
 TOKEN : (ACHAR| '_'|',' |'.'|')'|'('|'/'|'-'|'='|'°'|':'|'%'|DIGIT)+;
 
 
-document: sentence+ -> ^(NODE["Sentence"]  sentence )+ ;
+document: sentence+-> ^(NODE["Sentence"]  sentence )+ ;
 
-sentence:  (sentence1|sentence2|sentence3)+   (comma|cc|stop|adv)* ;
+sentence:  (sentence1|sentence2|sentence3|sentence4)+   (comma|cc|stop|adv)* ;
 sentence1
 	: nounphrase+ verbphrase* prepphrase*-> ^(NODE["NounPhrase"]  nounphrase)+  ^(NODE["VerbPhrase"]  verbphrase)*  prepphrase*;	
 sentence2
 	: verbphrase+ nounphrase* prepphrase*-> ^(NODE["VerbPhrase"]  verbphrase)+  ^(NODE["NounPhrase"]  nounphrase)*  prepphrase*;	
 sentence3
-	: prepphrase+ (nounphrase|verbphrase)+ ->  prepphrase+  ^(NODE["NounPhrase"]  nounphrase)* ^(NODE["VerbPhrase"]  verbphrase)+;	
+	: prepphrase+ nounphrase+ verbphrase*->  prepphrase+  ^(NODE["NounPhrase"]  nounphrase)+ ^(NODE["VerbPhrase"]  verbphrase)*;	
+	
+sentence4
+	: prepphrase+ verbphrase+ nounphrase*->  prepphrase+  ^(NODE["VerbPhrase"]  verbphrase)+ ^(NODE["NounPhrase"]  nounphrase)*;
 
 nounphrase : dt? (adj|adv)*  noun+ (cc? comma? cc?  adj+ noun )*   (prepphraseOf| prepphraseIN)*  ;
 //sentence: noun;

@@ -78,6 +78,7 @@ public class ChemistrySentenceParserTest {
 		checkNodes(t);
 
 	}	
+
 	private InputStream getInputStream(String resourceName){
 		InputStream inStream = this.getClass().getClassLoader().getResourceAsStream(resourceName);
 		return inStream;
