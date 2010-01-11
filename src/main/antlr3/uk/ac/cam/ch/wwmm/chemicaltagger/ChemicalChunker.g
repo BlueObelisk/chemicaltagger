@@ -1,4 +1,5 @@
 grammar ChemicalChunker;
+
 options {
     language=Java;
     output = AST;
@@ -13,7 +14,6 @@ tokens{
  }
 @lexer::header {package uk.ac.cam.ch.wwmm.chemicaltagger;}
 
-
 WS	:	 (' '|'\t')+ {skip();};
 NEWLINE	:	'\r'? '\n';
 
@@ -24,31 +24,34 @@ fragment ACHAR	:	('A'..'Z') | ('a'..'z');
 fragment DIGIT	: ('0'..'9');
 
 //TOKEN	:	(ACHAR|':'|'%'|'_'|',' |'.'|')'|'('|'/'|'-'|'='|'°'|DIGIT)+;
-TOKEN : (ACHAR| '_'|',' |'.'|')'|'('|'/'|'-'|'='|'°'|':'|'%'|DIGIT)+;
+TOKEN : (ACHAR| '_'|',' |'.'|')'|'('|'/'|'-'|'='|'°'|':'|'%'|'\''|'{'|'}'|'['|']'|DIGIT)+;
+
+document: sentences+-> ^(NODE["Sentence"]  sentences )+ ;
+
+sentences:  (sentence|unmatchedPhrase)+   (comma|cc|stop|adv)* ;
+
+sentence:  (nounphrase|verbphrase|prepphrase)+ ;
 
 
-document: sentence+-> ^(NODE["Sentence"]  sentence )+ ;
-
-sentence:  (sentence1|sentence2|sentence3|sentence4)+   (comma|cc|stop|adv)* ;
-sentence1
-	: nounphrase+ verbphrase* prepphrase*-> ^(NODE["NounPhrase"]  nounphrase)+  ^(NODE["VerbPhrase"]  verbphrase)*  prepphrase*;	
-sentence2
-	: verbphrase+ nounphrase* prepphrase*-> ^(NODE["VerbPhrase"]  verbphrase)+  ^(NODE["NounPhrase"]  nounphrase)*  prepphrase*;	
-sentence3
-	: prepphrase+ nounphrase+ verbphrase*->  prepphrase+  ^(NODE["NounPhrase"]  nounphrase)+ ^(NODE["VerbPhrase"]  verbphrase)*;	
+unmatchedPhrase
+	:	 unmatchedTokens -> ^(NODE["Unmatched"] unmatchedTokens)+;
 	
-sentence4
-	: prepphrase+ verbphrase+ nounphrase*->  prepphrase+  ^(NODE["VerbPhrase"]  verbphrase)+ ^(NODE["NounPhrase"]  nounphrase)*;
+unmatchedTokens
+	:	(noun|verb|adj|adv|inAll|dt|oscarcd|oscarcm|oscarrn|oscaront|brackets);	
 
-nounphrase : dt? (adj|adv)*  noun+ (cc? comma? cc?  adj+ noun )*   (prepphraseOf| prepphraseIN)*  ;
-//sentence: noun;
 
-verbphrase :  to? inAll? inafter? (adv* adj? verb+ adv* adj?)+ (cc? comma? prepphrase)* ;
+nounphrase
+	:	nounphraseStructure ->  ^(NODE["NounPhrase"]  nounphraseStructure);	
+nounphraseStructure : dt? (adj|adv)*  noun+ (cc? comma? cc?  adj+ noun )*   (prepphraseOf| prepphraseIN)*  ;
+
+
+verbphrase
+	:	verbphraseStructure ->  ^(NODE["VerbPhrase"]  verbphraseStructure);
+verbphraseStructure :  to? inAll? inafter? (adv* adj? verb+ adv* adj?)+ (cc? comma? prepphrase)* ;
 verb : vbg|vbd|vbz|vbn|vbuse|vbsubmerge|vbsubject|vbadd|vbcharge|vbcontain|vbdrop|vbfill|vbsuspend|vbtreat|vbapparatus|vbconcentrate|vbcool|vbdegass|vbdissolve|vbdry|vbextract|vbfilter |vbheat|vbincrease|vbpartition|vbprecipitate|vbpurify|vbquench|vbrecover|vbremove|vbstir|vbsynthesize|vbwait|vbwash|vbyield;
 number : cd|oscarcd;	
-noun :  md|unnamedmolecule|molecule|nnstate|nn|nns|nntime|apparatus|nnatmosphere|nneq|nnchementity|measurements|nntemp|nnflash|nngeneral|nnmethod|nnamount|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnapparatus|
-nnconcentrate|wdt|wp_poss|wpo|wps|nnsynthesize|oscaront|nnmixture|amount|cd|nnp|nnadd|mixture|oscarCompound;
 
+noun :  prp|unnamedmolecule|molecule|nnstate|nn|nns|nnp|nnadd|nntime|apparatus|nnatmosphere|nneq|amount|nnchementity|measurements|nntemp|nnflash|nngeneral|nnmethod|nnamount|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|wdt|wp_poss|wpo|wps|nnsynthesize|nnmixture|oscaront|number|mixture|oscarCompound;
 mixture:  lrb (measurements|md|stop|oscarCompound|molecule|unnamedmolecule|dash|sym|cd|noun|inof|cd|comma|adj)+ rrb;
 //mixture:  lrb (sentence)+ rrb;
 adj	:	jj|jjr|jjs|jjt|oscarcj|oscarrn;
@@ -79,7 +82,7 @@ percent	: cd nnpercent -> ^(NODE["PERCENT"]   cd nnpercent );
 volume	: cd nnvol -> ^(NODE["VOLUME"]   cd nnvol );
 
 apparatus
-	:	(measurements|adj|jj|nn)+ nnapparatus+-> ^(NODE["APPARATUS"]   measurements? adj? nn? nnapparatus+ );
+	:	(measurements|adj|jj|nn|nnpressure)* nnapparatus+-> ^(NODE["APPARATUS"]   measurements? adj? nn? nnapparatus+ );
 measurements
 	:mmol|gram|percent|volume;	
 
@@ -115,7 +118,8 @@ amount 	: lrb measurements (comma  measurements)*  rrb ->   ^(NODE["AMOUNT"]  lr
 //amount 	: lrb gram comma  mmol  rrb;     
 method:
     (nngeneral|nn)? nnmethod (oscarcd|cd)?  ;
-
+    brackets 
+    	:	(lrb|rrb|lsqb|rsqb)+;
 //Tags---Pattern---Description
 oscarcd:'OSCAR-CD' TOKEN;
 oscarcj:'OSCAR-CJ' TOKEN;
@@ -428,6 +432,8 @@ ppl:'PPL' TOKEN;
 
 // Plural reflexive/intensive personal pronoun (ourselves)
 ppls:'PPLS' TOKEN;
+
+prp	:	'PRP'  TOKEN;
 
 // Objective personal pronoun (me, him, it, them)
 ppo:'PPO' TOKEN;

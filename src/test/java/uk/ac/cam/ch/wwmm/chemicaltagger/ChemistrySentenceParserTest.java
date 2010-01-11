@@ -79,6 +79,19 @@ public class ChemistrySentenceParserTest {
 
 	}	
 
+
+	@Test	
+	public void testSentence7() {
+		InputStream taggedStream = getInputStream("uk/ac/cam/ch/wwmm/chemicaltagger/parseTest/sentence7.txt");
+		ChemistrySentenceParser chemChunkParser = new ChemistrySentenceParser(
+				taggedStream);
+		Tree t = chemChunkParser.parseTags();
+		checkNodes(t);
+
+	}	
+
+	
+	
 	private InputStream getInputStream(String resourceName){
 		InputStream inStream = this.getClass().getClassLoader().getResourceAsStream(resourceName);
 		return inStream;

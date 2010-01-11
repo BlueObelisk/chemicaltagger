@@ -105,15 +105,13 @@ public class ChemistryPOSTagger {
 			String currentToken = tokenList.get(i);
 			String newTag = combinedTags.get(i).getPOS();
 
-			if (StringUtils.equalsIgnoreCase(currentTag, "oscar-cm")
+			if ((StringUtils.equalsIgnoreCase(currentTag, "oscar-cm")|| StringUtils.equalsIgnoreCase(currentTag, "oscar-ont"))
+					
 					&& StringUtils.equalsIgnoreCase(currentToken, "a")) {
 				newTag = "DT";
 			}
 
-			if (StringUtils.equalsIgnoreCase(currentTag, "oscar-ont")
-					&& StringUtils.equalsIgnoreCase(currentToken, "a")) {
-				newTag = "DT";
-			}
+
 			if (StringUtils.equalsIgnoreCase(currentTag, "oscar-cm")
 					&& currentToken.contains("°C")) {
 				newTag = "NN-TEMP";
@@ -179,17 +177,6 @@ public class ChemistryPOSTagger {
 				}
 			}
 
-			if (currentTag.toLowerCase().startsWith("vb-")) {
-				if (!currentTag.toLowerCase().startsWith("vb-use") && !currentTag.toLowerCase().startsWith("vb-add")) {
-					List afterList = Utils
-							.addToList("oscar-cj oscar-cm nns nn-chementity");
-					List notList = Utils.addToList("rb in-after");
-					if (stringafter(afterList, i, combinedTags)
-							&& !stringbefore(notList, i, combinedTags)) {
-						newTag = "OSCAR-CJ";
-					}
-				}
-			}
 			if (currentTag.toLowerCase().startsWith("vbn")
 					|| currentTag.toLowerCase().startsWith("vbg")) {
 
