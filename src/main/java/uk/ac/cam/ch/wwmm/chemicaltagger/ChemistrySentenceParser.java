@@ -66,7 +66,7 @@ public class ChemistrySentenceParser {
 
 		ANTLRInputStream input;
 		try {
-			input = new ANTLRInputStream(taggedTokenInStream);
+			input = new ANTLRInputStream(taggedTokenInStream, "UTF-8");
 		} catch (IOException ioexception) {
 			throw new RuntimeException("Antlr input Stream Error: "
 					+ ioexception.getMessage());
