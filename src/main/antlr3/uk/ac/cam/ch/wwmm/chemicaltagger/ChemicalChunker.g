@@ -24,7 +24,7 @@ fragment ACHAR	:	('A'..'Z') | ('a'..'z');
 fragment DIGIT	: ('0'..'9');
 
 //TOKEN	:	(ACHAR|':'|'%'|'_'|',' |'.'|')'|'('|'/'|'-'|'='|'°'|DIGIT)+;
-TOKEN : (ACHAR|'?'|'\xb0'| '_'|',' |'.'|')'|'('|'/'|'-'|'='|'°'|':'|'%'|'\''|'{'|'}'|'['|']'|DIGIT)+;
+TOKEN : (ACHAR|'?'|'\xb0'| '_'|',' |'.'|')'|'('|'/'|'-'|'='|'\u00B0'|':'|'%'|'\''|'{'|'}'|'['|']'|DIGIT)+;
 
 document: sentences+-> ^(NODE["Sentence"]  sentences )+ ;
 
