@@ -3,8 +3,10 @@ package uk.ac.cam.ch.wwmm.chemicaltagger;
 import java.io.InputStream;
 
 import junit.framework.Assert;
+
 import org.antlr.runtime.tree.Tree;
 import org.junit.Test;
+import org.mortbay.log.Log;
 
 /*****************************
  * Passes Tagged Sentences to
@@ -109,7 +111,8 @@ public class ChemistrySentenceParserTest {
 		for (int i = 0; i < nodeCount; i++) {
 			String text = astTree.getChild(i).getText();
 			int type = astTree.getChild(i).getType();
-			Assert.assertNotSame("Type was 0 for the text '"+text+"'",0, type);
+			Log.debug("****Text="+text+" type=="+type);
+			Assert.assertNotSame("Antlr Parse Fails for the for the text '"+text+"'",0, type);
 			checkNodes(astTree.getChild(i));
 
 		}
