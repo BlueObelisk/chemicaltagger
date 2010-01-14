@@ -111,7 +111,7 @@ public class ChemistrySentenceParserTest {
 		for (int i = 0; i < nodeCount; i++) {
 			String text = astTree.getChild(i).getText();
 			int type = astTree.getChild(i).getType();
-			Log.debug("****Text="+text+" type=="+type);
+			Log.info("****Text="+text+" type=="+type);
 			Assert.assertNotSame("Antlr Parse Fails for the for the text '"+text+"'",0, type);
 			checkNodes(astTree.getChild(i));
 
