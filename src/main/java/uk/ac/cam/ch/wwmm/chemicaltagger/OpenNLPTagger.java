@@ -1,7 +1,15 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.URL;
 import java.util.List;
 
+import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
 
 import opennlp.tools.lang.english.PosTagger;
@@ -32,13 +40,20 @@ public class OpenNLPTagger {
 			token[i] = tokenList.get(i);
 		}
 		try {
+			InputStreamReader tagDictReader = new InputStreamReader(
+					ClassLoader.getSystemResourceAsStream("openNlpResources/tagdict"), "UTF-8");
+			tagDict = new POSDictionary(new BufferedReader(tagDictReader), true);
 
-			// TODO this needs jar-ifying
-			tagDict = new POSDictionary(
-					"src/main/resources/openNlpResources/tagdict");
-			PosTagger posTagger = new PosTagger(
-					"src/main/resources/openNlpResources/tag.bin", tagDict);
-
+			//the constructor only takes a file path, so we copy it to temp in case
+			//the code is running from a jar
+			//openNlp throws a weird NumberFormatException if the temp file name doesn't end in .bin (!)			
+			InputStream is = ClassLoader.getSystemResourceAsStream("openNlpResources/tag.bin");
+			File tempFile = File.createTempFile("tag", ".bin");
+			tempFile.deleteOnExit();
+			OutputStream os = new FileOutputStream(tempFile);
+			IOUtils.copy(is, os);
+			
+			PosTagger posTagger = new PosTagger(tempFile.getCanonicalPath(), tagDict);
 			tags = posTagger.tag(token);
 			posContainer.addToBrownListFromStringArray(tags);
 
