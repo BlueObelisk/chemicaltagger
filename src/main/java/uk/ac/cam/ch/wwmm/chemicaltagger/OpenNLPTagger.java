@@ -53,6 +53,9 @@ public class OpenNLPTagger {
 			OutputStream os = new FileOutputStream(tempFile);
 			IOUtils.copy(is, os);
 			
+			System.out.println(new File(tempFile.getCanonicalPath()).canRead());
+			System.out.println(new File(tempFile.getCanonicalPath()).length());
+			
 			PosTagger posTagger = new PosTagger(tempFile.getCanonicalPath(), tagDict);
 			tags = posTagger.tag(token);
 			posContainer.addToBrownListFromStringArray(tags);
