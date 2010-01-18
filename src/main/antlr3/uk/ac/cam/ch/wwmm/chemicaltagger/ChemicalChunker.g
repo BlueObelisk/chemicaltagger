@@ -26,7 +26,7 @@ fragment DIGIT	: ('0'..'9');
 fragment UNICODE	:  '\u00B0'..'\ufffe';
 
 //TOKEN	:	(ACHAR|DIGIT|UNICODE)+;
-TOKEN : (ACHAR|'?'|'\xb0'| '_'|',' |'.'|')'|'('|'/'|'-'|'='|':'|'%'|'\''|'{'|'}'|'['|']'|DIGIT|UNICODE)+;
+TOKEN : (ACHAR|'?'| '_'|',' |'.'|')'|'('|'/'|'-'|'='|':'|'%'|'\''|'{'|'}'|'['|']'|DIGIT|UNICODE)+;
 
 
 
@@ -52,10 +52,10 @@ nounphraseStructure : dt? (adj|adv)*  noun+ (cc? comma? cc?  adj+ noun )*   (pre
 verbphrase
 	:	verbphraseStructure ->  ^(NODE["VerbPhrase"]  verbphraseStructure);
 verbphraseStructure :  to? inAll? inafter? (adv* adj? verb+ adv* adj?)+ (cc? comma? prepphrase)* ;
-verb : vbg|vbd|vbz|vbn|vbuse|vbsubmerge|vbsubject|vbadd|vbcharge|vbcontain|vbdrop|vbfill|vbsuspend|vbtreat|vbapparatus|vbconcentrate|vbcool|vbdegass|vbdissolve|vbdry|vbextract|vbfilter |vbheat|vbincrease|vbpartition|vbprecipitate|vbpurify|vbquench|vbrecover|vbremove|vbstir|vbsynthesize|vbwait|vbwash|vbyield;
+verb : vb|vbg|vbd|vbz|vbn|vbuse|vbsubmerge|vbsubject|vbadd|vbcharge|vbcontain|vbdrop|vbfill|vbsuspend|vbtreat|vbapparatus|vbconcentrate|vbcool|vbdegass|vbdissolve|vbdry|vbextract|vbfilter |vbheat|vbincrease|vbpartition|vbprecipitate|vbpurify|vbquench|vbrecover|vbremove|vbstir|vbsynthesize|vbwait|vbwash|vbyield|vbchange;
 number : cd|oscarcd;	
 
-noun :  prp|unnamedmolecule|molecule|nnstate|nn|nns|nnp|nnadd|oscarcpr|nntime|apparatus|nnatmosphere|nneq|amount|nnchementity|measurements|nntemp|nnflash|nngeneral|nnmethod|nnamount|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|wdt|wp_poss|wpo|wps|nnsynthesize|nnmixture|oscaront|number|mixture|oscarCompound;
+noun :  prp|unnamedmolecule|molecule|nnstate|nn|nns|nnp|nnadd|oscarcpr|nntime|apparatus|nnatmosphere|nneq|amount|nnchementity|measurements|nntemp|nnflash|nngeneral|nnmethod|nnamount|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|nnvol|nnpurify|wdt|wp_poss|wpo|wps|nnsynthesize|nnmixture|oscaront|number|mixture|oscarCompound|nnextract|nnfilter|nnprecipitate|nnremove;
 mixture:  lrb (measurements|md|stop|oscarCompound|molecule|unnamedmolecule|dash|sym|cd|noun|inof|cd|comma|adj)+ rrb;
 //mixture:  lrb (sentence)+ rrb;
 adj	:	jj|jjr|jjs|jjt|oscarcj|oscarrn;
@@ -93,7 +93,7 @@ measurements
 // The RRB at the end is for leftover brackets from chemicals that didn't parse properly
 oscarCompound :  (oscarCompound1|oscarCompound2|oscarCompound3|oscarcm) rrb?;
 
-oscarCompound3 :	oscarcm dash oscarcm -> ^(NODE["OSCARCM"]  oscarcm dash oscarcm);
+oscarCompound3 :	oscarcm (dash oscarcm)+ -> ^(NODE["OSCARCM"]  oscarcm (dash oscarcm)+);
 oscarCompound2 :	oscarcm oscarcm+ -> ^(NODE["OSCARCM"]  oscarcm oscarcm+);
 oscarCompound1 :	oscarcm jj oscarcm -> ^(NODE["OSCARCM"]  oscarcm jj oscarcm);
 moleculeamount1
