@@ -13,11 +13,8 @@ import java.util.List;
 import nu.xom.Document;
 import nu.xom.Serializer;
 
-import org.junit.Assert;
 import org.xmlcml.cml.base.CMLConstants;
 import org.xmlcml.euclid.Util;
-
-import weka.gui.SysErrLog;
 
 /********************************************
  * A Utils class.

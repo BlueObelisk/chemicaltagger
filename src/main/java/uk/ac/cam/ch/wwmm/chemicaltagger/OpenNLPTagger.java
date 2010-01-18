@@ -6,14 +6,13 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
-import java.net.URL;
 import java.util.List;
-
-import org.apache.commons.io.IOUtils;
-import org.apache.log4j.Logger;
 
 import opennlp.tools.lang.english.PosTagger;
 import opennlp.tools.postag.POSDictionary;
+
+import org.apache.commons.io.IOUtils;
+import org.apache.log4j.Logger;
 
 public class OpenNLPTagger {
 	private final Logger LOG = Logger.getLogger(OscarTagger.class);

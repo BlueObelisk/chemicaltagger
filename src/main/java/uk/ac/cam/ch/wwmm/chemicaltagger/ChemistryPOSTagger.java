@@ -1,32 +1,10 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import nu.xom.Document;
-import nu.xom.Element;
-import nu.xom.Node;
-import nu.xom.Text;
-import opennlp.tools.lang.english.PosTagger;
-import opennlp.tools.postag.POSDictionary;
 
 import org.apache.commons.configuration.Configuration;
-import org.apache.commons.configuration.ConfigurationException;
-import org.apache.commons.configuration.PropertiesConfiguration;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
-import org.xmlcml.euclid.Util;
-
-import uk.ac.cam.ch.wwmm.oscar3.Oscar3Props;
-import uk.ac.cam.ch.wwmm.oscar3.flow.OscarFlow;
-import uk.ac.cam.ch.wwmm.ptclib.scixml.TextToSciXML;
 
 /**************************************************************
  * 
