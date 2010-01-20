@@ -114,7 +114,10 @@ public class ChemistryPOSTagger {
 					&& StringUtils.equalsIgnoreCase(currentToken, "M")) {
 				newTag = "NN-MOL";
 			}
-
+			if (StringUtils.equalsIgnoreCase(currentTag, "''")) {
+				newTag = "FW";
+			}
+			
 			if (StringUtils.equalsIgnoreCase(currentTag, "cd")) {
 				List beforeList = Utils
 						.addToList("in-of jj nn-chementity comma");
