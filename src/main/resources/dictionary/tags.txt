@@ -30,18 +30,17 @@ TO---^to$|^To$---The preposition 'TO'
 #Nouns
 NN-STATE---powder|glass|liquid|oil|solid|gas|syrup|crystal|gum|needle|prisms---Physical States
 NN-TIME---^period(s)?$|^min(utes|.)?$|^hour(s)?|^seconds$|^d$|^h$|^days$|.*night|hr(s)?---Time Token
-NN-GRAM---(m|k|\xce\xbc)?g$|cm3---Grams
-NN-MOL---(^M|m|k|\xce\xbc)?mol(s)?$|^M$---Mols
+NN-MASS---(m|k|\xce\xbc)?g$|cm3---Grams
+NN-AMOUNT---(^M|m|k|\xce\xbc)?mol(s)?$|^M$---Mols
 NN-ATMOSPHERE---(a|A)tmosphere(s)?$---Atmosphere
 NN-EQ---^eq\.$---Equivalence
 NN-VOL---(m|k|\xce\xbc|µ)?(l|L)$|cm3---Volume
 NN-CHEMENTITY---poly|^resin$|^salt$|^product$|^oligomers$|^(M|m)acroinitiator$|^nanotubes$|^(s|S)eptum$|^(i|I)nitiator$|(M|m)onomer$|^ice$|^petroleum|metal|^eluent$|(co|Co)?polymer(s)?$|generation|solution|solvent|complex|layer|residue|gel|plug|catalyst|compound(s)?|.+®|^Å$---Chemical entities not marked up by OSCAR
-#NN-TEMP---\d+&#0176(C|c)|room|temperature|\xc2|\xcb|°|°C|rt|RT|-?\d+°C|\d*ºC|^oC---Temperature Token
 NN-TEMP---\d*(\xb0|&#0176|\xc3\x97|o|°|º)(C|c)|room|temperature|rt|RT---Temperature Token
 NN-FLASH---^flash$---Flash
 NN-GENERAL---^(G|g)eneral$---General term
 NN-METHOD---^(P|p)rocedure(s)?$|(t|T)echnique(s)?$|(m|M)ethod(s)?$---Method token       
-NN-AMOUNT---^weighed$|^amount|^total$---Amount
+#NN-AMOUNT---^weighed$|^amount|^total$---Amount
 NN-PRESSURE---^pressure$---Pressure Token
 NN-COLUMN---^(c|C)?olumn$---Column Token 
 NN-CHROMATOGRAPHY---^(c|C)?hromatography$---Chromatography Token 
