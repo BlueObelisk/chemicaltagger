@@ -133,25 +133,42 @@ public class Utils {
 		return newSentence.toString().replace("  ", " ").trim();
 	}
 
-	
 	/**
 	 * 
 	 * loads a "sentence" file consisting of a single line of text
 	 * 
-	 * @param resourceName qualified file name e.g. uk/ac/cam/ch/wwmm/foo.txt
+	 * @param resourceName
+	 *            qualified file name e.g. uk/ac/cam/ch/wwmm/foo.txt
 	 * @return
 	 */
 	public static String readSentence(String resourceName) {
-		// requires sentence with no newlines except possibly at end 
+		// requires sentence with no newlines except possibly at end
 		String sentence = null;
 		try {
-			InputStream refStream = ClassLoader.getSystemResourceAsStream(resourceName);
-			BufferedReader br = new BufferedReader(new InputStreamReader(refStream, Charset.forName("UTF-8")));
+			InputStream refStream = ClassLoader
+					.getSystemResourceAsStream(resourceName);
+			BufferedReader br = new BufferedReader(new InputStreamReader(
+					refStream, Charset.forName("UTF-8")));
 			sentence = br.readLine();
 		} catch (IOException e) {
-			throw new RuntimeException("Cannot read sentence: "+resourceName);
+			throw new RuntimeException("Cannot read sentence: " + resourceName);
 		}
 		return sentence.trim();
 	}
 
+	/**
+	 * 
+	 * Returns the content of the resource as an inputstream
+	 * 
+	 * @param pathName
+	 *            qualified file name e.g. uk/ac/cam/ch/wwmm/foo.txt
+	 * @return
+	 */
+	public static InputStream getInputStream(String pathName) {
+		// requires sentence with no newlines except possibly at end
+		InputStream inStream;
+		inStream = ClassLoader.getSystemResourceAsStream(pathName);
+
+		return inStream;
+	}
 }

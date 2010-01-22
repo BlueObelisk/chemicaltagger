@@ -8,10 +8,10 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<repositories>
 		<repository>
-			<id>wwmm</id>
-			<name>wwmm</name>
-			<url>http://wwmm.ch.cam.ac.uk/maven2</url>
-		</repository>
+			<id>ucc-repo</id>
+			<name>UCC Repository</name>
+			<url>http://maven.ch.cam.ac.uk/m2repo</url>
+		</repository>  
 	</repositories>
 	<build>
 		<plugins>

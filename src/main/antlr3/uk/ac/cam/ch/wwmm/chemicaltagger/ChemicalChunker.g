@@ -55,7 +55,7 @@ verbphraseStructure :  to? inAll? inafter? (adv* adj? verb+ adv* adj?)+ (cc? com
 verb : vb|vbg|vbd|vbz|vbn|vbuse|vbsubmerge|vbsubject|vbadd|vbcharge|vbcontain|vbdrop|vbfill|vbsuspend|vbtreat|vbapparatus|vbconcentrate|vbcool|vbdegass|vbdissolve|vbdry|vbextract|vbfilter |vbheat|vbincrease|vbpartition|vbprecipitate|vbpurify|vbquench|vbrecover|vbremove|vbstir|vbsynthesize|vbwait|vbwash|vbyield|vbchange;
 number : cd|oscarcd;	
 
-noun :  prp|unnamedmolecule|molecule|nnstate|nn|nns|nnp|nnadd|oscarcpr|nntime|apparatus|nnatmosphere|nneq|amount|nnchementity|measurements|nntemp|nnflash|nngeneral|nnmethod|nnamount|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|nnvol|nnpurify|wdt|wp_poss|wpo|wps|nnsynthesize|nnmixture|oscaront|number|mixture|oscarCompound|nnextract|nnfilter|nnprecipitate|nnremove|fw|fwin;
+noun :  prp|unnamedmolecule|molecule|nnstate|nn|nns|nnp|nnadd|oscarcpr|nntime|apparatus|nnatmosphere|nneq|quantity|nnchementity|measurements|nntemp|nnflash|nngeneral|nnmethod|nnamount|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|nnvol|nnpurify|wdt|wp_poss|wpo|wps|nnsynthesize|nnmixture|oscaront|number|mixture|oscarCompound|nnextract|nnfilter|nnprecipitate|nnremove|fw|fwin;
 mixture:  lrb (measurements|md|stop|oscarCompound|molecule|unnamedmolecule|dash|sym|cd|noun|inof|cd|comma|adj)+ rrb;
 //mixture:  lrb (sentence)+ rrb;
 adj	:	jj|jjr|jjs|jjt|oscarcj|oscarrn;
@@ -80,15 +80,15 @@ inAll	: in|inafter|inas|inbefore|inby|infor|infrom|inin|ininto|inof|inoff|inon|i
 prepphraseTemp:  (adv|adj)? inAll? dt? (adv|adj)? cd nntemp ->  ^(NODE["TempPhrase"]  adv? adj?  inAll?  dt? adv? adj? cd nntemp);
 
 			
-mmol	: cd nnmol -> ^(NODE["MMOL"]   cd nnmol );
-gram	: cd nngram-> ^(NODE["GRAM"]   cd nngram ); 
+amount	: cd nnamount -> ^(NODE["AMOUNT"]   cd nnamount );
+mass	: cd nnmass-> ^(NODE["MASS"]   cd nnmass ); 
 percent	: cd nnpercent -> ^(NODE["PERCENT"]   cd nnpercent );
 volume	: cd nnvol -> ^(NODE["VOLUME"]   cd nnvol );
 
 apparatus
 	:	(measurements|adj|jj|nn|nnpressure)* nnapparatus+-> ^(NODE["APPARATUS"]   measurements? adj? nn? nnapparatus+ );
 measurements
-	:mmol|gram|percent|volume;	
+	:amount|mass|percent|volume;	
 
 // The RRB at the end is for leftover brackets from chemicals that didn't parse properly
 oscarCompound :  (oscarCompound1|oscarCompound2|oscarCompound3|oscarcm) rrb?;
@@ -97,19 +97,19 @@ oscarCompound3 :	oscarcm (dash oscarcm)+ -> ^(NODE["OSCARCM"]  oscarcm (dash osc
 oscarCompound2 :	oscarcm oscarcm+ -> ^(NODE["OSCARCM"]  oscarcm oscarcm+);
 oscarCompound1 :	oscarcm jj oscarcm -> ^(NODE["OSCARCM"]  oscarcm jj oscarcm);
 moleculeamount1
-	:measurements amount? inof oscarCompound;	
+	:measurements quantity? inof oscarCompound;	
 moleculeamount2
-	:oscarCompound  amount* ;	
+	:oscarCompound  quantity* ;	
 moleculeamount : moleculeamount1 | moleculeamount2 ;	
 molecule          
 	:  moleculeamount-> ^(NODE["MOLECULE"]  moleculeamount );	
 
 unnamedmoleculeamount1
-	:measurements amount? inof (oscarcd|cd);	
+	:measurements quantity? inof (oscarcd|cd);	
 unnamedmoleculeamount2
-	:oscarcd amount*;		
+	:oscarcd quantity*;		
 unnamedmoleculeamount3
-	:measurements amount? inof (jj? noun)+;	
+	:measurements quantity? inof (jj? noun)+;	
 
 unnamedmoleculeamount
 	:unnamedmoleculeamount1 | unnamedmoleculeamount2 | unnamedmoleculeamount3 ;	
@@ -118,7 +118,7 @@ unnamedmoleculeamount
 unnamedmolecule 
 	: unnamedmoleculeamount -> ^(NODE["UNNAMEDMOLECULE"] unnamedmoleculeamount);	
 		
-amount 	: lrb measurements (comma  measurements)*  rrb ->   ^(NODE["AMOUNT"]  lrb measurements (comma  measurements)*  rrb);
+quantity 	: lrb measurements (comma  measurements)*  rrb ->   ^(NODE["QUANTITY"]  lrb measurements (comma  measurements)*  rrb);
 //amount 	: lrb gram comma  mmol  rrb;     
 method:
     (nngeneral|nn)? nnmethod (oscarcd|cd)?  ;
@@ -154,8 +154,8 @@ inoff:'IN-OFF' TOKEN;
 //Modified Nouns
 nnstate:'NN-STATE' TOKEN;
 nntime:'NN-TIME' TOKEN;
-nngram:'NN-GRAM' TOKEN;
-nnmol:'NN-MOL' TOKEN;
+nnmass:'NN-MASS' TOKEN;
+nnamount:'NN-AMOUNT' TOKEN;
 nnatmosphere:'NN-ATMOSPHERE' TOKEN;
 nneq:'NN-EQ' TOKEN;
 nnvol:'NN-VOL' TOKEN;
@@ -164,7 +164,7 @@ nntemp:'NN-TEMP' TOKEN;
 nnflash:'NN-FLASH' TOKEN;
 nngeneral:'NN-GENERAL' TOKEN;
 nnmethod:'NN-METHOD' TOKEN;
-nnamount:'NN-AMOUNT' TOKEN;
+//nnamount:'NN-AMOUNT' TOKEN;
 nnpressure:'NN-PRESSURE' TOKEN;
 nncolumn:'NN-COLUMN' TOKEN;
 nnchromatography:'NN-CHROMATOGRAPHY' TOKEN;

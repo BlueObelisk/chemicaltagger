@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 12:02:23 /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g 2010-01-17 23:44:15
+// $ANTLR 3.2 Sep 23, 2009 12:02:23 /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g 2010-01-22 19:39:14
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
 import org.antlr.runtime.*;
@@ -734,10 +734,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:34:7: ( 'NN-GRAM' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:34:9: 'NN-GRAM'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:34:7: ( 'NN-MASS' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:34:9: 'NN-MASS'
             {
-            match("NN-GRAM"); 
+            match("NN-MASS"); 
 
 
             }
@@ -755,10 +755,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:35:7: ( 'NN-MOL' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:35:9: 'NN-MOL'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:35:7: ( 'NN-AMOUNT' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:35:9: 'NN-AMOUNT'
             {
-            match("NN-MOL"); 
+            match("NN-AMOUNT"); 
 
 
             }
@@ -944,10 +944,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__46;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:44:7: ( 'NN-AMOUNT' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:44:9: 'NN-AMOUNT'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:44:7: ( 'NN-PRESSURE' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:44:9: 'NN-PRESSURE'
             {
-            match("NN-AMOUNT"); 
+            match("NN-PRESSURE"); 
 
 
             }
@@ -965,10 +965,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__47;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:45:7: ( 'NN-PRESSURE' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:45:9: 'NN-PRESSURE'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:45:7: ( 'NN-COLUMN' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:45:9: 'NN-COLUMN'
             {
-            match("NN-PRESSURE"); 
+            match("NN-COLUMN"); 
 
 
             }
@@ -986,10 +986,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__48;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:46:7: ( 'NN-COLUMN' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:46:9: 'NN-COLUMN'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:46:7: ( 'NN-CHROMATOGRAPHY' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:46:9: 'NN-CHROMATOGRAPHY'
             {
-            match("NN-COLUMN"); 
+            match("NN-CHROMATOGRAPHY"); 
 
 
             }
@@ -1007,10 +1007,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__49;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:47:7: ( 'NN-CHROMATOGRAPHY' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:47:9: 'NN-CHROMATOGRAPHY'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:47:7: ( 'NN-VACUUM' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:47:9: 'NN-VACUUM'
             {
-            match("NN-CHROMATOGRAPHY"); 
+            match("NN-VACUUM"); 
 
 
             }
@@ -1028,10 +1028,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__50;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:48:7: ( 'NN-VACUUM' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:48:9: 'NN-VACUUM'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:48:7: ( 'NN-CYCLE' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:48:9: 'NN-CYCLE'
             {
-            match("NN-VACUUM"); 
+            match("NN-CYCLE"); 
 
 
             }
@@ -1049,10 +1049,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__51;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:49:7: ( 'NN-CYCLE' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:49:9: 'NN-CYCLE'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:49:7: ( 'NN-TIMES' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:49:9: 'NN-TIMES'
             {
-            match("NN-CYCLE"); 
+            match("NN-TIMES"); 
 
 
             }
@@ -1070,10 +1070,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__52;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:50:7: ( 'NN-TIMES' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:50:9: 'NN-TIMES'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:50:7: ( 'OSCAR-CM' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:50:9: 'OSCAR-CM'
             {
-            match("NN-TIMES"); 
+            match("OSCAR-CM"); 
 
 
             }
@@ -1091,10 +1091,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__53;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:51:7: ( 'OSCAR-CM' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:51:9: 'OSCAR-CM'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:51:7: ( 'VB-USE' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:51:9: 'VB-USE'
             {
-            match("OSCAR-CM"); 
+            match("VB-USE"); 
 
 
             }
@@ -1112,10 +1112,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__54;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:52:7: ( 'VB-USE' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:52:9: 'VB-USE'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:52:7: ( 'VB-CHANGE' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:52:9: 'VB-CHANGE'
             {
-            match("VB-USE"); 
+            match("VB-CHANGE"); 
 
 
             }
@@ -1133,10 +1133,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__55;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:53:7: ( 'VB-CHANGE' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:53:9: 'VB-CHANGE'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:53:7: ( 'VB-SUBMERGE' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:53:9: 'VB-SUBMERGE'
             {
-            match("VB-CHANGE"); 
+            match("VB-SUBMERGE"); 
 
 
             }
@@ -1154,10 +1154,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__56;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:54:7: ( 'VB-SUBMERGE' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:54:9: 'VB-SUBMERGE'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:54:7: ( 'VB-SUBJECT' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:54:9: 'VB-SUBJECT'
             {
-            match("VB-SUBMERGE"); 
+            match("VB-SUBJECT"); 
 
 
             }
@@ -1175,10 +1175,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__57;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:55:7: ( 'VB-SUBJECT' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:55:9: 'VB-SUBJECT'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:55:7: ( 'NN-ADD' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:55:9: 'NN-ADD'
             {
-            match("VB-SUBJECT"); 
+            match("NN-ADD"); 
 
 
             }
@@ -1196,10 +1196,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__58;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:56:7: ( 'NN-ADD' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:56:9: 'NN-ADD'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:56:7: ( 'NN-MIXTURE' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:56:9: 'NN-MIXTURE'
             {
-            match("NN-ADD"); 
+            match("NN-MIXTURE"); 
 
 
             }
@@ -1217,10 +1217,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__59;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:57:7: ( 'NN-MIXTURE' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:57:9: 'NN-MIXTURE'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:57:7: ( 'VB-ADD' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:57:9: 'VB-ADD'
             {
-            match("NN-MIXTURE"); 
+            match("VB-ADD"); 
 
 
             }
@@ -1238,10 +1238,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__60;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:58:7: ( 'VB-ADD' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:58:9: 'VB-ADD'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:58:7: ( 'VB-CHARGE' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:58:9: 'VB-CHARGE'
             {
-            match("VB-ADD"); 
+            match("VB-CHARGE"); 
 
 
             }
@@ -1259,10 +1259,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__61;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:59:7: ( 'VB-CHARGE' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:59:9: 'VB-CHARGE'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:59:7: ( 'VB-CONTAIN' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:59:9: 'VB-CONTAIN'
             {
-            match("VB-CHARGE"); 
+            match("VB-CONTAIN"); 
 
 
             }
@@ -1280,10 +1280,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__62;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:60:7: ( 'VB-CONTAIN' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:60:9: 'VB-CONTAIN'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:60:7: ( 'VB-DROP' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:60:9: 'VB-DROP'
             {
-            match("VB-CONTAIN"); 
+            match("VB-DROP"); 
 
 
             }
@@ -1301,10 +1301,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__63;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:61:7: ( 'VB-DROP' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:61:9: 'VB-DROP'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:61:7: ( 'VB-FILL' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:61:9: 'VB-FILL'
             {
-            match("VB-DROP"); 
+            match("VB-FILL"); 
 
 
             }
@@ -1322,10 +1322,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__64;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:62:7: ( 'VB-FILL' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:62:9: 'VB-FILL'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:62:7: ( 'VB-SUSPEND' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:62:9: 'VB-SUSPEND'
             {
-            match("VB-FILL"); 
+            match("VB-SUSPEND"); 
 
 
             }
@@ -1343,10 +1343,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__65;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:63:7: ( 'VB-SUSPEND' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:63:9: 'VB-SUSPEND'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:63:7: ( 'VB-TREAT' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:63:9: 'VB-TREAT'
             {
-            match("VB-SUSPEND"); 
+            match("VB-TREAT"); 
 
 
             }
@@ -1364,10 +1364,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__66;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:64:7: ( 'VB-TREAT' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:64:9: 'VB-TREAT'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:64:7: ( 'VB-APPARATUS' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:64:9: 'VB-APPARATUS'
             {
-            match("VB-TREAT"); 
+            match("VB-APPARATUS"); 
 
 
             }
@@ -1385,10 +1385,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__67;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:65:7: ( 'VB-APPARATUS' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:65:9: 'VB-APPARATUS'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:65:7: ( 'NN-APPARATUS' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:65:9: 'NN-APPARATUS'
             {
-            match("VB-APPARATUS"); 
+            match("NN-APPARATUS"); 
 
 
             }
@@ -1406,10 +1406,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__68;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:66:7: ( 'NN-APPARATUS' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:66:9: 'NN-APPARATUS'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:66:7: ( 'VB-CONCENTRATE' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:66:9: 'VB-CONCENTRATE'
             {
-            match("NN-APPARATUS"); 
+            match("VB-CONCENTRATE"); 
 
 
             }
@@ -1427,10 +1427,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__69;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:67:7: ( 'VB-CONCENTRATE' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:67:9: 'VB-CONCENTRATE'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:67:7: ( 'NN-CONCENTRATE' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:67:9: 'NN-CONCENTRATE'
             {
-            match("VB-CONCENTRATE"); 
+            match("NN-CONCENTRATE"); 
 
 
             }
@@ -1448,10 +1448,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__70;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:68:7: ( 'NN-CONCENTRATE' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:68:9: 'NN-CONCENTRATE'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:68:7: ( 'VB-COOL' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:68:9: 'VB-COOL'
             {
-            match("NN-CONCENTRATE"); 
+            match("VB-COOL"); 
 
 
             }
@@ -1469,10 +1469,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__71;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:69:7: ( 'VB-COOL' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:69:9: 'VB-COOL'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:69:7: ( 'VB-DEGASS' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:69:9: 'VB-DEGASS'
             {
-            match("VB-COOL"); 
+            match("VB-DEGASS"); 
 
 
             }
@@ -1490,10 +1490,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__72;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:70:7: ( 'VB-DEGASS' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:70:9: 'VB-DEGASS'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:70:7: ( 'VB-DISSOLVE' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:70:9: 'VB-DISSOLVE'
             {
-            match("VB-DEGASS"); 
+            match("VB-DISSOLVE"); 
 
 
             }
@@ -1511,10 +1511,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__73;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:71:7: ( 'VB-DISSOLVE' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:71:9: 'VB-DISSOLVE'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:71:7: ( 'VB-DRY' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:71:9: 'VB-DRY'
             {
-            match("VB-DISSOLVE"); 
+            match("VB-DRY"); 
 
 
             }
@@ -1532,10 +1532,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__74;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:72:7: ( 'VB-DRY' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:72:9: 'VB-DRY'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:72:7: ( 'NN-DRY' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:72:9: 'NN-DRY'
             {
-            match("VB-DRY"); 
+            match("NN-DRY"); 
 
 
             }
@@ -1553,10 +1553,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__75;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:73:7: ( 'NN-DRY' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:73:9: 'NN-DRY'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:73:7: ( 'VB-EXTRACT' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:73:9: 'VB-EXTRACT'
             {
-            match("NN-DRY"); 
+            match("VB-EXTRACT"); 
 
 
             }
@@ -1574,10 +1574,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__76;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:74:7: ( 'VB-EXTRACT' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:74:9: 'VB-EXTRACT'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:74:7: ( 'NN-EXTRACT' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:74:9: 'NN-EXTRACT'
             {
-            match("VB-EXTRACT"); 
+            match("NN-EXTRACT"); 
 
 
             }
@@ -1595,10 +1595,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__77;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:75:7: ( 'NN-EXTRACT' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:75:9: 'NN-EXTRACT'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:75:7: ( 'VB-FILTER' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:75:9: 'VB-FILTER'
             {
-            match("NN-EXTRACT"); 
+            match("VB-FILTER"); 
 
 
             }
@@ -1616,10 +1616,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__78;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:76:7: ( 'VB-FILTER' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:76:9: 'VB-FILTER'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:76:7: ( 'NN-FILTER' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:76:9: 'NN-FILTER'
             {
-            match("VB-FILTER"); 
+            match("NN-FILTER"); 
 
 
             }
@@ -1637,10 +1637,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__79;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:77:7: ( 'NN-FILTER' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:77:9: 'NN-FILTER'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:77:7: ( 'VB-HEAT' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:77:9: 'VB-HEAT'
             {
-            match("NN-FILTER"); 
+            match("VB-HEAT"); 
 
 
             }
@@ -1658,10 +1658,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__80;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:78:7: ( 'VB-HEAT' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:78:9: 'VB-HEAT'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:78:7: ( 'VB-INCREASE' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:78:9: 'VB-INCREASE'
             {
-            match("VB-HEAT"); 
+            match("VB-INCREASE"); 
 
 
             }
@@ -1679,10 +1679,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__81;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:79:7: ( 'VB-INCREASE' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:79:9: 'VB-INCREASE'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:79:7: ( 'VB-PARTITION' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:79:9: 'VB-PARTITION'
             {
-            match("VB-INCREASE"); 
+            match("VB-PARTITION"); 
 
 
             }
@@ -1700,10 +1700,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__82;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:80:7: ( 'VB-PARTITION' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:80:9: 'VB-PARTITION'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:80:7: ( 'VB-PRECIPITATE' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:80:9: 'VB-PRECIPITATE'
             {
-            match("VB-PARTITION"); 
+            match("VB-PRECIPITATE"); 
 
 
             }
@@ -1721,10 +1721,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__83;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:81:7: ( 'VB-PRECIPITATE' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:81:9: 'VB-PRECIPITATE'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:81:7: ( 'NN-PRECIPITATE' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:81:9: 'NN-PRECIPITATE'
             {
-            match("VB-PRECIPITATE"); 
+            match("NN-PRECIPITATE"); 
 
 
             }
@@ -1742,10 +1742,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__84;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:82:7: ( 'NN-PRECIPITATE' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:82:9: 'NN-PRECIPITATE'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:82:7: ( 'VB-PURIFY' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:82:9: 'VB-PURIFY'
             {
-            match("NN-PRECIPITATE"); 
+            match("VB-PURIFY"); 
 
 
             }
@@ -1763,10 +1763,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__85;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:83:7: ( 'VB-PURIFY' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:83:9: 'VB-PURIFY'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:83:7: ( 'NN-PURIFY' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:83:9: 'NN-PURIFY'
             {
-            match("VB-PURIFY"); 
+            match("NN-PURIFY"); 
 
 
             }
@@ -1784,10 +1784,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__86;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:84:7: ( 'NN-PURIFY' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:84:9: 'NN-PURIFY'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:84:7: ( 'VB-QUENCH' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:84:9: 'VB-QUENCH'
             {
-            match("NN-PURIFY"); 
+            match("VB-QUENCH"); 
 
 
             }
@@ -1805,10 +1805,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__87;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:85:7: ( 'VB-QUENCH' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:85:9: 'VB-QUENCH'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:85:7: ( 'VB-RECOVER' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:85:9: 'VB-RECOVER'
             {
-            match("VB-QUENCH"); 
+            match("VB-RECOVER"); 
 
 
             }
@@ -1826,10 +1826,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__88;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:86:7: ( 'VB-RECOVER' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:86:9: 'VB-RECOVER'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:86:7: ( 'VB-REMOVE' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:86:9: 'VB-REMOVE'
             {
-            match("VB-RECOVER"); 
+            match("VB-REMOVE"); 
 
 
             }
@@ -1847,10 +1847,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__89;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:87:7: ( 'VB-REMOVE' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:87:9: 'VB-REMOVE'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:87:7: ( 'NN-REMOVE' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:87:9: 'NN-REMOVE'
             {
-            match("VB-REMOVE"); 
+            match("NN-REMOVE"); 
 
 
             }
@@ -1868,10 +1868,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__90;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:88:7: ( 'NN-REMOVE' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:88:9: 'NN-REMOVE'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:88:7: ( 'VB-STIR' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:88:9: 'VB-STIR'
             {
-            match("NN-REMOVE"); 
+            match("VB-STIR"); 
 
 
             }
@@ -1889,10 +1889,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__91;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:89:7: ( 'VB-STIR' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:89:9: 'VB-STIR'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:89:7: ( 'VB-SYNTHESIZE' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:89:9: 'VB-SYNTHESIZE'
             {
-            match("VB-STIR"); 
+            match("VB-SYNTHESIZE"); 
 
 
             }
@@ -1910,10 +1910,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__92;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:90:7: ( 'VB-SYNTHESIZE' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:90:9: 'VB-SYNTHESIZE'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:90:7: ( 'NN-SYNTHESIZE' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:90:9: 'NN-SYNTHESIZE'
             {
-            match("VB-SYNTHESIZE"); 
+            match("NN-SYNTHESIZE"); 
 
 
             }
@@ -1931,10 +1931,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__93;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:91:7: ( 'NN-SYNTHESIZE' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:91:9: 'NN-SYNTHESIZE'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:91:7: ( 'VB-WAIT' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:91:9: 'VB-WAIT'
             {
-            match("NN-SYNTHESIZE"); 
+            match("VB-WAIT"); 
 
 
             }
@@ -1952,10 +1952,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__94;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:92:7: ( 'VB-WAIT' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:92:9: 'VB-WAIT'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:92:7: ( 'VB-WASH' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:92:9: 'VB-WASH'
             {
-            match("VB-WAIT"); 
+            match("VB-WASH"); 
 
 
             }
@@ -1973,10 +1973,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__95;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:93:7: ( 'VB-WASH' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:93:9: 'VB-WASH'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:93:7: ( 'VB-YIELD' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:93:9: 'VB-YIELD'
             {
-            match("VB-WASH"); 
+            match("VB-YIELD"); 
 
 
             }
@@ -1994,10 +1994,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__96;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:94:7: ( 'VB-YIELD' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:94:9: 'VB-YIELD'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:94:7: ( 'COLON' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:94:9: 'COLON'
             {
-            match("VB-YIELD"); 
+            match("COLON"); 
 
 
             }
@@ -2015,10 +2015,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__97;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:95:7: ( 'COLON' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:95:9: 'COLON'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:95:7: ( 'COMMA' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:95:9: 'COMMA'
             {
-            match("COLON"); 
+            match("COMMA"); 
 
 
             }
@@ -2036,10 +2036,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__98;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:96:7: ( 'COMMA' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:96:9: 'COMMA'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:96:7: ( 'APOST' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:96:9: 'APOST'
             {
-            match("COMMA"); 
+            match("APOST"); 
 
 
             }
@@ -2057,10 +2057,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__99;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:97:7: ( 'APOST' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:97:9: 'APOST'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:97:7: ( 'NEG' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:97:9: 'NEG'
             {
-            match("APOST"); 
+            match("NEG"); 
 
 
             }
@@ -2078,10 +2078,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__100;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:98:8: ( 'NEG' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:98:10: 'NEG'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:98:8: ( 'DASH' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:98:10: 'DASH'
             {
-            match("NEG"); 
+            match("DASH"); 
 
 
             }
@@ -2099,10 +2099,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__101;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:99:8: ( 'DASH' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:99:10: 'DASH'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:99:8: ( 'STOP' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:99:10: 'STOP'
             {
-            match("DASH"); 
+            match("STOP"); 
 
 
             }
@@ -2120,10 +2120,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__102;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:100:8: ( 'STOP' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:100:10: 'STOP'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:100:8: ( 'NN-PERCENT' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:100:10: 'NN-PERCENT'
             {
-            match("STOP"); 
+            match("NN-PERCENT"); 
 
 
             }
@@ -2141,10 +2141,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__103;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:101:8: ( 'NN-PERCENT' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:101:10: 'NN-PERCENT'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:101:8: ( 'LSQB' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:101:10: 'LSQB'
             {
-            match("NN-PERCENT"); 
+            match("LSQB"); 
 
 
             }
@@ -2162,10 +2162,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__104;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:102:8: ( 'LSQB' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:102:10: 'LSQB'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:102:8: ( 'RSQB' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:102:10: 'RSQB'
             {
-            match("LSQB"); 
+            match("RSQB"); 
 
 
             }
@@ -2183,10 +2183,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__105;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:103:8: ( 'RSQB' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:103:10: 'RSQB'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:103:8: ( '-LRB-' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:103:10: '-LRB-'
             {
-            match("RSQB"); 
+            match("-LRB-"); 
 
 
             }
@@ -2204,10 +2204,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__106;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:104:8: ( '-LRB-' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:104:10: '-LRB-'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:104:8: ( '-RRB-' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:104:10: '-RRB-'
             {
-            match("-LRB-"); 
+            match("-RRB-"); 
 
 
             }
@@ -2225,10 +2225,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__107;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:105:8: ( '-RRB-' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:105:10: '-RRB-'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:105:8: ( 'ABL' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:105:10: 'ABL'
             {
-            match("-RRB-"); 
+            match("ABL"); 
 
 
             }
@@ -2246,10 +2246,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__108;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:106:8: ( 'ABL' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:106:10: 'ABL'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:106:8: ( 'ABN' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:106:10: 'ABN'
             {
-            match("ABL"); 
+            match("ABN"); 
 
 
             }
@@ -2267,10 +2267,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__109;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:107:8: ( 'ABN' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:107:10: 'ABN'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:107:8: ( 'ABX' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:107:10: 'ABX'
             {
-            match("ABN"); 
+            match("ABX"); 
 
 
             }
@@ -2288,10 +2288,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__110;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:108:8: ( 'ABX' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:108:10: 'ABX'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:108:8: ( 'AP' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:108:10: 'AP'
             {
-            match("ABX"); 
+            match("AP"); 
 
 
             }
@@ -2309,10 +2309,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__111;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:109:8: ( 'AP' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:109:10: 'AP'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:109:8: ( 'AT' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:109:10: 'AT'
             {
-            match("AP"); 
+            match("AT"); 
 
 
             }
@@ -2330,10 +2330,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__112;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:110:8: ( 'AT' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:110:10: 'AT'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:110:8: ( 'BE' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:110:10: 'BE'
             {
-            match("AT"); 
+            match("BE"); 
 
 
             }
@@ -2351,10 +2351,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__113;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:111:8: ( 'BE' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:111:10: 'BE'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:111:8: ( 'BED' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:111:10: 'BED'
             {
-            match("BE"); 
+            match("BED"); 
 
 
             }
@@ -2372,10 +2372,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__114;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:112:8: ( 'BED' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:112:10: 'BED'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:112:8: ( 'BEDZ' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:112:10: 'BEDZ'
             {
-            match("BED"); 
+            match("BEDZ"); 
 
 
             }
@@ -2393,10 +2393,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__115;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:113:8: ( 'BEDZ' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:113:10: 'BEDZ'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:113:8: ( 'BEG' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:113:10: 'BEG'
             {
-            match("BEDZ"); 
+            match("BEG"); 
 
 
             }
@@ -2414,10 +2414,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__116;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:114:8: ( 'BEG' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:114:10: 'BEG'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:114:8: ( 'BEM' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:114:10: 'BEM'
             {
-            match("BEG"); 
+            match("BEM"); 
 
 
             }
@@ -2435,10 +2435,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__117;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:115:8: ( 'BEM' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:115:10: 'BEM'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:115:8: ( 'BEN' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:115:10: 'BEN'
             {
-            match("BEM"); 
+            match("BEN"); 
 
 
             }
@@ -2456,10 +2456,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__118;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:116:8: ( 'BEN' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:116:10: 'BEN'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:116:8: ( 'BER' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:116:10: 'BER'
             {
-            match("BEN"); 
+            match("BER"); 
 
 
             }
@@ -2477,10 +2477,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__119;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:117:8: ( 'BER' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:117:10: 'BER'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:117:8: ( 'BEZ' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:117:10: 'BEZ'
             {
-            match("BER"); 
+            match("BEZ"); 
 
 
             }
@@ -2498,10 +2498,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__120;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:118:8: ( 'BEZ' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:118:10: 'BEZ'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:118:8: ( 'CC' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:118:10: 'CC'
             {
-            match("BEZ"); 
+            match("CC"); 
 
 
             }
@@ -2519,10 +2519,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__121;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:119:8: ( 'CC' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:119:10: 'CC'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:119:8: ( 'CD' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:119:10: 'CD'
             {
-            match("CC"); 
+            match("CD"); 
 
 
             }
@@ -2540,10 +2540,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__122;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:120:8: ( 'CD' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:120:10: 'CD'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:120:8: ( 'CS' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:120:10: 'CS'
             {
-            match("CD"); 
+            match("CS"); 
 
 
             }
@@ -2561,10 +2561,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__123;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:121:8: ( 'CS' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:121:10: 'CS'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:121:8: ( 'DO' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:121:10: 'DO'
             {
-            match("CS"); 
+            match("DO"); 
 
 
             }
@@ -2582,10 +2582,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__124;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:122:8: ( 'DO' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:122:10: 'DO'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:122:8: ( 'DOD' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:122:10: 'DOD'
             {
-            match("DO"); 
+            match("DOD"); 
 
 
             }
@@ -2603,10 +2603,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__125;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:123:8: ( 'DOD' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:123:10: 'DOD'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:123:8: ( 'DOZ' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:123:10: 'DOZ'
             {
-            match("DOD"); 
+            match("DOZ"); 
 
 
             }
@@ -2624,10 +2624,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__126;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:124:8: ( 'DOZ' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:124:10: 'DOZ'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:124:8: ( 'DT' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:124:10: 'DT'
             {
-            match("DOZ"); 
+            match("DT"); 
 
 
             }
@@ -2645,10 +2645,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__127;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:125:8: ( 'DT' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:125:10: 'DT'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:125:8: ( 'DTI' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:125:10: 'DTI'
             {
-            match("DT"); 
+            match("DTI"); 
 
 
             }
@@ -2666,10 +2666,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__128;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:126:8: ( 'DTI' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:126:10: 'DTI'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:126:8: ( 'DTS' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:126:10: 'DTS'
             {
-            match("DTI"); 
+            match("DTS"); 
 
 
             }
@@ -2687,10 +2687,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__129;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:127:8: ( 'DTS' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:127:10: 'DTS'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:127:8: ( 'DTX' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:127:10: 'DTX'
             {
-            match("DTS"); 
+            match("DTX"); 
 
 
             }
@@ -2708,10 +2708,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__130;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:128:8: ( 'DTX' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:128:10: 'DTX'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:128:8: ( 'EX' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:128:10: 'EX'
             {
-            match("DTX"); 
+            match("EX"); 
 
 
             }
@@ -2729,10 +2729,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__131;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:129:8: ( 'EX' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:129:10: 'EX'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:129:8: ( 'FW' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:129:10: 'FW'
             {
-            match("EX"); 
+            match("FW"); 
 
 
             }
@@ -2750,10 +2750,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__132;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:130:8: ( 'FW' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:130:10: 'FW'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:130:8: ( 'FW-IN' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:130:10: 'FW-IN'
             {
-            match("FW"); 
+            match("FW-IN"); 
 
 
             }
@@ -4072,44 +4072,151 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:28:7: ( ( ACHAR | DIGIT | UNICODE )+ )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:28:9: ( ACHAR | DIGIT | UNICODE )+
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:29:7: ( ( ACHAR | '?' | ';' | '_' | ',' | '.' | ')' | '(' | '/' | '-' | '=' | ':' | '%' | '\\'' | '{' | '}' | '[' | ']' | DIGIT | UNICODE )+ )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:29:9: ( ACHAR | '?' | ';' | '_' | ',' | '.' | ')' | '(' | '/' | '-' | '=' | ':' | '%' | '\\'' | '{' | '}' | '[' | ']' | DIGIT | UNICODE )+
             {
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:28:9: ( ACHAR | DIGIT | UNICODE )+
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:29:9: ( ACHAR | '?' | ';' | '_' | ',' | '.' | ')' | '(' | '/' | '-' | '=' | ':' | '%' | '\\'' | '{' | '}' | '[' | ']' | DIGIT | UNICODE )+
             int cnt4=0;
             loop4:
             do {
-                int alt4=4;
-                int LA4_0 = input.LA(1);
-
-                if ( ((LA4_0>='A' && LA4_0<='Z')||(LA4_0>='a' && LA4_0<='z')) ) {
-                    alt4=1;
-                }
-                else if ( ((LA4_0>='0' && LA4_0<='9')) ) {
-                    alt4=2;
-                }
-                else if ( ((LA4_0>='\u00B0' && LA4_0<='\uFFFE')) ) {
-                    alt4=3;
-                }
-
-
+                int alt4=21;
+                alt4 = dfa4.predict(input);
                 switch (alt4) {
             	case 1 :
-            	    // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:28:10: ACHAR
+            	    // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:29:10: ACHAR
             	    {
             	    mACHAR(); 
 
             	    }
             	    break;
             	case 2 :
-            	    // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:28:16: DIGIT
+            	    // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:29:16: '?'
+            	    {
+            	    match('?'); 
+
+            	    }
+            	    break;
+            	case 3 :
+            	    // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:29:20: ';'
+            	    {
+            	    match(';'); 
+
+            	    }
+            	    break;
+            	case 4 :
+            	    // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:29:25: '_'
+            	    {
+            	    match('_'); 
+
+            	    }
+            	    break;
+            	case 5 :
+            	    // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:29:29: ','
+            	    {
+            	    match(','); 
+
+            	    }
+            	    break;
+            	case 6 :
+            	    // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:29:34: '.'
+            	    {
+            	    match('.'); 
+
+            	    }
+            	    break;
+            	case 7 :
+            	    // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:29:38: ')'
+            	    {
+            	    match(')'); 
+
+            	    }
+            	    break;
+            	case 8 :
+            	    // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:29:42: '('
+            	    {
+            	    match('('); 
+
+            	    }
+            	    break;
+            	case 9 :
+            	    // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:29:46: '/'
+            	    {
+            	    match('/'); 
+
+            	    }
+            	    break;
+            	case 10 :
+            	    // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:29:50: '-'
+            	    {
+            	    match('-'); 
+
+            	    }
+            	    break;
+            	case 11 :
+            	    // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:29:54: '='
+            	    {
+            	    match('='); 
+
+            	    }
+            	    break;
+            	case 12 :
+            	    // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:29:58: ':'
+            	    {
+            	    match(':'); 
+
+            	    }
+            	    break;
+            	case 13 :
+            	    // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:29:62: '%'
+            	    {
+            	    match('%'); 
+
+            	    }
+            	    break;
+            	case 14 :
+            	    // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:29:66: '\\''
+            	    {
+            	    match('\''); 
+
+            	    }
+            	    break;
+            	case 15 :
+            	    // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:29:71: '{'
+            	    {
+            	    match('{'); 
+
+            	    }
+            	    break;
+            	case 16 :
+            	    // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:29:75: '}'
+            	    {
+            	    match('}'); 
+
+            	    }
+            	    break;
+            	case 17 :
+            	    // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:29:79: '['
+            	    {
+            	    match('['); 
+
+            	    }
+            	    break;
+            	case 18 :
+            	    // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:29:83: ']'
+            	    {
+            	    match(']'); 
+
+            	    }
+            	    break;
+            	case 19 :
+            	    // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:29:87: DIGIT
             	    {
             	    mDIGIT(); 
 
             	    }
             	    break;
-            	case 3 :
-            	    // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:28:22: UNICODE
+            	case 20 :
+            	    // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:29:93: UNICODE
             	    {
             	    mUNICODE(); 
 
@@ -5393,99 +5500,276 @@ public class ChemicalChunkerLexer extends Lexer {
     }
 
 
+    protected DFA4 dfa4 = new DFA4(this);
     protected DFA5 dfa5 = new DFA5(this);
+    static final String DFA4_eotS =
+        "\1\1\25\uffff";
+    static final String DFA4_eofS =
+        "\26\uffff";
+    static final String DFA4_minS =
+        "\1\45\25\uffff";
+    static final String DFA4_maxS =
+        "\1\ufffe\25\uffff";
+    static final String DFA4_acceptS =
+        "\1\uffff\1\25\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1"+
+        "\14\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24";
+    static final String DFA4_specialS =
+        "\26\uffff}>";
+    static final String[] DFA4_transitionS = {
+            "\1\16\1\uffff\1\17\1\11\1\10\2\uffff\1\6\1\13\1\7\1\12\12\24"+
+            "\1\15\1\4\1\uffff\1\14\1\uffff\1\3\1\uffff\32\2\1\22\1\uffff"+
+            "\1\23\1\uffff\1\5\1\uffff\32\2\1\20\1\uffff\1\21\62\uffff\uff4f"+
+            "\25",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+    };
+
+    static final short[] DFA4_eot = DFA.unpackEncodedString(DFA4_eotS);
+    static final short[] DFA4_eof = DFA.unpackEncodedString(DFA4_eofS);
+    static final char[] DFA4_min = DFA.unpackEncodedStringToUnsignedChars(DFA4_minS);
+    static final char[] DFA4_max = DFA.unpackEncodedStringToUnsignedChars(DFA4_maxS);
+    static final short[] DFA4_accept = DFA.unpackEncodedString(DFA4_acceptS);
+    static final short[] DFA4_special = DFA.unpackEncodedString(DFA4_specialS);
+    static final short[][] DFA4_transition;
+
+    static {
+        int numStates = DFA4_transitionS.length;
+        DFA4_transition = new short[numStates][];
+        for (int i=0; i<numStates; i++) {
+            DFA4_transition[i] = DFA.unpackEncodedString(DFA4_transitionS[i]);
+        }
+    }
+
+    class DFA4 extends DFA {
+
+        public DFA4(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 4;
+            this.eot = DFA4_eot;
+            this.eof = DFA4_eof;
+            this.min = DFA4_min;
+            this.max = DFA4_max;
+            this.accept = DFA4_accept;
+            this.special = DFA4_special;
+            this.transition = DFA4_transition;
+        }
+        public String getDescription() {
+            return "()+ loopback of 29:9: ( ACHAR | '?' | ';' | '_' | ',' | '.' | ')' | '(' | '/' | '-' | '=' | ':' | '%' | '\\'' | '{' | '}' | '[' | ']' | DIGIT | UNICODE )+";
+        }
+    }
     static final String DFA5_eotS =
-        "\1\uffff\13\31\1\uffff\12\31\3\uffff\1\31\1\110\1\31\1\112\1\114"+
-        "\1\31\1\117\1\120\1\122\1\127\1\31\1\131\1\134\1\135\1\143\1\145"+
-        "\1\31\1\151\1\31\1\155\1\161\4\31\1\170\1\171\1\172\2\uffff\1\u0081"+
-        "\1\u0082\1\u0083\1\u0087\1\u008b\1\u008c\1\u008e\2\31\1\u0095\1"+
-        "\u0096\5\31\5\uffff\2\31\6\uffff\1\u00b5\1\u00b6\1\uffff\1\u00b7"+
-        "\2\uffff\1\u00b9\3\uffff\1\u00c9\1\u00ca\1\u00cb\1\u00cc\1\uffff"+
-        "\1\31\1\uffff\1\u00ce\1\u00cf\1\u00d0\1\uffff\1\31\1\u00d2\1\u00d3"+
-        "\1\uffff\1\u00d4\1\u00d5\1\u00d6\1\uffff\1\31\1\u00d8\2\31\1\u00db"+
-        "\1\u00dc\3\uffff\1\u00de\1\u00df\1\u00e0\1\u00e1\1\u00e2\1\u00e3"+
-        "\3\uffff\1\u00e4\1\u00e5\1\u00e6\1\uffff\1\u00e7\1\u00e8\1\u00e9"+
-        "\4\uffff\1\u00eb\1\u00ed\1\u00ee\1\u00f0\1\u00f1\1\u00f2\2\uffff"+
-        "\1\u00f3\1\uffff\1\u00f4\1\u00f5\1\u00f6\1\u00f7\3\31\55\uffff\1"+
-        "\31\3\uffff\1\u0130\5\uffff\1\u0131\1\uffff\1\u0132\1\u0133\2\uffff"+
-        "\1\u0134\16\uffff\1\u0135\2\uffff\1\u0136\10\uffff\1\31\1\u0138"+
-        "\1\u0139\4\uffff\1\u013b\1\uffff\1\u013e\55\uffff\1\u0151\45\uffff"+
-        "\1\u0166\1\u0168\22\uffff";
+        "\1\uffff\26\31\3\uffff\1\31\1\110\1\31\1\112\1\114\1\31\1\117\1"+
+        "\120\1\122\1\127\1\31\1\131\1\134\1\135\1\143\1\145\1\31\1\151\1"+
+        "\31\1\155\1\161\4\31\1\170\1\171\1\172\2\31\1\u0083\1\u0084\1\u0086"+
+        "\1\u008a\1\u008e\1\u008f\1\u0091\2\31\1\u0098\1\u0099\5\31\1\uffff"+
+        "\1\31\1\uffff\1\31\1\uffff\2\31\2\uffff\1\31\1\uffff\1\31\1\uffff"+
+        "\1\u00ba\1\u00bb\1\uffff\1\u00bc\2\uffff\1\u00be\2\uffff\1\31\1"+
+        "\u00ce\1\u00cf\1\u00d0\1\u00d1\1\uffff\1\31\1\uffff\1\u00d3\1\u00d4"+
+        "\1\u00d5\1\uffff\1\31\1\u00d7\1\u00d8\1\uffff\1\u00d9\1\u00da\1"+
+        "\u00db\1\uffff\1\31\1\u00dd\2\31\1\u00e0\1\u00e1\3\uffff\2\31\1"+
+        "\u00e5\1\u00e6\1\u00e7\1\u00e8\1\u00e9\1\u00ea\2\uffff\1\31\1\uffff"+
+        "\1\u00ec\1\u00ed\1\u00ee\1\uffff\1\u00ef\1\u00f0\1\u00f1\4\uffff"+
+        "\1\u00f3\1\u00f5\1\u00f6\1\u00f8\1\u00f9\1\u00fa\2\uffff\1\u00fb"+
+        "\1\uffff\1\u00fc\1\u00fd\1\u00fe\1\u00ff\31\31\6\uffff\17\31\4\uffff"+
+        "\1\31\3\uffff\1\u0144\5\uffff\1\u0145\1\uffff\1\u0146\1\u0147\2"+
+        "\uffff\2\31\1\u014a\6\uffff\1\31\10\uffff\1\u014c\2\uffff\1\u014d"+
+        "\10\uffff\3\31\1\u0151\1\u0152\1\u0153\2\31\1\u0156\1\u0158\2\31"+
+        "\1\u015c\1\u015d\17\31\1\u016d\45\31\1\u019a\4\uffff\1\u019b\1\u019c"+
+        "\1\uffff\1\u019d\2\uffff\3\31\3\uffff\2\31\1\uffff\1\31\1\uffff"+
+        "\1\31\1\u01a7\1\u01a8\2\uffff\1\31\1\u01aa\13\31\1\u01b6\1\31\1"+
+        "\uffff\1\31\1\u01b9\14\31\1\u01c7\1\31\1\u01c9\7\31\1\u01d4\2\31"+
+        "\1\u01d7\20\31\4\uffff\7\31\1\u01f3\1\u01f5\2\uffff\1\u01f6\1\uffff"+
+        "\1\u01f7\3\31\1\u01fc\1\u01fd\1\u01fe\4\31\1\uffff\2\31\1\uffff"+
+        "\15\31\1\uffff\1\31\1\uffff\4\31\1\u0217\3\31\1\u021b\1\31\1\uffff"+
+        "\1\31\1\u021e\1\uffff\2\31\1\u0221\3\31\1\u0225\7\31\1\u022d\1\u022e"+
+        "\1\31\1\u0230\1\u0231\1\31\1\u0233\1\u0234\3\31\1\u0238\1\31\1\uffff"+
+        "\1\31\3\uffff\1\u023b\1\u023c\1\31\1\u023e\3\uffff\13\31\1\u024a"+
+        "\1\u024b\13\31\1\uffff\3\31\1\uffff\2\31\1\uffff\2\31\1\uffff\1"+
+        "\31\1\u025f\1\31\1\uffff\7\31\2\uffff\1\u0268\2\uffff\1\u0269\2"+
+        "\uffff\1\u026a\2\31\1\uffff\1\u026d\1\31\2\uffff\1\31\1\uffff\1"+
+        "\u0270\1\31\1\u0272\3\31\1\u0276\2\31\1\u0279\1\31\2\uffff\1\u027b"+
+        "\3\31\1\u027f\1\31\1\u0281\1\u0282\1\u0283\7\31\1\u028b\1\31\1\u028d"+
+        "\1\uffff\4\31\1\u0292\1\u0293\1\31\1\u0295\3\uffff\1\u0296\1\u0297"+
+        "\1\uffff\1\u0298\1\31\1\uffff\1\u029a\1\uffff\2\31\1\u029d\1\uffff"+
+        "\2\31\1\uffff\1\31\1\uffff\1\u02a1\2\31\1\uffff\1\u02a4\3\uffff"+
+        "\1\u02a5\2\31\1\u02a8\1\u02a9\2\31\1\uffff\1\31\1\uffff\1\u02ad"+
+        "\3\31\2\uffff\1\u02b1\4\uffff\1\31\1\uffff\2\31\1\uffff\3\31\1\uffff"+
+        "\1\u02b8\1\31\2\uffff\1\31\1\u02bb\2\uffff\2\31\1\u02be\1\uffff"+
+        "\1\u02bf\2\31\1\uffff\2\31\1\u02c4\3\31\1\uffff\2\31\1\uffff\1\31"+
+        "\1\u02cb\2\uffff\1\u02cc\1\31\1\u02ce\1\u02cf\1\uffff\1\u02d0\4"+
+        "\31\1\u02d5\2\uffff\1\31\3\uffff\1\31\1\u02d8\1\u02d9\1\u02da\1"+
+        "\uffff\1\u02db\1\31\4\uffff\1\31\1\u02de\1\uffff";
     static final String DFA5_eofS =
-        "\u0169\uffff";
+        "\u02df\uffff";
     static final String DFA5_minS =
         "\1\11\1\104\1\115\1\103\1\116\1\103\2\102\1\101\1\124\1\123\1\102"+
         "\1\114\1\105\1\130\1\127\1\126\1\112\1\104\1\116\1\114\1\110\1\104"+
-        "\3\uffff\1\103\1\60\1\55\1\60\1\55\1\114\2\60\1\55\1\44\1\107\1"+
-        "\60\1\44\1\60\1\55\1\60\1\114\1\60\1\123\2\60\1\117\1\115\2\121"+
-        "\3\60\2\uffff\6\60\2\44\1\120\2\60\1\124\1\44\1\114\1\102\1\101"+
-        "\5\uffff\1\117\1\115\2\uffff\1\101\1\uffff\1\101\1\uffff\1\44\1"+
-        "\60\1\uffff\1\60\2\uffff\1\44\2\uffff\1\101\4\60\1\uffff\1\123\1"+
-        "\uffff\3\60\1\uffff\1\110\2\60\1\uffff\3\60\1\uffff\1\120\1\60\2"+
-        "\102\2\60\3\uffff\6\60\3\uffff\3\60\1\uffff\3\60\4\uffff\1\44\5"+
-        "\60\2\uffff\1\60\1\uffff\4\60\1\122\1\116\1\101\1\106\1\105\1\116"+
-        "\1\111\1\uffff\1\106\1\117\1\uffff\1\124\3\105\1\104\1\121\1\101"+
-        "\1\110\1\111\1\105\11\uffff\1\110\1\124\1\104\1\105\1\111\4\uffff"+
-        "\1\101\1\uffff\1\105\1\101\5\uffff\1\124\3\uffff\1\60\5\uffff\1"+
-        "\60\1\uffff\2\60\2\uffff\1\60\16\uffff\1\60\2\uffff\1\60\10\uffff"+
-        "\1\55\2\60\4\uffff\2\124\1\106\6\uffff\1\115\16\uffff\1\105\1\114"+
-        "\3\uffff\1\105\2\uffff\1\101\1\116\1\102\4\uffff\1\117\2\uffff\1"+
-        "\114\3\uffff\1\103\1\111\1\60\7\uffff\1\103\4\uffff\1\110\2\uffff"+
-        "\1\105\4\uffff\1\103\1\116\1\103\1\uffff\1\112\3\uffff\1\114\5\uffff"+
-        "\1\104\2\uffff\1\117\1\123\22\uffff";
+        "\3\uffff\1\103\1\45\1\55\2\45\1\114\3\45\1\44\1\107\1\45\1\44\3"+
+        "\45\1\114\1\45\1\123\2\45\1\117\1\115\2\121\3\45\2\122\6\45\2\44"+
+        "\1\120\2\45\1\124\1\44\1\114\1\102\1\101\1\uffff\1\125\1\uffff\1"+
+        "\125\1\uffff\1\117\1\115\2\uffff\1\101\1\uffff\1\101\1\uffff\1\44"+
+        "\1\45\1\uffff\1\45\2\uffff\1\44\2\uffff\1\101\4\45\1\uffff\1\123"+
+        "\1\uffff\3\45\1\uffff\1\110\2\45\1\uffff\3\45\1\uffff\1\120\1\45"+
+        "\2\102\2\45\3\uffff\2\102\6\45\2\uffff\1\111\1\uffff\3\45\1\uffff"+
+        "\3\45\4\uffff\1\44\5\45\2\uffff\1\45\1\uffff\4\45\1\122\3\116\1"+
+        "\101\1\106\1\105\1\116\2\111\1\106\1\117\1\116\1\124\1\105\1\101"+
+        "\1\104\1\121\1\101\1\110\1\111\2\105\1\122\1\105\6\uffff\1\123\1"+
+        "\110\1\124\1\104\1\105\1\111\1\122\1\130\1\105\1\116\1\101\1\125"+
+        "\1\105\1\101\1\111\4\uffff\1\124\3\uffff\1\45\5\uffff\1\45\1\uffff"+
+        "\2\45\2\uffff\2\55\1\45\6\uffff\1\116\10\uffff\1\45\2\uffff\1\45"+
+        "\10\uffff\1\55\2\111\3\45\1\124\1\106\2\45\1\124\1\101\2\45\1\105"+
+        "\1\122\1\117\1\104\1\101\1\116\2\115\1\123\1\124\1\130\1\117\1\115"+
+        "\1\104\1\120\1\45\1\124\1\114\1\103\1\105\1\114\1\103\1\101\1\114"+
+        "\1\116\1\105\2\122\1\131\1\115\1\105\1\101\1\116\1\102\1\111\1\116"+
+        "\1\104\1\120\1\117\1\107\1\123\1\114\1\105\1\124\1\101\1\103\1\122"+
+        "\1\105\1\122\1\105\1\103\1\111\1\105\1\45\4\uffff\2\45\1\uffff\1"+
+        "\45\2\uffff\3\103\3\uffff\1\105\1\117\1\uffff\1\117\1\uffff\1\110"+
+        "\2\45\2\uffff\1\122\1\45\1\115\1\105\2\124\1\105\1\120\1\123\1\110"+
+        "\1\124\1\125\1\117\1\45\1\101\1\uffff\1\122\1\45\1\125\1\115\1\117"+
+        "\1\125\1\103\1\114\1\123\1\124\1\105\1\103\1\111\1\103\1\45\1\117"+
+        "\1\45\1\116\1\103\1\114\1\112\1\120\1\122\1\124\1\45\1\101\1\120"+
+        "\1\45\1\101\1\123\1\114\1\101\1\122\1\124\1\122\1\124\1\103\1\111"+
+        "\1\116\2\117\1\124\1\110\1\114\4\uffff\1\104\2\116\2\117\2\122\2"+
+        "\45\2\uffff\1\45\1\uffff\1\45\1\122\1\105\1\110\3\45\1\117\1\125"+
+        "\1\116\1\123\1\uffff\1\122\1\101\1\uffff\1\125\1\105\2\115\2\105"+
+        "\1\110\1\105\1\122\1\123\1\111\1\106\1\105\1\uffff\1\126\1\uffff"+
+        "\2\107\1\101\1\105\1\45\3\105\1\45\1\110\1\uffff\1\122\1\45\1\uffff"+
+        "\1\123\1\117\1\45\1\105\1\124\1\101\1\45\1\105\2\111\1\106\1\103"+
+        "\2\126\2\45\1\104\2\45\1\122\2\45\1\124\2\104\1\45\1\105\1\uffff"+
+        "\1\125\3\uffff\2\45\1\105\1\45\3\uffff\1\104\1\122\1\124\1\120\1"+
+        "\101\1\103\1\115\1\116\1\101\2\116\2\45\1\122\1\101\1\125\1\120"+
+        "\1\131\1\116\3\105\1\111\1\116\1\uffff\1\122\1\103\1\116\1\uffff"+
+        "\1\105\1\101\1\uffff\1\123\1\114\1\uffff\1\122\1\45\1\103\1\uffff"+
+        "\1\101\1\124\1\120\1\131\1\110\2\105\2\uffff\1\45\2\uffff\1\45\2"+
+        "\uffff\1\45\2\105\1\uffff\1\45\1\124\2\uffff\1\123\1\uffff\1\45"+
+        "\1\105\1\45\1\110\2\124\1\45\2\124\1\45\1\124\2\uffff\1\45\1\114"+
+        "\1\122\1\111\1\45\1\124\3\45\1\116\1\124\1\107\1\124\1\104\1\123"+
+        "\1\124\1\45\1\126\1\45\1\uffff\1\124\1\123\2\111\2\45\1\122\1\45"+
+        "\3\uffff\2\45\1\uffff\1\45\1\111\1\uffff\1\45\1\uffff\1\105\1\125"+
+        "\1\45\1\uffff\1\111\1\117\1\uffff\1\122\1\uffff\1\45\1\105\1\124"+
+        "\1\uffff\1\45\3\uffff\1\45\1\122\1\105\2\45\1\111\1\125\1\uffff"+
+        "\1\105\1\uffff\1\45\1\105\1\117\1\124\2\uffff\1\45\4\uffff\1\132"+
+        "\1\uffff\1\122\1\123\1\uffff\1\124\1\107\1\101\1\uffff\1\45\1\101"+
+        "\2\uffff\1\101\1\45\2\uffff\1\132\1\123\1\45\1\uffff\1\45\1\116"+
+        "\1\101\1\uffff\2\105\1\45\1\131\1\122\1\124\1\uffff\2\124\1\uffff"+
+        "\1\105\1\45\2\uffff\1\45\1\124\2\45\1\uffff\1\45\1\101\3\105\1\45"+
+        "\2\uffff\1\105\3\uffff\1\120\3\45\1\uffff\1\45\1\110\4\uffff\1\131"+
+        "\1\45\1\uffff";
     static final String DFA5_maxS =
         "\1\ufffe\1\123\1\117\1\123\1\116\1\122\1\102\2\124\1\131\2\123\1"+
         "\122\1\105\1\130\1\127\1\126\1\112\1\104\1\122\1\114\1\110\1\122"+
         "\3\uffff\1\103\1\ufffe\1\55\2\ufffe\1\115\4\ufffe\1\107\5\ufffe"+
-        "\1\130\1\ufffe\1\123\2\ufffe\1\117\1\115\2\121\3\ufffe\2\uffff\7"+
-        "\ufffe\1\123\1\120\2\ufffe\1\124\1\123\1\114\1\102\1\101\5\uffff"+
-        "\1\117\1\115\2\uffff\1\127\1\uffff\1\126\1\uffff\2\ufffe\1\uffff"+
-        "\1\ufffe\2\uffff\1\ufffe\2\uffff\1\131\4\ufffe\1\uffff\1\123\1\uffff"+
-        "\3\ufffe\1\uffff\1\110\2\ufffe\1\uffff\3\ufffe\1\uffff\1\120\1\ufffe"+
-        "\2\102\2\ufffe\3\uffff\6\ufffe\3\uffff\3\ufffe\1\uffff\3\ufffe\4"+
-        "\uffff\1\44\5\ufffe\2\uffff\1\ufffe\1\uffff\4\ufffe\1\122\1\116"+
-        "\1\101\1\123\1\131\1\116\1\111\1\uffff\1\126\1\122\1\uffff\1\131"+
-        "\1\111\1\122\1\117\1\124\1\130\1\117\1\131\1\114\1\125\11\uffff"+
-        "\1\117\1\131\1\120\1\122\1\111\4\uffff\1\125\1\uffff\1\105\1\101"+
-        "\5\uffff\1\124\3\uffff\1\ufffe\5\uffff\1\ufffe\1\uffff\2\ufffe\2"+
-        "\uffff\1\ufffe\16\uffff\1\ufffe\2\uffff\1\ufffe\10\uffff\1\55\2"+
-        "\ufffe\4\uffff\2\124\1\106\6\uffff\1\115\16\uffff\1\122\1\116\3"+
-        "\uffff\1\105\2\uffff\1\101\1\117\1\123\4\uffff\1\131\2\uffff\1\114"+
-        "\3\uffff\1\115\1\123\1\ufffe\7\uffff\1\122\4\uffff\1\110\2\uffff"+
-        "\1\105\4\uffff\1\123\1\122\1\124\1\uffff\1\115\3\uffff\1\124\5\uffff"+
-        "\1\120\2\uffff\1\117\1\123\22\uffff";
+        "\1\130\1\ufffe\1\123\2\ufffe\1\117\1\115\2\121\3\ufffe\2\122\7\ufffe"+
+        "\1\123\1\120\2\ufffe\1\124\1\123\1\114\1\102\1\101\1\uffff\1\125"+
+        "\1\uffff\1\125\1\uffff\1\117\1\115\2\uffff\1\127\1\uffff\1\126\1"+
+        "\uffff\2\ufffe\1\uffff\1\ufffe\2\uffff\1\ufffe\2\uffff\1\131\4\ufffe"+
+        "\1\uffff\1\123\1\uffff\3\ufffe\1\uffff\1\110\2\ufffe\1\uffff\3\ufffe"+
+        "\1\uffff\1\120\1\ufffe\2\102\2\ufffe\3\uffff\2\102\6\ufffe\2\uffff"+
+        "\1\111\1\uffff\3\ufffe\1\uffff\3\ufffe\4\uffff\1\44\5\ufffe\2\uffff"+
+        "\1\ufffe\1\uffff\4\ufffe\1\122\3\116\1\101\1\123\1\131\1\116\2\111"+
+        "\1\126\1\122\1\116\1\131\2\111\1\124\1\130\1\117\1\131\1\114\1\105"+
+        "\1\125\1\122\1\105\6\uffff\1\123\1\117\1\131\1\120\1\122\1\111\1"+
+        "\122\1\130\1\105\1\116\2\125\1\105\1\101\1\111\4\uffff\1\124\3\uffff"+
+        "\1\ufffe\5\uffff\1\ufffe\1\uffff\2\ufffe\2\uffff\2\55\1\ufffe\6"+
+        "\uffff\1\116\10\uffff\1\ufffe\2\uffff\1\ufffe\10\uffff\1\55\2\111"+
+        "\3\ufffe\1\124\1\106\2\ufffe\1\124\1\101\2\ufffe\1\105\1\122\1\117"+
+        "\1\104\1\101\1\116\2\115\1\123\1\124\1\130\1\117\1\115\1\104\1\120"+
+        "\1\ufffe\1\124\1\114\1\103\1\122\1\116\1\103\1\101\1\114\1\116\1"+
+        "\105\2\122\1\131\1\115\1\105\1\101\1\117\1\123\1\111\1\116\1\104"+
+        "\1\120\1\131\1\107\1\123\1\114\1\105\1\124\1\101\1\103\1\122\1\105"+
+        "\1\122\1\105\1\115\1\123\1\105\1\ufffe\4\uffff\2\ufffe\1\uffff\1"+
+        "\ufffe\2\uffff\1\122\2\103\3\uffff\1\105\1\117\1\uffff\1\117\1\uffff"+
+        "\1\110\2\ufffe\2\uffff\1\122\1\ufffe\1\115\1\105\2\124\1\105\1\120"+
+        "\1\123\1\110\1\124\1\125\1\117\1\ufffe\1\101\1\uffff\1\122\1\ufffe"+
+        "\1\125\1\115\1\117\1\125\1\103\1\114\1\123\1\124\1\105\1\123\1\111"+
+        "\1\103\1\ufffe\1\117\1\ufffe\1\122\1\124\1\114\1\115\1\120\1\122"+
+        "\1\124\1\ufffe\1\101\1\120\1\ufffe\1\101\1\123\1\124\1\101\1\122"+
+        "\1\124\1\122\1\124\1\103\1\111\1\116\2\117\1\124\1\110\1\114\4\uffff"+
+        "\1\120\2\116\2\117\2\122\2\ufffe\2\uffff\1\ufffe\1\uffff\1\ufffe"+
+        "\1\122\1\105\1\110\3\ufffe\1\117\1\125\1\116\1\123\1\uffff\1\122"+
+        "\1\101\1\uffff\1\125\1\105\2\115\2\105\1\110\1\105\1\122\1\123\1"+
+        "\111\1\106\1\105\1\uffff\1\126\1\uffff\2\107\1\101\1\105\1\ufffe"+
+        "\3\105\1\ufffe\1\110\1\uffff\1\122\1\ufffe\1\uffff\1\123\1\117\1"+
+        "\ufffe\1\105\1\124\1\101\1\ufffe\1\105\2\111\1\106\1\103\2\126\2"+
+        "\ufffe\1\104\2\ufffe\1\122\2\ufffe\1\124\2\104\1\ufffe\1\105\1\uffff"+
+        "\1\125\3\uffff\2\ufffe\1\105\1\ufffe\3\uffff\1\104\1\122\1\124\1"+
+        "\120\1\101\1\103\1\115\1\116\1\101\2\116\2\ufffe\1\122\1\101\1\125"+
+        "\1\120\1\131\1\116\3\105\1\111\1\116\1\uffff\1\122\1\103\1\116\1"+
+        "\uffff\1\105\1\101\1\uffff\1\123\1\114\1\uffff\1\122\1\ufffe\1\103"+
+        "\1\uffff\1\101\1\124\1\120\1\131\1\110\2\105\2\uffff\1\ufffe\2\uffff"+
+        "\1\ufffe\2\uffff\1\ufffe\2\105\1\uffff\1\ufffe\1\124\2\uffff\1\123"+
+        "\1\uffff\1\ufffe\1\105\1\ufffe\1\110\2\124\1\ufffe\2\124\1\ufffe"+
+        "\1\124\2\uffff\1\ufffe\1\114\1\122\1\111\1\ufffe\1\124\3\ufffe\1"+
+        "\116\1\124\1\107\1\124\1\104\1\123\1\124\1\ufffe\1\126\1\ufffe\1"+
+        "\uffff\1\124\1\123\2\111\2\ufffe\1\122\1\ufffe\3\uffff\2\ufffe\1"+
+        "\uffff\1\ufffe\1\111\1\uffff\1\ufffe\1\uffff\1\105\1\125\1\ufffe"+
+        "\1\uffff\1\111\1\117\1\uffff\1\122\1\uffff\1\ufffe\1\105\1\124\1"+
+        "\uffff\1\ufffe\3\uffff\1\ufffe\1\122\1\105\2\ufffe\1\111\1\125\1"+
+        "\uffff\1\105\1\uffff\1\ufffe\1\105\1\117\1\124\2\uffff\1\ufffe\4"+
+        "\uffff\1\132\1\uffff\1\122\1\123\1\uffff\1\124\1\107\1\101\1\uffff"+
+        "\1\ufffe\1\101\2\uffff\1\101\1\ufffe\2\uffff\1\132\1\123\1\ufffe"+
+        "\1\uffff\1\ufffe\1\116\1\101\1\uffff\2\105\1\ufffe\1\131\1\122\1"+
+        "\124\1\uffff\2\124\1\uffff\1\105\1\ufffe\2\uffff\1\ufffe\1\124\2"+
+        "\ufffe\1\uffff\1\ufffe\1\101\3\105\1\ufffe\2\uffff\1\105\3\uffff"+
+        "\1\120\3\ufffe\1\uffff\1\ufffe\1\110\4\uffff\1\131\1\ufffe\1\uffff";
     static final String DFA5_acceptS =
-        "\27\uffff\1\u00b0\1\u00b1\1\u00b2\34\uffff\1\140\1\141\20\uffff"+
-        "\1\u0090\1\6\1\u00a3\1\7\1\160\2\uffff\1\157\1\161\1\uffff\1\177"+
-        "\1\uffff\1\u0087\2\uffff\1\u0086\1\uffff\1\u0085\1\u008c\1\uffff"+
-        "\1\u008a\1\u008f\5\uffff\1\u00a5\1\uffff\1\145\3\uffff\1\146\3\uffff"+
-        "\1\162\3\uffff\1\165\6\uffff\1\u009d\1\u00a0\1\u00a1\6\uffff\1\147"+
-        "\1\171\1\172\3\uffff\1\173\3\uffff\1\u0080\1\u0084\1\u0092\1\u0091"+
-        "\6\uffff\1\u009b\1\u00a4\1\uffff\1\u00ab\13\uffff\1\20\2\uffff\1"+
-        "\25\12\uffff\1\101\1\120\1\u0089\1\u0088\1\u008b\1\132\1\u008e\1"+
-        "\u008d\1\54\5\uffff\1\70\1\102\1\106\1\107\1\uffff\1\115\2\uffff"+
-        "\1\126\1\u00a6\1\u00a7\1\u00a8\1\u00a9\1\uffff\1\142\1\143\1\144"+
-        "\1\uffff\1\163\1\164\1\166\1\167\1\170\1\uffff\1\u00a2\2\uffff\1"+
-        "\u009e\1\u009f\1\uffff\1\150\1\152\1\153\1\154\1\155\1\156\1\174"+
-        "\1\175\1\176\1\u0081\1\u0082\1\u0083\1\u0094\1\u0093\1\uffff\1\u0095"+
-        "\1\u0098\1\uffff\1\u0099\1\u0097\1\u009c\1\u00aa\1\u00ac\1\u00ad"+
-        "\1\u00ae\1\u00af\3\uffff\1\10\1\12\1\11\1\17\3\uffff\1\22\1\26\1"+
-        "\23\1\24\1\30\1\123\1\uffff\1\40\1\32\1\42\1\33\1\43\1\61\1\34\1"+
-        "\44\1\60\1\72\1\35\1\103\1\36\1\50\2\uffff\1\51\1\41\1\105\1\uffff"+
-        "\1\114\1\135\3\uffff\1\121\1\122\1\62\1\71\1\uffff\1\76\1\77\1\uffff"+
-        "\1\110\1\111\1\113\3\uffff\1\133\1\134\1\136\1\137\1\151\1\u0096"+
-        "\1\u009a\1\uffff\1\127\1\130\1\14\1\13\1\uffff\1\27\1\21\1\uffff"+
-        "\1\37\1\47\1\46\1\74\3\uffff\1\75\1\uffff\1\67\1\65\1\100\1\uffff"+
-        "\1\116\1\117\1\124\1\125\1\131\1\uffff\1\3\1\5\2\uffff\1\45\1\112"+
-        "\1\55\1\63\1\64\1\73\1\56\1\57\1\66\1\104\1\1\1\2\1\4\1\53\1\16"+
-        "\1\15\1\52\1\31";
+        "\27\uffff\1\u00b0\1\u00b1\1\u00b2\56\uffff\1\u0090\1\uffff\1\u00a3"+
+        "\1\uffff\1\157\2\uffff\1\156\1\160\1\uffff\1\177\1\uffff\1\u0087"+
+        "\2\uffff\1\u0086\1\uffff\1\u0085\1\u008c\1\uffff\1\u008a\1\u008f"+
+        "\5\uffff\1\u00a5\1\uffff\1\144\3\uffff\1\145\3\uffff\1\161\3\uffff"+
+        "\1\164\6\uffff\1\u009d\1\u00a0\1\u00a1\10\uffff\1\146\1\170\1\uffff"+
+        "\1\171\3\uffff\1\173\3\uffff\1\u0080\1\u0084\1\u0092\1\u0091\6\uffff"+
+        "\1\u009b\1\u00a4\1\uffff\1\u00ab\35\uffff\1\u0089\1\u0088\1\u008b"+
+        "\1\131\1\u008e\1\u008d\17\uffff\1\u00a6\1\u00a7\1\u00a8\1\u00a9"+
+        "\1\uffff\1\141\1\142\1\143\1\uffff\1\162\1\163\1\165\1\166\1\167"+
+        "\1\uffff\1\u00a2\2\uffff\1\u009e\1\u009f\3\uffff\1\147\1\151\1\152"+
+        "\1\153\1\154\1\155\1\uffff\1\174\1\175\1\176\1\u0081\1\u0082\1\u0083"+
+        "\1\u0094\1\u0093\1\uffff\1\u0095\1\u0098\1\uffff\1\u0099\1\u0097"+
+        "\1\u009c\1\u00aa\1\u00ac\1\u00ad\1\u00ae\1\u00af\104\uffff\1\132"+
+        "\1\133\1\135\1\136\2\uffff\1\150\1\uffff\1\u0096\1\u009a\3\uffff"+
+        "\1\126\1\127\1\10\2\uffff\1\17\1\uffff\1\13\3\uffff\1\21\1\22\17"+
+        "\uffff\1\35\54\uffff\1\130\1\137\1\140\1\172\11\uffff\1\20\1\27"+
+        "\1\uffff\1\23\13\uffff\1\57\2\uffff\1\36\15\uffff\1\100\1\uffff"+
+        "\1\53\12\uffff\1\61\2\uffff\1\77\33\uffff\1\14\1\uffff\1\15\1\26"+
+        "\1\24\4\uffff\1\31\1\40\1\32\30\uffff\1\74\3\uffff\1\120\2\uffff"+
+        "\1\64\2\uffff\1\65\3\uffff\1\105\7\uffff\1\123\1\124\1\uffff\1\1"+
+        "\1\2\1\uffff\1\52\1\3\3\uffff\1\12\2\uffff\1\25\1\30\1\uffff\1\51"+
+        "\13\uffff\1\50\1\41\23\uffff\1\67\10\uffff\1\125\1\4\1\5\2\uffff"+
+        "\1\11\2\uffff\1\43\1\uffff\1\33\3\uffff\1\47\2\uffff\1\45\1\uffff"+
+        "\1\104\3\uffff\1\113\1\uffff\1\117\1\54\1\62\7\uffff\1\75\1\uffff"+
+        "\1\103\4\uffff\1\112\1\114\1\uffff\1\116\1\6\1\7\1\16\1\uffff\1"+
+        "\60\2\uffff\1\102\3\uffff\1\42\2\uffff\1\134\1\63\2\uffff\1\56\1"+
+        "\66\3\uffff\1\101\3\uffff\1\115\6\uffff\1\44\2\uffff\1\55\2\uffff"+
+        "\1\76\1\106\4\uffff\1\71\6\uffff\1\70\1\107\1\uffff\1\122\1\34\1"+
+        "\37\4\uffff\1\121\2\uffff\1\73\1\111\1\72\1\110\2\uffff\1\46";
     static final String DFA5_specialS =
-        "\u0169\uffff}>";
+        "\u02df\uffff}>";
     static final String[] DFA5_transitionS = {
-            "\1\27\1\30\2\uffff\1\30\22\uffff\1\27\14\uffff\1\14\2\uffff"+
-            "\12\31\7\uffff\1\7\1\15\1\3\1\10\1\16\1\17\1\31\1\20\1\4\1\21"+
-            "\1\31\1\12\1\22\1\5\1\1\1\23\1\24\1\13\1\11\1\2\1\25\1\6\1\26"+
-            "\3\31\6\uffff\32\31\65\uffff\uff4f\31",
+            "\1\27\1\30\2\uffff\1\30\22\uffff\1\27\4\uffff\1\31\1\uffff\3"+
+            "\31\2\uffff\1\31\1\14\16\31\1\uffff\1\31\1\uffff\1\31\1\uffff"+
+            "\1\7\1\15\1\3\1\10\1\16\1\17\1\31\1\20\1\4\1\21\1\31\1\12\1"+
+            "\22\1\5\1\1\1\23\1\24\1\13\1\11\1\2\1\25\1\6\1\26\4\31\1\uffff"+
+            "\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff\1\31\62\uffff\uff4f"+
+            "\31",
             "\1\33\16\uffff\1\32",
             "\1\34\1\uffff\1\35",
             "\1\40\1\36\12\uffff\1\37\3\uffff\1\41",
@@ -5512,267 +5796,370 @@ public class ChemicalChunkerLexer extends Lexer {
             "",
             "",
             "\1\107",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
             "\1\111",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "\1\113\2\uffff\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f"+
-            "\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\1\31\1\113\16\31\1\uffff\1\31\1"+
+            "\uffff\1\31\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff"+
+            "\33\31\1\uffff\1\31\62\uffff\uff4f\31",
             "\1\115\1\116",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "\1\121\2\uffff\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f"+
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\1\31\1\121\16\31\1\uffff\1\31\1"+
+            "\uffff\1\31\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff"+
+            "\33\31\1\uffff\1\31\62\uffff\uff4f\31",
+            "\1\124\1\31\1\uffff\3\31\2\uffff\1\31\1\123\16\31\1\uffff\1"+
+            "\31\1\uffff\1\31\1\uffff\17\31\1\126\2\31\1\125\10\31\1\uffff"+
+            "\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff\1\31\62\uffff\uff4f"+
             "\31",
-            "\1\124\10\uffff\1\123\2\uffff\12\31\7\uffff\17\31\1\126\2\31"+
-            "\1\125\7\31\6\uffff\32\31\65\uffff\uff4f\31",
             "\1\130",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "\1\132\13\uffff\12\31\7\uffff\22\31\1\133\7\31\6\uffff\32\31"+
-            "\65\uffff\uff4f\31",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "\1\136\2\uffff\12\31\7\uffff\3\31\1\137\2\31\1\140\6\31\1\141"+
-            "\13\31\1\142\6\uffff\32\31\65\uffff\uff4f\31",
-            "\12\31\7\uffff\16\31\1\144\13\31\6\uffff\32\31\65\uffff\uff4f"+
-            "\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\132\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff"+
+            "\1\31\1\uffff\22\31\1\133\10\31\1\uffff\1\31\1\uffff\1\31\1"+
+            "\uffff\33\31\1\uffff\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\1\31\1\136\16\31\1\uffff\1\31\1"+
+            "\uffff\1\31\1\uffff\3\31\1\137\2\31\1\140\6\31\1\141\13\31\1"+
+            "\142\1\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff\1"+
+            "\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\16\31\1\144\14\31\1\uffff\1\31\1\uffff\1\31\1\uffff"+
+            "\33\31\1\uffff\1\31\62\uffff\uff4f\31",
             "\1\146\1\uffff\1\147\11\uffff\1\150",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
             "\1\152",
-            "\12\31\7\uffff\3\31\1\153\25\31\1\154\6\uffff\32\31\65\uffff"+
-            "\uff4f\31",
-            "\12\31\7\uffff\10\31\1\156\11\31\1\157\4\31\1\160\2\31\6\uffff"+
-            "\32\31\65\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\3\31\1\153\25\31\1\154\1\31\1\uffff\1\31\1\uffff\1"+
+            "\31\1\uffff\33\31\1\uffff\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\10\31\1\156\11\31\1\157\4\31\1\160\3\31\1\uffff\1\31"+
+            "\1\uffff\1\31\1\uffff\33\31\1\uffff\1\31\62\uffff\uff4f\31",
             "\1\162",
             "\1\163",
             "\1\164",
             "\1\165",
-            "\12\31\7\uffff\21\31\1\166\1\31\1\167\6\31\6\uffff\32\31\65"+
-            "\uffff\uff4f\31",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "",
-            "",
-            "\12\31\7\uffff\3\31\1\173\2\31\1\174\5\31\1\175\1\176\3\31"+
-            "\1\177\7\31\1\u0080\6\uffff\32\31\65\uffff\uff4f\31",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "\12\31\7\uffff\3\31\1\u0084\2\31\1\u0085\6\31\1\u0086\14\31"+
-            "\6\uffff\32\31\65\uffff\uff4f\31",
-            "\12\31\7\uffff\21\31\1\u0088\1\u0089\1\u008a\6\31\6\uffff\32"+
-            "\31\65\uffff\uff4f\31",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "\1\u008d\13\uffff\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff"+
-            "\uff4f\31",
-            "\1\u008f\47\uffff\1\u0090\2\uffff\1\u0091\3\uffff\1\u0092",
-            "\1\u0093",
-            "\12\31\7\uffff\17\31\1\u0094\12\31\6\uffff\32\31\65\uffff\uff4f"+
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\21\31\1\166\1\31\1\167\7\31\1\uffff\1\31\1\uffff\1"+
+            "\31\1\uffff\33\31\1\uffff\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\173",
+            "\1\174",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\3\31\1\175\2\31\1\176\5\31\1\177\1\u0080\3\31\1\u0081"+
+            "\7\31\1\u0082\1\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1"+
+            "\uffff\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\1\31\1\u0085\16\31\1\uffff\1\31"+
+            "\1\uffff\1\31\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff"+
+            "\33\31\1\uffff\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\3\31\1\u0087\2\31\1\u0088\6\31\1\u0089\15\31\1\uffff"+
+            "\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff\1\31\62\uffff\uff4f"+
             "\31",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "\1\u0097",
-            "\1\u0098\52\uffff\1\u0099\3\uffff\1\u009a",
-            "\1\u009b",
-            "\1\u009c",
-            "\1\u009d",
-            "",
-            "",
-            "",
-            "",
-            "",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\21\31\1\u008b\1\u008c\1\u008d\7\31\1\uffff\1\31\1\uffff"+
+            "\1\31\1\uffff\33\31\1\uffff\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u0090\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff"+
+            "\1\31\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31"+
+            "\1\uffff\1\31\62\uffff\uff4f\31",
+            "\1\u0092\47\uffff\1\u0093\2\uffff\1\u0094\3\uffff\1\u0095",
+            "\1\u0096",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\17\31\1\u0097\13\31\1\uffff\1\31\1\uffff\1\31\1\uffff"+
+            "\33\31\1\uffff\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u009a",
+            "\1\u009b\52\uffff\1\u009c\3\uffff\1\u009d",
             "\1\u009e",
             "\1\u009f",
+            "\1\u00a0",
+            "",
+            "\1\u00a1",
+            "",
+            "\1\u00a2",
+            "",
+            "\1\u00a3",
+            "\1\u00a4",
             "",
             "",
-            "\1\u00a0\1\u00a1\3\uffff\1\u00a6\2\uffff\1\u00a2\5\uffff\1"+
-            "\u00a5\5\uffff\1\u00a7\1\u00a4\1\u00a3",
+            "\1\u00a5\1\u00a6\3\uffff\1\u00ab\2\uffff\1\u00a7\5\uffff\1"+
+            "\u00aa\5\uffff\1\u00ac\1\u00a9\1\u00a8",
             "",
-            "\1\u00ac\1\uffff\1\u00af\1\u00b2\1\u00ad\1\u00b0\1\u00aa\5"+
-            "\uffff\1\u00ab\2\uffff\1\u00b1\1\uffff\1\u00b3\1\u00a8\1\u00a9"+
-            "\1\uffff\1\u00ae",
+            "\1\u00b0\1\uffff\1\u00b3\1\u00b7\1\u00b1\1\u00b4\1\u00b5\5"+
+            "\uffff\1\u00af\2\uffff\1\u00b6\1\uffff\1\u00b8\1\u00ad\1\u00ae"+
+            "\1\uffff\1\u00b2",
             "",
-            "\1\u00b4\13\uffff\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff"+
-            "\uff4f\31",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
+            "\1\u00b9\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff"+
+            "\1\31\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31"+
+            "\1\uffff\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
             "",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "",
-            "",
-            "\1\u00b8\13\uffff\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff"+
-            "\uff4f\31",
-            "",
-            "",
-            "\1\u00bd\1\uffff\1\u00bb\1\u00be\1\u00c1\1\u00bf\1\uffff\1"+
-            "\u00c2\1\u00c3\6\uffff\1\u00c4\1\u00c5\1\u00c6\1\u00bc\1\u00c0"+
-            "\1\u00ba\1\uffff\1\u00c7\1\uffff\1\u00c8",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "",
-            "\1\u00cd",
-            "",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "",
-            "\1\u00d1",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "",
-            "\1\u00d7",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "\1\u00d9",
-            "\1\u00da",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
             "",
             "",
-            "",
-            "\12\31\7\uffff\31\31\1\u00dd\6\uffff\32\31\65\uffff\uff4f\31",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
+            "\1\u00bd\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff"+
+            "\1\31\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31"+
+            "\1\uffff\1\31\62\uffff\uff4f\31",
             "",
             "",
+            "\1\u00c2\1\uffff\1\u00c0\1\u00c3\1\u00c6\1\u00c4\1\uffff\1"+
+            "\u00c7\1\u00c8\6\uffff\1\u00c9\1\u00ca\1\u00cb\1\u00c1\1\u00c5"+
+            "\1\u00bf\1\uffff\1\u00cc\1\uffff\1\u00cd",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
             "",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
+            "\1\u00d2",
             "",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "",
+            "\1\u00d6",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "",
+            "\1\u00dc",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u00de",
+            "\1\u00df",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "",
+            "",
+            "",
+            "\1\u00e2",
+            "\1\u00e3",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\31\31\1\u00e4\1\31\1\uffff\1\31\1\uffff\1\31\1\uffff"+
+            "\33\31\1\uffff\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "",
+            "",
+            "\1\u00eb",
+            "",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
             "",
             "",
             "",
             "",
-            "\1\u00ea",
-            "\12\31\7\uffff\22\31\1\u00ec\7\31\6\uffff\32\31\65\uffff\uff4f"+
-            "\31",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "\12\31\7\uffff\22\31\1\u00ef\7\31\6\uffff\32\31\65\uffff\uff4f"+
-            "\31",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
+            "\1\u00f2",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\22\31\1\u00f4\10\31\1\uffff\1\31\1\uffff\1\31\1\uffff"+
+            "\33\31\1\uffff\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\22\31\1\u00f7\10\31\1\uffff\1\31\1\uffff\1\31\1\uffff"+
+            "\33\31\1\uffff\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
             "",
             "",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
             "",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "\1\u00f8",
-            "\1\u00f9",
-            "\1\u00fa",
-            "\1\u00fc\14\uffff\1\u00fb",
-            "\1\u00fd\23\uffff\1\u00fe",
-            "\1\u00ff",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
             "\1\u0100",
-            "",
-            "\1\u0101\7\uffff\1\u0102\7\uffff\1\u0103",
-            "\1\u0104\2\uffff\1\u0105",
-            "",
-            "\1\u0106\4\uffff\1\u0107",
-            "\1\u0109\3\uffff\1\u0108",
-            "\1\u010b\14\uffff\1\u010a",
-            "\1\u010d\3\uffff\1\u010e\5\uffff\1\u010c",
-            "\1\u0111\10\uffff\1\u0110\2\uffff\1\u0112\3\uffff\1\u010f",
-            "\1\u0113\6\uffff\1\u0114",
-            "\1\u0116\15\uffff\1\u0115",
-            "\1\u0117\6\uffff\1\u0118\11\uffff\1\u0119",
-            "\1\u011b\2\uffff\1\u011a",
-            "\1\u011e\14\uffff\1\u011c\2\uffff\1\u011d",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\u011f\6\uffff\1\u0120",
-            "\1\u0122\1\u0121\3\uffff\1\u0123",
-            "\1\u0124\13\uffff\1\u0125",
-            "\1\u0127\3\uffff\1\u0128\10\uffff\1\u0126",
-            "\1\u0129",
-            "",
-            "",
-            "",
-            "",
-            "\1\u012a\20\uffff\1\u012b\2\uffff\1\u012c",
-            "",
-            "\1\u012d",
-            "\1\u012e",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\u012f",
-            "",
-            "",
-            "",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "",
-            "",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
+            "\1\u0101",
+            "\1\u0102",
+            "\1\u0103",
+            "\1\u0104",
+            "\1\u0106\14\uffff\1\u0105",
+            "\1\u0107\23\uffff\1\u0108",
+            "\1\u0109",
+            "\1\u010a",
+            "\1\u010b",
+            "\1\u010c\7\uffff\1\u010d\7\uffff\1\u010e",
+            "\1\u010f\2\uffff\1\u0110",
+            "\1\u0111",
+            "\1\u0112\4\uffff\1\u0113",
+            "\1\u0115\3\uffff\1\u0114",
+            "\1\u0116\3\uffff\1\u0117\3\uffff\1\u0118",
+            "\1\u011b\10\uffff\1\u0119\2\uffff\1\u011c\3\uffff\1\u011a",
+            "\1\u011d\6\uffff\1\u011e",
+            "\1\u0120\15\uffff\1\u011f",
+            "\1\u0121\6\uffff\1\u0122\11\uffff\1\u0123",
+            "\1\u0125\2\uffff\1\u0124",
+            "\1\u0126",
+            "\1\u0129\14\uffff\1\u0127\2\uffff\1\u0128",
+            "\1\u012a",
+            "\1\u012b",
             "",
             "",
             "",
             "",
             "",
             "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "",
-            "",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
+            "\1\u012c",
+            "\1\u012d\6\uffff\1\u012e",
+            "\1\u0130\1\u012f\3\uffff\1\u0131",
+            "\1\u0132\13\uffff\1\u0133",
+            "\1\u0135\3\uffff\1\u0136\10\uffff\1\u0134",
             "\1\u0137",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
-            "",
-            "",
-            "",
-            "",
+            "\1\u0138",
+            "\1\u0139",
             "\1\u013a",
-            "\1\u013c",
-            "\1\u013d",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
+            "\1\u013b",
+            "\1\u013c\20\uffff\1\u013d\2\uffff\1\u013e",
             "\1\u013f",
+            "\1\u0140",
+            "\1\u0141",
+            "\1\u0142",
+            "",
+            "",
+            "",
+            "",
+            "\1\u0143",
+            "",
+            "",
+            "",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "",
+            "",
+            "\1\u0148",
+            "\1\u0149",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\u014b",
             "",
             "",
             "",
@@ -5781,37 +6168,14 @@ public class ChemicalChunkerLexer extends Lexer {
             "",
             "",
             "",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
             "",
             "",
-            "",
-            "",
-            "",
-            "",
-            "\1\u0140\14\uffff\1\u0141",
-            "\1\u0142\1\uffff\1\u0143",
-            "",
-            "",
-            "",
-            "\1\u0144",
-            "",
-            "",
-            "\1\u0145",
-            "\1\u0146\1\u0147",
-            "\1\u0148\20\uffff\1\u0149",
-            "",
-            "",
-            "",
-            "",
-            "\1\u014a\11\uffff\1\u014b",
-            "",
-            "",
-            "\1\u014c",
-            "",
-            "",
-            "",
-            "\1\u014d\11\uffff\1\u014e",
-            "\1\u014f\11\uffff\1\u0150",
-            "\12\31\7\uffff\32\31\6\uffff\32\31\65\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
             "",
             "",
             "",
@@ -5819,55 +6183,669 @@ public class ChemicalChunkerLexer extends Lexer {
             "",
             "",
             "",
-            "\1\u0152\13\uffff\1\u0154\2\uffff\1\u0153",
             "",
-            "",
-            "",
-            "",
+            "\1\u014e",
+            "\1\u014f",
+            "\1\u0150",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u0154",
             "\1\u0155",
-            "",
-            "",
-            "\1\u0156",
-            "",
-            "",
-            "",
-            "",
-            "\1\u0158\17\uffff\1\u0157",
-            "\1\u0159\3\uffff\1\u015a",
-            "\1\u015c\20\uffff\1\u015b",
-            "",
-            "\1\u015e\2\uffff\1\u015d",
-            "",
-            "",
-            "",
-            "\1\u015f\7\uffff\1\u0160",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\u0161\5\uffff\1\u0162\2\uffff\1\u0164\2\uffff\1\u0163",
-            "",
-            "",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\23\31\1\u0157\7\31\1\uffff\1\31\1\uffff\1\31\1\uffff"+
+            "\33\31\1\uffff\1\31\62\uffff\uff4f\31",
+            "\1\u0159",
+            "\1\u015a",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\5\31\1\u015b\25\31\1\uffff\1\31\1\uffff\1\31\1\uffff"+
+            "\33\31\1\uffff\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u015e",
+            "\1\u015f",
+            "\1\u0160",
+            "\1\u0161",
+            "\1\u0162",
+            "\1\u0163",
+            "\1\u0164",
             "\1\u0165",
+            "\1\u0166",
             "\1\u0167",
+            "\1\u0168",
+            "\1\u0169",
+            "\1\u016a",
+            "\1\u016b",
+            "\1\u016c",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u016e",
+            "\1\u016f",
+            "\1\u0170",
+            "\1\u0171\14\uffff\1\u0172",
+            "\1\u0173\1\uffff\1\u0174",
+            "\1\u0175",
+            "\1\u0176",
+            "\1\u0177",
+            "\1\u0178",
+            "\1\u0179",
+            "\1\u017a",
+            "\1\u017b",
+            "\1\u017c",
+            "\1\u017d",
+            "\1\u017e",
+            "\1\u017f",
+            "\1\u0180\1\u0181",
+            "\1\u0182\20\uffff\1\u0183",
+            "\1\u0184",
+            "\1\u0185",
+            "\1\u0186",
+            "\1\u0187",
+            "\1\u0188\11\uffff\1\u0189",
+            "\1\u018a",
+            "\1\u018b",
+            "\1\u018c",
+            "\1\u018d",
+            "\1\u018e",
+            "\1\u018f",
+            "\1\u0190",
+            "\1\u0191",
+            "\1\u0192",
+            "\1\u0193",
+            "\1\u0194",
+            "\1\u0195\11\uffff\1\u0196",
+            "\1\u0197\11\uffff\1\u0198",
+            "\1\u0199",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
             "",
             "",
             "",
             "",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "",
+            "",
+            "\1\u019e\13\uffff\1\u01a0\2\uffff\1\u019f",
+            "\1\u01a1",
+            "\1\u01a2",
+            "",
+            "",
+            "",
+            "\1\u01a3",
+            "\1\u01a4",
+            "",
+            "\1\u01a5",
+            "",
+            "\1\u01a6",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "",
+            "",
+            "\1\u01a9",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u01ab",
+            "\1\u01ac",
+            "\1\u01ad",
+            "\1\u01ae",
+            "\1\u01af",
+            "\1\u01b0",
+            "\1\u01b1",
+            "\1\u01b2",
+            "\1\u01b3",
+            "\1\u01b4",
+            "\1\u01b5",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u01b7",
+            "",
+            "\1\u01b8",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u01ba",
+            "\1\u01bb",
+            "\1\u01bc",
+            "\1\u01bd",
+            "\1\u01be",
+            "\1\u01bf",
+            "\1\u01c0",
+            "\1\u01c1",
+            "\1\u01c2",
+            "\1\u01c4\17\uffff\1\u01c3",
+            "\1\u01c5",
+            "\1\u01c6",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u01c8",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u01ca\3\uffff\1\u01cb",
+            "\1\u01cd\20\uffff\1\u01cc",
+            "\1\u01ce",
+            "\1\u01d0\2\uffff\1\u01cf",
+            "\1\u01d1",
+            "\1\u01d2",
+            "\1\u01d3",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u01d5",
+            "\1\u01d6",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u01d8",
+            "\1\u01d9",
+            "\1\u01da\7\uffff\1\u01db",
+            "\1\u01dc",
+            "\1\u01dd",
+            "\1\u01de",
+            "\1\u01df",
+            "\1\u01e0",
+            "\1\u01e1",
+            "\1\u01e2",
+            "\1\u01e3",
+            "\1\u01e4",
+            "\1\u01e5",
+            "\1\u01e6",
+            "\1\u01e7",
+            "\1\u01e8",
             "",
             "",
             "",
             "",
+            "\1\u01e9\5\uffff\1\u01ea\2\uffff\1\u01ec\2\uffff\1\u01eb",
+            "\1\u01ed",
+            "\1\u01ee",
+            "\1\u01ef",
+            "\1\u01f0",
+            "\1\u01f1",
+            "\1\u01f2",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\16\31\1\u01f4\14\31\1\uffff\1\31\1\uffff\1\31\1\uffff"+
+            "\33\31\1\uffff\1\31\62\uffff\uff4f\31",
+            "",
+            "",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u01f8",
+            "\1\u01f9",
+            "\1\u01fa",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\22\31\1\u01fb\10\31\1\uffff\1\31\1\uffff\1\31\1\uffff"+
+            "\33\31\1\uffff\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u01ff",
+            "\1\u0200",
+            "\1\u0201",
+            "\1\u0202",
+            "",
+            "\1\u0203",
+            "\1\u0204",
+            "",
+            "\1\u0205",
+            "\1\u0206",
+            "\1\u0207",
+            "\1\u0208",
+            "\1\u0209",
+            "\1\u020a",
+            "\1\u020b",
+            "\1\u020c",
+            "\1\u020d",
+            "\1\u020e",
+            "\1\u020f",
+            "\1\u0210",
+            "\1\u0211",
+            "",
+            "\1\u0212",
+            "",
+            "\1\u0213",
+            "\1\u0214",
+            "\1\u0215",
+            "\1\u0216",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u0218",
+            "\1\u0219",
+            "\1\u021a",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u021c",
+            "",
+            "\1\u021d",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "",
+            "\1\u021f",
+            "\1\u0220",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u0222",
+            "\1\u0223",
+            "\1\u0224",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u0226",
+            "\1\u0227",
+            "\1\u0228",
+            "\1\u0229",
+            "\1\u022a",
+            "\1\u022b",
+            "\1\u022c",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u022f",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u0232",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u0235",
+            "\1\u0236",
+            "\1\u0237",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u0239",
+            "",
+            "\1\u023a",
+            "",
+            "",
+            "",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u023d",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "",
+            "",
+            "",
+            "\1\u023f",
+            "\1\u0240",
+            "\1\u0241",
+            "\1\u0242",
+            "\1\u0243",
+            "\1\u0244",
+            "\1\u0245",
+            "\1\u0246",
+            "\1\u0247",
+            "\1\u0248",
+            "\1\u0249",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u024c",
+            "\1\u024d",
+            "\1\u024e",
+            "\1\u024f",
+            "\1\u0250",
+            "\1\u0251",
+            "\1\u0252",
+            "\1\u0253",
+            "\1\u0254",
+            "\1\u0255",
+            "\1\u0256",
+            "",
+            "\1\u0257",
+            "\1\u0258",
+            "\1\u0259",
+            "",
+            "\1\u025a",
+            "\1\u025b",
+            "",
+            "\1\u025c",
+            "\1\u025d",
+            "",
+            "\1\u025e",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u0260",
+            "",
+            "\1\u0261",
+            "\1\u0262",
+            "\1\u0263",
+            "\1\u0264",
+            "\1\u0265",
+            "\1\u0266",
+            "\1\u0267",
+            "",
+            "",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "",
+            "",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "",
+            "",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u026b",
+            "\1\u026c",
+            "",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u026e",
+            "",
+            "",
+            "\1\u026f",
+            "",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u0271",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u0273",
+            "\1\u0274",
+            "\1\u0275",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u0277",
+            "\1\u0278",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u027a",
+            "",
+            "",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u027c",
+            "\1\u027d",
+            "\1\u027e",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u0280",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u0284",
+            "\1\u0285",
+            "\1\u0286",
+            "\1\u0287",
+            "\1\u0288",
+            "\1\u0289",
+            "\1\u028a",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u028c",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "",
+            "\1\u028e",
+            "\1\u028f",
+            "\1\u0290",
+            "\1\u0291",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u0294",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "",
+            "",
+            "",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u0299",
+            "",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "",
+            "\1\u029b",
+            "\1\u029c",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "",
+            "\1\u029e",
+            "\1\u029f",
+            "",
+            "\1\u02a0",
+            "",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u02a2",
+            "\1\u02a3",
+            "",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "",
+            "",
+            "",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u02a6",
+            "\1\u02a7",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u02aa",
+            "\1\u02ab",
+            "",
+            "\1\u02ac",
+            "",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u02ae",
+            "\1\u02af",
+            "\1\u02b0",
+            "",
+            "",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
             "",
             "",
             "",
             "",
+            "\1\u02b2",
+            "",
+            "\1\u02b3",
+            "\1\u02b4",
+            "",
+            "\1\u02b5",
+            "\1\u02b6",
+            "\1\u02b7",
+            "",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u02b9",
+            "",
+            "",
+            "\1\u02ba",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "",
+            "",
+            "\1\u02bc",
+            "\1\u02bd",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u02c0",
+            "\1\u02c1",
+            "",
+            "\1\u02c2",
+            "\1\u02c3",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u02c5",
+            "\1\u02c6",
+            "\1\u02c7",
+            "",
+            "\1\u02c8",
+            "\1\u02c9",
+            "",
+            "\1\u02ca",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "",
+            "",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u02cd",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u02d1",
+            "\1\u02d2",
+            "\1\u02d3",
+            "\1\u02d4",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "",
+            "",
+            "\1\u02d6",
+            "",
+            "",
+            "",
+            "\1\u02d7",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
+            "\1\u02dc",
             "",
             "",
             "",
             "",
-            "",
+            "\1\u02dd",
+            "\1\31\1\uffff\3\31\2\uffff\20\31\1\uffff\1\31\1\uffff\1\31"+
+            "\1\uffff\33\31\1\uffff\1\31\1\uffff\1\31\1\uffff\33\31\1\uffff"+
+            "\1\31\62\uffff\uff4f\31",
             ""
     };
 
