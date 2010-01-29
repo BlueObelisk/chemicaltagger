@@ -23,10 +23,11 @@ IN-FOR---^for$---The preposition 'FOR'
 IN-FROM---^from$---The preposition 'FROM'
 IN-UNDER---^under$---The preposition 'UNDER'
 IN-OVER---^over$---The preposition 'UNDER'
-
 IN-OFF---^off$---The preposition 'OFF'
 TO---^to$|^To$---The preposition 'TO'
 
+#Foreign Words
+FW---^et(.)?$|^al(.)?$|^et(.)?al(.)?$
 #Nouns
 NN-STATE---powder|glass|liquid|oil|solid|gas|syrup|crystal|gum|needle|prisms---Physical States
 NN-TIME---^period(s)?$|^min(utes|.)?$|^hour(s)?|^seconds$|^d$|^h$|^days$|.*night|hr(s)?---Time Token
@@ -146,6 +147,7 @@ VB-YIELD---^(yield|afford|result|provid|obtain|give|gave|isolat|leav|giv)(ed|e|i
 
 #Misc Tokens mainly to replace characters that are not markup friendly
 RB---.*wise$|.*ly$---Adverbs like dropwise
+RB-CONJ---^there[a-z]+|indeed|moreover---Conjunctive adverbs like: Thereof, therefrom etc..
 COLON---^:---Colon           
 COMMA---^,---Comma           
 APOST---^\'|^\'\'$---Apostrophe          

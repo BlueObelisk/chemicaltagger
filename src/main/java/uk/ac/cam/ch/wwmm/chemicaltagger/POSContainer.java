@@ -1,6 +1,5 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,8 +9,7 @@ import org.apache.log4j.Logger;
 import uk.ac.cam.ch.wwmm.chemicaltagger.WWMMTag.TagType;
 
 /********************************************
- * A container class that stores the grammatical
- * structure of the text .
+ * A container class that stores the grammatical structure of the text .
  * 
  * @author lh359
  ********************************************/
@@ -28,8 +26,6 @@ public class POSContainer {
 	public POSContainer() {
 	}
 
-
-
 	public void addToTokenList(String token) {
 		wordTokenList.add(token);
 	}
@@ -38,9 +34,9 @@ public class POSContainer {
 		for (String token : sentence.split(" ")) {
 			wordTokenList.add(token);
 		}
-		
+
 	}
-	
+
 	public List<String> getTokenList() {
 		return wordTokenList;
 	}
@@ -61,7 +57,11 @@ public class POSContainer {
 
 	public void addToBrownListFromStringArray(String[] brownTags) {
 		for (String string : brownTags) {
-			brownTagList.add(new WWMMTag(string));
+			if (StringUtils.isEmpty(string)) {
+				brownTagList.add(new WWMMTag("NN-UNKNOWN"));
+			} else {
+				brownTagList.add(new WWMMTag(string));
+			}
 		}
 	}
 
@@ -86,10 +86,10 @@ public class POSContainer {
 		}
 
 	}
-	
+
 	/*********************************************
-	 * Gets the output of the string and tag as:
-	 * "TAG TOKEN"
+	 * Gets the output of the string and tag as: "TAG TOKEN"
+	 * 
 	 * @return tokenTagTupleString (String).
 	 *********************************************/
 	public String getTokenTagTupleAsString() {
@@ -108,8 +108,7 @@ public class POSContainer {
 		return tokenTagTupleString.toString().trim();
 
 	}
-	
-	
+
 	public void printOutTags() {
 
 		System.out.println("Token List is " + this.wordTokenList);

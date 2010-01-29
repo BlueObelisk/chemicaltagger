@@ -26,13 +26,13 @@ fragment DIGIT	: ('0'..'9');
 fragment UNICODE	:  '\u00B0'..'\ufffe';
 
 //TOKEN	:	(ACHAR|DIGIT|UNICODE)+;
-TOKEN : (ACHAR|'?'|';'| '_'|',' |'.'|')'|'('|'/'|'-'|'='|':'|'%'|'\''|'{'|'}'|'['|']'|DIGIT|UNICODE)+;
+TOKEN : (ACHAR|'?'|';'| '_'|',' |'.'|')'|'('|'/'|'-'|'='|':'|'%'|'\''|'{'|'}'|'['|']'|'>'|'<'|'@'|'+'|'|'|DIGIT|UNICODE)+;
 
 
 
 document: sentences+-> ^(NODE["Sentence"]  sentences )+ ;
 
-sentences:  (sentence|unmatchedPhrase)+   (comma|cc|stop|adv)* ;
+sentences:  (sentence|unmatchedPhrase)+   (comma|cc|stop|adv|colon)* ;
 
 sentence:  (nounphrase|verbphrase|prepphrase)+ ;
 
@@ -41,29 +41,40 @@ unmatchedPhrase
 	:	 unmatchedTokens -> ^(NODE["Unmatched"] unmatchedTokens)+;
 	
 unmatchedTokens
-	:	(noun|verb|adj|adv|inAll|dt|oscarcd|oscarcm|oscarrn|oscaront|brackets);	
+	:	(fw|noun|verb|adj|adv|inAll|dt|oscarcd|oscarcm|oscarrn|oscaront|brackets|sym|colon|comma|md|neg|number);	
 
 
 nounphrase
 	:	nounphraseStructure ->  ^(NODE["NounPhrase"]  nounphraseStructure);	
-nounphraseStructure : dt? (adj|adv)*  noun+ (cc? comma? cc?  adj+ noun )*   (prepphraseOf| prepphraseIN)*  ;
+nounphraseStructure : dt? (adj|adv)*  (noun|number)+    (conjunction* adj* adv*  noun|number  )*   (prepphraseOf| prepphraseIN)*  ;
+conjunction 
+	:	 cc|comma;
 
 
 verbphrase
 	:	verbphraseStructure ->  ^(NODE["VerbPhrase"]  verbphraseStructure);
-verbphraseStructure :  to? inAll? inafter? (adv* adj? verb+ adv* adj?)+ (cc? comma? prepphrase)* ;
-verb : vb|vbg|vbd|vbz|vbn|vbuse|vbsubmerge|vbsubject|vbadd|vbcharge|vbcontain|vbdrop|vbfill|vbsuspend|vbtreat|vbapparatus|vbconcentrate|vbcool|vbdegass|vbdissolve|vbdry|vbextract|vbfilter |vbheat|vbincrease|vbpartition|vbprecipitate|vbpurify|vbquench|vbrecover|vbremove|vbstir|vbsynthesize|vbwait|vbwash|vbyield|vbchange;
-number : cd|oscarcd;	
+verbphraseStructure :  to? inAll? inafter? (md* adv* adj? verb+ md* adv* adj? neg? )+ (cc? comma? prepphrase)* ;
+verb : vb|vbp|vbg|vbd|vbz|vbn|vbuse|vbsubmerge|vbsubject|vbadd|vbcharge|vbcontain|vbdrop|vbfill|vbsuspend|vbtreat|vbapparatus|vbconcentrate|vbcool|vbdegass|vbdissolve|vbdry|vbextract|vbfilter |vbheat|vbincrease|vbpartition|vbprecipitate|vbpurify|vbquench|vbrecover|vbremove|vbstir|vbsynthesize|vbwait|vbwash|vbyield|vbchange;
 
-noun :  prp|unnamedmolecule|molecule|nnstate|nn|nns|nnp|nnadd|oscarcpr|nntime|apparatus|nnatmosphere|nneq|quantity|nnchementity|measurements|nntemp|nnflash|nngeneral|nnmethod|nnamount|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|nnvol|nnpurify|wdt|wp_poss|wpo|wps|nnsynthesize|nnmixture|oscaront|number|mixture|oscarCompound|nnextract|nnfilter|nnprecipitate|nnremove|fw|fwin;
-mixture:  lrb (measurements|md|stop|oscarCompound|molecule|unnamedmolecule|dash|sym|cd|noun|inof|cd|comma|adj)+ rrb;
-//mixture:  lrb (sentence)+ rrb;
+
+
+number : cd|oscarcd;	
+clause	:	wdt|wp_poss|wpo|wpo|wps|wql|wrb|ex|pdt;
+noun :  prp|unnamedmolecule|molecule|amount|mixture|nnstate|nn|nns|nnp|nnadd|oscarcpr|nntime|apparatus|nnatmosphere|nneq|quantity|nnchementity|measurements|nntemp|nnflash|nngeneral|nnmethod|nnamount|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|nnvol|nnpurify|wdt|wp_poss|wpo|wps|nnsynthesize|nnmixture|oscaront|number|oscarCompound|nnextract|nnfilter|nnprecipitate|nnremove|fw|fwin|sym|clause;
+
+
+mixture: (mixtureStructure2|mixtureStructure1) -> ^(NODE["MIXTURE"]  mixtureStructure2? mixtureStructure1?);
+mixtureStructure2: comma lrb mixtureContent rrb comma;
+mixtureStructure1:  lrb mixtureContent rrb;
+mixtureContent:   (verb|measurements|md|stop|oscarCompound|oscarcm|molecule|unnamedmolecule|dash|sym|cd|noun|inof|inAll|cd|comma|adj|colon|stop)+ ;
 adj	:	jj|jjr|jjs|jjt|oscarcj|oscarrn;
 
-adv	:	rb|rbr|rbt;
+adv	:	rb|rbr|rbt|rp|rbs|rbconj;
 // Different PrepPhrases
+
+
 prepphrase 
-	: 	prepphraseOther|prepphraseTemp|prepphraseTime  ;
+	: 	neg? prepphraseOther|prepphraseTemp|prepphraseTime  ;
 
 prepphraseOther
 	: (adv|adj)? inAll+  nounphrase ->  ^(NODE["PrepPhrase"]  adv? adj? inAll+  nounphrase);
@@ -91,9 +102,10 @@ measurements
 	:amount|mass|percent|volume;	
 
 // The RRB at the end is for leftover brackets from chemicals that didn't parse properly
-oscarCompound :  (oscarCompound1|oscarCompound2|oscarCompound3|oscarcm) rrb?;
+oscarCompound :  (oscarCompound1|oscarCompound2|oscarCompound3|oscarCompound4|oscarcm) rrb?;
 
-oscarCompound3 :	oscarcm (dash oscarcm)+ -> ^(NODE["OSCARCM"]  oscarcm (dash oscarcm)+);
+oscarCompound4 :	oscarcm (dash|apost)+ -> ^(NODE["OSCARCM"]  oscarcm  dash* apost* );
+oscarCompound3 :	oscarcm (dash oscarcm)+ dash?-> ^(NODE["OSCARCM"]  oscarcm (dash oscarcm)+ dash? );
 oscarCompound2 :	oscarcm oscarcm+ -> ^(NODE["OSCARCM"]  oscarcm oscarcm+);
 oscarCompound1 :	oscarcm jj oscarcm -> ^(NODE["OSCARCM"]  oscarcm jj oscarcm);
 moleculeamount1
@@ -464,8 +476,15 @@ rb:'RB' TOKEN;
 // Comparative adverb
 rbr:'RBR' TOKEN;
 
+// Conjunctive Adverbs
+rbconj	: 'RB-CONJ'  TOKEN
+	;
 // Superlative adverb
 rbt:'RBT' TOKEN;
+
+// Superlative adverb
+rbs:'RBS' TOKEN;
+
 
 // Nominal adverb (here, then, indoors)
 rn:'RN' TOKEN;
@@ -484,6 +503,9 @@ uh:'UH' TOKEN;
 
 // Verb, base form
 vb:'VB' TOKEN;
+
+vbp	: 'VBP' TOKEN
+	;
 
 // Verb, past tense
 vbd:'VBD' TOKEN;
@@ -516,3 +538,6 @@ wql:'WQL' TOKEN;
 
 // Wh- adverb (how, where, when)
 wrb:'WRB' TOKEN;
+
+pdt 	:	'PDT' TOKEN;
+

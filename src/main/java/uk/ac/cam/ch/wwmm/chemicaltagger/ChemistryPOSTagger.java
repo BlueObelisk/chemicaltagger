@@ -112,7 +112,7 @@ public class ChemistryPOSTagger {
 			}
 			if (StringUtils.equalsIgnoreCase(currentTag, "nnp")
 					&& StringUtils.equalsIgnoreCase(currentToken, "M")) {
-				newTag = "NN-MOL";
+				newTag = "NN-AMOUNT";
 			}
 			if (StringUtils.equalsIgnoreCase(currentTag, "''")) {
 				newTag = "FW";
@@ -175,7 +175,7 @@ public class ChemistryPOSTagger {
 				List beforeList = Utils.addToList("cd");
 
 				if (stringbefore(beforeList, i, combinedTags)) {
-					newTag = "NN-MOL";
+					newTag = "NN-AMOUNT";
 				}
 			}
 
