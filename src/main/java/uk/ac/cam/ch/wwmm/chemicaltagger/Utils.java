@@ -9,6 +9,8 @@ import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import nu.xom.Document;
 import nu.xom.Serializer;
@@ -29,7 +31,7 @@ public class Utils {
 		}
 	}
 
-	public static List addToList(String string) {
+	public static List<String> addToList(String string) {
 		List<String> arrayList = new ArrayList<String>();
 
 		for (String item : string.split(" ")) {
@@ -94,14 +96,25 @@ public class Utils {
 		StringBuilder newSentence = new StringBuilder();
 		sentence = sentence.replace("%", " %").replace(";", " ;");
 		String[] words = sentence.split(" ");
-
+		String regexString = "−?[A-Z]+[a-z]*\\.";
+		List<String> abvList = addToList("et. al. etc. e.g. i.e."); 
+		
+        Pattern pattern = Pattern.compile(regexString);
 		for (String string : words) {
 			String prefix = " ";
 			String suffix = " ";
-			if (string.endsWith(".")) {
+			string = string.replace(" ","");
+			Matcher myMatcher = pattern.matcher(string);
+			if ((string.endsWith(".")) && (!myMatcher.find()) && (!abvList.contains(string)) ) {
 				string = string.substring(0, string.length() - 1);
 				suffix = " ." + suffix;
 			}
+			
+			if ( (string.endsWith(".") && string.startsWith("°C")) ) {
+				string = string.substring(0, string.length() - 1);
+				suffix = " ." + suffix;
+			}
+
 			if (string.endsWith(",")) {
 				string = string.substring(0, string.length() - 1);
 				suffix = " ," + suffix;
@@ -129,6 +142,7 @@ public class Utils {
 
 			newSentence.append(prefix + string + suffix);
 		}
+		System.err.println("***Sentence "+newSentence.toString().replace("  ", " ").trim());
 
 		return newSentence.toString().replace("  ", " ").trim();
 	}
