@@ -109,9 +109,9 @@ oscarCompound3 :	oscarcm (dash oscarcm)+ dash?-> ^(NODE["OSCARCM"]  oscarcm (das
 oscarCompound2 :	oscarcm oscarcm+ -> ^(NODE["OSCARCM"]  oscarcm oscarcm+);
 oscarCompound1 :	oscarcm jj oscarcm -> ^(NODE["OSCARCM"]  oscarcm jj oscarcm);
 moleculeamount1
-	:measurements quantity? inof oscarCompound;	
+	:measurements (quantity|mixture)? inof oscarCompound;	
 moleculeamount2
-	:oscarCompound  quantity* ;	
+	:oscarCompound  (quantity|mixture)* ;	
 moleculeamount : moleculeamount1 | moleculeamount2 ;	
 molecule          
 	:  moleculeamount-> ^(NODE["MOLECULE"]  moleculeamount );	

@@ -31,7 +31,7 @@ FW---^et(.)?$|^al(.)?$|^et(.)?al(.)?$
 #Nouns
 NN-STATE---powder|glass|liquid|oil|solid|gas|syrup|crystal|gum|needle|prisms---Physical States
 NN-TIME---^period(s)?$|^min(utes|.)?$|^hour(s)?|^seconds$|^d$|^h$|^days$|.*night|hr(s)?---Time Token
-NN-MASS---(m|k|\xce\xbc)?g$|cm3---Grams
+NN-MASS---(m|k|\xce\xbc)?(g|gram)(s)?$---Grams
 NN-AMOUNT---(^M|m|k|\xce\xbc)?mol(s)?$|^M$---Mols
 NN-ATMOSPHERE---(a|A)tmosphere(s)?$---Atmosphere
 NN-EQ---^eq\.$---Equivalence
