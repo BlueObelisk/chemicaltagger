@@ -20,7 +20,7 @@ import uk.ac.cam.ch.wwmm.chemicaltagger.Utils;
 
 public class ExtractFromEPOTest {
 
-	
+	@Ignore
 	@Test
 	public void testGetPatentContent() {
 
