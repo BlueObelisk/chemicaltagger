@@ -6,7 +6,6 @@ import junit.framework.Assert;
 
 import org.antlr.runtime.tree.Tree;
 import org.junit.Test;
-import org.mortbay.log.Log;
 
 /*****************************
  * Passes Tagged Sentences to

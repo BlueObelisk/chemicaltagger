@@ -1,6 +1,6 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
-import static junit.framework.Assert.*;
+import static junit.framework.Assert.assertEquals;
 
 import org.junit.Test;
 

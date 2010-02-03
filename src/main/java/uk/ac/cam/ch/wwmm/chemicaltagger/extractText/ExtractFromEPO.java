@@ -331,7 +331,6 @@ public class ExtractFromEPO {
 	public void writeErrorsToCSV(List<DocumentContainer> docs)
 			throws IOException, UnsupportedEncodingException {
 		StringBuilder errorStream = new StringBuilder();
-		ChemistryPOSTagger chemPosTag = new ChemistryPOSTagger();
 		String DELIM = "\t";
 		String ENDLINE = "\n";
 
@@ -341,7 +340,7 @@ public class ExtractFromEPO {
 		antlrErrorWriter.flush();
 
 		for (DocumentContainer doc : docs) {
-			POSContainer posContainer = chemPosTag.runTaggers(doc.getContent());
+			POSContainer posContainer = ChemistryPOSTagger.getInstance().runTaggers(doc.getContent());
 			String tagged = posContainer.getTokenTagTupleAsString();
 
 			InputStream in = new ByteArrayInputStream(tagged.getBytes("UTF-8"));

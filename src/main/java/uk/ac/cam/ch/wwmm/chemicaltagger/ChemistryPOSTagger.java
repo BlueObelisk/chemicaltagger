@@ -18,6 +18,10 @@ import org.apache.log4j.Logger;
  ***************************************************************/
 public class ChemistryPOSTagger {
 
+	private static class TaggerHolder {
+		private static final ChemistryPOSTagger INSTANCE = new ChemistryPOSTagger();
+	}
+	
 	public String sentence;
 	private Configuration config = null;
 	private String config_filename = "textmining.properties";
@@ -27,15 +31,16 @@ public class ChemistryPOSTagger {
 	public OscarTagger oscarTagger;
 	public RegexTagger regexTagger;
 	public OpenNLPTagger openNLPTagger;
-	/****************************
-	 * Public Constructor
-	 ***************************/
-	public ChemistryPOSTagger() {
+	
+	private ChemistryPOSTagger() {
 		oscarTagger = new OscarTagger();
 		regexTagger = new RegexTagger();
 	    openNLPTagger = new OpenNLPTagger();	
 	}
 
+	public static ChemistryPOSTagger getInstance() {
+		return TaggerHolder.INSTANCE;
+	}
 
 	public void setSentence(String sentence) {
 		this.sentence = sentence;
