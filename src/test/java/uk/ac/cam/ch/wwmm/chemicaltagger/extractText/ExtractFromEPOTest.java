@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.antlr.runtime.tree.Tree;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.mortbay.log.Log;
 
@@ -21,12 +20,12 @@ import uk.ac.cam.ch.wwmm.chemicaltagger.Utils;
 
 public class ExtractFromEPOTest {
 
-	@Ignore
+	
 	@Test
 	public void testGetPatentContent() {
 
 		ExtractFromEPO epoExtract = new ExtractFromEPO();
-		String pathName = "uk/ac/cam/ch/wwmm/chemicaltagger/extractTest/epoPatents/EPÿ0975595B1.xml";
+		String pathName = "uk/ac/cam/ch/wwmm/chemicaltagger/extractTest/epoPatents/EPO1191614B1.xml";
 		InputStream inputSource = new Utils().getInputStream(pathName);
 		DocumentContainer epoContent = epoExtract.getInfo(inputSource);
 		System.out.println("ID::" + epoContent.getId());
@@ -88,7 +87,6 @@ public class ExtractFromEPOTest {
 
 		}
 	}
-	
 	@Ignore
 	@Test
 	public void main() throws IOException {
@@ -150,7 +148,7 @@ public class ExtractFromEPOTest {
 		for (int i = 0; i < nodeCount; i++) {
 			String text = astTree.getChild(i).getText();
 			int type = astTree.getChild(i).getType();
-			Log.info("****Text=" + text + " type==" + type);
+			//Log.info("****Text=" + text + " type==" + type);
 			if (type == 0) {
 				errorStream.append(patentId + DELIM + text + DELIM + type
 						+ DELIM + astTree.toStringTree() + ENDLINE);

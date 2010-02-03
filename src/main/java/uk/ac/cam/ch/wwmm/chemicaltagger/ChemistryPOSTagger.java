@@ -59,7 +59,7 @@ public class ChemistryPOSTagger {
 
 		posContainer.combineTaggers();
 		posContainer = correctCombinedTagsList(posContainer);
-		// posContainer.printOutTags();
+	    //posContainer.printOutTags();
 		LOG.info("Tag Token Tuple: " + posContainer.getTokenTagTupleAsString());
 		return posContainer;
 	}
@@ -162,7 +162,7 @@ public class ChemistryPOSTagger {
 					|| currentTag.toLowerCase().startsWith("vbg")) {
 
 				List afterList = Utils.addToList("oscar-cm nns nn-chementity oscar-cj");
-				List beforeList = Utils.addToList("dt");
+				List beforeList = Utils.addToList("dt rb");
 				if (stringafter(afterList, i, combinedTags)
 						&& stringbefore(beforeList, i, combinedTags)) {
 					newTag = "OSCAR-CJ";
@@ -170,6 +170,30 @@ public class ChemistryPOSTagger {
 
 			}
 
+			if (currentTag.toLowerCase().startsWith("vb")
+					&& currentToken.toLowerCase().endsWith("ing")) {
+
+				List afterList = Utils.addToList("nn oscar-cm nns nn-chementity oscar-cj jj nnp");
+				List beforeList = Utils.addToList("dt rbr rb");
+				if (stringafter(afterList, i, combinedTags)
+						&& stringbefore(beforeList, i, combinedTags)) {
+					newTag = "JJ";
+				}
+
+			}
+
+			if (currentTag.toLowerCase().startsWith("vb-")
+					&& !currentToken.toLowerCase().endsWith("ing")) {
+
+				List afterList = Utils.addToList("nn oscar-cm nns nn-chementity oscar-cj jj nnp");
+				List beforeList = Utils.addToList("dt in-in in-by in-of in stop ");
+				if (stringafter(afterList, i, combinedTags)
+						&& stringbefore(beforeList, i, combinedTags)) {
+					newTag = "JJ";
+				}
+
+			}
+			
 			if (currentToken.equals("M")) {
 
 				List beforeList = Utils.addToList("cd");
