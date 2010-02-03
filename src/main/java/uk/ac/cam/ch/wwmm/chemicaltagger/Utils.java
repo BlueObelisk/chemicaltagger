@@ -96,21 +96,29 @@ public class Utils {
 		StringBuilder newSentence = new StringBuilder();
 		sentence = sentence.replace("%", " %").replace(";", " ;");
 		String[] words = sentence.split(" ");
-		String regexString = "−?[A-Z]+[a-z]*\\.";
-		List<String> abvList = addToList("et. al. etc. e.g. i.e."); 
-		
-        Pattern pattern = Pattern.compile(regexString);
+		String abbreviationRegex = "−?[A-Z]+[a-z]*\\.";
+		String concatAmountRegex = "\\d\\d+(m|k|µ)?(l|L|g|gram|mol|cm3)(s)?$";
+		List<String> abvList = addToList("et. al. etc. e.g. i.e. vol. ca. wt.");
+		List<String> nextTokenList = addToList("gram vol %");
+		Pattern abbreviationPattern = Pattern.compile(abbreviationRegex);
+		Pattern concatAmountPattern = Pattern.compile(concatAmountRegex);
+
+		int index = 0;
 		for (String string : words) {
+			index++;
 			String prefix = " ";
 			String suffix = " ";
-			string = string.replace(" ","");
-			Matcher myMatcher = pattern.matcher(string);
-			if ((string.endsWith(".")) && (!myMatcher.find()) && (!abvList.contains(string)) ) {
-				string = string.substring(0, string.length() - 1);
-				suffix = " ." + suffix;
+			string = string.replace(" ", "");
+			Matcher abbreviationMatcher = abbreviationPattern.matcher(string);
+			if ((string.endsWith(".")) && (!abbreviationMatcher.find())
+					&& (!abvList.contains(string))) {
+				if (!stopWordAfter(words, index, nextTokenList)) {
+					string = string.substring(0, string.length() - 1);
+					suffix = " ." + suffix;
+				}
 			}
-			
-			if ( (string.endsWith(".") && string.startsWith("°C")) ) {
+
+			if ((string.endsWith(".") && string.startsWith("°C"))) {
 				string = string.substring(0, string.length() - 1);
 				suffix = " ." + suffix;
 			}
@@ -140,11 +148,54 @@ public class Utils {
 
 			}
 
+			if (string.startsWith("(") && string.endsWith(")")) {
+				String subString = string.substring(1, string.length() - 1);
+			    
+				string = subString;
+				prefix = prefix + "( ";
+				suffix =  " )" + suffix;
+			}			
+
+			Matcher concatAmountMatcher = concatAmountPattern.matcher(string);
+			if (concatAmountMatcher.find()) {
+				string = splitAmounts(string);
+			}
+
 			newSentence.append(prefix + string + suffix);
 		}
-		System.err.println("***Sentence "+newSentence.toString().replace("  ", " ").trim());
+		System.err.println("***Sentence "
+				+ newSentence.toString().replace("  ", " ").trim());
 
 		return newSentence.toString().replace("  ", " ").trim();
+	}
+
+	private static String splitAmounts(String string) {
+		String newString = string;
+		String numbers = "";
+		String letters = "";
+
+		for (char ch : string.toCharArray()) {
+			if (Character.isLetter(ch)) {
+				letters = letters + ch;
+			}
+			if (Character.isDigit(ch)) {
+				numbers = numbers + ch;
+			}
+
+		}
+		newString = numbers + " " + letters;
+		return newString;
+	}
+
+	private static boolean stopWordAfter(String[] words, int index,
+			List<String> nextTokenList) {
+		boolean wordAfter = false;
+		if (index + 1 < words.length) {
+			if (nextTokenList.contains(words[index + 1])) {
+				wordAfter = true;
+			}
+		}
+		return wordAfter;
 	}
 
 	/**

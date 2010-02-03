@@ -49,7 +49,7 @@ public class ASTtoXML {
 		for (int i = 0; i < nodeCount; i++) {
 			String text = astTree.getChild(i).getText();
 			int type = astTree.getChild(i).getType();
-			LOG.debug("Type = " + type + " text= " + text);
+			//LOG.debug("Type = " + type + " text= " + text);
 			if (type == 10) {
 				newNode.appendChild(text);
 			} else if (type != 0) {

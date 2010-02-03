@@ -25,7 +25,7 @@ public class FullParseTest {
 
 		Tree t = chemistrySentenceParser.parseTags();
 		ASTtoXML ast2XML = new ASTtoXML();
-		System.err.println(ast2XML.convert(t));
+		//System.err.println(ast2XML.convert(t));
 		checkNodes(t);
 	}
 	
@@ -42,7 +42,7 @@ public class FullParseTest {
 
 		Tree t = chemistrySentenceParser.parseTags();
 		ASTtoXML ast2XML = new ASTtoXML();
-		System.err.println(ast2XML.convert(t));
+		//System.err.println(ast2XML.convert(t));
 		checkNodes(t);
 	}
 	
@@ -59,7 +59,7 @@ public class FullParseTest {
 
 		Tree t = chemistrySentenceParser.parseTags();
 		ASTtoXML ast2XML = new ASTtoXML();
-		System.err.println(ast2XML.convert(t));
+		//System.err.println(ast2XML.convert(t));
 		checkNodes(t);
 	}
 
@@ -76,7 +76,7 @@ public class FullParseTest {
 
 		Tree t = chemistrySentenceParser.parseTags();
 		ASTtoXML ast2XML = new ASTtoXML();
-		System.err.println(ast2XML.convert(t));
+		//System.err.println(ast2XML.convert(t));
 		checkNodes(t);
 	}
 	@Test
@@ -92,7 +92,7 @@ public class FullParseTest {
 
 		Tree t = chemistrySentenceParser.parseTags();
 		ASTtoXML ast2XML = new ASTtoXML();
-		System.err.println(ast2XML.convert(t));
+		//System.err.println(ast2XML.convert(t));
 		checkNodes(t);
 	}
 	
@@ -109,7 +109,7 @@ public class FullParseTest {
 
 		Tree t = chemistrySentenceParser.parseTags();
 		ASTtoXML ast2XML = new ASTtoXML();
-		System.err.println(ast2XML.convert(t));
+		//System.err.println(ast2XML.convert(t));
 		checkNodes(t);
 	}
 	
@@ -126,7 +126,7 @@ public class FullParseTest {
 
 		Tree t = chemistrySentenceParser.parseTags();
 		ASTtoXML ast2XML = new ASTtoXML();
-		System.err.println(ast2XML.convert(t));
+		//System.err.println(ast2XML.convert(t));
 		checkNodes(t);
 	}
 
@@ -143,18 +143,18 @@ public class FullParseTest {
 
 		Tree t = chemistrySentenceParser.parseTags();
 		ASTtoXML ast2XML = new ASTtoXML();
-		System.err.println(ast2XML.convert(t));
+		//System.err.println(ast2XML.convert(t));
 		checkNodes(t);
 	}
 	
 
 	@Test
 	public void testFullSentence9() throws UnsupportedEncodingException {
-		String text = "Isopropyl 3-(hydroxymethyl)pyridine-2-carboxylate, (200 g, 1.02 mol; prepared as in −P. Ornstein et. al. J. Med. Chem. 1989, 32, 827), methyl N-[(4-methylphenyl)sulfonyl]glycinate (249g, 1.02 mol), and triphenylphosphine (403g, 1.5 mol) were dissolved in dry THF (3000mls) and cooled to zero degrees under N2. The diethylazodicarboxylate (DEAD) (267.6 g, 1.5 mol) was dissolved in dry THF (250 mls) and placed in a 500 ml addition funnel. The DEAD was added dropwise over 1 hour. The ice bath was removed and the reaction was allowed to warm slowly to RT. After 2 hours, the reaction was checked by HPLC and some glycinate remained. More starting reagents were added and the reaction was left to stir at RT. After 30 min, the reaction was checked again and saw a very small amount of the glycinate remaining. Concentrated reaction down to a reddish-orange oil that was carried onto the next step."; 
+		String text = "Isopropyl 3-(hydroxymethyl)pyridine-2-carboxylate, (200 g, 1.02 mol; prepared as in −P. Ornstein et. al. J. Med. Chem. 1989, 32, 827), methyl N-[(4-methylphenyl)sulfonyl]glycinate (249g, 1.02 mol), and triphenylphosphine (403g, 1.5 mol) were dissolved in dry THF (3000mls) and cooled to zero degrees under N2. The diethylazodicarboxylate (DEAD) (267.6 g, 1.5 mol) was dissolved in dry THF (250 mls) and placed in a 500 ml addition funnel. The DEAD was added dropwise over 1 hour. The ice bath was removed and the reaction was allowed to warm slowly to RT . After 2 hours, the reaction was checked by HPLC and some glycinate remained. More starting reagents were added and the reaction was left to stir at RT. After 30 min, the reaction was checked again and saw a very small amount of the glycinate remaining. Concentrated reaction down to a reddish-orange oil that was carried onto the next step. Addition of 10 mL methanol."; 
 		ChemistryPOSTagger posTagger = new ChemistryPOSTagger();
 		POSContainer posContainer = posTagger.runTaggers(text);
 		String tagged = posContainer.getTokenTagTupleAsString();
-        System.err.println("tAGGED= "+tagged);
+        
 		InputStream in = new ByteArrayInputStream(tagged.getBytes("UTF-8"));
 		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
 				in);
@@ -179,7 +179,7 @@ public class FullParseTest {
 		for (int i = 0; i < nodeCount; i++) {
 			String text = astTree.getChild(i).getText();
 			int type = astTree.getChild(i).getType();
-			Log.info("****Text=" + text + " type==" + type);
+			//Log.info("****Text=" + text + " type==" + type);
 			Assert.assertNotSame("Antlr Parse Fails for the for the text '"
 					+ text + "'", 0, type);
 			checkNodes(astTree.getChild(i));

@@ -1,7 +1,4 @@
 #Tags---Pattern---Description
-OSCAR-CD---^(ent-)?BOLD--.*BOLD-----bold numbers (representing chemical names)
-OSCAR-CD---^\d+[a-z]-----non-html oscar digits (representing chemical names)
-OSCAR-CJ---^Merrifield$|^crude$|^buffer$|^mono$|^(E|e)xcess|(A|a)mphiphilic$|(f|F)unctionalized$|(p|P)ot$|^cyclic$|(H|h)yperbranched$|^insoluble$|^(p|P)ropargyl$|Arm$|^(s|S)tar$|^anhydrous$|^aq(.|ueous)?$|^organic|^(s|S)at(.|urated)?$|^(Di|Tri|di|tri|poly)block$---Chemical Adjectives                              
 
 TM-UNICODE---®---Unicode Characters
 CD-UNICODE---×|&lt---Unicode Cardinal Digits
@@ -31,13 +28,13 @@ FW---^et(.)?$|^al(.)?$|^et(.)?al(.)?$
 #Nouns
 NN-STATE---powder|glass|liquid|oil|solid|gas|syrup|crystal|gum|needle|prisms---Physical States
 NN-TIME---^period(s)?$|^min(utes|.)?$|^hour(s)?|^seconds$|^d$|^h$|^days$|.*night|hr(s)?---Time Token
-NN-MASS---(m|k|\xce\xbc)?(g|gram)(s)?$---Grams
-NN-AMOUNT---(^M|m|k|\xce\xbc)?mol(s)?$|^M$---Mols
+NN-MASS---(\d\d+)?(m|k|\xce\xbc)?(g|gram)(s)?$---Grams
+NN-AMOUNT---(\d\d+)?(^M|m|k|\xce\xbc)?mol(s)?$|^M$---Mols
 NN-ATMOSPHERE---(a|A)tmosphere(s)?$---Atmosphere
 NN-EQ---^eq\.$---Equivalence
-NN-VOL---(m|k|\xce\xbc|µ)?(l|L)$|cm3---Volume
+NN-VOL---(\d\d+)?(m|k|\xce\xbc|µ)?(l|L)$|cm3---Volume
 NN-CHEMENTITY---poly|^resin$|^salt$|^product$|^oligomers$|^(M|m)acroinitiator$|^nanotubes$|^(s|S)eptum$|^(i|I)nitiator$|(M|m)onomer$|^ice$|^petroleum|metal|^eluent$|(co|Co)?polymer(s)?$|generation|solution|solvent|complex|layer|residue|gel|plug|catalyst|compound(s)?|.+®|^Å$---Chemical entities not marked up by OSCAR
-NN-TEMP---\d*(\xb0|&#0176|\xc3\x97|o|°|º)(C|c)|room|temperature|rt|RT---Temperature Token
+NN-TEMP---\d*(\xb0|&#0176|\xc3\x97|o|°|º)(C|c)|room|temperature|rt|RT|^deg$|^degrees$---Temperature Token
 NN-FLASH---^flash$---Flash
 NN-GENERAL---^(G|g)eneral$---General term
 NN-METHOD---^(P|p)rocedure(s)?$|(t|T)echnique(s)?$|(m|M)ethod(s)?$---Method token       
@@ -48,11 +45,17 @@ NN-CHROMATOGRAPHY---^(c|C)?hromatography$---Chromatography Token
 NN-VACUUM---^(v|V)?acuum$|^(v|V)?acuo$---Vacuum Token                   
 NN-CYCLE---^(c|C)?ycle(s)?$---Column Token                    
 NN-TIMES---^(t|T)?ime(s)?$---Times Token
+NN-EXAMPLE---^(e|E)xample(s)?$---Example Token
 
 #Not really chementities or Oscar-cm.. but need to be fixed
 NN-CHEMENTITY---^b$|^m$---will be removed
 OSCAR-CM---^p$|^n$|^Cl$---Oscar Entity will be removed later
 
+
+#Oscar related Tags
+OSCAR-CD---^(ent-)?BOLD--.*BOLD-----bold numbers (representing chemical names)
+OSCAR-CD---^\d+[a-z]-----non-html oscar digits (representing chemical names)
+OSCAR-CJ---^Merrifield$|^crude$|^buffer$|^mono$|^(E|e)xcess|(A|a)mphiphilic$|(f|F)unctionalized$|(p|P)ot$|^cyclic$|(H|h)yperbranched$|^insoluble$|^(p|P)ropargyl$|Arm$|^(s|S)tar$|^anhydrous$|^aq(.|ueous)?$|^organic|^(s|S)at(.|urated)?$|^(Di|Tri|di|tri|poly)block$---Chemical Adjectives                              
 
 #Verbs
 VB-USE---^using---Use Verb in the Present Term
@@ -77,9 +80,9 @@ VB-TREAT---^treat(e|s|ed|ing)?$---Treat Verb
                     
 #Apparatus Tokens
 VB-APPARATUS---(^equip|^seal|clos|^cap|^fitt)(ped|ed|e)?$---Apparatus Verb
-NN-APPARATUS---^neck$|^valve$|^adapter$|^inlet$|^outlet$|^condenser$|^stirrer$|^reactor$|^syringe$|^bath$|^oven$|^vessel$|^glove|^box$|^bar$|^tube$|^(S|s)chlenk$|^(F|f)lask(s)?$|^desiccator(s)?$---Apparatus Nouns
+NN-APPARATUS---^neck$|^valve$|^adapter$|^inlet$|^outlet$|^condenser$|^stirrer$|^reactor$|^syringe$|^bath$|^oven$|^vessel$|^glove|^box$|^bar$|^tube$|^(S|s)chlenk$|^(F|f)lask(s)?$|^(F|f)unnel?$|^desiccator(s)?$---Apparatus Nouns
 #Concentrate Tokens
-VB-CONCENTRATE---(^concentrat|^saturat)(ed|e|ing)?---Concentrate Verb
+VB-CONCENTRATE---(^concentrat|^saturat)(ed|e|ing)?$---Concentrate Verb
 NN-CONCENTRATE---^concentration---Concentrate Noun
 
 #Cool Tokens

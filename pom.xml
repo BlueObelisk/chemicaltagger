@@ -51,7 +51,7 @@
 				<configuration>
 					<testFailureIgnore>false</testFailureIgnore>
 					<!--					<forkMode>pertest</forkMode>-->
-					<argLine>-Xms512m -Xmx1024m -verbose:gc</argLine>
+					<argLine>-Xms512m -Xmx1024m</argLine>
 					<skip>false</skip>
 				</configuration>
 			</plugin>
