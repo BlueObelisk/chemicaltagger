@@ -10,8 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.antlr.runtime.tree.Tree;
+import org.junit.Ignore;
 import org.junit.Test;
-import org.mortbay.log.Log;
 
 import uk.ac.cam.ch.wwmm.chemicaltagger.ChemistryPOSTagger;
 import uk.ac.cam.ch.wwmm.chemicaltagger.ChemistrySentenceParser;
@@ -20,7 +20,7 @@ import uk.ac.cam.ch.wwmm.chemicaltagger.Utils;
 
 public class ExtractFromEPOTest {
 
-	
+	@Ignore
 	@Test
 	public void testGetPatentContent() {
 
