@@ -20,7 +20,6 @@ public class ParsePatents {
 		 
 		File patentDirectory = new File(path);
 		String[] patentDir = patentDirectory.list();
-		ChemistryPOSTagger posTagger = new ChemistryPOSTagger();
 		String outputDir = "target/patentsXML/";
 		InputStream taggedInputStream = null;
 		if (!new File(outputDir).exists()) {
@@ -38,7 +37,7 @@ public class ParsePatents {
 			/************************
 			 * Get Parts of Speech
 			 ************************/
-			POSContainer posContainer = posTagger.runTaggers(patentContent);
+			POSContainer posContainer = ChemistryPOSTagger.getInstance().runTaggers(patentContent);
 			docContainer.setTaggedContent(posContainer
 					.getTokenTagTupleAsString());
 			docs.add(docContainer);

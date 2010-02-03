@@ -18,22 +18,14 @@ import org.junit.Test;
  *****************************/
 public class ChemistryPOSTaggerTest {
 
-	private ChemistryPOSTagger posTagger;
 	private POSContainer posContainer;
 
-	@Before
-	public void setUp() {
-		if (posTagger == null) {
-			posTagger = new ChemistryPOSTagger();
-		}
-	}
-	
 
 	@Test
 	public void sentence1() {
 
 		String sentence = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/tagTest/test1.txt");
-		posContainer = posTagger.runTaggers(sentence);
+		posContainer = ChemistryPOSTagger.getInstance().runTaggers(sentence);
 		String ref = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/tagTest/ref1.txt");
 		Assert.assertEquals(ref, posContainer.getTokenTagTupleAsString());
 		checkLengthofTags();
@@ -43,7 +35,7 @@ public class ChemistryPOSTaggerTest {
 	@Test
 	public void sentence2() {
 		String sentence = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/tagTest/test2.txt");
-		posContainer = posTagger.runTaggers(sentence);
+		posContainer = ChemistryPOSTagger.getInstance().runTaggers(sentence);
 		String ref = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/tagTest/ref2.txt");
 		Assert.assertEquals(ref, posContainer.getTokenTagTupleAsString());
 		checkLengthofTags();
@@ -52,7 +44,7 @@ public class ChemistryPOSTaggerTest {
 	@Test
 	public void sentence3() {
 		String sentence = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/tagTest/test3.txt");
-		posContainer = posTagger.runTaggers(sentence);
+		posContainer = ChemistryPOSTagger.getInstance().runTaggers(sentence);
 		String ref = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/tagTest/ref3.txt");
 		Assert.assertEquals(ref, posContainer.getTokenTagTupleAsString());
 		checkLengthofTags();
@@ -61,7 +53,7 @@ public class ChemistryPOSTaggerTest {
 	@Test
 	public void sentence4() {
 		String sentence = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/tagTest/test4.txt");
-		posContainer = posTagger.runTaggers(sentence);
+		posContainer = ChemistryPOSTagger.getInstance().runTaggers(sentence);
 		String ref = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/tagTest/ref4.txt");
 		Assert.assertEquals(ref, posContainer.getTokenTagTupleAsString());
 		checkLengthofTags();
@@ -70,7 +62,7 @@ public class ChemistryPOSTaggerTest {
 	@Test
 	public void sentence5() {
 		String sentence = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/tagTest/test5.txt");
-		posContainer = posTagger.runTaggers(sentence);
+		posContainer = ChemistryPOSTagger.getInstance().runTaggers(sentence);
 		String ref = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/tagTest/ref5.txt");
 		Assert.assertEquals(ref, posContainer.getTokenTagTupleAsString());
 		checkLengthofTags();
@@ -80,7 +72,7 @@ public class ChemistryPOSTaggerTest {
 	@Test
 	public void sentence6() {
 		String sentence = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/tagTest/test6.txt");
-		posContainer = posTagger.runTaggers(sentence);
+		posContainer = ChemistryPOSTagger.getInstance().runTaggers(sentence);
 		String ref = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/tagTest/ref6.txt");
 		Assert.assertEquals(ref, posContainer.getTokenTagTupleAsString());
 		checkLengthofTags();

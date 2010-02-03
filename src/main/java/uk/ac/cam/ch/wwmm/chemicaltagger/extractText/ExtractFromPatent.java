@@ -1,10 +1,10 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger.extractText;
 
 import java.io.File;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
 import nu.xom.Builder;
 import nu.xom.Document;
 import nu.xom.Node;
