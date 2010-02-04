@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>chemicalTagger</groupId>
@@ -10,7 +11,7 @@
 			<id>ucc-repo</id>
 			<name>UCC Repository</name>
 			<url>http://maven.ch.cam.ac.uk/m2repo</url>
-		</repository>  
+		</repository>
 	</repositories>
 	<build>
 		<plugins>
@@ -24,15 +25,20 @@
 							<goal>antlr</goal>
 						</goals>
 						<configuration>
-							<sourceDirectory>src/main/antlr3</sourceDirectory>
+							<sourceDirectory>
+								src/main/antlr3
+							</sourceDirectory>
 							<conversionTimeout>10000</conversionTimeout>
-							<libDirectory>src/main/antlr3/imports</libDirectory>
+							<libDirectory>
+								src/main/antlr3/imports
+							</libDirectory>
 							<messageFormat>antlr</messageFormat>
-							<outputDirectory>target/generated-sources/antlr3</outputDirectory>
+							<outputDirectory>
+								target/generated-sources/antlr3
+							</outputDirectory>
 							<verbose>true</verbose>
 							<grammars>*.g</grammars>
 						</configuration>
-
 					</execution>
 				</executions>
 			</plugin>
@@ -61,11 +67,8 @@
 				<filtering>false</filtering>
 			</resource>
 		</resources>
-
 	</build>
 	<dependencies>
-
-
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>apache-log4j-extras</artifactId>
@@ -128,6 +131,12 @@
 			<artifactId>cmlxom</artifactId>
 			<version>2.5.1-SNAPSHOT</version>
 			<type>jar</type>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.0</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 </project>
