@@ -23,7 +23,7 @@ public class FullParseTest {
 
 		Tree t = chemistrySentenceParser.parseTags();
 		ASTtoXML ast2XML = new ASTtoXML();
-		//System.err.println(ast2XML.convert(t));
+		//System.err.println(ast2XML.convert(t).toXML());
 		checkNodes(t);
 	}
 	
@@ -39,7 +39,7 @@ public class FullParseTest {
 
 		Tree t = chemistrySentenceParser.parseTags();
 		ASTtoXML ast2XML = new ASTtoXML();
-		//System.err.println(ast2XML.convert(t));
+		//System.err.println(ast2XML.convert(t).toXML());
 		checkNodes(t);
 	}
 	
@@ -55,7 +55,7 @@ public class FullParseTest {
 
 		Tree t = chemistrySentenceParser.parseTags();
 		ASTtoXML ast2XML = new ASTtoXML();
-		//System.err.println(ast2XML.convert(t));
+		//System.err.println(ast2XML.convert(t).toXML());
 		checkNodes(t);
 	}
 
@@ -71,7 +71,7 @@ public class FullParseTest {
 
 		Tree t = chemistrySentenceParser.parseTags();
 		ASTtoXML ast2XML = new ASTtoXML();
-		//System.err.println(ast2XML.convert(t));
+		//System.err.println(ast2XML.convert(t).toXML());
 		checkNodes(t);
 	}
 	@Test
@@ -86,7 +86,7 @@ public class FullParseTest {
 
 		Tree t = chemistrySentenceParser.parseTags();
 		ASTtoXML ast2XML = new ASTtoXML();
-		//System.err.println(ast2XML.convert(t));
+		//System.err.println(ast2XML.convert(t).toXML());
 		checkNodes(t);
 	}
 	
@@ -102,7 +102,7 @@ public class FullParseTest {
 
 		Tree t = chemistrySentenceParser.parseTags();
 		ASTtoXML ast2XML = new ASTtoXML();
-		//System.err.println(ast2XML.convert(t));
+		//System.err.println(ast2XML.convert(t).toXML());
 		checkNodes(t);
 	}
 	
@@ -118,7 +118,7 @@ public class FullParseTest {
 
 		Tree t = chemistrySentenceParser.parseTags();
 		ASTtoXML ast2XML = new ASTtoXML();
-		//System.err.println(ast2XML.convert(t));
+		//System.err.println(ast2XML.convert(t).toXML());
 		checkNodes(t);
 	}
 
@@ -134,7 +134,7 @@ public class FullParseTest {
 
 		Tree t = chemistrySentenceParser.parseTags();
 		ASTtoXML ast2XML = new ASTtoXML();
-		//System.err.println(ast2XML.convert(t));
+		//System.err.println(ast2XML.convert(t).toXML());
 		checkNodes(t);
 	}
 	
@@ -151,7 +151,7 @@ public class FullParseTest {
 
 		Tree t = chemistrySentenceParser.parseTags();
 		ASTtoXML ast2XML = new ASTtoXML();
-		System.err.println(ast2XML.convert(t).toXML());
+		//System.err.println(ast2XML.convert(t).toXML());
 		checkNodes(t);
 	}
 	
