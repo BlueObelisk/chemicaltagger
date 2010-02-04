@@ -101,7 +101,7 @@ public class ExtractFromEPOTest {
 			extractEPO = new ExtractFromEPO();
 
 			String resourcePath = filePath + file;
-			System.err.println(resourcePath);
+			//System.err.println(resourcePath);
 			Utils utils = new Utils();
 			InputStream inStream = utils.getInputStream(resourcePath);
 			DocumentContainer docContainer = extractEPO.getInfo(inStream);

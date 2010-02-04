@@ -190,7 +190,7 @@ public class ChemistryPOSTagger {
 			if (currentTag.toLowerCase().startsWith("vb-")
 					&& !currentToken.toLowerCase().endsWith("ing")) {
 
-				List afterList = Utils.addToList("nn oscar-cm nns nn-chementity oscar-cj jj nnp");
+				List afterList = Utils.addToList("nn oscar-cm nns nn-chementity oscar-cj jj nnp nn-state");
 				List beforeList = Utils.addToList("dt in-in in-by in-of in stop ");
 				if (stringafter(afterList, i, combinedTags)
 						&& stringbefore(beforeList, i, combinedTags)) {
@@ -217,6 +217,15 @@ public class ChemistryPOSTagger {
 				}
 			}
 
+			if (currentTag.toLowerCase().equals("oscar-cd")) {
+
+				List afterList = Utils.addToList("nn-vol nn-mass");
+
+				if (stringafter(afterList, i, combinedTags)) {
+					newTag = "CD";
+				}
+			}
+			
 			combinedTags.get(i).setPOS(newTag);
 		}
 
