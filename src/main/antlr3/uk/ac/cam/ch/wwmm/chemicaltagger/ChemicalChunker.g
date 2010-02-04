@@ -76,7 +76,7 @@ adv	:	rb|rbr|rbt|rp|rbs|rbconj;
 
 
 prepphrase 
-	: 	neg? (prepphraseAtmosphere|prepphraseTemp|prepphraseTime|prepphraseOther)  ;
+	: 	neg? (prepphraseAtmosphere|prepphraseTemp|prepphraseTime|prepphraseIN|prepphraseOther)  ;
 
 prepphraseOther
 	: (adv|adj)? inAll+  nounphrase ->  ^(NODE["PrepPhrase"]  adv? adj? inAll+  nounphrase);
@@ -87,7 +87,7 @@ prepphraseTime
 	:(adv|adj)? inAll?  dt? (adv|adj)? cd? nntime+ ->  ^(NODE["TimePhrase"]  adv? adj? inAll? dt? adv? adj? cd? nntime+);
 
 prepphraseIN 
-	:inin molecule ->  ^(NODE["INMolecule"]  inin  molecule);
+	:inin molecule ->  ^(NODE["PrepPhrase"]  inin  molecule);
 
 prepphraseAtmosphere 
 	: inunder  dt? (adv|adj)? molecule nnatmosphere? ->  ^(NODE["AtmospherePhrase"]  inunder  dt? adv? adj? molecule nnatmosphere?  ) ;
@@ -115,11 +115,11 @@ measurements
 // The RRB at the end is for leftover brackets from chemicals that didn't parse properly
 oscarCompound :  (oscarCompound1|oscarCompound2|oscarCompound3|oscarCompound4|oscarCompound5|oscarcm) ;
 
-oscarCompound5 :	lrb oscarcm rrb -> ^(NODE["OSCARCM"]  lrb oscarcm  rrb );
-oscarCompound4 :	oscarcm (dash|apost)+ -> ^(NODE["OSCARCM"]  oscarcm  dash* apost* );
-oscarCompound3 :	oscarcm (dash oscarcm)+ dash?-> ^(NODE["OSCARCM"]  oscarcm (dash oscarcm)+ dash? );
-oscarCompound2 :	oscarcm oscarcm+ -> ^(NODE["OSCARCM"]  oscarcm oscarcm+);
-oscarCompound1 :	oscarcm jj oscarcm -> ^(NODE["OSCARCM"]  oscarcm jj oscarcm);
+oscarCompound5 :	lrb oscarcm rrb -> ^(NODE["OSCAR-CM"]  lrb oscarcm  rrb );
+oscarCompound4 :	oscarcm (dash|apost)+ -> ^(NODE["OSCAR-CM"]  oscarcm  dash* apost* );
+oscarCompound3 :	oscarcm (dash oscarcm)+ dash?-> ^(NODE["OSCAR-CM"]  oscarcm (dash oscarcm)+ dash? );
+oscarCompound2 :	oscarcm oscarcm+ -> ^(NODE["OSCAR-CM"]  oscarcm oscarcm+);
+oscarCompound1 :	oscarcm jj oscarcm -> ^(NODE["OSCAR-CM"]  oscarcm jj oscarcm);
 //moleculeamount1
 //	:measurements (quantity|mixture)? inof oscarCompound;	
 moleculeamount1
