@@ -17,34 +17,51 @@ import org.apache.log4j.Logger;
 
 public class OpenNLPTagger {
 
-	private static File tempFile;
+	private static final class INSTANCE_HOLDER {
+		private static OpenNLPTagger myInstance = new OpenNLPTagger();
+	}
 	
-	static {
-		 try {
-			//the constructor only takes a file path, so we copy it to temp in case
+	private File tempFile;
+	private PosTagger posTagger;
+	
+	private final Logger LOG = Logger.getLogger(OscarTagger.class);
+
+	private OpenNLPTagger() {
+		setUpTagDict();
+		try {
+			setUpPosTagger();
+		} catch (IOException e) {
+			LOG.error("Exception " + e.getMessage());
+			throw new RuntimeException("failed to initialise PosTagger", e);
+		}
+	}
+
+	
+	private void setUpTagDict() {
+		try {
+			//the constructor for PosTagger only takes a file path, so we copy it to temp in case
 			//the code is running from a jar
 			//openNlp throws a weird NumberFormatException if the temp file name doesn't end in .bin (!)			
 			tempFile = File.createTempFile("tag", ".bin");
 			tempFile.deleteOnExit();
 			//TODO ensure temp files are properly deleted
-			InputStream is = ClassLoader.getSystemResourceAsStream("openNlpResources/tag.bin");
+			InputStream is = getClass().getClassLoader().getResourceAsStream("openNlpResources/tag.bin");
 			OutputStream os = new FileOutputStream(tempFile);
 			IOUtils.copy(is, os);
 		}
 		 catch (IOException e) {
 			// TODO Auto-generated catch block
+			 LOG.error("Exception " + e.getMessage());
 			e.printStackTrace();
 		}
 	}
 	
-	private final Logger LOG = Logger.getLogger(OscarTagger.class);
-
-	/****************************
-	 * Public Constructor
-	 ***************************/
-	public OpenNLPTagger() {
+	private void setUpPosTagger() throws IOException {
+		InputStreamReader tagDictReader = new InputStreamReader(
+				ClassLoader.getSystemResourceAsStream("openNlpResources/tagdict"), "UTF-8");
+		POSDictionary tagDict = new POSDictionary(new BufferedReader(tagDictReader), true);
+		posTagger = new PosTagger(tempFile.getCanonicalPath(), tagDict);
 	}
-
 	
 
 	/*****************************************************
@@ -52,32 +69,29 @@ public class OpenNLPTagger {
 	 * POSContainer
 	 *****************************************************/
 	public POSContainer runTagger(POSContainer posContainer) {
-		POSDictionary tagDict;
-		String[] tags = null;
 		List<String> tokenList = posContainer.getTokenList();
-
-		String[] token = new String[tokenList.size()];
+		String[] tokens = new String[tokenList.size()];
 		for (int i = 0; i < tokenList.size(); i++) {
-			token[i] = tokenList.get(i);
+			tokens[i] = tokenList.get(i);
 		}
-		try {
-			InputStreamReader tagDictReader = new InputStreamReader(
-					ClassLoader.getSystemResourceAsStream("openNlpResources/tagdict"), "UTF-8");
-			tagDict = new POSDictionary(new BufferedReader(tagDictReader), true);
-			PosTagger posTagger = new PosTagger(tempFile.getCanonicalPath(), tagDict);
-			tags = posTagger.tag(token);
-			posContainer.addToBrownListFromStringArray(tags);
-
-		} catch (Exception e) {
-			LOG.error("Exception " + e.getMessage());
-			e.printStackTrace();
-			throw new RuntimeException(e);
-		}
+		
+		String[] tags = posTagger.tag(tokens);
+		posContainer.addToBrownListFromStringArray(tags);
 
 		return posContainer;
-
 	}
 
+
+
+	public static OpenNLPTagger getInstance() {
+		return INSTANCE_HOLDER.myInstance;
+	}
+
+
+
+	public PosTagger getTagger() {
+		return posTagger;
+	}
 
 
 }
