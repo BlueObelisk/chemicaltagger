@@ -35,7 +35,7 @@ public class ChemistryPOSTagger {
 	private ChemistryPOSTagger() {
 		oscarTagger = new OscarTagger();
 		regexTagger = new RegexTagger();
-	    openNLPTagger = new OpenNLPTagger();	
+	    openNLPTagger = OpenNLPTagger.getInstance();	
 	}
 
 	public static ChemistryPOSTagger getInstance() {
