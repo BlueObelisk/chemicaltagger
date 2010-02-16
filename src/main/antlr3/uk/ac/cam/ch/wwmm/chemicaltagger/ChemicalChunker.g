@@ -101,7 +101,7 @@ amount	: cd nnamount -> ^(NODE["AMOUNT"]   cd nnamount );
 mass	: cd nnmass-> ^(NODE["MASS"]   cd nnmass ); 
 percent	: cd nn? nnpercent -> ^(NODE["PERCENT"]   cd nn? nnpercent );
 volume	: cd nnvol -> ^(NODE["VOLUME"]   cd nnvol );
-
+molar	: cd nnmolar -> ^(NODE["MOLAR"]   cd nnmolar );
 preparationphrase
 	: vbsynthesize inas (nnexample cd| prepphrase)	;
 apparatus
@@ -110,7 +110,10 @@ apparatus
 preapparatus
 	:   quantity|nn|nnpressure|adj|nnadd|nnchementity|nnstate ;
 measurements
-	:(cd nn)? amount|mass|percent|volume    dt?;	
+	:(cd nn)? measurementtypes    dt?;	
+measurementtypes
+	: amount|mass|percent|volume|molar ;	
+
 
 // The RRB at the end is for leftover brackets from chemicals that didn't parse properly
 oscarCompound :  (oscarCompound1|oscarCompound2|oscarCompound3|oscarCompound4|oscarCompound5|oscarcm) ;
@@ -192,6 +195,7 @@ nnexample:'NN-EXAMPLE' TOKEN;
 nnstate:'NN-STATE' TOKEN;
 nntime:'NN-TIME' TOKEN;
 nnmass:'NN-MASS' TOKEN;
+nnmolar: 'NN-MOLAR'  TOKEN;
 nnamount:'NN-AMOUNT' TOKEN;
 nnatmosphere:'NN-ATMOSPHERE' TOKEN;
 nneq:'NN-EQ' TOKEN;
@@ -309,6 +313,7 @@ stop:'STOP' TOKEN;
 nnpercent:'NN-PERCENT' TOKEN;
 lsqb:'LSQB' TOKEN;
 rsqb:'RSQB' TOKEN;
+
 lrb:'-LRB-' TOKEN;
 rrb:'-RRB-' TOKEN;
 

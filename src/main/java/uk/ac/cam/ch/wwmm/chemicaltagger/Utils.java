@@ -66,7 +66,7 @@ public class Utils {
 
 		try {
 			Serializer serializer = new Serializer(new FileOutputStream(
-					xmlFilename));
+					xmlFilename),"UTF-8");
 			serializer.write(doc);
 			serializer.flush();
 		} catch (IOException ex) {
