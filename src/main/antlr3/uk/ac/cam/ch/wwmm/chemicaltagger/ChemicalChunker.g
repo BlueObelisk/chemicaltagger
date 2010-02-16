@@ -101,7 +101,7 @@ amount	: cd nnamount -> ^(NODE["AMOUNT"]   cd nnamount );
 mass	: cd nnmass-> ^(NODE["MASS"]   cd nnmass ); 
 percent	: cd nn? nnpercent -> ^(NODE["PERCENT"]   cd nn? nnpercent );
 volume	: cd nnvol -> ^(NODE["VOLUME"]   cd nnvol );
-molar	: cd nnmolar -> ^(NODE["MOLAR"]   cd nnmolar );
+molar	: cd? nnmolar -> ^(NODE["MOLAR"]   cd? nnmolar );
 preparationphrase
 	: vbsynthesize inas (nnexample cd| prepphrase)	;
 apparatus
@@ -112,8 +112,7 @@ preapparatus
 measurements
 	:(cd nn)? measurementtypes    dt?;	
 measurementtypes
-	: amount|mass|percent|volume|molar ;	
-
+	: molar|amount|mass|percent|volume ;	
 
 // The RRB at the end is for leftover brackets from chemicals that didn't parse properly
 oscarCompound :  (oscarCompound1|oscarCompound2|oscarCompound3|oscarCompound4|oscarCompound5|oscarcm) ;
