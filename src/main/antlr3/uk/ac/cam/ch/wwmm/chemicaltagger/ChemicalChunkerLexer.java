@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 12:02:23 /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g 2010-01-29 01:49:11
+// $ANTLR 3.2 Sep 23, 2009 12:02:23 /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g 2010-02-16 14:32:10
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
 import org.antlr.runtime.*;
@@ -149,6 +149,8 @@ public class ChemicalChunkerLexer extends Lexer {
     public static final int T__52=52;
     public static final int T__53=53;
     public static final int T__54=54;
+    public static final int T__191=191;
+    public static final int T__190=190;
     public static final int T__59=59;
     public static final int DIGIT=8;
     public static final int T__50=50;
@@ -696,10 +698,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:32:7: ( 'NN-STATE' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:32:9: 'NN-STATE'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:32:7: ( 'NN-EXAMPLE' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:32:9: 'NN-EXAMPLE'
             {
-            match("NN-STATE"); 
+            match("NN-EXAMPLE"); 
 
 
             }
@@ -717,10 +719,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:33:7: ( 'NN-TIME' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:33:9: 'NN-TIME'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:33:7: ( 'NN-STATE' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:33:9: 'NN-STATE'
             {
-            match("NN-TIME"); 
+            match("NN-STATE"); 
 
 
             }
@@ -738,10 +740,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:34:7: ( 'NN-MASS' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:34:9: 'NN-MASS'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:34:7: ( 'NN-TIME' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:34:9: 'NN-TIME'
             {
-            match("NN-MASS"); 
+            match("NN-TIME"); 
 
 
             }
@@ -759,10 +761,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:35:7: ( 'NN-AMOUNT' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:35:9: 'NN-AMOUNT'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:35:7: ( 'NN-MASS' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:35:9: 'NN-MASS'
             {
-            match("NN-AMOUNT"); 
+            match("NN-MASS"); 
 
 
             }
@@ -780,10 +782,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__38;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:36:7: ( 'NN-ATMOSPHERE' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:36:9: 'NN-ATMOSPHERE'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:36:7: ( 'NN-MOLAR' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:36:9: 'NN-MOLAR'
             {
-            match("NN-ATMOSPHERE"); 
+            match("NN-MOLAR"); 
 
 
             }
@@ -801,10 +803,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__39;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:37:7: ( 'NN-EQ' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:37:9: 'NN-EQ'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:37:7: ( 'NN-AMOUNT' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:37:9: 'NN-AMOUNT'
             {
-            match("NN-EQ"); 
+            match("NN-AMOUNT"); 
 
 
             }
@@ -822,10 +824,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__40;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:38:7: ( 'NN-VOL' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:38:9: 'NN-VOL'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:38:7: ( 'NN-ATMOSPHERE' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:38:9: 'NN-ATMOSPHERE'
             {
-            match("NN-VOL"); 
+            match("NN-ATMOSPHERE"); 
 
 
             }
@@ -843,10 +845,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__41;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:39:7: ( 'NN-CHEMENTITY' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:39:9: 'NN-CHEMENTITY'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:39:7: ( 'NN-EQ' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:39:9: 'NN-EQ'
             {
-            match("NN-CHEMENTITY"); 
+            match("NN-EQ"); 
 
 
             }
@@ -864,10 +866,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__42;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:40:7: ( 'NN-TEMP' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:40:9: 'NN-TEMP'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:40:7: ( 'NN-VOL' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:40:9: 'NN-VOL'
             {
-            match("NN-TEMP"); 
+            match("NN-VOL"); 
 
 
             }
@@ -885,10 +887,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__43;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:41:7: ( 'NN-FLASH' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:41:9: 'NN-FLASH'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:41:7: ( 'NN-CHEMENTITY' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:41:9: 'NN-CHEMENTITY'
             {
-            match("NN-FLASH"); 
+            match("NN-CHEMENTITY"); 
 
 
             }
@@ -906,10 +908,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__44;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:42:7: ( 'NN-GENERAL' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:42:9: 'NN-GENERAL'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:42:7: ( 'NN-TEMP' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:42:9: 'NN-TEMP'
             {
-            match("NN-GENERAL"); 
+            match("NN-TEMP"); 
 
 
             }
@@ -927,10 +929,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__45;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:43:7: ( 'NN-METHOD' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:43:9: 'NN-METHOD'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:43:7: ( 'NN-FLASH' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:43:9: 'NN-FLASH'
             {
-            match("NN-METHOD"); 
+            match("NN-FLASH"); 
 
 
             }
@@ -948,10 +950,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__46;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:44:7: ( 'NN-PRESSURE' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:44:9: 'NN-PRESSURE'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:44:7: ( 'NN-GENERAL' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:44:9: 'NN-GENERAL'
             {
-            match("NN-PRESSURE"); 
+            match("NN-GENERAL"); 
 
 
             }
@@ -969,10 +971,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__47;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:45:7: ( 'NN-COLUMN' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:45:9: 'NN-COLUMN'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:45:7: ( 'NN-METHOD' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:45:9: 'NN-METHOD'
             {
-            match("NN-COLUMN"); 
+            match("NN-METHOD"); 
 
 
             }
@@ -990,10 +992,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__48;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:46:7: ( 'NN-CHROMATOGRAPHY' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:46:9: 'NN-CHROMATOGRAPHY'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:46:7: ( 'NN-PRESSURE' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:46:9: 'NN-PRESSURE'
             {
-            match("NN-CHROMATOGRAPHY"); 
+            match("NN-PRESSURE"); 
 
 
             }
@@ -1011,10 +1013,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__49;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:47:7: ( 'NN-VACUUM' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:47:9: 'NN-VACUUM'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:47:7: ( 'NN-COLUMN' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:47:9: 'NN-COLUMN'
             {
-            match("NN-VACUUM"); 
+            match("NN-COLUMN"); 
 
 
             }
@@ -1032,10 +1034,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__50;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:48:7: ( 'NN-CYCLE' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:48:9: 'NN-CYCLE'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:48:7: ( 'NN-CHROMATOGRAPHY' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:48:9: 'NN-CHROMATOGRAPHY'
             {
-            match("NN-CYCLE"); 
+            match("NN-CHROMATOGRAPHY"); 
 
 
             }
@@ -1053,10 +1055,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__51;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:49:7: ( 'NN-TIMES' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:49:9: 'NN-TIMES'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:49:7: ( 'NN-VACUUM' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:49:9: 'NN-VACUUM'
             {
-            match("NN-TIMES"); 
+            match("NN-VACUUM"); 
 
 
             }
@@ -1074,10 +1076,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__52;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:50:7: ( 'OSCAR-CM' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:50:9: 'OSCAR-CM'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:50:7: ( 'NN-CYCLE' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:50:9: 'NN-CYCLE'
             {
-            match("OSCAR-CM"); 
+            match("NN-CYCLE"); 
 
 
             }
@@ -1095,10 +1097,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__53;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:51:7: ( 'VB-USE' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:51:9: 'VB-USE'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:51:7: ( 'NN-TIMES' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:51:9: 'NN-TIMES'
             {
-            match("VB-USE"); 
+            match("NN-TIMES"); 
 
 
             }
@@ -1116,10 +1118,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__54;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:52:7: ( 'VB-CHANGE' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:52:9: 'VB-CHANGE'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:52:7: ( 'OSCAR-CM' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:52:9: 'OSCAR-CM'
             {
-            match("VB-CHANGE"); 
+            match("OSCAR-CM"); 
 
 
             }
@@ -1137,10 +1139,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__55;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:53:7: ( 'VB-SUBMERGE' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:53:9: 'VB-SUBMERGE'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:53:7: ( 'VB-USE' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:53:9: 'VB-USE'
             {
-            match("VB-SUBMERGE"); 
+            match("VB-USE"); 
 
 
             }
@@ -1158,10 +1160,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__56;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:54:7: ( 'VB-SUBJECT' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:54:9: 'VB-SUBJECT'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:54:7: ( 'VB-CHANGE' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:54:9: 'VB-CHANGE'
             {
-            match("VB-SUBJECT"); 
+            match("VB-CHANGE"); 
 
 
             }
@@ -1179,10 +1181,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__57;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:55:7: ( 'NN-ADD' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:55:9: 'NN-ADD'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:55:7: ( 'VB-SUBMERGE' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:55:9: 'VB-SUBMERGE'
             {
-            match("NN-ADD"); 
+            match("VB-SUBMERGE"); 
 
 
             }
@@ -1200,10 +1202,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__58;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:56:7: ( 'NN-MIXTURE' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:56:9: 'NN-MIXTURE'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:56:7: ( 'VB-SUBJECT' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:56:9: 'VB-SUBJECT'
             {
-            match("NN-MIXTURE"); 
+            match("VB-SUBJECT"); 
 
 
             }
@@ -1221,10 +1223,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__59;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:57:7: ( 'VB-ADD' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:57:9: 'VB-ADD'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:57:7: ( 'NN-ADD' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:57:9: 'NN-ADD'
             {
-            match("VB-ADD"); 
+            match("NN-ADD"); 
 
 
             }
@@ -1242,10 +1244,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__60;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:58:7: ( 'VB-CHARGE' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:58:9: 'VB-CHARGE'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:58:7: ( 'NN-MIXTURE' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:58:9: 'NN-MIXTURE'
             {
-            match("VB-CHARGE"); 
+            match("NN-MIXTURE"); 
 
 
             }
@@ -1263,10 +1265,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__61;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:59:7: ( 'VB-CONTAIN' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:59:9: 'VB-CONTAIN'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:59:7: ( 'VB-ADD' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:59:9: 'VB-ADD'
             {
-            match("VB-CONTAIN"); 
+            match("VB-ADD"); 
 
 
             }
@@ -1284,10 +1286,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__62;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:60:7: ( 'VB-DROP' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:60:9: 'VB-DROP'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:60:7: ( 'VB-CHARGE' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:60:9: 'VB-CHARGE'
             {
-            match("VB-DROP"); 
+            match("VB-CHARGE"); 
 
 
             }
@@ -1305,10 +1307,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__63;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:61:7: ( 'VB-FILL' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:61:9: 'VB-FILL'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:61:7: ( 'VB-CONTAIN' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:61:9: 'VB-CONTAIN'
             {
-            match("VB-FILL"); 
+            match("VB-CONTAIN"); 
 
 
             }
@@ -1326,10 +1328,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__64;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:62:7: ( 'VB-SUSPEND' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:62:9: 'VB-SUSPEND'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:62:7: ( 'VB-DROP' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:62:9: 'VB-DROP'
             {
-            match("VB-SUSPEND"); 
+            match("VB-DROP"); 
 
 
             }
@@ -1347,10 +1349,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__65;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:63:7: ( 'VB-TREAT' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:63:9: 'VB-TREAT'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:63:7: ( 'VB-FILL' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:63:9: 'VB-FILL'
             {
-            match("VB-TREAT"); 
+            match("VB-FILL"); 
 
 
             }
@@ -1368,10 +1370,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__66;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:64:7: ( 'VB-APPARATUS' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:64:9: 'VB-APPARATUS'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:64:7: ( 'VB-SUSPEND' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:64:9: 'VB-SUSPEND'
             {
-            match("VB-APPARATUS"); 
+            match("VB-SUSPEND"); 
 
 
             }
@@ -1389,10 +1391,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__67;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:65:7: ( 'NN-APPARATUS' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:65:9: 'NN-APPARATUS'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:65:7: ( 'VB-TREAT' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:65:9: 'VB-TREAT'
             {
-            match("NN-APPARATUS"); 
+            match("VB-TREAT"); 
 
 
             }
@@ -1410,10 +1412,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__68;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:66:7: ( 'VB-CONCENTRATE' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:66:9: 'VB-CONCENTRATE'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:66:7: ( 'VB-APPARATUS' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:66:9: 'VB-APPARATUS'
             {
-            match("VB-CONCENTRATE"); 
+            match("VB-APPARATUS"); 
 
 
             }
@@ -1431,10 +1433,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__69;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:67:7: ( 'NN-CONCENTRATE' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:67:9: 'NN-CONCENTRATE'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:67:7: ( 'NN-APPARATUS' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:67:9: 'NN-APPARATUS'
             {
-            match("NN-CONCENTRATE"); 
+            match("NN-APPARATUS"); 
 
 
             }
@@ -1452,10 +1454,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__70;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:68:7: ( 'VB-COOL' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:68:9: 'VB-COOL'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:68:7: ( 'VB-CONCENTRATE' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:68:9: 'VB-CONCENTRATE'
             {
-            match("VB-COOL"); 
+            match("VB-CONCENTRATE"); 
 
 
             }
@@ -1473,10 +1475,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__71;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:69:7: ( 'VB-DEGASS' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:69:9: 'VB-DEGASS'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:69:7: ( 'NN-CONCENTRATE' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:69:9: 'NN-CONCENTRATE'
             {
-            match("VB-DEGASS"); 
+            match("NN-CONCENTRATE"); 
 
 
             }
@@ -1494,10 +1496,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__72;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:70:7: ( 'VB-DISSOLVE' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:70:9: 'VB-DISSOLVE'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:70:7: ( 'VB-COOL' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:70:9: 'VB-COOL'
             {
-            match("VB-DISSOLVE"); 
+            match("VB-COOL"); 
 
 
             }
@@ -1515,10 +1517,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__73;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:71:7: ( 'VB-DRY' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:71:9: 'VB-DRY'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:71:7: ( 'VB-DEGASS' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:71:9: 'VB-DEGASS'
             {
-            match("VB-DRY"); 
+            match("VB-DEGASS"); 
 
 
             }
@@ -1536,10 +1538,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__74;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:72:7: ( 'NN-DRY' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:72:9: 'NN-DRY'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:72:7: ( 'VB-DISSOLVE' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:72:9: 'VB-DISSOLVE'
             {
-            match("NN-DRY"); 
+            match("VB-DISSOLVE"); 
 
 
             }
@@ -1557,10 +1559,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__75;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:73:7: ( 'VB-EXTRACT' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:73:9: 'VB-EXTRACT'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:73:7: ( 'VB-DRY' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:73:9: 'VB-DRY'
             {
-            match("VB-EXTRACT"); 
+            match("VB-DRY"); 
 
 
             }
@@ -1578,10 +1580,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__76;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:74:7: ( 'NN-EXTRACT' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:74:9: 'NN-EXTRACT'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:74:7: ( 'NN-DRY' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:74:9: 'NN-DRY'
             {
-            match("NN-EXTRACT"); 
+            match("NN-DRY"); 
 
 
             }
@@ -1599,10 +1601,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__77;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:75:7: ( 'VB-FILTER' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:75:9: 'VB-FILTER'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:75:7: ( 'VB-EXTRACT' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:75:9: 'VB-EXTRACT'
             {
-            match("VB-FILTER"); 
+            match("VB-EXTRACT"); 
 
 
             }
@@ -1620,10 +1622,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__78;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:76:7: ( 'NN-FILTER' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:76:9: 'NN-FILTER'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:76:7: ( 'NN-EXTRACT' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:76:9: 'NN-EXTRACT'
             {
-            match("NN-FILTER"); 
+            match("NN-EXTRACT"); 
 
 
             }
@@ -1641,10 +1643,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__79;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:77:7: ( 'VB-HEAT' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:77:9: 'VB-HEAT'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:77:7: ( 'VB-FILTER' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:77:9: 'VB-FILTER'
             {
-            match("VB-HEAT"); 
+            match("VB-FILTER"); 
 
 
             }
@@ -1662,10 +1664,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__80;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:78:7: ( 'VB-INCREASE' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:78:9: 'VB-INCREASE'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:78:7: ( 'NN-FILTER' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:78:9: 'NN-FILTER'
             {
-            match("VB-INCREASE"); 
+            match("NN-FILTER"); 
 
 
             }
@@ -1683,10 +1685,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__81;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:79:7: ( 'VB-PARTITION' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:79:9: 'VB-PARTITION'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:79:7: ( 'VB-HEAT' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:79:9: 'VB-HEAT'
             {
-            match("VB-PARTITION"); 
+            match("VB-HEAT"); 
 
 
             }
@@ -1704,10 +1706,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__82;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:80:7: ( 'VB-PRECIPITATE' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:80:9: 'VB-PRECIPITATE'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:80:7: ( 'VB-INCREASE' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:80:9: 'VB-INCREASE'
             {
-            match("VB-PRECIPITATE"); 
+            match("VB-INCREASE"); 
 
 
             }
@@ -1725,10 +1727,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__83;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:81:7: ( 'NN-PRECIPITATE' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:81:9: 'NN-PRECIPITATE'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:81:7: ( 'VB-PARTITION' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:81:9: 'VB-PARTITION'
             {
-            match("NN-PRECIPITATE"); 
+            match("VB-PARTITION"); 
 
 
             }
@@ -1746,10 +1748,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__84;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:82:7: ( 'VB-PURIFY' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:82:9: 'VB-PURIFY'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:82:7: ( 'VB-PRECIPITATE' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:82:9: 'VB-PRECIPITATE'
             {
-            match("VB-PURIFY"); 
+            match("VB-PRECIPITATE"); 
 
 
             }
@@ -1767,10 +1769,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__85;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:83:7: ( 'NN-PURIFY' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:83:9: 'NN-PURIFY'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:83:7: ( 'NN-PRECIPITATE' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:83:9: 'NN-PRECIPITATE'
             {
-            match("NN-PURIFY"); 
+            match("NN-PRECIPITATE"); 
 
 
             }
@@ -1788,10 +1790,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__86;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:84:7: ( 'VB-QUENCH' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:84:9: 'VB-QUENCH'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:84:7: ( 'VB-PURIFY' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:84:9: 'VB-PURIFY'
             {
-            match("VB-QUENCH"); 
+            match("VB-PURIFY"); 
 
 
             }
@@ -1809,10 +1811,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__87;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:85:7: ( 'VB-RECOVER' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:85:9: 'VB-RECOVER'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:85:7: ( 'NN-PURIFY' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:85:9: 'NN-PURIFY'
             {
-            match("VB-RECOVER"); 
+            match("NN-PURIFY"); 
 
 
             }
@@ -1830,10 +1832,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__88;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:86:7: ( 'VB-REMOVE' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:86:9: 'VB-REMOVE'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:86:7: ( 'VB-QUENCH' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:86:9: 'VB-QUENCH'
             {
-            match("VB-REMOVE"); 
+            match("VB-QUENCH"); 
 
 
             }
@@ -1851,10 +1853,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__89;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:87:7: ( 'NN-REMOVE' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:87:9: 'NN-REMOVE'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:87:7: ( 'VB-RECOVER' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:87:9: 'VB-RECOVER'
             {
-            match("NN-REMOVE"); 
+            match("VB-RECOVER"); 
 
 
             }
@@ -1872,10 +1874,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__90;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:88:7: ( 'VB-STIR' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:88:9: 'VB-STIR'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:88:7: ( 'VB-REMOVE' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:88:9: 'VB-REMOVE'
             {
-            match("VB-STIR"); 
+            match("VB-REMOVE"); 
 
 
             }
@@ -1893,10 +1895,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__91;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:89:7: ( 'VB-SYNTHESIZE' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:89:9: 'VB-SYNTHESIZE'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:89:7: ( 'NN-REMOVE' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:89:9: 'NN-REMOVE'
             {
-            match("VB-SYNTHESIZE"); 
+            match("NN-REMOVE"); 
 
 
             }
@@ -1914,10 +1916,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__92;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:90:7: ( 'NN-SYNTHESIZE' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:90:9: 'NN-SYNTHESIZE'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:90:7: ( 'VB-STIR' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:90:9: 'VB-STIR'
             {
-            match("NN-SYNTHESIZE"); 
+            match("VB-STIR"); 
 
 
             }
@@ -1935,10 +1937,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__93;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:91:7: ( 'VB-WAIT' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:91:9: 'VB-WAIT'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:91:7: ( 'VB-SYNTHESIZE' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:91:9: 'VB-SYNTHESIZE'
             {
-            match("VB-WAIT"); 
+            match("VB-SYNTHESIZE"); 
 
 
             }
@@ -1956,10 +1958,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__94;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:92:7: ( 'VB-WASH' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:92:9: 'VB-WASH'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:92:7: ( 'NN-SYNTHESIZE' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:92:9: 'NN-SYNTHESIZE'
             {
-            match("VB-WASH"); 
+            match("NN-SYNTHESIZE"); 
 
 
             }
@@ -1977,10 +1979,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__95;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:93:7: ( 'VB-YIELD' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:93:9: 'VB-YIELD'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:93:7: ( 'VB-WAIT' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:93:9: 'VB-WAIT'
             {
-            match("VB-YIELD"); 
+            match("VB-WAIT"); 
 
 
             }
@@ -1998,10 +2000,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__96;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:94:7: ( 'COLON' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:94:9: 'COLON'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:94:7: ( 'VB-WASH' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:94:9: 'VB-WASH'
             {
-            match("COLON"); 
+            match("VB-WASH"); 
 
 
             }
@@ -2019,10 +2021,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__97;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:95:7: ( 'COMMA' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:95:9: 'COMMA'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:95:7: ( 'VB-YIELD' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:95:9: 'VB-YIELD'
             {
-            match("COMMA"); 
+            match("VB-YIELD"); 
 
 
             }
@@ -2040,10 +2042,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__98;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:96:7: ( 'APOST' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:96:9: 'APOST'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:96:7: ( 'COLON' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:96:9: 'COLON'
             {
-            match("APOST"); 
+            match("COLON"); 
 
 
             }
@@ -2061,10 +2063,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__99;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:97:7: ( 'NEG' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:97:9: 'NEG'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:97:7: ( 'COMMA' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:97:9: 'COMMA'
             {
-            match("NEG"); 
+            match("COMMA"); 
 
 
             }
@@ -2082,10 +2084,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__100;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:98:8: ( 'DASH' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:98:10: 'DASH'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:98:8: ( 'APOST' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:98:10: 'APOST'
             {
-            match("DASH"); 
+            match("APOST"); 
 
 
             }
@@ -2103,10 +2105,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__101;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:99:8: ( 'STOP' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:99:10: 'STOP'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:99:8: ( 'NEG' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:99:10: 'NEG'
             {
-            match("STOP"); 
+            match("NEG"); 
 
 
             }
@@ -2124,10 +2126,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__102;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:100:8: ( 'NN-PERCENT' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:100:10: 'NN-PERCENT'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:100:8: ( 'DASH' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:100:10: 'DASH'
             {
-            match("NN-PERCENT"); 
+            match("DASH"); 
 
 
             }
@@ -2145,10 +2147,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__103;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:101:8: ( 'LSQB' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:101:10: 'LSQB'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:101:8: ( 'STOP' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:101:10: 'STOP'
             {
-            match("LSQB"); 
+            match("STOP"); 
 
 
             }
@@ -2166,10 +2168,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__104;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:102:8: ( 'RSQB' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:102:10: 'RSQB'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:102:8: ( 'NN-PERCENT' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:102:10: 'NN-PERCENT'
             {
-            match("RSQB"); 
+            match("NN-PERCENT"); 
 
 
             }
@@ -2187,10 +2189,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__105;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:103:8: ( '-LRB-' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:103:10: '-LRB-'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:103:8: ( 'LSQB' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:103:10: 'LSQB'
             {
-            match("-LRB-"); 
+            match("LSQB"); 
 
 
             }
@@ -2208,10 +2210,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__106;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:104:8: ( '-RRB-' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:104:10: '-RRB-'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:104:8: ( 'RSQB' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:104:10: 'RSQB'
             {
-            match("-RRB-"); 
+            match("RSQB"); 
 
 
             }
@@ -2229,10 +2231,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__107;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:105:8: ( 'ABL' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:105:10: 'ABL'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:105:8: ( '-LRB-' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:105:10: '-LRB-'
             {
-            match("ABL"); 
+            match("-LRB-"); 
 
 
             }
@@ -2250,10 +2252,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__108;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:106:8: ( 'ABN' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:106:10: 'ABN'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:106:8: ( '-RRB-' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:106:10: '-RRB-'
             {
-            match("ABN"); 
+            match("-RRB-"); 
 
 
             }
@@ -2271,10 +2273,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__109;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:107:8: ( 'ABX' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:107:10: 'ABX'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:107:8: ( 'ABL' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:107:10: 'ABL'
             {
-            match("ABX"); 
+            match("ABL"); 
 
 
             }
@@ -2292,10 +2294,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__110;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:108:8: ( 'AP' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:108:10: 'AP'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:108:8: ( 'ABN' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:108:10: 'ABN'
             {
-            match("AP"); 
+            match("ABN"); 
 
 
             }
@@ -2313,10 +2315,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__111;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:109:8: ( 'AT' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:109:10: 'AT'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:109:8: ( 'ABX' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:109:10: 'ABX'
             {
-            match("AT"); 
+            match("ABX"); 
 
 
             }
@@ -2334,10 +2336,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__112;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:110:8: ( 'BE' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:110:10: 'BE'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:110:8: ( 'AP' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:110:10: 'AP'
             {
-            match("BE"); 
+            match("AP"); 
 
 
             }
@@ -2355,10 +2357,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__113;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:111:8: ( 'BED' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:111:10: 'BED'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:111:8: ( 'AT' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:111:10: 'AT'
             {
-            match("BED"); 
+            match("AT"); 
 
 
             }
@@ -2376,10 +2378,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__114;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:112:8: ( 'BEDZ' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:112:10: 'BEDZ'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:112:8: ( 'BE' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:112:10: 'BE'
             {
-            match("BEDZ"); 
+            match("BE"); 
 
 
             }
@@ -2397,10 +2399,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__115;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:113:8: ( 'BEG' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:113:10: 'BEG'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:113:8: ( 'BED' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:113:10: 'BED'
             {
-            match("BEG"); 
+            match("BED"); 
 
 
             }
@@ -2418,10 +2420,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__116;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:114:8: ( 'BEM' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:114:10: 'BEM'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:114:8: ( 'BEDZ' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:114:10: 'BEDZ'
             {
-            match("BEM"); 
+            match("BEDZ"); 
 
 
             }
@@ -2439,10 +2441,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__117;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:115:8: ( 'BEN' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:115:10: 'BEN'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:115:8: ( 'BEG' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:115:10: 'BEG'
             {
-            match("BEN"); 
+            match("BEG"); 
 
 
             }
@@ -2460,10 +2462,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__118;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:116:8: ( 'BER' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:116:10: 'BER'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:116:8: ( 'BEM' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:116:10: 'BEM'
             {
-            match("BER"); 
+            match("BEM"); 
 
 
             }
@@ -2481,10 +2483,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__119;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:117:8: ( 'BEZ' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:117:10: 'BEZ'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:117:8: ( 'BEN' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:117:10: 'BEN'
             {
-            match("BEZ"); 
+            match("BEN"); 
 
 
             }
@@ -2502,10 +2504,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__120;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:118:8: ( 'CC' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:118:10: 'CC'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:118:8: ( 'BER' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:118:10: 'BER'
             {
-            match("CC"); 
+            match("BER"); 
 
 
             }
@@ -2523,10 +2525,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__121;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:119:8: ( 'CD' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:119:10: 'CD'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:119:8: ( 'BEZ' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:119:10: 'BEZ'
             {
-            match("CD"); 
+            match("BEZ"); 
 
 
             }
@@ -2544,10 +2546,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__122;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:120:8: ( 'CS' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:120:10: 'CS'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:120:8: ( 'CC' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:120:10: 'CC'
             {
-            match("CS"); 
+            match("CC"); 
 
 
             }
@@ -2565,10 +2567,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__123;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:121:8: ( 'DO' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:121:10: 'DO'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:121:8: ( 'CD' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:121:10: 'CD'
             {
-            match("DO"); 
+            match("CD"); 
 
 
             }
@@ -2586,10 +2588,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__124;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:122:8: ( 'DOD' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:122:10: 'DOD'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:122:8: ( 'CS' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:122:10: 'CS'
             {
-            match("DOD"); 
+            match("CS"); 
 
 
             }
@@ -2607,10 +2609,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__125;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:123:8: ( 'DOZ' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:123:10: 'DOZ'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:123:8: ( 'DO' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:123:10: 'DO'
             {
-            match("DOZ"); 
+            match("DO"); 
 
 
             }
@@ -2628,10 +2630,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__126;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:124:8: ( 'DT' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:124:10: 'DT'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:124:8: ( 'DOD' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:124:10: 'DOD'
             {
-            match("DT"); 
+            match("DOD"); 
 
 
             }
@@ -2649,10 +2651,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__127;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:125:8: ( 'DTI' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:125:10: 'DTI'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:125:8: ( 'DOZ' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:125:10: 'DOZ'
             {
-            match("DTI"); 
+            match("DOZ"); 
 
 
             }
@@ -2670,10 +2672,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__128;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:126:8: ( 'DTS' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:126:10: 'DTS'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:126:8: ( 'DT' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:126:10: 'DT'
             {
-            match("DTS"); 
+            match("DT"); 
 
 
             }
@@ -2691,10 +2693,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__129;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:127:8: ( 'DTX' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:127:10: 'DTX'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:127:8: ( 'DTI' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:127:10: 'DTI'
             {
-            match("DTX"); 
+            match("DTI"); 
 
 
             }
@@ -2712,10 +2714,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__130;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:128:8: ( 'EX' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:128:10: 'EX'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:128:8: ( 'DTS' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:128:10: 'DTS'
             {
-            match("EX"); 
+            match("DTS"); 
 
 
             }
@@ -2733,10 +2735,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__131;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:129:8: ( 'FW' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:129:10: 'FW'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:129:8: ( 'DTX' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:129:10: 'DTX'
             {
-            match("FW"); 
+            match("DTX"); 
 
 
             }
@@ -2754,10 +2756,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__132;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:130:8: ( 'FW-IN' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:130:10: 'FW-IN'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:130:8: ( 'EX' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:130:10: 'EX'
             {
-            match("FW-IN"); 
+            match("EX"); 
 
 
             }
@@ -2775,10 +2777,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__133;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:131:8: ( 'HV' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:131:10: 'HV'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:131:8: ( 'FW' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:131:10: 'FW'
             {
-            match("HV"); 
+            match("FW"); 
 
 
             }
@@ -2796,10 +2798,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__134;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:132:8: ( 'HVD' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:132:10: 'HVD'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:132:8: ( 'FW-IN' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:132:10: 'FW-IN'
             {
-            match("HVD"); 
+            match("FW-IN"); 
 
 
             }
@@ -2817,10 +2819,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__135;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:133:8: ( 'HVG' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:133:10: 'HVG'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:133:8: ( 'HV' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:133:10: 'HV'
             {
-            match("HVG"); 
+            match("HV"); 
 
 
             }
@@ -2838,10 +2840,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__136;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:134:8: ( 'HVN' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:134:10: 'HVN'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:134:8: ( 'HVD' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:134:10: 'HVD'
             {
-            match("HVN"); 
+            match("HVD"); 
 
 
             }
@@ -2859,10 +2861,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__137;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:135:8: ( 'IN' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:135:10: 'IN'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:135:8: ( 'HVG' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:135:10: 'HVG'
             {
-            match("IN"); 
+            match("HVG"); 
 
 
             }
@@ -2880,10 +2882,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__138;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:136:8: ( 'JJ' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:136:10: 'JJ'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:136:8: ( 'HVN' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:136:10: 'HVN'
             {
-            match("JJ"); 
+            match("HVN"); 
 
 
             }
@@ -2901,10 +2903,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__139;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:137:8: ( 'JJR' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:137:10: 'JJR'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:137:8: ( 'IN' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:137:10: 'IN'
             {
-            match("JJR"); 
+            match("IN"); 
 
 
             }
@@ -2922,10 +2924,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__140;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:138:8: ( 'JJS' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:138:10: 'JJS'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:138:8: ( 'JJ' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:138:10: 'JJ'
             {
-            match("JJS"); 
+            match("JJ"); 
 
 
             }
@@ -2943,10 +2945,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__141;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:139:8: ( 'JJT' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:139:10: 'JJT'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:139:8: ( 'JJR' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:139:10: 'JJR'
             {
-            match("JJT"); 
+            match("JJR"); 
 
 
             }
@@ -2964,10 +2966,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__142;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:140:8: ( 'MD' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:140:10: 'MD'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:140:8: ( 'JJS' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:140:10: 'JJS'
             {
-            match("MD"); 
+            match("JJS"); 
 
 
             }
@@ -2985,10 +2987,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__143;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:141:8: ( 'NC' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:141:10: 'NC'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:141:8: ( 'JJT' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:141:10: 'JJT'
             {
-            match("NC"); 
+            match("JJT"); 
 
 
             }
@@ -3006,10 +3008,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__144;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:142:8: ( 'NN' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:142:10: 'NN'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:142:8: ( 'MD' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:142:10: 'MD'
             {
-            match("NN"); 
+            match("MD"); 
 
 
             }
@@ -3027,10 +3029,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__145;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:143:8: ( 'NN$' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:143:10: 'NN$'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:143:8: ( 'NC' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:143:10: 'NC'
             {
-            match("NN$"); 
+            match("NC"); 
 
 
             }
@@ -3048,10 +3050,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__146;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:144:8: ( 'NNS' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:144:10: 'NNS'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:144:8: ( 'NN' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:144:10: 'NN'
             {
-            match("NNS"); 
+            match("NN"); 
 
 
             }
@@ -3069,10 +3071,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__147;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:145:8: ( 'NNS$' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:145:10: 'NNS$'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:145:8: ( 'NN$' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:145:10: 'NN$'
             {
-            match("NNS$"); 
+            match("NN$"); 
 
 
             }
@@ -3090,10 +3092,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__148;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:146:8: ( 'NP' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:146:10: 'NP'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:146:8: ( 'NNS' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:146:10: 'NNS'
             {
-            match("NP"); 
+            match("NNS"); 
 
 
             }
@@ -3111,10 +3113,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__149;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:147:8: ( 'NNP' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:147:10: 'NNP'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:147:8: ( 'NNS$' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:147:10: 'NNS$'
             {
-            match("NNP"); 
+            match("NNS$"); 
 
 
             }
@@ -3132,10 +3134,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__150;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:148:8: ( 'NP$' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:148:10: 'NP$'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:148:8: ( 'NP' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:148:10: 'NP'
             {
-            match("NP$"); 
+            match("NP"); 
 
 
             }
@@ -3153,10 +3155,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__151;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:149:8: ( 'NPS' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:149:10: 'NPS'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:149:8: ( 'NNP' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:149:10: 'NNP'
             {
-            match("NPS"); 
+            match("NNP"); 
 
 
             }
@@ -3174,10 +3176,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__152;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:150:8: ( 'NPS$' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:150:10: 'NPS$'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:150:8: ( 'NP$' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:150:10: 'NP$'
             {
-            match("NPS$"); 
+            match("NP$"); 
 
 
             }
@@ -3195,10 +3197,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__153;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:151:8: ( 'NR' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:151:10: 'NR'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:151:8: ( 'NPS' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:151:10: 'NPS'
             {
-            match("NR"); 
+            match("NPS"); 
 
 
             }
@@ -3216,10 +3218,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__154;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:152:8: ( 'OD' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:152:10: 'OD'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:152:8: ( 'NPS$' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:152:10: 'NPS$'
             {
-            match("OD"); 
+            match("NPS$"); 
 
 
             }
@@ -3237,10 +3239,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__155;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:153:8: ( 'PN' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:153:10: 'PN'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:153:8: ( 'NR' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:153:10: 'NR'
             {
-            match("PN"); 
+            match("NR"); 
 
 
             }
@@ -3258,10 +3260,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__156;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:154:8: ( 'PN$' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:154:10: 'PN$'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:154:8: ( 'OD' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:154:10: 'OD'
             {
-            match("PN$"); 
+            match("OD"); 
 
 
             }
@@ -3279,10 +3281,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__157;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:155:8: ( 'PP$' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:155:10: 'PP$'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:155:8: ( 'PN' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:155:10: 'PN'
             {
-            match("PP$"); 
+            match("PN"); 
 
 
             }
@@ -3300,10 +3302,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__158;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:156:8: ( 'PP$$' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:156:10: 'PP$$'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:156:8: ( 'PN$' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:156:10: 'PN$'
             {
-            match("PP$$"); 
+            match("PN$"); 
 
 
             }
@@ -3321,10 +3323,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__159;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:157:8: ( 'PPL' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:157:10: 'PPL'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:157:8: ( 'PP$' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:157:10: 'PP$'
             {
-            match("PPL"); 
+            match("PP$"); 
 
 
             }
@@ -3342,10 +3344,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__160;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:158:8: ( 'PPLS' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:158:10: 'PPLS'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:158:8: ( 'PP$$' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:158:10: 'PP$$'
             {
-            match("PPLS"); 
+            match("PP$$"); 
 
 
             }
@@ -3363,10 +3365,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__161;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:159:8: ( 'PRP' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:159:10: 'PRP'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:159:8: ( 'PPL' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:159:10: 'PPL'
             {
-            match("PRP"); 
+            match("PPL"); 
 
 
             }
@@ -3384,10 +3386,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__162;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:160:8: ( 'PPO' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:160:10: 'PPO'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:160:8: ( 'PPLS' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:160:10: 'PPLS'
             {
-            match("PPO"); 
+            match("PPLS"); 
 
 
             }
@@ -3405,10 +3407,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__163;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:161:8: ( 'PPS' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:161:10: 'PPS'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:161:8: ( 'PRP' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:161:10: 'PRP'
             {
-            match("PPS"); 
+            match("PRP"); 
 
 
             }
@@ -3426,10 +3428,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__164;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:162:8: ( 'PPSS' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:162:10: 'PPSS'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:162:8: ( 'PPO' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:162:10: 'PPO'
             {
-            match("PPSS"); 
+            match("PPO"); 
 
 
             }
@@ -3447,10 +3449,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__165;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:163:8: ( 'QL' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:163:10: 'QL'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:163:8: ( 'PPS' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:163:10: 'PPS'
             {
-            match("QL"); 
+            match("PPS"); 
 
 
             }
@@ -3468,10 +3470,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__166;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:164:8: ( 'QLP' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:164:10: 'QLP'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:164:8: ( 'PPSS' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:164:10: 'PPSS'
             {
-            match("QLP"); 
+            match("PPSS"); 
 
 
             }
@@ -3489,10 +3491,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__167;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:165:8: ( 'RB' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:165:10: 'RB'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:165:8: ( 'QL' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:165:10: 'QL'
             {
-            match("RB"); 
+            match("QL"); 
 
 
             }
@@ -3510,10 +3512,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__168;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:166:8: ( 'RBR' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:166:10: 'RBR'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:166:8: ( 'QLP' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:166:10: 'QLP'
             {
-            match("RBR"); 
+            match("QLP"); 
 
 
             }
@@ -3531,10 +3533,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__169;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:167:8: ( 'RB-CONJ' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:167:10: 'RB-CONJ'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:167:8: ( 'RB' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:167:10: 'RB'
             {
-            match("RB-CONJ"); 
+            match("RB"); 
 
 
             }
@@ -3552,10 +3554,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__170;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:168:8: ( 'RBT' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:168:10: 'RBT'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:168:8: ( 'RBR' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:168:10: 'RBR'
             {
-            match("RBT"); 
+            match("RBR"); 
 
 
             }
@@ -3573,10 +3575,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__171;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:169:8: ( 'RBS' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:169:10: 'RBS'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:169:8: ( 'RB-CONJ' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:169:10: 'RB-CONJ'
             {
-            match("RBS"); 
+            match("RB-CONJ"); 
 
 
             }
@@ -3594,10 +3596,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__172;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:170:8: ( 'RN' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:170:10: 'RN'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:170:8: ( 'RBT' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:170:10: 'RBT'
             {
-            match("RN"); 
+            match("RBT"); 
 
 
             }
@@ -3615,10 +3617,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__173;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:171:8: ( 'RP' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:171:10: 'RP'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:171:8: ( 'RBS' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:171:10: 'RBS'
             {
-            match("RP"); 
+            match("RBS"); 
 
 
             }
@@ -3636,10 +3638,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__174;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:172:8: ( 'SYM' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:172:10: 'SYM'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:172:8: ( 'RN' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:172:10: 'RN'
             {
-            match("SYM"); 
+            match("RN"); 
 
 
             }
@@ -3657,10 +3659,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__175;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:173:8: ( 'TO' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:173:10: 'TO'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:173:8: ( 'RP' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:173:10: 'RP'
             {
-            match("TO"); 
+            match("RP"); 
 
 
             }
@@ -3678,10 +3680,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__176;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:174:8: ( 'UH' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:174:10: 'UH'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:174:8: ( 'SYM' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:174:10: 'SYM'
             {
-            match("UH"); 
+            match("SYM"); 
 
 
             }
@@ -3699,10 +3701,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__177;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:175:8: ( 'VB' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:175:10: 'VB'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:175:8: ( 'TO' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:175:10: 'TO'
             {
-            match("VB"); 
+            match("TO"); 
 
 
             }
@@ -3720,10 +3722,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__178;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:176:8: ( 'VBP' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:176:10: 'VBP'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:176:8: ( 'UH' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:176:10: 'UH'
             {
-            match("VBP"); 
+            match("UH"); 
 
 
             }
@@ -3741,10 +3743,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__179;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:177:8: ( 'VBD' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:177:10: 'VBD'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:177:8: ( 'VB' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:177:10: 'VB'
             {
-            match("VBD"); 
+            match("VB"); 
 
 
             }
@@ -3762,10 +3764,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__180;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:178:8: ( 'VBG' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:178:10: 'VBG'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:178:8: ( 'VBP' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:178:10: 'VBP'
             {
-            match("VBG"); 
+            match("VBP"); 
 
 
             }
@@ -3783,10 +3785,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__181;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:179:8: ( 'VBN' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:179:10: 'VBN'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:179:8: ( 'VBD' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:179:10: 'VBD'
             {
-            match("VBN"); 
+            match("VBD"); 
 
 
             }
@@ -3804,10 +3806,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__182;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:180:8: ( 'VBZ' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:180:10: 'VBZ'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:180:8: ( 'VBG' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:180:10: 'VBG'
             {
-            match("VBZ"); 
+            match("VBG"); 
 
 
             }
@@ -3825,10 +3827,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__183;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:181:8: ( 'WDT' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:181:10: 'WDT'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:181:8: ( 'VBN' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:181:10: 'VBN'
             {
-            match("WDT"); 
+            match("VBN"); 
 
 
             }
@@ -3846,10 +3848,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__184;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:182:8: ( 'WP$' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:182:10: 'WP$'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:182:8: ( 'VBZ' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:182:10: 'VBZ'
             {
-            match("WP$"); 
+            match("VBZ"); 
 
 
             }
@@ -3867,10 +3869,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__185;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:183:8: ( 'WPO' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:183:10: 'WPO'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:183:8: ( 'WDT' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:183:10: 'WDT'
             {
-            match("WPO"); 
+            match("WDT"); 
 
 
             }
@@ -3888,10 +3890,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__186;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:184:8: ( 'WPS' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:184:10: 'WPS'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:184:8: ( 'WP$' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:184:10: 'WP$'
             {
-            match("WPS"); 
+            match("WP$"); 
 
 
             }
@@ -3909,10 +3911,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__187;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:185:8: ( 'WQL' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:185:10: 'WQL'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:185:8: ( 'WPO' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:185:10: 'WPO'
             {
-            match("WQL"); 
+            match("WPO"); 
 
 
             }
@@ -3930,10 +3932,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__188;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:186:8: ( 'WRB' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:186:10: 'WRB'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:186:8: ( 'WPS' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:186:10: 'WPS'
             {
-            match("WRB"); 
+            match("WPS"); 
 
 
             }
@@ -3951,8 +3953,50 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__189;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:187:8: ( 'PDT' )
-            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:187:10: 'PDT'
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:187:8: ( 'WQL' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:187:10: 'WQL'
+            {
+            match("WQL"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__189"
+
+    // $ANTLR start "T__190"
+    public final void mT__190() throws RecognitionException {
+        try {
+            int _type = T__190;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:188:8: ( 'WRB' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:188:10: 'WRB'
+            {
+            match("WRB"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__190"
+
+    // $ANTLR start "T__191"
+    public final void mT__191() throws RecognitionException {
+        try {
+            int _type = T__191;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:189:8: ( 'PDT' )
+            // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:189:10: 'PDT'
             {
             match("PDT"); 
 
@@ -3965,7 +4009,7 @@ public class ChemicalChunkerLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__189"
+    // $ANTLR end "T__191"
 
     // $ANTLR start "WS"
     public final void mWS() throws RecognitionException {
@@ -4367,8 +4411,8 @@ public class ChemicalChunkerLexer extends Lexer {
     // $ANTLR end "TOKEN"
 
     public void mTokens() throws RecognitionException {
-        // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | T__112 | T__113 | T__114 | T__115 | T__116 | T__117 | T__118 | T__119 | T__120 | T__121 | T__122 | T__123 | T__124 | T__125 | T__126 | T__127 | T__128 | T__129 | T__130 | T__131 | T__132 | T__133 | T__134 | T__135 | T__136 | T__137 | T__138 | T__139 | T__140 | T__141 | T__142 | T__143 | T__144 | T__145 | T__146 | T__147 | T__148 | T__149 | T__150 | T__151 | T__152 | T__153 | T__154 | T__155 | T__156 | T__157 | T__158 | T__159 | T__160 | T__161 | T__162 | T__163 | T__164 | T__165 | T__166 | T__167 | T__168 | T__169 | T__170 | T__171 | T__172 | T__173 | T__174 | T__175 | T__176 | T__177 | T__178 | T__179 | T__180 | T__181 | T__182 | T__183 | T__184 | T__185 | T__186 | T__187 | T__188 | T__189 | WS | NEWLINE | TOKEN )
-        int alt5=182;
+        // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | T__112 | T__113 | T__114 | T__115 | T__116 | T__117 | T__118 | T__119 | T__120 | T__121 | T__122 | T__123 | T__124 | T__125 | T__126 | T__127 | T__128 | T__129 | T__130 | T__131 | T__132 | T__133 | T__134 | T__135 | T__136 | T__137 | T__138 | T__139 | T__140 | T__141 | T__142 | T__143 | T__144 | T__145 | T__146 | T__147 | T__148 | T__149 | T__150 | T__151 | T__152 | T__153 | T__154 | T__155 | T__156 | T__157 | T__158 | T__159 | T__160 | T__161 | T__162 | T__163 | T__164 | T__165 | T__166 | T__167 | T__168 | T__169 | T__170 | T__171 | T__172 | T__173 | T__174 | T__175 | T__176 | T__177 | T__178 | T__179 | T__180 | T__181 | T__182 | T__183 | T__184 | T__185 | T__186 | T__187 | T__188 | T__189 | T__190 | T__191 | WS | NEWLINE | TOKEN )
+        int alt5=184;
         alt5 = dfa5.predict(input);
         switch (alt5) {
             case 1 :
@@ -5625,21 +5669,35 @@ public class ChemicalChunkerLexer extends Lexer {
                 }
                 break;
             case 180 :
-                // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:1174: WS
+                // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:1174: T__190
+                {
+                mT__190(); 
+
+                }
+                break;
+            case 181 :
+                // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:1181: T__191
+                {
+                mT__191(); 
+
+                }
+                break;
+            case 182 :
+                // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:1188: WS
                 {
                 mWS(); 
 
                 }
                 break;
-            case 181 :
-                // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:1177: NEWLINE
+            case 183 :
+                // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:1191: NEWLINE
                 {
                 mNEWLINE(); 
 
                 }
                 break;
-            case 182 :
-                // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:1185: TOKEN
+            case 184 :
+                // /home/lezan/galWorkspace/chemicaltagger/src/main/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g:1:1199: TOKEN
                 {
                 mTOKEN(); 
 
@@ -5746,37 +5804,38 @@ public class ChemicalChunkerLexer extends Lexer {
         "\2\uffff\1\31\1\uffff\1\u00f4\1\u00f5\1\u00f6\1\uffff\1\u00f7\1"+
         "\u00f8\1\u00f9\4\uffff\1\u00fb\1\u00fd\1\u00fe\1\u0100\1\u0101\1"+
         "\u0102\1\u0103\2\uffff\1\u0104\1\uffff\1\u0105\1\u0106\1\u0107\1"+
-        "\u0108\31\31\6\uffff\17\31\5\uffff\1\31\3\uffff\1\u014d\5\uffff"+
-        "\1\u014e\1\uffff\1\u014f\1\u0150\1\uffff\1\31\2\uffff\2\31\1\u0154"+
-        "\6\uffff\1\31\10\uffff\1\u0156\2\uffff\1\u0157\11\uffff\3\31\1\u015b"+
-        "\1\u015c\1\u015d\2\31\1\u0160\1\u0162\2\31\1\u0166\1\u0167\17\31"+
-        "\1\u0177\45\31\1\u01a4\4\uffff\1\31\1\u01a6\1\u01a7\1\uffff\1\u01a8"+
-        "\2\uffff\3\31\3\uffff\2\31\1\uffff\1\31\1\uffff\1\31\1\u01b2\1\u01b3"+
-        "\2\uffff\1\31\1\u01b5\13\31\1\u01c1\1\31\1\uffff\1\31\1\u01c4\14"+
-        "\31\1\u01d2\1\31\1\u01d4\7\31\1\u01df\2\31\1\u01e2\20\31\1\uffff"+
-        "\1\31\3\uffff\7\31\1\u01ff\1\u0201\2\uffff\1\u0202\1\uffff\1\u0203"+
-        "\3\31\1\u0208\1\u0209\1\u020a\4\31\1\uffff\2\31\1\uffff\15\31\1"+
-        "\uffff\1\31\1\uffff\4\31\1\u0223\3\31\1\u0227\1\31\1\uffff\1\31"+
-        "\1\u022a\1\uffff\2\31\1\u022d\3\31\1\u0231\7\31\1\u0239\1\u023a"+
-        "\1\31\1\u023c\1\u023d\1\u023e\1\31\1\u0240\1\u0241\3\31\1\u0245"+
-        "\1\31\1\uffff\1\31\3\uffff\1\u0248\1\u0249\1\31\1\u024b\3\uffff"+
-        "\13\31\1\u0257\1\u0258\13\31\1\uffff\3\31\1\uffff\2\31\1\uffff\2"+
-        "\31\1\uffff\1\31\1\u026c\1\31\1\uffff\7\31\2\uffff\1\u0275\3\uffff"+
-        "\1\u0276\2\uffff\1\u0277\2\31\1\uffff\1\u027a\1\31\2\uffff\1\31"+
-        "\1\uffff\1\u027d\1\31\1\u027f\3\31\1\u0283\2\31\1\u0286\1\31\2\uffff"+
-        "\1\u0288\3\31\1\u028c\1\31\1\u028e\1\u028f\1\u0290\7\31\1\u0298"+
-        "\1\31\1\u029a\1\uffff\4\31\1\u029f\1\u02a0\1\31\1\u02a2\3\uffff"+
-        "\1\u02a3\1\u02a4\1\uffff\1\u02a5\1\31\1\uffff\1\u02a7\1\uffff\2"+
-        "\31\1\u02aa\1\uffff\2\31\1\uffff\1\31\1\uffff\1\u02ae\2\31\1\uffff"+
-        "\1\u02b1\3\uffff\1\u02b2\2\31\1\u02b5\1\u02b6\2\31\1\uffff\1\31"+
-        "\1\uffff\1\u02ba\3\31\2\uffff\1\u02be\4\uffff\1\31\1\uffff\2\31"+
-        "\1\uffff\3\31\1\uffff\1\u02c5\1\31\2\uffff\1\31\1\u02c8\2\uffff"+
-        "\2\31\1\u02cb\1\uffff\1\u02cc\2\31\1\uffff\2\31\1\u02d1\3\31\1\uffff"+
-        "\2\31\1\uffff\1\31\1\u02d8\2\uffff\1\u02d9\1\31\1\u02db\1\u02dc"+
-        "\1\uffff\1\u02dd\4\31\1\u02e2\2\uffff\1\31\3\uffff\1\31\1\u02e5"+
-        "\1\u02e6\1\u02e7\1\uffff\1\u02e8\1\31\4\uffff\1\31\1\u02eb\1\uffff";
+        "\u0108\31\31\6\uffff\17\31\5\uffff\1\31\3\uffff\1\u014e\5\uffff"+
+        "\1\u014f\1\uffff\1\u0150\1\u0151\1\uffff\1\31\2\uffff\2\31\1\u0155"+
+        "\6\uffff\1\31\10\uffff\1\u0157\2\uffff\1\u0158\11\uffff\3\31\1\u015c"+
+        "\1\u015d\1\u015e\2\31\1\u0161\1\u0163\2\31\1\u0167\1\u0168\5\31"+
+        "\1\u016f\60\31\1\u01a7\4\uffff\1\31\1\u01a9\1\u01aa\1\uffff\1\u01ab"+
+        "\2\uffff\3\31\3\uffff\2\31\1\uffff\1\31\1\uffff\1\31\1\u01b5\1\u01b6"+
+        "\2\uffff\1\31\1\u01b8\4\31\1\uffff\12\31\1\u01c7\1\31\1\u01c9\14"+
+        "\31\1\u01d7\1\31\1\u01d9\7\31\1\u01e4\2\31\1\u01e7\20\31\1\uffff"+
+        "\1\31\3\uffff\7\31\1\u0204\1\u0206\2\uffff\1\u0207\1\uffff\1\u0208"+
+        "\5\31\1\u020f\1\u0210\1\u0211\5\31\1\uffff\1\31\1\uffff\15\31\1"+
+        "\uffff\1\31\1\uffff\4\31\1\u022a\3\31\1\u022e\1\31\1\uffff\1\31"+
+        "\1\u0231\1\uffff\2\31\1\u0234\3\31\1\u0238\7\31\1\u0240\1\u0241"+
+        "\1\31\1\u0243\1\u0244\1\u0245\1\31\1\u0247\1\u0248\3\31\1\u024c"+
+        "\1\31\1\uffff\1\31\3\uffff\1\u024f\2\31\1\u0252\1\31\1\u0254\3\uffff"+
+        "\1\u0255\12\31\1\u0260\1\u0261\13\31\1\uffff\3\31\1\uffff\2\31\1"+
+        "\uffff\2\31\1\uffff\1\31\1\u0275\1\31\1\uffff\7\31\2\uffff\1\u027e"+
+        "\3\uffff\1\u027f\2\uffff\1\u0280\2\31\1\uffff\1\u0283\1\31\1\uffff"+
+        "\2\31\1\uffff\1\31\2\uffff\1\u0288\1\31\1\u028a\2\31\1\u028d\2\31"+
+        "\1\u0290\1\31\2\uffff\1\u0292\3\31\1\u0296\1\31\1\u0298\1\u0299"+
+        "\1\u029a\7\31\1\u02a2\1\31\1\u02a4\1\uffff\4\31\1\u02a9\1\u02aa"+
+        "\1\31\1\u02ac\3\uffff\1\u02ad\1\u02ae\1\uffff\1\u02af\1\u02b0\1"+
+        "\u02b1\1\31\1\uffff\1\u02b3\1\uffff\2\31\1\uffff\2\31\1\uffff\1"+
+        "\31\1\uffff\1\u02b9\2\31\1\uffff\1\u02bc\3\uffff\1\u02bd\2\31\1"+
+        "\u02c0\1\u02c1\2\31\1\uffff\1\31\1\uffff\1\u02c5\3\31\2\uffff\1"+
+        "\u02c9\6\uffff\1\31\1\uffff\5\31\1\uffff\1\u02d0\1\31\2\uffff\1"+
+        "\31\1\u02d3\2\uffff\2\31\1\u02d6\1\uffff\1\u02d7\2\31\1\uffff\2"+
+        "\31\1\u02dc\3\31\1\uffff\2\31\1\uffff\1\31\1\u02e3\2\uffff\1\u02e4"+
+        "\1\31\1\u02e6\1\u02e7\1\uffff\1\u02e8\4\31\1\u02ed\2\uffff\1\31"+
+        "\3\uffff\1\31\1\u02f0\1\u02f1\1\u02f2\1\uffff\1\u02f3\1\31\4\uffff"+
+        "\1\31\1\u02f6\1\uffff";
     static final String DFA5_eofS =
-        "\u02ec\uffff";
+        "\u02f7\uffff";
     static final String DFA5_minS =
         "\1\11\1\104\1\115\1\103\1\116\1\103\2\102\1\101\1\124\1\123\1\102"+
         "\1\114\1\105\1\130\1\127\1\126\1\112\2\104\1\114\1\110\1\104\3\uffff"+
@@ -5788,49 +5847,50 @@ public class ChemicalChunkerLexer extends Lexer {
         "\uffff\3\45\1\uffff\1\110\2\45\1\uffff\3\45\1\uffff\1\120\1\45\2"+
         "\102\1\45\1\103\2\45\3\uffff\2\102\6\45\2\uffff\1\111\1\uffff\3"+
         "\45\1\uffff\3\45\4\uffff\1\44\6\45\2\uffff\1\45\1\uffff\4\45\1\122"+
-        "\3\116\1\101\1\106\1\105\1\116\2\111\1\106\1\117\1\116\1\124\1\105"+
-        "\1\101\1\104\1\121\1\101\1\110\1\111\2\105\1\122\1\105\6\uffff\1"+
+        "\3\116\1\101\1\106\1\105\1\116\2\111\1\106\1\117\1\116\1\121\1\124"+
+        "\1\105\1\101\1\104\1\101\1\110\1\111\2\105\1\122\1\105\6\uffff\1"+
         "\123\1\110\1\124\1\104\1\105\1\111\1\122\1\130\1\105\1\116\1\101"+
         "\1\125\1\105\1\101\1\111\5\uffff\1\124\3\uffff\1\45\5\uffff\1\45"+
         "\1\uffff\2\45\1\uffff\1\117\2\uffff\2\55\1\45\6\uffff\1\116\10\uffff"+
         "\1\45\2\uffff\1\45\11\uffff\1\55\2\111\3\45\1\124\1\106\2\45\1\124"+
-        "\1\101\2\45\1\105\1\122\1\117\1\104\1\101\1\116\2\115\1\123\1\124"+
-        "\1\130\1\117\1\115\1\104\1\120\1\45\1\124\1\114\1\103\1\105\1\114"+
-        "\1\103\1\101\1\114\1\116\1\105\2\122\1\131\1\115\1\105\1\101\1\116"+
-        "\1\102\1\111\1\116\1\104\1\120\1\117\1\107\1\123\1\114\1\105\1\124"+
-        "\1\101\1\103\1\122\1\105\1\122\1\105\1\103\1\111\1\105\1\45\4\uffff"+
-        "\1\116\2\45\1\uffff\1\45\2\uffff\3\103\3\uffff\1\105\1\117\1\uffff"+
-        "\1\117\1\uffff\1\110\2\45\2\uffff\1\122\1\45\1\115\1\105\2\124\1"+
-        "\105\1\120\1\123\1\110\1\124\1\125\1\117\1\45\1\101\1\uffff\1\122"+
-        "\1\45\1\125\1\115\1\117\1\125\1\103\1\114\1\123\1\124\1\105\1\103"+
-        "\1\111\1\103\1\45\1\117\1\45\1\116\1\103\1\114\1\112\1\120\1\122"+
-        "\1\124\1\45\1\101\1\120\1\45\1\101\1\123\1\114\1\101\1\122\1\124"+
-        "\1\122\1\124\1\103\1\111\1\116\2\117\1\124\1\110\1\114\1\uffff\1"+
-        "\112\3\uffff\1\104\2\116\2\117\2\122\2\45\2\uffff\1\45\1\uffff\1"+
-        "\45\1\122\1\105\1\110\3\45\1\117\1\125\1\116\1\123\1\uffff\1\122"+
-        "\1\101\1\uffff\1\125\1\105\2\115\2\105\1\110\1\105\1\122\1\123\1"+
-        "\111\1\106\1\105\1\uffff\1\126\1\uffff\2\107\1\101\1\105\1\45\3"+
-        "\105\1\45\1\110\1\uffff\1\122\1\45\1\uffff\1\123\1\117\1\45\1\105"+
-        "\1\124\1\101\1\45\1\105\2\111\1\106\1\103\2\126\2\45\1\104\3\45"+
-        "\1\122\2\45\1\124\2\104\1\45\1\105\1\uffff\1\125\3\uffff\2\45\1"+
-        "\105\1\45\3\uffff\1\104\1\122\1\124\1\120\1\101\1\103\1\115\1\116"+
-        "\1\101\2\116\2\45\1\122\1\101\1\125\1\120\1\131\1\116\3\105\1\111"+
-        "\1\116\1\uffff\1\122\1\103\1\116\1\uffff\1\105\1\101\1\uffff\1\123"+
-        "\1\114\1\uffff\1\122\1\45\1\103\1\uffff\1\101\1\124\1\120\1\131"+
-        "\1\110\2\105\2\uffff\1\45\3\uffff\1\45\2\uffff\1\45\2\105\1\uffff"+
-        "\1\45\1\124\2\uffff\1\123\1\uffff\1\45\1\105\1\45\1\110\2\124\1"+
-        "\45\2\124\1\45\1\124\2\uffff\1\45\1\114\1\122\1\111\1\45\1\124\3"+
-        "\45\1\116\1\124\1\107\1\124\1\104\1\123\1\124\1\45\1\126\1\45\1"+
-        "\uffff\1\124\1\123\2\111\2\45\1\122\1\45\3\uffff\2\45\1\uffff\1"+
-        "\45\1\111\1\uffff\1\45\1\uffff\1\105\1\125\1\45\1\uffff\1\111\1"+
-        "\117\1\uffff\1\122\1\uffff\1\45\1\105\1\124\1\uffff\1\45\3\uffff"+
-        "\1\45\1\122\1\105\2\45\1\111\1\125\1\uffff\1\105\1\uffff\1\45\1"+
-        "\105\1\117\1\124\2\uffff\1\45\4\uffff\1\132\1\uffff\1\122\1\123"+
-        "\1\uffff\1\124\1\107\1\101\1\uffff\1\45\1\101\2\uffff\1\101\1\45"+
-        "\2\uffff\1\132\1\123\1\45\1\uffff\1\45\1\116\1\101\1\uffff\2\105"+
-        "\1\45\1\131\1\122\1\124\1\uffff\2\124\1\uffff\1\105\1\45\2\uffff"+
-        "\1\45\1\124\2\45\1\uffff\1\45\1\101\3\105\1\45\2\uffff\1\105\3\uffff"+
-        "\1\120\3\45\1\uffff\1\45\1\110\4\uffff\1\131\1\45\1\uffff";
+        "\1\101\2\45\1\105\1\122\1\117\1\104\1\101\1\45\1\101\1\116\2\115"+
+        "\1\123\1\114\1\124\1\130\1\117\1\115\1\104\1\120\1\114\1\103\1\105"+
+        "\1\114\1\103\1\101\1\114\1\116\1\105\2\122\1\131\1\115\1\105\1\101"+
+        "\1\116\1\102\1\111\1\116\1\104\1\120\1\117\1\107\1\123\1\114\1\105"+
+        "\1\124\1\101\1\103\1\122\1\105\1\122\1\105\1\103\1\111\1\105\1\45"+
+        "\4\uffff\1\116\2\45\1\uffff\1\45\2\uffff\3\103\3\uffff\1\105\1\117"+
+        "\1\uffff\1\117\1\uffff\1\110\2\45\2\uffff\1\122\1\45\1\115\1\105"+
+        "\1\115\1\122\1\uffff\2\124\1\105\1\120\1\123\1\101\1\110\1\124\1"+
+        "\125\1\117\1\45\1\101\1\45\1\125\1\115\1\117\1\125\1\103\1\114\1"+
+        "\123\1\124\1\105\1\103\1\111\1\103\1\45\1\117\1\45\1\116\1\103\1"+
+        "\114\1\112\1\120\1\122\1\124\1\45\1\101\1\120\1\45\1\101\1\123\1"+
+        "\114\1\101\1\122\1\124\1\122\1\124\1\103\1\111\1\116\2\117\1\124"+
+        "\1\110\1\114\1\uffff\1\112\3\uffff\1\104\2\116\2\117\2\122\2\45"+
+        "\2\uffff\1\45\1\uffff\1\45\1\122\1\120\1\101\1\105\1\110\3\45\1"+
+        "\122\1\117\1\125\1\116\1\123\1\uffff\1\122\1\uffff\1\125\1\105\2"+
+        "\115\2\105\1\110\1\105\1\122\1\123\1\111\1\106\1\105\1\uffff\1\126"+
+        "\1\uffff\2\107\1\101\1\105\1\45\3\105\1\45\1\110\1\uffff\1\122\1"+
+        "\45\1\uffff\1\123\1\117\1\45\1\105\1\124\1\101\1\45\1\105\2\111"+
+        "\1\106\1\103\2\126\2\45\1\104\3\45\1\122\2\45\1\124\2\104\1\45\1"+
+        "\105\1\uffff\1\125\3\uffff\1\45\1\114\1\103\1\45\1\105\1\45\3\uffff"+
+        "\1\45\1\104\1\122\1\124\1\120\1\101\1\115\1\116\1\101\2\116\2\45"+
+        "\1\122\1\101\1\125\1\120\1\131\1\116\3\105\1\111\1\116\1\uffff\1"+
+        "\122\1\103\1\116\1\uffff\1\105\1\101\1\uffff\1\123\1\114\1\uffff"+
+        "\1\122\1\45\1\103\1\uffff\1\101\1\124\1\120\1\131\1\110\2\105\2"+
+        "\uffff\1\45\3\uffff\1\45\2\uffff\1\45\2\105\1\uffff\1\45\1\124\1"+
+        "\uffff\1\105\1\124\1\uffff\1\123\2\uffff\1\45\1\105\1\45\1\110\1"+
+        "\124\1\45\2\124\1\45\1\124\2\uffff\1\45\1\114\1\122\1\111\1\45\1"+
+        "\124\3\45\1\116\1\124\1\107\1\124\1\104\1\123\1\124\1\45\1\126\1"+
+        "\45\1\uffff\1\124\1\123\2\111\2\45\1\122\1\45\3\uffff\2\45\1\uffff"+
+        "\3\45\1\111\1\uffff\1\45\1\uffff\1\105\1\125\1\uffff\1\111\1\117"+
+        "\1\uffff\1\122\1\uffff\1\45\1\105\1\124\1\uffff\1\45\3\uffff\1\45"+
+        "\1\122\1\105\2\45\1\111\1\125\1\uffff\1\105\1\uffff\1\45\1\105\1"+
+        "\117\1\124\2\uffff\1\45\6\uffff\1\132\1\uffff\1\122\1\123\1\124"+
+        "\1\107\1\101\1\uffff\1\45\1\101\2\uffff\1\101\1\45\2\uffff\1\132"+
+        "\1\123\1\45\1\uffff\1\45\1\116\1\101\1\uffff\2\105\1\45\1\131\1"+
+        "\122\1\124\1\uffff\2\124\1\uffff\1\105\1\45\2\uffff\1\45\1\124\2"+
+        "\45\1\uffff\1\45\1\101\3\105\1\45\2\uffff\1\105\3\uffff\1\120\3"+
+        "\45\1\uffff\1\45\1\110\4\uffff\1\131\1\45\1\uffff";
     static final String DFA5_maxS =
         "\1\ufffe\1\123\1\117\1\123\1\116\1\122\1\102\2\124\1\131\2\123\1"+
         "\122\1\105\1\130\1\127\1\126\1\112\1\104\1\122\1\114\1\110\1\122"+
@@ -5843,1020 +5903,87 @@ public class ChemicalChunkerLexer extends Lexer {
         "\3\ufffe\1\uffff\1\120\1\ufffe\2\102\1\ufffe\1\103\2\ufffe\3\uffff"+
         "\2\102\6\ufffe\2\uffff\1\111\1\uffff\3\ufffe\1\uffff\3\ufffe\4\uffff"+
         "\1\44\6\ufffe\2\uffff\1\ufffe\1\uffff\4\ufffe\1\122\3\116\1\101"+
-        "\1\123\1\131\1\116\2\111\1\126\1\122\1\116\1\131\2\111\1\124\1\130"+
-        "\1\117\1\131\1\114\1\105\1\125\1\122\1\105\6\uffff\1\123\1\117\1"+
-        "\131\1\120\1\122\1\111\1\122\1\130\1\105\1\116\2\125\1\105\1\101"+
-        "\1\111\5\uffff\1\124\3\uffff\1\ufffe\5\uffff\1\ufffe\1\uffff\2\ufffe"+
-        "\1\uffff\1\117\2\uffff\2\55\1\ufffe\6\uffff\1\116\10\uffff\1\ufffe"+
-        "\2\uffff\1\ufffe\11\uffff\1\55\2\111\3\ufffe\1\124\1\106\2\ufffe"+
-        "\1\124\1\101\2\ufffe\1\105\1\122\1\117\1\104\1\101\1\116\2\115\1"+
-        "\123\1\124\1\130\1\117\1\115\1\104\1\120\1\ufffe\1\124\1\114\1\103"+
-        "\1\122\1\116\1\103\1\101\1\114\1\116\1\105\2\122\1\131\1\115\1\105"+
-        "\1\101\1\117\1\123\1\111\1\116\1\104\1\120\1\131\1\107\1\123\1\114"+
-        "\1\105\1\124\1\101\1\103\1\122\1\105\1\122\1\105\1\115\1\123\1\105"+
-        "\1\ufffe\4\uffff\1\116\2\ufffe\1\uffff\1\ufffe\2\uffff\1\122\2\103"+
-        "\3\uffff\1\105\1\117\1\uffff\1\117\1\uffff\1\110\2\ufffe\2\uffff"+
-        "\1\122\1\ufffe\1\115\1\105\2\124\1\105\1\120\1\123\1\110\1\124\1"+
-        "\125\1\117\1\ufffe\1\101\1\uffff\1\122\1\ufffe\1\125\1\115\1\117"+
-        "\1\125\1\103\1\114\1\123\1\124\1\105\1\123\1\111\1\103\1\ufffe\1"+
-        "\117\1\ufffe\1\122\1\124\1\114\1\115\1\120\1\122\1\124\1\ufffe\1"+
-        "\101\1\120\1\ufffe\1\101\1\123\1\124\1\101\1\122\1\124\1\122\1\124"+
-        "\1\103\1\111\1\116\2\117\1\124\1\110\1\114\1\uffff\1\112\3\uffff"+
-        "\1\120\2\116\2\117\2\122\2\ufffe\2\uffff\1\ufffe\1\uffff\1\ufffe"+
-        "\1\122\1\105\1\110\3\ufffe\1\117\1\125\1\116\1\123\1\uffff\1\122"+
-        "\1\101\1\uffff\1\125\1\105\2\115\2\105\1\110\1\105\1\122\1\123\1"+
-        "\111\1\106\1\105\1\uffff\1\126\1\uffff\2\107\1\101\1\105\1\ufffe"+
-        "\3\105\1\ufffe\1\110\1\uffff\1\122\1\ufffe\1\uffff\1\123\1\117\1"+
-        "\ufffe\1\105\1\124\1\101\1\ufffe\1\105\2\111\1\106\1\103\2\126\2"+
-        "\ufffe\1\104\3\ufffe\1\122\2\ufffe\1\124\2\104\1\ufffe\1\105\1\uffff"+
-        "\1\125\3\uffff\2\ufffe\1\105\1\ufffe\3\uffff\1\104\1\122\1\124\1"+
-        "\120\1\101\1\103\1\115\1\116\1\101\2\116\2\ufffe\1\122\1\101\1\125"+
-        "\1\120\1\131\1\116\3\105\1\111\1\116\1\uffff\1\122\1\103\1\116\1"+
-        "\uffff\1\105\1\101\1\uffff\1\123\1\114\1\uffff\1\122\1\ufffe\1\103"+
-        "\1\uffff\1\101\1\124\1\120\1\131\1\110\2\105\2\uffff\1\ufffe\3\uffff"+
-        "\1\ufffe\2\uffff\1\ufffe\2\105\1\uffff\1\ufffe\1\124\2\uffff\1\123"+
-        "\1\uffff\1\ufffe\1\105\1\ufffe\1\110\2\124\1\ufffe\2\124\1\ufffe"+
-        "\1\124\2\uffff\1\ufffe\1\114\1\122\1\111\1\ufffe\1\124\3\ufffe\1"+
-        "\116\1\124\1\107\1\124\1\104\1\123\1\124\1\ufffe\1\126\1\ufffe\1"+
-        "\uffff\1\124\1\123\2\111\2\ufffe\1\122\1\ufffe\3\uffff\2\ufffe\1"+
-        "\uffff\1\ufffe\1\111\1\uffff\1\ufffe\1\uffff\1\105\1\125\1\ufffe"+
-        "\1\uffff\1\111\1\117\1\uffff\1\122\1\uffff\1\ufffe\1\105\1\124\1"+
-        "\uffff\1\ufffe\3\uffff\1\ufffe\1\122\1\105\2\ufffe\1\111\1\125\1"+
-        "\uffff\1\105\1\uffff\1\ufffe\1\105\1\117\1\124\2\uffff\1\ufffe\4"+
-        "\uffff\1\132\1\uffff\1\122\1\123\1\uffff\1\124\1\107\1\101\1\uffff"+
-        "\1\ufffe\1\101\2\uffff\1\101\1\ufffe\2\uffff\1\132\1\123\1\ufffe"+
-        "\1\uffff\1\ufffe\1\116\1\101\1\uffff\2\105\1\ufffe\1\131\1\122\1"+
-        "\124\1\uffff\2\124\1\uffff\1\105\1\ufffe\2\uffff\1\ufffe\1\124\2"+
-        "\ufffe\1\uffff\1\ufffe\1\101\3\105\1\ufffe\2\uffff\1\105\3\uffff"+
-        "\1\120\3\ufffe\1\uffff\1\ufffe\1\110\4\uffff\1\131\1\ufffe\1\uffff";
+        "\1\123\1\131\1\116\2\111\1\126\1\122\1\116\1\130\1\131\1\111\1\117"+
+        "\1\124\1\117\1\131\1\114\1\105\1\125\1\122\1\105\6\uffff\1\123\1"+
+        "\117\1\131\1\120\1\122\1\111\1\122\1\130\1\105\1\116\2\125\1\105"+
+        "\1\101\1\111\5\uffff\1\124\3\uffff\1\ufffe\5\uffff\1\ufffe\1\uffff"+
+        "\2\ufffe\1\uffff\1\117\2\uffff\2\55\1\ufffe\6\uffff\1\116\10\uffff"+
+        "\1\ufffe\2\uffff\1\ufffe\11\uffff\1\55\2\111\3\ufffe\1\124\1\106"+
+        "\2\ufffe\1\124\1\101\2\ufffe\1\105\1\122\1\117\1\104\1\124\1\ufffe"+
+        "\1\101\1\116\2\115\1\123\1\114\1\124\1\130\1\117\1\115\1\104\1\120"+
+        "\1\114\1\103\1\122\1\116\1\103\1\101\1\114\1\116\1\105\2\122\1\131"+
+        "\1\115\1\105\1\101\1\117\1\123\1\111\1\116\1\104\1\120\1\131\1\107"+
+        "\1\123\1\114\1\105\1\124\1\101\1\103\1\122\1\105\1\122\1\105\1\115"+
+        "\1\123\1\105\1\ufffe\4\uffff\1\116\2\ufffe\1\uffff\1\ufffe\2\uffff"+
+        "\1\122\2\103\3\uffff\1\105\1\117\1\uffff\1\117\1\uffff\1\110\2\ufffe"+
+        "\2\uffff\1\122\1\ufffe\1\115\1\105\1\115\1\122\1\uffff\2\124\1\105"+
+        "\1\120\1\123\1\101\1\110\1\124\1\125\1\117\1\ufffe\1\101\1\ufffe"+
+        "\1\125\1\115\1\117\1\125\1\103\1\114\1\123\1\124\1\105\1\123\1\111"+
+        "\1\103\1\ufffe\1\117\1\ufffe\1\122\1\124\1\114\1\115\1\120\1\122"+
+        "\1\124\1\ufffe\1\101\1\120\1\ufffe\1\101\1\123\1\124\1\101\1\122"+
+        "\1\124\1\122\1\124\1\103\1\111\1\116\2\117\1\124\1\110\1\114\1\uffff"+
+        "\1\112\3\uffff\1\120\2\116\2\117\2\122\2\ufffe\2\uffff\1\ufffe\1"+
+        "\uffff\1\ufffe\1\122\1\120\1\101\1\105\1\110\3\ufffe\1\122\1\117"+
+        "\1\125\1\116\1\123\1\uffff\1\122\1\uffff\1\125\1\105\2\115\2\105"+
+        "\1\110\1\105\1\122\1\123\1\111\1\106\1\105\1\uffff\1\126\1\uffff"+
+        "\2\107\1\101\1\105\1\ufffe\3\105\1\ufffe\1\110\1\uffff\1\122\1\ufffe"+
+        "\1\uffff\1\123\1\117\1\ufffe\1\105\1\124\1\101\1\ufffe\1\105\2\111"+
+        "\1\106\1\103\2\126\2\ufffe\1\104\3\ufffe\1\122\2\ufffe\1\124\2\104"+
+        "\1\ufffe\1\105\1\uffff\1\125\3\uffff\1\ufffe\1\114\1\103\1\ufffe"+
+        "\1\105\1\ufffe\3\uffff\1\ufffe\1\104\1\122\1\124\1\120\1\101\1\115"+
+        "\1\116\1\101\2\116\2\ufffe\1\122\1\101\1\125\1\120\1\131\1\116\3"+
+        "\105\1\111\1\116\1\uffff\1\122\1\103\1\116\1\uffff\1\105\1\101\1"+
+        "\uffff\1\123\1\114\1\uffff\1\122\1\ufffe\1\103\1\uffff\1\101\1\124"+
+        "\1\120\1\131\1\110\2\105\2\uffff\1\ufffe\3\uffff\1\ufffe\2\uffff"+
+        "\1\ufffe\2\105\1\uffff\1\ufffe\1\124\1\uffff\1\105\1\124\1\uffff"+
+        "\1\123\2\uffff\1\ufffe\1\105\1\ufffe\1\110\1\124\1\ufffe\2\124\1"+
+        "\ufffe\1\124\2\uffff\1\ufffe\1\114\1\122\1\111\1\ufffe\1\124\3\ufffe"+
+        "\1\116\1\124\1\107\1\124\1\104\1\123\1\124\1\ufffe\1\126\1\ufffe"+
+        "\1\uffff\1\124\1\123\2\111\2\ufffe\1\122\1\ufffe\3\uffff\2\ufffe"+
+        "\1\uffff\3\ufffe\1\111\1\uffff\1\ufffe\1\uffff\1\105\1\125\1\uffff"+
+        "\1\111\1\117\1\uffff\1\122\1\uffff\1\ufffe\1\105\1\124\1\uffff\1"+
+        "\ufffe\3\uffff\1\ufffe\1\122\1\105\2\ufffe\1\111\1\125\1\uffff\1"+
+        "\105\1\uffff\1\ufffe\1\105\1\117\1\124\2\uffff\1\ufffe\6\uffff\1"+
+        "\132\1\uffff\1\122\1\123\1\124\1\107\1\101\1\uffff\1\ufffe\1\101"+
+        "\2\uffff\1\101\1\ufffe\2\uffff\1\132\1\123\1\ufffe\1\uffff\1\ufffe"+
+        "\1\116\1\101\1\uffff\2\105\1\ufffe\1\131\1\122\1\124\1\uffff\2\124"+
+        "\1\uffff\1\105\1\ufffe\2\uffff\1\ufffe\1\124\2\ufffe\1\uffff\1\ufffe"+
+        "\1\101\3\105\1\ufffe\2\uffff\1\105\3\uffff\1\120\3\ufffe\1\uffff"+
+        "\1\ufffe\1\110\4\uffff\1\131\1\ufffe\1\uffff";
     static final String DFA5_acceptS =
-        "\27\uffff\1\u00b4\1\u00b5\1\u00b6\57\uffff\1\u0090\1\uffff\1\u00a5"+
-        "\1\uffff\1\157\2\uffff\1\156\1\160\1\uffff\1\177\1\uffff\1\u0087"+
-        "\2\uffff\1\u0086\1\uffff\1\u0085\1\u008c\1\uffff\1\u008a\1\u008f"+
-        "\6\uffff\1\u00a7\1\uffff\1\144\3\uffff\1\145\3\uffff\1\161\3\uffff"+
-        "\1\164\10\uffff\1\u009d\1\u00a2\1\u00a3\10\uffff\1\146\1\170\1\uffff"+
-        "\1\171\3\uffff\1\173\3\uffff\1\u0080\1\u0084\1\u0092\1\u0091\7\uffff"+
-        "\1\u009b\1\u00a6\1\uffff\1\u00ae\35\uffff\1\u0089\1\u0088\1\u008b"+
-        "\1\131\1\u008e\1\u008d\17\uffff\1\u00a8\1\u00a9\1\u00aa\1\u00ab"+
-        "\1\u00ac\1\uffff\1\141\1\142\1\143\1\uffff\1\162\1\163\1\165\1\166"+
-        "\1\167\1\uffff\1\u00a4\2\uffff\1\u009e\1\uffff\1\u00a0\1\u00a1\3"+
-        "\uffff\1\147\1\151\1\152\1\153\1\154\1\155\1\uffff\1\174\1\175\1"+
-        "\176\1\u0081\1\u0082\1\u0083\1\u0094\1\u0093\1\uffff\1\u0095\1\u0098"+
-        "\1\uffff\1\u0099\1\u0097\1\u00b3\1\u009c\1\u00ad\1\u00af\1\u00b0"+
-        "\1\u00b1\1\u00b2\104\uffff\1\132\1\133\1\135\1\136\3\uffff\1\150"+
-        "\1\uffff\1\u0096\1\u009a\3\uffff\1\126\1\127\1\10\2\uffff\1\17\1"+
-        "\uffff\1\13\3\uffff\1\21\1\22\17\uffff\1\35\54\uffff\1\130\1\uffff"+
-        "\1\137\1\140\1\172\11\uffff\1\20\1\27\1\uffff\1\23\13\uffff\1\57"+
-        "\2\uffff\1\36\15\uffff\1\100\1\uffff\1\53\12\uffff\1\61\2\uffff"+
-        "\1\77\34\uffff\1\14\1\uffff\1\15\1\26\1\24\4\uffff\1\31\1\40\1\32"+
-        "\30\uffff\1\74\3\uffff\1\120\2\uffff\1\64\2\uffff\1\65\3\uffff\1"+
-        "\105\7\uffff\1\123\1\124\1\uffff\1\u009f\1\1\1\2\1\uffff\1\52\1"+
-        "\3\3\uffff\1\12\2\uffff\1\25\1\30\1\uffff\1\51\13\uffff\1\50\1\41"+
-        "\23\uffff\1\67\10\uffff\1\125\1\4\1\5\2\uffff\1\11\2\uffff\1\43"+
-        "\1\uffff\1\33\3\uffff\1\47\2\uffff\1\45\1\uffff\1\104\3\uffff\1"+
-        "\113\1\uffff\1\117\1\54\1\62\7\uffff\1\75\1\uffff\1\103\4\uffff"+
-        "\1\112\1\114\1\uffff\1\116\1\6\1\7\1\16\1\uffff\1\60\2\uffff\1\102"+
-        "\3\uffff\1\42\2\uffff\1\134\1\63\2\uffff\1\56\1\66\3\uffff\1\101"+
-        "\3\uffff\1\115\6\uffff\1\44\2\uffff\1\55\2\uffff\1\76\1\106\4\uffff"+
-        "\1\71\6\uffff\1\70\1\107\1\uffff\1\122\1\34\1\37\4\uffff\1\121\2"+
-        "\uffff\1\73\1\111\1\72\1\110\2\uffff\1\46";
+        "\27\uffff\1\u00b6\1\u00b7\1\u00b8\57\uffff\1\u0092\1\uffff\1\u00a7"+
+        "\1\uffff\1\161\2\uffff\1\160\1\162\1\uffff\1\u0081\1\uffff\1\u0089"+
+        "\2\uffff\1\u0088\1\uffff\1\u0087\1\u008e\1\uffff\1\u008c\1\u0091"+
+        "\6\uffff\1\u00a9\1\uffff\1\146\3\uffff\1\147\3\uffff\1\163\3\uffff"+
+        "\1\166\10\uffff\1\u009f\1\u00a4\1\u00a5\10\uffff\1\150\1\172\1\uffff"+
+        "\1\173\3\uffff\1\175\3\uffff\1\u0082\1\u0086\1\u0094\1\u0093\7\uffff"+
+        "\1\u009d\1\u00a8\1\uffff\1\u00b0\35\uffff\1\u008b\1\u008a\1\u008d"+
+        "\1\133\1\u0090\1\u008f\17\uffff\1\u00aa\1\u00ab\1\u00ac\1\u00ad"+
+        "\1\u00ae\1\uffff\1\143\1\144\1\145\1\uffff\1\164\1\165\1\167\1\170"+
+        "\1\171\1\uffff\1\u00a6\2\uffff\1\u00a0\1\uffff\1\u00a2\1\u00a3\3"+
+        "\uffff\1\151\1\153\1\154\1\155\1\156\1\157\1\uffff\1\176\1\177\1"+
+        "\u0080\1\u0083\1\u0084\1\u0085\1\u0096\1\u0095\1\uffff\1\u0097\1"+
+        "\u009a\1\uffff\1\u009b\1\u0099\1\u00b5\1\u009e\1\u00af\1\u00b1\1"+
+        "\u00b2\1\u00b3\1\u00b4\105\uffff\1\134\1\135\1\137\1\140\3\uffff"+
+        "\1\152\1\uffff\1\u0098\1\u009c\3\uffff\1\130\1\131\1\10\2\uffff"+
+        "\1\17\1\uffff\1\13\3\uffff\1\21\1\22\6\uffff\1\37\67\uffff\1\132"+
+        "\1\uffff\1\141\1\142\1\174\11\uffff\1\20\1\27\1\uffff\1\23\16\uffff"+
+        "\1\61\1\uffff\1\40\15\uffff\1\102\1\uffff\1\55\12\uffff\1\63\2\uffff"+
+        "\1\101\34\uffff\1\14\1\uffff\1\15\1\26\1\24\6\uffff\1\32\1\42\1"+
+        "\33\30\uffff\1\76\3\uffff\1\122\2\uffff\1\66\2\uffff\1\67\3\uffff"+
+        "\1\107\7\uffff\1\125\1\126\1\uffff\1\u00a1\1\1\1\2\1\uffff\1\54"+
+        "\1\3\3\uffff\1\12\2\uffff\1\25\2\uffff\1\31\1\uffff\1\53\1\34\12"+
+        "\uffff\1\52\1\43\23\uffff\1\71\10\uffff\1\127\1\4\1\5\2\uffff\1"+
+        "\11\4\uffff\1\45\1\uffff\1\35\2\uffff\1\51\2\uffff\1\47\1\uffff"+
+        "\1\106\3\uffff\1\115\1\uffff\1\121\1\56\1\64\7\uffff\1\77\1\uffff"+
+        "\1\105\4\uffff\1\114\1\116\1\uffff\1\120\1\6\1\7\1\16\1\30\1\104"+
+        "\1\uffff\1\62\5\uffff\1\44\2\uffff\1\136\1\65\2\uffff\1\60\1\70"+
+        "\3\uffff\1\103\3\uffff\1\117\6\uffff\1\46\2\uffff\1\57\2\uffff\1"+
+        "\100\1\110\4\uffff\1\73\6\uffff\1\72\1\111\1\uffff\1\124\1\36\1"+
+        "\41\4\uffff\1\123\2\uffff\1\75\1\113\1\74\1\112\2\uffff\1\50";
     static final String DFA5_specialS =
-        "\u02ec\uffff}>";
+        "\u02f7\uffff}>";
     static final String[] DFA5_transitionS = {
-            "\1\27\1\30\2\uffff\1\30\22\uffff\1\27\4\uffff\1\31\1\uffff\3"+
-            "\31\1\uffff\2\31\1\14\23\31\1\7\1\15\1\3\1\10\1\16\1\17\1\31"+
-            "\1\20\1\4\1\21\1\31\1\12\1\22\1\5\1\1\1\23\1\24\1\13\1\11\1"+
-            "\2\1\25\1\6\1\26\4\31\1\uffff\1\31\1\uffff\1\31\1\uffff\35\31"+
-            "\62\uffff\uff4f\31",
-            "\1\33\16\uffff\1\32",
-            "\1\34\1\uffff\1\35",
-            "\1\40\1\36\12\uffff\1\37\3\uffff\1\41",
-            "\1\42",
-            "\1\45\1\uffff\1\44\10\uffff\1\43\1\uffff\1\46\1\uffff\1\47",
-            "\1\50",
-            "\1\52\15\uffff\1\51\3\uffff\1\53",
-            "\1\54\15\uffff\1\55\4\uffff\1\56",
-            "\1\57\4\uffff\1\60",
-            "\1\61",
-            "\1\63\13\uffff\1\64\1\uffff\1\65\2\uffff\1\62",
-            "\1\66\5\uffff\1\67",
-            "\1\70",
-            "\1\71",
-            "\1\72",
-            "\1\73",
-            "\1\74",
-            "\1\75",
-            "\1\101\11\uffff\1\76\1\uffff\1\77\1\uffff\1\100",
-            "\1\102",
-            "\1\103",
-            "\1\104\13\uffff\1\105\1\106\1\107",
-            "",
-            "",
-            "",
-            "\1\110",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\112",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\2\31\1\114\56\31\1\uffff\1\31\1"+
-            "\uffff\1\31\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\116\1\117",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\2\31\1\122\56\31\1\uffff\1\31\1"+
-            "\uffff\1\31\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\125\1\31\1\uffff\3\31\1\uffff\2\31\1\124\42\31\1\127\2\31"+
-            "\1\126\10\31\1\uffff\1\31\1\uffff\1\31\1\uffff\35\31\62\uffff"+
-            "\uff4f\31",
-            "\1\131",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\133\1\31\1\uffff\3\31\1\uffff\50\31\1\134\10\31\1\uffff"+
-            "\1\31\1\uffff\1\31\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\2\31\1\137\26\31\1\141\2\31\1\142"+
-            "\6\31\1\143\1\31\1\140\11\31\1\144\1\31\1\uffff\1\31\1\uffff"+
-            "\1\31\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\44\31\1\146\14\31\1\uffff\1\31\1"+
-            "\uffff\1\31\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\150\1\uffff\1\151\11\uffff\1\152",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\154",
-            "\1\31\1\uffff\3\31\1\uffff\31\31\1\155\25\31\1\156\1\31\1\uffff"+
-            "\1\31\1\uffff\1\31\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\36\31\1\160\11\31\1\161\4\31\1\162"+
-            "\3\31\1\uffff\1\31\1\uffff\1\31\1\uffff\35\31\62\uffff\uff4f"+
-            "\31",
-            "\1\164",
-            "\1\165",
-            "\1\166",
-            "\1\167",
-            "\1\31\1\uffff\3\31\1\uffff\2\31\1\171\44\31\1\170\1\173\1\172"+
-            "\7\31\1\uffff\1\31\1\uffff\1\31\1\uffff\35\31\62\uffff\uff4f"+
-            "\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\177",
-            "\1\u0080",
-            "\1\31\1\uffff\3\31\1\uffff\31\31\1\u0081\2\31\1\u0082\5\31"+
-            "\1\u0083\1\u0084\3\31\1\u0085\7\31\1\u0086\1\31\1\uffff\1\31"+
-            "\1\uffff\1\31\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\2\31\1\u0089\56\31\1\uffff\1\31"+
-            "\1\uffff\1\31\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\31\31\1\u008b\2\31\1\u008c\6\31"+
-            "\1\u008d\15\31\1\uffff\1\31\1\uffff\1\31\1\uffff\35\31\62\uffff"+
-            "\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\47\31\1\u008f\1\u0090\1\u0091\7"+
-            "\31\1\uffff\1\31\1\uffff\1\31\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u0094\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff"+
-            "\1\31\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u0096\47\uffff\1\u0097\2\uffff\1\u0098\3\uffff\1\u0099",
-            "\1\u009a",
-            "\1\u009b",
-            "\1\31\1\uffff\3\31\1\uffff\45\31\1\u009c\13\31\1\uffff\1\31"+
-            "\1\uffff\1\31\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u009f",
-            "\1\u00a0\52\uffff\1\u00a1\3\uffff\1\u00a2",
-            "\1\u00a3",
-            "\1\u00a4",
-            "\1\u00a5",
-            "",
-            "\1\u00a6",
-            "",
-            "\1\u00a7",
-            "",
-            "\1\u00a8",
-            "\1\u00a9",
-            "",
-            "",
-            "\1\u00aa\1\u00ab\3\uffff\1\u00b0\2\uffff\1\u00ac\5\uffff\1"+
-            "\u00af\5\uffff\1\u00b1\1\u00ae\1\u00ad",
-            "",
-            "\1\u00b5\1\uffff\1\u00b8\1\u00bc\1\u00b6\1\u00b9\1\u00ba\5"+
-            "\uffff\1\u00b4\2\uffff\1\u00bb\1\uffff\1\u00bd\1\u00b2\1\u00b3"+
-            "\1\uffff\1\u00b7",
-            "",
-            "\1\u00be\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff"+
-            "\1\31\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "",
-            "",
-            "\1\u00c2\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff"+
-            "\1\31\1\uffff\35\31\62\uffff\uff4f\31",
-            "",
-            "",
-            "\1\u00c7\1\uffff\1\u00c5\1\u00c8\1\u00cb\1\u00c9\1\uffff\1"+
-            "\u00cc\1\u00cd\6\uffff\1\u00ce\1\u00cf\1\u00d0\1\u00c6\1\u00ca"+
-            "\1\u00c4\1\uffff\1\u00d1\1\uffff\1\u00d2",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "",
-            "\1\u00d8",
-            "",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "",
-            "\1\u00dc",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "",
-            "\1\u00e2",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u00e4",
-            "\1\u00e5",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u00e7",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "",
-            "",
-            "",
-            "\1\u00ea",
-            "\1\u00eb",
-            "\1\31\1\uffff\3\31\1\uffff\57\31\1\u00ec\1\31\1\uffff\1\31"+
-            "\1\uffff\1\31\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "",
-            "",
-            "\1\u00f3",
-            "",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "",
-            "",
-            "",
-            "",
-            "\1\u00fa",
-            "\1\31\1\uffff\3\31\1\uffff\50\31\1\u00fc\10\31\1\uffff\1\31"+
-            "\1\uffff\1\31\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\50\31\1\u00ff\10\31\1\uffff\1\31"+
-            "\1\uffff\1\31\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "",
-            "",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u0109",
-            "\1\u010a",
-            "\1\u010b",
-            "\1\u010c",
-            "\1\u010d",
-            "\1\u010f\14\uffff\1\u010e",
-            "\1\u0110\23\uffff\1\u0111",
-            "\1\u0112",
-            "\1\u0113",
-            "\1\u0114",
-            "\1\u0115\7\uffff\1\u0116\7\uffff\1\u0117",
-            "\1\u0118\2\uffff\1\u0119",
-            "\1\u011a",
-            "\1\u011b\4\uffff\1\u011c",
-            "\1\u011e\3\uffff\1\u011d",
-            "\1\u011f\3\uffff\1\u0120\3\uffff\1\u0121",
-            "\1\u0124\10\uffff\1\u0122\2\uffff\1\u0125\3\uffff\1\u0123",
-            "\1\u0126\6\uffff\1\u0127",
-            "\1\u0129\15\uffff\1\u0128",
-            "\1\u012a\6\uffff\1\u012b\11\uffff\1\u012c",
-            "\1\u012e\2\uffff\1\u012d",
-            "\1\u012f",
-            "\1\u0132\14\uffff\1\u0130\2\uffff\1\u0131",
-            "\1\u0133",
-            "\1\u0134",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\u0135",
-            "\1\u0136\6\uffff\1\u0137",
-            "\1\u0139\1\u0138\3\uffff\1\u013a",
-            "\1\u013b\13\uffff\1\u013c",
-            "\1\u013e\3\uffff\1\u013f\10\uffff\1\u013d",
-            "\1\u0140",
-            "\1\u0141",
-            "\1\u0142",
-            "\1\u0143",
-            "\1\u0144",
-            "\1\u0145\20\uffff\1\u0146\2\uffff\1\u0147",
-            "\1\u0148",
-            "\1\u0149",
-            "\1\u014a",
-            "\1\u014b",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\u014c",
-            "",
-            "",
-            "",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "",
-            "\1\u0151",
-            "",
-            "",
-            "\1\u0152",
-            "\1\u0153",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\u0155",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "",
-            "",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\u0158",
-            "\1\u0159",
-            "\1\u015a",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u015e",
-            "\1\u015f",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\51\31\1\u0161\7\31\1\uffff\1\31"+
-            "\1\uffff\1\31\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u0163",
-            "\1\u0164",
-            "\1\31\1\uffff\3\31\1\uffff\33\31\1\u0165\25\31\1\uffff\1\31"+
-            "\1\uffff\1\31\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u0168",
-            "\1\u0169",
-            "\1\u016a",
-            "\1\u016b",
-            "\1\u016c",
-            "\1\u016d",
-            "\1\u016e",
-            "\1\u016f",
-            "\1\u0170",
-            "\1\u0171",
-            "\1\u0172",
-            "\1\u0173",
-            "\1\u0174",
-            "\1\u0175",
-            "\1\u0176",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u0178",
-            "\1\u0179",
-            "\1\u017a",
-            "\1\u017b\14\uffff\1\u017c",
-            "\1\u017d\1\uffff\1\u017e",
-            "\1\u017f",
-            "\1\u0180",
-            "\1\u0181",
-            "\1\u0182",
-            "\1\u0183",
-            "\1\u0184",
-            "\1\u0185",
-            "\1\u0186",
-            "\1\u0187",
-            "\1\u0188",
-            "\1\u0189",
-            "\1\u018a\1\u018b",
-            "\1\u018c\20\uffff\1\u018d",
-            "\1\u018e",
-            "\1\u018f",
-            "\1\u0190",
-            "\1\u0191",
-            "\1\u0192\11\uffff\1\u0193",
-            "\1\u0194",
-            "\1\u0195",
-            "\1\u0196",
-            "\1\u0197",
-            "\1\u0198",
-            "\1\u0199",
-            "\1\u019a",
-            "\1\u019b",
-            "\1\u019c",
-            "\1\u019d",
-            "\1\u019e",
-            "\1\u019f\11\uffff\1\u01a0",
-            "\1\u01a1\11\uffff\1\u01a2",
-            "\1\u01a3",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "",
-            "",
-            "",
-            "",
-            "\1\u01a5",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "",
-            "",
-            "\1\u01a9\13\uffff\1\u01ab\2\uffff\1\u01aa",
-            "\1\u01ac",
-            "\1\u01ad",
-            "",
-            "",
-            "",
-            "\1\u01ae",
-            "\1\u01af",
-            "",
-            "\1\u01b0",
-            "",
-            "\1\u01b1",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "",
-            "",
-            "\1\u01b4",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u01b6",
-            "\1\u01b7",
-            "\1\u01b8",
-            "\1\u01b9",
-            "\1\u01ba",
-            "\1\u01bb",
-            "\1\u01bc",
-            "\1\u01bd",
-            "\1\u01be",
-            "\1\u01bf",
-            "\1\u01c0",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u01c2",
-            "",
-            "\1\u01c3",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u01c5",
-            "\1\u01c6",
-            "\1\u01c7",
-            "\1\u01c8",
-            "\1\u01c9",
-            "\1\u01ca",
-            "\1\u01cb",
-            "\1\u01cc",
-            "\1\u01cd",
-            "\1\u01cf\17\uffff\1\u01ce",
-            "\1\u01d0",
-            "\1\u01d1",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u01d3",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u01d5\3\uffff\1\u01d6",
-            "\1\u01d8\20\uffff\1\u01d7",
-            "\1\u01d9",
-            "\1\u01db\2\uffff\1\u01da",
-            "\1\u01dc",
-            "\1\u01dd",
-            "\1\u01de",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u01e0",
-            "\1\u01e1",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u01e3",
-            "\1\u01e4",
-            "\1\u01e5\7\uffff\1\u01e6",
-            "\1\u01e7",
-            "\1\u01e8",
-            "\1\u01e9",
-            "\1\u01ea",
-            "\1\u01eb",
-            "\1\u01ec",
-            "\1\u01ed",
-            "\1\u01ee",
-            "\1\u01ef",
-            "\1\u01f0",
-            "\1\u01f1",
-            "\1\u01f2",
-            "\1\u01f3",
-            "",
-            "\1\u01f4",
-            "",
-            "",
-            "",
-            "\1\u01f5\5\uffff\1\u01f6\2\uffff\1\u01f8\2\uffff\1\u01f7",
-            "\1\u01f9",
-            "\1\u01fa",
-            "\1\u01fb",
-            "\1\u01fc",
-            "\1\u01fd",
-            "\1\u01fe",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\44\31\1\u0200\14\31\1\uffff\1\31"+
-            "\1\uffff\1\31\1\uffff\35\31\62\uffff\uff4f\31",
-            "",
-            "",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u0204",
-            "\1\u0205",
-            "\1\u0206",
-            "\1\31\1\uffff\3\31\1\uffff\50\31\1\u0207\10\31\1\uffff\1\31"+
-            "\1\uffff\1\31\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u020b",
-            "\1\u020c",
-            "\1\u020d",
-            "\1\u020e",
-            "",
-            "\1\u020f",
-            "\1\u0210",
-            "",
-            "\1\u0211",
-            "\1\u0212",
-            "\1\u0213",
-            "\1\u0214",
-            "\1\u0215",
-            "\1\u0216",
-            "\1\u0217",
-            "\1\u0218",
-            "\1\u0219",
-            "\1\u021a",
-            "\1\u021b",
-            "\1\u021c",
-            "\1\u021d",
-            "",
-            "\1\u021e",
-            "",
-            "\1\u021f",
-            "\1\u0220",
-            "\1\u0221",
-            "\1\u0222",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u0224",
-            "\1\u0225",
-            "\1\u0226",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u0228",
-            "",
-            "\1\u0229",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "",
-            "\1\u022b",
-            "\1\u022c",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u022e",
-            "\1\u022f",
-            "\1\u0230",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u0232",
-            "\1\u0233",
-            "\1\u0234",
-            "\1\u0235",
-            "\1\u0236",
-            "\1\u0237",
-            "\1\u0238",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u023b",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u023f",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u0242",
-            "\1\u0243",
-            "\1\u0244",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u0246",
-            "",
-            "\1\u0247",
-            "",
-            "",
-            "",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u024a",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "",
-            "",
-            "",
-            "\1\u024c",
-            "\1\u024d",
-            "\1\u024e",
-            "\1\u024f",
-            "\1\u0250",
-            "\1\u0251",
-            "\1\u0252",
-            "\1\u0253",
-            "\1\u0254",
-            "\1\u0255",
-            "\1\u0256",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u0259",
-            "\1\u025a",
-            "\1\u025b",
-            "\1\u025c",
-            "\1\u025d",
-            "\1\u025e",
-            "\1\u025f",
-            "\1\u0260",
-            "\1\u0261",
-            "\1\u0262",
-            "\1\u0263",
-            "",
-            "\1\u0264",
-            "\1\u0265",
-            "\1\u0266",
-            "",
-            "\1\u0267",
-            "\1\u0268",
-            "",
-            "\1\u0269",
-            "\1\u026a",
-            "",
-            "\1\u026b",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u026d",
-            "",
-            "\1\u026e",
-            "\1\u026f",
-            "\1\u0270",
-            "\1\u0271",
-            "\1\u0272",
-            "\1\u0273",
-            "\1\u0274",
-            "",
-            "",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "",
-            "",
-            "",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "",
-            "",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u0278",
-            "\1\u0279",
-            "",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u027b",
-            "",
-            "",
-            "\1\u027c",
-            "",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u027e",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u0280",
-            "\1\u0281",
-            "\1\u0282",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u0284",
-            "\1\u0285",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u0287",
-            "",
-            "",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u0289",
-            "\1\u028a",
-            "\1\u028b",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u028d",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u0291",
-            "\1\u0292",
-            "\1\u0293",
-            "\1\u0294",
-            "\1\u0295",
-            "\1\u0296",
-            "\1\u0297",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u0299",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "",
-            "\1\u029b",
-            "\1\u029c",
-            "\1\u029d",
-            "\1\u029e",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u02a1",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "",
-            "",
-            "",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u02a6",
-            "",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "",
-            "\1\u02a8",
-            "\1\u02a9",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "",
-            "\1\u02ab",
-            "\1\u02ac",
-            "",
-            "\1\u02ad",
-            "",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u02af",
-            "\1\u02b0",
-            "",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "",
-            "",
-            "",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u02b3",
-            "\1\u02b4",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u02b7",
-            "\1\u02b8",
-            "",
-            "\1\u02b9",
-            "",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u02bb",
-            "\1\u02bc",
-            "\1\u02bd",
-            "",
-            "",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "",
-            "",
-            "",
-            "",
-            "\1\u02bf",
-            "",
-            "\1\u02c0",
-            "\1\u02c1",
-            "",
-            "\1\u02c2",
-            "\1\u02c3",
-            "\1\u02c4",
-            "",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u02c6",
-            "",
-            "",
-            "\1\u02c7",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "",
-            "",
-            "\1\u02c9",
-            "\1\u02ca",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u02cd",
-            "\1\u02ce",
-            "",
-            "\1\u02cf",
-            "\1\u02d0",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u02d2",
-            "\1\u02d3",
-            "\1\u02d4",
-            "",
-            "\1\u02d5",
-            "\1\u02d6",
-            "",
-            "\1\u02d7",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "",
-            "",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u02da",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u02de",
-            "\1\u02df",
-            "\1\u02e0",
-            "\1\u02e1",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "",
-            "",
-            "\1\u02e3",
-            "",
-            "",
-            "",
-            "\1\u02e4",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            "\1\u02e9",
-            "",
-            "",
-            "",
-            "",
-            "\1\u02ea",
-            "\1\31\1\uffff\3\31\1\uffff\61\31\1\uffff\1\31\1\uffff\1\31"+
-            "\1\uffff\35\31\62\uffff\uff4f\31",
-            ""
     };
 
     static final short[] DFA5_eot = DFA.unpackEncodedString(DFA5_eotS);
@@ -6889,7 +6016,7 @@ public class ChemicalChunkerLexer extends Lexer {
             this.transition = DFA5_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | T__112 | T__113 | T__114 | T__115 | T__116 | T__117 | T__118 | T__119 | T__120 | T__121 | T__122 | T__123 | T__124 | T__125 | T__126 | T__127 | T__128 | T__129 | T__130 | T__131 | T__132 | T__133 | T__134 | T__135 | T__136 | T__137 | T__138 | T__139 | T__140 | T__141 | T__142 | T__143 | T__144 | T__145 | T__146 | T__147 | T__148 | T__149 | T__150 | T__151 | T__152 | T__153 | T__154 | T__155 | T__156 | T__157 | T__158 | T__159 | T__160 | T__161 | T__162 | T__163 | T__164 | T__165 | T__166 | T__167 | T__168 | T__169 | T__170 | T__171 | T__172 | T__173 | T__174 | T__175 | T__176 | T__177 | T__178 | T__179 | T__180 | T__181 | T__182 | T__183 | T__184 | T__185 | T__186 | T__187 | T__188 | T__189 | WS | NEWLINE | TOKEN );";
+            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | T__112 | T__113 | T__114 | T__115 | T__116 | T__117 | T__118 | T__119 | T__120 | T__121 | T__122 | T__123 | T__124 | T__125 | T__126 | T__127 | T__128 | T__129 | T__130 | T__131 | T__132 | T__133 | T__134 | T__135 | T__136 | T__137 | T__138 | T__139 | T__140 | T__141 | T__142 | T__143 | T__144 | T__145 | T__146 | T__147 | T__148 | T__149 | T__150 | T__151 | T__152 | T__153 | T__154 | T__155 | T__156 | T__157 | T__158 | T__159 | T__160 | T__161 | T__162 | T__163 | T__164 | T__165 | T__166 | T__167 | T__168 | T__169 | T__170 | T__171 | T__172 | T__173 | T__174 | T__175 | T__176 | T__177 | T__178 | T__179 | T__180 | T__181 | T__182 | T__183 | T__184 | T__185 | T__186 | T__187 | T__188 | T__189 | T__190 | T__191 | WS | NEWLINE | TOKEN );";
         }
     }
  
