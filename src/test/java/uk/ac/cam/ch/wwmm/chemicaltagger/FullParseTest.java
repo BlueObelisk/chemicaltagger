@@ -156,6 +156,33 @@ public class FullParseTest {
 		checkNodes(t);
 	}
 	
+	@Test
+	public void testFullSentence10() throws UnsupportedEncodingException {
+		String text = "A solution of tetraol 113 (74 mg, 0.30 mmol) was taken up in dry DMF (2 mL) and cooled to 0ºC. Imidazole (40 mg, 0.60 mmol) was added and allowed to dissolve followed by a solution of TIPSCl (0.08 mL, 0.36 mmol) and DMAP (2.0 mg, 20 ?mol) in DMF (1 mL). The reaction mixture was heated at 50 ºC for 18 hrs then quenched by addition of saturated NH4Cl(aq)  (2 mL) and diluted with  (3 mL). The aqueous layer was extracted with EtOAc (3 x 10 mL) and the combined organic layers washed with 10% aqueous LiCl (5 x 10 mL), saturated brine (5 mL), dried (MgSO4), filtered and concentrated in vacuo to give the crude product as a yellow oil. Flash chromatography using CH2Cl2/MeOH (98:2) afforded the title compound 115 as a clear oil (101 mg, 83%); Rf 0.56 (CH2Cl2/MeOH 90:10);  +16.0 (c 0.3 in CHCl3); IR (film) ?max/cm–1 3380 (OH), 2943 (CH), 2924 (CH), 2893 (CH), 2866 (CH), 1464, 1382, 1247, 1094, 1035, 1013, 996, 945, 883, 770, 734,  and 658; 1H (600 MHz), CDCl3: ? = 4.98 (1H, s, 37C=CHAHB), 4.89 (1H, s, 37-C=CHAHB), 4.13 (1H, br s, OH), 4.07 (1H, s, 38-CH), 3.86 (1H, dt, J = 10.2, 4.9 Hz, 45-CHAHB), 3.76 (1H, td, J = 10.2, 3.6 Hz, 45-CHAHB), 3.29–3.24 (1H, m, 42-CH), 3.20 (2H, obs. t, J = 8.0 Hz, 43CH, 41-CH), 3.15 (1H, dd, J = 10.2, 1.4 Hz, 39-CH), 2.84 (1H, br s, OH), 2.38 (1H, br s, OH), 1.99–1.86 (2H, m, 44CHAHB, 40-CH), 1.86–1.78 (1H, m, 44-CHAHB), 1.74 (3H, s, 36-CH3) and 1.14?1.02 (24H, m, 40CHCH3, ((SiCH(CH3)2)3); 13C (150 MHz), CDCl3: ? = 145.7 (37C=CH2), 111.0 (37C=CH2), 81.2 (39-CH), 78.2 (43-CH or 41CH), 77.8 (42-CH), 75.6 (43-CH or 41-CH), 73.1 (38-CH), 60.2 (45-CH2), 37.9 (40-CH), 36.8 (44-CH2), 19.3 (36CH3), 17.9 (6C, SiCH(CH3)2), 12.8 (40-CHCH3) and 11.8 (3C, SiCH(CH3)2); m/z (+ESI) Found [M+H]+ 403.2898; C21H43O5Si requires 403.2880, ? 4.5 ppm. "
+			+"(2-((2R,3R,4R,5R,6R)-3,4-Bis(4-methoxybenzyloxy)-6-((R)-1-(4-methoxy benzyloxy)-2-methylallyl)-5-methyltetrahydro-2H-pyran-2-yl)ethoxy)(tert-butyl)dimethylsilane 116 "
+			+"A solution of triol 114 (60 mg, 0.17 mmol) in dry DMF (2 mL) was cooled to 0 ºC.  (41 mg, 1.0 mmol) was added and "
+			+"the suspension was allowed to warm to room temperature. After 1 h, PMBBr (0.15 mL, 1.0 mmol) and TBAI (11 mg, 30 ?mol)"
+			+ "were added sequentially and the reaction mixture was stirred for 18 h at ambient temperature. " 
+			+ "The reaction was then cooled to 0 ºC and quenched by addition of saturated NH4Cl(aq) (5 mL) and diluted "
+			+ "with  (5 mL). The aqueous layer was extracted with EtOAc (3 x 30 mL) and the combined organic layers "
+			+ "washed with 10% aqueous LiCl (3 x 30 mL), saturated brine (30 mL), dried (MgSO4) and concentrated under reduced "
+			+ "pressure to give the crude product as a yellow oil. Flash chromatography @" 
+			+ " using petrol/EtOAc (95:5) afforded the title compound 116 as a white foam (105 mg, 85%) ; ";
+			
+			//(2-((2R,3R,4R,5R,6R)-3,4-Bis(4-methoxybenzyloxy)-6-((R)-1-(4-methoxy benzyloxy)-2-methylallyl)-5-methyltetrahydro-2H-pyran-2-yl) ethoxy) triisopropylsilane 117"; 
+		POSContainer posContainer = ChemistryPOSTagger.getInstance().runTaggers(text);
+		String tagged = posContainer.getTokenTagTupleAsString();
+        
+		InputStream in = new ByteArrayInputStream(tagged.getBytes("UTF-8"));
+		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
+				in);
+
+		Tree t = chemistrySentenceParser.parseTags();
+		ASTtoXML ast2XML = new ASTtoXML();
+		Utils.writeXMLToFile(ast2XML.convert(t),"target/file10.xml");
+		checkNodes(t);
+	}
+	
 	
 	
 	/*****************************
