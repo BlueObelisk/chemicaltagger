@@ -120,7 +120,7 @@ public class Utils {
 				}
 			}
 
-			if ((string.endsWith(".") && string.startsWith("°C"))) {
+			if ((string.endsWith(".") && string.contains("°C"))) {
 				string = string.substring(0, string.length() - 1);
 				suffix = " ." + suffix;
 			}
