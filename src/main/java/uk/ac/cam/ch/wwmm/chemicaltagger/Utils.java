@@ -98,11 +98,13 @@ public class Utils {
 		String[] words = sentence.split(" ");
 		String abbreviationRegex = "−?[A-Z]+[a-z]*\\.";
 		String concatAmountRegex = "(\\d\\d+(m|k|µ)?(l|L|g|gram|mol|cm3)(s)?$)|(\\d(L|ml|mL|gram|mol|cm3)(s)?$)";
+		String concatTempRegex = "\\d*(\\xb0|&#0176|\\xc3\\x97|o|°|º)(C|c)";
 		List<String> abvList = addToList("et. al. etc. e.g. i.e. vol. ca. wt.");
 		List<String> nextTokenList = addToList("gram vol %");
 		Pattern abbreviationPattern = Pattern.compile(abbreviationRegex);
 		Pattern concatAmountPattern = Pattern.compile(concatAmountRegex);
-
+		Pattern concatTempPattern = Pattern.compile(concatTempRegex);
+		
 		int index = 0;
 		for (String string : words) {
 			index++;
@@ -161,6 +163,10 @@ public class Utils {
 				string = splitAmounts(string);
 			}
 
+			Matcher concatTempMatcher = concatTempPattern.matcher(string);
+			if (concatTempMatcher.find()) {
+				string = splitTemparature(string);
+			}
 			newSentence.append(prefix + string + suffix);
 		}
 //		System.err.println("***Sentence "
@@ -187,6 +193,21 @@ public class Utils {
 		return newString;
 	}
 
+	private static String splitTemparature(String string) {
+		String newString = string;
+		String numbers = "";
+        
+		for (char ch : string.toCharArray()) {
+		
+			if (Character.isDigit(ch)) {
+				numbers = numbers + ch;
+			}
+
+		}
+		newString = string.replace(numbers, numbers+" ");
+		return newString;
+	}
+	
 	private static boolean stopWordAfter(String[] words, int index,
 			List<String> nextTokenList) {
 		boolean wordAfter = false;
