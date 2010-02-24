@@ -98,7 +98,7 @@ public class Utils {
 		String[] words = sentence.split(" ");
 		String abbreviationRegex = "−?[A-Z]+[a-z]*\\.";
 		String concatAmountRegex = "(\\d\\d+(m|k|µ)?(l|L|g|gram|mol|cm3)(s)?$)|(\\d(L|ml|mL|gram|mol|cm3)(s)?$)";
-		String concatTempRegex = "\\d*(\\xb0|&#0176|\\xc3\\x97|o|°|º)(C|c)";
+		String concatTempRegex = "\\d+(\\xb0|&#0176|\\xc3\\x97|o|°|º)(C|c)";
 		List<String> abvList = addToList("et. al. etc. e.g. i.e. vol. ca. wt.");
 		List<String> nextTokenList = addToList("gram vol %");
 		Pattern abbreviationPattern = Pattern.compile(abbreviationRegex);
