@@ -70,8 +70,8 @@ public class Utils {
 			serializer.write(doc);
 			serializer.flush();
 		} catch (IOException ex) {
-			System.err.println("error" + ex);
-		}
+            ex.printStackTrace();
+		 }
 	}
 
 	private boolean isNumeric(String input) {

@@ -65,7 +65,6 @@ public class readDoc {
 
 	private void writeOut(List<String> sections) {
 		int sectionIndex = 0;
-		System.err.println("OutputDir ->" + outputDir);
 		while (sectionIndex < sections.size()) {
 			fileInput = "";
 			String filename = "preparation-" + sectionIndex;

@@ -45,7 +45,6 @@ public class OscarTagger {
 	private void initialiseOSCAR() {
 		try {
 			config = new PropertiesConfiguration(config_filename);
-			System.err.println(config_filename);
 		} catch (ConfigurationException e1) {
 			e1.printStackTrace();
 		}
