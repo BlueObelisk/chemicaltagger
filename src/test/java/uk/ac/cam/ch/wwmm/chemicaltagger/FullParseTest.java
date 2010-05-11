@@ -5,9 +5,11 @@ import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 
 import junit.framework.Assert;
+import nu.xom.Document;
 
 import org.antlr.runtime.tree.Tree;
 import org.junit.Test;
+import org.xmlcml.cml.base.CMLUtil;
 
 public class FullParseTest {
 
@@ -183,7 +185,50 @@ public class FullParseTest {
 		checkNodes(t);
 	}
 	
+	@Test
+	public void testFullSentence20() throws UnsupportedEncodingException {
+		String text = "the cat sat on the mat";
+		POSContainer posContainer = ChemistryPOSTagger.getInstance().runTaggers(text);
+		String tagged = posContainer.getTokenTagTupleAsString();
+
+		InputStream in = new ByteArrayInputStream(tagged.getBytes("UTF-8"));
+		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
+				in);
+
+		Tree t = chemistrySentenceParser.parseTags();
+		Document doc = new ASTtoXML().convert(t);
+		CMLUtil.debug(doc.getRootElement(), "DDDDD");
+	}
 	
+	@Test
+	public void testFullSentence21() throws UnsupportedEncodingException {
+		String text = "the cat slept on the mat";
+		POSContainer posContainer = ChemistryPOSTagger.getInstance().runTaggers(text);
+		String tagged = posContainer.getTokenTagTupleAsString();
+
+		InputStream in = new ByteArrayInputStream(tagged.getBytes("UTF-8"));
+		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
+				in);
+
+		Tree t = chemistrySentenceParser.parseTags();
+		Document doc = new ASTtoXML().convert(t);
+		CMLUtil.debug(doc.getRootElement(), "DDDDD");
+	}
+	
+	@Test
+	public void testFullSentence22() throws UnsupportedEncodingException {
+		String text = "the cat slept on the mat";
+		POSContainer posContainer = ChemistryPOSTagger.getInstance().runTaggers(text);
+		String tagged = posContainer.getTokenTagTupleAsString();
+
+		InputStream in = new ByteArrayInputStream(tagged.getBytes("UTF-8"));
+		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
+				in);
+
+		Tree t = chemistrySentenceParser.parseTags();
+		Document doc = new ASTtoXML().convert(t);
+		CMLUtil.debug(doc.getRootElement(), "DDDDD");
+	}
 	
 	/*****************************
 	 * CheckNodes(Tree astTree)

@@ -18,6 +18,7 @@ glob:*ChunkerParser.java
 glob:*ChemicalChunkerParser.java
 glob:*ChemicalChunker.tokens
 glob:*.tokens
+glob:*.exe
 \.orig\..*$
 \.orig$
 \.chg\..*$
