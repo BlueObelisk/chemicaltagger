@@ -5,6 +5,7 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
 import java.io.File;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
