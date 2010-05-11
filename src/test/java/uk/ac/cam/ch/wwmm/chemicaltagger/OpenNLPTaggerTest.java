@@ -26,4 +26,50 @@ public class OpenNLPTaggerTest {
 			assertEquals(expectedTags[i], tags[i]);
 		}
 	}
+	
+	
+	@Test
+	public void tagText1() {
+		String text = "the cat sat on the mat";
+		String [] tags = OpenNLPTagger.getInstance().getTagger().tag(text.split("\\s"));
+		assertEquals(6, tags.length);
+//		DT NN VBD IN DT NN
+		String [] expectedTags = new String[] {"DT", "NN", "VBD", "IN", "DT", "NN"};
+		for (int i = 0; i < tags.length; i++) {
+			assertEquals(expectedTags[i], tags[i]);
+		}
+	}
+	
+	@Test
+	public void tagText2() {
+		String text = "time flies like an arrow";
+		String [] tags = OpenNLPTagger.getInstance().getTagger().tag(text.split("\\s"));
+		assertEquals(5, tags.length);
+		String [] expectedTags = new String[] {"NN", "VBZ", "IN", "DT",	"NN"};	
+		for (int i = 0; i < tags.length; i++) {
+			assertEquals(expectedTags[i], tags[i]);
+		}
+	}
+	
+	@Test
+	public void tagText3() {
+		String text = "fruit flies love a banana";
+		String [] tags = OpenNLPTagger.getInstance().getTagger().tag(text.split("\\s"));
+		assertEquals(5, tags.length);
+		String [] expectedTags = new String[] {"NN", "NNS", "VBP", "DT",	"NN"};	
+		for (int i = 0; i < tags.length; i++) {
+			assertEquals(expectedTags[i], tags[i]);
+		}
+	}
+	
+	@Test
+	public void tagText4() {
+		String text = "fruit flies like a banana";
+		String [] tags = OpenNLPTagger.getInstance().getTagger().tag(text.split("\\s"));
+		assertEquals(5, tags.length);
+		String [] expectedTags = new String[] {"NN", "NNS", "VBP", "DT",	"NN"};	
+		for (int i = 0; i < tags.length; i++) {
+			assertEquals(expectedTags[i], tags[i]);
+		}
+	}
 }
