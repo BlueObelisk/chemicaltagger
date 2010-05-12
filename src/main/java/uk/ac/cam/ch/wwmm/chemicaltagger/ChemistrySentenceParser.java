@@ -5,7 +5,6 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
 import java.io.File;
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -18,6 +17,9 @@ import org.antlr.runtime.CommonTokenStream;
 import org.antlr.runtime.RecognitionException;
 import org.antlr.runtime.tree.Tree;
 import org.apache.log4j.Logger;
+
+import uk.ac.cam.ch.wwmm.pregenerated.ChemicalChunkerLexer;
+import uk.ac.cam.ch.wwmm.pregenerated.ChemicalChunkerParser;
 
 /*****************************************
  * Passes Tagged Sentences to the
