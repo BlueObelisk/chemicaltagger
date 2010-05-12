@@ -20,7 +20,7 @@
 		<plugins>
 		<!--  removed antlr generation of *.java to permit build on Hudson
 		if you change the *.g comment this back in again -->
-		<!-- -->
+		<!-- 
 			<plugin>
 				<groupId>org.antlr</groupId>
 				<artifactId>antlr3-maven-plugin</artifactId>
@@ -48,7 +48,8 @@
 					</execution>
 				</executions>
 			</plugin>
-<!-- -->
+			-->
+			
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
