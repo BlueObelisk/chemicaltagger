@@ -13,9 +13,9 @@ import java.util.regex.Pattern;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
-
 /*****************************************************
  * Runs the regular expression tagger .
+ * 
  * @author lh359, pm286
  *****************************************************/
 public class RegexTagger {
@@ -23,14 +23,14 @@ public class RegexTagger {
 	private List<Rule> rules;
 	public String tagFile = "dictionary/tags.txt";
 	private final Logger LOG = Logger.getLogger(RegexTagger.class);
-	
+
 	/****************************
 	 * Public Constructor
 	 ***************************/
 	public RegexTagger() {
-       initializeRules();
+		initializeRules();
 	}
-	
+
 	/**************************************************************
 	 * Initialises the rules for the regular expression tagger
 	 ***************************************************************/
@@ -43,7 +43,8 @@ public class RegexTagger {
 			// PMR
 			InputStream is = this.getClass().getClassLoader()
 					.getResourceAsStream(tagFile);
-			BufferedReader in = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
+			BufferedReader in = new BufferedReader(new InputStreamReader(is,
+					Charset.forName("UTF-8")));
 
 			if (!in.ready()) {
 				throw new IOException();
@@ -51,12 +52,11 @@ public class RegexTagger {
 
 			while ((line = in.readLine()) != null) {
 				if (!line.startsWith("#") && !StringUtils.isEmpty(line)) {
-					try {
-						String[] lineTokens = line.split("---");
+					String[] lineTokens = line.split("---");
+					if (lineTokens.length > 1) {
 						rules.add(new Rule(lineTokens[0], lineTokens[1]));
-					} catch (Exception e) {
-						LOG.debug("Ignoring line--> " + line);
 					}
+
 				}
 
 			}
@@ -66,14 +66,11 @@ public class RegexTagger {
 			e.printStackTrace();
 		}
 
-		LOG.debug("Rules length-->" + rules.size());
 	}
-	
-	
+
 	/*****************************************************
-	 * Main Function. Runs the regular expression tagger
-	 * against the text and stores the tags
-	 * in POSContainer
+	 * Main Function. Runs the regular expression tagger against the text and
+	 * stores the tags in POSContainer
 	 *****************************************************/
 	public POSContainer runTagger(POSContainer posContainer) {
 
@@ -100,7 +97,6 @@ public class RegexTagger {
 		return posContainer;
 	}
 
-	
 	/**************************************************************
 	 * The Rule class . Compiles regex rules. Used later for the regex tagger.
 	 ***************************************************************/
@@ -114,8 +110,5 @@ public class RegexTagger {
 			pattern = Pattern.compile(regex);
 		}
 	}
-	
-	
 
-	
 }
