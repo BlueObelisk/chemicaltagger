@@ -246,7 +246,7 @@ public class ChemistryPOSTagger {
 
 				if (stringafter(afterList, i, combinedTags)) {
 					newTag = "OSCAR-CM";
-					int bracketIndex = Util.indexOfBalancedBracket('(',
+					int bracketIndex = Util.indexOfBalancedBracket(')',
 							currentToken);
 					if (currentToken.contains("(") && bracketIndex < 0) {
 						currentToken = currentToken + ")";
@@ -257,7 +257,7 @@ public class ChemistryPOSTagger {
 			}
 			
 			if (ignoreNextBracket & currentToken.equals(")")) {
-			    ignoreNextBracket = true;
+			    ignoreNextBracket = false;
 			   }
 			else{
 				newCombinedTagsList.add(new WWMMTag(newTag));

@@ -81,6 +81,16 @@ public class ChemistryPOSTaggerTest {
 	}
 	@Test
 	public void sentence7() {
+		String sentence = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/tagTest/test7.txt");
+		posContainer = ChemistryPOSTagger.getInstance().runTaggers(sentence);
+		String ref = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/tagTest/ref7.txt");
+		Assert.assertEquals(ref, posContainer.getTokenTagTupleAsString());
+		checkLengthofTags();
+
+	}
+
+	@Test
+	public void sentence8() {
 		String sentence = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/tagTest/test8.txt");
 		posContainer = ChemistryPOSTagger.getInstance().runTaggers(sentence);
 		String ref = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/tagTest/ref8.txt");
@@ -88,8 +98,6 @@ public class ChemistryPOSTaggerTest {
 		checkLengthofTags();
 
 	}
-
-
 	 
 
     
