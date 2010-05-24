@@ -37,7 +37,7 @@ public class PostProcessTags {
 			newTag = correctMisTaggedMisc(combinedTags, i, currentTag,
 					currentToken, newTag);
 
-			newTag = correctMisTaggedDigits(combinedTags, i, currentTag, newTag);
+			newTag = correctMisTaggedDigits(combinedTags, i, currentTag, currentToken, newTag);
 
 			/****************************************************
 			 * Function added to avoid the trailing close bracket
@@ -104,6 +104,7 @@ public class PostProcessTags {
 			if (StringUtils.equalsIgnoreCase(currentToken, "a")) {
 				newTag = "DT";
 			}
+			
 
 		}
 		return newTag;
@@ -200,12 +201,13 @@ public class PostProcessTags {
 	 *    
 	 * @param List<WWMMTag> combinedTags
 	 * @param int i
+	 * @param currentToken
 	 * @param currentTag
 	 * @param newTag
 	 * @return
 	 */
 	private String correctMisTaggedDigits(List<WWMMTag> combinedTags, int i,
-			String currentTag, String newTag) {
+			String currentTag,String currentToken, String newTag) {
 		if (StringUtils.equalsIgnoreCase(currentTag, "cd")) {
 			List<String> beforeList = Utils
 					.addToList("in-of jj nn-chementity comma");
@@ -221,7 +223,7 @@ public class PostProcessTags {
 
 			List<String> afterList = Utils.addToList("stop comma -lrb-");
 
-			if (stringafter(afterList, i, combinedTags)) {
+			if (stringafter(afterList, i, combinedTags) && !currentToken.contains(".") && currentToken.length() < 4) {
 				newTag = "OSCAR-CD";
 			}
 		}
@@ -230,7 +232,7 @@ public class PostProcessTags {
 
 			List<String> afterList = Utils.addToList("nn-vol nn-mass");
 
-			if (stringafter(afterList, i, combinedTags)) {
+			if (stringafter(afterList, i, combinedTags) || currentToken.contains(".") || currentToken.length() > 3) {
 				newTag = "CD";
 			}
 		}
