@@ -68,6 +68,10 @@ public class POSContainer {
 	public List<WWMMTag> getCombinedTagsList() {
 		return combinedTagsList;
 	}
+	
+	public void setCombinedTagsList(List<WWMMTag> newCombinedTagsList) {
+		this.combinedTagsList = newCombinedTagsList;
+	}
 
 	/***************************************
 	 * Combines the output of all 3 taggers.
@@ -122,5 +126,10 @@ public class POSContainer {
 
 		}
 
+	}
+
+	public void setTokenList(List<String> newTokenList) {
+		this.wordTokenList = newTokenList;
+		
 	}
 }

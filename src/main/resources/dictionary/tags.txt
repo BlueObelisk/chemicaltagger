@@ -138,7 +138,7 @@ NN-REMOVE---(pre|re)?(removal|evaporation|evaporator)$---Remove Noun
 VB-STIR---(pre|re)?(stir)(red|ring)?---Stir Verb
 
 #Synthesize Tokens
-VB-SYNTHESIZE---(pre|re)?(react|synthesize|synthesise|polymerize|polymerise|prepare)(d|ed)?$---Synthesize Verb
+VB-SYNTHESIZE---(pre|re)?(react|synthesize|synthesise|polymerize|polymerise|prepare)(s|d|ed)?$---Synthesize Verb
 NN-SYNTHESIZE---(pre|re|co|(p|P)oly)?(condens|synthesiz|synthesis|polymeris|polymeriz|prepar|reaction)(ation|e|ed|ing)?$---Synthesize Noun
 
 #Wait Tokens

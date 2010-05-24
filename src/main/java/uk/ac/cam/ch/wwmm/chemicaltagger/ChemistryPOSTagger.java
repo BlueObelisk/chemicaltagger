@@ -1,18 +1,20 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.configuration.Configuration;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
+import org.xmlcml.euclid.Util;
 
 /**************************************************************
  * 
- * Runs 3 taggers against the sentence: 
-      - OSCAR: for recognising chemical entities. 
-      - Regex: for recognising chemistry related words that are not recognised by OSCAR .
-      - OpenNLP Brown fo recognising common english words .
- * It then combines the output of all 3 taggers and performs some simple corrections
+ * Runs 3 taggers against the sentence: - OSCAR: for recognising chemical
+ * entities. - Regex: for recognising chemistry related words that are not
+ * recognised by OSCAR . - OpenNLP Brown fo recognising common english words .
+ * It then combines the output of all 3 taggers and performs some simple
+ * corrections
  * 
  * @author lh359
  ***************************************************************/
@@ -21,21 +23,21 @@ public class ChemistryPOSTagger {
 	private static class TaggerHolder {
 		private static final ChemistryPOSTagger INSTANCE = new ChemistryPOSTagger();
 	}
-	
+
 	public String sentence;
 	private Configuration config = null;
 	private String config_filename = "textmining.properties";
 	private final Logger LOG = Logger.getLogger(ChemistryPOSTagger.class);
 	private static final String FLOW_COMMAND = "recognise inline";
-    
+
 	public OscarTagger oscarTagger;
 	public RegexTagger regexTagger;
 	public OpenNLPTagger openNLPTagger;
-	
+
 	private ChemistryPOSTagger() {
 		oscarTagger = new OscarTagger();
 		regexTagger = new RegexTagger();
-	    openNLPTagger = OpenNLPTagger.getInstance();	
+		openNLPTagger = OpenNLPTagger.getInstance();
 	}
 
 	public static ChemistryPOSTagger getInstance() {
@@ -46,33 +48,27 @@ public class ChemistryPOSTagger {
 		this.sentence = sentence;
 	}
 
-
-	
 	/*****************************************************
 	 * Main Module.
 	 * 
-	 * Initialises POSContainer. 
+	 * Initialises POSContainer.
 	 * 
 	 *****************************************************/
 	public POSContainer runTaggers(String inputSentence) {
 
 		POSContainer posContainer = new POSContainer();
 		inputSentence = Utils.formatSentence(inputSentence);
-		
-		posContainer = oscarTagger.runTagger(posContainer,inputSentence);
+
+		posContainer = oscarTagger.runTagger(posContainer, inputSentence);
 		posContainer = regexTagger.runTagger(posContainer);
 		posContainer = openNLPTagger.runTagger(posContainer);
 
 		posContainer.combineTaggers();
 		posContainer = correctCombinedTagsList(posContainer);
-	    //posContainer.printOutTags();
+		// posContainer.printOutTags();
 		LOG.info("Tag Token Tuple: " + posContainer.getTokenTagTupleAsString());
 		return posContainer;
 	}
-
-
-
-
 
 	/**************************************************
 	 * Corrects MisNamed Tags
@@ -83,18 +79,22 @@ public class ChemistryPOSTagger {
 
 		List<String> tokenList = posContainer.getTokenList();
 		List<WWMMTag> combinedTags = posContainer.getCombinedTagsList();
+		
+		List<String> newTokenList = new ArrayList<String>();
+		List<WWMMTag> newCombinedTagsList = new ArrayList<WWMMTag>() ;
+		boolean ignoreNextBracket = false;
 
 		for (int i = 0; i < combinedTags.size(); i++) {
 			String currentTag = combinedTags.get(i).getPOS();
 			String currentToken = tokenList.get(i);
 			String newTag = combinedTags.get(i).getPOS();
 
-			if ((StringUtils.equalsIgnoreCase(currentTag, "oscar-cm")|| StringUtils.equalsIgnoreCase(currentTag, "oscar-ont"))
-					
+			if ((StringUtils.equalsIgnoreCase(currentTag, "oscar-cm") || StringUtils
+					.equalsIgnoreCase(currentTag, "oscar-ont"))
+
 					&& StringUtils.equalsIgnoreCase(currentToken, "a")) {
 				newTag = "DT";
 			}
-
 
 			if (StringUtils.equalsIgnoreCase(currentTag, "oscar-cm")
 					&& currentToken.contains("°C")) {
@@ -123,7 +123,7 @@ public class ChemistryPOSTagger {
 			if (StringUtils.equalsIgnoreCase(currentTag, "''")) {
 				newTag = "FW";
 			}
-			
+
 			if (StringUtils.equalsIgnoreCase(currentTag, "cd")) {
 				List beforeList = Utils
 						.addToList("in-of jj nn-chementity comma");
@@ -167,7 +167,8 @@ public class ChemistryPOSTagger {
 			if (currentTag.toLowerCase().startsWith("vbn")
 					|| currentTag.toLowerCase().startsWith("vbg")) {
 
-				List afterList = Utils.addToList("oscar-cm nns nn-chementity oscar-cj");
+				List afterList = Utils
+						.addToList("oscar-cm nns nn-chementity oscar-cj");
 				List beforeList = Utils.addToList("dt rb");
 				if (stringafter(afterList, i, combinedTags)
 						&& stringbefore(beforeList, i, combinedTags)) {
@@ -179,7 +180,8 @@ public class ChemistryPOSTagger {
 			if (currentTag.toLowerCase().startsWith("vb")
 					&& currentToken.toLowerCase().endsWith("ing")) {
 
-				List afterList = Utils.addToList("nn oscar-cm nns nn-chementity oscar-cj jj nnp");
+				List afterList = Utils
+						.addToList("nn oscar-cm nns nn-chementity oscar-cj jj nnp");
 				List beforeList = Utils.addToList("dt rbr rb");
 				if (stringafter(afterList, i, combinedTags)
 						&& stringbefore(beforeList, i, combinedTags)) {
@@ -191,15 +193,17 @@ public class ChemistryPOSTagger {
 			if (currentTag.toLowerCase().startsWith("vb-")
 					&& !currentToken.toLowerCase().endsWith("ing")) {
 
-				List afterList = Utils.addToList("nn oscar-cm nns nn-chementity oscar-cj jj nnp nn-state");
-				List beforeList = Utils.addToList("dt in-in in-by in-of in stop ");
+				List afterList = Utils
+						.addToList("nn oscar-cm nns nn-chementity oscar-cj jj nnp nn-state");
+				List beforeList = Utils
+						.addToList("dt in-in in-by in-of in stop ");
 				if (stringafter(afterList, i, combinedTags)
 						&& stringbefore(beforeList, i, combinedTags)) {
 					newTag = "JJ";
 				}
 
 			}
-			
+
 			if (currentToken.equals("M")) {
 
 				List beforeList = Utils.addToList("cd");
@@ -226,10 +230,45 @@ public class ChemistryPOSTagger {
 					newTag = "CD";
 				}
 			}
+
+			if (currentTag.toLowerCase().equals("oscar-cd")) {
+
+				List afterList = Utils.addToList("nn-vol nn-mass");
+
+				if (stringafter(afterList, i, combinedTags)) {
+					newTag = "CD";
+				}
+			}
+
+			if (currentTag.toLowerCase().equals("oscar-cm")) {
+
+				List afterList = Utils.addToList("-rrb-");
+
+				if (stringafter(afterList, i, combinedTags)) {
+					newTag = "OSCAR-CM";
+					int bracketIndex = Util.indexOfBalancedBracket('(',
+							currentToken);
+					if (currentToken.contains("(") && bracketIndex < 0) {
+						currentToken = currentToken + ")";
+						ignoreNextBracket = true;
+					}
+
+				}
+			}
 			
-			combinedTags.get(i).setPOS(newTag);
+			if (ignoreNextBracket & currentToken.equals(")")) {
+			    ignoreNextBracket = true;
+			   }
+			else{
+				newCombinedTagsList.add(new WWMMTag(newTag));
+				
+				newTokenList.add(currentToken);
+			}
+
 		}
 
+		posContainer.setTokenList(newTokenList);
+		posContainer.setCombinedTagsList(newCombinedTagsList);
 		return posContainer;
 	}
 

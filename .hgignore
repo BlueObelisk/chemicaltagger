@@ -3,6 +3,7 @@ glob:.deployment
 glob:.project
 glob:*.settings*
 glob:.target
+glob:bin
 glob:classes
 glob:target
 glob:.hgignore~

@@ -1,1 +1,8 @@
 138 mg of (2-Amino-5-bromo-phenyl)-pyridin-4-yl-methanone and ( 102 mg ) of 4-ethyl-benzenesulfonyl chloride 321 g 4g 200 mls ( 3000 mls ) 3 ml 50 °C .
+The Schiff base 2-((2-(dimethylamino)ethylimino)methyl)-6-methoxyphenol reacts with
+zinc(II) chloride in methanol to form the title complex. It adopts
+tetrahedron coordination geometry with the Schiff base ligand
+coordinated <i>via</i> the imine N and the phenolate O atoms. A
+formal proton transfer of the phenolic hydrogen to the amine N atom
+occurred leading to the formation of the neutral O/N-bidentate
+ligand bearing a pendant ammonium group.
