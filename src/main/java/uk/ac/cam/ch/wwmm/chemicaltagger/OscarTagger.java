@@ -57,7 +57,6 @@ public class OscarTagger {
 		}
 		try {
 			Oscar3Props.configureWorkspace();
-			System.out.println("workspace configured");
 		} catch (Exception e) {
 			LOG.error("Problem setting up OSCAR3: " + e.getMessage());
 			throw new RuntimeException("Problem setting up OSCAR3: "
