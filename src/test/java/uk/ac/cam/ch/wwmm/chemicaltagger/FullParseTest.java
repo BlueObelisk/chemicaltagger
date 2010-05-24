@@ -185,6 +185,24 @@ public class FullParseTest {
 		checkNodes(t);
 	}
 	
+	
+	@Test
+	public void testFullSentence11() throws UnsupportedEncodingException {
+		String text = "The residue was dissolved in 5.1ml toluene and tetrakis[2-(2-pyridinyl- N)phenyl- C]-di- -chlorodiiridium (III) (0.20 g, 0.19 mmol) and triethylamine (43.8 µl, 0.32 mmol) were added." ;
+		text = "The residue was dissolved in 5.1ml toluene and tetrakis[2-(2-pyridinyl-N)phenyl-C]-di-chlorodiiridium(III) (0.20 g, 0.19 mmol) and triethylamine (43.8 µl, 0.32 mmol) were added." ;
+		
+		POSContainer posContainer = ChemistryPOSTagger.getInstance().runTaggers(text);
+		String tagged = posContainer.getTokenTagTupleAsString();
+        
+		InputStream in = new ByteArrayInputStream(tagged.getBytes("UTF-8"));
+		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
+				in);
+
+		Tree t = chemistrySentenceParser.parseTags();
+		ASTtoXML ast2XML = new ASTtoXML();
+		Utils.writeXMLToFile(ast2XML.convert(t),"target/file11.xml");
+		checkNodes(t);
+	}
 	@Test
 	public void testFullSentence20() throws UnsupportedEncodingException {
 		String text = "the cat sat on the mat";
