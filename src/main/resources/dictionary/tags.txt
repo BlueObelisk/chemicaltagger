@@ -27,7 +27,7 @@ TO---^to$|^To$---The preposition 'TO'
 FW---^et(.)?$|^al(.)?$|^et(.)?al(.)?$
 #Nouns
 NN-STATE---powder|glass|liquid|oil|solid|gas|syrup|crystal|gum|needle|prisms---Physical States
-NN-TIME---^period(s)?$|^min(utes|.)?$|^hour(s)?|^seconds$|^d$|^h$|^days$|.*night|hr(s)?---Time Token
+NN-TIME---^period(s)?$|^min(utes|.)?$|^hour(s)?|^week(s|end)?$|^seconds$|^d$|^h$|^days$|.*night|hr(s)?---Time Token
 NN-MASS---(\d\d+)?(m|k|\xce\xbc)?(g|gram)(s)?$---Grams
 NN-AMOUNT---(\d\d+)?(m|k|\xce\xbc)?mol(s)?$---Mols
 NN-MOLAR---^(\d+)?(^M)$---Molar
@@ -109,7 +109,7 @@ VB-FILTER---filter(ed|ing)?$|^filtrated$---Filter Verb
 NN-FILTER---filtration---Filter Noun
 
 #Heat Tokens
-VB-HEAT---(heat|warm|reflux|^flam|^maintain)(ed|ing)?---Heat Verb
+VB-HEAT---(heat|warm|reflux|^flam|^maintain)(ed|ing|e)?$---Heat Verb
 VB-INCREASE---(increas|rais)(e|ed|ing)?---Increase Verb
 
 #Partition Tokens
