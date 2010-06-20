@@ -3,7 +3,6 @@ package uk.ac.cam.ch.wwmm.chemicaltagger;
 import static uk.ac.cam.ch.wwmm.chemicaltagger.Utils.readSentence;
 
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
 /*****************************

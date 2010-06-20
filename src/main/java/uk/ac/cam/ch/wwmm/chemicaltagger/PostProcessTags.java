@@ -129,7 +129,8 @@ public class PostProcessTags {
 			if (!currentTag.toLowerCase().startsWith("nn-state")
 					&& !currentTag.toLowerCase().startsWith("nn-apparatus")
 					&& !currentTag.toLowerCase().startsWith("nn-temp")
-					&& !currentTag.toLowerCase().startsWith("nn-pressure")) {
+					&& !currentTag.toLowerCase().startsWith("nn-pressure")
+					&& !currentTag.toLowerCase().startsWith("nn-time")) {
 				List<String> beforeList = Utils.addToList("dt jj");
 				List<String> afterList = Utils
 						.addToList("vbd jj nn-chementity nn-mixture nn-apparatus nn comma");
@@ -228,6 +229,8 @@ public class PostProcessTags {
 			}
 		}
 
+
+		
 		if (currentTag.toLowerCase().equals("oscar-cd")) {
 
 			List<String> afterList = Utils.addToList("nn-vol nn-mass");
@@ -267,6 +270,14 @@ public class PostProcessTags {
 
 		if (StringUtils.equalsIgnoreCase(currentTag, "''")) {
 			newTag = "FW";
+		}
+		if (currentTag.toLowerCase().equals("nn-mixture")) {
+
+			List<String> afterList = Utils.addToList("vbd");
+
+			if (stringafter(afterList, i, combinedTags) ) {
+				newTag = "NN-CHEMENTITY";
+			}
 		}
 		return newTag;
 	}
