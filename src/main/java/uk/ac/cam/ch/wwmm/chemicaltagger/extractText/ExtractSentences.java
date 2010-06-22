@@ -50,7 +50,7 @@ public class ExtractSentences {
 			if (sub.getChildCount() > 1) {
 				tagToken.append(getTagToken(sub));
 			}
-			if (hasMoreChildren(sub)) {
+			else if (hasMoreChildren(sub)) {
 				tagToken.append(getTagToken(sub));
 			} else {
 
@@ -155,11 +155,11 @@ public class ExtractSentences {
 		for (String file : patentDir) {
 			if (file.startsWith("ACTA")) {
 
-				extractSentence.extracts(path + file);
+				extractSentence.extract(path + file);
 
 			}
 
 		}
-		extractSentence.writeToCSV("SubPhrases");
+		extractSentence.writeToCSV("Phrases");
 	}
 }
