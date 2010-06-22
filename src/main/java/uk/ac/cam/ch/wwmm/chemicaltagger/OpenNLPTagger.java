@@ -2,6 +2,7 @@ package uk.ac.cam.ch.wwmm.chemicaltagger;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,6 +15,7 @@ import opennlp.tools.postag.POSDictionary;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
+import org.xmlcml.euclid.Util;
 
 public class OpenNLPTagger {
 
@@ -57,11 +59,18 @@ public class OpenNLPTagger {
 	}
 	
 	private void setUpPosTagger() throws IOException {
-		InputStreamReader tagDictReader = new InputStreamReader(
-				ClassLoader.getSystemResourceAsStream("openNlpResources/tagdict"), "UTF-8");
+		InputStreamReader tagDictReader = null;
+		try {
+			tagDictReader = new InputStreamReader(
+			       Util.getResourceUsingContextClassLoader(
+			    		   "openNlpResources/tagdict", this.getClass()), "UTF-8");
+		} catch (Exception e) {
+				throw new RuntimeException("Cannot open src/main/resources/openNlpResources/tagdict" , e);
+		}
 		POSDictionary tagDict = new POSDictionary(new BufferedReader(tagDictReader), true);
 		posTagger = new PosTagger(tempFile.getCanonicalPath(), tagDict);
 	}
+	
 	
 
 	/*****************************************************
