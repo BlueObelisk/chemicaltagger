@@ -215,7 +215,7 @@ public class FullParseTest {
 
 		Tree t = chemistrySentenceParser.parseTags();
 		Document doc = new ASTtoXML().convert(t);
-		CMLUtil.debug(doc.getRootElement(), "DDDDD");
+//		CMLUtil.debug(doc.getRootElement(), "DDDDD");
 	}
 	
 	@Test
@@ -230,7 +230,7 @@ public class FullParseTest {
 
 		Tree t = chemistrySentenceParser.parseTags();
 		Document doc = new ASTtoXML().convert(t);
-		CMLUtil.debug(doc.getRootElement(), "DDDDD");
+//		CMLUtil.debug(doc.getRootElement(), "DDDDD");
 	}
 	
 	@Test
@@ -245,7 +245,7 @@ public class FullParseTest {
 
 		Tree t = chemistrySentenceParser.parseTags();
 		Document doc = new ASTtoXML().convert(t);
-		CMLUtil.debug(doc.getRootElement(), "DDDDD");
+//		CMLUtil.debug(doc.getRootElement(), "DDDDD");
 	}
 	
 	/*****************************

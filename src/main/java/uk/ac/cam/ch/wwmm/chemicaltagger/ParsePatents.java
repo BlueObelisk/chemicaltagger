@@ -53,7 +53,7 @@ public class ParsePatents {
 						.getTaggedContent().getBytes());
 
 			} catch (Exception e) {
-				System.out.println("exception " + e.getMessage());
+				System.err.println("exception " + e.getMessage());
 			}
 
 			ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(

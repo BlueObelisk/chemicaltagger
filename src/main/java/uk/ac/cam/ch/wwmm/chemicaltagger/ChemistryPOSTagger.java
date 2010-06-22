@@ -55,7 +55,7 @@ public class ChemistryPOSTagger {
 		posContainer.combineTaggers();
 		posContainer =  new PostProcessTags().correctCombinedTagsList(posContainer);
 		// posContainer.printOutTags();
-		LOG.info("Tag Token Tuple: " + posContainer.getTokenTagTupleAsString());
+//		LOG.info("Tag Token Tuple: " + posContainer.getTokenTagTupleAsString());
 		return posContainer;
 	}
 
