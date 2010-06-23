@@ -27,16 +27,16 @@ public class ExtractFromXMLTest {
 
 		File patentDirectory = new File(path);
 		String[] patentDir = patentDirectory.list();
-		System.err.println(patentDir);
+//		System.err.println(patentDir);
 		for (String file : patentDir) {
 
 			String resourcePath = path + file;
-			LOG.info("Extracting data from " + resourcePath);
+//			LOG.debug("Extracting data from " + resourcePath);
 			new Utils();
 
 			ExtractFromXML extract = new ExtractFromXML();
 			DocumentContainer docContainer = extract.getContent(resourcePath);
-			System.err.println(docContainer.getContent());
+//			System.err.println(docContainer.getContent());
 			// POSContainer posContainer =
 			// ChemistryPOSTagger.getInstance().runTaggers(docContainer.getContent());
 			String test = "The refined procedure for the synthesis of (I) is as follows: A solution of 2,6-diisopropyl aniline (4.695 g, 26.5 mmol s) and formic acid (7.314 g, 159.0 mmol, 6eq.) in chloroform (20 ml) was refluxed with continuous stirring for 16 hrs. The colour of the solution changed from yellow to green to colorless over the course of the reaction. The solvent and excess formic acid were removed under vacuum to yield the title compound as a white solid. Needle-like single crystals suitable for X-ray analysis were obtained from slow evaporation of a chloroform solution (5.00 g, 92%). 1 -NMR (CDCl , p.p.m.): Two rotomers observed in 2:1 ratio.";
