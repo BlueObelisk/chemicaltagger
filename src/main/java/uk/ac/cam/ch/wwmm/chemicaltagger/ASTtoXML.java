@@ -46,7 +46,7 @@ public class ASTtoXML {
 	 * @return doc (Document)
 	 *******************************************/
 	public Document convert(Tree astTree, boolean postProcess) {
-		System.err.println(astTree.toStringTree());
+//		System.err.println(astTree.toStringTree());
 		Element root = new Element("Document");
 		Document doc = new Document(getNodes(astTree, root));
 		if (postProcess) {

@@ -1,6 +1,7 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger.extractText;
 
 import java.io.File;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -37,7 +38,7 @@ public class ExtractFromXML {
 		Document doc = null;
 		
 		DocumentContainer docContainer = new DocumentContainer();
-        LOG.info("Extracting data from "+sourceFile);
+//        LOG.debug("Extracting data from "+sourceFile);
 		try {
 			doc = builder.build(sourceFile);
 			docContainer.setId(doc.getRootElement().getAttributeValue("id"));
