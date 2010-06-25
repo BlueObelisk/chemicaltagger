@@ -94,6 +94,7 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+
 		<dependency>
 			<groupId>wwmm</groupId>
 			<artifactId>oscar3</artifactId>
