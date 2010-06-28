@@ -37,7 +37,8 @@ NN-VOL---(\d\d+)?(m|k|\xce\xbc|µ)?(l|L)$|cm3---Volume
 #this is for non-spaced volumes like 3ml
 NN-VOL---d+(m|k|\xce\xbc|µ)(l|L|cm3)$---Volume
 NN-CHEMENTITY---^(p|P)(H|h)$|poly|^resin$|^salt$|^product$|^oligomers$|^(M|m)acroinitiator$|^nanotubes$|^(s|S)eptum$|^(i|I)nitiator$|(M|m)onomer$|^ice$|^petroleum|metal|^eluent$|(co|Co)?polymer(s)?$|generation|solution|solvent|complex|layer|residue|gel|plug|catalyst|compound(s)?|.+®|^Å$---Chemical entities not marked up by OSCAR
-NN-TEMP---\d*(\xb0|&#0176|\xc3\x97|o|°|º)(C|c)|room$|temperature$|rt$|RT$|^deg$|^degrees$|^K$---Temperature Token
+NN-TEMP---\d*(\xb0|&#0176|\xc3\x97|o|°|º)(C|c)|room$|temperature$|rt$|RT$|^deg$|^degrees$---Temperature Token
+NN-TEMP---^K$---Temperature Token
 NN-FLASH---^flash$---Flash
 NN-GENERAL---^(G|g)eneral$---General term
 NN-METHOD---^(P|p)rocedure(s)?$|(t|T)echnique(s)?$|(m|M)ethod(s)?$---Method token       
