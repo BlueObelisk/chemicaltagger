@@ -154,6 +154,9 @@ public class PostProcessTags {
 			}
 		}
 
+
+
+		
 		if (currentTag.toLowerCase().startsWith("vbn")
 				|| currentTag.toLowerCase().startsWith("vbg")) {
 
@@ -277,6 +280,16 @@ public class PostProcessTags {
 
 			if (stringafter(afterList, i, combinedTags) ) {
 				newTag = "NN-CHEMENTITY";
+			}
+		}
+		
+		if (currentTag.toLowerCase().startsWith("nn-concentrate")) {
+			List<String> beforeList = Utils.addToList("jj oscar-cj");
+			List<String> afterList = Utils.addToList("in-of");
+
+			if (!stringbefore(beforeList, i, combinedTags)
+					&& (stringafter(afterList, i, combinedTags))) {
+				newTag = "NN";
 			}
 		}
 		return newTag;
