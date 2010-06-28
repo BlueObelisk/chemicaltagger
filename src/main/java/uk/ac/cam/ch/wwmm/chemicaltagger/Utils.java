@@ -107,7 +107,6 @@ public class Utils {
 		
 		int index = 0;
 		for (String string : words) {
-			index++;
 			String prefix = " ";
 			String suffix = " ";
 			string = string.replace(" ", "");
@@ -167,6 +166,13 @@ public class Utils {
 			if (concatTempMatcher.find()) {
 				string = splitTemparature(string);
 			}
+			if (string.equals("K.") && index > 0){
+				if (isNumber(words[index - 1])){
+					string = "K .";
+				}
+			}
+			index++;
+
 			newSentence.append(prefix + string + suffix);
 		}
 //		System.err.println("***Sentence "
@@ -206,6 +212,22 @@ public class Utils {
 		}
 		newString = string.replace(numbers, numbers+" ");
 		return newString;
+	}
+	
+	private static boolean isNumber(String word) {
+		
+		for (char ch : word.toCharArray()) {
+		
+			if (Character.isDigit(ch)) {
+				
+			}
+			else{
+				return false;
+			}
+
+		}
+		
+		return true;
 	}
 	
 	private static boolean stopWordAfter(String[] words, int index,
