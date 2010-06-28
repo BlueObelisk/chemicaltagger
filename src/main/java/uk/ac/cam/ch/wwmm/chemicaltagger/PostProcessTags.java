@@ -271,6 +271,14 @@ public class PostProcessTags {
 			}
 		}
 
+		if (currentToken.equals("K")) {
+
+			List<String> beforeList = Utils.addToList("cd");
+
+			if (stringbefore(beforeList, i, combinedTags)) {
+				newTag = "NN-TEMP";
+			}
+		}
 		if (StringUtils.equalsIgnoreCase(currentTag, "''")) {
 			newTag = "FW";
 		}
