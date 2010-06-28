@@ -3,7 +3,9 @@ package uk.ac.cam.ch.wwmm.chemicaltagger;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.InputStream;
+import java.io.OutputStream;
 
 import nu.xom.Builder;
 import nu.xom.Document;
@@ -21,12 +23,14 @@ public class ConverterTest {
 	@Test
 	public void runMe() throws Exception {
 		String fileIn = "src/test/resources/converter/in/experiment.xml";
-		String fileOut = "converter/out/experiment.tagged.xml";
+		new File("target/converter/out/").mkdirs();
+		String fileOut = "target/converter/out/experiment.tagged.xml";
 		String fileRef = "src/test/resources/converter/ref/experiment.tagged.xml";
 		InputStream in = new FileInputStream(fileIn);
 		Document out = createTagged(in);
 		Document ref = CMLUtil.parseQuietlyToDocument(new File(fileRef));
-//		OutputStream outStream = new FileOutputStream(fileOut);
+		OutputStream outStream = new FileOutputStream(fileOut);
+		CMLUtil.debug(out.getRootElement(), outStream, 0);
 		JumboTestUtils.assertEqualsCanonically(
 				"chemical tagger", ref.getRootElement(), out.getRootElement(), true);
 	}
