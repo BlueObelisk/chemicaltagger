@@ -310,6 +310,18 @@ public class PostProcessTags {
 				newTag = "NN";
 			}
 		}
+		
+		if (currentToken.toLowerCase().startsWith("obtain")) {
+			
+			List<String> afterList = Utils.addToList("in-from");
+
+			List<String> after2List = Utils.addToList("nnp");
+			if (stringafter(afterList, i, combinedTags)
+					&& (string2after(after2List, i, combinedTags))) {
+				newTag = "VB";
+			}
+		}
+		
 		return newTag;
 		
 		
@@ -353,6 +365,29 @@ public class PostProcessTags {
 
 		if (afterIndex < combinedTags.size()) {
 			if (afterList.contains(combinedTags.get(afterIndex).getPOS()
+					.toLowerCase())) {
+				after = true;
+			}
+
+		}
+		return after;
+	}
+	
+	/**********************************
+	 * A boolean function that checks for the tokens after the current token
+	 * 
+	 * @param afterList
+	 * @param index
+	 * @param combinedTags
+	 * @return
+	 **********************************/
+	private boolean string2after(List<String> afterList, int index,
+			List<WWMMTag> combinedTags) {
+		boolean after = false;
+		int after2Index = index + 2;
+
+		if (after2Index < combinedTags.size()) {
+			if (afterList.contains(combinedTags.get(after2Index).getPOS()
 					.toLowerCase())) {
 				after = true;
 			}
