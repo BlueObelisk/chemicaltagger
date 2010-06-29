@@ -305,7 +305,7 @@ public class PostProcessTags {
 			List<String> beforeList = Utils.addToList("in-in");
 			List<String> afterList = Utils.addToList("comma stop");
 
-			if (!stringbefore(beforeList, i, combinedTags)
+			if (stringbefore(beforeList, i, combinedTags)
 					&& (stringafter(afterList, i, combinedTags))) {
 				newTag = "NN";
 			}
@@ -350,6 +350,7 @@ public class PostProcessTags {
 			List<WWMMTag> combinedTags) {
 		boolean after = false;
 		int afterIndex = index + 1;
+
 		if (afterIndex < combinedTags.size()) {
 			if (afterList.contains(combinedTags.get(afterIndex).getPOS()
 					.toLowerCase())) {
