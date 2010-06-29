@@ -300,7 +300,19 @@ public class PostProcessTags {
 				newTag = "NN";
 			}
 		}
+		
+		if (currentToken.toLowerCase().equals("addition")) {
+			List<String> beforeList = Utils.addToList("in-in");
+			List<String> afterList = Utils.addToList("comma stop");
+
+			if (!stringbefore(beforeList, i, combinedTags)
+					&& (stringafter(afterList, i, combinedTags))) {
+				newTag = "NN";
+			}
+		}
 		return newTag;
+		
+		
 	}
 
 	
