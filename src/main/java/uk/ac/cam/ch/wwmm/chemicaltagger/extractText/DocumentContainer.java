@@ -45,6 +45,7 @@ public class DocumentContainer {
 
 
 	public String getContent() {
+		content = content.replace("\t", " ");
         return content;
     }
 

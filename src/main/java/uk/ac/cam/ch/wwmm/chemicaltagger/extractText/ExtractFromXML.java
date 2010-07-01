@@ -23,12 +23,13 @@ public class ExtractFromXML {
 
 	private final Logger LOG = Logger.getLogger(ExtractFromXML.class);
 
-	
+	private String searchTag = "//p";
+
 	/****************************************
-	 * Parses an XML files and saves the output
-	 * into DocumentContainer
+	 * Parses an XML files and saves the output into DocumentContainer
 	 * 
-	 * @param sourceFile (String)
+	 * @param sourceFile
+	 *            (String)
 	 * @return docContainer (DocumentContainer)
 	 ****************************************/
 	private String getStringValue(Element action, String Delimiter) {
@@ -37,14 +38,16 @@ public class ExtractFromXML {
 			if (action.getChild(i) instanceof nu.xom.Text) {
 				stringValue.append(action.getChild(i).getValue());
 			} else {
-				Element sub = (Element) action.getChild(i);
+				if (!(action.getChild(i) instanceof nu.xom.ProcessingInstruction)) {
+					Element sub = (Element) action.getChild(i);
 
-				if (sub.getChildCount() > 1) {
-					stringValue.append(getStringValue(sub, Delimiter));
-				} else if (hasMoreChildren(sub)) {
-					stringValue.append(getStringValue(sub, Delimiter));
-				} else {
-					stringValue.append(sub.getValue() + Delimiter);
+					if (sub.getChildCount() > 0) {
+						stringValue.append(getStringValue(sub, Delimiter));
+					} else if (hasMoreChildren(sub)) {
+						stringValue.append(getStringValue(sub, Delimiter));
+					} else {
+						stringValue.append(sub.getValue() + Delimiter);
+					}
 				}
 			}
 		}
@@ -55,10 +58,18 @@ public class ExtractFromXML {
 	private boolean hasMoreChildren(Element sub) {
 		// TODO Auto-generated method stub
 
+		if (sub.getChildCount() == 0) {
+			return false;
+		}
 		if (sub.getChild(0).getChildCount() > 0) {
 			return true;
 		}
 		return false;
+	}
+
+	public DocumentContainer getContent(String sourceFile, String searchTag) {
+		this.searchTag = searchTag;
+		return getContent(sourceFile);
 	}
 
 	public DocumentContainer getContent(String sourceFile) {
@@ -70,22 +81,30 @@ public class ExtractFromXML {
 		try {
 			doc = builder.build(sourceFile);
 			docContainer.setId(doc.getRootElement().getAttributeValue("id"));
-			Nodes sections = doc.query("//p");
+			Nodes sections = doc.query(searchTag);
 			String content = "";
 			String tlc = "";
 			for (int i = 0; i < sections.size(); i++) {
 
-			    Element elementNode = (Element )sections.get(i);
+				Element elementNode = (Element) sections.get(i);
 
-				String cleanNode = getStringValue(elementNode,
-						"").trim().replace("\n", " ").replace("\r", "");
+				String cleanNode = getStringValue(elementNode, "").trim()
+						.replace("\n", " ").replace("\r", "");
 				;
 
 				if (cleanNode.toLowerCase().startsWith("tlc")) {
 					tlc = cleanNode;
 					break;
 				} else {
-					content = content + " " + cleanNode;
+					if (content.length() > 0) {
+						if (content.trim().endsWith(".")) {
+							content += " " + cleanNode;
+						}
+						else{
+							content += " . " + cleanNode;
+						}
+					} else
+						content = cleanNode;
 				}
 
 			}
@@ -114,7 +133,6 @@ public class ExtractFromXML {
 		return docContainer;
 	}
 
-
 	public static void main(String[] args) {
 		List docs = new ArrayList<DocumentContainer>();
 		String path = "src/main/resources/xmlFiles/";
@@ -125,8 +143,6 @@ public class ExtractFromXML {
 			String resourcePath = path + file;
 			ExtractFromXML extract = new ExtractFromXML();
 			DocumentContainer docContainer = extract.getContent(resourcePath);
-			
-			docs.add(docContainer);
 
 		}
 
