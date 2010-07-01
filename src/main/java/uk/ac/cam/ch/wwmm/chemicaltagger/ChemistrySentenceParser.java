@@ -28,12 +28,12 @@ import uk.ac.cam.ch.wwmm.pregenerated.ChemicalChunkerParser;
  * 
  * @author pm286, lh359
  *****************************************/
-public class ChemistrySentenceParser {
+public class ChemistrySentenceParser extends Thread {
 
 	private InputStream taggedTokenInStream = null;
 	private final Logger LOG = Logger.getLogger(ChemistrySentenceParser.class);
 	private Document doc = null;
-
+    private Tree parseTree = null;
 	/*********************************
 	 * Constructor Class.
 	 * @param  taggedTokenInputFilename (String)
@@ -58,6 +58,13 @@ public class ChemistrySentenceParser {
 	}
 
 	
+	public void run(){
+		parseTags();
+	}
+	
+	public Tree getTree(){
+		return parseTree;
+	}
 	/********************************************
 	 * Main Function
 	 * Pass inputStream to Antlr and produces an
@@ -86,8 +93,8 @@ public class ChemistrySentenceParser {
 					+ e.getMessage());
 
 		}
-		Tree t = (Tree) result.getTree();
-		return t;
+		parseTree = (Tree) result.getTree();
+		return parseTree;
 
 	}
 
