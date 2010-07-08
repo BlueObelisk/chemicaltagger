@@ -22,18 +22,31 @@
 				removed antlr generation of *.java to permit build on Hudson if you
 				change the *.g comment this back in again
 			-->
-			<!--
-				<plugin> <groupId>org.antlr</groupId>
-				<artifactId>antlr3-maven-plugin</artifactId> <version>3.2</version>
-				<executions> <execution> <goals> <goal>antlr</goal> </goals>
-				<configuration> <sourceDirectory> src/main/antlr3 </sourceDirectory>
-				<conversionTimeout>10000</conversionTimeout> <libDirectory>
-				src/main/antlr3/imports </libDirectory>
-				<messageFormat>antlr</messageFormat> <outputDirectory>
-				target/generated-sources/antlr3 </outputDirectory>
-				<verbose>true</verbose> <grammars>*.g</grammars> </configuration>
-				</execution> </executions> </plugin>
-			-->
+			<!--  
+			<plugin>
+				<groupId>org.antlr</groupId>
+				<artifactId>antlr3-maven-plugin</artifactId>
+				<version>3.2</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>antlr</goal>
+						</goals>
+						<configuration>
+							<sourceDirectory> src/main/antlr3 </sourceDirectory>
+							<conversionTimeout>10000</conversionTimeout>
+							<libDirectory>
+								src/main/antlr3/imports </libDirectory>
+							<messageFormat>antlr</messageFormat>
+							<outputDirectory>
+								target/generated-sources/antlr3 </outputDirectory>
+							<verbose>true</verbose>
+							<grammars>*.g</grammars>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+-->
 
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
