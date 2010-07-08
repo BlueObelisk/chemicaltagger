@@ -69,10 +69,8 @@
       </NounPhrase>
     </PrepPhrase>
     <CC>and</CC>
-  </Sentence>
-  <Sentence>
     <NounPhrase>
-      <UNNAMEDMOLECULE>
+      <MOLECULE>
         <QUANTITY>
           <VOLUME>
             <CD>5</CD>
@@ -80,10 +78,8 @@
           </VOLUME>
         </QUANTITY>
         <IN-OF>of</IN-OF>
-        <MOLECULE>
-          <OSCAR-CM>water</OSCAR-CM>
-        </MOLECULE>
-      </UNNAMEDMOLECULE>
+        <OSCAR-CM>water</OSCAR-CM>
+      </MOLECULE>
     </NounPhrase>
     <VerbPhrase>
       <VBD>was</VBD>
@@ -109,9 +105,7 @@
         </MIXTURE>
       </MOLECULE>
     </NounPhrase>
-    <Unmatched>
-      <RB>dropwise</RB>
-    </Unmatched>
+    <RB>dropwise</RB>
     <STOP>.</STOP>
   </Sentence>
   <Sentence>
@@ -201,12 +195,8 @@
         </NounPhrase>
       </PrepPhrase>
     </VerbPhrase>
-    <Unmatched>
-      <COMMA>,</COMMA>
-    </Unmatched>
+    <COMMA>,</COMMA>
     <CC>and</CC>
-  </Sentence>
-  <Sentence>
     <VerbPhrase>
       <VB-HEAT>heated</VB-HEAT>
     </VerbPhrase>
@@ -237,8 +227,6 @@
       <VB-FILTER>filtered</VB-FILTER>
     </VerbPhrase>
     <CC>and</CC>
-  </Sentence>
-  <Sentence>
     <VerbPhrase>
       <VB-WAIT>left</VB-WAIT>
       <TimePhrase>
@@ -249,9 +237,7 @@
         <NN-TIME>days</NN-TIME>
       </TimePhrase>
     </VerbPhrase>
-    <Unmatched>
-      <COMMA>,</COMMA>
-    </Unmatched>
+    <COMMA>,</COMMA>
     <NounPhrase>
       <JJ>brown</JJ>
       <NN-STATE>crystals</NN-STATE>
@@ -266,13 +252,9 @@
     <VerbPhrase>
       <VBD>were</VBD>
       <VB-FILTER>filtered</VB-FILTER>
-    </VerbPhrase>
-    <Unmatched>
       <IN-OFF>off</IN-OFF>
-    </Unmatched>
-    <Unmatched>
-      <COMMA>,</COMMA>
-    </Unmatched>
+    </VerbPhrase>
+    <COMMA>,</COMMA>
     <VerbPhrase>
       <VB-WASH>washed</VB-WASH>
       <PrepPhrase>
@@ -284,12 +266,8 @@
         </NounPhrase>
       </PrepPhrase>
     </VerbPhrase>
-    <Unmatched>
-      <COMMA>,</COMMA>
-    </Unmatched>
+    <COMMA>,</COMMA>
     <CC>and</CC>
-  </Sentence>
-  <Sentence>
     <VerbPhrase>
       <VB-DRY>dried</VB-DRY>
       <PrepPhrase>

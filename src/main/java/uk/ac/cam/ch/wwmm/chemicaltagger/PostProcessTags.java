@@ -176,7 +176,7 @@ public class PostProcessTags {
 				&& currentToken.toLowerCase().endsWith("ing")) {
 
 			List<String> afterList = Utils
-					.addToList("nn oscar-cm nns nn-chementity oscar-cj jj nnp");
+					.addToList("nn oscar-cm nns nn-chementity oscar-cj jj nnp nn-state");
 			List<String> beforeList = Utils.addToList("dt rbr rb");
 			if (stringafter(afterList, i, combinedTags)
 					&& stringbefore(beforeList, i, combinedTags)) {
@@ -185,18 +185,6 @@ public class PostProcessTags {
 
 		}
 
-		if (currentTag.toLowerCase().startsWith("vb-")
-				&& !currentToken.toLowerCase().endsWith("ing")) {
-
-			List<String> afterList = Utils
-					.addToList("nn oscar-cm nns nn-chementity oscar-cj jj nnp nn-state");
-			List<String> beforeList = Utils.addToList("dt in-in in-by in-of in stop ");
-			if (stringafter(afterList, i, combinedTags)
-					&& stringbefore(beforeList, i, combinedTags)) {
-				newTag = "JJ";
-			}
-
-		}
 		return newTag;
 	}
 
