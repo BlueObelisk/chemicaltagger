@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 14:05:07 uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g 2010-07-08 15:25:32
+// $ANTLR 3.2 Sep 23, 2009 14:05:07 uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker.g 2010-07-11 02:44:06
 package uk.ac.cam.ch.wwmm.pregenerated;
 
 import org.antlr.runtime.*;
