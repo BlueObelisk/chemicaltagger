@@ -135,6 +135,11 @@ public class PostProcessTrees {
 					    elementList.add(nextPhraseElement);
 					    i++;
 					}
+					else if (nextPhraseElement.getLocalName().contains("VerbPhrase") &&
+							nextPhraseElement.getChild(0).getValue().toLowerCase().equals("to")){
+					    elementList.add(nextPhraseElement);
+					    i++;
+					}
 					else if (actionName.contains("Yield") & nextPhraseElement.getLocalName().contains("NounPhrase")){
 				
 						    elementList.add(nextPhraseElement);

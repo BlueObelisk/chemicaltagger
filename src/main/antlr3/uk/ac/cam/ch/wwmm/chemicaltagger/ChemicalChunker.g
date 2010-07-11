@@ -47,7 +47,7 @@ unmatchedTokens
 
 nounphrase
 	:	nounphraseStructure ->  ^(NODE["NounPhrase"]  nounphraseStructure);	
-nounphraseStructure : dt? (adj|adv)*  (dissolvePhrase|noun|number|ratio)+    (conjunction* adj* adv*  noun|number|ratio )*   (prepphraseOf| prepphraseIN dissolvePhrase?)*  ;
+nounphraseStructure : dt? advAdj*  (dissolvePhrase|noun|number|ratio)+    (conjunction* advAdj*  noun|number|ratio )*   (prepphraseOf| prepphraseIN dissolvePhrase?)*  ;
 dissolvePhrase 
 	:	(dissolveStructure1|dissolveStructure2) ->  ^(NODE["DissolvePhrase"] dissolveStructure1? dissolveStructure2?);
 
@@ -68,7 +68,7 @@ verb : vb|vbp|vbg|vbd|vbz|vbn|vbuse|vbsubmerge|vbsubject|vbadd|vbcharge|vbcontai
 
 number : cd|oscarcd;	
 clause	:	wdt|wp_poss|wpo|wpo|wps|wql|wrb|ex|pdt;
-noun :  prp|citation|molecule|unnamedmolecule|nnstate|nn|nns|nnp|nnadd|preparationphrase|nnexample|oscarcpr|range|amount|mixture|nntime|apparatus|nnatmosphere|nneq|quantity|nnchementity|measurements|nntemp|nnflash|nngeneral|nnmethod|nnamount|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|nnvol|nnpurify|wdt|wp_poss|wpo|wps|nnsynthesize|nnmixture|oscaront|number|oscarCompound|nnextract|nnfilter|nnprecipitate|nnremove|fw|fwin|sym|clause;
+noun :  prp|citation|molecule|apparatus|unnamedmolecule|nnstate|nn|nns|nnp|nnadd|preparationphrase|nnexample|oscarcpr|range|amount|mixture|nntime|nnatmosphere|nneq|quantity|nnchementity|measurements|nntemp|nnflash|nngeneral|nnmethod|nnamount|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|nnvol|nnpurify|wdt|wp_poss|wpo|wps|nnsynthesize|nnmixture|oscaront|number|oscarCompound|nnextract|nnfilter|nnprecipitate|nnremove|fw|fwin|sym|clause;
 range: cd dash cd;
 
 ratio : (numberratio|nounratio) -> ^(NODE["RATIO"] numberratio? nounratio?)  ;
@@ -135,7 +135,7 @@ apparatus
 	:	preapparatus* nnapparatus+-> ^(NODE["APPARATUS"]   preapparatus* nnapparatus+ );
 
 preapparatus
-	:   quantity|nn|nnpressure|adj|nnadd|nnchementity|nnstate ;
+	:  dt?  quantity|nn|nnpressure|adj|nnadd|nnchementity|nnstate ;
 measurements
 	:(cd nn)? measurementtypes    dt?;	
 measurementtypes

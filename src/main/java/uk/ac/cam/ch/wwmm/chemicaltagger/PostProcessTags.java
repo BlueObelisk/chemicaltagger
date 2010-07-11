@@ -169,6 +169,30 @@ public class PostProcessTags {
 			}
 
 		}
+		
+		if (currentTag.toLowerCase().startsWith("vb")
+				&& !currentToken.toLowerCase().endsWith("ing")) {
+
+			List<String> afterList = Utils
+					.addToList("oscar-cm");
+			List<String> beforeList = Utils
+			.addToList("rb vbd");
+	
+			if (stringafter(afterList, i, combinedTags) & !stringbefore(beforeList, i, combinedTags)) {
+				newTag = "OSCAR-CJ";
+			}
+
+		}
+		
+		if (currentToken.toLowerCase().startsWith("form")) {
+
+			List<String> beforeList = Utils
+					.addToList("vbd");
+			if (stringbefore(beforeList, i, combinedTags)) {
+				newTag = "VB-YIELD";
+			}
+
+		}
 		/********
 		 * Gerunds
 		 */

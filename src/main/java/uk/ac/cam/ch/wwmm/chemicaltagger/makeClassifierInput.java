@@ -45,7 +45,7 @@ public class makeClassifierInput {
 				ExtractFromXML extract = new ExtractFromXML();
 				DocumentContainer docContainer = extract.getContent(file
 						.getAbsolutePath()
-						+ "/experiment.xml");
+						+ "/experimental.xml");
 				String content = docContainer.getContent();
 				if (StringUtils.isNotEmpty(content)) {
 
