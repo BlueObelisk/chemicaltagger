@@ -49,7 +49,12 @@ nounphrase
 	:	nounphraseStructure ->  ^(NODE["NounPhrase"]  nounphraseStructure);	
 nounphraseStructure : dt? (adj|adv)*  (dissolvePhrase|noun|number|ratio)+    (conjunction* adj* adv*  noun|number|ratio )*   (prepphraseOf| prepphraseIN dissolvePhrase?)*  ;
 dissolvePhrase 
-	:	molecule inin molecule ->  ^(NODE["DissolvePhrase"]  molecule inin molecule);
+	:	(dissolveStructure1|dissolveStructure2) ->  ^(NODE["DissolvePhrase"] dissolveStructure1? dissolveStructure2?);
+
+dissolveStructure1
+	:	lrb molecule (inin molecule)+ rrb ;
+dissolveStructure2
+	:	molecule (inin molecule)+ ;
 
 
 conjunction 
@@ -58,22 +63,31 @@ conjunction
 
 verbphrase
 	:	verbphraseStructure ->  ^(NODE["VerbPhrase"]  verbphraseStructure);
-verbphraseStructure :  to? inAll? inafter? (md* adv* adj? verb+ md* adv* adj? neg? )+ inoff? (cc? comma? prepphrase)*  ;
+verbphraseStructure :  to? inAll? inafter? (md* adv* adj? verb+ md* adv* adj? neg? )+ inoff? (cc? comma? prepphrase)*   ;
 verb : vb|vbp|vbg|vbd|vbz|vbn|vbuse|vbsubmerge|vbsubject|vbadd|vbcharge|vbcontain|vbdrop|vbfill|vbsuspend|vbtreat|vbapparatus|vbconcentrate|vbcool|vbdegass|vbdissolve|vbdry|vbextract|vbfilter |vbheat|vbincrease|vbpartition|vbprecipitate|vbpurify|vbquench|vbrecover|vbremove|vbstir|vbsynthesize|vbwait|vbwash|vbyield|vbchange;
 
 number : cd|oscarcd;	
 clause	:	wdt|wp_poss|wpo|wpo|wps|wql|wrb|ex|pdt;
-noun :  prp|molecule|unnamedmolecule|nnstate|nn|nns|nnp|nnadd|preparationphrase|nnexample|oscarcpr|range|amount|mixture|nntime|apparatus|nnatmosphere|nneq|quantity|nnchementity|measurements|nntemp|nnflash|nngeneral|nnmethod|nnamount|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|nnvol|nnpurify|wdt|wp_poss|wpo|wps|nnsynthesize|nnmixture|oscaront|number|oscarCompound|nnextract|nnfilter|nnprecipitate|nnremove|fw|fwin|sym|clause;
+noun :  prp|citation|molecule|unnamedmolecule|nnstate|nn|nns|nnp|nnadd|preparationphrase|nnexample|oscarcpr|range|amount|mixture|nntime|apparatus|nnatmosphere|nneq|quantity|nnchementity|measurements|nntemp|nnflash|nngeneral|nnmethod|nnamount|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|nnvol|nnpurify|wdt|wp_poss|wpo|wps|nnsynthesize|nnmixture|oscaront|number|oscarCompound|nnextract|nnfilter|nnprecipitate|nnremove|fw|fwin|sym|clause;
 range: cd dash cd;
+
 ratio : (numberratio|nounratio) -> ^(NODE["RATIO"] numberratio? nounratio?)  ;
 numberratio	:	 cd (colon cd)+ ;
 nounratio 
 	:	 noun  (colon noun)+  ;
+
+
+citation: (citationStructure1|citationStructure2) -> ^(NODE["CITATION"]  citationStructure1? citationStructure2?);
+
+citationStructure1:  lrb citationContent rrb;
+citationStructure2: comma lrb citationContent rrb comma;
+citationContent:   (nnp|fw|cd|conjunction) (nnp|fw|cd|conjunction)+ ;
 	
 mixture: (mixtureStructure2|mixtureStructure1) -> ^(NODE["MIXTURE"]  mixtureStructure2? mixtureStructure1?);
 mixtureStructure2: comma lrb mixtureContent rrb comma;
 mixtureStructure1:  lrb mixtureContent rrb;
 mixtureContent:   (fw|verb|measurements|md|stop|oscarCompound|molecule|unnamedmolecule|dash|sym|cd|noun|inof|inAll|cd|comma|adj|colon|stop) (fw|verb|measurements|md|stop|oscarCompound|molecule|unnamedmolecule|dash|sym|cd|noun|inof|inAll|cd|comma|adj|colon|stop)+ ;
+
 adj	:	jj|jjr|jjs|jjt|oscarcj|oscarrn;
 adv	:	rb|rbr|rbt|rp|rbs|rbconj;
 // Different PrepPhrases
@@ -90,18 +104,25 @@ prepphraseOf
 	: inof  nounphrase->  ^(NODE["PrepPhrase"]  inof  nounphrase);
 
 prepphraseTime 
-	:advAdj* inAll?  dt? advAdj* cd? nntime+ ->  ^(NODE["TimePhrase"]  advAdj* inAll? dt? advAdj* cd? nntime+);
-
+	:prepPhraseTimeStructure ->  ^(NODE["TimePhrase"]  prepPhraseTimeStructure);
+prepPhraseTimeStructure
+	:advAdj* inAll?  dt? advAdj* cd? nntime+	;
+	
 prepphraseIN 
 	:inin molecule ->  ^(NODE["PrepPhrase"]  inin  molecule);
 
 prepphraseAtmosphere 
-	: inunder  dt? advAdj* molecule nnatmosphere? ->  ^(NODE["AtmospherePhrase"]  inunder  dt? advAdj* molecule nnatmosphere?  ) ;
-
+	: prepphraseAtmosphereContent ->  ^(NODE["AtmospherePhrase"]  prepphraseAtmosphereContent ) ;
+prepphraseAtmosphereContent
+	:inunder  dt? advAdj* molecule nnatmosphere?	;
+	
 
 inAll	: in|inafter|inas|inbefore|inby|infor|infrom|inin|ininto|inof|inoff|inon|inover|inunder|invia|inwith|inwithout|to;
-prepphraseTemp:  (adv|adj)? inAll? dt? (adv|adj)? cd? nntemp+ ->  ^(NODE["TempPhrase"]  adv? adj?  inAll?  dt? adv? adj? cd? nntemp+);
+prepphraseTemp:  prepphraseTempContent ->  ^(NODE["TempPhrase"]   prepphraseTempContent);
 
+prepphraseTempContent
+	:  advAdj? inAll? dt? advAdj? cd? nntemp+;	
+	
 			
 amount	: cd nnamount -> ^(NODE["AMOUNT"]   cd nnamount );
 mass	: cd nnmass-> ^(NODE["MASS"]   cd nnmass ); 
@@ -134,17 +155,20 @@ moleculeamount1
 	:(quantity|mixture)+ inof oscarCompound;	
 
 moleculeamount2
-	:(quantity|mixture)* oscarCompound+  (quantity|mixture)* ;	
+	:(quantity|mixture)* oscarCompound+  (citation|quantity|mixture)* ;	
 moleculeamount : moleculeamount1 | moleculeamount2 ;	
 molecule          
 	:  moleculeamount-> ^(NODE["MOLECULE"]  moleculeamount );	
 
 //unnamedmoleculeamount1
 //	:measurements quantity? inof (oscarcd|cd);	
+
+oscarcdType	:  lrb (oscarcd|cd) rrb;	
 unnamedmoleculeamount1
 	: quantity inof (oscarcd|cd);
 unnamedmoleculeamount2
-	:oscarcd quantity*;		
+	:oscarcd|oscarcdType (citation|quantity|mixture)*;	
+		
 //unnamedmoleculeamount3
 //	:measurements quantity? inof (jj? noun)+;	
 

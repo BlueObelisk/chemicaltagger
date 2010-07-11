@@ -211,6 +211,15 @@ public class PostProcessTags {
 			}
 		}
 
+		if (StringUtils.equalsIgnoreCase(currentTag, "prp") || currentToken.toLowerCase().startsWith("ii")) {
+			List<String> beforeList = Utils
+					.addToList("-lrb-");
+			List<String> afterList = Utils.addToList("-rrb-");
+			if (stringbefore(beforeList, i, combinedTags)
+					&& (stringafter(afterList, i, combinedTags))) {
+				newTag = "OSCAR-CD";
+			}
+		}
 		if (currentTag.toLowerCase().equals("cd")) {
 
 			List<String> afterList = Utils.addToList("stop comma -lrb-");
@@ -286,6 +295,16 @@ public class PostProcessTags {
 			if (!stringbefore(beforeList, i, combinedTags)
 					&& (stringafter(afterList, i, combinedTags))) {
 				newTag = "NN";
+			}
+		}
+		
+		if (currentTag.toLowerCase().startsWith("nn-synthesize")) {
+			List<String> beforeList = Utils.addToList("dt");
+			List<String> afterList = Utils.addToList("in-of");
+
+			if (stringbefore(beforeList, i, combinedTags)
+					&& (!stringafter(afterList, i, combinedTags))) {
+				newTag = "NN-CHEMENTITY";
 			}
 		}
 		

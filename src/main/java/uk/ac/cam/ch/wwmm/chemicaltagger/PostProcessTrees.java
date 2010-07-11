@@ -7,6 +7,7 @@ import java.util.List;
 import nu.xom.Attribute;
 import nu.xom.Document;
 import nu.xom.Element;
+import nu.xom.Node;
 import nu.xom.Nodes;
 
 public class PostProcessTrees {
@@ -92,13 +93,26 @@ public class PostProcessTrees {
 		Nodes nodes = doc.query("//Sentence");
 		for (int i = 0; i < nodes.size(); i++) {
 			Element sentenceNode = (Element)nodes.get(i);
-			root.appendChild(processSentence(sentenceNode));
+			Element newSentenceNode = processSentence(sentenceNode); 
+			root.appendChild(newSentenceNode);
 		}
+		Element processedRoot = processDissolve(root);
 		Document processedDoc = new Document(root);
 		return processedDoc;
 
 	}
 	
+	private Element processDissolve(Element root) {
+		Nodes nodes = root.query("//DissolvePhrase");
+		for (int i = 0; i < nodes.size(); i++) {
+             Element dissolveElement = (Element) nodes.get(i);
+             dissolveElement.setLocalName("ActionPhrase");
+          	 Attribute attribute = new Attribute("type", "Dissolve");
+			
+			 dissolveElement.addAttribute(attribute);
+		}
+		return root;
+	}
 	private Element processSentence(Element sentenceNode) {
 	    Element newSentence = new Element("Sentence");
 	    List<Element> elementList = new ArrayList<Element>();
@@ -112,6 +126,7 @@ public class PostProcessTrees {
 			if (containsKeyword(content)){
 				Element actionPhrase = new Element("ActionPhrase");
 				Attribute attribute = new Attribute("type", actionName);
+				
 				actionPhrase.addAttribute(attribute);
 				elementList.add(phraseElement);
 				if (i + 1 < sentenceNode.getChildCount()){

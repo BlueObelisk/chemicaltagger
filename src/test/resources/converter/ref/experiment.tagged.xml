@@ -230,10 +230,8 @@
     <VerbPhrase>
       <VB-WAIT>left</VB-WAIT>
       <TimePhrase>
-        <JJ>several</JJ>
         <IN-FOR>for</IN-FOR>
         <JJ>several</JJ>
-        <IN-FOR>for</IN-FOR>
         <NN-TIME>days</NN-TIME>
       </TimePhrase>
     </VerbPhrase>
