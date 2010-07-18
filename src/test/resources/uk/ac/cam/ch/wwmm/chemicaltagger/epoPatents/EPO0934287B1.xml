@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ep-patent-document PUBLIC "-//EPO//EP PATENT DOCUMENT 1.4//EN" "ep-patent-document-v1-4.dtd">
+<ep-patent-document id="EP97938449B1" file="EP97938449NWB1.xml" lang="en" country="EP" doc-number="0934287" kind="B1" date-publ="20090527" status="n" dtd-version="ep-patent-document-v1-4">
+<SDOBI lang="en"><B000><eptags><B001EP>ATBECHDEDKESFRGBGRITLILUNLSEMCPTIESILTLVFIRO....AL..............................</B001EP><B003EP>*</B003EP><B005EP>J</B005EP><B007EP>DIM360 Ver 2.15 (14 Jul 2008) -  2100000/0</B007EP></eptags></B000><B100><B110>0934287</B110><B120><B121>EUROPEAN PATENT SPECIFICATION</B121></B120><B130>B1</B130><B140><date>20090527</date></B140><B190>EP</B190></B100><B200><B210>97938449.2</B210><B220><date>19970820</date></B220><B240><B241><date>19990329</date></B241><B242><date>20030827</date></B242></B240><B250>en</B250><B251EP>en</B251EP><B260>en</B260></B200><B300><B310>719947</B310><B320><date>19960925</date></B320><B330><ctry>US</ctry></B330></B300><B400><B405><date>20090527</date><bnum>200922</bnum></B405><B430><date>19990811</date><bnum>199932</bnum></B430><B450><date>20090527</date><bnum>200922</bnum></B450><B452EP><date>20081110</date></B452EP></B400><B500><B510EP><classification-ipcr sequence="1"><text>C07D 267/02        20060101AFI19991207BHEP        </text></classification-ipcr><classification-ipcr sequence="2"><text>C07D 281/02        20060101ALI19991207BHEP        </text></classification-ipcr><classification-ipcr sequence="3"><text>C07D 285/15        20060101ALI19991207BHEP        </text></classification-ipcr><classification-ipcr sequence="4"><text>C07D 279/06        20060101ALI19991207BHEP        </text></classification-ipcr><classification-ipcr sequence="5"><text>C07D 273/04        20060101ALI19991207BHEP        </text></classification-ipcr><classification-ipcr sequence="6"><text>A61K  31/40        20060101ALI19991207BHEP        </text></classification-ipcr><classification-ipcr sequence="7"><text>A61K  31/41        20060101ALI19991207BHEP        </text></classification-ipcr><classification-ipcr sequence="8"><text>A61K  31/42        20060101ALI19991207BHEP        </text></classification-ipcr><classification-ipcr sequence="9"><text>C07D 265/06        20060101ALI19991207BHEP        </text></classification-ipcr><classification-ipcr sequence="10"><text>C07D 257/02        20060101ALI19991207BHEP        </text></classification-ipcr><classification-ipcr sequence="11"><text>C07D 251/04        20060101ALI19991207BHEP        </text></classification-ipcr><classification-ipcr sequence="12"><text>C07D 239/04        20060101ALI19991207BHEP        </text></classification-ipcr><classification-ipcr sequence="13"><text>C07D 211/14        20060101ALI19991207BHEP        </text></classification-ipcr><classification-ipcr sequence="14"><text>C07D 291/04        20060101ALI19991207BHEP        </text></classification-ipcr><classification-ipcr sequence="15"><text>C07D 285/04        20060101ALI19991207BHEP        </text></classification-ipcr><classification-ipcr sequence="16"><text>C07D 273/00        20060101ALI19991207BHEP        </text></classification-ipcr><classification-ipcr sequence="17"><text>C07D 249/04        20060101ALI19991207BHEP        </text></classification-ipcr><classification-ipcr sequence="18"><text>C07D 233/02        20060101ALI19991207BHEP        </text></classification-ipcr><classification-ipcr sequence="19"><text>C07D 207/06        20060101ALI19991207BHEP        </text></classification-ipcr><classification-ipcr sequence="20"><text>A61K  31/53        20060101ALI19991207BHEP        </text></classification-ipcr><classification-ipcr sequence="21"><text>A61K  31/54        20060101ALI19991207BHEP        </text></classification-ipcr><classification-ipcr sequence="22"><text>A61K  31/415       20060101ALI19991207BHEP        </text></classification-ipcr><classification-ipcr sequence="23"><text>A61K  31/425       20060101ALI19991207BHEP        </text></classification-ipcr><classification-ipcr sequence="24"><text>A61K  31/445       20060101ALI19991207BHEP        </text></classification-ipcr><classification-ipcr sequence="25"><text>A61K  31/495       20060101ALI19991207BHEP        </text></classification-ipcr><classification-ipcr sequence="26"><text>A61K  31/535       20060101ALI19991207BHEP        </text></classification-ipcr><classification-ipcr sequence="27"><text>C07D 277/06        20060101ALI19991207BHEP        </text></classification-ipcr></B510EP><B540><B541>de</B541><B542>HETEROCYCLISCHE ESTER UND AMIDE</B542><B541>en</B541><B542>HETEROCYCLIC ESTERS AND AMIDES</B542><B541>fr</B541><B542>ESTERS ET AMIDES HETEROCYCLIQUES</B542></B540><B560><B561><text>EP-A- 0 564 924</text></B561><B561><text>FR-A- 1 559 851</text></B561><B561><text>US-A- 5 192 773</text></B561><B561><text>US-A- 5 330 993</text></B561><B561><text>US-A- 5 654 332</text></B561><B562><text>B. AKERMARK, N.-G. JOHANSSON: "Synthesis of strained heterocyclic rings. I. 2-Hydroxy-beta-lactams and 4-oxazolidinones by photocyclization of 2-oxoamides" TETRAHEDRON LETTERS, no. 5, 1969, pages 371-372, XP002124578</text></B562><B562><text>K. R. HENERY-LOGAN, C. G. CHEN: "Synthesis of oxygen analogs of the penicillins. I. Photocyclization of 2-oxoamides to 3-carbomethoxy-6-hydroxypenams" TETRAHEDRON LETTERS, no. 13, 1973, pages 1103-1104, XP002124579</text></B562><B562><text>D. M. BRUNWIN, G. LOWE: "Total Synthesis of Nuclear Analogues of 7-Methylcephalosporin" J. CHEM. SOC. PERKIN TRNS. I,1973, pages 1321-1328, XP002124580</text></B562><B562><text>L. V. DUNKERTON, R. M. AHMED: "Synthetic approaches to bicyclomycin I. Preparation of monocyclic intermediates by retrograde Michael cleavage of 6-alkyl-6-methoxyhexahydro-3H-thiazolo[3,4 -a]pyrazine-5,8-diones" TETRAHEDRON LETTERS, vol. 21, 1980, pages 1803-1806, XP002124581</text></B562><B562><text>Y. INAMORI ET AL.: "Synthesis of Methyl and ethyl 3-Alkylthiazolidine-4(R)-carboxylates and Their Roots Inhibition of the Growth of Brassica campestris" BIOSCI. BIOTECHNOL. BIOCHEM., vol. 58, no. 6, 1994, pages 1150-1152, XP002124582</text></B562><B562><text>J. MED. CHEM., 1996, Volume 39, Number 9, DRAGOVICH P.S. et al., "Structure-Based Design of Novel, Urea-Containing FKBP12 Inhibitors", pages 1872-1874.</text></B562><B562><text>BIOORGANIC &amp; MEDICINAL CHEMISTRY LETTERS, 1994, Volume 4, No. 2, HOLT D.A. et al., "Structure-Activity Studies of Synthetic FKBP Ligands as Peptidyl-Prolyl Isomerase Inhibitors", pages 315-320.</text></B562><B562><text>J. AM. CHEM. SOC., 1993, Volume 115, HOLT D.A. et al., "Design, Synthesis and Kinetic Evaluation of High-Affinity FKBP Ligands and the X-Ray Crystal Structures of Their Complexes with FKBP12", pages 9925-9938.</text></B562><B565EP><date>19991201</date></B565EP></B560></B500><B700><B720><B721><snm>LI, Jia-He,
+Guilford Pharmaceuticals Inc.</snm><adr><str>6611 Tributary Street</str><city>Baltimore, MD 21224</city><ctry>US</ctry></adr></B721><B721><snm>HAMILTON, Gregory S.,
+Guilford Pharmaceut. Inc.</snm><adr><str>6611 Tributary Street</str><city>Baltimore, MD 21224</city><ctry>US</ctry></adr></B721></B720><B730><B731><snm>GliaMed, Inc.</snm><iid>07891370</iid><irf>P/6173.EPP</irf><adr><str>3960 Broadway, 3rd Floor</str><city>New York, NY 10032</city><ctry>US</ctry></adr></B731></B730><B740><B741><snm>Evens, Paul Jonathan</snm><sfx>et al</sfx><iid>00083931</iid><adr><str>Maguire Boss 
+24 East Street</str><city>St. Ives
+Cambridgeshire PE27 5PD</city><ctry>GB</ctry></adr></B741></B740></B700><B800><B840><ctry>AT</ctry><ctry>BE</ctry><ctry>CH</ctry><ctry>DE</ctry><ctry>DK</ctry><ctry>ES</ctry><ctry>FI</ctry><ctry>FR</ctry><ctry>GB</ctry><ctry>GR</ctry><ctry>IE</ctry><ctry>IT</ctry><ctry>LI</ctry><ctry>LU</ctry><ctry>MC</ctry><ctry>NL</ctry><ctry>PT</ctry><ctry>SE</ctry></B840><B844EP><B845EP><ctry>AL</ctry><date>19990329</date></B845EP><B845EP><ctry>LT</ctry><date>19990329</date></B845EP><B845EP><ctry>LV</ctry><date>19990329</date></B845EP><B845EP><ctry>RO</ctry><date>19990329</date></B845EP><B845EP><ctry>SI</ctry><date>19990329</date></B845EP></B844EP><B860><B861><dnum><anum>US1997014624</anum></dnum><date>19970820</date></B861><B862>en</B862></B860><B870><B871><dnum><pnum>WO1998013355</pnum></dnum><date>19980402</date><bnum>199813</bnum></B871></B870><B880><date>19990811</date><bnum>199932</bnum></B880></B800></SDOBI><!-- EPO <DP n="1"> -->
+<description id="desc" lang="en">
+<heading id="h0001"><b><u style="single">BACKGROUND OF THE INVENTION</u></b></heading>
+<heading id="h0002"><b>1. <u style="single">Field of Invention</u></b></heading>
+<p id="p0001" num="0001">This invention relates to neurotrophic low molecular weight, small molecule heterocyclic esters and amides having an affinity for FIBP-type immunophilins, and their use as inhibitors of the enzyme activity associated with immunophilin proteins, particularly peptidyl-prolyl isomerase, or rotamase, enzyme activity.</p>
+<heading id="h0003"><b>2. <u style="single">Description of Related Art</u></b></heading>
+<p id="p0002" num="0002">The term immunophilin refers to a number of proteins that serve as receptors for the principal imonunosuppressant drugs, cyclosporin A (CsA), FK506 and rapamycin. Known classes of immunophilins are cyclophilins and FK506 binding proteins, or FKBPs. Cyclosporin A binds to cyclophilin A while FK506 and rapamycin bind to FKHP12. These immunophilin-drug complexes interface with various intracellular signal transduction systems, especially the immune and nervous systems.</p>
+<p id="p0003" num="0003">Immunophilins are known to have peptidyl-prolyl isomerase (PPIase), or rotamase, enzyme activity. It has been determined that rotamase enzyme activity plays a role in the catalyzation of the interconversion of the <i>cis</i> and <i>trans</i> isomers of peptide and protein substrates for the immunophilin proteins.<!-- EPO <DP n="2"> --></p>
+<p id="p0004" num="0004">Immunophilins were originally discovered and studied in the immune tissue. It was initially postulated by those skilled in the art that inhibition of the immunophilins' rotamase activity leads to inhibition of T-cell proliferation, thereby causing the immunosuppressive activity exhibited by immunosuppressant drugs, such as cyclosporin A, FK506 and rapamycin. Further study has shown that the inhibition of rotamase activity, in and of itself, does not result in immunosuppressive activity. <nplcit id="ncit0001" npl-type="s"><text>Schreiber et al., science, 1990, vol. 250, pp. 556-559</text></nplcit>. Instead, immunosuppression appears to stem from the formulation of a complex of immunosuppressant drugs and immunophilins. It has been shown that the immunophilin-drug complexes interact with ternary protein targets as their mode of action. <nplcit id="ncit0002" npl-type="s"><text>Schreiber et al., Cell, 1991, vol. 66, pp. 607-815</text></nplcit>. In the case of FKBP-FK506 and cyclophilin-CsA, the immunophilin-drug complexes bind to the enzyme calcineurin and inhibit the T-cell receptor signaling which leads to T-cell proliferation. Similarly, the immunophilin-drug complex of FKBP-rapamycin interacts with the RAFT1/FRAP protein and inhibits the IL-2 receptor signalling.</p>
+<p id="p0005" num="0005">Immunophilins have been found to be present at high concentrations in the central nervous system. Immunophilins are enriched 10-50 times more in the<!-- EPO <DP n="3"> --> central nervous system than in the immune system. Within neural tissues, immunophilins appear to influence nitric oxide synthesis, neurotransmitter release and neuronal process extension.</p>
+<p id="p0006" num="0006">It has been found that picomolar concentrations of an immunosuppressant such as FK506 and rapamycin stimulate neurite outgrowth in PC12 cells and sensory neurons, namely dorsal root ganglion cells (DRGs). <nplcit id="ncit0003" npl-type="s"><text>Lyons et al., Proc. of Natl-Acad. Sci ., 1994, vol. 91, pp. 8191-8186</text></nplcit>. In whole animal experiments, FK506 has been shown to stimulate nerve regeneration following facial nerve injury.</p>
+<p id="p0007" num="0007"><nplcit id="ncit0004" npl-type="s"><text>B Ackerman et al Tetrahedron Letters no.6, 1989, pages 371-372</text></nplcit> relates to synthesis of strained heterocyclic rings including 2-hydroxy-beta-lactams and 4-oxazolidinones by photocyclization of 2-oxoamides.</p>
+<p id="p0008" num="0008"><nplcit id="ncit0005" npl-type="s"><text>K.R. Henery-Logan et al Tetrahedron Letters no. 13, 1973, pages 1103-1104</text></nplcit> relates to the synthesis of oxygen analogue of penicillins by photocyclization of 2-oxoamides to 3-carbomethoxy-6-hydroxypenams.</p>
+<p id="p0009" num="0009"><nplcit id="ncit0006" npl-type="s"><text>D. M. Brunw!A et al J.Chem. Soc. Parkins Trns. I, 1973, pages 1321-1328</text></nplcit> relates to total synthesis of analogues of 7-methylcephalosporin</p>
+<p id="p0010" num="0010"><nplcit id="ncit0007" npl-type="s"><text>L.V. Dunkerton et al Tetrahedron Letters no. 21, 1980 pages 1830-1806</text></nplcit> relates to synthetic approaches to the preparation of bicyclomycin.</p>
+<p id="p0011" num="0011"><nplcit id="ncit0008" npl-type="s"><text>Inamori et al Biosci. Biotechnol. Biochem, vol. 58, no. 6, 1994, pages 1150-1152</text></nplcit> relates to the synthesis of methyl and methyl 3-alkylthiazolidine-4(R)-carboxylates.</p>
+<p id="p0012" num="0012"><patcit id="pcit0001" dnum="US5654332A"><text>US5,654,332</text></patcit> relates to a methods and pharmaceutical composition for stimulating the growth of nourites in nerves cells. The compositions comprise a neurotrophic amount of a compound, which binds to the FK-506 binding proteins and a neurotrophic factor such as a nerve growth factor NGF.</p>
+<p id="p0013" num="0013"><patcit id="pcit0002" dnum="US5192773A"><text>US5,192,773</text></patcit> relates to a novel immunosuppressive compounds having an affinity for the FKK-50 binding protein (FKBP).</p>
+<p id="p0014" num="0014"><patcit id="pcit0003" dnum="US5330993A"><text>US5,330,993</text></patcit> also relates to a novel class of immunosuppressive compounds having an affinity for the FK-506 binding protein (FKBP). Once bound to this protein the immunosuppressive compounds are said to inhibit the prolyl peptidyl cis-trans isomerase (rotamase) activity of FKBP and inhibit T cell activation.</p>
+<p id="p0015" num="0015"><patcit id="pcit0004" dnum="EP564924A"><text>EP564924</text></patcit> relates to certain immunosuppressant 2-oxoethyl derivates.</p>
+<p id="p0016" num="0016"><nplcit id="ncit0009" npl-type="s"><text>Dragovich et al J Med. Chem., 1996 Volume 39, Number 9 pages 1872-1874</text></nplcit> relatest to the structure-based design and subsequent synthesis of certain urea-containing FKBP12 inhibitors.<!-- EPO <DP n="4"> --></p>
+<p id="p0017" num="0017"><nplcit id="ncit0010" npl-type="s"><text>D. A. Holt et al Bioorganic &amp; Medicinal Chemistry Letters, 1994. Vol. 4, No. 2 page 315-320</text></nplcit> relates to preparation of a series of non-macrocyclic pipecolyl alpha-ketoamides and evalution of the same as FKBP cis-trans peptidyl isomerise inhibitors.</p>
+<p id="p0018" num="0018"><nplcit id="ncit0011" npl-type="s"><text>D. A. Holt et al J. Am. Chem. Soc. 1993, Vol 115, pages 9925-9938</text></nplcit> relates to the design and synthesis of high-affinity FKBP12 ligands, said to potentially inhibit rotamase activity catalyzed by FKBP12.</p>
+<p id="p0019" num="0019">Surprisingly, it has been found that certain compounds with a high affinity for FKBPs are potent rotamase inhibitors and exhibit excellent neurotrophic effects. Furthermore, these rotamase inhibitors are devoid of immunosuppresive activity. These findings suggest the use of rotamase inhibitors in treating various peripheral neuropathies and enhancing neuronal regrowth in the central nervous system (CNS) . Studies have demonstrated that neurodegenerative disorders such as Alzheimer's disease,Parkinson's disease, and amyetrophic lateral sclerosis (ALS) may occur due to the loss, or decreased availability, of a neurotrophic substance specific for a particular population of neurons affected in the disorder.<!-- EPO <DP n="5"> --></p>
+<p id="p0020" num="0020">Several neurotrophic factors affecting specific neuronal populations in the central nervous system have been identified. For example, it has been hypothesized that Alzheimer's disease results from a decrease or loss of nerve growth factor (NGF). It has thus been proposed to treat SDAT patents with exogenous nerve growth factor or other neurotrophic proteins, such as brain derived growth factor, glial derived growth factor, ciliary neurotrophic factor and neurotropin-3, to increase the survival of degenerating neuronal populations.</p>
+<p id="p0021" num="0021">Clinical application of these proteins in various neurological disease states is hammered by difficulties in the delivery and bioavailability of large proteins to nervous system targets. By contrast, immunosuppressant drugs with neurotrophic activity are relatively small and display excellent bioavailability and specificity. However, when administered chronically, immunosuppressant drugs exhibit a number of potentially serious side effects including nephrotoxicity, such as impairment of glomerular filtration and irreversible interstitial fibrosis (<nplcit id="ncit0012" npl-type="s"><text>Kopp et al., J. Am. Soc. Nephrol., 1991, 1:162</text></nplcit>); neurological deficits, such as involuntary tremors, or non-specific cerebral angina, such as non-localized headaches (<nplcit id="ncit0013" npl-type="s"><text>De Groen et al., N. Engl. J. Med., 1987, 317:861</text></nplcit>); and vascular hypertension with complications resulting therefrom (<nplcit id="ncit0014" npl-type="s"><text>Kahan et al., N. Engl.<!-- EPO <DP n="6"> --> J. Med., 1989, 321:1725</text></nplcit>).</p>
+<p id="p0022" num="0022">In order to prevent the side effects associated with use of the immunosuppressant compounds, the present invention provides non-immunosuppressive compounds containing small molecule FKBP rotamase inhibitors for enhancing neurite outgrowth, and promoting neuronal growth and regeneration in various neuropathological situations where neuronal repair can be facilitated, including: peripheral nerve damage caused by physical injury or disease state such as diabetes; physical damage to the central nervous system (spinal cord and brain); brain damage associated with stroke; and neurological disorders relating to neurodegeneration, such as Parkinson's disease, SDAT (Alzheimer's disease), and amyotrophic lateral sclerosis.</p>
+<heading id="h0004"><b><u style="single">SUMMARY OF THE INVENTION</u></b></heading>
+<p id="p0023" num="0023">The present invention relates to neurotrophic low molecular weight, small molecule compounds having an affinity for FKBP-type immunophilins. Once bound to these proteins, the neurotrophic compounds are potent inhibitors of the enzyme activity associated with immunophilin proteins, particularly peptidyl-prolyl isomerase, or rotamase, enzyme activity. A key feature of the compounds of the present invention is that they do not exert any significant immunosuppressive activity in<!-- EPO <DP n="7"> --> addition to their neurotrophic activity.</p>
+<p id="p0024" num="0024">Specifically, the present invention relates to a compound of formula I:
+<chemistry id="chem0001" num="0001"><img id="ib0001" file="imgb0001.tif" wi="104" he="56" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+or a pharmaceutically acceptable salt thereof, wherein:
+<ul id="ul0001" list-style="none">
+<li>A and B, together with the nitrogen and carbon atoms to which they are respectively attached, form a 5-7 membered saturated or unsaturated heterocyclic ring containing, in addition to the nitrogen atom, at least one additional O, S, SO, SO<sub>2</sub>, NH or NR<sub>1</sub> heteroatom in any chemically stable oxidation state;</li>
+<li>X is O or S;</li>
+<li>Z is O, NH or NR<sub>1</sub>; and</li>
+<li>W and Y are independently O. S, CH<sub>2</sub> or H<sub>2</sub>;</li>
+<li>R<sub>1</sub> is C<sub>1</sub>-C<sub>5</sub> straight or branched chain alkyl, which is substituted in one or more position(s) with (Ar<sub>1</sub>)<sub>n</sub>, or up to C<sub>6</sub> straight or branched chain alkenyl, which is substituted in one or more position(s) with (Ar<sub>1</sub>)<sub>n</sub>, C<sub>3</sub>-C<sub>8</sub> cycloalkyl C<sub>3</sub>-C<sub>8</sub> cycloalkyl connected by C<sub>1</sub>-C<sub>6</sub> straight or branched chain alkyl, C<sub>3</sub>-C<sub>8</sub> cycloalkyl connected by up to C<sub>8</sub> straight or branched chain alkenyl, Ar<sub>2</sub> or a combination thereof,<!-- EPO <DP n="8"> --></li>
+<li>n is 1 or 2,</li>
+<li>R<sub>2</sub> is either C<sub>1</sub>-C<sub>3</sub> straight or branched chain alkyl or alkenyl, C<sub>3</sub>-C<sub>9</sub> cycloalkyl, C<sub>3</sub>-C<sub>7</sub> cycloalkenyl, or Ar<sub>1</sub>, wherein said alkyl, alkenyl, cycloalkyl or cycloalkenyl is either unsubstituted or substituted in one or more position (s) with C<sub>1</sub>-C<sub>4</sub> straight or branched chain alkyl or alkenyl, hydroxyl, or a combination thereof; and</li>
+<li>Ar<sub>1</sub> and Ar<sub>2</sub> are independently a mono-, bi- or tricyclic, carbo- or heterocyclic ring, wherein the ring is either unsubstituted or substituted in one to three position (s) with halo, hydroxyl, nitro, trifluoromethyl, C<sub>1</sub>-C<sub>6</sub> straight or branched chain alkyl or alkenyl, C<sub>1</sub>-C<sub>4</sub> alkoxy, C<sub>1</sub>-C<sub>8</sub> alkenyloxy, phenoxy, benzyloxy, amino, or a combination thereof; wherein the individual ring sizes are 5-6 member; and wherein the heterocyclic ring contains 1-6 heteroatom(s) selected from the group consisting of O. N, S. and a combination thereof.</li>
+</ul><!-- EPO <DP n="9"> --></p>
+<p id="p0025" num="0025">The compound of claim 1, wherein the at least one additional heteroatom in the 5-7 membered saturated or unsaturated heterocyclic ring is NH or NR<sub>1</sub>.<!-- EPO <DP n="10"> --></p>
+<p id="p0026" num="0026">The present invention also relates to a pharmaceutical composition comprising a neurotrophically effective amount of the compound of formula I, II or III, and a pharmaceutically acceptable carrier.</p>
+<p id="p0027" num="0027">The present invention further relates to a method of effecting a neuronal activity in an animal, comprising:
+<ul id="ul0002" list-style="none" compact="compact">
+<li>administering to the animal a neurotrophically effective amount of the compound of formula I, II or III.</li>
+</ul></p>
+<heading id="h0005"><b><u style="single">BRIEF DESCRIPTION OF THE DRAWINGS</u></b></heading>
+<p id="p0028" num="0028">
+<ul id="ul0003" list-style="none" compact="compact">
+<li><figref idref="f0001">FIG. 1(A)</figref> is a representative photomicrograph of compound 1 (1 pM) promoting neurite outgrowth in sensory neurons.</li>
+<li><figref idref="f0001">FIG. 1(B)</figref> is a representative photomicrograph of compound 1 (10 pM) promoting neurite outgrowth in sensory neurons.</li>
+<li><figref idref="f0001">FIG. 1(C)</figref> is a representative photomicrograph of compound 1 (100 pM) promoting neurite outgrowth in sensory neurons.</li>
+<li><figref idref="f0002">FIG. 2 (A)</figref> is a representative photomicrograph of compound 2 (10 pM) promoting neurite outgrowth in sensory neutrons.<!-- EPO <DP n="11"> --></li>
+<li><figref idref="f0002">FIG. 2 (B)</figref> is a representative photomicrograph of compound 2 (100 pM) promoting neurite outgrowth in sensory neurons.</li>
+<li><figref idref="f0002">FIG. 2(C)</figref> is a representative photomicrograph of compound 2 (10 nM) promoting neurite outgrowth in sensory neurons.</li>
+</ul></p>
+<heading id="h0006"><b><u style="single">DETAILED DESCRIPTION OF THE INVENTION</u></b></heading>
+<heading id="h0007"><b><u style="single">Definitions</u></b></heading>
+<p id="p0029" num="0029">"Alkyl" means a branched or unbranched saturated hydrocarbon chain containing 1 to 6 carbon atoms, such as methyl, ethyl, propyl, iso-propyl, butyl, iso-butyl, tert-butyl, n-pentyl, n-hexyl, and the like, unless otherwise indicated.</p>
+<p id="p0030" num="0030">"Alkoxy" means the group -OR wherein R is alkyl as herein defined. Preferably, R is a branched or unbranched saturated hydrocarbon chain containing 1 to 3 carbon atoms.</p>
+<p id="p0031" num="0031">"Halo" means fluoro, chloro, bromo, or iodo, unless otherwise indicated.</p>
+<p id="p0032" num="0032">"Phenyl" includes all possible isomeric phenyl radicals, optionally monosubstituted or multi-substituted with substituents selected from the group consisting of alkyl, alkoxy, hydroxy, halo, and haloalkyl.</p>
+<p id="p0033" num="0033">The term "pharmaceutically acceptable salt" refers to salts of the subject compounds which posses the<!-- EPO <DP n="12"> --> desired pharmacological activity and which are neither biologically nor otherwise undesirable. The salts can be formed with inorganic acids such as acetate, adipate, alginate, aspartate, benzoate, benzenesulfonate, bisulfate butyrate, citrate, camphorate, canphorsulfonate, cyclopentanepropionate, digluconate, dodecylsulfate, ethanesulfonate, fumarate, glucohaptanoate, glycerophosphate, hemisulfate heptanoate, hexanoate, hydrochloride hydrobromide, hydroiodide, 2-hydroxyethanesulfonate, lactate, maleate, methanesulfonate, 2-naphthalenesulfonate, nicotinate, oxalate, thiocyanate, tosylate and undecanoate. Base salts include ammonium salts, alkali metal salts such as sodium and potassium salts, alkaline earth metal salts such as calcium and magnesium salts, salt with organic bases such as dicyclohexylamine salts, N-methyl-D-glucamine, and salts with amino acids such as arginine, lysine, and so forth. Also, the basic nitrogen-containing groups can be quarternized with such agents as lower alkyl halides, such an methyl, ethyl, propyl, and butyl chloride, bromides and iodides; dialkyl sulfates like dimethyl, diethyl, dibutyl and diamyl sulfates, long chain halides such as decyl, lauryl, myristyl and stearyl chlorides, bromides and iodides, aralkyl halides like benzyl and phenethyl bromides and others. Water or oil-soluble or dispersible products are thereby obtained.<!-- EPO <DP n="13"> --></p>
+<p id="p0034" num="0034">The compounds of this invention possess asymmetric centers and thus can be produced as mixtures of stereoisomers or as individual stereoisomers. The individual stereoisomers may be obtained by using an optically active starting material, by resolving a racemic or non-racemic mixture of an intermediate at some appropriate stage of the synthesis, or by resolution of the compound of formula (I) . It is understood that the individual stereoisomers as well as mixtures (racemic and non-racemic) of stereoisomers are encompassed by the scope of the present invention. The compounds of this invention possess at least one asymmetric centers and thus can be produced as mixtures of stereoisomers or as individual R- and S-stereoisomers. The individual enantiomers may be obtained by resolving a racemic or non-racemic mixture of an intermediate at some appropriate stage of the synthesis. It is understood that the individual R- and S- stereoisomers as well as mixtures of stereoisomers are encompassed by this invention. The S-stereoisomer is most preferred due to its greater activity.</p>
+<p id="p0035" num="0035">"Isomers" are different compounds that have the same molecular formula.</p>
+<p id="p0036" num="0036">"Stereoisomers" are isomers that differ only in the way the atoms are arranged in space.<!-- EPO <DP n="14"> --></p>
+<p id="p0037" num="0037">"Enantiomers" are a pair of stereoisomers that are non-superimposable mirror-images of each other.</p>
+<p id="p0038" num="0038">"Diastereoisomers" are stereoisomers which are not mirror images of each other.</p>
+<p id="p0039" num="0039">"Racemic mixture" means a mixture containing equal parts of individual enantiomers. "Non-racemic mixture" is a mixture containing unequal parts of individual enantiomers or stereoisomers.</p>
+<p id="p0040" num="0040">The term "treatment" as used herein covers any treatment of a disease and/or condition in an animal, particularly a human, and includes:
+<ol id="ol0001" compact="compact" ol-style="">
+<li>(i) preventing a disease and/or condition from occurring in a subject which may be predisposed to the disease and/or condition but has not yet been diagnosed as having it;</li>
+<li>(ii) inhibiting the disease and/or condition, i.e., arresting its development; or</li>
+<li>(iii) relieving the disease and/or condition, i.e., causing regression of the disease and/or condition.</li>
+</ol></p>
+<p id="p0041" num="0041">The system used in naming the compounds of the present invention is shown below, using a compound of formula II as an example.</p>
+<p id="p0042" num="0042">A compounds 3-phenyl-1-propyl (2S) -1- (3, 3-dimethyl-1,2-dioxopentyl)-2-(4-thiazolidine)carboxylate.<!-- EPO <DP n="15"> --></p>
+<heading id="h0008"><b><u style="single">Compounds of the Invention</u></b></heading>
+<p id="p0043" num="0043">The neurotrophic low molecular weight, small molecule PKBP inhibitor compounds of this invention have an affinity for FKBP-type immunophilins, such as FKBP12. When the neurotrophic compounds of this invention are bound to an FKBP-type immunophilin, they have been found to inhibit the prolyl-peptidyl cis-trans isomerase activity, or rotamase, activity of the binding protein and unexpectedly stimulate neurite growth.</p>
+<heading id="h0009"><b><u style="single">FORMULA I</u></b></heading>
+<p id="p0044" num="0044">In particular, this invention relates to a compound of formula I:
+<chemistry id="chem0002" num="0002"><img id="ib0002" file="imgb0002.tif" wi="95" he="50" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+or a Pharmaceutically acceptable salt thereof, wherein:
+<ul id="ul0004" list-style="none">
+<li>A and B, together with the nitrogen and carbon atoms to which they are respectively attached, form a 5-7 membered saturated or unsaturated heterocyclic ring containing, in addition to the nitrogen atom, at least<!-- EPO <DP n="16"> --> one additional O, S, SO, SOa, NH or NR1 heteroatom in any chemically stable oxidation state;</li>
+<li>X is O or S;</li>
+<li>Z is O, NH or R<sub>1</sub>;</li>
+<li>W and Y are independently O, S, CH<sub>2</sub> or H<sub>2</sub>;</li>
+<li>R<sub>1</sub> is C<sub>1</sub> -C<sub>6</sub> straight or branched chain alkyl, which is substituted in one or more position(s) with (Ar<sub>1</sub>)<sub>n</sub>, up to C<sub>6</sub> straight or branched chain alkenyl, which is substituted in one or more position(s) with (Ar<sub>1</sub>)<sub>n</sub>, C<sub>3</sub>-C<sub>8</sub> cycloalkyl C<sub>3</sub>-C<sub>8</sub> cycloalkyl connected by a C<sub>1</sub>-C<sub>6</sub> straight or branched chain alkyl or up to C<sub>8</sub> straight or branched chain alkenyl, Ar<sub>a</sub>, or a combination thereof:</li>
+<li>n is 1 or 2;</li>
+<li>R<sub>2</sub> is either C<sub>1</sub>-C<sub>9</sub> straight or branched chain alkyl or up to C<sub>8</sub> straight or branched chain alkenyl, C<sub>8</sub>-C<sub>8</sub> cycloalkyl, C<sub>5</sub>-C<sub>7</sub> cycloalkenyl, or Ar<sub>1</sub>, wherein said alkyl, alkenyl, cycloalkyl or cycloalkenyl is either unsubstituted or substitute in one or more position(s) with C<sub>1</sub>-C<sub>4</sub> straight or branched chain alkyl or up to C<sub>4</sub> straight or branched chain alkenyl, hydroxy, or a combination thereof: and</li>
+<li>Ar<sub>1</sub> and Ar<sub>2</sub> are independently a mono-, bi- or tricyclic, carbo- or heterocyclic ring, wherein the ring is either unsubstituted or substituted in one to three position(s) with halo, hydroxyl, nitro, trifluoromethyl, C<sub>1</sub>-C<sub>6</sub> straight or branched chain alkyl or up to C<sub>6</sub> straight or branched chain alkenyl, C<sub>1</sub> -C<sub>4</sub> alkoxy, up to C<sub>4</sub> alkenyloxy, phenoxy, benzyloxy, amino, or a combination thereof; wherein the individual ring sizes are 5-6 members; and wherein the heterocyclic ring<!-- EPO <DP n="17"> --> contains 1-6 heteroam(s) selected from the group consisting of O, N, S, and a combination thereof.</li>
+</ul></p>
+<p id="p0045" num="0045">The mono and bicyclic, carbo- and heterocyclic rings include without limitation naphthyl, indolyl furyl, thiazolyl, thienyl, pyridyl, quinolinyl, isoquinolinyl, fluorenyl and phenol.<!-- EPO <DP n="18"> --></p>
+<p id="p0046" num="0046">Compound of formula II
+<chemistry id="chem0003" num="0003"><img id="ib0003" file="imgb0003.tif" wi="109" he="46" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+are presented in TABLE I<!-- EPO <DP n="19"> -->
+<tables id="tabl0001" num="0001">
+<table frame="none">
+<title><b><u style="single">TABLE 1</u></b></title>
+<tgroup cols="6" colsep="0">
+<colspec colnum="1" colname="col1" colwidth="10mm"/>
+<colspec colnum="2" colname="col2" colwidth="11mm"/>
+<colspec colnum="3" colname="col3" colwidth="11mm"/>
+<colspec colnum="4" colname="col4" colwidth="11mm"/>
+<colspec colnum="5" colname="col5" colwidth="30mm"/>
+<colspec colnum="6" colname="col6" colwidth="31mm"/>
+<thead>
+<row>
+<entry valign="top">No.</entry>
+<entry valign="top">A</entry>
+<entry valign="top">B</entry>
+<entry valign="top">C</entry>
+<entry valign="top">R<sub>1</sub></entry>
+<entry valign="top">R<sub>2</sub></entry></row></thead>
+<tbody>
+<row rowsep="0">
+<entry>1</entry>
+<entry>CH<sub>2</sub></entry>
+<entry>S</entry>
+<entry>CH<sub>2</sub></entry>
+<entry>3-phenylpropyl</entry>
+<entry>3,3-dimethylpentyl</entry></row>
+<row rowsep="0">
+<entry>2</entry>
+<entry>CH<sub>2</sub></entry>
+<entry>S</entry>
+<entry>CH<sub>2</sub></entry>
+<entry>3-(3-pyridyl)propyl</entry>
+<entry>3,3-dimethylpentyl</entry></row>
+<row rowsep="0">
+<entry>3</entry>
+<entry>CH<sub>2</sub></entry>
+<entry>S</entry>
+<entry>CH<sub>2</sub></entry>
+<entry>3-phenylpropyl</entry>
+<entry>cyclohexyl</entry></row>
+<row rowsep="0">
+<entry>4</entry>
+<entry>CH<sub>2</sub></entry>
+<entry>S</entry>
+<entry>CH<sub>2</sub></entry>
+<entry>3-phenylpropyl</entry>
+<entry>tert-butyl</entry></row>
+<row rowsep="0">
+<entry>5</entry>
+<entry>CH<sub>2</sub></entry>
+<entry>CH<sub>2</sub></entry>
+<entry>NH</entry>
+<entry>3-phenylpropyl</entry>
+<entry>3,3-dimethylpentyl</entry></row>
+<row rowsep="0">
+<entry>6</entry>
+<entry>CH<sub>2</sub></entry>
+<entry>CH<sub>2</sub></entry>
+<entry>NH</entry>
+<entry>3-phenylpropyl</entry>
+<entry>cyclohexyl</entry></row>
+<row rowsep="0">
+<entry>7</entry>
+<entry>CH<sub>2</sub></entry>
+<entry>CH<sub>2</sub></entry>
+<entry>NH</entry>
+<entry>3-pbenylpropyl</entry>
+<entry>tert-butyl</entry></row></tbody></tgroup>
+</table>
+</tables><!-- EPO <DP n="20"> --></p>
+<p id="p0047" num="0047">Compound of formula III
+<chemistry id="chem0004" num="0004"><img id="ib0004" file="imgb0004.tif" wi="106" he="43" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+are presented in TABLE II.
+<tables id="tabl0002" num="0002">
+<table frame="none">
+<title><b><u style="single">TABLE II</u></b></title>
+<tgroup cols="7" colsep="0">
+<colspec colnum="1" colname="col1" colwidth="11mm"/>
+<colspec colnum="2" colname="col2" colwidth="11mm"/>
+<colspec colnum="3" colname="col3" colwidth="11mm"/>
+<colspec colnum="4" colname="col4" colwidth="10mm"/>
+<colspec colnum="5" colname="col5" colwidth="11mm"/>
+<colspec colnum="6" colname="col6" colwidth="27mm"/>
+<colspec colnum="7" colname="col7" colwidth="31mm"/>
+<thead>
+<row>
+<entry valign="top"><b>No.</b></entry>
+<entry valign="top"><b>A</b></entry>
+<entry valign="top"><b>B</b></entry>
+<entry valign="top"><b>C</b></entry>
+<entry valign="top"><b>D</b></entry>
+<entry valign="top"><b>R<sub>1</sub></b></entry>
+<entry valign="top"><b>R<sub>2</sub></b></entry></row></thead>
+<tbody>
+<row rowsep="0">
+<entry>8</entry>
+<entry>CH<sub>2</sub></entry>
+<entry>CH<sub>2</sub></entry>
+<entry>S</entry>
+<entry>CH<sub>2</sub></entry>
+<entry>3-phenylpropyl</entry>
+<entry>3,3-dimethylpentyl</entry></row>
+<row rowsep="0">
+<entry>9</entry>
+<entry>CH<sub>2</sub></entry>
+<entry>CH<sub>2</sub></entry>
+<entry>O</entry>
+<entry>CH<sub>2</sub></entry>
+<entry>3-phenylpropyl</entry>
+<entry>3,3-dimethylpentyl</entry></row>
+<row rowsep="0">
+<entry>10</entry>
+<entry>CH<sub>2</sub></entry>
+<entry>CH<sub>2</sub></entry>
+<entry>S</entry>
+<entry>CH<sub>2</sub></entry>
+<entry>3-phenylpropyl</entry>
+<entry>cyclohexyl</entry></row>
+<row rowsep="0">
+<entry>11</entry>
+<entry>CH<sub>2</sub></entry>
+<entry>CH<sub>2</sub></entry>
+<entry>O</entry>
+<entry>CH<sub>2</sub></entry>
+<entry>3-phenylpropyl</entry>
+<entry>cyclohexyl</entry></row>
+<row rowsep="0">
+<entry>12</entry>
+<entry>CH<sub>2</sub></entry>
+<entry>CH<sub>2</sub></entry>
+<entry>S</entry>
+<entry>CH<sub>2</sub></entry>
+<entry>3-phenylpropyl</entry>
+<entry>phenyl</entry></row>
+<row rowsep="0">
+<entry>13</entry>
+<entry>CH<sub>2</sub></entry>
+<entry>CH<sub>2</sub></entry>
+<entry>O</entry>
+<entry>CH<sub>2</sub></entry>
+<entry>3-phenylpropyl</entry>
+<entry>phenyl</entry></row>
+<row rowsep="0">
+<entry>14</entry>
+<entry>CH<sub>2</sub></entry>
+<entry>CH<sub>2</sub></entry>
+<entry>NH</entry>
+<entry>CH<sub>2</sub></entry>
+<entry>3-phenylpropyl</entry>
+<entry>3,3-dimethylpentyl</entry></row>
+<row rowsep="0">
+<entry>15</entry>
+<entry>CH<sub>2</sub></entry>
+<entry>CH<sub>2</sub></entry>
+<entry>NH</entry>
+<entry>CH<sub>2</sub></entry>
+<entry>3-phenylpropyl</entry>
+<entry>phenyl</entry></row></tbody></tgroup>
+</table>
+</tables></p>
+<p id="p0048" num="0048">The compounds of the present invention exist as stereoisomeric forms, either enantiomers or diastereoisomers. Included within the scope of the invention are the enantiomers, the racemic form, and diastereoisomeric mixtures. Enantiomers and diastereoisomers can be separated by methods known to those skilled in the art.<!-- EPO <DP n="21"> --></p>
+<heading id="h0010"><b><u style="single">Methods of Using the Compounds of the Invention</u></b></heading>
+<p id="p0049" num="0049">The compounds of the present invention have an affinity for the FK506 binding protein, particularly FKBP12, which is present in the brain. When the inventive compounds bind to FKBP in the brain, they exhibit excellent neurotrophic activity. This activity is useful in the stimulation of damaged neurons, the promotion of neuronal regeneration, the prevention of neurodegeneration, and the treatment of several neurological disorders known to be associated with neuronal degeneration and peripheral neuropathies.</p>
+<p id="p0050" num="0050">For the foregoing reasons, the present invention further relates to a method of effecting a neuronal activity in an animal, comprising:
+<ul id="ul0005" list-style="none" compact="compact">
+<li>administering to the animal a neurotrophically effective amount of a compound of formula I, II or III.</li>
+</ul></p>
+<p id="p0051" num="0051">In a preferred embodiment, the neuronal activity is selected from the group consisting of stimulation of damaged neurons, promotion of neuronal regeneration, prevention of neurodegeneration and treatment of neurological disorder.</p>
+<p id="p0052" num="0052">The neurological disorders that may be treated include but are not limited to: trigeminal neuralgia; glossopharyngeal neuralgia; Bell's Palsy; myasthenia gravis; muscular dystrophy; amyotraphic lateral sclerosis; progressive muscular atrophy; progressive<!-- EPO <DP n="22"> --> bulbar inherited muscular atrophy; herniated; ruptured or prolapsed invertabrae disk syndromes; cervical spondylosis; plexus disorders; thoracic outlet destruction syndromes.; peripheral neuropathic such as those caused by lead, dapsone, ticks, porphyria, or Gullain-Barré syndrome: Alzheimer's disease; and Pakinson's disease.</p>
+<p id="p0053" num="0053">The compounds of the present invention are particularly useful for treating a neurological disorder selected from the group consisting of: peripheral neuropathy caused by physical injury or disease state, physical damage to the brain, physical damage to the spinal cord, stroke associated with brain damage, and neurological disorder relating to neurodegeneration. Examples of neurological disorders relating to neurodegeneration are Alzheimer's Disease, Parkinson's Disease, and amyotrophic lateral sclerosis.</p>
+<p id="p0054" num="0054">For these purposes the compounds of the present invention may be administered orally, parenterally, by inhalation spray, topically, rectally, nasally, buccally, vaginally or via an implanted reservoir in dosage formulation containing conventional non-toxic pharmaceutically- acceptable carriers, adjuvants and vehicles. The term parenteral as used herein includes subcutaneous, intravenous, intramuscular, intraperitoneally, intrathecally, intraventricularly,<!-- EPO <DP n="23"> --> intrasternal and intracranial injection or infusion techniques.</p>
+<p id="p0055" num="0055">To be effective therapeutically as central nervous system targets, the compounds of the present invention should readily penetrate the blood-brain barrier when peripherally administered. Compounds which cannot penetrate the blood-brain barrier can be effectively administered by an intraventricular route.</p>
+<p id="p0056" num="0056">The compounds of the present invention may be administered in the form of sterile injectable preparations, for example, as sterile injectable aqueous or oleaginous suspensions. These suspensions may be formulated according to techniques known in the art using suitable dispersing or wetting agents and suspending agents. The sterile injectable preparations may also be sterile injectable solutions or suspensions in non-toxic parenterally-acceptable diluents or solvents, for example, as solutions in 1,3 -butanediol. Among the acceptable vehicles and solvents that may be employed are water, Ringer's solution and isotonic sodium chloride solution. In addition, sterile, fixed oils are conventionally employed as solvents or suspending mediums. For this purpose, any bland fixed oil may be employed including synthetic mono- or di-glycerides. Fatty acids such as oleic acid and its glyceride derivatives, including olive oil and castor oil,<!-- EPO <DP n="24"> --> especially in their polyoxyethylated versions, are useful in the preparation of injectables. These oil solutions or suspensions may also contain long-chain alcohol diluents or dispersants.</p>
+<p id="p0057" num="0057">The compounds may be administered orally in the form of capsules, tablets, aqueous suspensions or solutions - Tablets may contain carriers such as lactose and corn starch, and/or lubricating agents such as magnesium stearate. Capsules may contain diluents including lactose and dried corn starch. Aqueous suspensions may contain emulsifying and suspending agents combined with the active ingredient. The oral dosage forms may further contain sweetening and/or flavoring and/or coloring agents.</p>
+<p id="p0058" num="0058">The compounds of this invention may also be administered rectally in the form of suppositories. These compositions can be prepared by mixing the drug with a suitable non-irritating excipient which is solid at room temperature, but liquid at rectal temperature and, therefore, will melt in the rectum to release the drug. Such materials include cocoa butter, beeswax and polyethylene glycols.</p>
+<p id="p0059" num="0059">The compounds of this invention may also be administered topically, especially when the conditions addressed for treatment involve areas or organs readily accessible by topical application, including<!-- EPO <DP n="25"> --> neurological disorders of the eye, the skin, or the lower intestinal tract. Suitable topical formulation are readily prepared for each of these areas.</p>
+<p id="p0060" num="0060">For topical application to the eye, or ophthalmic use, the compounds can be formulated as micronized suspensions in isotonic, pH adjusted sterile saline, or, preferably, as solutions in isotonic, pH adjusted sterile saline, either with or without a preservative such as benzylalkonium chloride. Alternatively for the ophthalmic uses the compounds may be formulated in an ointment such as petrolatum.</p>
+<p id="p0061" num="0061">For topical application to the skin, the compounds can be formulated in a suitable ointment containing the compound suspended or dissolved in, for example, a mixture with one or more of the following: mineral oil, liquid petrolatum, white petrolatum, propylene glycol, polyoxyethylene polyoxypropylene compound, emulsifying wax and water. Alternatively, the compounds can be formulated in a suitable lotion or cream containing the active compound suspended or dissolved in, for example, a mixture of one or more of the hollowing: mineral oil, sorbitan monostearate, polysorbate 60, cetyl esters wax, cetearyl alcohol, 2-octyldodecanol, benzyl alcohol and water.</p>
+<p id="p0062" num="0062">Topical application for the lower intestinal tract an be effected in a rectal suppository formulation (see<!-- EPO <DP n="26"> --> above) or in a suitable enema formulation.</p>
+<p id="p0063" num="0063">Dosage levels on the order of about 0.1 mg to about 10,000 mg of the active ingredient compound are useful in the treatment of the above conditions, with preferred levels of about 0.1 mg to about 1,000 mg. The amount of active ingredient that may be combined with the carrier material to produce a single dosage form will vary depending upon the host treated and the particular mode of administration.</p>
+<p id="p0064" num="0064">It is understood, however, that a specific dose level for any particular patient will depend upon a variety of factors including the activity of the specific compound employed, the age, body weight, general health, sex, diet, time of administration, rate of excretion, drug combination, and the severity of the particular disease being treated and form of administration.</p>
+<p id="p0065" num="0065">The compounds can be administered with other neurotrophic agents such as neurotrophic growth factor (NGF), glial derived growth factor, brain derived growth factor, ciliary neurotrophic factor, and neurotropin-3. The dosage level of other neurotrophic drugs wall depend upon the factors previously stated and the neurotrophic effectiveness of the drug combination.<!-- EPO <DP n="27"> --></p>
+<heading id="h0011"><b><u style="single">Pharmaceutical Compositions of the Invention</u></b></heading>
+<p id="p0066" num="0066">The present Invention also relates to a pharmaceutical composition comprising:
+<ol id="ol0002" compact="compact" ol-style="">
+<li>(i) a neurotrophically effective amount of the compound of formula I, II* or III, and</li>
+<li>(ii) a pharmaceutically acceptable carrier.</li>
+</ol></p>
+<p id="p0067" num="0067">The above discussion relating to the utility and administration of the compounds of the present invention also applies to the pharmaceutical, compositions of the present invention.</p>
+<heading id="h0012"><b><u style="single">Examples</u></b></heading>
+<p id="p0068" num="0068">The following examples are illustrative of the present invention and are not intended to be limitations thereon. Unless otherwise specified, all percentages are based on 100% by weight of the final compound.</p>
+<heading id="h0013"><b>EXAMPLE 1</b></heading>
+<heading id="h0014"><u style="single">Synthesis of 3-phenyl-1-propyl (2<i>S</i>)-1-(3,3-dimethyl-1,2-dioxopentyl) -2-(4-thiazolidine) carboxylate</u> (1)</heading>
+<p id="p0069" num="0069"><u style="single">1- (1,2-dioxo-2-methoxyethyl) 2-(4-thiazolidine)-carboxylate-</u> A solution of L-thioproline (1.51 g; 11.34 mmol) in 40 mL of dry methylene chloride was cooled to 0°C and treated with 3.3 mL (2.41 g; 23,81 mmol) of triethylamine. After stirring this mixture for 30 minutes, a solution of methyl oxalyl chloride (1.81 g;<!-- EPO <DP n="28"> --> 14.14 mmol) was added dropwise. The resulting mixtures was stirred at 0°C for 1.5 hours, filtered through Celite to remove solids, dried and concentrated. The crude material was purified on a silic gel column, eluting with 10% MeOH in methylene chloride, to obtain 2.0 g of the oxamate as an orange-yellow solid,</p>
+<p id="p0070" num="0070"><u style="single">3-phenyl-1-propyl(2<i>S</i>)-1-(1,2-dioxo-2-methoxyethyl) 2-(4-thiazolidine)carboxylate.</u> 1-(1,2-dioxo-2-methoxyethyl)2-(4-thiazolidine)carboxylate (500 mg; 2.25 mmol), 3-phenyl-1-propanol (465 mg; 3.42 mmol), dicyclohexylcarbodiimide (750 mg; 3.65 mmol), 4-dimethylaminopyridine (95 mg; 0.75 mmol) and camphorsulfonic acid (175 mg; 0.75 mmol) in 30 mL of methylene chloride were stirred together overnight. The mixture was filtered through Celite to remove solids and chromatographed (25% ethyl acetate/hexane) to obtain 690 mg of material, <sup>1</sup>H NMR (CDCl<sub>3</sub>, 300 MHz): δ1.92-2.01 (m, 2H) : 2.61-2.69 (m, 2H); 3.34 (m, 1H) ; 4.11-4.25 (m, 2H); 4.73 (m, 1H) ; 5.34 (m, 1H) ; 7.12 (m, 3H); 7.23 (m, *2H).</p>
+<p id="p0071" num="0071"><u style="single">3-phenyl-1-propyl (2<i>S</i>) -1- (3,3-dimethyl-1,2</u> -<u style="single">dioxopentyl)-2-(4-thiazolidine) carboxylate</u> (1). A solution of 3-phenyl-1-propyl(2<i>S</i>)-1-(1,2-dioxo-2-methoxyethyl) 2-(4-thiazolidine) carboxylate (670 mg; 1.98 mmol) in tetrahydrofuran (10 mL) was cooled to -78°C and treated with 2.3 mL of a 1.0 M solution of 1,1-dimethylpropylmagnesium chloride in ether. After<!-- EPO <DP n="29"> --> stirring the mixture for 3 hours, it was poured into saturated ammonium chloride, extracted into ethyl acetate, and the organic phase was washed with water, dried and concentrated. The crude material was purified on a silica gel column, eluting with 25% ethyl acetate in hexane, to obtain 380 mg of the compound of Example 1 as a yellow oil, <sup>1</sup>H NMR (CDCl<sub>3</sub>, 300 MHz): d 0.86 (t, 3H); 1.21 (s, 3H); 1.26 (s, 3H); 1.62-1.91 (m, 3H); 2.01 (m, 2H); 2.71 (m, 2H); 3.26-8.83 (m, 2H); 4.19 (m, 2H); 4.58 (m, 1H); 7.19 (m, 8H); 7.30 (m, 2H). Anal. Clcd. for C<sub>20</sub>H<sub>27</sub>NO<sub>4</sub>S: C, 68.68; H, 7.23; N, 3.71. Found: C, 64.29; H, 7.39; N, 3.46,</p>
+<heading id="h0015">EXAMPLE 2</heading>
+<heading id="h0016">Synthesis of 3- (3-pyridyl) -2-propyl(2S) -1- (3,3-dimethyl-1,2-dioxopentyl) 2-(4-thiazolidine) carboxylate (2)</heading>
+<p id="p0072" num="0072">The compound of Example 2 was prepared according to the procedure of Example 1, using 3-(3-pyridyl) -1-propanol in the final step, to yield 3- (3-pyridyl) -1-propyl (2S) 1-(3,3-dimethyl-1,2-dioxopentyl)-2-(4-thiazolidine) carboxylate, <sup>1</sup>HNMR (CDCl<sub>3</sub>, 300 MHz) : δ 0.89 (t, 3H, J =7.3); 1.25 (s, 3H); 1.28 (s, 3H); 1.77 (q, 2H, J=7.3); 2.03 (tt, 2H, J=6.4, 7.5); 2.72 (t, 2H, J=4.5); 8.20 (dd. 1H, J=4.0, 11.8); 3.23 (dd, 1H, J=7.0, 11-8); 4.23 (t, 2H, J=6.4); 4.55 (d, 2H, J=8.9); 5.08 (dd, 1H, J=4.0, 7.0); 7.24 (m, 1H); 8.48 (m, 2H). Anal.<!-- EPO <DP n="30"> --> Calcd. for C<sub>19</sub>H<sub>26</sub>N<sub>2</sub>O<sub>4</sub>S - 0.5 H<sub>2</sub>O; C, 58.89; H, 7.02; N, 7.23. Found: C, 58.83; H, 7.05; N, 7.19.</p>
+<p id="p0073" num="0073">As discussed above, the compounds of the present invention have an affinity for the FK506 binding protein, particularly FKBP12. The inhibition of the prolyl peptidyl <i>cis-trans</i> isomerase activity of FKBP may be measured as an indicator of this affinity.</p>
+<heading id="h0017"><b><u style="single">Ki Test Procedure</u></b></heading>
+<p id="p0074" num="0074">inhibition of the peptidyl-prolyl isomerase (rotamase) activity of the inventive compounds can be evaluated by known methods described in the literature (<nplcit id="ncit0015" npl-type="s"><text>Harding, et al., Nature, 1989, 341:758-760</text></nplcit>; <nplcit id="ncit0016" npl-type="s"><text>Holt et al. J. Am. Chem. Soc., 115:9923-9938</text></nplcit>). These values are obtained as apparent Ki's and are presented in Table III. The <i>cis-trans</i> isomerization of an alanine-proline bond in a model substrate, N-succinyl-Ala-Ala-Pro-Phe-<i>p-</i>nitroanilide, is monitored spectrophotometrically in a chymotrypsin-coupled assay, which releases <i>para-</i>nitroanilide from the <i>trans</i> form of the substrate. The inhibition of this reaction caused by the addition of different concentrations of inhibitor is determined, and the data is analyzed as a change in first-order rate constant as a function of inhibitor concentrations to yield the apparent Ki values.<!-- EPO <DP n="31"> --></p>
+<p id="p0075" num="0075">In a plastic cuvette are added 950 mL of ice cold assay buffer (25 mM HEPES, pH 7.8, 100 mM NaCl), 10 mL of FKBP (2.5 mM in 10 mM Tris-cl pH 7.5, 100 mM NaCl, 1 mM dithiothreitol), 25 mL of chymotrypsin (50 mg/ml in 1 mM HCl) and 10 mL of test compound at various concentrations in dimethyl sulfoxide. The reaction is initiated by the addition of 5 mL of substrate (succinyl-Ala-Phe-Pro-Phe-para-nitroanilide, 5 mg/mL in 2.35 mM LiCl in trifluoroethanol).</p>
+<p id="p0076" num="0076">The absorbance at 390 nm versus time is monitored for 90 seconds using a spectrophotometer and the rate constants are determined from the absorbance versus time data files.</p>
+<p id="p0077" num="0077">The data for these experiments for representative compounds are presented in Table III under the column "Ki".</p>
+<p id="p0078" num="0078">The neurotrophic effects of the compounds of the present invention can be demonstrated in cellular biological experiments in vitro, as described below.</p>
+<heading id="h0018"><b><u style="single">Chick Dorsal Root Ganglion Cultures and Neurite Outgrowth</u></b></heading>
+<p id="p0079" num="0079">Dorsal root ganglia were dissected from chick embryos of ten day gestation. Whole ganglion explants were cultured on thin layer Matrigel-coated 12 well plates with Liebovitz L15. plus high glucose media<!-- EPO <DP n="32"> --> supplemented with 2 mM glutamine and 10% fetal calf serum, and also containing 10 µM cytosine β-D arabinofuranoside (Ara C) at 37°C in an environment containing 5% CO<sub>2</sub>, Twenty-four hours later, the DRGs were treated with various immunophilin ligands. Forty-eight hours after drug treatment, the ganglia were visualized under phase contrast or Hoffman Modulation contrast with a Zeiss Axiovert inverted microscope. Photomicrographs of the explants were made, and neurite outgrowth was quantitated. Neurites longer than the DRG diameter were counted as positive, with total number of neurites quantitated per each experimental condition. Three to four DRGs are cultured per well, and each treatment was performed in duplicate.</p>
+<p id="p0080" num="0080">The data for these experiments for representative compounds are presented in the "ED50" column of Table III. Representative photomicrographs of compounds 1 (1 pM, 10 pM, 100 pM) and 2 (10 pM, 100 pM, 10 nM) promoting neurite outgrowth in sensory neurone are shown in FIG.'s 1(A-C) and 2(A-C), respectively.<!-- EPO <DP n="33"> -->
+<tables id="tabl0003" num="0003">
+<table frame="none">
+<title><b><u style="single">TABLE III</u></b></title>
+<tgroup cols="3" colsep="0">
+<colspec colnum="1" colname="col1" colwidth="21mm"/>
+<colspec colnum="2" colname="col2" colwidth="14mm"/>
+<colspec colnum="3" colname="col3" colwidth="18mm"/>
+<thead>
+<row>
+<entry namest="col1" nameend="col3" align="center" valign="top">In Vitro Test Results</entry></row>
+<row>
+<entry valign="top">Compound</entry>
+<entry valign="top">Ki, nM</entry>
+<entry valign="top">ED50nM</entry></row></thead>
+<tbody>
+<row rowsep="0">
+<entry>1</entry>
+<entry>215</entry>
+<entry>0.031</entry></row>
+<row rowsep="0">
+<entry>2</entry>
+<entry>638</entry>
+<entry>2.0</entry></row></tbody></tgroup>
+</table>
+</tables></p>
+<p id="p0081" num="0081">All publications and patents identified above are hereby incorporated by reference.</p>
+<p id="p0082" num="0082">The invention being thus described, it will be obvious that the same may be varied in many ways. Such variations are not to be regarded as a departure from the spirit and scope of the invention and all such modifications are intended to be included within the scope of the following claims.</p>
+</description><!-- EPO <DP n="34"> -->
+<claims id="claims01" lang="en">
+<claim id="c-en-01-0001" num="0001">
+<claim-text>A compound of formula I:
+<chemistry id="chem0005" num="0005"><img id="ib0005" file="imgb0005.tif" wi="83" he="36" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+or a pharmaceutically acceptable salt thereof, wherein:
+<claim-text>A and B, together with the nitrogen and carbon atoms to which they are respectively attached, form a 5-1 membered saturated or unsaturated heterocyclic ring containing, in addition to the nitrogen atom, at least one additional O, S, SO, SO<sub>2</sub>, NH or NR. heteroatom in any chemically stable oxidation state;</claim-text>
+<claim-text>X is O or S;</claim-text>
+<claim-text>Z is O, NH or NR<sub>1</sub>;</claim-text>
+<claim-text>W and Y are independently O, S, CH<sub>2</sub> or H<sub>2</sub>;</claim-text>
+<claim-text>R<sub>1</sub> is :
+<claim-text>- C<sub>1</sub>-C<sub>6</sub> straight or branched chain alkyl which is substituted in one or more position (s) with (Ar<sub>1</sub>)<sub>n</sub>,<br/>
+up to C<sub>6</sub> straight or branched chain alkenyl, which is substituted in one or more position (s) with (Ar<sub>1</sub>)<sub>n</sub>,</claim-text>
+<claim-text>- C<sub>3</sub>-C<sub>8</sub> cycloalkyl,</claim-text>
+<claim-text>- C<sub>3</sub>-C<sub>8</sub> cycloalkyl connected by a C<sub>1</sub>-C<sub>6</sub> straight or branched chain alkyl</claim-text></claim-text>
+<claim-text>C<sub>3</sub>-C<sub>6</sub> cycloalkyl connected by up to C<sub>5</sub> straight a branched chain alkenyl, or</claim-text>
+<claim-text>-Ar<sub>2</sub>;</claim-text>
+<claim-text>n is 1 or 2</claim-text>
+<claim-text>R<sub>2</sub> is:
+<claim-text>- C<sub>1</sub>-C<sub>9</sub> straight or branched chain alkyl,<br/>
+up to C<sub>9</sub> straight or branched chain alkenyl,<!-- EPO <DP n="35"> --></claim-text>
+<claim-text>- C<sub>3</sub>-C<sub>8</sub> cycloalkyl,</claim-text>
+<claim-text>- C<sub>5</sub>-C<sub>7</sub> cycloalkenyl, or</claim-text>
+<claim-text>- Ar<sub>1</sub>;<br/>
+wherein said alkyl, Alkenyl, cycloalkyl or cycloalkenyl is either unsubstituted or substituted in one or more position(s), wherein the one or more substituent(s) are independently:
+<claim-text>- C<sub>1</sub>-C<sub>4</sub> straight or branched chain alkyl,<br/>
+up to C<sub>4</sub> straight or branched chain alkenyl, or</claim-text>
+<claim-text>- hydroxyl;</claim-text></claim-text></claim-text>
+<claim-text>and where Ar<sub>1</sub> and Ar<sub>2</sub> are independently:
+<claim-text>- a monocyclic carbocyclic ring,</claim-text>
+<claim-text>- a bicyclic carbocyclic ring,</claim-text>
+<claim-text>- a tricyclic carbocyclic ring,</claim-text>
+<claim-text>- a monocyclic heterocyclic ring,</claim-text>
+<claim-text>- a bicyclic heterocyclic ring, or</claim-text>
+<claim-text>- a tricyclic heterocyclic ring;<br/>
+wherein the ring is either unsubstituted or substituted in one to three position (s), wherein the one to three substituent(s) are independently:
+<claim-text>- halo,</claim-text>
+<claim-text>- hydroxyl,</claim-text>
+<claim-text>- nitro,</claim-text>
+<claim-text>- trifluoromethyl,</claim-text>
+<claim-text>- C<sub>1</sub>-C<sub>6</sub> straight or branched chain alkyl,<br/>
+up to C<sub>6</sub> straight or branched chain alkenyl,</claim-text>
+<claim-text>- C<sub>1</sub>-C<sub>4</sub> alkoxy,<br/>
+up to C<sub>4</sub> alkenyloxy,<!-- EPO <DP n="36"> --></claim-text>
+<claim-text>- phenoxy,</claim-text>
+<claim-text>- benzyloxy, or</claim-text>
+<claim-text>- amino;</claim-text></claim-text></claim-text>
+wherein the individual ring sizes are 5-6 members, and wherein the heterocyclic rings contain 1-6 hetereatom (s) independently selected from the group consisting of O, N, and S.</claim-text></claim>
+<claim id="c-en-01-0002" num="0002">
+<claim-text>The compound of claim 1, wherein the monocyclic carbocyclic ring, bicyclic carbocyclic ring, monocyclic heterocyclic ring, or bicyclic heterocyclic ring is selected from the group consisting of naphthyl, indolyl, furyl, thiazolyl, thienyl, pyridyl, quinolinyl, isoquinolinyl, fluorenyl, and phenyl.</claim-text></claim>
+<claim id="c-en-01-0003" num="0003">
+<claim-text>The compound of claim 1, wherein the at least one additional heteroatom in the 5-7 membered saturated or unsaturated heterocyclic ring is NH or NR<sub>1</sub>.</claim-text></claim>
+<claim id="c-en-01-0004" num="0004">
+<claim-text>The compound 1-(1,2-dioxo-2-methoxyethyl)-2-(4-thiazolidine) carboxylate.</claim-text></claim>
+<claim id="c-en-01-0005" num="0005">
+<claim-text>A compound selected from 3-phenyl-1-propyl(2S)-1-3,3-dimethyl-1,2-dioxopentyl)-2-(4-thiazolidine)carboxylate; and 3-(3-pyridinyl)-1-propyl-(2S)-1-(3,3-dimethyl-1,2-dioxopentyl)-2-(4-thiazolidine)carboxylate.</claim-text></claim>
+<claim id="c-en-01-0006" num="0006">
+<claim-text>The compound of any one of the preceding claims selected from the S-stereoisomer thereof.</claim-text></claim>
+<claim id="c-en-01-0007" num="0007">
+<claim-text>A pharmaceutically acceptable salt of a compound according to any one of the preceding claims, selected from acetate, adipate, alginate, aspartate, benzoate, benzenesulphonate, bisulphate, butyrate, citrate, camphorate, camphorsulphate, cyclopentanepropionate, digluconate, dodecylsulphate, ethanesulphonate, fumarate, glucoheptanoate, glycerophosphate, hemisulphate, heptanoate, hexanoate, hydrochloride, hydrobromide, hydroiodide, 2-hydroxyethanesulphonate, lactate, maleate, methanesulphonate, 2-naphtalenesulphonate, nicotinate, oxalate, thiocyanate, tosylate, undecanoate, and ammonium, alkalimetal and alkaline earth metal salts, salts with organic bases and salts with amino acids.</claim-text></claim>
+<claim id="c-en-01-0008" num="0008">
+<claim-text>A compound of anyone of claims 1 to 3, 5 and 7, when the compound has affinity for the FKBP-type immunophilins.<!-- EPO <DP n="37"> --></claim-text></claim>
+<claim id="c-en-01-0009" num="0009">
+<claim-text>A compound of claim 8, wherein the FKBP-type immunophilin is FKBP-12.</claim-text></claim>
+<claim id="c-en-01-0010" num="0010">
+<claim-text>A compound according to any one of claims 1 to 3, 5 and 7, wherein the compound inhibits rotamase enzyme activity.</claim-text></claim>
+<claim id="c-en-01-0011" num="0011">
+<claim-text>A pharmaceutical composition comprising a neurotrophically effective amount of a compound of any one of claims 1 to 3, 5 and 7 and a pharmaceutically acceptable carrier.</claim-text></claim>
+<claim id="c-en-01-0012" num="0012">
+<claim-text>A pharmaceutically composition according to claim 11, selected from sterile injectable preparations,
+<claim-text>capsules, tablets, aqueous suspensions and solutions,</claim-text>
+<claim-text>suppositories, micronised suspensions and solutions,</claim-text>
+<claim-text>ointments, lotions, creams and enemas.</claim-text></claim-text></claim>
+<claim id="c-en-01-0013" num="0013">
+<claim-text>The compound of any of claims 1 to 3, 5 and 7 for effecting a neuronal activity in an animal, by administering to the animal a neurotrophically effective amount of the compound.</claim-text></claim>
+<claim id="c-en-01-0014" num="0014">
+<claim-text>The compound of claim 13, wherein the neuronal activity is selected from the group consisting of stimulation of damaged neurons, promotion of neuronal regeneration, prevention of neurodegeneration, and treatment of neurological disorders.</claim-text></claim>
+<claim id="c-en-01-0015" num="0015">
+<claim-text>The compound of claim 14, wherein the neurological disorder is selected from the group consisting of peripheral neuropathy caused by physical injury or disease state, physical damage to the brain, physical damage to the spinal cord, stroke associated with brain damage, and neurological disorder reflating to neurodegeneration.</claim-text></claim>
+<claim id="c-en-01-0016" num="0016">
+<claim-text>The compound of claim 16, wherein the neurological disorder relating to neurodegeneration is selected from the group consisting of Alzheimer's Disease, Parkinson's Disease, and amyotrophic lateral sclerosis.</claim-text></claim>
+<claim id="c-en-01-0017" num="0017">
+<claim-text>The use of a compound according to any one of claims 1 to 3, 5 and 7<!-- EPO <DP n="38"> --> in the preparation of a medicament for effecting a neuronal activity in an animal, by administering to the animal a neurotrophically effective amount of the compound.</claim-text></claim>
+<claim id="c-en-01-0018" num="0018">
+<claim-text>The use according to claim 17, wherein the neuronal activity is selected from the group consisting of stimulation of damaged neurons, promotion of neuronal regeneration, prevention of neurodegeneration, and treatment of neurological disorders.</claim-text></claim>
+<claim id="c-en-01-0019" num="0019">
+<claim-text>The use according to claim 18, wherein the neurological disorder is selected from the group consisting of peripheral neuropathy caused by physical injury or disease state, physical damage to the brain, physical damage to the spinal cord, stroke associated with brain damage, and neurological disorder relating to neurodegeneration.</claim-text></claim>
+<claim id="c-en-01-0020" num="0020">
+<claim-text>The use of claim 19, wherein the neurological disorder relating to neurodegeneration is selected from the group consisting of Alzheimer's Disease, Parkinson's Disease, and amyotrophic lateral sclerosis.</claim-text></claim>
+<claim id="c-en-01-0021" num="0021">
+<claim-text>A compound, composition or use according to any one of claims 1 to 3, 5 and 7 to 20, for administration orally parenterally, including subcutaneously, intravenously, intramuscularly, intraperitoneally, intrathecally, intraventricularly, intrasternally or intracranially, by inhalation spray, topically, rectally, nasally, buccally, vaginally or via an implanted reservoir.</claim-text></claim>
+<claim id="c-en-01-0022" num="0022">
+<claim-text>A compound, composition or use according to 1 to 3, 5 and 7 to 21 for administration with another neurotrophic agents, such as neurotrophic growth factor, glial-derived growth factor, brain-derived growth factor, ciliary neurotrophic factor and neurotropin-3.</claim-text></claim>
+</claims><!-- EPO <DP n="39"> -->
+<claims id="claims02" lang="de">
+<claim id="c-de-01-0001" num="0001">
+<claim-text>Verbindung der Formel I:
+<chemistry id="chem0006" num="0006"><img id="ib0006" file="imgb0006.tif" wi="58" he="27" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+oder ein pharmazeutisch akzeptables Salz davon, wobei:
+<claim-text>A und zusammen mit den Stickstoff- und Kohlenstoffatomen, an die sie jeweils gebunden sind, einen 5-7gliedrigen, gesättigten oder ungesättigten heterozyklischen Ring bilden, der zusätzlich zum Stickstoffatom wenigstens ein zusätzliches O, S, SO, SO<sub>2</sub>, NH oder NR<sub>1</sub> Heteroatom in einem beliebigen chemisch stabilen Oxydationszustand enthält,</claim-text>
+<claim-text>X O oder S ist,</claim-text>
+<claim-text>Z O, NH oder NR<sub>1</sub> ist,</claim-text>
+<claim-text>W und Y unabhängig O, S, CH<sub>2</sub> oder H<sub>2</sub> sind,</claim-text>
+<claim-text>R<sub>1</sub> Folgendes ist:
+<claim-text>- gerad- oder verzweigtkettiges C<sub>1</sub>-C<sub>6</sub>-Alkyl, das in einer oder mehreren Position(en) durch (Ar<sub>1</sub>)<sub>n</sub> substituiert ist,</claim-text>
+<claim-text>- gerad- oder verzweigtkettiges Alkenyl mit bis zu 6 Kohlenstoffatomen, das in einer oder mehreren Position(en) durch (Ar<sub>1</sub>)<sub>n</sub> substituiert ist,</claim-text>
+<claim-text>- C<sub>3</sub>-C<sub>8</sub>-Cycloalkyl,</claim-text>
+<claim-text>- C<sub>3</sub>-C<sub>8</sub>-Cycloalkyl, verbunden durch ein gerad- oder verzweigtkettiges C<sub>1</sub>-C<sub>6</sub>-Alkyl,</claim-text>
+<claim-text>- C<sub>3</sub>-C<sub>6</sub>-Cycloalkyl, verbunden durch ein gerad- oder verzweigtkettiges Alkenyl mit bis zu 6 Kohlenstoffatomen, oder</claim-text>
+<claim-text>- Ar<sub>2</sub>,</claim-text><!-- EPO <DP n="40"> --></claim-text>
+<claim-text>n 1 oder 2 ist,</claim-text>
+<claim-text>R<sub>2</sub> Folgendes ist:
+<claim-text>- gerad- oder verzweigtkettiges C<sub>1</sub>-C<sub>9</sub>-Alkyl,</claim-text>
+<claim-text>- gerad- oder verzweigtkettiges Alkenyl mit bis zu 9 Kohlenstoffatomen,</claim-text>
+<claim-text>- C<sub>3</sub>-C<sub>8</sub>-Cycloalkyl,</claim-text>
+<claim-text>- C<sub>5</sub>-C<sub>7</sub>-Cycloalkenyl oder</claim-text>
+<claim-text>- Ar<sub>1</sub>,<br/>
+wobei das genannte Alkyl, Alkenyl, Cycloalkyl oder Cycloalkenyl entweder unsubstituiert oder substituiert ist in einer oder mehreren Position(en), wobei der eine oder die mehreren Substituent(en) unabhängig Folgendes ist/sind:</claim-text>
+<claim-text>- gerad- oder verzweigtkettiges C<sub>1</sub>-C<sub>4</sub>-Alkyl,</claim-text>
+<claim-text>- gerad- oder verzweigtkettiges Alkenyl mit bis zu 4 Kohlenstoffatomen oder</claim-text>
+<claim-text>- Hydroxyl,<br/>
+und wobei Ar<sub>1</sub> und Ar<sub>2</sub> unabhängig Folgendes sind:</claim-text>
+<claim-text>- ein monozyklischer, carbozyklischer Ring,</claim-text>
+<claim-text>- ein bizyklischer, carbozyklischer Ring,</claim-text>
+<claim-text>- ein trizyklischer, carbozyklischer Ring,</claim-text>
+<claim-text>- ein monozyklischer, heterozyklischer Ring,</claim-text>
+<claim-text>- ein bizyklischer, heterozyklischer Ring oder</claim-text>
+<claim-text>- ein trizyklischer, heterozyklischer Ring,<br/>
+wobei der Ring entweder unsubstituiert oder substituiert ist in einer bis drei Position(en), wobei die ein bis drei Substituenten unabhängig Folgendes ist/sind:</claim-text>
+<claim-text>- Halo,</claim-text>
+<claim-text>- Hydroxyl,</claim-text>
+<claim-text>- Nitro,</claim-text>
+<claim-text>- Trifluormethyl,</claim-text>
+<claim-text>- gerad- oder verzweigtkettiges C<sub>1</sub>-C<sub>6</sub>-Alkyl,</claim-text>
+<claim-text>- gerad- oder verzweigtkettiges Alkenyl mit bis zu 6 Kohlenstoffatomen,</claim-text>
+<claim-text>- C<sub>1</sub>-C<sub>4</sub>-Alkoxy,<!-- EPO <DP n="41"> --></claim-text>
+<claim-text>- Alkenyloxy mit bis zu 4 Kohlenstoffatomen,</claim-text>
+<claim-text>- Phenoxy,</claim-text>
+<claim-text>- Benzyloxy oder</claim-text>
+<claim-text>- Amino,</claim-text></claim-text>
+wobei die individuellen Ringgrößen 5-6 Glieder umfassen und wobei die heterozyklischen Ringe 1-6 Heteroatom(e) enthalten, die unabhängig ausgewählt sind aus der Gruppe bestehend aus 0, N und S.</claim-text></claim>
+<claim id="c-de-01-0002" num="0002">
+<claim-text>Verbindung nach Anspruch 1, wobei der monozyklische, carbozyklische Ring, der bizyklische, carbozyklische Ring, der monozyklische, heterozyklische Ring oder der bizyklische, heterozyklische Ring ausgewählt ist aus der Gruppe bestehend aus Naphthyl, Indolyl, Furyl, Thiazolyl, Thienyl, Pyridyl, Chinolinyl, Isochinolinyl, Fluorenyl und Phenyl.</claim-text></claim>
+<claim id="c-de-01-0003" num="0003">
+<claim-text>Verbindung nach Anspruch 1, wobei das wenigstens eine zusätzliche Heteroatom im 5-7gliedrigen, gesättigten oder ungesättigten heterozyklischen Ring NH oder NR<sub>1</sub> ist.</claim-text></claim>
+<claim id="c-de-01-0004" num="0004">
+<claim-text>Verbindung 1-(1,2-Dioxo-2-methoxyethyl)-2-(4-thiazolidin)-carboxylat.</claim-text></claim>
+<claim id="c-de-01-0005" num="0005">
+<claim-text>Verbindung, die ausgewählt ist aus 3-Phenyl-1-propyl(2S)-1-3,3-dimethyl-1,2-dioxopentyl)-2-(4-thiazolidin)carboxylat und 3-(3-Pyridinyl)-1-propyl(2S)-1-(3,3-dimethyl-1,2-dioxopentyl)-2-(4-thiazolidin)carboxylat.</claim-text></claim>
+<claim id="c-de-01-0006" num="0006">
+<claim-text>Verbindung nach einem der vorherigen Ansprüche, die ausgewählt ist aus den S-Stereoisomern davon.</claim-text></claim>
+<claim id="c-de-01-0007" num="0007">
+<claim-text>Pharmazeutisch akzeptables Salz einer Verbindung nach einem der vorherigen Ansprüche, ausgewählt aus Acetat,<!-- EPO <DP n="42"> --> Adipat, Alginat, Aspartat, Benzoat, Benzolsulfonat, Bisulfit, Butyrat, Citrat, Camphorat, Camphorsulfat, Cyclopentanpropionat, Digluconat, Dodecylsulfat, Ethansulfonat, Fumarat, Glucoheptanoat, Glycerophosphat, Hemisulfat, Heptanoat, Hexanoat, Hydrochlorid, Hydrobromid, Hydroiodid, 2-Hydroxyethansulfonat, Laktat, Maleat, Methansulfonat, 2-Naphthalensulfonat, Nicotinat, Oxalat, Thiocyanat, Tosylat, Undecanoat und Ammonium, Alkalimetall und Erdalkalimetallsalzen, Salzen mit organischen Basen und Salzen mit Aminosäuren.</claim-text></claim>
+<claim id="c-de-01-0008" num="0008">
+<claim-text>Verbindung nach einem der Ansprüche, 1 bis 3, 5 und 7, wobei die Verbindung Affinität zu FKBP-Immunophilinen hat.</claim-text></claim>
+<claim id="c-de-01-0009" num="0009">
+<claim-text>Verbindung nach Anspruch 8, wobei das FKBP-Immunophilin FKBP-12 ist.</claim-text></claim>
+<claim id="c-de-01-0010" num="0010">
+<claim-text>Verbindung nach einem der Ansprüche 1 bis 3, 5 und 7, wobei die Verbindung Rotamase-Enzymaktivität inhibiert.</claim-text></claim>
+<claim id="c-de-01-0011" num="0011">
+<claim-text>Pharmazeutische Zusammensetzung, die eine neurotroph wirksame Menge einer Verbindung nach einem der Ansprüche 1 bis 3, 5 und 7 und einen pharmazeutisch akzeptablen Träger umfasst.</claim-text></claim>
+<claim id="c-de-01-0012" num="0012">
+<claim-text>Pharmazeutische Zusammensetzung nach Anspruch 11, ausgewählt aus sterilen Injektionspräparaten, Kapseln, Tabletten, wässrigen Suspensionen und Lösungen, Suppositorien, mikronisierten Suspensionen und Lösungen, Salben, Lotionen, Cremes und Einlaufmitteln.</claim-text></claim>
+<claim id="c-de-01-0013" num="0013">
+<claim-text>Verbindung nach einem der Ansprüche 1 bis 3, 5 und 7 zum Bewirken einer neuronalen Aktivität in einem Tier durch<!-- EPO <DP n="43"> --> Verabreichen einer neurotroph wirksamen Menge der Verbindung an das Tier.</claim-text></claim>
+<claim id="c-de-01-0014" num="0014">
+<claim-text>Verbindung nach Anspruch 13, wobei die neuronale Aktivität ausgewählt ist aus der Gruppe bestehend aus der Stimulation beschädigter Neuronen, Unterstützung der neuronalen Regeneration, Prävention einer Neurodegeneration und Behandlung neurologischer Störungen.</claim-text></claim>
+<claim id="c-de-01-0015" num="0015">
+<claim-text>Verbindung nach Anspruch 14, wobei die neurologische Störung ausgewählt ist aus der Gruppe bestehend aus einer peripheren Neuropathie infolge einer physischen Verletzung oder eines Erkrankungszustands, einer physischen Schädigung des Gehirns, einer physischen Schädigung des Rückenmarks, eines Schlaganfalls in Verbindung mit einer Gehirnschädigung sowie einer neurologischen Störung in Zusammenhang mit Neurodegeneration.</claim-text></claim>
+<claim id="c-de-01-0016" num="0016">
+<claim-text>Verbindung nach Anspruch 15, wobei die neurologische Störung in Zusammenhang mit Neurodegeneration ausgewählt ist aus der Gruppe bestehend aus der Alzheimer-Krankheit, der Parkinson-Krankheit und amyotropher Lateralsklerose.</claim-text></claim>
+<claim id="c-de-01-0017" num="0017">
+<claim-text>Verwendung einer Verbindung nach einem der Ansprüche 1 bis 3, 5 und 7 zur Herstellung eines Medikaments zum Bewirken einer neuronalen Aktivität in einem Tier durch Verabreichen einer neurotroph wirksamen Menge der Verbindung an das Tier.</claim-text></claim>
+<claim id="c-de-01-0018" num="0018">
+<claim-text>Verwendung nach Anspruch 17, wobei die neuronale Aktivität ausgewählt ist aus der Gruppe bestehend aus der Stimulation defekter Neuronen, Unterstützung der neuronalen Regeneration, Prävention einer Neurodegeneration und Behandlung neurologischer Störungen.<!-- EPO <DP n="44"> --></claim-text></claim>
+<claim id="c-de-01-0019" num="0019">
+<claim-text>Verwendung nach Anspruch 18, wobei die neurologische Störung ausgewählt ist aus der Gruppe bestehend aus peripherer Neuropathie infolge einer physischen Verletzung oder eines Erkrankungszustands, einer physischen Schädigung des Gehirns, einer physischen Schädigung des Rückenmarks, eines Schlaganfalls in Verbindung mit einer Gehirnschädigung sowie einer neurologischen Störung in Zusammenhang mit Neurodegeneration.</claim-text></claim>
+<claim id="c-de-01-0020" num="0020">
+<claim-text>Verwendung nach Anspruch 19, wobei die neurologische Störung in Zusammenhang mit Neurodegeneration ausgewählt ist aus der Gruppe bestehend aus der Alzheimer-Krankheit, der Parkinson-Krankheit und amyotropher Lateralsklerose.</claim-text></claim>
+<claim id="c-de-01-0021" num="0021">
+<claim-text>Verbindung, Zusammensetzung oder Verwendung nach einem der Ansprüche 1 bis 3, 5 und 7 bis 20 zur oralen, parenteralen, einschließlich subkutanen, intravenösen, intramuskulären, intraperitonealen, intrathekalen, intraventrikulären, intrasternalen oder intrakraniellen Verabreichung, Verabreichung per Inhalationsspray, topischen, rektalen, nasalen, bukkalen, vaginalen Verabreichung oder Verabreichung über ein implantiertes Reservoir.</claim-text></claim>
+<claim id="c-de-01-0022" num="0022">
+<claim-text>Verbindung, Zusammensetzung oder Verwendung nach 1 bis 3, 5 und 7 bis 21 zur Verabreichung mit anderen neurotrophen Agenzien, wie neurotrophem Wachstumsfaktor, Gliawachstumsfaktor, hirnabstammendem Wachstumsfaktor, ziliärem neurotrophem Faktor und Neurotropin-3.</claim-text></claim>
+</claims><!-- EPO <DP n="45"> -->
+<claims id="claims03" lang="fr">
+<claim id="c-fr-01-0001" num="0001">
+<claim-text>Composé de Formule I :
+<chemistry id="chem0007" num="0007"><img id="ib0007" file="imgb0007.tif" wi="57" he="25" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+ou sel pharmaceutiquement acceptable de celui-ci, où :
+<claim-text>A et B, en conjonction avec les atomes d'azote et de carbone auxquels ils sont respectivement attachés, forment un noyau hétérocyclique saturé ou insaturé à 5-7 chaînons contenant, en plus de l'atome d'azote, au moins un hétéroatome O, S, SO, SO<sub>2</sub>, NH ou NR<sub>1</sub> additionnel dans tout état d'oxydation chimiquement stable ;</claim-text>
+<claim-text>X représente O ou S ;</claim-text>
+<claim-text>Z représente O, NH ou NR<sub>1</sub>;</claim-text>
+<claim-text>W et Y représentent indépendamment O, S, CH<sub>2</sub> ou H<sub>2</sub>;</claim-text>
+<claim-text>R<sub>1</sub> représente :
+<claim-text>- un groupement alkyle en C<sub>1</sub>-C<sub>6</sub> à chaîne linéaire ou ramifiée, qui est substitué en une ou plusieurs positions par (Ar<sub>1</sub>)<sub>n</sub>,</claim-text>
+<claim-text>- un groupement alkényle en C<sub>6</sub> au plus à chaîne linéaire ou ramifiée, qui est substitué en une ou plusieurs positions par (Ar<sub>1</sub>)<sub>n</sub>,</claim-text>
+<claim-text>- un groupement cycloalkyle en C<sub>3</sub>-C<sub>8</sub>,</claim-text>
+<claim-text>- un groupement cycloalkyle en C<sub>3</sub>-C<sub>8</sub> connecté par un groupement alkyle en C<sub>1</sub>-C<sub>6</sub> à chaîne linéaire ou ramifiée,</claim-text>
+<claim-text>- un groupement cycloalkyle en C<sub>3</sub>-C<sub>6</sub> connecté par un groupement alkényle en C<sub>6</sub> au plus à chaîne linéaire ou ramifiée, ou</claim-text>
+<claim-text>- Ar<sub>2</sub>,</claim-text></claim-text>
+<claim-text>n représente 1 ou 2 ;</claim-text>
+<claim-text>R<sub>2</sub> représente :
+<claim-text>- un groupement alkyle en C<sub>1</sub>-C<sub>9</sub> à chaîne linéaire ou ramifiée,</claim-text>
+<claim-text>- un groupement alkényle en C<sub>9</sub> au plus à chaîne linéaire ou ramifiée,</claim-text>
+<claim-text>- un groupement cycloalkyle en C<sub>3</sub>-C<sub>8</sub>,</claim-text>
+<claim-text>- un groupement cycloalkényle en C<sub>5</sub>-C<sub>7</sub>, ou</claim-text>
+<claim-text>- Ar<sub>1</sub> ,<br/>
+où ledit groupement alkyle, alkényle, cycloalkyle ou cycloalkényle est soit non substitué, soit substitué en une ou plusieurs positions, le ou les substituant(s) étant indépendamment sélectionné(s) parmi :
+<claim-text>- un groupement alkyle en C<sub>1</sub>-C<sub>4</sub> à chaîne linéaire ou ramifiée,<!-- EPO <DP n="46"> --></claim-text>
+<claim-text>- un groupement alkényle en C<sub>4</sub> au plus à chaîne linéaire ou ramifiée, ou</claim-text>
+<claim-text>- un groupement hydroxyle ;</claim-text>
+et où Ar<sub>1</sub> et Ar<sub>2</sub> représentent indépendamment ;</claim-text>
+<claim-text>- un noyau carbocyclique monocyclique,</claim-text>
+<claim-text>- un noyau carbocyclique bicyclique,</claim-text>
+<claim-text>- un noyau carbocyclique tricyclique,</claim-text>
+<claim-text>- un noyau hétérocyclique monocyclique,</claim-text>
+<claim-text>- un noyau hétérocyclique bicyclique,</claim-text>
+<claim-text>- un noyau hétérocyclique tricyclique,<br/>
+où ledit noyau est soit non substitué, soit substitué en une à trois positions, les un à trois substituants étant indépendamment sélectionnés parmi les groupements suivants :
+<claim-text>- halo,</claim-text>
+<claim-text>- hydroxyle,</claim-text>
+<claim-text>- nitro,</claim-text>
+<claim-text>- trilluorométhyle,</claim-text>
+<claim-text>- alkyle en C<sub>1</sub>-C<sub>6</sub> à chaîne linéaire ou ramifiée,</claim-text>
+<claim-text>- alkényle en C<sub>6</sub> au plus à chaîne linéaire ou ramifiée,</claim-text>
+<claim-text>- alkoxy en C<sub>1</sub>-C<sub>4</sub>,</claim-text>
+<claim-text>- alkényloxy en C<sub>4</sub> au plus,</claim-text>
+<claim-text>- phénoxy,</claim-text>
+<claim-text>- benzyloxy, ou</claim-text>
+<claim-text>- amino ;</claim-text></claim-text></claim-text>
+où la taille des noyaux individuels est de 5-6 chaînons ; et où les noyaux hétérocycliques contiennent 1-6 hétéroatome(s) indépendamment sélectionné(s) dans le groupe consistant en O, N et S.</claim-text></claim>
+<claim id="c-fr-01-0002" num="0002">
+<claim-text>Composé de la revendication 1, où le noyau carbocyclique monocyclique, le noyau carbocyclique bicyclique, le noyau hétérocyclique monocyclique ou le noyau hétérocyclique bicyclique est sélectionné dans le groupe consistant en un groupement naphtyle, indolyle, furyle, thiazolyle, thiényle, pyridyle, quinolinyle, isoquinolinyle, fluorényle et phényle.</claim-text></claim>
+<claim id="c-fr-01-0003" num="0003">
+<claim-text>Composé de la revendication 1, où le au moins un hétéroatome additionnel du noyau hétérocyclique saturé ou insaturé à 5-7 chaînons est NH ou NR<sub>1</sub>.</claim-text></claim>
+<claim id="c-fr-01-0004" num="0004">
+<claim-text>Composé qu'est le 2-(4-thiazolidine) carboxylate de 1-(1,2-dioxo-2-méthoxyéthyle).</claim-text></claim>
+<claim id="c-fr-01-0005" num="0005">
+<claim-text>Composé sélectionné entre le 2-(4-thiazolidine) carboxylate de 3-phényl-1-propyl(2S)-1-(3,3-diméthyl-1,2-dioxopentyle) et le 2-(4-thiazolidine) carboxylate de 3-(3-pyridinyl)-1-propyl(2S)-1-(3,3-diméthyl-1,2-dioxopentyle).<!-- EPO <DP n="47"> --></claim-text></claim>
+<claim id="c-fr-01-0006" num="0006">
+<claim-text>Composé de l'une quelconque des revendications précédentes, sélectionné parmi les stéréoisomères S de celui-ci.</claim-text></claim>
+<claim id="c-fr-01-0007" num="0007">
+<claim-text>Sel pharmaceutiquement acceptable d'un composé selon l'une quelconque des revendications précédentes, sélectionné parmi un acétate, adipate, alginate, aspartate, benzoate, benzènesulfonate, bisulfate, butyrate, citrate, camphorate, camphorsulfate, cyclopentanepropionate, digluconate, dodécylsulfate, éthanesulfonate, fumarate, glucoheptanoate, glycérophosphate, hémisulfate, heptanoate, hexanoate, chlorhydrate, bromhydrate, iodhydrate, 2-hydroxyéthanesulfonate, lactate, maléate, méthanesulfonate, 2-naphtalènesulfonate, nicotinate, oxalate, thiocyanate, tosylate, undécanoate et ammonium, des sels de métaux alcalins et alcalino-terreux, des sels de bases organiques et des sels d'acides aminés.</claim-text></claim>
+<claim id="c-fr-01-0008" num="0008">
+<claim-text>Composé de l'une quelconque des revendications 1 à 3, 5 et 7, où le composé a une affinité pour les immunophilines de type FKBP.</claim-text></claim>
+<claim id="c-fr-01-0009" num="0009">
+<claim-text>Composé de la revendication 8, où l'immunophiline de type FKBP est la FKBP-12.</claim-text></claim>
+<claim id="c-fr-01-0010" num="0010">
+<claim-text>Composé selon l'une quelconque des revendications 1 à 3, 5 et 7, où le composé inhibe l'activité de l'enzyme rotamase.</claim-text></claim>
+<claim id="c-fr-01-0011" num="0011">
+<claim-text>Composition pharmaceutique qui comprend une quantité efficace sur le plan neurotrophique d'un composé de l'une quelconque des revendications 1 à 3, 5 et 7 et un véhicule pharmaceutiquement acceptable.</claim-text></claim>
+<claim id="c-fr-01-0012" num="0012">
+<claim-text>Composition pharmaceutique selon la revendication 11, sélectionnée parmi des préparations injectables stériles, gélules, comprimés, suspensions et solutions aqueuses, suppositoires, suspensions et solutions micronisées, pommades, lotions, crèmes et lavements.</claim-text></claim>
+<claim id="c-fr-01-0013" num="0013">
+<claim-text>Composé de l'une quelconque des revendications 1 à 3, 5 et 7, pour obtenir une activité neuronale chez un animal par administration à l'animal du composé à une quantité efficace sur le plan neurotrophique.</claim-text></claim>
+<claim id="c-fr-01-0014" num="0014">
+<claim-text>Composé de la revendication 13, où l'activité neuronale est sélectionnée dans le groupe consistant en la stimulation de neurones endommagés, l'encouragement d'une régénération neuronale, la prévention d'une dégénérescence neuronale et le traitement d'affections neurologiques.</claim-text></claim>
+<claim id="c-fr-01-0015" num="0015">
+<claim-text>Composé de la revendication 14, où l'affection neurologique est sélectionnée dans le groupe consistant en une neuropathie périphérique causée par une lésion physique ou un état pathologique, une lésion physique du cerveau, une lésion physique de la moelle épinière, un accident vasculaire cérébral associé à une lésion cérébrale et une affection neurologique liée à une dégénérescence neuronale.</claim-text></claim>
+<claim id="c-fr-01-0016" num="0016">
+<claim-text>Composé de la revendication 15, où l'affection neurologique liée à une dégénérescence neuronale est sélectionnée dans le groupe consistant en la maladie d'Alzheimer, la maladie de Parkinson et la sclérose latérale amyotrophique.</claim-text></claim>
+<claim id="c-fr-01-0017" num="0017">
+<claim-text>Utilisation d'un composé selon l'une quelconque des revendications 1 à 3, 5 et 7 dans la préparation d'un médicament conçu pour obtenir une activité neuronale chez un<!-- EPO <DP n="48"> --> animal par administration à l'animal du composé à une quantité efficace sur le plan neurotrophique.</claim-text></claim>
+<claim id="c-fr-01-0018" num="0018">
+<claim-text>Utilisation selon la revendication 17, où l'activité neuronale est sélectionnée dans le groupe consistant en la stimulation de neurones endommagés, l'encouragement d'une régénération neuronale, la prévention d'une dégénérescence neuronale et le traitement d'affections neurologiques.</claim-text></claim>
+<claim id="c-fr-01-0019" num="0019">
+<claim-text>Utilisation selon la revendication 18, où l'affection neurologique est sélectionnée dans le groupe consistant en une neuropathie périphérique causée par une lésion physique ou un état pathologique, une lésion physique du cerveau, une lésion physique de la moelle épinière, un accident vasculaire cérébral associé à une lésion cérébrale et une affection neurologique liée à une dégénérescence neuronale.</claim-text></claim>
+<claim id="c-fr-01-0020" num="0020">
+<claim-text>Utilisation de la revendication 19, où l'affection neurologique liée à une dégénérescence neuronale est sélectionnée dans le groupe consistant or la maladie d'Alzheimer, la maladie de Parkinson et la sclérose latérale amyotrophique.</claim-text></claim>
+<claim id="c-fr-01-0021" num="0021">
+<claim-text>Composé, composition ou utilisation de l'une quelconque des revendications 1 à 3, 5 et 7 à 20 pour administration par voie orale, parentérale, y compris sous-cutanée, intraveineuse, intramusculaire, intrapéritonéale, intrathécale, intraventriculaire, intrastemale ou intracrânienne, en inhalation ou nébulisation, en application locale, rectale, nasale, buccale ou vaginale ou par l'intermédiaire d'un réservoir implanté.</claim-text></claim>
+<claim id="c-fr-01-0022" num="0022">
+<claim-text>Composé, composition ou utilisation selon les revendications 1 à 3, 5 et 7 à 21 pour administration avec d'autres agents neurotrophiques comme un facteur de croissance neurotrophique, le facteur neurotrophique dérivé des lignées cellulaires gliales, le facteur de croissance dérivé du cerveau, le facteur neurotrophique ciliaire et la neurohapliine 3.</claim-text></claim>
+</claims><!-- EPO <DP n="49"> -->
+<drawings id="draw" lang="en">
+<figure id="f0001" num="1(A),1(B),1(C)"><img id="if0001" file="imgf0001.tif" wi="119" he="233" img-content="drawing" img-format="tif" orientation="portrait" inline="no"/></figure><!-- EPO <DP n="50"> -->
+<figure id="f0002" num="2(A),2(B),2(C)"><img id="if0002" file="imgf0002.tif" wi="126" he="233" img-content="drawing" img-format="tif" orientation="portrait" inline="no"/></figure>
+</drawings>
+<ep-reference-list id="ref-list">
+<heading id="ref-h0001"><b>REFERENCES CITED IN THE DESCRIPTION</b></heading>
+<p id="ref-p0001" num=""><i>This list of references cited by the applicant is for the reader's convenience only. It does not form part of the European patent document. Even though great care has been taken in compiling the references, errors or omissions cannot be excluded and the EPO disclaims all liability in this regard.</i></p>
+<heading id="ref-h0002"><b>Patent documents cited in the description</b></heading>
+<p id="ref-p0002" num="">
+<ul id="ref-ul0001" list-style="bullet">
+<li><patcit id="ref-pcit0001" dnum="US5654332A"><document-id><country>US</country><doc-number>5654332</doc-number><kind>A</kind></document-id></patcit><crossref idref="pcit0001">[0012]</crossref></li>
+<li><patcit id="ref-pcit0002" dnum="US5192773A"><document-id><country>US</country><doc-number>5192773</doc-number><kind>A</kind></document-id></patcit><crossref idref="pcit0002">[0013]</crossref></li>
+<li><patcit id="ref-pcit0003" dnum="US5330993A"><document-id><country>US</country><doc-number>5330993</doc-number><kind>A</kind></document-id></patcit><crossref idref="pcit0003">[0014]</crossref></li>
+<li><patcit id="ref-pcit0004" dnum="EP564924A"><document-id><country>EP</country><doc-number>564924</doc-number><kind>A</kind></document-id></patcit><crossref idref="pcit0004">[0015]</crossref></li>
+</ul></p>
+<heading id="ref-h0003"><b>Non-patent literature cited in the description</b></heading>
+<p id="ref-p0003" num="">
+<ul id="ref-ul0002" list-style="bullet">
+<li><nplcit id="ref-ncit0001" npl-type="s"><article><author><name>Schreiber et al.</name></author><atl/><serial><sertitle>science</sertitle><pubdate><sdate>19900000</sdate><edate/></pubdate><vid>250</vid></serial><location><pp><ppf>556</ppf><ppl>559</ppl></pp></location></article></nplcit><crossref idref="ncit0001">[0004]</crossref></li>
+<li><nplcit id="ref-ncit0002" npl-type="s"><article><author><name>Schreiber et al.</name></author><atl/><serial><sertitle>Cell</sertitle><pubdate><sdate>19910000</sdate><edate/></pubdate><vid>66</vid></serial><location><pp><ppf>607</ppf><ppl>815</ppl></pp></location></article></nplcit><crossref idref="ncit0002">[0004]</crossref></li>
+<li><nplcit id="ref-ncit0003" npl-type="s"><article><author><name>Lyons et al.</name></author><atl/><serial><sertitle>Proc. of Natl-Acad. Sci .</sertitle><pubdate><sdate>19940000</sdate><edate/></pubdate><vid>91</vid></serial><location><pp><ppf>8191</ppf><ppl>8186</ppl></pp></location></article></nplcit><crossref idref="ncit0003">[0006]</crossref></li>
+<li><nplcit id="ref-ncit0004" npl-type="s"><article><author><name>B Ackerman et al.</name></author><atl/><serial><sertitle>Tetrahedron Letters</sertitle><pubdate><sdate>19890000</sdate><edate/></pubdate><vid>6</vid></serial><location><pp><ppf>371</ppf><ppl>372</ppl></pp></location></article></nplcit><crossref idref="ncit0004">[0007]</crossref></li>
+<li><nplcit id="ref-ncit0005" npl-type="s"><article><author><name>K.R. Henery-Logan et al.</name></author><atl/><serial><sertitle>Tetrahedron Letters</sertitle><pubdate><sdate>19730000</sdate><edate/></pubdate></serial><location><pp><ppf>1103</ppf><ppl>1104</ppl></pp></location></article></nplcit><crossref idref="ncit0005">[0008]</crossref></li>
+<li><nplcit id="ref-ncit0006" npl-type="s"><article><author><name>D. M. Brunw!A et al.</name></author><atl/><serial><sertitle>J.Chem. Soc. Parkins Trns. I</sertitle><pubdate><sdate>19730000</sdate><edate/></pubdate></serial><location><pp><ppf>1321</ppf><ppl>1328</ppl></pp></location></article></nplcit><crossref idref="ncit0006">[0009]</crossref></li>
+<li><nplcit id="ref-ncit0007" npl-type="s"><article><author><name>L.V. Dunkerton et al.</name></author><atl/><serial><sertitle>Tetrahedron Letters</sertitle><pubdate><sdate>19800000</sdate><edate/></pubdate><vid>21</vid></serial><location><pp><ppf>1830</ppf><ppl>1806</ppl></pp></location></article></nplcit><crossref idref="ncit0007">[0010]</crossref></li>
+<li><nplcit id="ref-ncit0008" npl-type="s"><article><author><name>Inamori et al.</name></author><atl/><serial><sertitle>Biosci. Biotechnol. Biochem</sertitle><pubdate><sdate>19940000</sdate><edate/></pubdate><vid>58</vid><ino>6</ino></serial><location><pp><ppf>1150</ppf><ppl>1152</ppl></pp></location></article></nplcit><crossref idref="ncit0008">[0011]</crossref></li>
+<li><nplcit id="ref-ncit0009" npl-type="s"><article><author><name>Dragovich et al.</name></author><atl/><serial><sertitle>J Med. Chem.</sertitle><pubdate><sdate>19960000</sdate><edate/></pubdate><vid>39</vid><ino>9</ino></serial><location><pp><ppf>1872</ppf><ppl>1874</ppl></pp></location></article></nplcit><crossref idref="ncit0009">[0016]</crossref></li>
+<li><nplcit id="ref-ncit0010" npl-type="s"><article><author><name>D. A. Holt et al.</name></author><atl/><serial><sertitle>Bioorganic &amp; Medicinal Chemistry Letters</sertitle><pubdate><sdate>19940000</sdate><edate/></pubdate><vid>4</vid><ino>2</ino></serial><location><pp><ppf>315</ppf><ppl>320</ppl></pp></location></article></nplcit><crossref idref="ncit0010">[0017]</crossref></li>
+<li><nplcit id="ref-ncit0011" npl-type="s"><article><author><name>D. A. Holt et al.</name></author><atl/><serial><sertitle>J. Am. Chem. Soc.</sertitle><pubdate><sdate>19930000</sdate><edate/></pubdate><vid>115</vid></serial><location><pp><ppf>9925</ppf><ppl>9938</ppl></pp></location></article></nplcit><crossref idref="ncit0011">[0018]</crossref></li>
+<li><nplcit id="ref-ncit0012" npl-type="s"><article><author><name>Kopp et al.</name></author><atl/><serial><sertitle>J. Am. Soc. Nephrol.</sertitle><pubdate><sdate>19910000</sdate><edate/></pubdate><vid>1</vid></serial><location><pp><ppf>162</ppf><ppl/></pp></location></article></nplcit><crossref idref="ncit0012">[0021]</crossref></li>
+<li><nplcit id="ref-ncit0013" npl-type="s"><article><author><name>De Groen et al.</name></author><atl/><serial><sertitle>N. Engl. J. Med.</sertitle><pubdate><sdate>19870000</sdate><edate/></pubdate><vid>317</vid></serial><location><pp><ppf>861</ppf><ppl/></pp></location></article></nplcit><crossref idref="ncit0013">[0021]</crossref></li>
+<li><nplcit id="ref-ncit0014" npl-type="s"><article><author><name>Kahan et al.</name></author><atl/><serial><sertitle>N. Engl. J. Med.</sertitle><pubdate><sdate>19890000</sdate><edate/></pubdate><vid>321</vid></serial><location><pp><ppf>1725</ppf><ppl/></pp></location></article></nplcit><crossref idref="ncit0014">[0021]</crossref></li>
+<li><nplcit id="ref-ncit0015" npl-type="s"><article><author><name>Harding et al.</name></author><atl/><serial><sertitle>Nature</sertitle><pubdate><sdate>19890000</sdate><edate/></pubdate><vid>341</vid></serial><location><pp><ppf>758</ppf><ppl>760</ppl></pp></location></article></nplcit><crossref idref="ncit0015">[0074]</crossref></li>
+<li><nplcit id="ref-ncit0016" npl-type="s"><article><author><name>Holt et al.</name></author><atl/><serial><sertitle>J. Am. Chem. Soc</sertitle><vid>115</vid></serial><location><pp><ppf>9923</ppf><ppl>9938</ppl></pp></location></article></nplcit><crossref idref="ncit0016">[0074]</crossref></li>
+</ul></p>
+</ep-reference-list>
+</ep-patent-document>

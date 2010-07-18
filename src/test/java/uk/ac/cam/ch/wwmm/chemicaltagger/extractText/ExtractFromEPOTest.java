@@ -27,7 +27,7 @@ public class ExtractFromEPOTest {
 		ExtractFromEPO epoExtract = new ExtractFromEPO();
 		String pathName = "uk/ac/cam/ch/wwmm/chemicaltagger/extractTest/epoPatents/EPO1191614B1.xml";
 		InputStream inputSource = new Utils().getInputStream(pathName);
-		DocumentContainer epoContent = epoExtract.getInfo(inputSource);
+		DocumentContainer epoContent = epoExtract.getInfo(pathName);
 		System.out.println("ID::" + epoContent.getId());
 		System.out.println("Publication Date::" + epoContent.getPubDate());
 		System.out.println("Content::" + epoContent.getContent());
@@ -104,7 +104,7 @@ public class ExtractFromEPOTest {
 			//System.err.println(resourcePath);
 			Utils utils = new Utils();
 			InputStream inStream = utils.getInputStream(resourcePath);
-			DocumentContainer docContainer = extractEPO.getInfo(inStream);
+			DocumentContainer docContainer = extractEPO.getInfo(resourcePath);
 			docs.add(docContainer);
 
 		}
