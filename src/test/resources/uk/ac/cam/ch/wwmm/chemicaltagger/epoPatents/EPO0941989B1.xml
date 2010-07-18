@@ -1,0 +1,728 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ep-patent-document PUBLIC "-//EPO//EP PATENT DOCUMENT 1.4//EN" "ep-patent-document-v1-4.dtd">
+<ep-patent-document id="EP99810156B1" file="EP99810156NWB1.xml" lang="en" country="EP" doc-number="0941989" kind="B1" date-publ="20090708" status="n" dtd-version="ep-patent-document-v1-4">
+<SDOBI lang="en"><B000><eptags><B001EP>..BE..DE..ESFRGB..IT....NL......................................................</B001EP><B005EP>J</B005EP><B007EP>DIM360 Ver 2.15 (14 Jul 2008) -  2100000/0</B007EP></eptags></B000><B100><B110>0941989</B110><B120><B121>EUROPEAN PATENT SPECIFICATION</B121></B120><B130>B1</B130><B140><date>20090708</date></B140><B190>EP</B190></B100><B200><B210>99810156.2</B210><B220><date>19990222</date></B220><B240><B241><date>20000207</date></B241><B242><date>20030403</date></B242></B240><B250>en</B250><B251EP>en</B251EP><B260>en</B260></B200><B300><B310>33266</B310><B320><date>19980302</date></B320><B330><ctry>US</ctry></B330></B300><B400><B405><date>20090708</date><bnum>200928</bnum></B405><B430><date>19990915</date><bnum>199937</bnum></B430><B450><date>20090708</date><bnum>200928</bnum></B450><B452EP><date>20090211</date></B452EP></B400><B500><B510EP><classification-ipcr sequence="1"><text>C07D 251/24        20060101AFI19990726BHEP        </text></classification-ipcr></B510EP><B540><B541>de</B541><B542>Verfahren zur Herstellung von 2,4-Diaryl-6-o-hydroxyphenyl-1,3,5-triazin Derivaten in Anwesenheit eines Protonensäure-Katalysators</B542><B541>en</B541><B542>Process for the preparation of 2,4-diaryl-6-o-hydroxyphenyl-1,3,5-triazine derivatives in the presence of a protic acid catalyst</B542><B541>fr</B541><B542>Procédé de préparation de dérivés 2,4-diaryl-6-o-hydroxyphenyl-1,3,5-triazine en présence de catalyseur acide protique</B542></B540><B560><B561><text>EP-A- 0 165 608</text></B561><B561><text>BE-A- 661 225</text></B561><B561><text>FR-A- 1 466 836</text></B561><B562><text>PATENT ABSTRACTS OF JAPAN vol. 97, no. 7, 31 July 1997 (1997-07-31) &amp; JP 09 059263 A (ASAHI DENKA KOGYO K.K.), 4 March 1997 (1997-03-04)</text></B562><B562><text>BRUNETTI H. &amp; LÜTHI C.E.: "153. Die Synthese von asymmetrisch substituierten o-Hydroxyphenyl-s-triazinen" HELVETICA CHIMICA ACTA, vol. 55, no. 5, 1972, pages 1566-1595, XP002034121</text></B562></B560></B500><B700><B720><B721><snm>Stevenson, Tyler Arthur</snm><adr><str>538 Kenwood Place</str><city>Teaneck, NJ 07666</city><ctry>US</ctry></adr></B721><B721><snm>Ackerman, Michael</snm><adr><str>
+</str><city>Deceased</city><ctry>US</ctry></adr></B721><B721><snm>Hayoz, Pascal</snm><adr><str>Ettingerstrasse 55</str><city>4114 Hofstetten</city><ctry>CH</ctry></adr></B721><B721><snm>Meuwly, Roger</snm><adr><str>Au Village</str><city>1784 Cournillens</city><ctry>CH</ctry></adr></B721><B721><snm>Oswald, John Francis</snm><adr><str>Weisshaldenweg 407</str><city>5063 Wölflinswil</city><ctry>CH</ctry></adr></B721><B721><snm>Schregenberger, Christian</snm><adr><str>Am Rai 143</str><city>4305 Olsberg</city><ctry>CH</ctry></adr></B721></B720><B730><B731><snm>Ciba Holding Inc.</snm><iid>08395120</iid><irf>A-21505/A/CGC 1</irf><adr><str>Klybeckstrasse 141</str><city>4057 Basel</city><ctry>CH</ctry></adr></B731></B730></B700><B800><B840><ctry>BE</ctry><ctry>DE</ctry><ctry>ES</ctry><ctry>FR</ctry><ctry>GB</ctry><ctry>IT</ctry><ctry>NL</ctry></B840><B880><date>20000112</date><bnum>200002</bnum></B880></B800></SDOBI><!-- EPO <DP n="1"> -->
+<description id="desc" lang="en">
+<p id="p0001" num="0001">This invention pertains to novel methods for the preparation of tris-aryl-o-hydroxyphenyl-s-triazines using cyanuric chloride as a starting material. Particular o-hydroxyphenyl-s-triazines which can be made by these new methods are: bis-aryl-resorcinol based s-triazines; mono-aryl-bis-resorcinol based s-triazines; and tris-resorcinol-s-triazines.</p>
+<heading id="h0001"><u style="single">Background of the Invention</u></heading>
+<p id="p0002" num="0002">Tris-aryl-o-hydroxyphenyl-s-triazines are intermediates for or are themselves UV absorbers useful for the protection of natural or synthetic materials from the adverse action of actinic radiation. There are many methods described for the preparation of such s-triazines as seen from the publications of <nplcit id="ncit0001" npl-type="s"><text>S. Tanimoto and M. Yamagata, Senryo to Yakuhim, 1995, 40(12), 325-339</text></nplcit> and of <nplcit id="ncit0002" npl-type="s"><text>H. Brunetti and G. E. Luethi, Helv. Chim. Acta, 1972, 55(5), 1566-1595</text></nplcit>.</p>
+<p id="p0003" num="0003">The most versatile method is to employ one or more Friedel-Crafts reactions starting from cyanuric chloride. A major obstacle in this approach is the fact that Friedel-Crafts reactions of aryl groups and cyanuric chloride are non-selective. This is a problem when the goal is to prepare an asymmetric tris-aryl-s-triazine. This is explained in the Tanimoto and Brunetti publications mentioned above and in United States Patent Nos. <patcit id="pcit0001" dnum="US5084570A"><text>5,084,570</text></patcit> and <patcit id="pcit0002" dnum="US5106972A"><text>5,106,972</text></patcit>. However, it is well-known that substitution reactions between nucleophiles and cyanuric chloride are selective as taught by <nplcit id="ncit0003" npl-type="b"><text>E. M. Smolin and L. Rapoport, s-Triazines and Derivatives in The Chemistry of Heterocyclic Compounds, A. Weissberger Ed., Interscience Publishers, New York, 1959, pp. 53-57</text></nplcit>.</p>
+<p id="p0004" num="0004">One possible approach to prepare asymmetric tris-aryl-s-triazines selectively would be to (a) replace one or two chlorine atoms of cyanuric chloride with an appropriate protecting group in a nucleophilic manner; (b) replace the remaining chlorine atom(s) with the desired aryl group via a Friedel-Crafts reaction; (c) displace the protecting group(s) with chlorine, and finally (d) replace the newly formed chlorine(s) with the second aryl group in a Friedel-Crafts manner. United States Patent Nos. <patcit id="pcit0003" dnum="US5084570A"><text>5,084,570</text></patcit> and <patcit id="pcit0004" dnum="US5106972A"><text>5,106,972</text></patcit> disclose this strategy for the preparation of 2,(2,4-dihydroxyphenyl)-4,6-diaryl-s-triazine. The protecting group chosen in<!-- EPO <DP n="2"> --> in these two patents is methyl mercaptan. The process outlined is four steps starting from cyanuric chloride.</p>
+<p id="p0005" num="0005">Another drawback of Friedel-Crafts reactions of aryl groups and cyanuric chloride in addition of non-selectivity is the fact that large amounts of Lewis acid are necessary to mediate the reaction, normally equimolar amounts. The Lewis acid most commonly used is aluminum chloride. These reactions produce prodigious amounts of alumunim waste which is environmentally hard to handle. Some typical reactions using this catalyst are described in <patcit id="pcit0005" dnum="EP165608A"><text>EP-A-165608</text></patcit>.</p>
+<p id="p0006" num="0006">Syntheses of some phenoxy substituted triazines are reported in <patcit id="pcit0006" dnum="BE661225"><text>BE-661225</text></patcit> and <patcit id="pcit0007" dnum="FR1466836"><text>FR-1466836</text></patcit>, Japanese <patcit id="pcit0008" dnum="JPHEI959263B"><text>Hei 9-59263</text></patcit> discloses a three-step synthetic approach for the preparation of asymmetric tris-aryl-hydroxyphenyl-s-triazines. The preferred method of the Japanese reference is a one-pot process using a Lewis acid to mediate all three steps. This reference will be discussed in more detail later in this application.</p>
+<p id="p0007" num="0007">A welcome addition to the art therefore would be to (a) provide a method of performing Friedel-Crafts reactions between aryl groups and s-triazines using protic acids instead of Lewis acids, and to (b) provide a method of preparing asymmetric tris-aryl-s-triazines in less than four synthetic steps.</p>
+<heading id="h0002"><u style="single">Objects of the Invention</u></heading>
+<p id="p0008" num="0008">One object of the invention is a process in which protic acids may be employed as Friedel-Crafts catalysts for the reaction between aryl groups and s-triazines.</p>
+<p id="p0009" num="0009">Another object of the invention is a method for the preparation of asymmetric tris-aryl-s-triazines in less than four synthetic steps.</p>
+<p id="p0010" num="0010">A third object of the invention is a process combining the two processes mentioned above.</p>
+<heading id="h0003"><u style="single">Detailed Description of the Invention</u></heading>
+<p id="p0011" num="0011">Strong protic acids, such as hydrogen halides, sulfuric or sulfonic acids, nitric acid etc. as well as solid-supported protic acids such as AMBERLYST<sup>®</sup> (Rohm &amp; Haas),AMBERLITE<sup>®</sup> (Rohm &amp; Haas) and NAFION<sup>®</sup> (duPont) catalysts, may be employed as effective Friedel-Crafts<!-- EPO <DP n="3"> --> catalysts to form carbon-carbon bonds between aryl groups and s-triazines. Preferred are acids having a pKa value below 4, especially below 2; examples include the substances listed above or hydrogen chloride (gaseous or as solution), methanesulfonic acid, p-toluenesulfonic acid, phosphoric acid, polyphosphoric acid. Active leaving groups are halogen, especially Cl or F, or alkoxy and aryloxy. Preferred leaving groups are chlorine, phenoxy and substituted phenoxy moieties.</p>
+<p id="p0012" num="0012">The simpliest example of a reaction of this type is replacing the chlorine atoms on cyanuric chloride with resorcinol to prepare a tris-2,4,6-(2,4-dihydroxyphenyl)-s-triazine. United States Patent Nos. <patcit id="pcit0009" dnum="US3118887A"><text>3,118,887</text></patcit> and <patcit id="pcit0010" dnum="US3244708A"><text>3.244.708</text></patcit> describe such syntheses, but where large amounts of aluminum chloride are used. Indeed, no added catalyst at all is required as the hydrogen chloride gas released during the initial nucleophilic reaction between resorcinol and cyanuric chloride serves as the catalyst for the carbon-carbon bond formation as seen below:
+<chemistry id="chem0001" num="0001"><img id="ib0001" file="imgb0001.tif" wi="131" he="118" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry></p>
+<p id="p0013" num="0013">X in these formulae is hydrogen, alkyl, phenylalkyl or halogen.<!-- EPO <DP n="4"> --> An effective temperature range is from 70°C to 200°C. The most effective temperature range is 100°C to 170°C.</p>
+<p id="p0014" num="0014">This reaction may also be performed on mono-aryl-bis-chloro-s-triazines and bis-aryl-mono-chloro-s-triazines as seen below.
+<chemistry id="chem0002" num="0002"><img id="ib0002" file="imgb0002.tif" wi="164" he="82" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+<chemistry id="chem0003" num="0003"><img id="ib0003" file="imgb0003.tif" wi="164" he="79" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry></p>
+<p id="p0015" num="0015">R<sub>1</sub>, R<sub>2</sub> and R<sub>3</sub> are each independently hydrogen, alkyl of 1 to 12 carbon atoms, hydroxy, alkoxy of 1 to 12 carbon atoms, halogen, phenyl or phenyl substituted by alkyl of 1 to 12 carbon atoms, hydroxy, alkoxy of 1 to 12 carbon atoms or halogen. The solvents and<!-- EPO <DP n="5"> --> temperature ranges are those given supra. O-Attached resorcinol groups on the s-triazine ring are observed as transient intermediates during the course of these reactions.</p>
+<p id="p0016" num="0016">Similar Friedel-Crafts reactions may also be employed with alkoxy or aryloxy moieties as the leaving group. In these cases an external protic acid is added to the mixture. The most effective protic acids are hydrogen chloride gas and methanesulfonic acid. As with halogen, one or more alkoxy or aryloxy groups may be replaced in this fashion. Phenoxy and/or substituted phenoxy groups are especially suitable leaving groups as seen in the reactions outlined below.
+<chemistry id="chem0004" num="0004"><img id="ib0004" file="imgb0004.tif" wi="164" he="73" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+<chemistry id="chem0005" num="0005"><img id="ib0005" file="imgb0005.tif" wi="164" he="72" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry><!-- EPO <DP n="6"> -->
+<chemistry id="chem0006" num="0006"><img id="ib0006" file="imgb0006.tif" wi="164" he="77" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry></p>
+<p id="p0017" num="0017">R<sub>1</sub>, R<sub>2</sub> and R<sub>3</sub> are as defined above. The temperature ranges used are as above using chlorine as the leaving group.</p>
+<p id="p0018" num="0018">The instant process also pertains to the preparation of asymmetric tris-aryl-s-triazines in only three steps while avoiding the selectivity problem of Friedel-Crafts reactions with cyanuric chloride. United States Patent Nos.<patcit id="pcit0011" dnum="US5084570A"><text> 5,084,570</text></patcit> and <patcit id="pcit0012" dnum="US5106972A"><text>5,106,972</text></patcit> describe a four-step process to overcome this selectivity problem. The key to the new three step process is to take advantage of a nucleophilic substitution step on cyanuric chloride which is selective (E. M. Smolin et al., loc cit). The nucleophile introduced into the triazine ring will also perform as a leaving group under Friedel-Crafts conditions. It is a poor leaving group compared to chlorine. In this way selectivity under Friedel-Crafts condition is achieved. This allows one to avoid having to rechlorinate the triazine ring prior to subsequent Friedel-Crafts reactions thus reducing the number of synthetic steps. Effective nucleophiles which also serve as Friedel-Crafts leaving groups are alkoxy and aryloxy groups. Especially effective are phenoxy and substituted phenoxy.</p>
+<p id="p0019" num="0019">For example, in order to prepare a mono-resorcinol-bis-aryl-s-triazine, cyanuric chloride is reacted with one mole of phenol or substituted phenol under nucleophilic (basic) conditions.<!-- EPO <DP n="7"> -->
+<chemistry id="chem0007" num="0007"><img id="ib0007" file="imgb0007.tif" wi="128" he="58" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+R<sub>1</sub>, R<sub>2</sub> and R<sub>3</sub> are defined as above.</p>
+<p id="p0020" num="0020">As mentioned above, the phenoxy group is an active Friedel-Crafts leaving group. It is a weaker one than chlorine thus allowing for the introduction of a relatively weak Friedel-Crafts substrate such as m-xylene, toluene, benzene, chlorobenzene or biphenyl while leaving the phenol group intact.
+<chemistry id="chem0008" num="0008"><img id="ib0008" file="imgb0008.tif" wi="161" he="68" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry></p>
+<p id="p0021" num="0021">In the third step, the phenoxide may be replaced with a strong Friedel-Crafts substrate such as resorcinol.<!-- EPO <DP n="8"> -->
+<chemistry id="chem0009" num="0009"><img id="ib0009" file="imgb0009.tif" wi="151" he="69" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+X, R<sub>1</sub>, R<sub>2</sub> and R<sub>3</sub> are as defined above.</p>
+<p id="p0022" num="0022">Japanese <patcit id="pcit0013" dnum="JPHEI959263B"><text>Hei 9-59263</text></patcit> discloses this three-step synthetic approach for the preparation of asymmetric tris-aryl-hydroxyphenyl-s-triazines. The preferred method of the Japanese reference is a one-pot process using a Lewis acid to mediate all three steps. The Japanese reference does not describe that step 3 can be mediated successfully by protic acids and that resorcinol itself may be used as a blocking group as is discussed further infra. This reference does not suggest the general applicability of the three-step synthesis.</p>
+<p id="p0023" num="0023">Likewise, asymmetric tris-aryl-s-triazines which contain one weak and two strong Friedel-Crafts substrates may be prepared in three steps from cyanuric chloride. Examples are bis-resorcinol-mono-aryl-s-triazines where the aryl group is m-xylene, toluene, benzene, chlorobenzene or biphenyl. These materials are prepared by reacting cyanuric chloride with two moles of a phenol or substituted phenol under basic conditions to form a mono-chloro-bis-phenoxy-s-triazine. The remaining chlorine atom may be replaced with a weak Friedel-Crafts substrate such as m-xylene, toluene, benzene, chlorobenzene or biphenyl leaving the phenoxy groups intact. The phenoxy groups may then be replaced by a strong Friedel-Crafts substrate such as resorcinol.<!-- EPO <DP n="9"> -->
+<chemistry id="chem0010" num="0010"><img id="ib0010" file="imgb0010.tif" wi="123" he="79" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+<chemistry id="chem0011" num="0011"><img id="ib0011" file="imgb0011.tif" wi="145" he="69" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+<chemistry id="chem0012" num="0012"><img id="ib0012" file="imgb0012.tif" wi="162" he="65" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry><!-- EPO <DP n="10"> --></p>
+<p id="p0024" num="0024">A special embodiment of this approach to prepare mono-resorcinol-bis-aryl-s-triazine would be to use resorcinol itself as the blocking phenol in step 1. A bis-triazine-resorcinol adduct is formed and is carried through steps 2 and 3 as seen above. This method is especially advantageous if excess resorcinol is used. In an industrial process only one phenol (namely resorcinol) would need to be recovered and recycled instead of two thus allowing for substantial cost savings. This embodiment is outlined below.
+<chemistry id="chem0013" num="0013"><img id="ib0013" file="imgb0013.tif" wi="165" he="158" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry></p>
+<p id="p0025" num="0025">The nucleophilic first step in the special embodiment above may be performed in a variety of solvents such as acetone, acetone/water mixtures and xylene. It may also be<!-- EPO <DP n="11"> --> carried out by means of a two-phase reaction with water and a hydrocarbon solvent such as xylene. A phase-transfer catalyst including quaternary ammonium salts or polyether such as glymes or poly(ethylene glycol) aids the reaction. Bases which can be used include hydroxide, carbonate and bicarbonate salts of sodium, potassium and calcium. Effective temperatures range from -20°C to 100°C. The most effective temperatures range from -20°C to 50°C.</p>
+<p id="p0026" num="0026">Especially effective condition are the use of 10 % water in acetone as solvent and sodium hydroxide as the base at a temperature range of -20°C to 5°C. Also especially effective is the use of a two-phase system of water/xylene with sodium bicarbonate as the base and a quaternary ammonium salt such as benzyltrimethylammonium chloride as phase-transfer catalyst at temperatures of -5°C to 10°C. Also especially effective is the use of benzyltrimethylammonium chloride as a catalyst in xylene at temperatures of -10°C to 10°C with potassium carbonate base under anhydrous conditions.</p>
+<p id="p0027" num="0027">The second step in which chlorine is displaced by the weaker Friedel-Crafts substrate requires a Lewis acid catalyst. Aluminum chloride is the Lewis acid of choice and may be used in the range of 0.2 to 1.5 equivalents per equivalent of s-triazine. The reaction is best performed neat using an excess of the Friedel-Crafts substrate as solvent. Effective amounts of neat Friedel-Crafts reactant range from 2 to 20 molar equivalents. Examples of solvents which may be employed in this way include m-xylene, toluene, benzene, chlorobenzene and biphenyl. An effective temperature range for this reaction is from 0°C to 170°C; especially from 70°C to 150°C.</p>
+<p id="p0028" num="0028">It is especially effective to perform the first step in a hydrocarbon solvent which will also be the Friedel-Crafts reactant for step two. Step two may then be performed without isolation of the product of step one.</p>
+<p id="p0029" num="0029">Lewis acids usable within present process are mainly those known in the art as Friedel-Crafts catalysts; examples are AlCl<sub>3</sub>, FeCl<sub>3</sub>, ZnCl<sub>2</sub>, TiCl<sub>4</sub>, SnCl<sub>2</sub>; especially preferred is AlCl<sub>3</sub>.</p>
+<p id="p0030" num="0030">Step three, in which the phenol is replaced by a strong Friedel-Crafts substrate such as resorcinol, may be performed with a protic acid catalyst. The preferred protic acids are<!-- EPO <DP n="12"> --> hydrogen chloride gas and methanesulfonic acid. The reaction may be performed in the neat molten resorcinol. The amount of resorcinol may range from 1.2 to 10 molar equivalents per phenoxy group being displaced. The most effective range is from 1.2 to 4 molar equivalents of resorcinol per phenoxy moiety. The reaction may be performed e.g. with a catalyst level of 0.33 to 1.5 molar equivalents per triazine. The temperature for the reaction may range from 25°C to 200°C. The most effective temperature range is from 120°C to 170°C.</p>
+<p id="p0031" num="0031">Present invention may be carried out according to process variants A-F. The most general form corresponds to variants D, E and F, corresponding to a process for preparing a compound of formula A
+<chemistry id="chem0014" num="0014"><img id="ib0014" file="imgb0014.tif" wi="67" he="49" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+wherein
+<ul id="ul0001" list-style="none" compact="compact">
+<li>G and G' each independently are a residue of the formula
+<chemistry id="chem0015" num="0015"><img id="ib0015" file="imgb0015.tif" wi="113" he="34" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry></li>
+<li>R<sub>1</sub>, R<sub>2</sub> and R<sub>3</sub> are each independently hydrogen; alkyl of 1 to 12 carbon atoms; hydroxy; alkoxy of 1 to 12 carbon atoms; C<sub>2</sub>-C<sub>8</sub>alkenyl; C<sub>3</sub>-C<sub>18</sub>alkoxy interrupted by O and/or substituted by OH; C<sub>2</sub>-C<sub>18</sub>alkyl or C<sub>2</sub>-C<sub>18</sub>alkoxy, each interrupted by COO or substituted by COOH; halogen; nitro; amino; amino substituted by a C<sub>1</sub>-C<sub>12</sub> hydrocarbon selected from alkyl, phenyl, cycloalkyl; C<sub>2</sub>-C<sub>18</sub>acylamino; C<sub>2</sub>-C<sub>12</sub>alkoxycarbonyl; C<sub>5</sub>-C<sub>12</sub>cycloalkyloxycarbonyl; C<sub>7</sub>-C<sub>15</sub>phenylalkoxycarbonyl; phenyl or phenyl substituted by alkyl of 1 to 12 carbon atoms, hydroxy, alkoxy of 1 to 12 carbon atoms or halogen; and<!-- EPO <DP n="13"> --></li>
+<li>X, Y and Z, independently, are as defined for R<sub>1</sub>, R<sub>2</sub> or R<sub>3</sub>, or are phenylalkyl of 7 to 15 carbon atoms;<br/>
+which process comprises<br/>
+reacting a compound of the formula B
+<chemistry id="chem0016" num="0016"><img id="ib0016" file="imgb0016.tif" wi="56" he="35" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+wherein<br/>
+E<sub>1</sub> is a leaving group selected from halogen, C<sub>1</sub>-C<sub>12</sub>alkoxy or
+<chemistry id="chem0017" num="0017"><img id="ib0017" file="imgb0017.tif" wi="45" he="30" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+where R<sub>11</sub>, R<sub>12</sub> and R<sub>13</sub> are as defined for R<sub>1</sub>, R<sub>2</sub> and R<sub>3</sub>, and R<sub>11</sub> also may be a residue of the formula
+<chemistry id="chem0018" num="0018"><img id="ib0018" file="imgb0018.tif" wi="70" he="41" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+E<sub>2</sub> and E<sub>3</sub> are a leaving group as defined for E<sub>1</sub> or are G or G';<br/>
+with a compound of formula C
+<chemistry id="chem0019" num="0019"><img id="ib0019" file="imgb0019.tif" wi="59" he="28" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+in the presence of an effective amount of a protic acid catalyst to give the compound of formula A.<br/>
+<!-- EPO <DP n="14"> -->R<sub>1</sub>, R<sub>2</sub>, R<sub>3</sub> may also be SO<sub>3</sub>H; SO<sub>3</sub><sup>-</sup>; CN; or R<sub>1</sub> and R<sub>2</sub>, and especially X and Y, stand vicinal and form, together with the carbon atoms they are attached to, a carbocyclic ring of 5 or 6 carbon atoms, or a ring of 4 or 5 carbon atoms and -O-, -N= or -NH-.</li>
+</ul></p>
+<p id="p0032" num="0032">Preferably, the protic acid is the only acid catalyst used, or it is used in combination with a Lewis acid potentiator, which is added in an amount of 0-0.25 equivalents Lewis acid per equivalent leaving group (such as chloride) or phenolic compound. If the leaving group is halogen, the amount of protic acid formed thereby can be sufficient so that no further addition of protic acid is needed. The total amount of protic acid is preferably 0.8 to about 20 equivalents, preferably about 1 to 2 equivalents per equivalent leaving group.</p>
+<p id="p0033" num="0033">In process variants D and F, both G and G' a phenolic residue of the formula
+<chemistry id="chem0020" num="0020"><img id="ib0020" file="imgb0020.tif" wi="28" he="28" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+<ul id="ul0002" list-style="none" compact="compact">
+<li>In the compounds of formulae A, B and C,</li>
+<li>R<sub>1</sub>, R<sub>2</sub> and R<sub>3</sub> preferably are each independently hydrogen; alkyl of 1 to 12 carbon atoms; alkoxy of 1 to 12 carbon atoms; C<sub>2</sub>-C<sub>8</sub>alkenyl; C<sub>3</sub>-C<sub>18</sub>alkoxy interrupted by O and/or substituted by OH; C<sub>2</sub>-C<sub>18</sub>alkyl or C<sub>2</sub>-C<sub>18</sub>alkoxy, each interrupted by COO or substituted by COOH; halogen; nitro; amino; amino substituted by a C<sub>1</sub>-C<sub>12</sub> hydrocarbon selected from alkyl, phenyl, cycloalkyl; C<sub>2</sub>-C<sub>18</sub>acylamino; C<sub>2</sub>-C<sub>12</sub>alkoxycarbonyl; C<sub>5</sub>-C<sub>12</sub>cycloalkyloxycarbonyl; C<sub>7</sub>-C<sub>15</sub>phenylaikoxycarbonyl; phenyl or phenyl substituted by alkyl of 1 to 12 carbon atoms, hydroxy, alkoxy of 1 to 12 carbon atoms or halogen;</li>
+<li>R<sub>12</sub> and R<sub>13</sub> are preferably as defined for X and Y, and</li>
+<li>R<sub>11</sub> is preferably as defined for Z or R<sub>11</sub> also may be a residue of the formula
+<chemistry id="chem0021" num="0021"><img id="ib0021" file="imgb0021.tif" wi="71" he="40" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry></li>
+<li>X and Y, independently, are preferably hydrogen; alkyl of 1 to 12 carbon atoms; phenylalkyl of 7 to 15 carbon atoms; and<!-- EPO <DP n="15"> --></li>
+<li>Z is preferably in meta-position to OH and is hydroxy; alkoxy of 1 to 12 carbon atoms; C<sub>3</sub>-C<sub>18</sub>alkoxy interrupted by O and/or substituted by OH; C<sub>2</sub>-C<sub>18</sub>alkoxy interrupted by COO or substituted by COOH; halogen; nitro; amino; amino substituted by a C<sub>1</sub>-C<sub>12</sub> hydrocarbon selected from alkyl, phenyl, cycloalkyl; C<sub>2</sub>-C<sub>18</sub>acylamino; C<sub>2</sub>-C<sub>12</sub>alkoxycarbonyl.</li>
+</ul></p>
+<p id="p0034" num="0034">Most preferably, in the compounds of formulae A, B and C<br/>
+X is hydrogen; alkyl of 1 to 12 carbon atoms; phenylalkyl of 7 to 15 carbon atoms or halogen;<br/>
+Y is hydrogen;<br/>
+Z is hydroxy;<br/>
+R<sub>1</sub>, R<sub>2</sub> and R<sub>3</sub> are each independently hydrogen; alkyl of 1 to 12 carbon atoms; hydroxy; alkoxy of 1 to 12 carbon atoms; halogen; phenyl or phenyl substituted by alkyl of 1 to 12 carbon atoms, hydroxy, alkoxy of 1 to 12 carbon atoms or halogen;<br/>
+E<sub>1</sub>, E<sub>2</sub> and/or E<sub>3</sub> as a leaving group in formula B are Cl.</p>
+<p id="p0035" num="0035">Especially preferred are R<sub>1</sub>, R<sub>2</sub> and R<sub>3</sub> each independently as hydrogen; alkyl of 1 to 4 carbon atoms; alkoxy of 1 to 12 carbon atoms; Cl; phenyl or phenyl substituted by alkyl of 1 to 4 carbon atoms, alkoxy of 1 to 12 carbon atoms;<br/>
+R<sub>12</sub> and R<sub>13</sub> defined for X and Y, and<br/>
+R<sub>11</sub> as defined for Z or R<sub>11</sub> is a residue of the formula
+<chemistry id="chem0022" num="0022"><img id="ib0022" file="imgb0022.tif" wi="58" he="37" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry></p>
+<p id="p0036" num="0036">Accordingly, a preferred process leads to a compound of formula I
+<chemistry id="chem0023" num="0023"><img id="ib0023" file="imgb0023.tif" wi="72" he="58" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry><!-- EPO <DP n="16"> -->
+from a starting compound of formula XIII
+<chemistry id="chem0024" num="0024"><img id="ib0024" file="imgb0024.tif" wi="99" he="43" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+or to a compound of formula VII
+<chemistry id="chem0025" num="0025"><img id="ib0025" file="imgb0025.tif" wi="85" he="60" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+from the starting compound of formula XIV
+<chemistry id="chem0026" num="0026"><img id="ib0026" file="imgb0026.tif" wi="47" he="46" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+or to a compound of formula XII<!-- EPO <DP n="17"> -->
+<chemistry id="chem0027" num="0027"><img id="ib0027" file="imgb0027.tif" wi="88" he="68" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+from the starting compound of the formula B
+<chemistry id="chem0028" num="0028"><img id="ib0028" file="imgb0028.tif" wi="63" he="32" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+where E<sub>1</sub>, E<sub>2</sub> and E<sub>3</sub> each is a leaving group selected from F, Cl and
+<chemistry id="chem0029" num="0029"><img id="ib0029" file="imgb0029.tif" wi="45" he="33" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+where R<sub>11</sub>, R<sub>12</sub> and R<sub>13</sub> are as defined for R<sub>1</sub>, R<sub>2</sub> and R<sub>3</sub>, and R<sub>11</sub><br/>
+also may be a residue of the formula
+<chemistry id="chem0030" num="0030"><img id="ib0030" file="imgb0030.tif" wi="73" he="43" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+<ul id="ul0003" list-style="none" compact="compact">
+<li>X is hydrogen; alkyl of 1 to 12 carbon atoms; phenylalkyl of 7 to 15 carbon atoms or halogen; and</li>
+<li>R<sub>1</sub>, R<sub>2</sub> and R<sub>3</sub> are each independently hydrogen; alkyl of 1 to 12 carbon atoms; hydroxy; alkoxy of 1 to 12 carbon atoms; halogen; phenyl or phenyl substituted by alkyl of 1 to 12 carbon atoms, hydroxy, alkoxy of 1 to 12 carbon atoms or halogen;<!-- EPO <DP n="18"> --> and comprises reacting the starting compound with a resorcinol of formula VI
+<chemistry id="chem0031" num="0031"><img id="ib0031" file="imgb0031.tif" wi="59" he="32" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+in the presence of an effective amount of a protic acid to form a compound of formula XII.</li>
+</ul></p>
+<p id="p0037" num="0037">The amount of resorcinol of formula VI preferably is<br/>
+one to ten equivalents per equivalent of the compound of formula XIII for the preparation of a compound of the formula I or<br/>
+two to twenty equivalents per equivalent of the compound of formula XIV for the preparation of a compound of the formula VII or<br/>
+three to thirty equivalents per equivalent of the compound of formula B for the preparation of a compound of the formula XII.</p>
+<p id="p0038" num="0038">The amount of protic acid is usually 0.5 to 10, often 0.7 to 5, especially ca. 0.8 to 1.5 equivalents per equivalent of the formula C or VI; the protic acid is preferably a hydrogen halide, sulfuric or sulfonic acid, especially hydrogen chloride or methanesulfonic acid. The protic acid can also be used along with a Lewis acid potentiator at the level of less than 0.25, e.g. 0.01 to 0.2, equivalents of Lewis acid per equivalent of chloride formed.<br/>
+The leaving group E<sub>1</sub>, E<sub>2</sub> and E<sub>3</sub> is preferably Cl or F or
+<chemistry id="chem0032" num="0032"><img id="ib0032" file="imgb0032.tif" wi="36" he="29" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+especially Cl; thus a preferred starting material of formula b is cyanuric chloride
+<chemistry id="chem0033" num="0033"><img id="ib0033" file="imgb0033.tif" wi="33" he="25" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+The process can be carried out in the melt or in a solvent, e.g. an aromatic hydrocarbon or tetramethylene sulfone. With the leaving group halogen, no extra acid catalyst is needed.<!-- EPO <DP n="19"> --> Variants A, B and C of present process pertain to a 3 step process for preparing a compound of formula A
+<chemistry id="chem0034" num="0034"><img id="ib0034" file="imgb0034.tif" wi="70" he="47" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+wherein
+<ul id="ul0004" list-style="none">
+<li>G is a residue of the formula
+<chemistry id="chem0035" num="0035"><img id="ib0035" file="imgb0035.tif" wi="36" he="29" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+and</li>
+<li>G' is a residue of the formula
+<chemistry id="chem0036" num="0036"><img id="ib0036" file="imgb0036.tif" wi="33" he="28" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+in process variant A and B or is a residue of the formula
+<chemistry id="chem0037" num="0037"><img id="ib0037" file="imgb0037.tif" wi="29" he="31" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+in process variant C;</li>
+<li>R<sub>1</sub>, R<sub>2</sub> and R<sub>3</sub> are each independently hydrogen; alkyl of 1 to 12 carbon atoms; hydroxy; alkoxy of 1 to 12 carbon atoms; C<sub>2</sub>-C<sub>8</sub>alkenyl; C<sub>3</sub>-C<sub>18</sub>alkoxy interrupted by O and/or substituted by OH; C<sub>2</sub>-C<sub>18</sub>alkyl or C<sub>2</sub>-C<sub>18</sub>alkoxy, each interrupted by COO or substituted by COOH; halogen; nitro; amino; amino substituted by a C<sub>1</sub>-C<sub>12</sub> hydrocarbon selected from alkyl, phenyl, cycloalkyl; C<sub>2</sub>-C<sub>18</sub>acylamino; C<sub>2</sub>-C<sub>12</sub>alkoxycarbonyl; C<sub>5</sub>-C<sub>12</sub>cycloalkyloxycarbonyl; C<sub>7</sub>-C<sub>15</sub>phenylalkoxycarbonyl; phenyl or phenyl substituted by alkyl of 1 to 12 carbon atoms, hydroxy, alkoxy of 1 to 12 carbon atoms or halogen; and</li>
+<li>X, Y and Z, independently, are as defined for R<sub>1</sub>, R<sub>2</sub> or R<sub>3</sub>, or are phenylalkyl of 7 to 15 carbon atoms;<!-- EPO <DP n="20"> --> which process comprises
+<ul id="ul0005" list-style="none" compact="compact">
+<li>(1.) reacting a compound of the formula
+<chemistry id="chem0038" num="0038"><img id="ib0038" file="imgb0038.tif" wi="30" he="34" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+wherein<br/>
+E is halogen, with a phenolic compound of formula II
+<chemistry id="chem0039" num="0039"><img id="ib0039" file="imgb0039.tif" wi="65" he="32" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+in the presence of a base to form a compound of formula III
+<chemistry id="chem0040" num="0040"><img id="ib0040" file="imgb0040.tif" wi="71" he="50" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+wherein R<sub>11</sub>, R<sub>12</sub> and R<sub>13</sub>, independently, are as defined for R<sub>1</sub>, R<sub>2</sub> or R<sub>3</sub>, and R<sub>11</sub> also may be<br/>
+a residue of the formula
+<chemistry id="chem0041" num="0041"><img id="ib0041" file="imgb0041.tif" wi="64" he="41" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+(variant B); and<br/>
+E<sub>1</sub> is halogen or a residue of the formula
+<chemistry id="chem0042" num="0042"><img id="ib0042" file="imgb0042.tif" wi="39" he="27" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry><!-- EPO <DP n="21"> --></li>
+<li>(2). reacting the compound of formula III neat with a compound of formula IV
+<chemistry id="chem0043" num="0043"><img id="ib0043" file="imgb0043.tif" wi="44" he="24" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+in the presence of an effective amount of a Lewis acid catalyst to give a compound of formula V
+<chemistry id="chem0044" num="0044"><img id="ib0044" file="imgb0044.tif" wi="75" he="61" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+where E' is a residue of the formula
+<chemistry id="chem0045" num="0045"><img id="ib0045" file="imgb0045.tif" wi="82" he="27" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry></li>
+<li>(3). reacting the compound of formula V neat with a compound of formula VI
+<chemistry id="chem0046" num="0046"><img id="ib0046" file="imgb0046.tif" wi="39" he="29" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+in the presence of an effective amount of a protic acid catalyst as the only catalyst to give the compound of formula A.</li>
+</ul></li>
+</ul><!-- EPO <DP n="22"> --></p>
+<p id="p0039" num="0039">Preferably, when G' in formula A is a residue of the formula
+<chemistry id="chem0047" num="0047"><img id="ib0047" file="imgb0047.tif" wi="33" he="28" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+(variants A or B), step 1 is run at -20°C to 100°C, and at least two equivalents of the compound of formula IV are used in step 2, and 1.2 to ten equivalents of compound of formula VI are used per one equivalent of triazine in step 3, and when none of R<sub>1</sub>, R<sub>2</sub> or R<sub>3</sub> in formula II is hydroxy, in step 1 one equivalent of the phenolic compound of formula II (variant A), and when one of R<sub>1</sub>, R<sub>2</sub> or R<sub>3</sub> is hydroxy, in step 1 half an equivalent of the phenolic compound of formula II (variant B) is used to form a compound of formula III
+<chemistry id="chem0048" num="0048"><img id="ib0048" file="imgb0048.tif" wi="80" he="55" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+and when G' in formula A is a residue of the formula
+<chemistry id="chem0049" num="0049"><img id="ib0049" file="imgb0049.tif" wi="33" he="34" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+two equivalents of the phenolic compound of formula II used in step 1 to form a compound of formula VIII<!-- EPO <DP n="23"> -->
+<chemistry id="chem0050" num="0050"><img id="ib0050" file="imgb0050.tif" wi="93" he="69" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+and step 1 run at -20°C to 200°C; at least one equivalent of the compound of formula IV is used in step 2, and 2.4 to twenty equivalents of compound of formula VI are used per one equivalent of triazine in step 3.</p>
+<p id="p0040" num="0040">Especially preferred is a process for preparing a compound of formula A, wherein all 3 phenyl moieties bonded to the triazine ring are the same and are
+<chemistry id="chem0051" num="0051"><img id="ib0051" file="imgb0051.tif" wi="29" he="21" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+or wherein each of G and G' are 4-phenylphenyl or 4-phenylphenyl substituted by alkyl of 1 to 12 carbon atoms, alkoxy of 1 to 12 carbon atoms or halogen.<br/>
+Especially preferred is a process wherein the phenolic compounds of formulae C, II and VI are identical and are of the formula
+<chemistry id="chem0052" num="0052"><img id="ib0052" file="imgb0052.tif" wi="29" he="25" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+Also preferred is a process where the aromatic compound of the formula IV is not a phenol, i.e. none of R<sub>1</sub>, R<sub>2</sub> and R<sub>3</sub> in formula IV is hydroxy; the compound of formula IV is especially preferred as a pure hydrocarbon of 6-20 carbon atoms.</p>
+<p id="p0041" num="0041">More specifically, the process of present invention may be carried out according to the embodiments A, B, C, D, E or F as follows:<!-- EPO <DP n="24"> -->
+<ul id="ul0006" list-style="none" compact="compact">
+<li>A is preferably a process for preparing a compound of formula I
+<chemistry id="chem0053" num="0053"><img id="ib0053" file="imgb0053.tif" wi="82" he="66" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+where
+<ul id="ul0007" list-style="none" compact="compact">
+<li>X is hydrogen, alkyl of 1 to 12 carbon atoms, phenylalkyl of 7 to 15 carbon atoms or halogen, and</li>
+<li>R<sub>1</sub>, R<sub>2</sub> and R<sub>3</sub> are each independently hydrogen, alkyl of 1 to 12 carbon atoms, hydroxy, alkoxy of 1 to 12 carbon atoms, halogen, phenyl or phenyl substituted by alkyl of 1 to 12 carbon atoms, hydroxy, alkoxy of 1 to 12 carbon atoms or halogen,</li>
+</ul>
+which process comprises
+<ol id="ol0001" compact="compact" ol-style="">
+<li>(1). reacting cyanuric chloride with a phenolic compound of formula II
+<chemistry id="chem0054" num="0054"><img id="ib0054" file="imgb0054.tif" wi="47" he="39" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+to form a compound of formula III<!-- EPO <DP n="25"> -->
+<chemistry id="chem0055" num="0055"><img id="ib0055" file="imgb0055.tif" wi="54" he="48" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry></li>
+<li>(2). reacting the compound of formula III with an aromatic hydrocarbon of formula IV
+<chemistry id="chem0056" num="0056"><img id="ib0056" file="imgb0056.tif" wi="53" he="24" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+in the presence of an effective amount of a Lewis acid catalyst to give a compound of formula V
+<chemistry id="chem0057" num="0057"><img id="ib0057" file="imgb0057.tif" wi="79" he="60" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry></li>
+<li>(3). reacting the compound of formula V with a compound of formula VI
+<chemistry id="chem0058" num="0058"><img id="ib0058" file="imgb0058.tif" wi="48" he="34" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry><!-- EPO <DP n="26"> -->
+in the presence of an effective amount of a protic acid catalyst to give the compound of formula I.</li>
+</ol></li>
+<li>B is preferably a process for preparing a compound of formula I
+<chemistry id="chem0059" num="0059"><img id="ib0059" file="imgb0059.tif" wi="85" he="70" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+where
+<ul id="ul0008" list-style="none" compact="compact">
+<li>X is hydrogen, alkyl of 1 to 12 carbon atoms, phenylalkyl of 7 to 15 carbon atoms or halogen, and</li>
+<li>R<sub>1</sub>, R<sub>2</sub> and R<sub>3</sub> are each independently hydrogen, alkyl of 1 to 12 carbon atoms, hydroxy, alkoxy of 1 to 12 carbon atoms, halogen, phenyl or phenyl substituted by alkyl of 1 to 12 carbon atoms, hydroxy, alkoxy of 1 to 12 carbon atoms or halogen,</li>
+</ul>
+which process comprises
+<ol id="ol0002" compact="compact" ol-style="">
+<li>(1). reacting cyanuric chloride with a half equivalent of a resorcinol to form a compound of formula X
+<chemistry id="chem0060" num="0060"><img id="ib0060" file="imgb0060.tif" wi="86" he="58" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry><!-- EPO <DP n="27"> --></li>
+<li>(2). reacting the compound of formula X with an aromatic hydrocarbon of formula IV
+<chemistry id="chem0061" num="0061"><img id="ib0061" file="imgb0061.tif" wi="37" he="26" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+in the presence of an effective amount of a Lewis acid catalyst to give a compound of formula XI
+<chemistry id="chem0062" num="0062"><img id="ib0062" file="imgb0062.tif" wi="111" he="77" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry></li>
+<li>(3). reacting the compound of formula XI with a compound of formula VI
+<chemistry id="chem0063" num="0063"><img id="ib0063" file="imgb0063.tif" wi="53" he="33" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+in the presence of an effective amount of a protic acid catalyst to give the compound of formula I.</li>
+</ol></li>
+<li>C is preferably a process for preparing a compound of formula VII<!-- EPO <DP n="28"> -->
+<chemistry id="chem0064" num="0064"><img id="ib0064" file="imgb0064.tif" wi="100" he="74" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+where
+<ul id="ul0009" list-style="none" compact="compact">
+<li>X is hydrogen, alkyl of 1 to 12 carbon atoms, phenylalkyl of 7 to 15 carbon atoms or halogen, and</li>
+<li>R<sub>1</sub>, R<sub>2</sub> and R<sub>3</sub> are each independently hydrogen, alkyl of 1 to 12 carbon atoms, hydroxy, alkoxy of 1 to 12 carbon atoms, halogen, phenyl or phenyl substituted by alkyl of 1 to 12 carbon atoms, hydroxy, alkoxy of 1 to 12 carbon atoms or halogen,</li>
+</ul>
+which process comprises
+<ol id="ol0003" compact="compact" ol-style="">
+<li>(1). reacting cyanuric chloride with two equivalents of a phenolic compound of the formula II
+<chemistry id="chem0065" num="0065"><img id="ib0065" file="imgb0065.tif" wi="73" he="39" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+to form a compound of formula VIII<!-- EPO <DP n="29"> -->
+<chemistry id="chem0066" num="0066"><img id="ib0066" file="imgb0066.tif" wi="79" he="84" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry></li>
+<li>(2). reacting the compound of formula VIII with an aromatic hydrocarbon of formula IV
+<chemistry id="chem0067" num="0067"><img id="ib0067" file="imgb0067.tif" wi="44" he="23" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+in the presence of an effective amount of a Lewis acid catalyst to give a compound of formula IX
+<chemistry id="chem0068" num="0068"><img id="ib0068" file="imgb0068.tif" wi="70" he="68" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry></li>
+<li>(3). reacting the compound of formula IX with a compound of formula VI<!-- EPO <DP n="30"> -->
+<chemistry id="chem0069" num="0069"><img id="ib0069" file="imgb0069.tif" wi="54" he="42" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+in the presence of an effective amount of a protic acid catalyst to give the compound of formula VII.</li>
+</ol></li>
+</ul></p>
+<p id="p0042" num="0042">In process variants A, B and C, step 1 is carried out in the presence of a base, said base is preferably a hydroxide, carbonate or bicarbonate of sodium, potassium or calcium. most preferably sodium hydroxide, sodium bicarbonate or potassium carbonate.</p>
+<p id="p0043" num="0043">In process variants A, B and C, step 1 is preferably run in acetone, acetone/water or a hydrocarbon. Another embodiment is when step 1 is run in a two-phase system of water and a hydrocarbon solvent, preferably xylene and where the phase transfer agent is a quaternary ammonium salt, a polyether or a poly(ethylene glycol), most preferably a quaternary ammonium salt, which is benzyltrimethylammonium chloride. Another embodiment is when step 1 is run in xylene with a phase transfer catalyst and potassium carbonate base under anhydrous conditions.</p>
+<p id="p0044" num="0044">In process variants A and B, step 1 is usually run at -20°C to 100°C; preferably at - 20°C to 50°C.</p>
+<p id="p0045" num="0045">In process variant C, step 1 is usually run at -20°C to 200°C; preferably at -20°C to 130°C.</p>
+<p id="p0046" num="0046">In process variant A and B, step 1 is preferably run in 10 % water in acetone with sodium hydroxide as base at a temperature of -20°C to 5°C.</p>
+<p id="p0047" num="0047">In process variant C, step 1 is preferably run in 10 % water in acetone with sodium hydroxide as base at a temperature of -20°C to 60°C.<!-- EPO <DP n="31"> --></p>
+<p id="p0048" num="0048">In another embodiment of process variants A and B, step 1 is run in a two-phase system of aromatic hydrocarbon/water with sodium bicarbonate as the base and benzyltrimethylammonium chloride as a phase transfer catalyst at a temperature of -5°C to 10°C.</p>
+<p id="p0049" num="0049">In another embodiment of process variant C, step 1 is run in a two-phase system of aromatic hydrocarbon/water with sodium bicarbonate as the base and benzyltrimethylammonium chloride as phase transfer catalyst at a temperature of -5°C to 110°C.</p>
+<p id="p0050" num="0050">In still another embodiment of process variants A and B, step 1 is run in xylene with benzyltrimethylammonium chloride as catalyst and potassium carbonate as base under anhydrous conditions at a temperature of -10°C to 10°C.</p>
+<p id="p0051" num="0051">In another embodiment of process variant C, step 1 is run in xylene with benzyltrimethylammonium chloride as catalyst and potassium carbonate as base under anhydrous conditions at a temperature of -10°C to 110°C.</p>
+<p id="p0052" num="0052">Still another embodiment of process variants A, B and C, the product of step 1 is not isolated.</p>
+<p id="p0053" num="0053">In process variants A, B and C, in step 2 the Lewis acid usually is aluminum chloride, preferably wherein the aluminum chloride is used in the range of 0.2 to 1.5 equivalents per one equivalent of s-triazine.</p>
+<p id="p0054" num="0054">In process variants A, B and C, step 2 is usually run at a temperature of 0°C to 170°C; especially 70°C to 150°C.</p>
+<p id="p0055" num="0055">In process variants A, B and C, step 2 is conveniently run neat in an excess of aromatic compound of formula IV, preferably where the aromatic compound of formula IV is m-xylene, toluene, benzene, chlorobenzene or biphenyl.</p>
+<p id="p0056" num="0056">In process variants A, B and C, the compound of formula IV is often used in the range of from 2 to 20 molar equivalents per equivalent of triazine of the compound of formula III, X or VIII.<!-- EPO <DP n="32"> --></p>
+<p id="p0057" num="0057">In process variants A, B and C, compounds of formulae III, X or VIII conveniently are not isolated, the Lewis acid is added and the temperature increased, if necessary, to produce the compound of formula V, XI or IX.</p>
+<p id="p0058" num="0058">In process variants A, B and C, in step 3 usually a protic acid is used, which is preferably hydrogen chloride gas or methanesulfonic acid.</p>
+<p id="p0059" num="0059">In process variants A, B and C, step 3 is conveniently carried out using 1.2 to ten equivalents of the compound of formula C or VI, most preferably a resorcinol, per each phenoxy-triazine bond.</p>
+<p id="p0060" num="0060">In process variants A, B and C, step 3 is usually carried out at a temperature of from 25°C to 200°C, preferably from 120°C to 170°C.</p>
+<p id="p0061" num="0061">In process variants A, B and C, in step 3, four equivalents of C or VI, especially a resorcinol, and 1 to 1.5 equivalents of methanesulfonic acid are preferably used per each phenoxy-triazine bond; or four to ten equivalents of C or VI, especially resorcinol, are used per each phenoxy-triazine bond; or 1.2 to 1.5 equivalents of compounds of formulae C or VI, especially resorcinol, and 0.8 to 1.5 equivalents of Lewis acid are used per each phenoxy-triazine bond.</p>
+<p id="p0062" num="0062">In process variants A, B and C, step 3 conveniently may be performed neat.</p>
+<p id="p0063" num="0063">D is preferably a process for preparing a compound of formula XII<!-- EPO <DP n="33"> -->
+<chemistry id="chem0070" num="0070"><img id="ib0070" file="imgb0070.tif" wi="83" he="68" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+where
+<ul id="ul0010" list-style="none" compact="compact">
+<li>X is hydrogen, alkyl of 1 to 12 carbon atoms, phenylalkyl of 7 to 15 carbon atoms or halogen,</li>
+</ul>
+which process comprises<br/>
+reacting cyanuric chloride with a resorcinol of formula VI
+<chemistry id="chem0071" num="0071"><img id="ib0071" file="imgb0071.tif" wi="53" he="35" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+in the presence of an effective amount of a protic acid to form a compound of formula XII.<br/>
+E is preferably a process for the preparing a compound of formula I<!-- EPO <DP n="34"> -->
+<chemistry id="chem0072" num="0072"><img id="ib0072" file="imgb0072.tif" wi="88" he="67" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+where
+<ul id="ul0011" list-style="none" compact="compact">
+<li>X is hydrogen, alkyl of 1 to 12 carbon atoms, phenylalkyl of 7 to 15 carbon atoms or halogen, and</li>
+<li>R<sub>1</sub>, R<sub>2</sub> and R<sub>3</sub> are each independently hydrogen, alkyl of 1 to 12 carbon atoms, hydroxy, alkoxy of 1 to 12 carbon atoms, halogen, phenyl or phenyl substituted by alkyl of 1 to 12 carbon atoms, hydroxy, alkoxy of 1 to 12 carbon atoms or halogen,</li>
+</ul>
+which process comprises reacting a compound of formula XIII
+<chemistry id="chem0073" num="0073"><img id="ib0073" file="imgb0073.tif" wi="87" he="45" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+with a compound of formula VI
+<chemistry id="chem0074" num="0074"><img id="ib0074" file="imgb0074.tif" wi="64" he="31" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+in the presence of an effective amount of a protic acid to form a compound of formula I.<br/>
+F is preferably a process for the preparing a compound of formula XII<!-- EPO <DP n="35"> -->
+<chemistry id="chem0075" num="0075"><img id="ib0075" file="imgb0075.tif" wi="86" he="66" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+where
+<ul id="ul0012" list-style="none" compact="compact">
+<li>X is hydrogen, alkyl of 1 to 12 carbon atoms, phenylalkyl of 7 to 15 carbon atoms or halogen,</li>
+</ul>
+which comprises reacting a compound of formula XV
+<chemistry id="chem0076" num="0076"><img id="ib0076" file="imgb0076.tif" wi="84" he="68" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+where
+<ul id="ul0013" list-style="none" compact="compact">
+<li>R<sub>1</sub>, R<sub>2</sub> and R<sub>3</sub> are each independently hydrogen, alkyl of 1 to 12 carbon atoms, hydroxy, alkoxy of 1 to 12 carbon atoms, halogen, phenyl or phenyl substituted by alkyl of 1 to 12 carbon atoms, hydroxy, alkoxy of 1 to 12 carbon atoms or halogen,</li>
+</ul><!-- EPO <DP n="36"> -->
+with a compound of formula (VI)
+<chemistry id="chem0077" num="0077"><img id="ib0077" file="imgb0077.tif" wi="55" he="34" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+in the presence of an effective amount of a protic acid to form a compound of formula XII.<br/>
+Further compounds obtainable according to present process correspond, for example, to the following formulae (R denoting H or C<sub>1</sub>-C<sub>8</sub>alkoxy, and X, R<sub>1</sub>, R<sub>2</sub> and R<sub>3</sub> are as defined):
+<chemistry id="chem0078" num="0078"><img id="ib0078" file="imgb0078.tif" wi="131" he="47" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry></p>
+<p id="p0064" num="0064">In process variants D, E and F, the reaction is carried out in the melt.</p>
+<p id="p0065" num="0065">In process variants D and E, often no catalyst is added and 1.2 to ten equivalents of the compound of formula VI, especially resorcinol, are used per equivalent of chloride.</p>
+<p id="p0066" num="0066">In process variants D, E and F, often a protic acid catalyst is added which is preferably hydrogen chloride or methanesulfonic acid.</p>
+<p id="p0067" num="0067">In process variants D, E and F, the protic acid catalyst may also be used along with a Lewis acid potentiator at a level of less than 0.25 equivalents of Lewis acid per equivalent of leaving group or phenol.</p>
+<p id="p0068" num="0068">In process variants D, E and F, the reaction is usually carried out at a temperature of from 70°C to 200°C; and most preferably at 100°C to 170°C.<!-- EPO <DP n="37"> --></p>
+<heading id="h0004"><u style="single">Example 1</u></heading>
+<heading id="h0005">2,4,6-Tris-(2,4-dihydroxyphenyl-s-triazine</heading>
+<p id="p0069" num="0069">To a 250 mL round-bottomed flask equipped with a condenser, magnetic stirrer and a nitrogen atmosphere is charged 5.60 g (0.0510 mol) of resorcinol. The stirred resorcinol is heated to 120°C at which point it becomes molten. A 2.08 g (0.0113 mol) portion of cyanuric chloride is added all at once resulting in an immediate evolution of hydrogen chloride gas. After 30 minutes, a portion of water is added and the mixture is refluxed for two hours and then allowed to cool to room temperature. The crude yellow powder (3.52 g) is collected by vacuum filtration. <sup>1</sup>H nmr (DMSO-d<sub>6</sub>) reveals an overall conversion of 50 % to the title compound.</p>
+<heading id="h0006">Alternatively:</heading>
+<p id="p0070" num="0070">To a 250 mL round-bottomed flask equipped with a condenser, magnetic stirrer and a nitrogen atmosphere is added 1.00 g (2.80 mmol) of cyanuric chloride, 5.00 g (45.5 mmol) of resorcinol and 0.21 g (2.2 mmol) of methanesulfonic acid. The molten mixture is stirred at 130°C for 2.5 hours. The mixture is then triturated with hot water and 0.410 g of a brown-red solid is collected by vacuum filtration. <sup>1</sup>H nmr (DMSO-d<sub>6</sub>) reveals the presence of the title compound.</p>
+<heading id="h0007"><u style="single">Example 2</u></heading>
+<heading id="h0008">4,6-Bis-(2,4-dimethylphenyl)-2-phenoxy-s-triazine</heading>
+<p id="p0071" num="0071">To a 1 L four-necked, round-bottomed flask equipped with a mechanical stirrer and an addition funnel is charges 37.5 g (0.203 mol) of cyanuric chloride and 200 mL of m-xylene. The suspension/solution is chilled below 5°C and 34.5 g of sodium bicarbonate, 200 mL of water and 1.4 g of benzyltrimethylammonium chloride are added. The contents of the flask are again cooled below 5°C. A solution of phenol (19.2 g, 0.203 mol) in 100 mL of m-xylene<!-- EPO <DP n="38"> --> is charged to the addition funnel and then added over a 10-minute period to the reaction flask while the temperature is maintained between 1°C and 3°C. The mixture is then stirred at 2-7°C for five hours.</p>
+<p id="p0072" num="0072">The mixture is then warmed to 50°C and the phases are separated. The organic phases is returned to the reaction flask and 32.5 g (0.244 mol) of aluminum chloride are added at 35°C. The mixture is then heated at about 130°C for three hours. The contents are cooled below 120°C and poured into 500 mL of cold 2N hydrochloric acid. The phases are separated and the organic phases is washed twice with water and one with saturated sodium bicarbonate solution. After drying over anhydrous potassium carbonate, the solvent is removed under reduced pressure to afford an oil which crystallized upon cooling. The crude solid is recrystallized from isopropanol to afford 57.7 g (75 % yield) of the title compounds melting at 96-98°C.</p>
+<p id="p0073" num="0073">Examples 3 and 4 below represent some of the various novel methods which can be used to prepare 4,6-bis-(2,4-dimethylphenyl)-2-(2,4-dihydroxyphenyl)-s-triazine.</p>
+<heading id="h0009"><u style="single">Example 3</u></heading>
+<heading id="h0010">4,6-Bis-(2,4-dimethylphenyl)-2-(2,4-dihydroxyphenyl)-s-triazine</heading>
+<p id="p0074" num="0074">To a 50 mL round-bottomed flask equipped with a magnetic stirrer, condenser and nitrogen atmosphere are charged 1.00 g (3.10 mmol) of 4,6-bis-(2,4-dimethylphenyl)-2-chloro-s-triazine and 1.70 g (15.5 mmol) of resorcinol. The mixture is stirred at 180°C for five hours at which point <sup>1</sup>H nmr (CDCl<sub>3</sub>) of an aliquot reveals a 72 % overall conversion to the title compound.<!-- EPO <DP n="39"> --></p>
+<heading id="h0011"><u style="single">Example 4</u></heading>
+<heading id="h0012">4,6-Bis-(2,4-dimethylphenyl)-2-(2,4-dihydroxyphenyl)-s-triazine</heading>
+<p id="p0075" num="0075">A 300 mL three-necked, round-bottomed flask fitted with a magnetic stirrer, an acid trap, a gas inlet and a heat lamp to prevent sublimation is charged with 29.9 g (0.272 mol) of resorcinol and 2.00 g (0.00525 mol) of the product of Example 2. The mixture is heated to 150°C and hydrogen chloride gas is bubbled slowly through the molten mixture for 25 minutes. The mixture is stirred at this temperature for another 4.5 hours and then allowed to cool to room temperature. Portions of water and toluene are added and the mixture is refluxed till the solids are dissolved. The mixture is allowed to cool to room temperature and the layers separated. The organic layer is washed once with water, twice with saturated sodium bicarbonate solution and once with brine. After drying over anhydrous magnesium sulfate and filtering, the solvent is removed under reduced pressure to afford 1.56 g of crude product. Purification by flash chromatography on silica gel with 3:1 heptane:ethyl acetate gives 1.19 g (57 % yield) of the title compound as a yellow solid.</p>
+</description><!-- EPO <DP n="40"> -->
+<claims id="claims01" lang="en">
+<claim id="c-en-01-0001" num="0001">
+<claim-text>A process for preparing a compound of formula A
+<chemistry id="chem0079" num="0079"><img id="ib0079" file="imgb0079.tif" wi="69" he="51" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+wherein
+<claim-text>G and G' each independently are a residue of the formula
+<chemistry id="chem0080" num="0080"><img id="ib0080" file="imgb0080.tif" wi="114" he="34" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry></claim-text>
+<claim-text>R<sub>1</sub>, R<sub>2</sub> and R<sub>3</sub> are each independently hydrogen; alkyl of 1 to 12 carbon atoms; hydroxy; alkoxy of 1 to 12 carbon atoms; C<sub>2</sub>-C<sub>8</sub>alkenyl; C<sub>3</sub>-C<sub>18</sub>alkoxy interrupted by O and/or substituted by OH; C<sub>2</sub>-C<sub>18</sub>alkyl or C<sub>2</sub>-C<sub>18</sub>alkoxy, each interrupted by COO or substituted by COOH; halogen; nitro; SO<sub>3</sub>H; SO<sub>3</sub><sup>-</sup>; CN; amino; amino substituted by a C<sub>1</sub>-C<sub>12</sub> hydrocarbon selected from alkyl, phenyl, cycloalkyl; C<sub>2</sub>-C<sub>18</sub>acylamino; C<sub>2</sub>-C<sub>12</sub>alkoxycarbonyl; C<sub>5</sub>-C<sub>12</sub>cycloalkyloxy-carbonyl; C<sub>7</sub>-C<sub>15</sub>phenylalkoxycarbonyl; phenyl or phenyl substituted by alkyl of 1 to 12 carbon atoms, hydroxy, alkoxy of 1 to 12 carbon atoms or halogen; or R<sub>1</sub> and R<sub>2</sub> stand vicinal and form, together with the carbon atoms they are attached to, a carbocyclic ring of 5 or 6 carbon atoms, or a ring of 4 or 5 carbon atoms and -O-, -N= or -NH-; and</claim-text>
+<claim-text>X, Y and Z, independently, are as defined for R<sub>1</sub>, R<sub>2</sub> or R<sub>3</sub>, or are phenylalkyl of 7 to 15 carbon atoms;</claim-text>
+which process comprises<br/>
+<!-- EPO <DP n="41"> -->reacting a compound of the formula B
+<chemistry id="chem0081" num="0081"><img id="ib0081" file="imgb0081.tif" wi="42" he="33" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+wherein<br/>
+E<sub>1</sub> is a leaving group selected from halogen, C<sub>1</sub>-C<sub>12</sub>alkoxy or
+<chemistry id="chem0082" num="0082"><img id="ib0082" file="imgb0082.tif" wi="46" he="32" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+where R<sub>11</sub>, R<sub>12</sub> and R<sub>13</sub> are as defined for R<sub>1</sub>, R<sub>2</sub> and R<sub>3</sub>, and R<sub>11</sub> also may be a residue of the formula
+<chemistry id="chem0083" num="0083"><img id="ib0083" file="imgb0083.tif" wi="69" he="41" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+E<sub>2</sub> and E<sub>3</sub> are a leaving group as defined for E<sub>1</sub> or are G or G';<br/>
+with a compound of formula C
+<chemistry id="chem0084" num="0084"><img id="ib0084" file="imgb0084.tif" wi="52" he="28" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+in the presence of an effective amount of a protic acid catalyst to give the compound of formula A, whereby the reaction is carried out in the melt.</claim-text></claim>
+<claim id="c-en-01-0002" num="0002">
+<claim-text>Process of claim 1, where in the compounds of formulae A, B and C<br/>
+R<sub>1</sub>, R<sub>2</sub> and R<sub>3</sub> are each independently hydrogen; alkyl of 1 to 12 carbon atoms; alkoxy of 1 to 12 carbon atoms; C<sub>2</sub>-C<sub>8</sub>alkenyl; C<sub>3</sub>-C<sub>18</sub>alkoxy interrupted by O and/or substituted by OH; C<sub>2</sub>-C<sub>18</sub>alkyl or C<sub>2</sub>-C<sub>18</sub>alkoxy, each interrupted by COO or substituted by COOH; halogen; nitro; amino; amino substituted by a C<sub>1</sub>-C<sub>12</sub> hydrocarbon selected from alkyl, phenyl, cycloalkyl; C<sub>2</sub>-C<sub>18</sub>acylamino; C<sub>2</sub>-C<sub>12</sub>alkoxycarbonyl; C<sub>5</sub>-C<sub>12</sub>cycloalkyloxy-carbonyl; C<sub>7</sub>-C<sub>15</sub>phenylalkoxycarbonyl;<!-- EPO <DP n="42"> --> phenyl or phenyl substituted by alkyl of 1 to 12 carbon atoms, hydroxy, alkoxy of 1 to 12 carbon atoms or halogen;<br/>
+R<sub>12</sub> and R<sub>13</sub> are as defined for X and Y, and<br/>
+R<sub>11</sub> is as defined for Z or R<sub>11</sub> also may be a residue of the formula
+<chemistry id="chem0085" num="0085"><img id="ib0085" file="imgb0085.tif" wi="69" he="39" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+X and Y, independently, are hydrogen; alkyl of 1 to 12 carbon atoms; phenylalkyl of 7 to 15 carbon atoms; and<br/>
+Z is in meta-position to OH and is hydroxy; alkoxy of 1 to 12 carbon atoms; C<sub>3</sub>-C<sub>18</sub>alkoxy interrupted by O and/or substituted by OH; C<sub>2</sub>-C<sub>18</sub>alkoxy interrupted by COO or substituted by COOH; halogen; nitro; amino; amino substituted by a C<sub>1</sub>-C<sub>12</sub> hydrocarbon selected from alkyl, phenyl, cycloalkyl; C<sub>2</sub>-C<sub>18</sub>acylamino; C<sub>2</sub>-C<sub>12</sub>alkoxycarbonyl.</claim-text></claim>
+<claim id="c-en-01-0003" num="0003">
+<claim-text>Process of claim 2, where in the compounds of formulae A, B and C<br/>
+X is hydrogen; alkyl of 1 to 12 carbon atoms; phenylalkyl of 7 to 15 carbon atoms or halogen;<br/>
+Y is hydrogen;<br/>
+Z is hydroxy;<br/>
+R<sub>1</sub>, R<sub>2</sub> and R<sub>3</sub> are each independently hydrogen; alkyl of 1 to 12 carbon atoms; hydroxy; alkoxy of 1 to 12 carbon atoms; halogen; phenyl or phenyl substituted by alkyl of 1 to 12 carbon atoms, hydroxy, alkoxy of 1 to 12 carbon atoms or halogen;<br/>
+E<sub>1</sub>, E<sub>2</sub> and/or E<sub>3</sub> as a leaving group in formula B are Cl.</claim-text></claim>
+<claim id="c-en-01-0004" num="0004">
+<claim-text>A process according to claim 1 for preparing a compound of formula I<!-- EPO <DP n="43"> -->
+<chemistry id="chem0086" num="0086"><img id="ib0086" file="imgb0086.tif" wi="83" he="66" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+from a starting compound of formula XIII
+<chemistry id="chem0087" num="0087"><img id="ib0087" file="imgb0087.tif" wi="80" he="47" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+or a compound of formula VII
+<chemistry id="chem0088" num="0088"><img id="ib0088" file="imgb0088.tif" wi="95" he="71" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+from the starting compound of formula XIV<!-- EPO <DP n="44"> -->
+<chemistry id="chem0089" num="0089"><img id="ib0089" file="imgb0089.tif" wi="54" he="56" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+or a compound of formula XII
+<chemistry id="chem0090" num="0090"><img id="ib0090" file="imgb0090.tif" wi="83" he="70" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+from the starting compound of the formula B
+<chemistry id="chem0091" num="0091"><img id="ib0091" file="imgb0091.tif" wi="62" he="33" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+where
+<claim-text>E<sub>1</sub>, E<sub>2</sub> and E<sub>3</sub> each is a leaving group selected from F, Cl and<!-- EPO <DP n="45"> -->
+<chemistry id="chem0092" num="0092"><img id="ib0092" file="imgb0092.tif" wi="41" he="33" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+where R<sub>11</sub>, R<sub>12</sub> and R<sub>13</sub> are as defined for R<sub>1</sub>, R<sub>2</sub> and R<sub>3</sub>, and R<sub>11</sub> also may be a residue of the formula
+<chemistry id="chem0093" num="0093"><img id="ib0093" file="imgb0093.tif" wi="69" he="41" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry></claim-text>
+<claim-text>X is hydrogen; alkyl of 1 to 12 carbon atoms; phenylalkyl of 7 to 15 carbon atoms or halogen; and</claim-text>
+<claim-text>R<sub>1</sub>, R<sub>2</sub> and R<sub>3</sub> are each independently hydrogen; alkyl of 1 to 12 carbon atoms; hydroxy; alkoxy of 1 to 12 carbon atoms; halogen; phenyl or phenyl substituted by alkyl of 1 to 12 carbon atoms, hydroxy, alkoxy of 1 to 12 carbon atoms or halogen;</claim-text>
+which process comprises<br/>
+reacting the starting compound with a resorcinol of formula VI
+<chemistry id="chem0094" num="0094"><img id="ib0094" file="imgb0094.tif" wi="50" he="39" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+in the presence of an effective amount of a protic acid.</claim-text></claim>
+<claim id="c-en-01-0005" num="0005">
+<claim-text>A process according to claim 1 wherein the leaving group E<sub>1</sub>, E<sub>2</sub> and E<sub>3</sub> is Cl.</claim-text></claim>
+<claim id="c-en-01-0006" num="0006">
+<claim-text>A process according to claim 3 or 5 in which no acid catalyst is added to the reaction mixture.<!-- EPO <DP n="46"> --></claim-text></claim>
+<claim id="c-en-01-0007" num="0007">
+<claim-text>A process according to claim 4 in which the amount of resorcinol of formula VI used is<br/>
+one to ten equivalents per equivalent of the compound of formula XIII for the preparation of a compound of the formula I or<br/>
+two to twenty equivalents per equivalent of the compound of formula XIV for the preparation of a compound of the formula VII or<br/>
+three to thirty equivalents per equivalent of the compound of formula B for the preparation of a compound of the formula XII.</claim-text></claim>
+<claim id="c-en-01-0008" num="0008">
+<claim-text>A process according to claim 1 in which the protic acid is a hydrogen halide, sulfuric or a sulfonic acid.</claim-text></claim>
+<claim id="c-en-01-0009" num="0009">
+<claim-text>A process according to claim 1 wherein the catalyst is 0.8 to 20 equivalents of the protic acid and wherein 0 to 0.25 equivalents of Lewis acid are added as a potentiator, each amount per equivalent of leaving group.</claim-text></claim>
+<claim id="c-en-01-0010" num="0010">
+<claim-text>A process according to claim 4 wherein the reaction is carried out at a temperature of 70°C to 200°C.</claim-text></claim>
+<claim id="c-en-01-0011" num="0011">
+<claim-text>A process for preparing a compound of formula A
+<chemistry id="chem0095" num="0095"><img id="ib0095" file="imgb0095.tif" wi="71" he="47" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+wherein
+<claim-text>G is a residue of the formula
+<chemistry id="chem0096" num="0096"><img id="ib0096" file="imgb0096.tif" wi="37" he="28" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+and<!-- EPO <DP n="47"> --></claim-text>
+<claim-text>G' is a residue of the formula
+<chemistry id="chem0097" num="0097"><img id="ib0097" file="imgb0097.tif" wi="80" he="34" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry></claim-text>
+<claim-text>R<sub>1</sub>, R<sub>2</sub> and R<sub>3</sub> are each independently hydrogen; alkyl of 1 to 12 carbon atoms; hydroxy; alkoxy of 1 to 12 carbon atoms; C<sub>2</sub>-C<sub>8</sub>alkenyl; C<sub>3</sub>-C<sub>18</sub>alkoxy interrupted by O and/or substituted by OH; C<sub>2</sub>-C<sub>18</sub>alkyl or C<sub>2</sub>-C<sub>18</sub>alkoxy, each interrupted by COO or substituted by COOH; halogen; nitro; amino; amino substituted by a C<sub>1</sub>-C<sub>12</sub> hydrocarbon selected from alkyl, phenyl, cycloalkyl; C<sub>2</sub>-C<sub>18</sub>acylamino; C<sub>2</sub>-C<sub>12</sub>alkoxycarbonyl; C<sub>5</sub>-C<sub>12</sub>cycloalkyloxycarbonyl; C<sub>7</sub>-C<sub>15</sub>phenylalkoxycarbonyl; phenyl or phenyl substituted by alkyl of 1 to 12 carbon atoms, hydroxy, alkoxy of 1 to 12 carbon atoms or halogen; and</claim-text>
+<claim-text>X, Y and Z, independently, are as defined for R<sub>1</sub>, R<sub>2</sub> or R<sub>3</sub>, or are phenylalkyl of 7 to 15 carbon atoms;</claim-text>
+which process comprises
+<claim-text>(1.) reacting a compound of the formula
+<chemistry id="chem0098" num="0098"><img id="ib0098" file="imgb0098.tif" wi="31" he="31" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+wherein
+<claim-text>E is halogen, with a phenolic compound of formula II
+<chemistry id="chem0099" num="0099"><img id="ib0099" file="imgb0099.tif" wi="64" he="37" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry></claim-text>
+in the presence of a base to form a compound of formula III<!-- EPO <DP n="48"> -->
+<chemistry id="chem0100" num="0100"><img id="ib0100" file="imgb0100.tif" wi="73" he="55" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+wherein R<sub>11</sub>, R<sub>12</sub> and R<sub>13</sub>, independently, are as defined for R<sub>1</sub>, R<sub>2</sub> or R<sub>3</sub>, and R<sub>11</sub> also may be<br/>
+a residue of the formula
+<chemistry id="chem0101" num="0101"><img id="ib0101" file="imgb0101.tif" wi="67" he="38" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+and<br/>
+E<sub>1</sub> is halogen or a residue of the formula
+<chemistry id="chem0102" num="0102"><img id="ib0102" file="imgb0102.tif" wi="39" he="32" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry></claim-text>
+<claim-text>(2). reacting the compound of formula III neat with an excess of a compound of formula IV
+<chemistry id="chem0103" num="0103"><img id="ib0103" file="imgb0103.tif" wi="37" he="24" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+in the presence of an effective amount of a Lewis acid catalyst to give a compound of formula V<!-- EPO <DP n="49"> -->
+<chemistry id="chem0104" num="0104"><img id="ib0104" file="imgb0104.tif" wi="74" he="62" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+where E' is a residue of the formula
+<chemistry id="chem0105" num="0105"><img id="ib0105" file="imgb0105.tif" wi="77" he="31" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry></claim-text>
+<claim-text>(3). reacting the compound of formula V neat with a compound of formula VI
+<chemistry id="chem0106" num="0106"><img id="ib0106" file="imgb0106.tif" wi="53" he="31" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+in the presence of an effective amount of a protic acid catalyst as the only catalyst to give the compound of formula A.</claim-text></claim-text></claim>
+<claim id="c-en-01-0012" num="0012">
+<claim-text>A process according to claim 11 wherein when G' in formula A is a residue of the formula
+<chemistry id="chem0107" num="0107"><img id="ib0107" file="imgb0107.tif" wi="35" he="26" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+step 1 is run at -20°C to 100°C, and at least two equivalents of the compound of formula IV are used in step 2, and 1.2 to ten equivalents of the compound of formula VI are used per one equivalent of triazine in step 3, and when none of R<sub>1</sub>, R<sub>2</sub> or R<sub>3</sub> in formula II is hydroxy, in step 1 one equivalent of the phenolic compound of formula II, and when one of R<sub>1</sub>, R<sub>2</sub> or R<sub>3</sub> is hydroxy, in step 1 half<!-- EPO <DP n="50"> --> an equivalent of the phenolic compound of formula II is used to form a compound of formula III
+<chemistry id="chem0108" num="0108"><img id="ib0108" file="imgb0108.tif" wi="62" he="58" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+and when G' in formula A is a residue of the formula
+<chemistry id="chem0109" num="0109"><img id="ib0109" file="imgb0109.tif" wi="30" he="32" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+two equivalents of the phenolic compound of formula II used in step 1 to form a compound of formula VIII
+<chemistry id="chem0110" num="0110"><img id="ib0110" file="imgb0110.tif" wi="107" he="74" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+and step 1 run at -20°C to 200°C; 2.4 to twenty equivalents of the compound of formula VI are used per one equivalent of triazine in step 3.</claim-text></claim>
+<claim id="c-en-01-0013" num="0013">
+<claim-text>A process according to claim 11 wherein the phenolic compound of formula II and the compound of formula VI are identical and are of the formula
+<chemistry id="chem0111" num="0111"><img id="ib0111" file="imgb0111.tif" wi="29" he="27" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry></claim-text></claim>
+</claims><!-- EPO <DP n="51"> -->
+<claims id="claims02" lang="de">
+<claim id="c-de-01-0001" num="0001">
+<claim-text>Verfahren zur Herstellung einer Verbindung der Formel A
+<chemistry id="chem0112" num="0112"><img id="ib0112" file="imgb0112.tif" wi="67" he="45" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+worin
+<claim-text>G und G' jeweils unabhängig einen Rest der Formel
+<chemistry id="chem0113" num="0113"><img id="ib0113" file="imgb0113.tif" wi="75" he="29" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+darstellen;</claim-text>
+<claim-text>R<sub>1</sub>, R<sub>2</sub> und R<sub>3</sub> jeweils unabhängig darstellen Wasserstoff; Alkyl mit 1 bis 12 Kohlenstoff-Atomen; Hydroxy; Alkoxy mit 1 bis 12 Kohlenstoff-Atomen; C<sub>2</sub>-C<sub>8</sub>-Alkenyl; C<sub>3</sub>-C<sub>18</sub>-Alkoxy, unterbrochen durch O und/oder substituiert mit OH; C<sub>2</sub>-C<sub>18</sub>-Alkyl oder C<sub>2</sub>-C<sub>18</sub>-Alkoxy, jeweils unterbrochen durch COO oder substituiert mit COOH; Halogen; Nitro; SO<sub>3</sub>H; SO<sub>3</sub><sup>-</sup>; CN; Amino; Amino, substituiert mit einem C<sub>1</sub>-C<sub>12</sub>-Kohlenwasserstoff, ausgewählt aus Alkyl, Phenyl, Cycloalkyl; C<sub>2</sub>-C<sub>18</sub>-Acylamino; C<sub>2</sub>-C<sub>12</sub>-Alkoxycarbonyl; C<sub>5</sub>-C<sub>12</sub>-Cycloalkyloxy-carbonyl; C<sub>7</sub>-C<sub>15</sub>-Phenylalkoxycarbonyl; Phenyl oder Phenyl, substituiert mit Alkyl mit 1 bis 12 Kohlenstoff-Atomen, Hydroxy, Alkoxy mit 1 bis 12 Kohlenstoff-Atomen oder Halogen; oder R<sub>1</sub> und R<sub>2</sub> vicinal stehen und zusammen mit den Kohlenstoff-Atomen, an die sie gebunden sind, einen carbocyclischen Ring mit 5 oder 6 Kohlenstoff-Atomen, oder einen Ring mit 4 oder 5 Kohlenstoff-Atomen und -O-, -N= oder -NH- bilden; und<!-- EPO <DP n="52"> --></claim-text>
+<claim-text>X, Y und Z unabhängig wie für R<sub>1</sub>, R<sub>2</sub> oder R<sub>3</sub> definiert sind, oder Phenylalkyl mit 7 bis 15 Kohlenstoff-Atomen darstellen; wobei das Verfahren umfasst</claim-text>
+<claim-text>Umsetzen einer Verbindung der Formel B
+<chemistry id="chem0114" num="0114"><img id="ib0114" file="imgb0114.tif" wi="46" he="31" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry></claim-text>
+<claim-text>worin E<sub>1</sub> eine Abgangs-Gruppe darstellt, ausgewählt aus Halogen, C<sub>1</sub>-C<sub>12</sub>-Alkoxy oder
+<chemistry id="chem0115" num="0115"><img id="ib0115" file="imgb0115.tif" wi="35" he="25" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+worin R<sub>11</sub>, R<sub>12</sub> und R<sub>13</sub> wie für R<sub>1</sub>, R<sub>2</sub> und R<sub>3</sub> definiert sind, und R<sub>11</sub> auch einen Rest der Formel
+<chemistry id="chem0116" num="0116"><img id="ib0116" file="imgb0116.tif" wi="67" he="40" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+darstellen kann,</claim-text>
+<claim-text>E<sub>2</sub> und E<sub>3</sub> eine Abgangs-Gruppe, wie für E<sub>1</sub> definiert, darstellen oder G oder G' darstellen;</claim-text>
+mit einer Verbindung der Formel C
+<chemistry id="chem0117" num="0117"><img id="ib0117" file="imgb0117.tif" wi="47" he="27" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+in Gegenwart einer wirksamen Menge von einem protischen SäureKatalysator, um die Verbindung der Formel A zu ergeben, wobei die Reaktion in der Schmelze ausgeführt wird.</claim-text></claim>
+<claim id="c-de-01-0002" num="0002">
+<claim-text>Verfahren nach Anspruch 1, wobei in den Verbindungen der Formeln A, B und C<br/>
+R<sub>1</sub>, R<sub>2</sub> und R<sub>3</sub> jeweils unabhängig darstellen Wasserstoff; Alkyl mit 1 bis 12 Kohlenstoff-Atomen; Alkoxy mit 1 bis 12 Kohlenstoff-Atomen; C<sub>2</sub>-C<sub>8</sub>-Alkenyl; C<sub>3</sub>-C<sub>18</sub>-Alkoxy, unterbrochen durch O und/oder substituiert mit OH; C<sub>2</sub>-C<sub>18</sub>-Alkyl oder C<sub>2</sub>-C<sub>18</sub>-Alkoxy, jeweils<!-- EPO <DP n="53"> --> unterbrochen durch COO oder substituiert mit COOH; Halogen; Nitro; Amino; Amino, substituiert mit einem C<sub>1</sub>-C<sub>12</sub>-Kohlenwasserstoff, ausgewählt aus Alkyl, Phenyl, Cycloalkyl; C<sub>2</sub>-C<sub>18</sub>-Acylamino; C<sub>2</sub>-C<sub>12</sub>-Alkoxycarbonyl; C<sub>5</sub>-C<sub>12</sub>-Cycloalkyloxy-carbonyl; C<sub>7</sub>-C<sub>15</sub>-Phenylalkoxycarbonyl; Phenyl oder Phenyl, substituiert mit Alkyl mit 1 bis 12 Kohlenstoff-Atomen, Hydroxy, Alkoxy mit 1 bis 12 Kohlenstoff-Atomen oder Halogen;<br/>
+R<sub>12</sub> und R<sub>13</sub> wie für X und Y definiert sind, und<br/>
+R<sub>11</sub> wie für Z definiert ist oder R<sub>11</sub> auch einen Rest der Formel
+<chemistry id="chem0118" num="0118"><img id="ib0118" file="imgb0118.tif" wi="68" he="39" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+darstellen kann;<br/>
+X und Y unabhängig Wasserstoff; Alkyl mit 1 bis 12 Kohlenstoff-Atomen; Phenylalkyl mit 7 bis 15 Kohlenstoff-Atomen darstellen; und<br/>
+Z in meta-Position zu OH vorliegt und darstellt Hydroxy; Alkoxy mit 1 bis 12 Kohlenstoff-Atomen; C<sub>3</sub>-C<sub>18</sub>-Alkoxy, unterbrochen durch O und/oder substituiert mit OH; C<sub>2</sub>-C<sub>18</sub>-Alkoxy, unterbrochen durch COO oder substituiert mit COOH; Halogen; Nitro; Amino; Amino, substituiert mit einem C<sub>1</sub>-C<sub>12</sub>-Kohlenwasserstoff, ausgewählt aus Alkyl, Phenyl, Cycloalkyl; C<sub>2</sub>-C<sub>18</sub>-Acylamino; C<sub>2</sub>-C<sub>12</sub>-Alkoxycarbonyl.</claim-text></claim>
+<claim id="c-de-01-0003" num="0003">
+<claim-text>Verfahren nach Anspruch 2, wobei in den Verbindungen der Formeln A, B und C<br/>
+X Wasserstoff; Alkyl mit 1 bis 12 Kohlenstoff-Atomen; Phenylalkyl mit 7 bis 15 Kohlenstoff-Atomen oder Halogen darstellt;<br/>
+Y Wasserstoff darstellt;<br/>
+Z Hydroxy darstellt;<br/>
+R<sub>1</sub>, R<sub>2</sub> und R<sub>3</sub> jeweils unabhängig darstellen Wasserstoff; Alkyl mit 1 bis 12 Kohlenstoff-Atomen; Hydroxy; Alkoxy mit 1 bis 12 Kohlenstoff-Atomen; Halogen; Phenyl oder Phenyl, substituiert<!-- EPO <DP n="54"> --> mit Alkyl mit 1 bis 12 Kohlenstoff-Atomen, Hydroxy, Alkoxy mit 1 bis 12 Kohlenstoff-Atomen oder Halogen;<br/>
+E<sub>1</sub>, E<sub>2</sub> und/oder E<sub>3</sub> als eine Abgangs-Gruppe in der Formel B Cl darstellen.</claim-text></claim>
+<claim id="c-de-01-0004" num="0004">
+<claim-text>Verfahren nach Anspruch 1 zur Herstellung einer Verbindung der Formel I
+<chemistry id="chem0119" num="0119"><img id="ib0119" file="imgb0119.tif" wi="73" he="57" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+aus einer Ausgangs-Verbindung der Formel XIII
+<chemistry id="chem0120" num="0120"><img id="ib0120" file="imgb0120.tif" wi="75" he="37" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+oder einer Verbindung der Formel VII
+<chemistry id="chem0121" num="0121"><img id="ib0121" file="imgb0121.tif" wi="82" he="57" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+aus der Ausgangs-Verbindung der Formel XIV<!-- EPO <DP n="55"> -->
+<chemistry id="chem0122" num="0122"><img id="ib0122" file="imgb0122.tif" wi="45" he="45" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+oder einer Verbindung der Formel XII
+<chemistry id="chem0123" num="0123"><img id="ib0123" file="imgb0123.tif" wi="74" he="56" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+aus der Ausgangs-Verbindung der Formel B
+<chemistry id="chem0124" num="0124"><img id="ib0124" file="imgb0124.tif" wi="59" he="28" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+worin<br/>
+E<sub>1</sub>, E<sub>2</sub> und E<sub>3</sub> jeweils eine Abgangs-Gruppe darstellt, ausgewählt aus F, Cl und
+<chemistry id="chem0125" num="0125"><img id="ib0125" file="imgb0125.tif" wi="41" he="27" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+worin R<sub>11</sub>, R<sub>12</sub> und R<sub>13</sub> wie für R<sub>1</sub>, R<sub>2</sub> und R<sub>3</sub> definiert sind, und R<sub>11</sub>, auch einen Rest der Formel
+<chemistry id="chem0126" num="0126"><img id="ib0126" file="imgb0126.tif" wi="69" he="39" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+darstellen kann;<br/>
+X Wasserstoff; Alkyl mit 1 bis 12 Kohlenstoff-Atomen; Phenylalkyl mit 7 bis 15 Kohlenstoff-Atomen oder Halogen darstellt; und<!-- EPO <DP n="56"> --> R<sub>1</sub>, R<sub>2</sub> und R<sub>3</sub> jeweils unabhängig darstellen Wasserstoff; Alkyl mit 1 bis 12 Kohlenstoff-Atomen; Hydroxy; Alkoxy mit 1 bis 12 Kohlenstoff-Atomen; Halogen; Phenyl oder Phenyl, substituiert mit Alkyl mit 1 bis 12 Kohlenstoff-Atomen, Hydroxy, Alkoxy mit 1 bis 12 Kohlenstoff-Atomen oder Halogen;<br/>
+wobei das Verfahren umfasst<br/>
+Umsetzen der Ausgangs-Verbindung mit einem Resorcin der Formel VI
+<chemistry id="chem0127" num="0127"><img id="ib0127" file="imgb0127.tif" wi="35" he="29" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+in Gegenwart einer wirksamen Menge von einer protischen Säure.</claim-text></claim>
+<claim id="c-de-01-0005" num="0005">
+<claim-text>Verfahren nach Anspruch 1, wobei die Abgangs-Gruppe E<sub>1</sub>, E<sub>2</sub> und E<sub>3</sub> Cl darstellt.</claim-text></claim>
+<claim id="c-de-01-0006" num="0006">
+<claim-text>Verfahren nach Anspruch 3 oder 5, wobei kein Säure-Katalysator zu dem Reaktions-Gemisch gegeben wird.</claim-text></claim>
+<claim id="c-de-01-0007" num="0007">
+<claim-text>Verfahren nach Anspruch 4, wobei die Menge an verwendetem Resorcin der Formel VI<br/>
+ein bis zehn Äquivalente pro Äquivalent der Verbindung der Formel XIII für die Herstellung von einer Verbindung der Formel I oder<br/>
+zwei bis zwanzig Äquivalente pro Äquivalent der Verbindung der Formel XIV für die Herstellung von einer Verbindung der Formel VII oder<br/>
+drei bis dreißig Äquivalente pro Äquivalent der Verbindung der Formel B für die Herstellung von einer Verbindung der Formel XII ist.</claim-text></claim>
+<claim id="c-de-01-0008" num="0008">
+<claim-text>Verfahren nach Anspruch 1, wobei die protische Säure eine Halogenwasserstoff-, Schwefel- oder eine Sulfonsäure ist.<!-- EPO <DP n="57"> --></claim-text></claim>
+<claim id="c-de-01-0009" num="0009">
+<claim-text>Verfahren nach Anspruch 1, wobei der Katalysator 0,8 bis 20 Äquivalente von der protische Säure ist und wobei 0 bis 0,25 Äquivalente an Lewis-Säure als ein Potenziator, jede Menge pro Äquivalent Abgangs-Gruppe, zugegeben werden.</claim-text></claim>
+<claim id="c-de-01-0010" num="0010">
+<claim-text>Verfahren nach Anspruch 4, wobei die Reaktion bei einer Temperatur von 70°C bis 200°C ausgeführt wird.</claim-text></claim>
+<claim id="c-de-01-0011" num="0011">
+<claim-text>Verfahren zur Herstellung einer Verbindung der Formel A
+<chemistry id="chem0128" num="0128"><img id="ib0128" file="imgb0128.tif" wi="65" he="44" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+worin
+<claim-text>G einen Rest der Formel
+<chemistry id="chem0129" num="0129"><img id="ib0129" file="imgb0129.tif" wi="28" he="27" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+darstellt, und</claim-text>
+<claim-text>G' einen Rest der Formel
+<chemistry id="chem0130" num="0130"><img id="ib0130" file="imgb0130.tif" wi="71" he="32" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+darstellt,</claim-text>
+<claim-text>R<sub>1</sub>, R<sub>2</sub> und R<sub>3</sub> jeweils unabhängig darstellen Wasserstoff; Alkyl mit 1 bis 12 Kohlenstoff-Atomen; Hydroxy; Alkoxy mit 1 bis 12 Kohlenstof f-Atomen; C<sub>2</sub>-C<sub>8</sub>-Alkenyl; C<sub>3</sub>-C<sub>18</sub>-Alkoxy, unterbrochen durch O und/oder substituiert mit OH; C<sub>2</sub>-C<sub>18</sub>-Alkyl oder C<sub>2</sub>-C<sub>18</sub>-Alkoxy, jeweils unterbrochen durch COO oder substituiert mit COOH; Halogen; Nitro; Amino; Amino, substituiert mit einem C<sub>1</sub>-C<sub>12</sub>-Kohlenwasserstoff, ausgewählt aus Alkyl, Phenyl, Cycloalkyl; C<sub>2</sub>-C<sub>18</sub>-Acylamino; C<sub>2</sub>-C<sub>12</sub>-Alkoxycarbonyl; C<sub>5</sub>-C<sub>12</sub>-Cycloalkyloxycarbonyl; C<sub>7</sub>-C<sub>15</sub>-Phenylalkoxycarbonyl; Phenyl oder Phenyl, substituiert mit Alkyl mit 1 bis 12 Kohlenstoff-Atomen, Hydroxy, Alkoxy mit 1 bis 12 Kohlenstoff-Atomen oder Halogen; und<!-- EPO <DP n="58"> --></claim-text>
+<claim-text>X, Y und Z unabhängig wie für R<sub>1</sub>, R<sub>2</sub> oder R<sub>3</sub> definiert sind, oder Phenylalkyl mit 7 bis 15 Kohlenstoff-Atomen darstellen;</claim-text>
+wobei das Verfahren umfasst
+<claim-text>(1.) Umsetzen einer Verbindung der Formel
+<chemistry id="chem0131" num="0131"><img id="ib0131" file="imgb0131.tif" wi="34" he="30" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+worin
+<claim-text>E Halogen darstellt, mit einer phenolischen Verbindung der Formel II
+<chemistry id="chem0132" num="0132"><img id="ib0132" file="imgb0132.tif" wi="49" he="29" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+in Gegenwart von einer Base, um eine Verbindung der Formel III zu bilden
+<chemistry id="chem0133" num="0133"><img id="ib0133" file="imgb0133.tif" wi="59" he="46" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+worin R<sub>11</sub>, R<sub>12</sub> und R<sub>13</sub> unabhängig wie für R<sub>1</sub>, R<sub>2</sub> oder R<sub>3</sub> definiert sind, und R<sub>11</sub> auch einen Rest der Formel
+<chemistry id="chem0134" num="0134"><img id="ib0134" file="imgb0134.tif" wi="67" he="41" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+darstellen kann; und</claim-text>
+<claim-text>E<sub>1</sub> Halogen oder einen Rest der Formel
+<chemistry id="chem0135" num="0135"><img id="ib0135" file="imgb0135.tif" wi="35" he="29" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+darstellt;</claim-text><!-- EPO <DP n="59"> --></claim-text>
+<claim-text>(2). Umsetzen der Verbindung der Formel III unverdünnt mit einem Überschuss von einer Verbindung der Formel IV
+<chemistry id="chem0136" num="0136"><img id="ib0136" file="imgb0136.tif" wi="39" he="23" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+in Gegenwart einer wirksamen Menge von einem Lewis-Säure-Katalysator, um eine Verbindung der Formel V zu ergeben,
+<chemistry id="chem0137" num="0137"><img id="ib0137" file="imgb0137.tif" wi="66" he="52" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+worin E' einen Rest der Formel
+<chemistry id="chem0138" num="0138"><img id="ib0138" file="imgb0138.tif" wi="74" he="27" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+darstellt;</claim-text>
+<claim-text>(3). Umsetzen der Verbindung der Formel V unverdünnt mit einer Verbindung der Formel VI
+<chemistry id="chem0139" num="0139"><img id="ib0139" file="imgb0139.tif" wi="50" he="24" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+in Gegenwart einer wirksamen Menge von einem protischen SäureKatalysator als dem einzigen Katalysator, um eine Verbindung der Formel A zu ergeben.</claim-text></claim-text></claim>
+<claim id="c-de-01-0012" num="0012">
+<claim-text>Verfahren nach Anspruch 11, wobei<!-- EPO <DP n="60"> --> wenn G' in Formel A einen Rest der Formel
+<chemistry id="chem0140" num="0140"><img id="ib0140" file="imgb0140.tif" wi="30" he="24" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+darstellt, Schritt 1 bei -20°C bis 100°C ausgeführt wird, und mindestens zwei Äquivalente der Verbindung der Formel IV in Schritt 2 verwendet werden, und 1,2 bis zehn Äquivalente der Verbindung der Formel VI pro ein Äquivalent von Triazin in Schritt 3 verwendet werden, und wenn keiner von R<sub>1</sub>, R<sub>2</sub> oder R<sub>3</sub> in Formel II Hydroxy darstellt, in Schritt 1 ein Äquivalent der phenolischen Verbindung der Formel II, und wenn einer von R<sub>1</sub>, R<sub>2</sub> oder R<sub>3</sub> Hydroxy darstellt, in Schritt 1 die Hälfte von einem Äquivalent der phenolischen Verbindung der Formel II verwendet wird, um eine Verbindung der Formel III
+<chemistry id="chem0141" num="0141"><img id="ib0141" file="imgb0141.tif" wi="47" he="42" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+zu bilden; und wenn G' in Formel A einen Rest der Formel
+<chemistry id="chem0142" num="0142"><img id="ib0142" file="imgb0142.tif" wi="26" he="30" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+darstellt, zwei Äquivalente von der phenolischen Verbindung der Formel II in Schritt 1 verwendet werden, um eine Verbindung der Formel VIII<!-- EPO <DP n="61"> -->
+<chemistry id="chem0143" num="0143"><img id="ib0143" file="imgb0143.tif" wi="91" he="74" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+zu bilden;<br/>
+und Schritt 1 bei -20°C bis 200°C abläuft; 2,4 bis zwanzig Äquivalente der Verbindung der Formel VI pro ein Äquivalent Triazin in Schritt 3 verwendet werden.</claim-text></claim>
+<claim id="c-de-01-0013" num="0013">
+<claim-text>Verfahren nach Anspruch 11, wobei die phenolische Verbindung der Formel II und die Verbindung der Formel VI identisch sind und die Formel
+<chemistry id="chem0144" num="0144"><img id="ib0144" file="imgb0144.tif" wi="33" he="31" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+darstellen.</claim-text></claim>
+</claims><!-- EPO <DP n="62"> -->
+<claims id="claims03" lang="fr">
+<claim id="c-fr-01-0001" num="0001">
+<claim-text>Procédé de préparation d'un composé de formule A
+<chemistry id="chem0145" num="0145"><img id="ib0145" file="imgb0145.tif" wi="69" he="45" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+dans laquelle
+<claim-text>G et G' sont chacun indépendamment un résidu de formule
+<chemistry id="chem0146" num="0146"><img id="ib0146" file="imgb0146.tif" wi="78" he="34" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry></claim-text>
+<claim-text>R<sub>1</sub>, R<sub>2</sub> et R<sub>3</sub> sont chacun indépendamment un atome d'hydrogène ; un groupe alkyle de 1 à 12 atomes de carbone ; hydroxy ; alcoxy de 1 à 12 atomes de carbone ; alcényle en C<sub>2</sub> à C<sub>8</sub> ; alcoxy en C<sub>3</sub> à C<sub>18</sub> interrompu par O et/ou substitué par OH ; alkyle en C<sub>2</sub> à C<sub>18</sub> ou alcoxy en C<sub>2</sub> à C<sub>18</sub>, chacun interrompu par COO ou substitué par COOH ; un atome d'halogène ; un groupe nitro ; SO<sub>3</sub>H ; SO<sub>3</sub><sup>-</sup> ; CN ; amino ; amino substitué par un hydrocarbure en C<sub>1</sub> à C<sub>12</sub> choisi parmi alkyle, phényle, cycloalkyle ; acylamino en C<sub>2</sub> à C<sub>18</sub> ; alcoxycarbonyle en C<sub>2</sub> à C<sub>12</sub> ; cycloalkyloxy en C<sub>5</sub> à C<sub>12</sub>-carbonyle; phénylalcoxycarbonyle en C<sub>7</sub> à C<sub>15</sub> ; phényle ou phényle substitué par alkyle de 1 à 12 atomes de carbone, hydroxy, alcoxy de 1 à 12 atomes de carbone ou un atome d'halogène ; ou bien R<sub>1</sub> et R<sub>2</sub> sont viscinaux et forment, conjointement avec les atomes de carbone auxquels ils sont attachés, un cycle carbocyclique de 5 ou 6 atomes de carbone, ou un cycle de 4 ou 5 atomes de carbone et -O-, -N= ou -NH- ; et</claim-text>
+<claim-text>X, Y et Z, indépendamment, sont tels que définis pour R<sub>1</sub>, R<sub>2</sub> ou R<sub>3</sub>, ou sont un groupe phénylalkyle de 7 à 15 atomes de carbone ;</claim-text>
+lequel procédé comprend<br/>
+<!-- EPO <DP n="63"> -->la réaction d'un composé de formule B
+<chemistry id="chem0147" num="0147"><img id="ib0147" file="imgb0147.tif" wi="38" he="34" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+dans laquelle
+<claim-text>E<sub>1</sub> est un groupe partant choisi parmi un atome d'halogène, un groupe alcoxy en C<sub>1</sub> à C<sub>12</sub> ou
+<chemistry id="chem0148" num="0148"><img id="ib0148" file="imgb0148.tif" wi="34" he="23" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry></claim-text>
+<claim-text>où R<sub>11</sub>, R<sub>12</sub> et R<sub>13</sub> sont tels que définis pour R<sub>1</sub>, R<sub>2</sub> et R<sub>3</sub>, et R<sub>11</sub> peut également être un résidu de formule
+<chemistry id="chem0149" num="0149"><img id="ib0149" file="imgb0149.tif" wi="68" he="40" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry></claim-text>
+<claim-text>E<sub>2</sub> et E<sub>3</sub> sont un groupe partant tel que défini pour E<sub>1</sub> ou sont G ou G' ;</claim-text>
+avec un composé de formule C
+<chemistry id="chem0150" num="0150"><img id="ib0150" file="imgb0150.tif" wi="54" he="26" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+en présence d'une quantité efficace d'un catalyseur acide protique pour donner le composé de formule A, moyennant quoi la réaction est réalisée dans la matière fondue.</claim-text></claim>
+<claim id="c-fr-01-0002" num="0002">
+<claim-text>Procédé selon la revendication 1, dans lequel dans les composés de formules A, B et C<br/>
+R<sub>1</sub>, R<sub>2</sub> et R<sub>3</sub> sont chacun indépendamment un atome d'hydrogène ; un groupe alkyle de 1 à 12 atomes de carbone, alcoxy de 1 à 12 atomes de carbone ; alcényle en C<sub>2</sub> à C<sub>8</sub> ; alcoxy en C<sub>3</sub> à C<sub>18</sub> interrompu par O et/ou substitué par OH ; alkyle en C<sub>2</sub> à C<sub>18</sub> ou alcoxy en C<sub>2</sub> à C<sub>18</sub>, chacun interrompu par COO ou substitué par COOH ; un atome d'halogène ; un groupe nitro ; amino ; amino substitué par un hydrocarbure en C<sub>1</sub> à C<sub>12</sub> choisi parmi alkyle, phényle, cycloalkyle ; acylamino en C<sub>2</sub> à C<sub>18</sub> ; alcoxycarbonyle en C<sub>2</sub> à C<sub>12</sub> ; cycloalkyloxy en C<sub>5</sub> à C<sub>12</sub>-carbonyle ; phénylalcoxycarbonyle en C<sub>7</sub> à C<sub>15</sub> ; phényle ou phényle substitué par un alkyle de 1<!-- EPO <DP n="64"> --> à 12 atomes de carbone, par un hydroxy, par un alcoxy de 1 à 12 atomes de carbone ou par un atome d'halogène ;<br/>
+R<sub>12</sub> et R<sub>13</sub> sont tels que définis pour X et Y ; et<br/>
+R<sub>11</sub> est tel que défini pour Z ou R<sub>11</sub> peut également être un résidu de formule
+<chemistry id="chem0151" num="0151"><img id="ib0151" file="imgb0151.tif" wi="70" he="39" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+X et Y, indépendamment, sont un atome d'hydrogène ; un groupe alkyle de 1 à 12 atomes de carbone ; phénylalkyle de 7 à 15 atomes de carbone ; et<br/>
+Z est en position méta par rapport à OH et est un groupe hydroxy ; alcoxy de 1 à 12 atomes de carbone ; alcoxy en C<sub>3</sub> à C<sub>18</sub> interrompu par O et/ou substitué par OH ; alcoxy en C<sub>2</sub> à C<sub>18</sub> interrompu par COO ou substitué par COOH ; un atome d'halogène ; un groupe nitro ; amino ; amino substitué par un hydrocarbure en C<sub>1</sub> à C<sub>12</sub> choisi parmi alkyle, phényle, cycloalkyle ; acylamino en C<sub>2</sub> à C<sub>18</sub> ; alcoxycarbonyle en C<sub>2</sub> à C<sub>12</sub>.</claim-text></claim>
+<claim id="c-fr-01-0003" num="0003">
+<claim-text>Procédé selon la revendication 2, dans lequel, dans les composés de formules A, B et C<br/>
+X est un atome d'hydrogène ; un groupe alkyle de 1 à 12 atomes de carbone ; phénylalkyle de 7 à 15 atomes de carbone ou un atome d'halogène ;<br/>
+Y est un atome d'hydrogène ;<br/>
+Z est un groupe hydroxy ;<br/>
+R<sub>1</sub>, R<sub>2</sub> et R<sub>3</sub> sont chacun indépendamment un atome d'hydrogène ; un groupe<br/>
+alkyle de 1 à 12 atomes de carbone ; un groupe hydroxy ; un groupe alcoxy de 1 à 12 atomes de carbone; un atome d'halogène; un groupe phényle ou phényle substitué par un alkyle de 1 à 12 atomes de carbone, par un hydroxy, par un alcoxy de 1 à 12 atomes de carbone ou par un atome d'halogène ;<br/>
+E<sub>1</sub>, E<sub>2</sub> et/ou E<sub>3</sub> en tant que groupe partant dans la formule B sont Cl.</claim-text></claim>
+<claim id="c-fr-01-0004" num="0004">
+<claim-text>Procédé selon la revendication 1 pour préparer un composé de formule 1<!-- EPO <DP n="65"> -->
+<chemistry id="chem0152" num="0152"><img id="ib0152" file="imgb0152.tif" wi="80" he="62" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+à partir d'un composé de départ de formule XIII
+<chemistry id="chem0153" num="0153"><img id="ib0153" file="imgb0153.tif" wi="86" he="44" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+ou un composé de formule VII
+<chemistry id="chem0154" num="0154"><img id="ib0154" file="imgb0154.tif" wi="97" he="70" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+à partir du composé de départ de formule XIV<!-- EPO <DP n="66"> -->
+<chemistry id="chem0155" num="0155"><img id="ib0155" file="imgb0155.tif" wi="59" he="58" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+ou un composé de formule XII
+<chemistry id="chem0156" num="0156"><img id="ib0156" file="imgb0156.tif" wi="80" he="60" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+à partir du composé de départ de formule B
+<chemistry id="chem0157" num="0157"><img id="ib0157" file="imgb0157.tif" wi="66" he="29" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+où
+<claim-text>E<sub>1</sub>, E<sub>2</sub> et E<sub>3</sub> sont chacun un groupe partant choisi parmi F, Cl et
+<chemistry id="chem0158" num="0158"><img id="ib0158" file="imgb0158.tif" wi="44" he="32" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry></claim-text>
+<claim-text>où R<sub>11</sub>, R<sub>12</sub> et R<sub>13</sub> sont tels que définis pour R<sub>1</sub>, R<sub>2</sub> et R<sub>3</sub>, et R<sub>11</sub> peut également être un résidu de formule
+<chemistry id="chem0159" num="0159"><img id="ib0159" file="imgb0159.tif" wi="69" he="44" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry><!-- EPO <DP n="67"> --></claim-text>
+<claim-text>X est un atome d'hydrogène ; un groupe alkyle de 1 à 12 atomes de carbone ; phénylalkyle de 7 à 15 atomes de carbone ou un atome d'halogène ; et</claim-text>
+<claim-text>R<sub>1</sub>, R<sub>2</sub> et R<sub>3</sub> sont chacun indépendamment un atome d'hydrogène ; un groupe alkyle de 1 à 12 atomes de carbone ; hydroxy ; alcoxy de 1 à 12 atomes de carbone ; un atome d'halogène ; un groupe phényle, ou phényle substitué par un alkyle de 1 à 12 atomes de carbone, par un hydroxy, par un alcoxy de 1 à 12 atomes de carbone ou par un atome d'halogène ;</claim-text>
+lequel procédé comprend<br/>
+la réaction du composé de départ avec un résorcinol de formule VI
+<chemistry id="chem0160" num="0160"><img id="ib0160" file="imgb0160.tif" wi="51" he="34" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+en présence d'une quantité efficace d'acide protique.</claim-text></claim>
+<claim id="c-fr-01-0005" num="0005">
+<claim-text>Procédé selon la revendication 1, dans lequel le groupe partant E<sub>1</sub>, E<sub>2</sub> et E<sub>3</sub> est Cl.</claim-text></claim>
+<claim id="c-fr-01-0006" num="0006">
+<claim-text>Procédé selon la revendication 3 ou 5, dans lequel aucun catalyseur acide n'est ajouté au mélange de réaction.</claim-text></claim>
+<claim id="c-fr-01-0007" num="0007">
+<claim-text>Procédé selon la revendication 4, dans lequel la quantité de résorcinol de formule VI utilisée est de<br/>
+un à dix équivalents par équivalent du composé de formule XIII pour la préparation d'un composé de formule I ou<br/>
+deux à vingt équivalents par équivalent du composé de formule XIV pour la préparation d'un composé de formule VII ou<br/>
+trois à trente équivalents par équivalent du composé de formule B pour la préparation d'un composé de formule XII.</claim-text></claim>
+<claim id="c-fr-01-0008" num="0008">
+<claim-text>Procédé selon la revendication 1, dans lequel l'acide protique est un halogénure d'hydrogène, l'acide sulfurique ou un acide sulfonique.</claim-text></claim>
+<claim id="c-fr-01-0009" num="0009">
+<claim-text>Procédé selon la revendication 1, dans lequel le catalyseur est de 0,8 à 20 équivalents de l'acide protique et dans lequel 0 à 0,25 équivalent d'acide de Lewis est ajouté en tant que renforçateur, chaque quantité étant par équivalent de groupe partant.</claim-text></claim>
+<claim id="c-fr-01-0010" num="0010">
+<claim-text>Procédé selon la revendication 4, dans lequel la réaction est réalisée à une température de 70 °C à 200 °C.</claim-text></claim>
+<claim id="c-fr-01-0011" num="0011">
+<claim-text>Procédé de préparation d'un composé de formule A<!-- EPO <DP n="68"> -->
+<chemistry id="chem0161" num="0161"><img id="ib0161" file="imgb0161.tif" wi="70" he="45" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+dans laquelle
+<claim-text>G est un résidu de formule
+<chemistry id="chem0162" num="0162"><img id="ib0162" file="imgb0162.tif" wi="38" he="27" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+et</claim-text>
+<claim-text>G' est un résidu de formule
+<chemistry id="chem0163" num="0163"><img id="ib0163" file="imgb0163.tif" wi="63" he="32" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry></claim-text>
+<claim-text>R<sub>1</sub>, R<sub>2</sub> et R<sub>3</sub> sont chacun indépendamment un atome d'hydrogène ; un groupe alkyle de 1 à 12 atomes de carbone ; hydroxy ; alcoxy de 1 à 12 atomes de carbone ; alcényle en C<sub>2</sub> à C<sub>8</sub> ; alcoxy en C<sub>3</sub> à C<sub>18</sub> interrompu par O et/ou substitué par OH ; alkyle en C<sub>2</sub> à C<sub>18</sub> ou alcoxy en C<sub>2</sub> à C<sub>18</sub>, chacun interrompu par COO ou substitué par COOH ; un atome d'halogène ; un groupe nitro ; amino ; amino substitué par un hydrocarbure en C<sub>1</sub> à C<sub>12</sub> choisi parmi alkyle, phényle, cycloalkyle ; acylamino en C<sub>2</sub> à C<sub>18</sub> ; alcoxycarbonyle en C<sub>2</sub> à C<sub>12</sub> ; cycloalkyloxy en C<sub>5</sub> à C<sub>12</sub>-carbonyle ; phénylalcoxycarbonyle en C<sub>7</sub> à C<sub>15</sub> ; phényle ou phényle substitué par un alkyle de 1 à 12 atomes de carbone, par un hydroxy, par un alcoxy de 1 à 12 atomes de carbone ou par un atome d'halogène ; et</claim-text>
+<claim-text>X, Y et Z, indépendamment, sont tels que définis pour R<sub>1</sub>, R<sub>2</sub> ou R<sub>3</sub>, ou sont un groupe phénylalkyle de 7 à 15 atomes de carbone ;</claim-text>
+lequel procédé comprend
+<claim-text>(1). la réaction d'un composé de formule
+<chemistry id="chem0164" num="0164"><img id="ib0164" file="imgb0164.tif" wi="32" he="33" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+dans laquelle
+<claim-text>E est un atome d'halogène, avec un composé phénolique de formule II<!-- EPO <DP n="69"> -->
+<chemistry id="chem0165" num="0165"><img id="ib0165" file="imgb0165.tif" wi="59" he="35" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+en présence d'une base pour former un composé de formule III
+<chemistry id="chem0166" num="0166"><img id="ib0166" file="imgb0166.tif" wi="69" he="51" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+dans laquelle R<sub>11</sub>, R<sub>12</sub> et R<sub>13</sub>, indépendamment, sont tels que définis pour R<sub>1</sub>, R<sub>2</sub> et R<sub>3</sub>, et R<sub>11</sub> peut également être un résidu de formule
+<chemistry id="chem0167" num="0167"><img id="ib0167" file="imgb0167.tif" wi="68" he="40" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+et</claim-text>
+<claim-text>E<sub>1</sub> est un atome d'halogène ou un résidu de formule
+<chemistry id="chem0168" num="0168"><img id="ib0168" file="imgb0168.tif" wi="39" he="30" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry></claim-text></claim-text>
+<claim-text>(2). la réaction du composé net de formule III avec un excès d'un composé de formule IV
+<chemistry id="chem0169" num="0169"><img id="ib0169" file="imgb0169.tif" wi="38" he="21" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+en présence d'une quantité efficace d'un catalyseur acide de Lewis pour donner un composé de formule V<!-- EPO <DP n="70"> -->
+<chemistry id="chem0170" num="0170"><img id="ib0170" file="imgb0170.tif" wi="74" he="56" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+dans laquelle E' est un résidu de formule
+<chemistry id="chem0171" num="0171"><img id="ib0171" file="imgb0171.tif" wi="75" he="30" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry></claim-text>
+<claim-text>(3). la réaction du composé net de formule V avec un composé de formule VI
+<chemistry id="chem0172" num="0172"><img id="ib0172" file="imgb0172.tif" wi="51" he="27" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+en présence d'une quantité efficace d'un catalyseur acide protique en tant que seul catalyseur pour donner le composé de formule A.</claim-text></claim-text></claim>
+<claim id="c-fr-01-0012" num="0012">
+<claim-text>Procédé selon la revendication 11, dans lequel lorsque G' dans la formule A est un résidu de formule
+<chemistry id="chem0173" num="0173"><img id="ib0173" file="imgb0173.tif" wi="38" he="26" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+l'étape 1 est réalisée à une température de -20 °C à 100 °C, et au moins deux équivalents du composé de formule IV sont utilisés dans l'étape 2, et 1,2 à dix équivalents du composé de formule VI sont utilisés pour un équivalent de triazine dans l'étape 3, et lorsque aucun de R<sub>1</sub>, R<sub>2</sub> ou R<sub>3</sub> dans la formule II n'est un groupe hydroxy, dans l'étape 1, un équivalent du composé phénolique de formule II est utilisé, et lorsque l'un de R<sub>1</sub>, R<sub>2</sub> ou R<sub>3</sub> est un groupe hydroxy, dans l'étape 1, un demi-équivalent du composé phénolique de formule II est utilisé pour former un composé de formule III<!-- EPO <DP n="71"> -->
+<chemistry id="chem0174" num="0174"><img id="ib0174" file="imgb0174.tif" wi="61" he="58" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+et lorsque G' dans la formule A est un résidu de formule
+<chemistry id="chem0175" num="0175"><img id="ib0175" file="imgb0175.tif" wi="32" he="33" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+deux équivalents du composé phénolique de formule II sont utilisés dans l'étape 1 pour former un composé de formule VIII
+<chemistry id="chem0176" num="0176"><img id="ib0176" file="imgb0176.tif" wi="100" he="76" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry>
+et l'étape 1 est réalisée à une température de -20 °C à 200 °C ; 2,4 à vingt équivalents du composé de formule VI sont utilisés pour un équivalent de triazine dans l'étape 3.</claim-text></claim>
+<claim id="c-fr-01-0013" num="0013">
+<claim-text>Procédé selon la revendication 11, dans lequel le composé phénolique de formule II et le composé de formule VI sont identiques et de formule
+<chemistry id="chem0177" num="0177"><img id="ib0177" file="imgb0177.tif" wi="30" he="25" img-content="chem" img-format="tif" orientation="portrait" inline="no"/></chemistry></claim-text></claim>
+</claims>
+<ep-reference-list id="ref-list">
+<heading id="ref-h0001"><b>REFERENCES CITED IN THE DESCRIPTION</b></heading>
+<p id="ref-p0001" num=""><i>This list of references cited by the applicant is for the reader's convenience only. It does not form part of the European patent document. Even though great care has been taken in compiling the references, errors or omissions cannot be excluded and the EPO disclaims all liability in this regard.</i></p>
+<heading id="ref-h0002"><b>Patent documents cited in the description</b></heading>
+<p id="ref-p0002" num="">
+<ul id="ref-ul0001" list-style="bullet">
+<li><patcit id="ref-pcit0001" dnum="US5084570A"><document-id><country>US</country><doc-number>5084570</doc-number><kind>A</kind></document-id></patcit><crossref idref="pcit0001">[0003]</crossref><crossref idref="pcit0003">[0004]</crossref><crossref idref="pcit0011">[0018]</crossref></li>
+<li><patcit id="ref-pcit0002" dnum="US5106972A"><document-id><country>US</country><doc-number>5106972</doc-number><kind>A</kind></document-id></patcit><crossref idref="pcit0002">[0003]</crossref><crossref idref="pcit0004">[0004]</crossref><crossref idref="pcit0012">[0018]</crossref></li>
+<li><patcit id="ref-pcit0003" dnum="EP165608A"><document-id><country>EP</country><doc-number>165608</doc-number><kind>A</kind></document-id></patcit><crossref idref="pcit0005">[0005]</crossref></li>
+<li><patcit id="ref-pcit0004" dnum="BE661225"><document-id><country>BE</country><doc-number>661225</doc-number></document-id></patcit><crossref idref="pcit0006">[0006]</crossref></li>
+<li><patcit id="ref-pcit0005" dnum="FR1466836"><document-id><country>FR</country><doc-number>1466836</doc-number></document-id></patcit><crossref idref="pcit0007">[0006]</crossref></li>
+<li><patcit id="ref-pcit0006" dnum="JPHEI959263B"><document-id><country>JP</country><doc-number>HEI959263</doc-number><kind>B</kind></document-id></patcit><crossref idref="pcit0008">[0006]</crossref><crossref idref="pcit0013">[0022]</crossref></li>
+<li><patcit id="ref-pcit0007" dnum="US3118887A"><document-id><country>US</country><doc-number>3118887</doc-number><kind>A</kind></document-id></patcit><crossref idref="pcit0009">[0012]</crossref></li>
+<li><patcit id="ref-pcit0008" dnum="US3244708A"><document-id><country>US</country><doc-number>3244708</doc-number><kind>A</kind></document-id></patcit><crossref idref="pcit0010">[0012]</crossref></li>
+</ul></p>
+<heading id="ref-h0003"><b>Non-patent literature cited in the description</b></heading>
+<p id="ref-p0003" num="">
+<ul id="ref-ul0002" list-style="bullet">
+<li><nplcit id="ref-ncit0001" npl-type="s"><article><author><name>S. Tanimoto</name></author><author><name>M. Yamagata</name></author><atl/><serial><sertitle>Senryo to Yakuhim</sertitle><pubdate><sdate>19950000</sdate><edate/></pubdate><vid>40</vid><ino>12</ino></serial><location><pp><ppf>325</ppf><ppl>339</ppl></pp></location></article></nplcit><crossref idref="ncit0001">[0002]</crossref></li>
+<li><nplcit id="ref-ncit0002" npl-type="s"><article><author><name>H. Brunetti</name></author><author><name>G. E. Luethi</name></author><atl/><serial><sertitle>Helv. Chim. Acta</sertitle><pubdate><sdate>19720000</sdate><edate/></pubdate><vid>55</vid><ino>5</ino></serial><location><pp><ppf>1566</ppf><ppl>1595</ppl></pp></location></article></nplcit><crossref idref="ncit0002">[0002]</crossref></li>
+<li><nplcit id="ref-ncit0003" npl-type="b"><article><atl/><book><author><name>E. M. Smolin</name></author><author><name>L. Rapoport</name></author><book-title>s-Triazines and Derivatives in The Chemistry of Heterocyclic Compounds</book-title><imprint><name>Interscience Publishers</name><pubdate>19590000</pubdate></imprint><location><pp><ppf>53</ppf><ppl>57</ppl></pp></location></book></article></nplcit><crossref idref="ncit0003">[0003]</crossref></li>
+</ul></p>
+</ep-reference-list>
+</ep-patent-document>

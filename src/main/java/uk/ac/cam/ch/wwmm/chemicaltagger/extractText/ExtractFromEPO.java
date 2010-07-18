@@ -2,9 +2,11 @@ package uk.ac.cam.ch.wwmm.chemicaltagger.extractText;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.Reader;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
@@ -75,17 +77,22 @@ public class ExtractFromEPO {
 	/****************************************
 	 * Parses an XML files and saves the output into DocumentContainer
 	 * 
-	 * @param inputSource
+	 * @param inputPath
 	 *            (InputStream)
 	 * @return docContainer (DocumentContainer)
 	 ****************************************/
-	public DocumentContainer getInfo(InputStream inputSource) {
-		Builder builder = new Builder();
+	public DocumentContainer getInfo(String inputPath) {
+		
 		Document doc = null;
 		DocumentContainer docContainer = new DocumentContainer();
 		try {
-			doc = builder.build(inputSource);
-
+			System.out.println("Path="+inputPath);
+			
+			Reader read = new FileReader(new File(inputPath));
+			System.out.println(read.read());
+			doc = new Builder().build(read);
+            
+		
 		} catch (ParsingException ex) {
 			LOG.fatal("ParsingException " + ex.getMessage(),
 					new RuntimeException());
@@ -93,6 +100,7 @@ public class ExtractFromEPO {
 
 			LOG.fatal(ex.getMessage(), new RuntimeException());
 		}
+		System.out.println(doc.toXML());
 		docContainer
 				.setId(doc.getRootElement().getAttributeValue(ID_ATTRIBUTE));
 		docContainer.setPubDate(doc.getRootElement().getAttributeValue(
@@ -306,9 +314,9 @@ public class ExtractFromEPO {
 
 	public static void main(String[] args) throws IOException {
 		List<DocumentContainer> docs = new ArrayList<DocumentContainer>();
-		String path = "src/test/resources/uk/ac/cam/ch/wwmm/chemicaltagger/extractTest/epoPatents/";
+		String path = "src/test/resources/uk/ac/cam/ch/wwmm/chemicaltagger/epoPatents/";
 
-		String filePath = "uk/ac/cam/ch/wwmm/chemicaltagger/extractTest/epoPatents/";
+		String filePath = "uk/ac/cam/ch/wwmm/chemicaltagger/epoPatents/";
 		File patentDirectory = new File(path);
 		String[] patentDir = patentDirectory.list();
 		System.err.println(patentDir.length);
@@ -316,11 +324,12 @@ public class ExtractFromEPO {
 		for (String file : patentDir) {
 			extractEPO = new ExtractFromEPO();
 
-			String resourcePath = filePath + file;
+			String resourcePath = path + file;
 			System.err.println(resourcePath);
 			Utils utils = new Utils();
-			InputStream inStream = utils.getInputStream(resourcePath);
-			DocumentContainer docContainer = extractEPO.getInfo(inStream);
+			
+//			InputStream inStream = new Utils().getInputStream(resourcePath);
+			DocumentContainer docContainer = extractEPO.getInfo(resourcePath);
 			docs.add(docContainer);
 
 		}

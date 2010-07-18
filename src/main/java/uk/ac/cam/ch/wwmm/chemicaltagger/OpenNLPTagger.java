@@ -62,8 +62,9 @@ public class OpenNLPTagger {
 		InputStreamReader tagDictReader = null;
 		try {
 			tagDictReader = new InputStreamReader(
-			       Util.getResourceUsingContextClassLoader(
-			    		   "openNlpResources/tagdict", this.getClass()), "UTF-8");
+					new Utils().getInputStream("openNlpResources/tagdict"));
+//			       Util.getResourceUsingContextClassLoader(
+//			    		   "openNlpResources/tagdict", this.getClass()), "UTF-8");
 		} catch (Exception e) {
 				throw new RuntimeException("Cannot open src/main/resources/openNlpResources/tagdict" , e);
 		}
