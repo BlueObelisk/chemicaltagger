@@ -26,7 +26,7 @@ public class PostProcessTrees {
 		actionMap.put("VB-TREAT", "Add");
 		// Apparatus Tokens
 		actionMap.put("VB-APPARATUS", "Apparatus");
-		actionMap.put("NN-APPARATUS", "Apparatus");
+//		actionMap.put("NN-APPARATUS", "Apparatus");
 		// Concentrate Tokens
 		actionMap.put("VB-CONCENTRATE", "Concentrate");
 		actionMap.put("NN-CONCENTRATE", "Concentrate");
@@ -96,7 +96,8 @@ public class PostProcessTrees {
 			Element newSentenceNode = processSentence(sentenceNode); 
 			root.appendChild(newSentenceNode);
 		}
-		Element processedRoot = processDissolve(root);
+		processDissolve(root);
+		processSolvent(root);
 		Document processedDoc = new Document(root);
 		return processedDoc;
 
@@ -178,6 +179,44 @@ public class PostProcessTrees {
 		
 	}
 	
+	
+	private Element processSolvent(Element root) {
+		Nodes nodes = root.query("//ActionPhrase");
+		
+		for (int i = 0; i < nodes.size(); i++) {
+			Element actionElement = (Element) nodes.get(i);
+//			System.out.println(actionElement.getAttributeValue("type"));
+			if (actionElement.getAttributeValue("type").equals("Dissolve")){
+             
+             addSolventRole(actionElement,"IN-IN",false);
+			}
+			if (actionElement.getAttributeValue("type").equals("Wash")){
+	             
+	             addSolventRole(actionElement,"IN-WITH",false);
+			}
+		
+		    
+            
+		}
+		return root;
+	}
+	
+	private void addSolventRole(Element solventElement, String preposition,boolean seenPreposition) {
+		
+		for (int i = 0; i < solventElement.getChildCount(); i++){
+			Element child = (Element) solventElement.getChild(i);
+			if (child.getLocalName().toLowerCase().contains("phrase")) {
+				addSolventRole(child,preposition,seenPreposition);
+			}
+			if (child.getLocalName().toLowerCase().contains("molecule") && seenPreposition){
+				Attribute attribute = new Attribute("role","Solvent");
+		
+				child.addAttribute(attribute);
+			}
+			if (child.getLocalName().equals(preposition)) seenPreposition = true;
+		}
+		
+	}
 	private boolean containsKeyword(String content) {
 		for (String keyword : actionMap.keySet()) {
 			if (content.contains(keyword)) {
