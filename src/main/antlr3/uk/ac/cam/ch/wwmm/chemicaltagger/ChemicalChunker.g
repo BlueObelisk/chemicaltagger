@@ -124,11 +124,12 @@ prepphraseTempContent
 	:  advAdj? inAll? dt? advAdj? cd? nntemp+;	
 	
 			
-amount	: cd nnamount -> ^(NODE["AMOUNT"]   cd nnamount );
-mass	: cd nnmass-> ^(NODE["MASS"]   cd nnmass ); 
+amount	: cd+ nnamount -> ^(NODE["AMOUNT"]   cd+ nnamount );
+mass	: cd+ nnmass-> ^(NODE["MASS"]   cd+ nnmass ); 
 percent	: cd nn? nnpercent -> ^(NODE["PERCENT"]   cd nn? nnpercent );
-volume	: cd nnvol -> ^(NODE["VOLUME"]   cd nnvol );
-molar	: cd? nnmolar -> ^(NODE["MOLAR"]   cd? nnmolar );
+volume	: cd+ nnvol -> ^(NODE["VOLUME"]   cd+ nnvol );
+molar	: cd* nnmolar -> ^(NODE["MOLAR"]   cd* nnmolar );
+
 preparationphrase
 	: vbsynthesize inas (nnexample cd| prepphrase)	;
 apparatus
@@ -137,7 +138,8 @@ apparatus
 preapparatus
 	:  dt?  quantity|nn|nnpressure|adj|nnadd|nnchementity|nnstate ;
 measurements
-	:(cd nn)? measurementtypes    dt?;	
+	:(cd nn)? multiple|measurementtypes    dt?;
+multiple	: cd cdunicode measurementtypes? -> ^(NODE["MULTIPLE"]   cd cdunicode measurementtypes? );		
 measurementtypes
 	: molar|amount|mass|percent|volume ;	
 
