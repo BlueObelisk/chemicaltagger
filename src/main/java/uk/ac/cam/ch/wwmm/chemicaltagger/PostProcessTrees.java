@@ -25,8 +25,7 @@ public class PostProcessTrees {
 		actionMap.put("VB-SUSPEND", "Add");
 		actionMap.put("VB-TREAT", "Add");
 		// Apparatus Tokens
-		actionMap.put("VB-APPARATUS", "Apparatus");
-//		actionMap.put("NN-APPARATUS", "Apparatus");
+		actionMap.put("VB-APPARATUS", "ApparatusAction");
 		// Concentrate Tokens
 		actionMap.put("VB-CONCENTRATE", "Concentrate");
 		actionMap.put("NN-CONCENTRATE", "Concentrate");
@@ -51,6 +50,8 @@ public class PostProcessTrees {
 		// Heat Tokens
 		actionMap.put("VB-HEAT", "Heat");
 		actionMap.put("VB-INCREASE", "Heat");
+
+		actionMap.put("VB-SUBMERGE", "Heat");
 		// Partition Tokens
 		actionMap.put("VB-PARTITION", "Partition");
 

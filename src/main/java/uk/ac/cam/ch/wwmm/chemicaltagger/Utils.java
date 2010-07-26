@@ -1,7 +1,10 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
 import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -99,7 +102,7 @@ public class Utils {
 		String abbreviationRegex = "−?[A-Z]+[a-z]*\\.";
 		String concatAmountRegex = "(\\d\\d+(m|k|µ)?(l|L|g|gram|mol|cm3)(s)?$)|(\\d(L|ml|mL|gram|mol|cm3)(s)?$)";
 		String concatTempRegex = "\\d+(\\xb0|&#0176|\\xc3\\x97|o|°|º)(C|c)";
-		List<String> abvList = addToList("et. al. etc. e.g. i.e. vol. ca. wt.");
+		List<String> abvList = addToList("et. al. etc. e.g. i.e. vol. ca. wt. aq.");
 		List<String> nextTokenList = addToList("gram vol %");
 		Pattern abbreviationPattern = Pattern.compile(abbreviationRegex);
 		Pattern concatAmountPattern = Pattern.compile(concatAmountRegex);
@@ -255,6 +258,8 @@ public class Utils {
 		try {
 			InputStream refStream = ClassLoader
 					.getSystemResourceAsStream(resourceName);
+			
+
 			BufferedReader br = new BufferedReader(new InputStreamReader(
 					refStream, Charset.forName("UTF-8")));
 			sentence = br.readLine();
@@ -264,6 +269,41 @@ public class Utils {
 		return sentence.trim();
 	}
 
+
+	public static String readSentence1(String resourceName) {
+		// requires sentence with no newlines except possibly at end
+		String sentence = "";
+		try {
+			InputStream refStream = ClassLoader
+					.getSystemResourceAsStream(resourceName);
+			
+
+			InputStreamReader br = new InputStreamReader(refStream, "UTF-8");
+            System.out.println(br.getEncoding());
+
+			sentence += br.read();
+
+		} catch (IOException e) {
+			throw new RuntimeException("Cannot read sentence: " + resourceName);
+		}
+		return sentence.trim();
+	}
+	
+	public static String getPathasInputStream(String pathName) throws IOException {
+		// requires sentence with no newlines except possibly at end
+		
+		// requires sentence with no newlines except possibly at end
+		String sentence = null;
+		try {
+			
+			BufferedReader br = new BufferedReader(new InputStreamReader(
+					new FileInputStream(new File(pathName)), "UTF8"));
+			sentence = br.readLine();
+		} catch (IOException e) {
+			throw new RuntimeException("Cannot read sentence: " + pathName);
+		}
+		return sentence.trim();
+	}
 	/**
 	 * 
 	 * Returns the content of the resource as an inputstream
@@ -277,7 +317,7 @@ public class Utils {
 		InputStream inStream;
 		System.out.println("path="+pathName);
 		inStream = ClassLoader.getSystemResourceAsStream(pathName);
-        System.out.println(inStream);
+
 		return inStream;
 	}
 }

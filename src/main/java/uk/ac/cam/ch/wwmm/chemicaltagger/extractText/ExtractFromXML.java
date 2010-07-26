@@ -32,11 +32,11 @@ public class ExtractFromXML {
 	 *            (String)
 	 * @return docContainer (DocumentContainer)
 	 ****************************************/
-	private String getStringValue(Element action, String Delimiter) {
+	public String getStringValue(Element action, String Delimiter) {
 		StringBuilder stringValue = new StringBuilder();
 		for (int i = 0; i < action.getChildCount(); i++) {
 			if (action.getChild(i) instanceof nu.xom.Text) {
-				stringValue.append(action.getChild(i).getValue());
+				stringValue.append(action.getChild(i).getValue()+Delimiter);
 			} else {
 				if (!(action.getChild(i) instanceof nu.xom.ProcessingInstruction)) {
 					Element sub = (Element) action.getChild(i);
@@ -52,7 +52,10 @@ public class ExtractFromXML {
 			}
 		}
 
-		return stringValue.toString();
+		/***************
+		 * Replace the non-breaking space with a normal space
+		 */
+		return stringValue.toString().replace(" "," ").replace("=", "=").replace("   ", " ");
 	}
 
 	private boolean hasMoreChildren(Element sub) {
@@ -80,8 +83,10 @@ public class ExtractFromXML {
 		LOG.info("Extracting data from " + sourceFile);
 		try {
 			doc = builder.build(sourceFile);
+			
 			docContainer.setId(doc.getRootElement().getAttributeValue("id"));
 			Nodes sections = doc.query(searchTag);
+			System.out.println(sections.size());
 			String content = "";
 			String tlc = "";
 			for (int i = 0; i < sections.size(); i++) {
