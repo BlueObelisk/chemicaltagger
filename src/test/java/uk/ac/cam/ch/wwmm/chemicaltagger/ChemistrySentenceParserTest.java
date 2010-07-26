@@ -101,7 +101,6 @@ public class ChemistrySentenceParserTest {
 
 	}	
 	
-	
 	private InputStream getInputStream(String resourceName){
 		InputStream inStream = this.getClass().getClassLoader().getResourceAsStream(resourceName);
 		return inStream;

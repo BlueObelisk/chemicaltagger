@@ -153,7 +153,7 @@ public class ExtractSentences {
 		String[] patentDir = patentDirectory.list();
 		ExtractSentences extractSentence = new ExtractSentences();
 		for (String file : patentDir) {
-			if (file.startsWith("ACTA")) {
+			if (file.startsWith("EP")) {
 
 				extractSentence.extract(path + file);
 

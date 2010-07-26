@@ -79,7 +79,7 @@ VB-CHARGE---^charge(d)?$---Charge Verb
 VB-CONTAIN---^containing$---Contain Verb
 VB-DROP---^dropped?$---Drop Verb
 VB-FILL---^(re)?filled?$---Fill Verb
-VB-SUSPEND---(^suspend|^plac)(e|s|ed|ing)?$---Suspend Verb
+VB-SUSPEND---(^suspend|^plac)(s|ed|ing|es)?$---Suspend Verb
 VB-TREAT---^treat(e|s|ed|ing)?$---Treat Verb
                     
 #Apparatus Tokens
@@ -96,7 +96,7 @@ VB-COOL---^(cool|chill|frozen)(ed|e|ing)?---Cool Verb
 VB-DEGASS---(de)?(gass|oxginat|evacuat|under|purg|bubbl)(ed|e|d|ing)?---Degass Verb
 
 #Dissolve Tokens
-VB-DISSOLVE---^dissolv(ed|e|ing)?---Dissolve Verb
+VB-DISSOLVE---^(re)?dissolv(ed|e|ing)?---Dissolve Verb
 
 #Dry Tokens
 VB-DRY---^(freeze|re)?dr(y|ied|ying)?$---Dry Verb
