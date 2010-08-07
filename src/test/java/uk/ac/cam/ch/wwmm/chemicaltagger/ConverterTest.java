@@ -14,6 +14,7 @@ import nu.xom.Nodes;
 
 import org.antlr.runtime.tree.Tree;
 import org.junit.Test;
+
 import org.xmlcml.cml.base.CMLUtil;
 import org.xmlcml.cml.testutil.JumboTestUtils;
 
@@ -28,13 +29,30 @@ public class ConverterTest {
 		String fileRef = "src/test/resources/converter/ref/experiment.tagged.xml";
 		InputStream in = new FileInputStream(fileIn);
 		Document out = createTagged(in);
-		Document ref = CMLUtil.parseQuietlyToDocument(new File(fileRef));
+		Document ref = null;
+		try {
+			ref = new Builder().build(new File(fileRef));
+		} catch (Exception e) {
+			throw new RuntimeException("bug ", e);
+		}
 		OutputStream outStream = new FileOutputStream(fileOut);
-		CMLUtil.debug(out.getRootElement(), outStream, 0);
+//		CMLUtil.debug(out.getRootElement(), outStream, 0);
 		JumboTestUtils.assertEqualsCanonically(
 				"chemical tagger", ref.getRootElement(), out.getRootElement(), true);
 	}
 	
+	@Test
+	public void testEncodingFromUtils() {
+		// this pair appears almost identical in Eclipse, so just checking
+		if ("°".equals("º")) {
+			System.out.println("equal");
+		} else {
+			System.out.println("unequal"+"°".length()+"/"+(int)"°".charAt(0)+"/"+(int)"°".charAt(1)+
+					" "+"º".length()+"/"+(int)"º".charAt(0)+"/"+(int)"º".charAt(1));
+			
+		}
+
+	}
 	private Document createTagged(InputStream inputStream) {
 		Document inDocument = null;
 		try {
