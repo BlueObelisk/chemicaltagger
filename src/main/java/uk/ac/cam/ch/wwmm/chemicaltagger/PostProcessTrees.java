@@ -7,7 +7,6 @@ import java.util.List;
 import nu.xom.Attribute;
 import nu.xom.Document;
 import nu.xom.Element;
-import nu.xom.Node;
 import nu.xom.Nodes;
 
 public class PostProcessTrees {

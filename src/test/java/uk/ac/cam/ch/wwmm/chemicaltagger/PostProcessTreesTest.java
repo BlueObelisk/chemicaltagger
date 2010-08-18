@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import junit.framework.Assert;
-
 import nu.xom.Builder;
 import nu.xom.Document;
 import nu.xom.ParsingException;

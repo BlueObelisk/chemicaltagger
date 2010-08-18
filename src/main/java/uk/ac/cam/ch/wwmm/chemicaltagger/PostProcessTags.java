@@ -3,8 +3,6 @@ package uk.ac.cam.ch.wwmm.chemicaltagger;
 import java.util.ArrayList;
 import java.util.List;
 
-import opennlp.tools.ngram.TokenList;
-
 import org.apache.commons.lang.StringUtils;
 import org.xmlcml.euclid.Util;
 
