@@ -15,7 +15,6 @@ import opennlp.tools.postag.POSDictionary;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
-import org.xmlcml.euclid.Util;
 
 public class OpenNLPTagger {
 

@@ -57,6 +57,13 @@
 		</resources>
 	</build>
 	<dependencies>
+	
+	<dependency>
+			<groupId>cml</groupId>
+			<artifactId>cmlxom</artifactId>
+			<version>2.5.1-SNAPSHOT</version>
+		</dependency>
+	    
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>apache-log4j-extras</artifactId>
@@ -115,11 +122,7 @@
 			<artifactId>xom</artifactId>
 			<version>1.1</version>
 		</dependency>
-		<dependency>
-			<groupId>cml</groupId>
-			<artifactId>cmlxom</artifactId>
-			<version>2.5.1-SNAPSHOT</version>
-		</dependency>
+		
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>

@@ -1,11 +1,7 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
-import java.util.HashMap;
-
-import nu.xom.Attribute;
 import nu.xom.Document;
 import nu.xom.Element;
-import nu.xom.Nodes;
 
 import org.antlr.runtime.tree.Tree;
 import org.apache.log4j.Logger;

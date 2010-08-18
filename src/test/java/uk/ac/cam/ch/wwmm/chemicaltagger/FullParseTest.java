@@ -8,9 +8,7 @@ import junit.framework.Assert;
 import nu.xom.Document;
 
 import org.antlr.runtime.tree.Tree;
-import org.apache.commons.lang.StringUtils;
 import org.junit.Test;
-import org.xmlcml.cml.base.CMLUtil;
 
 public class FullParseTest {
 
