@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ep-patent-document PUBLIC "-//EPO//EP PATENT DOCUMENT 1.4//EN" "ep-patent-document-v1-4.dtd">
+<ep-patent-document id="EP00978793B1" file="EP00978793NWB1.xml" lang="en" country="EP" doc-number="1240130" kind="B1" date-publ="20090506" status="n" dtd-version="ep-patent-document-v1-4">
+<SDOBI lang="en"><B000><eptags><B001EP>ATBECHDEDKESFRGBGRITLILUNLSEMCPTIE......FI....CY..TR............................</B001EP><B003EP>*</B003EP><B005EP>J</B005EP><B007EP>DIM360 Ver 2.15 (14 Jul 2008) -  2100000/0</B007EP></eptags></B000><B100><B110>1240130</B110><B120><B121>EUROPEAN PATENT SPECIFICATION</B121></B120><B130>B1</B130><B140><date>20090506</date></B140><B190>EP</B190></B100><B200><B210>00978793.8</B210><B220><date>20001120</date></B220><B240><B241><date>20020624</date></B241><B242><date>20030910</date></B242></B240><B250>en</B250><B251EP>en</B251EP><B260>en</B260></B200><B300><B310>166970 P</B310><B320><date>19991123</date></B320><B330><ctry>US</ctry></B330><B310>681007</B310><B320><date>20001114</date></B320><B330><ctry>US</ctry></B330></B300><B400><B405><date>20090506</date><bnum>200919</bnum></B405><B430><date>20020918</date><bnum>200238</bnum></B430><B450><date>20090506</date><bnum>200919</bnum></B450><B452EP><date>20080605</date></B452EP></B400><B500><B510EP><classification-ipcr sequence="1"><text>C07C  51/265       20060101AFI20010605BHEP        </text></classification-ipcr><classification-ipcr sequence="2"><text>C07D 307/89        20060101ALI20010605BHEP        </text></classification-ipcr></B510EP><B540><B541>de</B541><B542>VERFAHREN ZUR OXIDATON VON XYLEN-DERIVATEN</B542><B541>en</B541><B542>METHOD FOR OXIDATION OF XYLENE DERIVATIVES</B542><B541>fr</B541><B542>PROCEDE D'OXYDATION DE DERIVES DE XYLENE</B542></B540><B560><B561><text>DE-A- 2 236 875</text></B561><B561><text>GB-A- 856 245</text></B561><B561><text>US-A- 4 387 243</text></B561><B561><text>US-A- 5 225 573</text></B561><B562><text>GLUKHOVSKII N ET AL: "PREPARATION OF 4-BROMOPHTHALIC ANHYDRIDE BY OXIDATION OF 4-BROMO-ORTHO-ZYLENE" JOURNAL OF CHEMICAL TECHNOLOGY AND BIOTECHNOLOGY. (INTERNATIONAL JOURNAL OF BIOTECHNICAL AND CHEMICAL PROCESSES),GB,ELSEVIER APPLIED SCIENCE PUBLISHERS. BARKING, vol. 63, no. 2, 1 June 1995 (1995-06-01), pages 117-124, XP000510968 ISSN: 0268-2575</text></B562><B562><text>CHEMICAL ABSTRACTS, vol. 101, no. 25, 17 December 1984 (1984-12-17) Columbus, Ohio, US; abstract no. 230079, NAZARENKO ET AL.: "Preparation of monochlorophthalic acids by the liquid phase ...." XP002162265 &amp; UKR.KHIM:ZH., vol. 50, no. 6, 1984, pages 644-647,</text></B562></B560></B500><B700><B720><B721><snm>TAKEKOSHI, Tohru</snm><adr><str>171 Droms Road</str><city>Scotia, NY 12302</city><ctry>US</ctry></adr></B721></B720><B730><B731><snm>Sabic Innovative Plastics IP B.V.</snm><iid>08695120</iid><irf>P-CANTGE-007/WO</irf><adr><str>Plasticslaan 1</str><city>4612 PX Bergen op Zoom</city><ctry>NL</ctry></adr></B731></B730><B740><B741><snm>Kihn, Pierre Emile Joseph</snm><sfx>et al</sfx><iid>00083131</iid><adr><str>Office Ernest T. Freylinger S.A. 
+234, route d'Arlon 
+B.P. 48</str><city>8001 Strassen</city><ctry>LU</ctry></adr></B741></B740></B700><B800><B840><ctry>AT</ctry><ctry>BE</ctry><ctry>CH</ctry><ctry>CY</ctry><ctry>DE</ctry><ctry>DK</ctry><ctry>ES</ctry><ctry>FI</ctry><ctry>FR</ctry><ctry>GB</ctry><ctry>GR</ctry><ctry>IE</ctry><ctry>IT</ctry><ctry>LI</ctry><ctry>LU</ctry><ctry>MC</ctry><ctry>NL</ctry><ctry>PT</ctry><ctry>SE</ctry><ctry>TR</ctry></B840><B860><B861><dnum><anum>US2000031719</anum></dnum><date>20001120</date></B861><B862>en</B862></B860><B870><B871><dnum><pnum>WO2001038280</pnum></dnum><date>20010531</date><bnum>200122</bnum></B871></B870><B880><date>20020918</date><bnum>200238</bnum></B880></B800></SDOBI><!-- EPO <DP n="1"> -->
+<description id="desc" lang="en">
+<p id="p0001" num="0001">This application claims priority of a Provisional Application entitled "Method for Oxidation of Xylene Derivatives" by Tohru Takekoshi, Serial Number <patcit id="pcit0001" dnum="US60166970B"><text>60/166,970 and filed November 23, 1999</text></patcit>.</p>
+<heading id="h0001">BACKGROUND OF THE INVENTION</heading>
+<p id="p0002" num="0002">This invention relates to a method for oxidizing xylene derivatives. More particularly, the invention relates to a method for oxidizing a substrate comprising at least one halo-ortho-xylene in the presence of at least one metal catalyst and in the absence of solvent or promoter to provide a product comprising halophthalic anhydride. In one key embodiment the invention relates to a method for producing a product comprising 4-chlorophthalic anhydride.</p>
+<p id="p0003" num="0003">Methods for oxidizing ortho-xylene are known. Most of these methods either require the presence of a corrosive solvent such as acetic acid or the presence of a promoter or both. For example, <patcit id="pcit0002" dnum="US3402184A"><text>U.S. Patent 3,402,184</text></patcit> describes oxidation of ortho-xylene in acetic acid solvent in the presence of a bromine promoter. <patcit id="pcit0003" dnum="US4215053A"><text>U.S. Patents 4,215,053</text></patcit>, <patcit id="pcit0004" dnum="US4299977A"><text>4,299,977</text></patcit>, <patcit id="pcit0005" dnum="US4322549A"><text>4,322,549</text></patcit>, and<patcit id="pcit0006" dnum="US4387243A"><text> 4,387,243</text></patcit> describe oxidation of ortho-xylene in the absence of solvent but in the presence of a bromine promoter. Methods for preparing 4-chlorophthalic anhydride are also known. However, these methods typically involve aromatization of a Diels-Alder adduct of chloroprene and a maleic anhydride as in <patcit id="pcit0007" dnum="US5322954A"><text>U.S. Patent 5,322,954</text></patcit>, or chlorination of phthalic acid as in Japanese patent applications <patcit id="pcit0008" dnum="JP07258152B"><text>07258152</text></patcit> and <patcit id="pcit0009" dnum="JP02129143A"><text>02129143</text></patcit>. The latter chlorination process may produce polychlorinated biphenyls (PCBs).</p>
+<p id="p0004" num="0004">There is a need, therefore, to provide a method for oxidizing a substrate comprising a halo-ortho-xylene which does not require a solvent or promoter, particularly a corrosive solvent or promoter. There is also a need for a method for producing 4-chlorophthalic anhydride which does not involve handling toxic chloroprene or chlorine gas, and which does not produce PCBs.<!-- EPO <DP n="2"> --></p>
+<heading id="h0002">SUMMARY OF THE INVENTION</heading>
+<p id="p0005" num="0005">In one embodiment the invention is a method for oxidizing a substrate comprising at least one halo-ortho-xylene which comprises combining the substrate in the absence of solvent or promoter with at least one metal catalyst and heating in the presence of an oxygen source.</p>
+<p id="p0006" num="0006">In another embodiment the invention is a method for oxidizing a substrate comprising 4-chloro-ortho-xylene which comprises combining chloro-orthoxylene in the absence of solvent or promoter with at least one metal catalyst which is a metal compound with a metal selected from the group consisting of cobalt, manganese, vanadium, copper, molybdenum, and iron, and heating in the presence of molecular oxygen to produce a product mixture comprising 4-chlorophthalic anhydride and chlorotoluic acid.</p>
+<p id="p0007" num="0007">In still another embodiment the invention is a method for producing 4-chlorophthalic anhydride which comprises oxidizing a substrate comprising 4-chloro-ortho-xylene, optionally in the presence of chlorotoluic acid, which comprises the steps of
+<ol id="ol0001" compact="compact" ol-style="">
+<li>(i) combining substrate in the absence of solvent or promoter with at least one metal catalyst which is a metal compound with a metal selected from the group consisting of cobalt, manganese, vanadium, copper, molybdenum, and iron, and heating in the presence of molecular oxygen to a temperature in a range of between about 100°C and about 230°C at atmospheric pressure, wherein the molar ratio of substrate to the at least one metal catalyst is in a range of about 80-180 : 1; and</li>
+<li>(ii) isolating product comprising 4-chlorophthalic anhydride.</li>
+</ol></p>
+<heading id="h0003">DETAILED DESCRIPTION; PREFERRED EMBODIMENTS</heading>
+<p id="p0008" num="0008">In one embodiment the substrate comprising at least one halo-ortho-xylene of the present invention preferably comprises a monohalo-ortho-xylene, more preferably 4-halo-ortho-xylene, most preferably 4-fluoro- or 4-chloro-ortho-xylene. In another embodiment the substrate comprises a mixture of 4-halo- and 3-halo-ortho-xylene,<!-- EPO <DP n="3"> --> preferably a mixture of 4-fluoro- and 3-fluoro-ortho-xylene or a mixture of 4-chloro- and 3-chloro-ortho-xylene. When 3-halo-ortho-xylene is present, it comprises about 0.001-15 molar percent, preferably about 0.01-12 molar percent, and more preferably about 0.1-10 molar percent of total substrate.</p>
+<p id="p0009" num="0009">In yet another embodiment the substrate comprises at least one halo-ortho-xylene as described above, optionally in the presence of at least one halotoluic acid, preferably at least one chlorotoluic acid (also known as chloro methylbenzoic acid), more preferably either (a) 4-chloro-2-methyl benzoic acid or (b) 5-chloro-2-methylbenzoic acid or (c) a mixture thereof, and still more preferably a mixture of either or both of (a) and (b) with either (d) 4-halo-ortho-xylene, or (e) a mixture of 4-halo- and 3-halo-ortho-xylene. Halo-toluic acid may be either added to the substrate or may be present as a consequence of partial oxidation of halo-ortho-xylene. As a consequence of partial oxidation the amount of halo-toluic acid in the substrate will vary with such factors as reaction temperature, time, and catalyst.</p>
+<p id="p0010" num="0010">In still another embodiment the substrate comprises a mixture of ortho-xylene either with (d) 4-halo-ortho-xylene, or with (e) a mixture of 4-halo- and 3-halo-ortho-xylene, or with at least one chlorotoluic acid, or with a mixture of chlorotoluic acid with either (d) 4-halo-ortho-xylene, or (e) a mixture of 4-halo- and 3-halo-ortho-xylene. When ortho-xylene is present, it comprises about 0.001-10 molar percent and preferably about 0.01-1 molar percent of total substrate. An especially preferred substrate comprises 4-chloro-ortho-xylene, optionally in combination with at least one of 3-chloro-ortho-xylene, ortho-xylene, or chlorotoluic acid.</p>
+<p id="p0011" num="0011">At least one metal catalyst is used in the present invention. The at least one metal catalyst comprises a metal compound with a metal selected from the group consisting of cobalt, manganese, vanadium, copper, molybdenum, and iron, and mixtures thereof. Preferably, a metal compound is a salt of the metal and more preferably an acetate or acetylacetonate of the metal. Illustrative metal compounds which are suitable for use in the invention include cobalt (II) acetate, manganese (II) acetate, vanadyl (IV) acetate (VO[OC(O)CH<sub>3</sub>]<sub>2</sub>), vanadyl (IV) acetylacetonate, copper<!-- EPO <DP n="4"> --> (I) acetate, molybdenyl (VI) acetylacetonate (MoO<sub>2</sub>[C<sub>5</sub>H<sub>7</sub>O2]), iron (II) acetate, and mixtures thereof. The molar ratio of halo-ortho-xylene substrate to the at least one metal catalyst is in a range of about 20-500 : 1, preferably in a range of about 50-250 : 1, and most preferably in a range of about 80-180 : 1. In especially preferred embodiments the molar ratio of halo-ortho-xylene substrate to the at least one metal catalyst is about 100:1. The at least one metal catalyst may be added in one portion to the substrate or in more than one portion during the course of the reaction.</p>
+<p id="p0012" num="0012">The oxygen source used in the present invention may be high purity oxygen or molecular oxygen, air, or oxygen diluted with another gas which has no negative effects on the reaction, such as nitrogen, noble gases, argon, or carbon dioxide. The concentration of diluent gas, when present, in the oxygen source may amount to about 1 to about 95 volume %, preferably about 5 to about 90, and more preferably about 10 to about 80 volume %. In a preferred embodiment the oxygen source is molecular oxygen.</p>
+<p id="p0013" num="0013">Oxygen in the form of an oxygen source may be introduced into the reaction mixture by any convenient means. In one embodiment the reaction mixture is agitated or stirred under a positive pressure of oxygen source. In a preferred embodiment oxygen source is introduced by sparging or bubbling into the reaction mixture at essentially atmospheric pressure.</p>
+<p id="p0014" num="0014">The reaction mixture is heated to a temperature effective to promote oxidation of at least one methyl group of halo-ortho-xylene in the presence of the at least one catalyst and oxygen source. The reaction mixture is heated to a temperature in a range of between about 80°C and the effective boiling point of the reaction mixture under the prevailing pressure. More preferably the reaction mixture is heated to a temperature in a range of between about 100°C and about 230°C and most preferably in a range of between about 150°C and about 180°C at atmospheric pressure.</p>
+<p id="p0015" num="0015">Catalysts suitable for use in the present invention are typically poorly soluble in halo-ortho-xylene. However, as polar oxidation intermediates and products<!-- EPO <DP n="5"> --> containing functionalities such as hydroxy, carboxaldehyde, or carboxylic acid are formed, the catalyst typically becomes increasingly soluble. For example, suitable catalysts may typically dissolve within about 0.5 to 1.0 hours at a temperature in a range of between about 100°C and about 230°C, particularly at a temperature in a range of between about 150°C and about 180°C.</p>
+<p id="p0016" num="0016">The products of the oxidation reaction comprise those obtained by oxidation of at least one of and preferably both the two aromatic methyl groups. In particular the products comprise halotoluic acid and halophthalic anhydride, respectively. In a preferred embodiment the substrate halo-ortho-xylene comprises 4-chloro-ortho-xylene and the products comprise chlorotoluic acid and 4-chlorophthalic anhydride. In another preferred embodiment the substrate,chloro-ortho-xylene comprises a mixture of 3-chloro- and 4-chloro-ortho-xylene and the products comprise chlorotoluic acids and a mixture of 3-chloro- and 4-chlorophthalic anhydride. When ortho-xylene is present in the substrate, then a small amount of phthalic anhydride and toluic acid may also be obtained in addition to the oxidation products of halo-ortho-xylene.</p>
+<p id="p0017" num="0017">The product halophthalic anhydrides may be used in processes to make various types of aromatic polyethers, particularly polyetherimides. In one embodiment a product comprising 4-chlorophthalic anhydride (or a mixture thereof with 3-chlorophthalic anhydride) may be reacted with at least one diamine to prepare bis(chlorophthalimide) compounds which can serve as monomer for polyetherimide synthesis. For example, polyetherimides are conveniently prepared by the reaction of salts of dihydroxyaromatic compounds, such as bisphenol A disodium salt, with bis(halophthalimides) as illustrated by 1,3-bis[N-(4-chlorophthalimido)] benzene, which has the structure
+<chemistry id="chem0001" num="0001"><img id="ib0001" file="imgb0001.tif" wi="110" he="41" img-content="chem" img-format="tif"/></chemistry><!-- EPO <DP n="6"> --></p>
+<p id="p0018" num="0018">According to <patcit id="pcit0010" dnum="US5229482A"><text>US Patents 5,229,482</text></patcit> and <patcit id="pcit0011" dnum="US5830974A"><text>5,830,974</text></patcit>, the preparation of aromatic polyethers may be conducted in solution in relatively non-polar solvents, using a phase transfer catalyst which is substantially stable under the temperature conditions employed. Solvents disclosed in <patcit id="pcit0012" dnum="US5229482A"><text>5,229,482</text></patcit> include o-dichlorobenzene, dichlorotoluene, 1,2,4-trichlorobenzene and diphenyl sulfone. In <patcit id="pcit0013" dnum="US5830974A"><text>5,830,974</text></patcit>, monoalkoxybenzenes such as anisole, diphenylether, or phenetole are employed. Solvents of the same types may be used for the preparation of bis(halophthalimide) intermediates, particularly bis(chlorophthalimide) intermediates, for polyetherimides.</p>
+<p id="p0019" num="0019">The reaction of diamine with 4-halophthalic anhydride (or a mixture thereof with 3-halophthalic anhydride) in the presence of any phthalic anhydride arising from ortho-xylene oxidation may produce trace amounts of the mono-halo species. For example the reaction of diamine with 4-chlorophthalic anhydride (or a mixture thereof with 3-chlorophthalic anhydride) in the presence of any phthalic anhydride arising from ortho-xylene oxidation may produce trace amounts of the mono-halo species, 1-N-(4-chlorophthalimido)-3-N-(phthalimido)benzene in addition to 1,3-bis[N-(4-chlorophthalimido)]benzene (optionally in the presence of 3-chloro species). The mono-halo species may serve as a chain-stopper in reaction with salts of dihydroxyaromatic compounds in polyetherimide synthesis.</p>
+<p id="p0020" num="0020">The process of the present invention may be performed in batch mode or as a semi-continuous or continuous process. In one embodiment the products of the oxidation reaction may be isolated by conventional means, such as one or more steps of distillation or extraction. In another embodiment the products are at least partially recycled into a further oxidation process to increase conversion of halo-ortho-xylene or to increase conversion of halo-toluic acid, or both.</p>
+<p id="p0021" num="0021">The invention is illustrated by the following examples. All parts and percentages are by weight.</p>
+<heading id="h0004">EXAMPLE 1</heading>
+<p id="p0022" num="0022">In a 50 milliliter (ml) three-neck flask were placed 14.1 grams (g) of 4-chloro-o-xylene and 0.249 g (1.00 millimole) of cobalt (II) acetate tetrahydrate. The<!-- EPO <DP n="7"> --> mixture was magnetically stirred at 170°C and oxygen gas was continuously bubbled through the mixture using a capillary inlet tube at a rate of 0.02 SCFH. In 112 hours of reaction the yield of 4-chlorophthalic anhydride was 8.3% and the yield of 4-chlorotoluic acid was 38.7%, both based on starting material.</p>
+<heading id="h0005">EXAMPLES 2-7</heading>
+<p id="p0023" num="0023">The procedure of example 1 was repeated except that different catalysts and different reaction times were used. The catalysts used were manganese (II) acetate; a 1:1 (mole/mole) mixture of manganese (II) acetate and cobalt (II) acetate; vanadyl acetate; copper (I) acetate; molybdenyl (VI) acetylacetonate; or iron (II) acetate. Key products were 4-chlorophthalic anhydride (4-CIPA), chlorotoluic acid (ClTAcid), and chlorotolualdehyde (ClTAldehyde). The results are shown in Table 1.
+<tables id="tabl0001" num="0001">
+<table frame="all">
+<tgroup cols="6">
+<colspec colnum="1" colname="col1" colwidth="18mm"/>
+<colspec colnum="2" colname="col2" colwidth="54mm"/>
+<colspec colnum="3" colname="col3" colwidth="32mm"/>
+<colspec colnum="4" colname="col4" colwidth="16mm"/>
+<colspec colnum="5" colname="col5" colwidth="17mm"/>
+<colspec colnum="6" colname="col6" colwidth="24mm"/>
+<thead>
+<row>
+<entry morerows="1" align="center" valign="top">Example</entry>
+<entry morerows="1" align="center" valign="top">Catalyst</entry>
+<entry morerows="1" align="center" valign="top">Reaction time (hrs.)</entry>
+<entry namest="col4" nameend="col6" align="center" valign="top">Yield-%</entry></row>
+<row>
+<entry align="center" valign="top">4-ClPA</entry>
+<entry align="center" valign="top">ClTAcid</entry>
+<entry align="center" valign="top">ClTAldehyde</entry></row></thead>
+<tbody>
+<row>
+<entry align="center"/>
+<entry align="center"/>
+<entry align="center"/>
+<entry align="center"/>
+<entry align="char" char="." charoff="22"/>
+<entry align="center"/></row>
+<row>
+<entry align="center">2</entry>
+<entry align="center">Mn (II) acetate</entry>
+<entry align="center">66</entry>
+<entry align="center">14.1</entry>
+<entry align="char" char="." charoff="22">58.7</entry>
+<entry align="center">5.3</entry></row>
+<row>
+<entry align="center">3</entry>
+<entry align="center">Co (II) acetate + Mn (II) acetate (1:1)</entry>
+<entry align="center">64</entry>
+<entry align="center">17.4</entry>
+<entry align="char" char="." charoff="22">59.6</entry>
+<entry align="center">2.1</entry></row>
+<row>
+<entry align="center">4</entry>
+<entry align="center">Co (II) acetate + Mn (II) acetate (1:1)</entry>
+<entry align="center">107</entry>
+<entry align="center">36.4</entry>
+<entry align="char" char="." charoff="22">43.4</entry>
+<entry align="center">0.5</entry></row>
+<row>
+<entry align="center">5</entry>
+<entry align="center">Vanadyl (IV) acetate</entry>
+<entry align="center">72</entry>
+<entry align="center">21.4</entry>
+<entry align="char" char="." charoff="22">48.9</entry>
+<entry align="center">6.5</entry></row>
+<row>
+<entry align="center">6</entry>
+<entry align="center">Vanadyl (IV) acetate</entry>
+<entry align="center">96</entry>
+<entry align="center">32.5</entry>
+<entry align="char" char="." charoff="22">47.3</entry>
+<entry align="center">1.5</entry></row>
+<row>
+<entry align="center">7</entry>
+<entry align="center">Cu (I) acetate</entry>
+<entry align="center">76</entry>
+<entry align="center">0.3</entry>
+<entry align="char" char="." charoff="22">45.0</entry>
+<entry align="center">19.6</entry></row>
+<row>
+<entry align="center">8</entry>
+<entry align="center">Molybdenyl (VI) acetylacetonate</entry>
+<entry align="center">111</entry>
+<entry align="center">8.7</entry>
+<entry align="char" char="." charoff="22">30.0</entry>
+<entry align="center">10.0</entry></row>
+<row>
+<entry align="center">9</entry>
+<entry align="center">Fe (II) acetate</entry>
+<entry align="center">70</entry>
+<entry align="center">12.3</entry>
+<entry align="char" char="." charoff="22">32.2</entry>
+<entry align="center">22.1</entry></row></tbody></tgroup>
+</table>
+</tables></p>
+<p id="p0024" num="0024">While typical embodiments have been set forth for the purpose of illustration, the foregoing descriptions and examples should not be deemed to be a limitation on the scope of the invention.</p>
+</description><!-- EPO <DP n="8"> -->
+<claims id="claims01" lang="en">
+<claim id="c-en-01-0001" num="0001">
+<claim-text>A method for oxidizing a substrate comprising at least one halo-ortho-xylene which comprises combining the substrate in the absence of solvent or promoter with at least one metal catalyst and heating to a temperature in the range between about 80°C and the effective boiling point of the reaction mixture under the prevailing pressure in the presence of an oxygen source to produce a product mixture.</claim-text></claim>
+<claim id="c-en-01-0002" num="0002">
+<claim-text>The method of claim 1 wherein the product mixture comprises halo-phthalic anhydride and halo-toluic acid.</claim-text></claim>
+<claim id="c-en-01-0003" num="0003">
+<claim-text>The method of claim 2 wherein the substrate comprises chloro-ortho-xylene or fluoro-ortho-xylene.</claim-text></claim>
+<claim id="c-en-01-0004" num="0004">
+<claim-text>The method of claim 1 wherein the at least one metal catalyst is a metal compound with a metal selected from the group consisting of cobalt, manganese, vanadium, copper, molybdenum, and iron.</claim-text></claim>
+<claim id="c-en-01-0005" num="0005">
+<claim-text>The method of claim 1 in which the oxygen source is molecular oxygen.</claim-text></claim>
+<claim id="c-en-01-0006" num="0006">
+<claim-text>The method of claim 1 in which the reaction mixture is heated to a temperature in a range of between 100°C and 230°C at atmospheric pressure.</claim-text></claim>
+<claim id="c-en-01-0007" num="0007">
+<claim-text>A method according to claim 1 for oxidizing a substrate comprising 4-chloro-ortho-xylene which comprises combining chloro-ortho-xylene in the absence of solvent or promoter with at least one metal catalyst which is a metal compound with a metal selected from the group consisting of cobalt, manganese, vanadium, copper, molybdenum, and iron, and heating in the presence of molecular oxygen to produce a product mixture comprising 4-chlorophthalic anhydride and chlorotoluic acid.</claim-text></claim>
+<claim id="c-en-01-0008" num="0008">
+<claim-text>The method of claim 7 in which the molar ratio of 4-chloro-ortho-xylene substrate to the at least one metal catalyst is in a range of about 80-180 : 1.<!-- EPO <DP n="9"> --></claim-text></claim>
+<claim id="c-en-01-0009" num="0009">
+<claim-text>The method of claim 7 in which the reaction mixture is heated to a temperature in a range of between 150°C and 180°C at atmospheric pressure.</claim-text></claim>
+<claim id="c-en-01-0010" num="0010">
+<claim-text>A method according to claim 1 for producing a product mixture comprising 4-chlorophthalic anhydride which comprises oxidizing a substrate comprising 4-chloro-ortho-xylene, optionally in the presence of chlorotoluic acid, which comprises the steps of
+<claim-text>(i) combining substrate in the absence of solvent or promoter with at least one metal catalyst which is a metal compound with a metal selected from the group consisting of cobalt, manganese, vanadium, copper, molybdenum, and iron, and heating in the presence of molecular oxygen to a temperature in a range of between 100°C and 230°C at atmospheric pressure, wherein the molar ratio of substrate to the at least one metal catalyst is in a range of 80-180 : 1; and</claim-text>
+<claim-text>(ii) isolating product comprising 4-chlorophthalic anhydride.</claim-text></claim-text></claim>
+</claims><!-- EPO <DP n="10"> -->
+<claims id="claims02" lang="de">
+<claim id="c-de-01-0001" num="0001">
+<claim-text>Verfahren zum Oxidieren eines Trägerstoffs, der mindestens ein Halogen-ortho-xylol umfasst, wobei das Verfahren das Vereinen des Trägerstoffs in Abwesenheit von Lösemittel oder Promotor mit mindestens einem Metallkatalysator und das Erhitzen auf eine Temperatur im Bereich zwischen etwa 80 °C und dem effektiven Siedepunkt des Reaktionsgemischs unter dem vorherrschenden Druck in Gegenwart einer Sauerstoffquelle umfasst, um ein Produktgemisch zu produzieren</claim-text></claim>
+<claim id="c-de-01-0002" num="0002">
+<claim-text>Verfahren nach Anspruch 1, wobei das Produktgemisch Halogenphthalsäureanhydrid und Halogentoluylsäure umfasst</claim-text></claim>
+<claim id="c-de-01-0003" num="0003">
+<claim-text>Verfahren nach Anspruch 2, wobei der Trägerstoff Chlor-ortho-xylol oder Fluor-ortho-xylol umfasst.</claim-text></claim>
+<claim id="c-de-01-0004" num="0004">
+<claim-text>Verfahren nach Anspruch 1, wobei es sich bei dem mindestens einen Metallkatalysator um eine Metallverbindung mit einem Metall handelt, das aus der Gruppe bestehend aus Kobalt, Mangan, Vanadium, Kupfer, Molybdän und Eisen ausgewählt ist</claim-text></claim>
+<claim id="c-de-01-0005" num="0005">
+<claim-text>Verfahren nach Anspruch 1, in dem es sich bei der Sauerstoffquelle um molekularen Sauerstoff handelt.</claim-text></claim>
+<claim id="c-de-01-0006" num="0006">
+<claim-text>Verfahren nach Anspruch 1, in dem das Reaktionsgemisch auf eine Temperatur in einem Bereich zwischen 100 °C und 230 °C bei atmosphärischem Druck erhitzt wird</claim-text></claim>
+<claim id="c-de-01-0007" num="0007">
+<claim-text>Verfahren nach Anspruch 1 zum Oxidieren eines Trägerstoffs, der 4-Chlor-ortho-xylol umfasst, wobei das Verfahren das Vereinen von Chlor-ortho-xylol<!-- EPO <DP n="11"> --> in Abwesenheit von Lösemittel oder Promotor mit mindestens einem Metallkatalysator, bei dem es sich um eine Metallverbindung mit einem Metall handelt, das aus der Gruppe bestehend aus Kobalt, Mangan, Vanadium, Kupfer, Molybdän und Eisen ausgewählt ist, und das Erhitzen in Gegenwart von molekularem Sauerstoff umfasst, um ein Produktgemisch zu produzieren, das 4-Chlorphthalsäureanhydrid und Chlortoluylsäure umfasst.</claim-text></claim>
+<claim id="c-de-01-0008" num="0008">
+<claim-text>Verfahren nach Anspruch 7, in dem das Molverhältnis von 4-Chlor-ortho-xylol-Trägerstoff zu dem mindestens einen Metallkatalysator in einem Bereich von etwa 80-180:1 liegt.</claim-text></claim>
+<claim id="c-de-01-0009" num="0009">
+<claim-text>Verfahren nach Anspruch 7, in dem das Reaktionsgemisch auf eine Temperatur in einem Bereich zwischen 150 °C und 180 °C bei atmosphärischem Druck erhitzt wird</claim-text></claim>
+<claim id="c-de-01-0010" num="0010">
+<claim-text>Verfahren nach Anspruch 1 zum Produzieren eines Produktgemischs, das 4-Chlorphthalsäureanhydrid umfasst, wobei das Verfahren das Oxidieren eines Trägerstoffs, der 4-Chlor-ortho-xylol umfasst, gegebenenfalls in Gegenwart von Chlortoluylsäure umfasst, wobei das Oxidieren die folgenden Schritte umfasst:
+<claim-text>(i) Vereinen des Trägerstoffs in Abwesenheit von Lösemittel oder Promotor mit mindestens einem Metallkatalysator, bei dem es sich um eine Metallverbindung mit einem Metall handelt, das aus der Gruppe bestehend aus Kobalt, Mangan, Vanadium, Kupfer, Molybdän und Eisen ausgewählt ist, und Erhitzen in Gegenwart von molekularem Sauerstoff auf eine Temperatur in einem Bereich zwischen 100 °C und 230 °C bei atmosphärischem Druck, wobei das Molverhältnis von Trägerstoff zu dem mindestens einen Metallkatalysator in einem Bereich von 80-180:1 liegt; und</claim-text>
+<claim-text>(ii) Isolieren eines Produkts, das 4-Chlorphthalsäureanhydrid umfasst.</claim-text></claim-text></claim>
+</claims><!-- EPO <DP n="12"> -->
+<claims id="claims03" lang="fr">
+<claim id="c-fr-01-0001" num="0001">
+<claim-text>Procédé pour oxyder un substrat comprenant au moins un halogéno-ortho-xylène, qui comprend les étapes consistant à combiner le substrat en l'absence de solvant ou d'activateur à au moins un catalyseur métallique et à chauffer à une température dans la plage comprise entre environ 80°C et le point d'ébullition effectif du mélange réactionnel sous la pression régnante, en présence d'une source d'oxygène afin de produire un mélange de produits</claim-text></claim>
+<claim id="c-fr-01-0002" num="0002">
+<claim-text>Procédé selon la revendication 1, dans lequel le mélange de produits comprend un anhydride halogéno-phtalique et un acide halogénotoluique</claim-text></claim>
+<claim id="c-fr-01-0003" num="0003">
+<claim-text>Procédé selon la revendication 2, dans lequel le substrat comprend le chloro-ortho-xylène ou le fluoro-ortho-xylène.</claim-text></claim>
+<claim id="c-fr-01-0004" num="0004">
+<claim-text>Procédé selon la revendication 1, dans lequel ledit au moins un catalyseur métallique est un composé métallique ayant un métal choisi dans le groupe formé par le cobalt, le manganèse, le vanadium, le cuivre, le molybdène et le fer</claim-text></claim>
+<claim id="c-fr-01-0005" num="0005">
+<claim-text>Procédé selon la revendication 1, dans lequel la source d'oxygène est l'oxygène moléculaire</claim-text></claim>
+<claim id="c-fr-01-0006" num="0006">
+<claim-text>Procédé selon la revendication 1, dans lequel le mélange réactionnel est chauffé à une température dans une plage comprise entre 100°C et 230°C à la pression atmosphérique</claim-text></claim>
+<claim id="c-fr-01-0007" num="0007">
+<claim-text>Procédé selon la revendication 1, pour oxyder un substrat comprenant le 4-chloro-ortho-xylène qui comprend les étapes consistant à combiner le chloro-ortho-xylène en l'absence de solvant ou d'activateur, à au<!-- EPO <DP n="13"> --> moins un catalyseur métallique qui est un composé métallique ayant un métal choisi dans le groupe formé par le cobalt, le manganèse, le vanadium, le cuivre, le molybdène et le fer, et à chauffer en présence d'oxygène moléculaire afin de produire un mélange de produits comprenant l'anhydride 4-chlorophtalique et l'acide chloro-toluique.</claim-text></claim>
+<claim id="c-fr-01-0008" num="0008">
+<claim-text>Procédé selon la revendication 7, dans lequel le rapport molaire du substrat à base de 4-chloro-ortho-xylène audit au moins un catalyseur métallique, est dans une plage d'environ (80 à 180):1</claim-text></claim>
+<claim id="c-fr-01-0009" num="0009">
+<claim-text>Procédé selon la revendication 7, dans lequel le mélange réactionnel est chauffé à une température dans une plage comprise entre 150°C et 180°C à la pression atmosphérique</claim-text></claim>
+<claim id="c-fr-01-0010" num="0010">
+<claim-text>Procédé selon la revendication 1, pour produire un mélange de produits, comprenant l'anhydride 4-chloro-phtalique, qui comprend l'oxydation d'un substrat comprenant le 4-chloro-ortho-xylène, éventuellement en présence d'acide chloro-toluique, qui comprend les étapes consistant
+<claim-text>(i) à combiner le substrat en l'absence de solvant ou d'activateur à au moins un catalyseur métallique qui est un composé métallique ayant un métal choisi dans le groupe formé par le cobalt, le manganèse, le vanadium, le cuivre, le molybdène et le fer, et à chauffer en présence d'oxygène moléculaire à une température dans une plage comprise entre 100°C et 230°C à la pression atmosphérique, dans lequel le rapport molaire du substrat audit au moins un catalyseur métallique, est dans une plage de (80-180) :1 ; et</claim-text>
+<claim-text>(ii) à isoler le produit comprenant l'anhydride 4-chlorophtalique</claim-text></claim-text></claim>
+</claims>
+<ep-reference-list id="ref-list">
+<heading id="ref-h0001"><b>REFERENCES CITED IN THE DESCRIPTION</b></heading>
+<p id="ref-p0001" num=""><i>This list of references cited by the applicant is for the reader's convenience only. It does not form part of the European patent document. Even though great care has been taken in compiling the references, errors or omissions cannot be excluded and the EPO disclaims all liability in this regard.</i></p>
+<heading id="ref-h0002"><b>Patent documents cited in the description</b></heading>
+<p id="ref-p0002" num="">
+<ul id="ref-ul0001" list-style="bullet">
+<li><patcit id="ref-pcit0001" dnum="US60166970B"><document-id><country>US</country><doc-number>60166970</doc-number><kind>B</kind><date>19991123</date></document-id></patcit><crossref idref="pcit0001">[0001]</crossref></li>
+<li><patcit id="ref-pcit0002" dnum="US3402184A"><document-id><country>US</country><doc-number>3402184</doc-number><kind>A</kind></document-id></patcit><crossref idref="pcit0002">[0003]</crossref></li>
+<li><patcit id="ref-pcit0003" dnum="US4215053A"><document-id><country>US</country><doc-number>4215053</doc-number><kind>A</kind></document-id></patcit><crossref idref="pcit0003">[0003]</crossref></li>
+<li><patcit id="ref-pcit0004" dnum="US4299977A"><document-id><country>US</country><doc-number>4299977</doc-number><kind>A</kind></document-id></patcit><crossref idref="pcit0004">[0003]</crossref></li>
+<li><patcit id="ref-pcit0005" dnum="US4322549A"><document-id><country>US</country><doc-number>4322549</doc-number><kind>A</kind></document-id></patcit><crossref idref="pcit0005">[0003]</crossref></li>
+<li><patcit id="ref-pcit0006" dnum="US4387243A"><document-id><country>US</country><doc-number>4387243</doc-number><kind>A</kind></document-id></patcit><crossref idref="pcit0006">[0003]</crossref></li>
+<li><patcit id="ref-pcit0007" dnum="US5322954A"><document-id><country>US</country><doc-number>5322954</doc-number><kind>A</kind></document-id></patcit><crossref idref="pcit0007">[0003]</crossref></li>
+<li><patcit id="ref-pcit0008" dnum="JP07258152B"><document-id><country>JP</country><doc-number>07258152</doc-number><kind>B</kind></document-id></patcit><crossref idref="pcit0008">[0003]</crossref></li>
+<li><patcit id="ref-pcit0009" dnum="JP02129143A"><document-id><country>JP</country><doc-number>02129143</doc-number><kind>A</kind></document-id></patcit><crossref idref="pcit0009">[0003]</crossref></li>
+<li><patcit id="ref-pcit0010" dnum="US5229482A"><document-id><country>US</country><doc-number>5229482</doc-number><kind>A</kind></document-id></patcit><crossref idref="pcit0010">[0018]</crossref><crossref idref="pcit0012">[0018]</crossref></li>
+<li><patcit id="ref-pcit0011" dnum="US5830974A"><document-id><country>US</country><doc-number>5830974</doc-number><kind>A</kind></document-id></patcit><crossref idref="pcit0011">[0018]</crossref><crossref idref="pcit0013">[0018]</crossref></li>
+</ul></p>
+</ep-reference-list>
+</ep-patent-document>
