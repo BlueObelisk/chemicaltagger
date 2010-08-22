@@ -36,7 +36,7 @@ public class ExtractFromXML {
 		StringBuilder stringValue = new StringBuilder();
 		for (int i = 0; i < action.getChildCount(); i++) {
 			if (action.getChild(i) instanceof nu.xom.Text) {
-				stringValue.append(action.getChild(i).getValue()+Delimiter);
+				stringValue.append(action.getChild(i).getValue().trim()+Delimiter);
 			} else {
 				if (!(action.getChild(i) instanceof nu.xom.ProcessingInstruction)) {
 					Element sub = (Element) action.getChild(i);
