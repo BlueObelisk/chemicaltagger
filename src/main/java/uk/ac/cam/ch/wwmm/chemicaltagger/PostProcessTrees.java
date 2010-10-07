@@ -12,7 +12,8 @@ import nu.xom.Nodes;
 public class PostProcessTrees {
 	public final static HashMap<String, String> actionMap = new HashMap<String, String>();
 	private String actionName;
-	public PostProcessTrees(){
+
+	public PostProcessTrees() {
 		// Add Tokens
 		actionMap.put("VB-ADD", "Add");
 		actionMap.put("NN-ADD", "Add");
@@ -47,6 +48,7 @@ public class PostProcessTrees {
 		actionMap.put("NN-FILTER", "Filter");
 
 		// Heat Tokens
+
 		actionMap.put("VB-HEAT", "Heat");
 		actionMap.put("VB-INCREASE", "Heat");
 
@@ -86,14 +88,14 @@ public class PostProcessTrees {
 		actionMap.put("VB-YIELD", "Yield");
 
 	}
+
 	public Document process(Document doc) {
 		Element root = new Element("Document");
-		
-		
+
 		Nodes nodes = doc.query("//Sentence");
 		for (int i = 0; i < nodes.size(); i++) {
-			Element sentenceNode = (Element)nodes.get(i);
-			Element newSentenceNode = processSentence(sentenceNode); 
+			Element sentenceNode = (Element) nodes.get(i);
+			Element newSentenceNode = processSentence(sentenceNode);
 			root.appendChild(newSentenceNode);
 		}
 		processDissolve(root);
@@ -102,121 +104,217 @@ public class PostProcessTrees {
 		return processedDoc;
 
 	}
-	
+
 	private Element processDissolve(Element root) {
 		Nodes nodes = root.query("//DissolvePhrase");
 		for (int i = 0; i < nodes.size(); i++) {
-             Element dissolveElement = (Element) nodes.get(i);
-             dissolveElement.setLocalName("ActionPhrase");
-          	 Attribute attribute = new Attribute("type", "Dissolve");
-			
-			 dissolveElement.addAttribute(attribute);
+			Element dissolveElement = (Element) nodes.get(i);
+			dissolveElement.setLocalName("ActionPhrase");
+			Attribute attribute = new Attribute("type", "Dissolve");
+
+			dissolveElement.addAttribute(attribute);
 		}
 		return root;
 	}
+
 	private Element processSentence(Element sentenceNode) {
-	    Element newSentence = new Element("Sentence");
-	    List<Element> elementList = new ArrayList<Element>();
-	    
-	    for (int i = 0; i < sentenceNode.getChildCount(); i++) {
-	    	
+		Element newSentence = new Element("Sentence");
+		List<Element> elementList = new ArrayList<Element>();
+		List<String> splitList = new ArrayList<String>();
+		splitList.add("comma");
+		splitList.add("cc");
+		splitList.add("stop");
+		splitList.add("rb");
+		boolean seenVerb = false;
+		Element actionPhrase = null;
+		for (int i = 0; i < sentenceNode.getChildCount(); i++) {
+
 			Element phraseElement = (Element) sentenceNode.getChild(i);
-			
+
 			String content = phraseElement.toXML();
-			
-			if (containsKeyword(content)){
-				Element actionPhrase = new Element("ActionPhrase");
+			System.out.println("--Phrase is " + phraseElement.toXML());
+			if (containsKeyword(content)) {
+
+				actionPhrase = new Element("ActionPhrase");
 				Attribute attribute = new Attribute("type", actionName);
-				
+				System.out.println("* I contain keyword:: "
+						+ actionPhrase.toXML());
 				actionPhrase.addAttribute(attribute);
 				elementList.add(phraseElement);
-				if (i + 1 < sentenceNode.getChildCount()){
-					Element nextPhraseElement = (Element) sentenceNode.getChild(i+1);
-					if (nextPhraseElement.getLocalName().contains("PrepPhrase")){
-					    elementList.add(nextPhraseElement);
-					    i++;
+
+				if (phraseElement.getLocalName().contains("VerbPhrase")) {
+
+					if (seenVerb) {
+						System.out
+								.println("-- I have seen a verb and I am currently a verb");
+
+						System.out
+								.println("--- ActionPhrase at the moment is  "
+										+ actionPhrase);
+						if (actionPhrase != null) {
+							addListToNode(actionPhrase, elementList);
+							newSentence.appendChild(actionPhrase);
+							actionPhrase = null;
+
+						} else {
+							addListToNode(newSentence, elementList);
+
+						}
+						elementList = new ArrayList<Element>();
+						System.out.println("---- New sentence is "
+								+ newSentence.toXML());
+
 					}
-					else if (nextPhraseElement.getLocalName().contains("VerbPhrase") &&
-							nextPhraseElement.getChild(0).getValue().toLowerCase().equals("to")){
-					    elementList.add(nextPhraseElement);
-					    i++;
-					}
-					else if (actionName.contains("Yield") & nextPhraseElement.getLocalName().contains("NounPhrase")){
-				
-						    elementList.add(nextPhraseElement);
-						    i++;
-					}
+					seenVerb = true;
+
 				}
-				addListToNode(actionPhrase,elementList);
-				newSentence.appendChild(actionPhrase);
+			} else if (phraseElement.getLocalName().contains("VerbPhrase")) {
+				
+				if (seenVerb) {
+					System.out
+							.println("-- I have seen a verb and I am currently a verb");
+
+					System.out
+							.println("--- ActionPhrase at the moment is  "
+									+ actionPhrase);
+					if (actionPhrase != null) {
+						addListToNode(actionPhrase, elementList);
+						newSentence.appendChild(actionPhrase);
+						actionPhrase = null;
+
+					} else {
+						addListToNode(newSentence, elementList);
+
+					}
+					elementList = new ArrayList<Element>();
+					System.out.println("---- New sentence is "
+							+ newSentence.toXML());
+
+				}
+				elementList.add(phraseElement);
+				seenVerb = true;
+				System.out.println("** I contain a verb:: ");
+				// elementList = new ArrayList<Element>();
+			} else if (seenVerb
+					& splitList.contains(phraseElement.getLocalName()
+							.toLowerCase())) {
+
+				System.out
+						.println("*** I have seen a verb and I am currently a stop word ");
+
+				System.out.println("**** ActionPhrase at the moment is  "
+						+ actionPhrase);
+				elementList.add(phraseElement);
+				if (actionPhrase != null) {
+					addListToNode(actionPhrase, elementList);
+					newSentence.appendChild(actionPhrase);
+					actionPhrase = null;
+
+				} else
+					addListToNode(newSentence, elementList);
+
+				System.out.println("***** New sentence is "
+						+ newSentence.toXML());
 				elementList = new ArrayList<Element>();
-			    	
+				seenVerb = false;
 			}
-			else if (phraseElement.getLocalName().contains("VerbPhrase")){
+			else if (splitList.contains(phraseElement.getLocalName()
+							.toLowerCase())) {
+
+				if (actionPhrase!= null){
+					
+					addListToNode(actionPhrase, elementList);
+					newSentence.appendChild(actionPhrase);
+					elementList = new ArrayList<Element>();
+					actionPhrase = null;
+				}
+				String elementListContent = elementListToString(elementList);
+				if (elementListContent.toLowerCase().contains("timephrase") &  elementListContent.toLowerCase().contains("after")){
+					actionPhrase = new Element("ActionPhrase");
+					Attribute attribute = new Attribute("type", "Wait");
+					System.out.println("* I contain keyword:: "
+							+ actionPhrase.toXML());
+					actionPhrase.addAttribute(attribute);
 					elementList.add(phraseElement);
-				    addListToNode(newSentence,elementList);
+					addListToNode(actionPhrase, elementList);
+					newSentence.appendChild(actionPhrase);
+					actionPhrase = null;
+
 					elementList = new ArrayList<Element>();
 				}
-			else{
+				
+			}
+			else {
 				elementList.add(phraseElement);
 			}
-			
+
 		}
-	    if (elementList.size() > 0){
-			addListToNode(newSentence,elementList);
+
+		if (elementList.size() > 0) {
+			addListToNode(newSentence, elementList);
 		}
 		return newSentence;
 	}
-	
-	
-	
+
+	private String elementListToString(List<Element> elementList) {
+		// TODO Auto-generated method stub
+		String elementContent = "";
+		for (Element element : elementList) {
+			elementContent = elementContent + element.toXML();
+		}
+		
+		return elementContent;
+			
+		
+	}
 	private void addListToNode(Element parentNode, List<Element> elementList) {
 		for (Element element : elementList) {
 			Element newElement = (Element) element.copy();
-			
+
 			parentNode.appendChild(newElement);
 		}
-		
+
 	}
-	
-	
+
 	private Element processSolvent(Element root) {
 		Nodes nodes = root.query("//ActionPhrase");
-		
+
 		for (int i = 0; i < nodes.size(); i++) {
 			Element actionElement = (Element) nodes.get(i);
-//			System.out.println(actionElement.getAttributeValue("type"));
-			if (actionElement.getAttributeValue("type").equals("Dissolve")){
-             
-             addSolventRole(actionElement,"IN-IN",false);
+			// System.out.println(actionElement.getAttributeValue("type"));
+			if (actionElement.getAttributeValue("type").equals("Dissolve")) {
+
+				addSolventRole(actionElement, "IN-IN", false);
 			}
-			if (actionElement.getAttributeValue("type").equals("Wash")){
-	             
-	             addSolventRole(actionElement,"IN-WITH",false);
+			if (actionElement.getAttributeValue("type").equals("Wash")) {
+
+				addSolventRole(actionElement, "IN-WITH", false);
 			}
-		
-		    
-            
+
 		}
 		return root;
 	}
-	
-	private void addSolventRole(Element solventElement, String preposition,boolean seenPreposition) {
-		
-		for (int i = 0; i < solventElement.getChildCount(); i++){
+
+	private void addSolventRole(Element solventElement, String preposition,
+			boolean seenPreposition) {
+
+		for (int i = 0; i < solventElement.getChildCount(); i++) {
 			Element child = (Element) solventElement.getChild(i);
 			if (child.getLocalName().toLowerCase().contains("phrase")) {
-				addSolventRole(child,preposition,seenPreposition);
+				addSolventRole(child, preposition, seenPreposition);
 			}
-			if (child.getLocalName().toLowerCase().contains("molecule") && seenPreposition){
-				Attribute attribute = new Attribute("role","Solvent");
-		
+			if (child.getLocalName().toLowerCase().contains("molecule")
+					&& seenPreposition) {
+				Attribute attribute = new Attribute("role", "Solvent");
+
 				child.addAttribute(attribute);
 			}
-			if (child.getLocalName().equals(preposition)) seenPreposition = true;
+			if (child.getLocalName().equals(preposition))
+				seenPreposition = true;
 		}
-		
+
 	}
+
 	private boolean containsKeyword(String content) {
 		for (String keyword : actionMap.keySet()) {
 			if (content.contains(keyword)) {
@@ -226,7 +324,5 @@ public class PostProcessTrees {
 		}
 		return false;
 	}
-	
-	
 
 }
