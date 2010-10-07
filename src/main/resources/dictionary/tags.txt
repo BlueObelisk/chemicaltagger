@@ -27,7 +27,7 @@ TO---^to$|^To$---The preposition 'TO'
 FW---^et(.)?$|^al(.)?$|^et(.)?al(.)?$
 #Nouns
 NN-STATE---powder|glass|liquid|oil|solid|gas|syrup|crystal|gum|needle|prisms---Physical States
-NN-TIME---^period(s)?$|^min(utes|.)?$|^hour(s)?|^month(s)?|^week(s|end)?$|^seconds$|^d$|^h$|^days$|.*night|hr(s)?---Time Token
+NN-TIME---^period(s)?$|^min(utes|.)?$|^hour(s)?|^month(s)?|^week(s|end)?$|^seconds$|^d$|^h$|^days$|.*night|hr(s)?|^(t|T)ime$---Time Token
 NN-MASS---(\d\d+)?(m|k|\xce\xbc)?(g|gram)(s)?$---Grams
 NN-AMOUNT---(\d\d+)?(m|k|\xce\xbc)?mol(s)?$---Mols
 NN-MOLAR---^(\d+)?(^M)$---Molar
@@ -48,7 +48,7 @@ NN-COLUMN---^(c|C)?olumn$---Column Token
 NN-CHROMATOGRAPHY---^(c|C)?hromatography$---Chromatography Token 
 NN-VACUUM---^(v|V)?acuum$|^(v|V)?acuo$---Vacuum Token                   
 NN-CYCLE---^(c|C)?ycle(s)?$---Column Token                    
-NN-TIMES---^(t|T)?ime(s)?$---Times Token
+NN-TIMES---^(t|T)imes$---Times Token
 NN-EXAMPLE---^(e|E)xample(s)?$---Example Token
 
 #Not really chementities or Oscar-cm.. but need to be fixed
@@ -84,7 +84,7 @@ VB-TREAT---^treat(e|s|ed|ing)?$---Treat Verb
                     
 #Apparatus Tokens
 VB-APPARATUS---(^equip|^seal|clos|^cap|^fitt)(ped|ed|e)?$---Apparatus Verb
-NN-APPARATUS---^neck$|^valve$|^adapter$|^inlet$|^outlet$|^condenser$|^stirrer$|^reactor$|^syringe$|^bath$|^oven$|^vessel$|^glove|^box$|^bar$|^tube$|^(S|s)chlenk$|^(F|f)lask(s)?$|^(F|f)unnel?$|^desiccator(s)?$---Apparatus Nouns
+NN-APPARATUS---^trap$|^neck$|^valve$|^adapter$|^inlet$|^outlet$|^condenser$|^stirrer$|^reactor$|^syringe$|^bath$|^oven$|^vessel$|^glove|^box$|^bar$|^tube$|^(S|s)chlenk$|^(F|f)lask(s)?$|^(F|f)unnel?$|^desiccator(s)?$---Apparatus Nouns
 #Concentrate Tokens
 VB-CONCENTRATE---(^concentrat|^saturat)(ed|e|ing)?$---Concentrate Verb
 NN-CONCENTRATE---^concentration---Concentrate Noun

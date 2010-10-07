@@ -148,12 +148,17 @@ public class PostProcessTags {
 		if (currentTag.toLowerCase().startsWith("vb-precipitate")) {
 			List<String> beforeList = Utils.addToList("jj oscar-cj");
 			List<String> afterList = Utils.addToList("in-of");
-
+			List<String> notafterList = Utils.addToList("nn-time");
 			if (stringbefore(beforeList, i, combinedTags)
 					&& (stringafter(afterList, i, combinedTags) || i == combinedTags
 							.size())) {
-				newTag = "NN-CHEMENTITY";
+				if (!stringafter(notafterList, i, combinedTags))	newTag = "NN-CHEMENTITY";
 			}
+		}
+
+		if (currentToken.startsWith("Contain")) {
+			 newTag = "JJ";
+			
 		}
 
 		if (currentTag.toLowerCase().startsWith("vbn")

@@ -47,7 +47,10 @@ unmatchedTokens
 
 nounphrase
 	:	nounphraseStructure ->  ^(NODE["NounPhrase"]  nounphraseStructure);	
-nounphraseStructure : dt? advAdj*  (dissolvePhrase|noun|number|ratio)+    (conjunction* advAdj*  noun|number|ratio )*   (prepphraseOf| prepphraseIN dissolvePhrase?)*  ;
+nounphraseStructure 
+	:	multiApparatus|nounphraseStructure1;	
+
+nounphraseStructure1 : dt? advAdj*  (dissolvePhrase|noun|number|ratio)+    (conjunction* advAdj*  noun|number|ratio )*   (prepphraseOf| prepphraseIN dissolvePhrase?)*  ;
 dissolvePhrase 
 	:	(dissolveStructure1|dissolveStructure2) ->  ^(NODE["DissolvePhrase"] dissolveStructure1? dissolveStructure2?);
 
@@ -132,11 +135,16 @@ molar	: cd* nnmolar -> ^(NODE["MOLAR"]   cd* nnmolar );
 
 preparationphrase
 	: vbsynthesize inas (nnexample cd| prepphrase)	;
+	
+multiApparatus 
+	:	apparatus (conjunction* apparatus)+ >  ^(NODE["MultipleApparatus"]  advAdj* inAll+  nounphrase);	
 apparatus
-	:	preapparatus* nnapparatus+-> ^(NODE["APPARATUS"]   preapparatus* nnapparatus+ );
+	:	preapparatus* nnApp+-> ^(NODE["APPARATUS"]   preapparatus* nnApp+ );
 
+nnApp 
+	:	nnapparatus (dash nnapparatus)*;
 preapparatus
-	:  dt?  quantity|nn|nnpressure|adj|nnadd|nnchementity|nnstate ;
+	:  dt?  (quantity|nn|nnpressure|adj|nnadd|molecule|nnchementity|nnstate)+ ;
 measurements
 	:(cd nn)? multiple|measurementtypes    dt?;
 multiple	: cd cdunicode measurementtypes? -> ^(NODE["MULTIPLE"]   cd cdunicode measurementtypes? );		
