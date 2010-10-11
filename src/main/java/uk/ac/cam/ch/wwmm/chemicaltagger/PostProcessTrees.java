@@ -133,7 +133,7 @@ public class PostProcessTrees {
 			Element phraseElement = (Element) sentenceNode.getChild(i);
 
 			String content = phraseElement.toXML();
-			System.out.println("--Phrase is " + phraseElement.toXML());
+//			System.out.println("--Phrase is " + phraseElement.toXML());
 			if (containsKeyword(content)) {
 
 				
@@ -141,12 +141,12 @@ public class PostProcessTrees {
 				if (phraseElement.getLocalName().contains("VerbPhrase")) {
 
 					if (seenVerb) {
-						System.out
-								.println("-- I have seen a verb and I am currently a verb");
-
-						System.out
-								.println("--- ActionPhrase at the moment is  "
-										+ actionPhrase);
+//						System.out
+//								.println("-- I have seen a verb and I am currently a verb");
+//
+//						System.out
+//								.println("--- ActionPhrase at the moment is  "
+//										+ actionPhrase);
 						if (actionPhrase != null) {
 							addListToNode(actionPhrase, elementList);
 							newSentence.appendChild(actionPhrase);
@@ -157,8 +157,8 @@ public class PostProcessTrees {
 
 						}
 						elementList = new ArrayList<Element>();
-						System.out.println("---- New sentence is "
-								+ newSentence.toXML());
+//						System.out.println("---- New sentence is "
+//								+ newSentence.toXML());
 
 					}
 					seenVerb = true;
@@ -166,8 +166,8 @@ public class PostProcessTrees {
 				}
 				actionPhrase = new Element("ActionPhrase");
 				Attribute attribute = new Attribute("type", actionName);
-				System.out.println("* I contain keyword:: "
-						+ actionName);
+//				System.out.println("* I contain keyword:: "
+//						+ actionName);
 				actionPhrase.addAttribute(attribute);
 				elementList.add(phraseElement);
 
@@ -175,12 +175,12 @@ public class PostProcessTrees {
 			} else if (phraseElement.getLocalName().contains("VerbPhrase")) {
 				
 				if (seenVerb) {
-					System.out
-							.println("-- I have seen a verb and I am currently a verb");
-
-					System.out
-							.println("--- ActionPhrase at the moment is  "
-									+ actionPhrase);
+//					System.out
+//							.println("-- I have seen a verb and I am currently a verb");
+//
+//					System.out
+//							.println("--- ActionPhrase at the moment is  "
+//									+ actionPhrase);
 					if (actionPhrase != null) {
 						addListToNode(actionPhrase, elementList);
 						newSentence.appendChild(actionPhrase);
@@ -191,22 +191,22 @@ public class PostProcessTrees {
 
 					}
 					elementList = new ArrayList<Element>();
-					System.out.println("---- New sentence is "
-							+ newSentence.toXML());
+//					System.out.println("---- New sentence is "
+//							+ newSentence.toXML());
 
 				}
 				elementList.add(phraseElement);
 				
 
 				seenVerb = true;
-				System.out.println("** I contain a verb:: ");
+//				System.out.println("** I contain a verb:: ");
 				String elementListContent = elementListToString(elementList);
 
 				if (elementListContent.toLowerCase().contains("timephrase")){
 					actionPhrase = new Element("ActionPhrase");
 					Attribute attribute = new Attribute("type", "Wait");
-					System.out.println("* I contain keyword:: "
-							+ actionPhrase.toXML());
+//					System.out.println("* I contain keyword:: "
+//							+ actionPhrase.toXML());
 					actionPhrase.addAttribute(attribute);
 					
 					addListToNode(actionPhrase, elementList);
@@ -220,8 +220,8 @@ public class PostProcessTrees {
 
 					actionPhrase = new Element("ActionPhrase");
 					Attribute attribute = new Attribute("type", "ApparatusAction");
-					System.out.println("* I contain keyword:: "
-							+ actionPhrase.toXML());
+//					System.out.println("* I contain keyword:: "
+//							+ actionPhrase.toXML());
 					actionPhrase.addAttribute(attribute);
 					
 					addListToNode(actionPhrase, elementList);
@@ -236,11 +236,11 @@ public class PostProcessTrees {
 					& splitList.contains(phraseElement.getLocalName()
 							.toLowerCase())) {
 
-				System.out
-						.println("*** I have seen a verb and I am currently a stop word ");
-
-				System.out.println("**** ActionPhrase at the moment is  "
-						+ actionPhrase);
+//				System.out
+//						.println("*** I have seen a verb and I am currently a stop word ");
+//
+//				System.out.println("**** ActionPhrase at the moment is  "
+//						+ actionPhrase);
 				elementList.add(phraseElement);
 				if (actionPhrase != null) {
 					addListToNode(actionPhrase, elementList);
@@ -250,8 +250,8 @@ public class PostProcessTrees {
 				} else
 					addListToNode(newSentence, elementList);
 				
-				System.out.println("***** New sentence is "
-						+ newSentence.toXML());
+//				System.out.println("***** New sentence is "
+//						+ newSentence.toXML());
 				elementList = new ArrayList<Element>();
 				seenVerb = false;
 			}
@@ -269,8 +269,8 @@ public class PostProcessTrees {
 				if (elementListContent.toLowerCase().contains("timephrase")){
 					actionPhrase = new Element("ActionPhrase");
 					Attribute attribute = new Attribute("type", "Wait");
-					System.out.println("* I contain keyword:: "
-							+ actionPhrase.toXML());
+//					System.out.println("* I contain keyword:: "
+//							+ actionPhrase.toXML());
 					actionPhrase.addAttribute(attribute);
 					elementList.add(phraseElement);
 					addListToNode(actionPhrase, elementList);
