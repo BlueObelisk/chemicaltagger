@@ -154,21 +154,24 @@ public class PostProcessTags {
 			if (stringbefore(beforeList, i, combinedTags)
 					&& (stringafter(afterList, i, combinedTags) || i == combinedTags
 							.size())) {
-				if (!stringafter(notafterList, i, combinedTags))	newTag = "NN-CHEMENTITY";
+				if (!stringafter(notafterList, i, combinedTags))
+					newTag = "NN-CHEMENTITY";
 			}
 		}
 
 		if (currentToken.startsWith("Contain")) {
-			 newTag = "JJ";
-			
+			newTag = "JJ";
+
 		}
 
 		if (currentTag.toLowerCase().startsWith("vbn")
-				|| currentTag.toLowerCase().startsWith("vbg") || currentToken.endsWith("ed")) {
+				|| currentTag.toLowerCase().startsWith("vbg")
+				|| currentToken.endsWith("ed")) {
 
 			List<String> afterList = Utils
 					.addToList("oscar-cm nns nn-chementity oscar-cj nnp");
-			List<String> beforeList = Utils.addToList("dt rb rb-conj dt-the stop");
+			List<String> beforeList = Utils
+					.addToList("dt rb rb-conj dt-the stop");
 			if (stringafter(afterList, i, combinedTags)
 					&& stringbefore(beforeList, i, combinedTags)) {
 				newTag = "OSCAR-CJ";
@@ -184,12 +187,24 @@ public class PostProcessTags {
 			}
 
 		}
-		
+
 		if (currentTag.toLowerCase().startsWith("vb-yield")) {
 
 			List<String> beforeList = Utils.addToList("nn-percent");
 			if (stringbefore(beforeList, i, combinedTags)) {
 				newTag = "NN-YIELD";
+			}
+
+		}
+
+		if (currentTag.toLowerCase().startsWith("vb-precipitate")) {
+
+			if (i != 0) {
+				int beforeIndex = i - 1;
+				if (tokenList.get(beforeIndex).endsWith("ing")) {
+					newTag = "NN-CHEMENTITY";
+				}
+
 			}
 
 		}
@@ -204,9 +219,16 @@ public class PostProcessTags {
 					.addToList("nn oscar-cm nns nn-chementity oscar-cj jj nnp nn-state nn-apparatus");
 			List<String> beforeList = Utils.addToList("dt dt-the");
 
+			List<String> notList = Utils.addToList("in-of");
 			if (stringafter(afterList, i, combinedTags)
 					&& stringbefore(beforeList, i, combinedTags)) {
 				newTag = "JJ";
+			}
+
+			else if (currentToken.toLowerCase().endsWith("ing")
+					&& stringbefore(beforeList, i, combinedTags)
+					&& !stringafter(notList, i, combinedTags)) {
+				newTag = "OSCAR-CJ";
 			}
 
 		}
@@ -214,7 +236,7 @@ public class PostProcessTags {
 		if (currentTag.toLowerCase().startsWith("vb")
 				&& !currentToken.toLowerCase().endsWith("ing")) {
 
-			List<String> beforeList = Utils.addToList("dt dt-the");
+			List<String> beforeList = Utils.addToList("dt dt-the in-in");
 			List<String> afterList = Utils
 					.addToList("nn oscar-cm nns nn-chementity oscar-cj jj nnp nn-state nn-apparatus");
 
@@ -384,9 +406,9 @@ public class PostProcessTags {
 		}
 		if (currentTag.toLowerCase().startsWith("nn-synthesize")) {
 
-			List<String> afterList = Utils
-					.addToList("nn-apparatus");
-			List<String> beforeList = Utils.addToList("dt nn-apparatus rb-conj dt-the");
+			List<String> afterList = Utils.addToList("nn-apparatus");
+			List<String> beforeList = Utils
+					.addToList("dt nn-apparatus rb-conj dt-the");
 			if (stringafter(afterList, i, combinedTags)
 					&& stringbefore(beforeList, i, combinedTags)) {
 				newTag = "OSCAR-CJ";
