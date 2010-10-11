@@ -2,7 +2,7 @@
 <Document>
   <Sentence>
     <NounPhrase>
-      <DT>The</DT>
+      <DT-THE>The</DT-THE>
       <NN-CHEMENTITY>title</NN-CHEMENTITY>
       <NN-CHEMENTITY>compound</NN-CHEMENTITY>
     </NounPhrase>
@@ -16,7 +16,7 @@
       <PrepPhrase>
         <IN-IN>in</IN-IN>
         <NounPhrase>
-          <DT>the</DT>
+          <DT-THE>the</DT-THE>
           <NN>literature</NN>
         </NounPhrase>
       </PrepPhrase>
@@ -110,7 +110,7 @@
   </Sentence>
   <Sentence>
     <NounPhrase>
-      <DT>The</DT>
+      <DT-THE>The</DT-THE>
       <JJ>yellow</JJ>
       <NN-CHEMENTITY>solution</NN-CHEMENTITY>
     </NounPhrase>
@@ -132,7 +132,7 @@
   </Sentence>
   <Sentence>
     <NounPhrase>
-      <DT>The</DT>
+      <DT-THE>The</DT-THE>
       <NN>resultant</NN>
       <NN-CHEMENTITY>mixture</NN-CHEMENTITY>
     </NounPhrase>
@@ -218,7 +218,7 @@
   </Sentence>
   <Sentence>
     <NounPhrase>
-      <DT>The</DT>
+      <DT-THE>The</DT-THE>
       <JJ>brown</JJ>
       <NN-CHEMENTITY>solution</NN-CHEMENTITY>
     </NounPhrase>

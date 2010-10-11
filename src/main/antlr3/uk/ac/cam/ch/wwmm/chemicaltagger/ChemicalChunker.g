@@ -35,7 +35,7 @@ document: sentences+-> ^(NODE["Sentence"]  sentences )+ ;
 
 sentences:  (sentence|unmatchedPhrase)+    (comma|stop)*;
 
-sentence:  (nounphrase|verbphrase|prepphrase)+ (advAdj|colon) * conjunction*;
+sentence:  (nounphrase|verbphrase|prepphrase)+ (advAdj|colon) * (conjunction|rbconj)*;
 
 
 unmatchedPhrase
@@ -47,10 +47,13 @@ unmatchedTokens
 
 nounphrase
 	:	nounphraseStructure ->  ^(NODE["NounPhrase"]  nounphraseStructure);	
+	
 nounphraseStructure 
-	:	multiApparatus|nounphraseStructure1;	
-
-nounphraseStructure1 : dt? advAdj*  (dissolvePhrase|noun|number|ratio)+    (conjunction* advAdj*  noun|number|ratio )*   (prepphraseOf| prepphraseIN dissolvePhrase?)*  ;
+	:	nounphraseStructure1|nounphraseStructure2;
+nounphraseStructure1
+	:	 multiApparatus ->  ^(NODE["MultipleApparatus"] multiApparatus);		
+nounphraseStructure2 
+	:	dtTHE? dt? advAdj*  (dissolvePhrase|noun|number|ratio)+    (conjunction* advAdj*  noun|number|ratio )*   (prepphraseOf| prepphraseIN dissolvePhrase?)*  ;
 dissolvePhrase 
 	:	(dissolveStructure1|dissolveStructure2) ->  ^(NODE["DissolvePhrase"] dissolveStructure1? dissolveStructure2?);
 
@@ -66,12 +69,12 @@ conjunction
 
 verbphrase
 	:	verbphraseStructure ->  ^(NODE["VerbPhrase"]  verbphraseStructure);
-verbphraseStructure :  to? inAll? inafter? (md* adv* adj? verb+ md* adv* adj? neg? )+ inoff? (cc? comma? prepphrase)*   ;
+verbphraseStructure :  to? inAll? inafter? (md* rbconj? adv* adj? verb+ md* adv* adj? neg? )+ inoff? (cc? comma? prepphrase)*   ;
 verb : vb|vbp|vbg|vbd|vbz|vbn|vbuse|vbsubmerge|vbsubject|vbadd|vbcharge|vbcontain|vbdrop|vbfill|vbsuspend|vbtreat|vbapparatus|vbconcentrate|vbcool|vbdegass|vbdissolve|vbdry|vbextract|vbfilter |vbheat|vbincrease|vbpartition|vbprecipitate|vbpurify|vbquench|vbrecover|vbremove|vbstir|vbsynthesize|vbwait|vbwash|vbyield|vbchange;
 
 number : cd|oscarcd;	
 clause	:	wdt|wp_poss|wpo|wpo|wps|wql|wrb|ex|pdt;
-noun :  prp|citation|molecule|apparatus|unnamedmolecule|nnstate|nn|nns|nnp|nnadd|preparationphrase|nnexample|oscarcpr|range|amount|mixture|nntime|nnatmosphere|nneq|quantity|nnchementity|measurements|nntemp|nnflash|nngeneral|nnmethod|nnamount|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|nnvol|nnpurify|wdt|wp_poss|wpo|wps|nnsynthesize|nnmixture|oscaront|number|oscarCompound|nnextract|nnfilter|nnprecipitate|nnremove|fw|fwin|sym|clause;
+noun :  prp|citation|molecule|apparatus|unnamedmolecule|nnyield|nnstate|nn|nns|nnp|nnadd|preparationphrase|nnexample|oscarcpr|range|amount|mixture|nntime|nnatmosphere|nneq|quantity|nnchementity|measurements|nntemp|nnflash|nngeneral|nnmethod|nnamount|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|nnvol|nnpurify|wdt|wp_poss|wpo|wps|nnsynthesize|nnmixture|oscaront|number|oscarCompound|nnextract|nnfilter|nnprecipitate|nnremove|fw|fwin|sym|clause;
 range: cd dash cd;
 
 ratio : (numberratio|nounratio) -> ^(NODE["RATIO"] numberratio? nounratio?)  ;
@@ -89,10 +92,10 @@ citationContent:   (nnp|fw|cd|conjunction) (nnp|fw|cd|conjunction)+ ;
 mixture: (mixtureStructure2|mixtureStructure1) -> ^(NODE["MIXTURE"]  mixtureStructure2? mixtureStructure1?);
 mixtureStructure2: comma lrb mixtureContent rrb comma;
 mixtureStructure1:  lrb mixtureContent rrb;
-mixtureContent:   (fw|verb|measurements|md|stop|oscarCompound|molecule|unnamedmolecule|dash|sym|cd|noun|inof|inAll|cd|comma|adj|colon|stop) (fw|verb|measurements|md|stop|oscarCompound|molecule|unnamedmolecule|dash|sym|cd|noun|inof|inAll|cd|comma|adj|colon|stop)+ ;
+mixtureContent:   (fw|verb|measurements|md|stop|oscarCompound|molecule|unnamedmolecule|dash|sym|cd|noun|inof|inAll|cd|comma|adj|colon|stop) (fw|verb|measurements|nnyield|md|stop|oscarCompound|molecule|unnamedmolecule|dash|sym|cd|noun|inof|inAll|cd|comma|adj|colon|stop)+ ;
 
 adj	:	jj|jjr|jjs|jjt|oscarcj|oscarrn;
-adv	:	rb|rbr|rbt|rp|rbs|rbconj;
+adv	:	rb|rbr|rbt|rp|rbs;
 // Different PrepPhrases
 
 
@@ -137,14 +140,14 @@ preparationphrase
 	: vbsynthesize inas (nnexample cd| prepphrase)	;
 	
 multiApparatus 
-	:	apparatus (conjunction* apparatus)+ >  ^(NODE["MultipleApparatus"]  advAdj* inAll+  nounphrase);	
+	:	apparatus (conjunction* apparatus )*;	
 apparatus
-	:	preapparatus* nnApp+-> ^(NODE["APPARATUS"]   preapparatus* nnApp+ );
+	:	dt? preapparatus* nnApp+-> ^(NODE["APPARATUS"]   dt? preapparatus* nnApp+ );
 
 nnApp 
-	:	nnapparatus (dash nnapparatus)*;
+	:	nnapparatus+ (dash nnapparatus)*;
 preapparatus
-	:  dt?  (quantity|nn|nnpressure|adj|nnadd|molecule|nnchementity|nnstate)+ ;
+	:    (quantity|adj|nnpressure|nnadd|molecule|nnchementity|nnstate|nn)+ ;
 measurements
 	:(cd nn)? multiple|measurementtypes    dt?;
 multiple	: cd cdunicode measurementtypes? -> ^(NODE["MULTIPLE"]   cd cdunicode measurementtypes? );		
@@ -342,6 +345,8 @@ vbwash:'VB-WASH' TOKEN;
 //Yield Tokens
 vbyield:'VB-YIELD' TOKEN;
 
+//Yield Tokens
+nnyield:'NN-YIELD' TOKEN;
 //Misc Tokens mainly to replace characters that are not markup friendly
 colon:'COLON' TOKEN;
 comma:'COMMA' TOKEN;
@@ -418,6 +423,9 @@ doz:'DOZ' TOKEN;
 // Singular determiner/quantifier (this, that)
 dt:'DT' TOKEN;
 
+
+// Singular determiner/quantifier (this, that)
+dtTHE:'DT-THE' TOKEN;
 // Singular or plural determiner/quantifier (some, any)
 dti:'DTI' TOKEN;
 

@@ -4,6 +4,8 @@ TM-UNICODE---®---Unicode Characters
 CD-UNICODE---×|&lt---Unicode Cardinal Digits
 CD---^(\d|-)?\d+\.?\d*$--- Cardinal Digits
 
+DT-THE---^(t|T)he$---The determiner 'THE';
+
 # Prepositions
 IN-AS---^as$---The preposition 'AS'
 IN-BEFORE---^before$---The preposition 'BEFORE'
@@ -132,7 +134,7 @@ VB-QUENCH---(quench|terminat)(e|ed|ing)?$---Quench Verb
 VB-RECOVER---(recover|collect)(ed)?$---Recover Verb
 
 #Remove Tokens
-VB-REMOVE---(pre|re)?(remov|evaporat|decant|absorb|withdraw)(n|e|ed|ing)?$---Remove Verb
+VB-REMOVE---(pre|re)?(remov|evaporat|decant|absorb|withdraw|azeotroped|azeotroping)(n|e|ed|ing)?$---Remove Verb
 NN-REMOVE---(pre|re)?(removal|evaporation|evaporator)$---Remove Noun
 
 #Stir Tokens
@@ -154,7 +156,7 @@ VB-YIELD---^(yield|afford|result|provid|obtain|give|gave|isolat|leav|giv)(ed|e|i
 
 #Misc Tokens mainly to replace characters that are not markup friendly
 RB---.*wise$|.*ly$---Adverbs like dropwise
-RB-CONJ---^there[a-z]+|indeed|moreover---Conjunctive adverbs like: Thereof, therefrom etc..
+RB-CONJ---^there[a-z]+|indeed|moreover|^(T|t)hen$---Conjunctive adverbs like: Thereof, therefrom etc..
 COLON---^:---Colon           
 COMMA---^,---Comma           
 APOST---^\'|^\'\'$---Apostrophe          
