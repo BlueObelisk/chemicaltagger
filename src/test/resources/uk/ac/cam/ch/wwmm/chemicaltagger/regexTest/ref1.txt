@@ -1,1 +1,1 @@
-NN-MIXTURE mixture VB-STIR stirred NN-TEMP room NN-TEMP temperature IN-FOR for CD 24 NN-TIME h RB subsequently CD 50 NN-TEMP °C IN-FOR for CD 24 NN-TIME h STOP .
+DT-THE The NN-MIXTURE mixture VB-STIR stirred NN-TEMP room NN-TEMP temperature IN-FOR for CD 24 NN-TIME h RB subsequently CD 50 NN-TEMP °C IN-FOR for CD 24 NN-TIME h STOP .
