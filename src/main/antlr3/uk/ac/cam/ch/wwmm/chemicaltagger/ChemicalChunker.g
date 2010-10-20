@@ -42,7 +42,7 @@ unmatchedPhrase
 	:	 unmatchedTokens -> ^(NODE["Unmatched"] unmatchedTokens)+;
 	
 unmatchedTokens
-	:	(fw|noun|verb|inAll|dt|oscarcd|oscarcm|oscarrn|oscaront|brackets|sym|colon|md|neg|number|comma|advAdj);	
+	:	(fw|noun|verb|inAll|dt|dtTHE|oscarcd|oscarcm|oscarrn|oscaront|brackets|sym|colon|md|neg|number|comma|advAdj|rbconj);	
 
 
 nounphrase
@@ -53,14 +53,14 @@ nounphraseStructure
 nounphraseStructure1
 	:	 multiApparatus ->  ^(NODE["MultipleApparatus"] multiApparatus);		
 nounphraseStructure2 
-	:	dtTHE? dt? advAdj*  (dissolvePhrase|noun|number|ratio)+    (conjunction* advAdj*  noun|number|ratio )*   (prepphraseOf| prepphraseIN dissolvePhrase?)*  ;
+	:	dtTHE? dt? advAdj*  (dissolvePhrase|noun|number|ratio)+    (conjunction* advAdj* (dissolvePhrase|noun|number|ratio) )*   ((prepphraseOf| prepphraseIN) dissolvePhrase?)*  ;
 dissolvePhrase 
 	:	(dissolveStructure1|dissolveStructure2) ->  ^(NODE["DissolvePhrase"] dissolveStructure1? dissolveStructure2?);
 
 dissolveStructure1
-	:	lrb molecule (inin molecule)+ rrb ;
+	:	lrb adj? nnp? (molecule|unnamedmolecule) (inin adj? nnp? (molecule|unnamedmolecule))+ rrb ;
 dissolveStructure2
-	:	molecule (inin molecule)+ ;
+	:	adj? nnp? (molecule|unnamedmolecule) (inin adj? nnp? (molecule|unnamedmolecule))+ ;
 
 
 conjunction 
@@ -74,9 +74,13 @@ verb : vb|vbp|vbg|vbd|vbz|vbn|vbuse|vbsubmerge|vbsubject|vbadd|vbcharge|vbcontai
 
 number : cd|oscarcd;	
 clause	:	wdt|wp_poss|wpo|wpo|wps|wql|wrb|ex|pdt;
-noun :  prp|citation|molecule|apparatus|unnamedmolecule|nnyield|nnstate|nn|nns|nnp|nnadd|preparationphrase|nnexample|oscarcpr|range|amount|mixture|nntime|nnatmosphere|nneq|quantity|nnchementity|measurements|nntemp|nnflash|nngeneral|nnmethod|nnamount|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|nnvol|nnpurify|wdt|wp_poss|wpo|wps|nnsynthesize|nnmixture|oscaront|number|oscarCompound|nnextract|nnfilter|nnprecipitate|nnremove|fw|fwin|sym|clause;
-range: cd dash cd;
+noun 	:	nounStructure (dash nounStructure)*;
 
+nounStructure :  prp|citation|cycles|molecule|apparatus|unnamedmolecule|nnyield|nnstate|nn|nns|nnp|nnadd|preparationphrase|nnexample|oscarcpr|range|amount|mixture|nntime|nnatmosphere|nneq|quantity|nnchementity|measurements|nntemp|nnflash|nngeneral|nnmethod|nnamount|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|nnvol|nnpurify|wdt|wp_poss|wpo|wps|nnsynthesize|nnmixture|oscaront|nndry|number|oscarCompound|nnextract|nnfilter|nnprecipitate|nnremove|fw|fwin|sym|clause;
+range: cd dash cd;
+cycles	:	cycleStructure -> ^(NODE["CYCLES"] cycleStructure)  ;
+cycleStructure	:	cd dashNN? nncycle;  
+dashNN	:	(adj|nn|cd) (dash (adj|nn|cd))*;  
 ratio : (numberratio|nounratio) -> ^(NODE["RATIO"] numberratio? nounratio?)  ;
 numberratio	:	 cd (colon cd)+ ;
 nounratio 
@@ -154,19 +158,19 @@ nnApp
 preapparatus
 	:    (quantity|adj|nnpressure|nnadd|molecule|nnchementity|nnstate|nn)+ ;
 measurements
-	:(cd nn)? multiple|measurementtypes    dt?;
+	:(cd nn)? (multiple|measurementtypes)    dt?;
 multiple	: cd cdunicode measurementtypes? -> ^(NODE["MULTIPLE"]   cd cdunicode measurementtypes? );		
 measurementtypes
 	: molar|amount|mass|percent|volume ;	
 
 // The RRB at the end is for leftover brackets from chemicals that didn't parse properly
-oscarCompound :  (oscarCompound1|oscarCompound2|oscarCompound3|oscarCompound4|oscarCompound5|oscarcm) ;
+oscarCompound :  adj* (oscarCompound1|oscarCompound2|oscarCompound3|oscarCompound4|oscarcm) ;
 
-oscarCompound5 :	lrb oscarcm rrb -> ^(NODE["OSCARCM"]  lrb oscarcm  rrb );
-oscarCompound4 :	oscarcm (dash|apost)+ -> ^(NODE["OSCARCM"]  oscarcm  dash* apost* );
-oscarCompound3 :	oscarcm (dash oscarcm)+ dash?-> ^(NODE["OSCARCM"]  oscarcm (dash oscarcm)+ dash? );
-oscarCompound2 :	oscarcm oscarcm+ -> ^(NODE["OSCARCM"]  oscarcm oscarcm+);
-oscarCompound1 :	oscarcm jj oscarcm -> ^(NODE["OSCARCM"]  oscarcm jj oscarcm);
+oscarCompound4 :	lrb  oscarcm rrb -> ^(NODE["OSCARCM"]  lrb  oscarcm  rrb );
+oscarCompound3 :	oscarcm (dash|apost)+ -> ^(NODE["OSCARCM"]   oscarcm  dash* apost* );
+oscarCompound2 :	oscarcm (dash oscarcm)+ dash?-> ^(NODE["OSCARCM"]   oscarcm (dash   oscarcm)+ dash? );
+oscarCompound1 :	oscarcm oscarcm+ -> ^(NODE["OSCARCM"]  oscarcm oscarcm+);
+//oscarCompound1 :	oscarcm oscarcm -> ^(NODE["OSCARCM"]  oscarcm oscarcm);
 //moleculeamount1
 //	:measurements (quantity|mixture)? inof oscarCompound;	
 moleculeamount1
@@ -185,7 +189,7 @@ oscarcdType	:  lrb (oscarcd|cd) rrb;
 unnamedmoleculeamount1
 	: quantity inof (oscarcd|cd);
 unnamedmoleculeamount2
-	:oscarcd|oscarcdType (citation|quantity|mixture)*;	
+	:(oscarcd|oscarcdType) (citation|quantity|mixture)*;	
 		
 //unnamedmoleculeamount3
 //	:measurements quantity? inof (jj? noun)+;	
@@ -193,8 +197,11 @@ unnamedmoleculeamount2
 unnamedmoleculeamount3
 	:quantity inof (jj? noun)+;	
 
+
+unnamedmoleculeamount4
+	:(quantity|mixture) nnchementity;	
 unnamedmoleculeamount
-	:unnamedmoleculeamount1 | unnamedmoleculeamount2 | unnamedmoleculeamount3 ;	
+	:(unnamedmoleculeamount1 | unnamedmoleculeamount2 | unnamedmoleculeamount3|unnamedmoleculeamount4) ;	
 
 
 unnamedmolecule 
