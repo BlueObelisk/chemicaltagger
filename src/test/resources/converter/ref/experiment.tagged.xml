@@ -39,21 +39,21 @@
           </QUANTITY>
         </MOLECULE>
         <CC>and</CC>
-        <MOLECULE>
-          <OSCARCM>
-            <OSCAR-CM>potassium</OSCAR-CM>
-            <OSCAR-CM>hydroxide</OSCAR-CM>
-          </OSCARCM>
-          <QUANTITY>
-            <_-LRB->(</_-LRB->
-            <AMOUNT>
-              <CD>1.00</CD>
-              <NN-AMOUNT>mmol</NN-AMOUNT>
-            </AMOUNT>
-            <_-RRB->)</_-RRB->
-          </QUANTITY>
-        </MOLECULE>
-        <PrepPhrase>
+           <DissolvePhrase>
+          <MOLECULE>
+            <OSCARCM>
+              <OSCAR-CM>potassium</OSCAR-CM>
+              <OSCAR-CM>hydroxide</OSCAR-CM>
+            </OSCARCM>
+            <QUANTITY>
+              <_-LRB->(</_-LRB->
+              <AMOUNT>
+                <CD>1.00</CD>
+                <NN-AMOUNT>mmol</NN-AMOUNT>
+              </AMOUNT>
+              <_-RRB->)</_-RRB->
+            </QUANTITY>
+          </MOLECULE>
           <IN-IN>in</IN-IN>
           <MOLECULE>
             <QUANTITY>
@@ -65,22 +65,20 @@
             <IN-OF>of</IN-OF>
             <OSCAR-CM>methanol</OSCAR-CM>
           </MOLECULE>
-        </PrepPhrase>
+        </DissolvePhrase>
+        <CC>and</CC>
+        <MOLECULE>
+          <QUANTITY>
+            <VOLUME>
+              <CD>5</CD>
+              <NN-VOL>ml</NN-VOL>
+            </VOLUME>
+          </QUANTITY>
+          <IN-OF>of</IN-OF>
+          <OSCAR-CM>water</OSCAR-CM>
+        </MOLECULE>
       </NounPhrase>
     </PrepPhrase>
-    <CC>and</CC>
-    <NounPhrase>
-      <MOLECULE>
-        <QUANTITY>
-          <VOLUME>
-            <CD>5</CD>
-            <NN-VOL>ml</NN-VOL>
-          </VOLUME>
-        </QUANTITY>
-        <IN-OF>of</IN-OF>
-        <OSCAR-CM>water</OSCAR-CM>
-      </MOLECULE>
-    </NounPhrase>
     <VerbPhrase>
       <VBD>was</VBD>
       <VB-ADD>added</VB-ADD>

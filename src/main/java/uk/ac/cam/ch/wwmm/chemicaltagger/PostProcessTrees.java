@@ -22,7 +22,7 @@ public class PostProcessTrees {
 		actionMap.put("VB-CONTAIN", "Add");
 		actionMap.put("VB-DROP", "Add");
 		actionMap.put("VB-FILL", "Add");
-		actionMap.put("VB-SUSPEND", "Add");
+		// actionMap.put("VB-SUSPEND", "Add");
 		actionMap.put("VB-TREAT", "Add");
 		// Apparatus Tokens
 		actionMap.put("VB-APPARATUS", "ApparatusAction");
@@ -33,7 +33,7 @@ public class PostProcessTrees {
 		actionMap.put("VB-COOL", "Cool");
 		// Degass Tokens
 		actionMap.put("VB-DEGASS", "Degass");
-
+		actionMap.put("VB-SUBJECT", "Degass");
 		// Dissolve Tokens
 		actionMap.put("VB-DISSOLVE", "Dissolve");
 		// Dry Tokens
@@ -125,7 +125,7 @@ public class PostProcessTrees {
 		splitList.add("cc");
 		splitList.add("stop");
 		splitList.add("rb-conj");
-		
+
 		boolean seenVerb = false;
 		Element actionPhrase = null;
 		for (int i = 0; i < sentenceNode.getChildCount(); i++) {
@@ -133,20 +133,12 @@ public class PostProcessTrees {
 			Element phraseElement = (Element) sentenceNode.getChild(i);
 
 			String content = phraseElement.toXML();
-//			System.out.println("--Phrase is " + phraseElement.toXML());
+			// System.out.println("--Phrase is " + phraseElement.toXML());
 			if (containsKeyword(content)) {
 
-				
-				
 				if (phraseElement.getLocalName().contains("VerbPhrase")) {
 
 					if (seenVerb) {
-//						System.out
-//								.println("-- I have seen a verb and I am currently a verb");
-//
-//						System.out
-//								.println("--- ActionPhrase at the moment is  "
-//										+ actionPhrase);
 						if (actionPhrase != null) {
 							addListToNode(actionPhrase, elementList);
 							newSentence.appendChild(actionPhrase);
@@ -157,30 +149,30 @@ public class PostProcessTrees {
 
 						}
 						elementList = new ArrayList<Element>();
-//						System.out.println("---- New sentence is "
-//								+ newSentence.toXML());
 
 					}
 					seenVerb = true;
 
 				}
-				actionPhrase = new Element("ActionPhrase");
-				Attribute attribute = new Attribute("type", actionName);
-//				System.out.println("* I contain keyword:: "
-//						+ actionName);
-				actionPhrase.addAttribute(attribute);
-				elementList.add(phraseElement);
+				String elementListContent = elementListToString(elementList);
+				if (!elementListContent.toLowerCase().contains("nn-example")) {
+					actionPhrase = new Element("ActionPhrase");
+					Attribute attribute = new Attribute("type", actionName);
+					// System.out.println("* I contain keyword:: "
+					// + actionName);
+					actionPhrase.addAttribute(attribute);
+					elementList.add(phraseElement);
+				}
 
-				
 			} else if (phraseElement.getLocalName().contains("VerbPhrase")) {
-				
+
 				if (seenVerb) {
-//					System.out
-//							.println("-- I have seen a verb and I am currently a verb");
-//
-//					System.out
-//							.println("--- ActionPhrase at the moment is  "
-//									+ actionPhrase);
+					// System.out
+					// .println("-- I have seen a verb and I am currently a verb");
+					//
+					// System.out
+					// .println("--- ActionPhrase at the moment is  "
+					// + actionPhrase);
 					if (actionPhrase != null) {
 						addListToNode(actionPhrase, elementList);
 						newSentence.appendChild(actionPhrase);
@@ -191,24 +183,23 @@ public class PostProcessTrees {
 
 					}
 					elementList = new ArrayList<Element>();
-//					System.out.println("---- New sentence is "
-//							+ newSentence.toXML());
+					// System.out.println("---- New sentence is "
+					// + newSentence.toXML());
 
 				}
 				elementList.add(phraseElement);
-				
 
 				seenVerb = true;
-//				System.out.println("** I contain a verb:: ");
+				// System.out.println("** I contain a verb:: ");
 				String elementListContent = elementListToString(elementList);
 
-				if (elementListContent.toLowerCase().contains("timephrase")){
+				if (elementListContent.toLowerCase().contains("timephrase")) {
 					actionPhrase = new Element("ActionPhrase");
 					Attribute attribute = new Attribute("type", "Wait");
-//					System.out.println("* I contain keyword:: "
-//							+ actionPhrase.toXML());
+					// System.out.println("* I contain keyword:: "
+					// + actionPhrase.toXML());
 					actionPhrase.addAttribute(attribute);
-					
+
 					addListToNode(actionPhrase, elementList);
 					newSentence.appendChild(actionPhrase);
 					actionPhrase = null;
@@ -216,14 +207,16 @@ public class PostProcessTrees {
 					elementList = new ArrayList<Element>();
 					seenVerb = false;
 				}
-				if (elementListContent.toLowerCase().contains("multipleapparatus")){
+				if (elementListContent.toLowerCase().contains(
+						"multipleapparatus")) {
 
 					actionPhrase = new Element("ActionPhrase");
-					Attribute attribute = new Attribute("type", "ApparatusAction");
-//					System.out.println("* I contain keyword:: "
-//							+ actionPhrase.toXML());
+					Attribute attribute = new Attribute("type",
+							"ApparatusAction");
+					// System.out.println("* I contain keyword:: "
+					// + actionPhrase.toXML());
 					actionPhrase.addAttribute(attribute);
-					
+
 					addListToNode(actionPhrase, elementList);
 					newSentence.appendChild(actionPhrase);
 					actionPhrase = null;
@@ -236,41 +229,41 @@ public class PostProcessTrees {
 					& splitList.contains(phraseElement.getLocalName()
 							.toLowerCase())) {
 
-//				System.out
-//						.println("*** I have seen a verb and I am currently a stop word ");
-//
-//				System.out.println("**** ActionPhrase at the moment is  "
-//						+ actionPhrase);
+				// System.out
+				// .println("*** I have seen a verb and I am currently a stop word ");
+				//
+				// System.out.println("**** ActionPhrase at the moment is  "
+				// + actionPhrase);
 				elementList.add(phraseElement);
 				if (actionPhrase != null) {
+
 					addListToNode(actionPhrase, elementList);
 					newSentence.appendChild(actionPhrase);
 					actionPhrase = null;
 
 				} else
 					addListToNode(newSentence, elementList);
-				
-//				System.out.println("***** New sentence is "
-//						+ newSentence.toXML());
+
+				// System.out.println("***** New sentence is "
+				// + newSentence.toXML());
 				elementList = new ArrayList<Element>();
 				seenVerb = false;
-			}
-			else if (splitList.contains(phraseElement.getLocalName()
-							.toLowerCase())) {
+			} else if (splitList.contains(phraseElement.getLocalName()
+					.toLowerCase())) {
 
-				if (actionPhrase!= null){
-					
+				if (actionPhrase != null) {
+
 					addListToNode(actionPhrase, elementList);
 					newSentence.appendChild(actionPhrase);
 					elementList = new ArrayList<Element>();
 					actionPhrase = null;
 				}
 				String elementListContent = elementListToString(elementList);
-				if (elementListContent.toLowerCase().contains("timephrase")){
+				if (elementListContent.toLowerCase().contains("timephrase")) {
 					actionPhrase = new Element("ActionPhrase");
 					Attribute attribute = new Attribute("type", "Wait");
-//					System.out.println("* I contain keyword:: "
-//							+ actionPhrase.toXML());
+					// System.out.println("* I contain keyword:: "
+					// + actionPhrase.toXML());
 					actionPhrase.addAttribute(attribute);
 					elementList.add(phraseElement);
 					addListToNode(actionPhrase, elementList);
@@ -280,9 +273,7 @@ public class PostProcessTrees {
 					elementList = new ArrayList<Element>();
 				}
 
-				
-			}
-			else {
+			} else {
 				elementList.add(phraseElement);
 			}
 
@@ -300,11 +291,11 @@ public class PostProcessTrees {
 		for (Element element : elementList) {
 			elementContent = elementContent + element.toXML();
 		}
-		
+
 		return elementContent;
-			
-		
+
 	}
+
 	private void addListToNode(Element parentNode, List<Element> elementList) {
 		for (Element element : elementList) {
 			Element newElement = (Element) element.copy();

@@ -13,6 +13,8 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javax.sound.midi.SysexMessage;
+
 import nu.xom.Document;
 import nu.xom.Serializer;
 
@@ -67,12 +69,12 @@ public class Utils {
 
 		try {
 			Serializer serializer = new Serializer(new FileOutputStream(
-					xmlFilename),"UTF-8");
+					xmlFilename), "UTF-8");
 			serializer.write(doc);
 			serializer.flush();
 		} catch (IOException ex) {
-            ex.printStackTrace();
-		 }
+			ex.printStackTrace();
+		}
 	}
 
 	private boolean isNumeric(String input) {
@@ -95,7 +97,14 @@ public class Utils {
 	 *************************************/
 	public static String formatSentence(String sentence) {
 		StringBuilder newSentence = new StringBuilder();
+		sentence=sentence.replace("  ", " ");
+//		if (sentence.toLowerCase().contains("and preparation of")) {
+//			System.out.println("**********senteeence:: " + sentence);
+//		}
+//		sentence = sentence.replace("and Preparation of", ". Preparation of")
+//				.replace("and Synthesis of", ". Synthesis of");
 		sentence = sentence.replace("%", " %").replace(";", " ;");
+
 		String[] words = sentence.split(" ");
 		String abbreviationRegex = "−?[A-Z]+[a-z]*\\.";
 		String concatAmountRegex = "(\\d\\d+(m|k|µ)?(l|L|g|gram|mol|cm3)(s)?$)|(\\d(L|ml|mL|gram|mol|cm3)(s)?$)";
@@ -105,7 +114,7 @@ public class Utils {
 		Pattern abbreviationPattern = Pattern.compile(abbreviationRegex);
 		Pattern concatAmountPattern = Pattern.compile(concatAmountRegex);
 		Pattern concatTempPattern = Pattern.compile(concatTempRegex);
-		
+
 		int index = 0;
 		for (String string : words) {
 			String prefix = " ";
@@ -152,11 +161,11 @@ public class Utils {
 
 			if (string.startsWith("(") && string.endsWith(")")) {
 				String subString = string.substring(1, string.length() - 1);
-			    
+
 				string = subString;
 				prefix = prefix + "( ";
-				suffix =  " )" + suffix;
-			}			
+				suffix = " )" + suffix;
+			}
 
 			Matcher concatAmountMatcher = concatAmountPattern.matcher(string);
 			if (concatAmountMatcher.find()) {
@@ -167,8 +176,8 @@ public class Utils {
 			if (concatTempMatcher.find()) {
 				string = splitTemparature(string);
 			}
-			if (string.equals("K.") && index > 0){
-				if (isNumber(words[index - 1])){
+			if (string.equals("K.") && index > 0) {
+				if (isNumber(words[index - 1])) {
 					string = "K .";
 				}
 			}
@@ -176,8 +185,8 @@ public class Utils {
 
 			newSentence.append(prefix + string + suffix);
 		}
-//		System.err.println("***Sentence "
-//				+ newSentence.toString().replace("  ", " ").trim());
+		// System.err.println("***Sentence "
+		// + newSentence.toString().replace("  ", " ").trim());
 
 		return newSentence.toString().replace("  ", " ").trim();
 	}
@@ -203,34 +212,33 @@ public class Utils {
 	private static String splitTemparature(String string) {
 		String newString = string;
 		String numbers = "";
-        
+
 		for (char ch : string.toCharArray()) {
-		
+
 			if (Character.isDigit(ch)) {
 				numbers = numbers + ch;
 			}
 
 		}
-		newString = string.replace(numbers, numbers+" ");
+		newString = string.replace(numbers, numbers + " ");
 		return newString;
 	}
-	
+
 	private static boolean isNumber(String word) {
-		
+
 		for (char ch : word.toCharArray()) {
-		
+
 			if (Character.isDigit(ch)) {
-				
-			}
-			else{
+
+			} else {
 				return false;
 			}
 
 		}
-		
+
 		return true;
 	}
-	
+
 	private static boolean stopWordAfter(String[] words, int index,
 			List<String> nextTokenList) {
 		boolean wordAfter = false;
@@ -256,7 +264,6 @@ public class Utils {
 		try {
 			InputStream refStream = ClassLoader
 					.getSystemResourceAsStream(resourceName);
-			
 
 			BufferedReader br = new BufferedReader(new InputStreamReader(
 					refStream, Charset.forName("UTF-8")));
@@ -267,17 +274,15 @@ public class Utils {
 		return sentence.trim();
 	}
 
-
 	public static String readSentence1(String resourceName) {
 		// requires sentence with no newlines except possibly at end
 		String sentence = "";
 		try {
 			InputStream refStream = ClassLoader
 					.getSystemResourceAsStream(resourceName);
-			
 
 			InputStreamReader br = new InputStreamReader(refStream, "UTF-8");
-            System.out.println(br.getEncoding());
+			System.out.println(br.getEncoding());
 
 			sentence += br.read();
 
@@ -286,14 +291,15 @@ public class Utils {
 		}
 		return sentence.trim();
 	}
-	
-	public static String getPathasInputStream(String pathName) throws IOException {
+
+	public static String getPathasInputStream(String pathName)
+			throws IOException {
 		// requires sentence with no newlines except possibly at end
-		
+
 		// requires sentence with no newlines except possibly at end
 		String sentence = null;
 		try {
-			
+
 			BufferedReader br = new BufferedReader(new InputStreamReader(
 					new FileInputStream(new File(pathName)), "UTF8"));
 			sentence = br.readLine();
@@ -302,6 +308,7 @@ public class Utils {
 		}
 		return sentence.trim();
 	}
+
 	/**
 	 * 
 	 * Returns the content of the resource as an inputstream
@@ -313,7 +320,7 @@ public class Utils {
 	public static InputStream getInputStream(String pathName) {
 		// requires sentence with no newlines except possibly at end
 		InputStream inStream;
-		System.out.println("path="+pathName);
+		System.out.println("path=" + pathName);
 		inStream = ClassLoader.getSystemResourceAsStream(pathName);
 
 		return inStream;

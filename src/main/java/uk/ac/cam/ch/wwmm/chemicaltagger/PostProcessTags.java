@@ -3,8 +3,6 @@ package uk.ac.cam.ch.wwmm.chemicaltagger;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.text.DefaultEditorKit.CutAction;
-
 import org.apache.commons.lang.StringUtils;
 import org.xmlcml.euclid.Util;
 
@@ -26,6 +24,7 @@ public class PostProcessTags {
 
 		boolean ignoreNextBracket = false;
 
+//		System.out.println("Before correcting tags:"+posContainer.getTokenTagTupleAsString());
 		for (int i = 0; i < combinedTags.size(); i++) {
 			String currentTag = combinedTags.get(i).getPOS();
 			String currentToken = tokenList.get(i);
@@ -132,6 +131,7 @@ public class PostProcessTags {
 				|| currentTag.toLowerCase().startsWith("nn")) {
 			if (!currentTag.toLowerCase().startsWith("nn-state")
 					&& !currentTag.toLowerCase().startsWith("nn-apparatus")
+					&& !currentTag.toLowerCase().startsWith("nn-cycle")
 					&& !currentTag.toLowerCase().startsWith("nn-temp")
 					&& !currentTag.toLowerCase().startsWith("nn-pressure")
 					&& !currentTag.toLowerCase().startsWith("nn-time")) {
@@ -139,6 +139,7 @@ public class PostProcessTags {
 				List<String> afterList = Utils
 						.addToList("vbd jj nn-chementity nn-mixture nn-apparatus nn comma");
 
+				
 				if (stringbefore(beforeList, i, combinedTags)
 						&& (stringafter(afterList, i, combinedTags) || i == combinedTags
 								.size())) {
@@ -164,14 +165,19 @@ public class PostProcessTags {
 
 		}
 
+		if (currentToken.equals("w")) {
+			newTag = "NN-CHEMENTITY";
+
+		}
 		if (currentTag.toLowerCase().startsWith("vbn")
 				|| currentTag.toLowerCase().startsWith("vbg")
+				|| currentTag.toLowerCase().startsWith("vb-")
 				|| currentToken.endsWith("ed")) {
 
 			List<String> afterList = Utils
 					.addToList("oscar-cm nns nn-chementity oscar-cj nnp");
 			List<String> beforeList = Utils
-					.addToList("dt rb rb-conj dt-the stop");
+					.addToList("dt rb rb-conj dt-the stop in-with in-of in-under");
 			if (stringafter(afterList, i, combinedTags)
 					&& stringbefore(beforeList, i, combinedTags)) {
 				newTag = "OSCAR-CJ";
@@ -197,6 +203,16 @@ public class PostProcessTags {
 
 		}
 
+		if (currentTag.toLowerCase().startsWith("vb")) {
+
+			List<String> beforeList = Utils.addToList("to");
+			List<String> beforebeforeList = Utils.addToList("vb-heat");
+			List<String> afterList = Utils.addToList("stop");
+			if (stringbefore(beforeList, i, combinedTags) &&  stringbefore(beforebeforeList, i-1, combinedTags) && stringafter(afterList, i, combinedTags)) {
+				newTag = "NN";
+			}
+
+		}
 		if (currentTag.toLowerCase().startsWith("vb-precipitate")) {
 
 			if (i != 0) {
@@ -377,10 +393,9 @@ public class PostProcessTags {
 		if (currentTag.toLowerCase().startsWith("nn-synthesize")) {
 			List<String> beforeList = Utils.addToList("dt dt-the");
 			List<String> afterList = Utils.addToList("in-of");
-
-			if (stringbefore(beforeList, i, combinedTags)
-					&& (!stringafter(afterList, i, combinedTags))) {
-				newTag = "NN-CHEMENTITY";
+			if  (!stringafter(afterList, i, combinedTags)) {
+				
+				 newTag = "NN-CHEMENTITY";
 			}
 		}
 
