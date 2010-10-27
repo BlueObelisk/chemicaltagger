@@ -14,9 +14,6 @@ glob:patent*
 glob:taggedPatents*
 glob:.settings/org.eclipse.jdt.core.prefs
 glob:.settings/org.maven.ide.eclipse.prefs
-glob:*Lexer.java
-glob:*ChunkerParser.java
-glob:*ChemicalChunkerParser.java
 glob:*ChemicalChunker.tokens
 glob:*.tokens
 glob:*.exe
