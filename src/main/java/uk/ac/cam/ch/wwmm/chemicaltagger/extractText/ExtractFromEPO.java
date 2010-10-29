@@ -22,10 +22,11 @@ import nu.xom.Text;
 import org.antlr.runtime.tree.Tree;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
-import org.mortbay.log.Log;
+
 
 import uk.ac.cam.ch.wwmm.chemicaltagger.ChemistryPOSTagger;
 import uk.ac.cam.ch.wwmm.chemicaltagger.ChemistrySentenceParser;
+import uk.ac.cam.ch.wwmm.chemicaltagger.OscarTagger;
 import uk.ac.cam.ch.wwmm.chemicaltagger.POSContainer;
 import uk.ac.cam.ch.wwmm.chemicaltagger.Utils;
 
@@ -36,7 +37,7 @@ import uk.ac.cam.ch.wwmm.chemicaltagger.Utils;
  ********************************************/
 public class ExtractFromEPO {
 
-	private final Logger LOG = Logger.getLogger(ExtractFromEPO.class);
+	private final static Logger LOG = Logger.getLogger(ExtractFromEPO.class);
 	private final static String PATENT_NODE = "ep-patent-document";
 	private final static String DESCRIPTION_NODE = "//description";
 	private final static String ID_ATTRIBUTE = "id";
@@ -67,10 +68,9 @@ public class ExtractFromEPO {
 	private final static String NONPATENT_SDATE = "*//sdate";
 	private final static String NONPATENT_EDATE = "*//edate";
 
-	
-
 	public ExtractFromEPO() {
 
+		
 	}
 
 
@@ -373,7 +373,7 @@ public class ExtractFromEPO {
 		for (int i = 0; i < nodeCount; i++) {
 			String text = astTree.getChild(i).getText();
 			int type = astTree.getChild(i).getType();
-			Log.info("****Text=" + text + " type==" + type);
+			LOG.info("****Text=" + text + " type==" + type);
 			if (type == 0) {
 				errorStream.append(patentId + DELIM + text + DELIM + type
 						+ DELIM + astTree.toStringTree() + ENDLINE);

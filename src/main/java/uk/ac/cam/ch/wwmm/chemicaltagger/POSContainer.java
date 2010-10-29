@@ -7,6 +7,7 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
 import uk.ac.cam.ch.wwmm.chemicaltagger.WWMMTag.TagType;
+import uk.ac.cam.ch.wwmm.oscar.document.NamedEntity;
 
 /********************************************
  * A container class that stores the grammatical structure of the text .
@@ -99,6 +100,7 @@ public class POSContainer {
 	public String getTokenTagTupleAsString() {
 		StringBuilder tokenTagTupleString = new StringBuilder();
 
+		
 		for (int i = 0; i < wordTokenList.size(); i++) {
 			if (StringUtils.isNotEmpty(combinedTagsList.get(i).POS)
 					&& StringUtils.isNotEmpty(wordTokenList.get(i))) {
@@ -131,5 +133,10 @@ public class POSContainer {
 	public void setTokenList(List<String> newTokenList) {
 		this.wordTokenList = newTokenList;
 		
+	}
+
+	public List<WWMMTag> getOscarList() {
+		// TODO Auto-generated method stub
+		return this.oscarTagList;
 	}
 }

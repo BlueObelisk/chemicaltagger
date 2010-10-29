@@ -39,7 +39,7 @@
           </QUANTITY>
         </MOLECULE>
         <CC>and</CC>
-           <DissolvePhrase>
+        <DissolvePhrase>
           <MOLECULE>
             <OSCARCM>
               <OSCAR-CM>potassium</OSCAR-CM>
@@ -186,8 +186,12 @@
               <NN-VOL>ml</NN-VOL>
             </VOLUME>
             <COMMA>,</COMMA>
-            <JJ>1:1</JJ>
-            <NN>v/v</NN>
+            <CD>1</CD>
+            <COLON>:</COLON>
+            <CD>1</CD>
+            <NN>v</NN>
+            <DASH>/</DASH>
+            <NN>v</NN>
             <_-RRB->)</_-RRB->
           </MIXTURE>
         </NounPhrase>

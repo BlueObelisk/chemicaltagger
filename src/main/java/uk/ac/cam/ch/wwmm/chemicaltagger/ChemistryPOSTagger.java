@@ -47,10 +47,11 @@ public class ChemistryPOSTagger {
 
 		POSContainer posContainer = new POSContainer();
 		inputSentence = Utils.formatSentence(inputSentence);
+		
 		posContainer = oscarTagger.runTagger(posContainer, inputSentence);
 		posContainer = regexTagger.runTagger(posContainer);
 		posContainer = openNLPTagger.runTagger(posContainer);
-
+	
 		posContainer.combineTaggers();
 		posContainer =  new PostProcessTags().correctCombinedTagsList(posContainer);
 		// posContainer.printOutTags();
