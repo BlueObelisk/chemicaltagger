@@ -1,24 +1,22 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
-import java.util.Iterator;
-
-import nu.xom.Document;
-import nu.xom.Element;
-import nu.xom.Node;
-import nu.xom.Text;
+import java.net.URISyntaxException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.commons.configuration.Configuration;
-import org.apache.commons.configuration.ConfigurationException;
-import org.apache.commons.configuration.PropertiesConfiguration;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
-import uk.ac.cam.ch.wwmm.oscar3.Oscar3Props;
-import uk.ac.cam.ch.wwmm.oscar3.flow.OscarFlow;
-import uk.ac.cam.ch.wwmm.ptclib.scixml.TextToSciXML;
+import uk.ac.cam.ch.wwmm.oscar.Oscar;
+import uk.ac.cam.ch.wwmm.oscar.document.NamedEntity;
+import uk.ac.cam.ch.wwmm.oscar.document.Token;
+import uk.ac.cam.ch.wwmm.oscar.document.TokenSequence;
+import uk.ac.cam.ch.wwmm.oscar.opsin.OpsinDictionary;
 
 /*****************************************************
  * Runs the OSCAR tagger .
+ * 
  * @author lh359, dmj30,jat45
  *****************************************************/
 
@@ -28,6 +26,7 @@ public class OscarTagger {
 	private String config_filename = "textmining.properties";
 	private final Logger LOG = Logger.getLogger(OscarTagger.class);
 	private static final String FLOW_COMMAND = "recognise inline";
+	private Oscar oscar;
 
 	/****************************
 	 * Public Constructor
@@ -43,116 +42,183 @@ public class OscarTagger {
 	 * @author jat45
 	 *****************************************************/
 	private void initialiseOSCAR() {
+
+		oscar = new Oscar(this.getClass().getClassLoader());
 		try {
-			config = new PropertiesConfiguration(config_filename);
-		} catch (ConfigurationException e1) {
+			oscar.loadDefaultDictionaries();
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		Oscar3Props.getInstance();
-		Iterator<String> iterator = config.getKeys();
-		while (iterator.hasNext()) {
-			String name = iterator.next();
-			String value = config.getString(name);
-			Oscar3Props.setProperty(name, value);
-		}
 		try {
-			Oscar3Props.configureWorkspace();
-		} catch (Exception e) {
-			LOG.error("Problem setting up OSCAR3: " + e.getMessage());
-			throw new RuntimeException("Problem setting up OSCAR3: "
-					+ e.getMessage(), e);
+
+			oscar.getDictionaryRegistry().register(new OpsinDictionary());
+		} catch (URISyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 
 	/*****************************************************
-	 * Main Function.
-	 * Runs OSCAR over a string and process the XML output Stores the tokens and
-	 * tags to the POSContainer class which is returned
+	 * Main Function. Runs OSCAR over a string and process the XML output Stores
+	 * the tokens and tags to the POSContainer class which is returned
 	 * 
 	 * @author dmj30, lh359
 	 *****************************************************/
-	public POSContainer runTagger(POSContainer posContainer,String sentence) {
+	public POSContainer runTagger(POSContainer posContainer, String sentence) {
 
-		Document doc = TextToSciXML.textToSciXML(sentence);
-		OscarFlow oscarFlow = new OscarFlow(doc);
+		List<NamedEntity> neList = new ArrayList<NamedEntity>();
+		List<TokenSequence> tokens = new ArrayList<TokenSequence>();
 		try {
-			oscarFlow.runFlow(FLOW_COMMAND);
+			sentence = oscar.normalize(sentence);
+			tokens = oscar.tokenize(sentence);
+			neList = oscar.recognizeNamedEntities(tokens);
 		} catch (Exception e) {
 			e.printStackTrace();
-			throw new RuntimeException();
 		}
-		Document parsed = oscarFlow.getInlineXML();
-		Node paragraph = parsed.query("//P").get(0);
 
-		for (int i = 0; i < paragraph.getChildCount(); i++) {
+		neList = removePartialMatches(neList);
 
-			if (paragraph.getChild(i) instanceof Text) {
-				Text textnode = (Text) paragraph.getChild(i);
-				String textContent = textnode.getValue().toString().trim();
-				processOSCARTextNodes(posContainer, textContent.split(" "));
-			} else if (paragraph.getChild(i) instanceof Element) {
-				Element ne = (Element) paragraph.getChild(i);
-				processOSCARNENodes(posContainer, ne);
+		String word = "";
+		String tag = "nil";
+		int endIndex = -1;
+		for (TokenSequence tokenSequence : tokens) {
+			for (Token tok : tokenSequence.getTokens()) {
+				if (tok.getStart() >= endIndex) {
+					word = tok.getValue();
+					endIndex = tok.getEnd();
+					tag = "nil";
+
+					boolean foundNE = false;
+					for (NamedEntity ne : neList) {
+						if (ne.getStart() == tok.getStart()) {
+							word = ne.getSurface();
+							tag = ne.getType();
+							foundNE = true;
+							endIndex = ne.getEnd();
+							for (String subWord : word.split(" ")) {
+								posContainer.addToTokenList(subWord);
+								posContainer.addToOSCARList(tag);
+							}
+
+						}
+					}
+					if (!foundNE) {
+
+						posContainer.addToTokenList(word);
+						posContainer.addToOSCARList(tag);
+					}
+				}
 			}
+		}
+		return posContainer;
+		// return processOSCARTags(posContainer, neList, sentence);
+
+	}
+
+	private List<NamedEntity> removePartialMatches(List<NamedEntity> neList) {
+		List<NamedEntity> newNeList = new ArrayList<NamedEntity>();
+
+		for (NamedEntity namedEntity : neList) {
+			boolean isPartial = false;
+			boolean isCM = false;
+			int start = namedEntity.getStart();
+			int end = namedEntity.getEnd();
+			for (NamedEntity otherNamedEntity : neList) {
+				if (otherNamedEntity.getStart() == start) {
+					if (otherNamedEntity.getEnd() > end) {
+						isPartial = true;
+					}
+					if (otherNamedEntity.getType().contains("CM")
+							& !namedEntity.getType().contains("CM"))
+						isCM = true;
+
+				}
+				if (otherNamedEntity.getEnd() == end) {
+
+					if (otherNamedEntity.getStart() < start) {
+						isPartial = true;
+					}
+
+				}
+			}
+			if (!isPartial & !isCM) {
+				newNeList.add(namedEntity);
+			}
+		}
+
+		return newNeList;
+	}
+
+	/*****************************************************
+	 * Converts NamedEntities into POS Tags and Tokens which are then stored in
+	 * POSContainer
+	 *****************************************************/
+	private POSContainer processOSCARTags(POSContainer posContainer,
+			List<NamedEntity> neList, String sentence) {
+		int index = 0;
+
+		for (NamedEntity ne : neList) {
+			String word = "";
+
+			while (index < ne.getStart()) {
+				int endIndex = sentence.substring(0, index).length()
+						+ sentence.substring(index, sentence.length()).indexOf(
+								"/");
+
+				if (endIndex > sentence.substring(0, index).length()
+						+ sentence.substring(index, sentence.length()).indexOf(
+								" ")) {
+					endIndex = sentence.substring(0, index).length()
+							+ sentence.substring(index, sentence.length())
+									.indexOf(" ");
+				}
+				if (endIndex < 0) {
+					endIndex = sentence.length();
+				}
+
+				word = sentence.substring(index, endIndex);
+				if (StringUtils.isNotEmpty(word)) {
+					posContainer.addToTokenList(word);
+					posContainer.addToOSCARList("nil");
+					// LOG.info(word+": nil");
+				}
+				index = endIndex + 1;
+
+			}
+			if (index == ne.getStart()) {
+				if (ne.getSurface().contains(" ")) {
+					for (String subWord : ne.getSurface().split(" ")) {
+						posContainer.addToTokenList(subWord);
+						posContainer.addToOSCARList(ne.getType());
+
+					}
+				} else {
+					posContainer.addToTokenList(ne.getSurface());
+					posContainer.addToOSCARList(ne.getType());
+
+				}
+				index = ne.getEnd();
+
+			}
+
+		}
+		if (index < sentence.length()) {
+
+			String subString = sentence.substring(index, sentence.length());
+
+			for (String word : subString.split(" ")) {
+				posContainer.addToTokenList(word);
+				posContainer.addToOSCARList("nil");
+
+			}
+		}
+
+		for (String word : posContainer.getTokenList()) {
+			System.out.println(word);
 		}
 
 		return posContainer;
 	}
 
-	/*****************************************************
-	 * Converts XML NE nodes into POS Tags and Tokens which are then stored in
-	 * POSContainer
-	 *****************************************************/
-	private void processOSCARNENodes(POSContainer posContainer, Element ne) {
-
-		if (ne.getAttributeValue("type") != null
-				&& ne.getAttributeValue("surface") != null) {
-
-			String surface = ne.getAttributeValue("surface").trim();
-			String type = ne.getAttributeValue("type").trim();
-			String[] surfaceTokens = surface.split(" ");
-			if (surfaceTokens.length == 1) {
-				posContainer.wordTokenList.add(surface);
-				posContainer.addToOSCARList(type);
-
-			} else if (surfaceTokens.length > 1) {
-				for (int i = 0; i < surfaceTokens.length; i++) {
-					String surfaceToken = surfaceTokens[i];
-					posContainer.wordTokenList.add(surfaceToken);
-					if (i == 0) {
-						posContainer
-								.addToOSCARList(type, WWMMTag.TagType.START);
-					} else if (i == surfaceTokens.length - 1) {
-						posContainer.addToOSCARList(type, WWMMTag.TagType.END);
-					} else {
-						posContainer.addToOSCARList(type,
-								WWMMTag.TagType.MIDDLE);
-					}
-
-				}
-
-			}
-
-		}
-
-	}
-
-	/*****************************************************
-	 * Converts XML textNodes into POS Tags and Tokens which are then stored in
-	 * POSContainer
-	 *****************************************************/
-	private void processOSCARTextNodes(POSContainer posContainer,
-			String[] textString) {
-		for (String string : textString) {
-			if (!StringUtils.isEmpty(string)) {
-				try {
-					posContainer.addToTokenList(string);
-					posContainer.addToOSCARList("nil");
-				} catch (Exception e) {
-					LOG.debug(e.getMessage());
-					e.printStackTrace();
-				}
-			}
-		}
-	}
 }

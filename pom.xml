@@ -22,31 +22,18 @@
 				removed antlr generation of *.java to permit build on Hudson if you
 				change the *.g comment this back in again
 			-->
-			<!--  
-			<plugin>
-				<groupId>org.antlr</groupId>
-				<artifactId>antlr3-maven-plugin</artifactId>
-				<version>3.2</version>
-				<executions>
-					<execution>
-						<goals>
-							<goal>antlr</goal>
-						</goals>
-						<configuration>
-							<sourceDirectory> src/main/antlr3 </sourceDirectory>
-							<conversionTimeout>10000</conversionTimeout>
-							<libDirectory>
-								src/main/antlr3/imports </libDirectory>
-							<messageFormat>antlr</messageFormat>
-							<outputDirectory>
-								target/generated-sources/antlr3 </outputDirectory>
-							<verbose>true</verbose>
-							<grammars>*.g</grammars>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
--->
+			<!--
+				<plugin> <groupId>org.antlr</groupId>
+				<artifactId>antlr3-maven-plugin</artifactId> <version>3.2</version>
+				<executions> <execution> <goals> <goal>antlr</goal> </goals>
+				<configuration> <sourceDirectory> src/main/antlr3 </sourceDirectory>
+				<conversionTimeout>10000</conversionTimeout> <libDirectory>
+				src/main/antlr3/imports </libDirectory>
+				<messageFormat>antlr</messageFormat> <outputDirectory>
+				target/generated-sources/antlr3 </outputDirectory>
+				<verbose>true</verbose> <grammars>*.g</grammars> </configuration>
+				</execution> </executions> </plugin>
+			-->
 
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -70,10 +57,33 @@
 		</resources>
 	</build>
 	<dependencies>
+        <dependency>
+            <groupId>uk.ac.cam.ch.wwmm.oscar</groupId>
+            <artifactId>oscar4-api</artifactId>
+            <version>4.0-SNAPSHOT</version>
+        </dependency>
+
+		<dependency>
+			<groupId>uk.ac.cam.ch.wwmm.oscar</groupId>
+			<artifactId>oscar4-tokenizer</artifactId>
+			<version>4.0-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>uk.ac.cam.ch.wwmm.oscar</groupId>
+			<artifactId>oscar4-memmrecogniser</artifactId>
+			<version>4.0-SNAPSHOT</version>
+		</dependency>
+
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>apache-log4j-extras</artifactId>
 			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.13</version>
 		</dependency>
 		<dependency>
 			<groupId>org.antlr</groupId>
@@ -93,11 +103,6 @@
 			</exclusions>
 		</dependency>
 
-		<dependency>
-			<groupId>wwmm</groupId>
-			<artifactId>oscar3</artifactId>
-			<version>1.0-SNAPSHOT</version>
-		</dependency>
 		<dependency>
 			<groupId>taglibs</groupId>
 			<artifactId>regexp</artifactId>
@@ -147,5 +152,16 @@
 			<scope>test</scope>
 
 		</dependency>
+		<dependency>
+			<groupId>trove</groupId>
+			<artifactId>trove</artifactId>
+			<version>1.1-beta-5</version>
+		</dependency>
+		<dependency>
+			<groupId>uk.ac.cam.ch.wwmm.oscar</groupId>
+			<artifactId>oscar4-opsin</artifactId>
+			<version>4.0-SNAPSHOT</version>
+		</dependency>
+
 	</dependencies>
 </project>

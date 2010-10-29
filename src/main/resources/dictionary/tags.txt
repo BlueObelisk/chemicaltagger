@@ -28,6 +28,7 @@ TO---^to$|^To$---The preposition 'TO'
 #Foreign Words
 FW---^et(.)?$|^al(.)?$|^et(.)?al(.)?$
 #Nouns
+NN---^wt.$---Weight
 NN-STATE---powder|glass|liquid|oil|solid|gas|syrup|crystal|gum|needle|prisms---Physical States
 NN-TIME---^period(s)?$|^min(utes|.)?$|^hour(s)?|^month(s)?|^week(s|end)?$|^seconds$|^d$|^h$|^days$|.*night|hr(s)?|^(t|T)ime$---Time Token
 NN-MASS---(\d\d+)?(m|k|\xce\xbc)?(g|gram)(s)?$---Grams

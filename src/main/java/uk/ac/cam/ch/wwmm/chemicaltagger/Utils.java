@@ -1,6 +1,7 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
 import java.io.BufferedReader;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -12,8 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import javax.sound.midi.SysexMessage;
 
 import nu.xom.Document;
 import nu.xom.Serializer;
