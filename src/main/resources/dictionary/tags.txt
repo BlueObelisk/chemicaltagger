@@ -103,7 +103,7 @@ VB-DEGASS---(de)?(gass|oxginat|evacuat|under|purg|bubbl|flush)(ed|e|d|ing)?---De
 VB-DISSOLVE---^(re)?dissolv(ed|e|ing)?---Dissolve Verb
 
 #Dry Tokens
-VB-DRY---^(freeze|re)?dr(y|ied|ying)?$---Dry Verb
+VB-DRY---^(freeze|re)?(-)?dr(y|ied|ying)?$---Dry Verb
 NN-DRY---^dryness$---Dry Noun
 #Extract Tokens
 VB-EXTRACT---extract(ed|ing)?---Extract Verb
@@ -158,7 +158,7 @@ VB-YIELD---^(yield|afford|result|provid|obtain|give|gave|isolat|leav|giv)(ed|e|i
 
 #Misc Tokens mainly to replace characters that are not markup friendly
 RB---.*wise$|.*ly$---Adverbs like dropwise
-RB-CONJ---^there[a-z]+|indeed|moreover|^(T|t)hen$|^prior$---Conjunctive adverbs like: Thereof, therefrom etc..
+RB-CONJ---^there[a-z]+|indeed|moreover|^(T|t)hen$|^prior|(s|S)ubsequently$---Conjunctive adverbs like: Thereof, therefrom etc..
 COLON---^:---Colon           
 COMMA---^,---Comma           
 APOST---^\'|^\'\'$---Apostrophe          

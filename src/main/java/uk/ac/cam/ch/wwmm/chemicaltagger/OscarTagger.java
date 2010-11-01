@@ -43,13 +43,13 @@ public class OscarTagger {
 	 *****************************************************/
 	private void initialiseOSCAR() {
 
-		oscar = new Oscar(this.getClass().getClassLoader());
 		try {
-			oscar.loadDefaultDictionaries();
+			oscar = new Oscar();
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
+	
 		try {
 
 			oscar.getDictionaryRegistry().register(new OpsinDictionary());
