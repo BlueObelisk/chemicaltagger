@@ -392,7 +392,7 @@ public class PostProcessTags {
 
 		if (currentTag.toLowerCase().startsWith("nn-synthesize")) {
 			List<String> beforeList = Utils.addToList("dt dt-the");
-			List<String> afterList = Utils.addToList("in-of");
+			List<String> afterList = Utils.addToList("in-of nn-method");
 			if  (!stringafter(afterList, i, combinedTags)) {
 				
 				 newTag = "NN-CHEMENTITY";
@@ -431,6 +431,15 @@ public class PostProcessTags {
 
 		}
 
+		if (currentToken.equals("D") & currentTag.toLowerCase().equals("nn-time")) {
+
+			List<String> beforeList = Utils
+					.addToList("in-in");
+			if (stringbefore(beforeList, i, combinedTags)) {
+				newTag = "NN";
+			}
+
+		}
 		return newTag;
 
 	}
