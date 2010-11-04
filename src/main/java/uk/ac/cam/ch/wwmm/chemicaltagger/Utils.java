@@ -97,18 +97,14 @@ public class Utils {
 	public static String formatSentence(String sentence) {
 		StringBuilder newSentence = new StringBuilder();
 		sentence=sentence.replace("  ", " ");
-//		if (sentence.toLowerCase().contains("and preparation of")) {
-//			System.out.println("**********senteeence:: " + sentence);
-//		}
-//		sentence = sentence.replace("and Preparation of", ". Preparation of")
-//				.replace("and Synthesis of", ". Synthesis of");
-		sentence = sentence.replace("%", " %").replace(";", " ;");
+    	sentence = sentence.replace("%", " %").replace(";", " ;");
 
 		String[] words = sentence.split(" ");
 		String abbreviationRegex = "−?[A-Z]+[a-z]*\\.";
 		String concatAmountRegex = "(\\d\\d+(m|k|µ)?(l|L|g|gram|mol|cm3)(s)?$)|(\\d(L|ml|mL|gram|mol|cm3)(s)?$)";
 		String concatTempRegex = "\\d+(\\xb0|&#0176|\\xc3\\x97|o|°|º)(C|c)";
 		List<String> abvList = addToList("et. al. etc. e.g. i.e. vol. ca. wt. aq.");
+		List<String> htmlList = addToList("gt; lt;");
 		List<String> nextTokenList = addToList("gram vol %");
 		Pattern abbreviationPattern = Pattern.compile(abbreviationRegex);
 		Pattern concatAmountPattern = Pattern.compile(concatAmountRegex);
@@ -128,6 +124,12 @@ public class Utils {
 				}
 			}
 
+			
+			if ((string.endsWith(";") && !htmlList.contains(string.toLowerCase()))) {
+				string = string.substring(0, string.length() - 1);
+				suffix = " ;" + suffix;
+			}
+			
 			if ((string.endsWith(".") && string.contains("°C"))) {
 				string = string.substring(0, string.length() - 1);
 				suffix = " ." + suffix;

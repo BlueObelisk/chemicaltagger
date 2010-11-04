@@ -50,6 +50,7 @@ public class OscarTagger {
 			e1.printStackTrace();
 		}
 	
+		
 		try {
 
 			oscar.getDictionaryRegistry().register(new OpsinDictionary());
