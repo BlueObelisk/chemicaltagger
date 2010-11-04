@@ -23,4 +23,3 @@ glob:*.exe
 \.rej$
 \.conflict\~$
 glob:nbactions.xml
-^oscar-workspace/
