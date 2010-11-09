@@ -11,6 +11,7 @@ glob:Properties.dat
 glob:cInChI-1
 glob:__Test__*
 glob:patent*
+glob:*~
 glob:taggedPatents*
 glob:.settings/org.eclipse.jdt.core.prefs
 glob:.settings/org.maven.ide.eclipse.prefs

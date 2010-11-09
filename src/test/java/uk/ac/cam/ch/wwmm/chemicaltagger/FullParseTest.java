@@ -232,12 +232,14 @@ public class FullParseTest {
 //		CMLUtil.debug(doc.getRootElement(), "DDDDD");
 	}
 	
+
+	
+	
 	@Test
 	public void testFullSentence22() throws UnsupportedEncodingException {
 		String text = "HyperBranched Polymerization . A typical polymerization procedure was as follows . Cp 2 TiCl 2 ( 25 mg , 0.1 × 10 -3 M ) , Zn ( 7 mg , 0.1 × 10 -3 M ) and dioxane ( 0.5 mL ) were added into a 5 mL glass tube , and then the reaction solution was degassed using three freeze-vacuum-thaw cycles , and reacted at room temperature for 10 min , until the solution turned lime green . GMA ( 0.355 g , 2.5 × 10 -3 M ) , St ( 0.260 g , 2.5 × 10 -3 M ) , CuBr 2 ( 23 mg , 0.1 × 10 -3 M ) and bpy ( 48 mg , 0.3 × 10 -3 M ) were added into the reaction solution , and the tube was again degassed using three freeze-vacuum-thaw cycles . The tube was then sealed under a vacuum , and the sealed tube was immersed in an oil bath at 90 °C . After polymerization for 4 h , the tube was rapidly cooled to room temperature . The polymer solution in THF was passed through a short column of neutral alumina to remove the metal salt . After two precipitations by addition of the polymer solution into petroleum ether ( 30- 60 °C ) , the hyperbranched P(GMA - co -St ) -Br n ( HP(GMA-St)-Br n ) was obtained in a 51 % yield after filtration and drying in a vacuum oven at 30 °C overnight . The monomer conversion was determined gravimetrically . was 78 000 and was 1.19 .";
-     String text2 =   "HyperBranched Polymerization . A typical polymerization procedure was as follows . Cp 2 TiCl 2 ( 25 mg , 0.1 × 10 -3 M ) , Zn ( 7 mg , 0.1 × 10 -3 M ) and dioxane ( 0.5 mL ) were added into a 5 mL glass tube , and then the reaction solution was degassed using three freeze-vacuum-thaw cycles , and reacted at room temperature for 10 min , until the solution turned lime green . GMA ( 0.355 g , 2.5 × 10 -3 M ) , St ( 0.260 g , 2.5 × 10 -3 M ) , CuBr 2 ( 23 mg , 0.1 × 10 -3 M ) and bpy ( 48 mg , 0.3 × 10 -3 M ) were added into the reaction solution , and the tube was again degassed using three freeze-vacuum-thaw cycles . The tube was then sealed under a vacuum , and the sealed tube was immersed in an oil bath at 90 °C . After polymerization for 4 h , the tube was rapidly cooled to room temperature . The polymer solution in THF was passed through a short column of neutral alumina to remove the metal salt . After two precipitations by addition of the polymer solution into petroleum ether ( 30- 60 °C ) , the hyperbranched P(GMA - co -St ) -Br n ( HP(GMA-St)-Br n ) was obtained in a 51 % yield after filtration and drying in a vacuum oven at 30 °C overnight . The monomer conversion was determined gravimetrically . was 78 000 and was 1.19 .";
-	    System.out.println(text.equals(text2));
-        POSContainer posContainer = ChemistryPOSTagger.getInstance().runTaggers(text2);
+
+        POSContainer posContainer = ChemistryPOSTagger.getInstance().runTaggers(text);
 		String tagged = posContainer.getTokenTagTupleAsString();
         System.out.println(tagged);
 		InputStream in = new ByteArrayInputStream(tagged.getBytes("UTF-8"));
@@ -249,6 +251,37 @@ public class FullParseTest {
 		Utils.writeXMLToFile(doc, "target/testExperiment.xml");
 	}
 	
+	@Test
+	public void testFullSentence23() throws UnsupportedEncodingException {
+		String text = "The influence of halogen oxidation on the variabilities of ozone (O3) and volatile organic compounds (VOCs) within the Arctic and sub-Arctic atmospheric boundary layer was investigated using field measurements from multiple campaigns conducted in March and April 2008 as part of the POLARCAT project. For the ship-based measurements, a high degree of correlation (r = 0.98 for 544 data points collected north of 68° N) was observed between the acetylene to benzene ratio, used as a marker for chlorine and bromine oxidation, and O3 signifying the vast influence of halogen oxidation throughout the ice-free regions of the North Atlantic . Concurrent airborne and ground-based measurements in the Alaskan Arctic substantiated this correlation and were used to demonstrate that halogen oxidation influenced O3 variability throughout the Arctic boundary layer during these springtime studies. Measurements aboard the R/V Knorr in the North Atlantic and Arctic Oceans provided a unique view of the transport of O3-poor air masses from the Arctic Basin to latitudes as far south as 52° N. FLEXPART, a Lagrangian transport model, was used to quantitatively determine the exposure of air masses encountered by the ship to first-year ice (FYI), multi-year ice (MYI), and total ICE (FYI+MYI). O3 anti-correlated with the modeled total ICE tracer (r = −0.86) indicating that up to 73% of the O3 variability measured in the Arctic marine boundary layer could be related to sea ice exposure. ";
+        POSContainer posContainer = ChemistryPOSTagger.getInstance().runTaggers(text);
+		String tagged = posContainer.getTokenTagTupleAsString();
+        System.out.println(tagged);
+		InputStream in = new ByteArrayInputStream(tagged.getBytes("UTF-8"));
+		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
+				in);
+
+		Tree t = chemistrySentenceParser.parseTags();
+		Document doc = new ASTtoXML().convert(t,true);
+		Utils.writeXMLToFile(doc, "target/testExperiment.xml");
+	}
+	
+	@Test
+	public void testFullSentence24() throws UnsupportedEncodingException{
+		String text = "γ-Tocotrienol and γ-Tocopherol Are Primarily Metabolized to Conjugated 2-(β-carboxyethyl)-6-Hydroxy-2,7,8-Trimethylchroman and Sulfated Long-Chain Carboxychromanols in Rats and eaten for breakfast";
+	      POSContainer posContainer = ChemistryPOSTagger.getInstance().runTaggers(text);
+		  String tagged = posContainer.getTokenTagTupleAsString();
+	      System.out.println(tagged);
+		  InputStream in = new ByteArrayInputStream(tagged.getBytes("UTF-8"));
+		  ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
+					in);
+
+		  Tree t = chemistrySentenceParser.parseTags();
+		  Document doc = new ASTtoXML().convert(t);
+		  Utils.writeXMLToFile(doc, "target/testMetabolism.xml");
+
+		  Assert.assertEquals(1,doc.query("//Sentence").size());
+	}
 	/*****************************
 	 * CheckNodes(Tree astTree)
 	 * 
@@ -261,7 +294,7 @@ public class FullParseTest {
 		for (int i = 0; i < nodeCount; i++) {
 			String text = astTree.getChild(i).getText();
 			int type = astTree.getChild(i).getType();
-			//Log.info("****Text=" + text + " type==" + type);
+//			Log.info("****Text=" + text + " type==" + type);
 			Assert.assertNotSame("Antlr Parse Fails for the for the text '"
 					+ text + "'", 0, type);
 			checkNodes(astTree.getChild(i));
