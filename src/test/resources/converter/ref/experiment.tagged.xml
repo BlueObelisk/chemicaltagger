@@ -246,10 +246,8 @@
       <VBD>had</VBD>
       <VB-YIELD>formed</VB-YIELD>
     </VerbPhrase>
-    <Unmatched>
-      <DT>that</DT>
-    </Unmatched>
     <VerbPhrase>
+      <DT>that</DT>
       <VBD>were</VBD>
       <VB-FILTER>filtered</VB-FILTER>
       <IN-OFF>off</IN-OFF>

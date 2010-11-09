@@ -4,6 +4,7 @@ import nu.xom.Document;
 import nu.xom.Element;
 
 import org.antlr.runtime.tree.Tree;
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
 /*****************************
@@ -16,9 +17,8 @@ public class ASTtoXML {
 
 	final Logger LOG = Logger.getLogger(ASTtoXML.class);
 
-
 	public ASTtoXML() {
-		}
+	}
 
 	/********************************************
 	 * Main Function Converts astTree to XML Document. Calls the recursive
@@ -43,10 +43,20 @@ public class ASTtoXML {
 	 *******************************************/
 	public Document convert(Tree astTree, boolean postProcess) {
 		Element root = new Element("Document");
-		Document doc = new Document(getNodes(astTree, root));
+		Document doc = null;
+		if (astTree.getChildCount() > 0) {
+			if (StringUtils.isNotEmpty(astTree.getChild(0).getParent()
+					.getText())) {
+				Element sentenceNode = new Element("Sentence");
+				root.appendChild(getNodes(astTree, sentenceNode));
+				doc = new Document(root);
+
+			} else
+				doc = new Document(getNodes(astTree, root));
+		}
 		if (postProcess) {
 			PostProcessTrees procTree = new PostProcessTrees();
-			
+
 			doc = procTree.process(doc);
 		}
 		return doc;
@@ -58,7 +68,6 @@ public class ASTtoXML {
 	 * @param doc
 	 * @return
 	 */
-	
 
 	/**********************************************
 	 * A recursive function that goes through the leaves of the tree to create
@@ -74,7 +83,9 @@ public class ASTtoXML {
 
 		int nodeCount = astTree.getChildCount();
 		Element newNode = null;
+
 		for (int i = 0; i < nodeCount; i++) {
+
 			String text = astTree.getChild(i).getText();
 			int type = astTree.getChild(i).getType();
 			// LOG.debug("Type = " + type + " text= " + text);
