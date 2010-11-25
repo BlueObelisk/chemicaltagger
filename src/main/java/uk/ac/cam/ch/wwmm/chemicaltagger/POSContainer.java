@@ -43,6 +43,7 @@ public class POSContainer {
 	}
 
 	public void addToOSCARList(String oscarTag) {
+		if (oscarTag.startsWith("ONT")) oscarTag = "ONT";
 		oscarTagList.add(new WWMMTag("OSCAR-" + oscarTag));
 
 	}

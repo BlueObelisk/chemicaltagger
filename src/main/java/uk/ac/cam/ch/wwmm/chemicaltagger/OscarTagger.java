@@ -9,6 +9,8 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
 import uk.ac.cam.ch.wwmm.oscar.Oscar;
+import uk.ac.cam.ch.wwmm.oscar.document.IToken;
+import uk.ac.cam.ch.wwmm.oscar.document.ITokenSequence;
 import uk.ac.cam.ch.wwmm.oscar.document.NamedEntity;
 import uk.ac.cam.ch.wwmm.oscar.document.Token;
 import uk.ac.cam.ch.wwmm.oscar.document.TokenSequence;
@@ -69,7 +71,7 @@ public class OscarTagger {
 	public POSContainer runTagger(POSContainer posContainer, String sentence) {
 
 		List<NamedEntity> neList = new ArrayList<NamedEntity>();
-		List<TokenSequence> tokens = new ArrayList<TokenSequence>();
+		List<ITokenSequence> tokens = new ArrayList<ITokenSequence>();
 		try {
 			sentence = oscar.normalize(sentence);
 			tokens = oscar.tokenize(sentence);
@@ -83,8 +85,8 @@ public class OscarTagger {
 		String word = "";
 		String tag = "nil";
 		int endIndex = -1;
-		for (TokenSequence tokenSequence : tokens) {
-			for (Token tok : tokenSequence.getTokens()) {
+		for (ITokenSequence tokenSequence : tokens) {
+			for (IToken tok : tokenSequence.getTokens()) {
 				if (tok.getStart() >= endIndex) {
 					word = tok.getValue();
 					endIndex = tok.getEnd();
