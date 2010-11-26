@@ -96,7 +96,7 @@ public class OscarTagger {
 					for (NamedEntity ne : neList) {
 						if (ne.getStart() == tok.getStart()) {
 							word = ne.getSurface();
-							tag = ne.getType();
+							tag = ne.getType().getName();
 							foundNE = true;
 							endIndex = ne.getEnd();
 							for (String subWord : word.split(" ")) {
@@ -132,8 +132,8 @@ public class OscarTagger {
 					if (otherNamedEntity.getEnd() > end) {
 						isPartial = true;
 					}
-					if (otherNamedEntity.getType().contains("CM")
-							& !namedEntity.getType().contains("CM"))
+					if (otherNamedEntity.getType().getName().contains("CM")
+							& !namedEntity.getType().getName().contains("CM"))
 						isCM = true;
 
 				}
@@ -193,12 +193,12 @@ public class OscarTagger {
 				if (ne.getSurface().contains(" ")) {
 					for (String subWord : ne.getSurface().split(" ")) {
 						posContainer.addToTokenList(subWord);
-						posContainer.addToOSCARList(ne.getType());
+						posContainer.addToOSCARList(ne.getType().getName());
 
 					}
 				} else {
 					posContainer.addToTokenList(ne.getSurface());
-					posContainer.addToOSCARList(ne.getType());
+					posContainer.addToOSCARList(ne.getType().getName());
 
 				}
 				index = ne.getEnd();
