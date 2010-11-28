@@ -59,8 +59,8 @@
 	<dependencies>
 		<dependency>
 			<groupId>log4j</groupId>
-			<artifactId>apache-log4j-extras</artifactId>
-			<version>1.0</version>
+			<artifactId>log4j</artifactId>
+			<version>1.2.13</version>
 		</dependency>
 		<dependency>
 			<groupId>org.antlr</groupId>
