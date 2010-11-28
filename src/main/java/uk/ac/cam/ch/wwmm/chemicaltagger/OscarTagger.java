@@ -56,7 +56,7 @@ public class OscarTagger {
 
 			oscar.getDictionaryRegistry().register(new OpsinDictionary());
 			oscar.getDictionaryRegistry().register(new PolymerDictionary());
-		} catch (URISyntaxException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
