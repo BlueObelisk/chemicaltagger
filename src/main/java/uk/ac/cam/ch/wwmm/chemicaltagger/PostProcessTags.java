@@ -203,6 +203,28 @@ public class PostProcessTags {
 
 		}
 
+		if (currentTag.toLowerCase().startsWith("vbd")) {
+
+			List<String> beforeList = Utils.addToList("oscar-cm");
+			List<String> afterList = Utils
+			.addToList("oscar-cj nn");
+
+			if (stringbefore(beforeList, i, combinedTags) && stringafter(afterList, i, combinedTags)) {
+				newTag = "JJ";
+			}
+
+		}
+		
+		if (currentTag.toLowerCase().startsWith("vb-filter")) {
+
+			List<String> beforeList = Utils.addToList("oscar-cj");
+			if (stringbefore(beforeList, i, combinedTags)) {
+				newTag = "NN";
+			}
+
+		}
+
+		
 		if (currentTag.toLowerCase().startsWith("vb")) {
 
 			List<String> beforeList = Utils.addToList("to");
@@ -224,6 +246,7 @@ public class PostProcessTags {
 			}
 
 		}
+
 		/********
 		 * Gerunds
 		 */
