@@ -210,15 +210,21 @@ unnamedmolecule
 	: unnamedmoleculeamount -> ^(NODE["UNNAMEDMOLECULE"] unnamedmoleculeamount);	
 		
 quantity 	:  (quantity1|quantity2) ->   ^(NODE["QUANTITY"]  quantity1? quantity2?);
+
 quantity1
 	: lrb measurements (comma  measurements)* (comma preparationphrase)* (stop preparationphrase)*  rrb;	 
+
 quantity2
 	:  measurements (comma  measurements)*  ;
-//amount 	: lrb gram comma  mmol  rrb;     
 method:
     (nngeneral|nn)? nnmethod (oscarcd|cd)?  ;
     brackets 
     	:	(lrb|rrb|lsqb|rsqb)+;
+
+
+
+
+
 //Tags---Pattern---Description
 oscarcd:'OSCAR-CD' TOKEN;
 oscarcj:'OSCAR-CJ' TOKEN;
