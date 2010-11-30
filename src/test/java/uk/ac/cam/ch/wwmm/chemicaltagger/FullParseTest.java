@@ -24,7 +24,7 @@ public class FullParseTest {
 
 		Tree t = chemistrySentenceParser.parseTags();
 		ASTtoXML ast2XML = new ASTtoXML();
-		Utils.writeXMLToFile(ast2XML.convert(t),"target/file1.xml");
+		Utils.writeXMLToFile(ast2XML.convert(t,true),"target/file1.xml");
 		
 		checkNodes(t);
 	}
@@ -265,7 +265,22 @@ public class FullParseTest {
 		Document doc = new ASTtoXML().convert(t,true);
 		Utils.writeXMLToFile(doc, "target/testExperiment.xml");
 	}
-	
+
+	@Test
+	public void testFullSentence26() throws UnsupportedEncodingException {
+		String text = "Potassium carbonate (0.63 g, 4.56 mmol) and thiophenol (0.19 g, 1.69 mmol) were added to 2-nitrobenzene sulfonamide . dmap was dissolved in thf";
+        POSContainer posContainer = ChemistryPOSTagger.getInstance().runTaggers(text);
+		String tagged = posContainer.getTokenTagTupleAsString();
+        System.out.println(tagged);
+		InputStream in = new ByteArrayInputStream(tagged.getBytes("UTF-8"));
+		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
+				in);
+
+		Tree t = chemistrySentenceParser.parseTags();
+		Document doc = new ASTtoXML().convert(t,true);
+		Utils.writeXMLToFile(doc, "target/testPaper.xml");
+	}
+
 	@Test
 	public void testFullSentence24() throws UnsupportedEncodingException{
 		String text = "γ-Tocotrienol and γ-Tocopherol Are Primarily Metabolized to Conjugated 2-(β-carboxyethyl)-6-Hydroxy-2,7,8-Trimethylchroman and Sulfated Long-Chain Carboxychromanols in Rats and eaten for breakfast";

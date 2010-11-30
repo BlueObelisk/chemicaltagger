@@ -4,9 +4,7 @@ import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.commons.configuration.Configuration;
 import org.apache.commons.lang.StringUtils;
-import org.apache.log4j.Logger;
 
 import uk.ac.cam.ch.wwmm.oscar.Oscar;
 import uk.ac.cam.ch.wwmm.oscar.chemnamedict.core.PolymerDictionary;
@@ -23,10 +21,6 @@ import uk.ac.cam.ch.wwmm.oscar.opsin.OpsinDictionary;
 
 public class OscarTagger {
 
-	private Configuration config = null;
-	private String config_filename = "textmining.properties";
-	private final Logger LOG = Logger.getLogger(OscarTagger.class);
-	private static final String FLOW_COMMAND = "recognise inline";
 	private Oscar oscar;
 
 	/****************************
@@ -115,7 +109,7 @@ public class OscarTagger {
 			}
 		}
 		return posContainer;
-		// return processOSCARTags(posContainer, neList, sentence);
+
 
 	}
 
@@ -151,77 +145,6 @@ public class OscarTagger {
 		}
 
 		return newNeList;
-	}
-
-	/*****************************************************
-	 * Converts NamedEntities into POS Tags and Tokens which are then stored in
-	 * POSContainer
-	 *****************************************************/
-	private POSContainer processOSCARTags(POSContainer posContainer,
-			List<NamedEntity> neList, String sentence) {
-		int index = 0;
-
-		for (NamedEntity ne : neList) {
-			String word = "";
-
-			while (index < ne.getStart()) {
-				int endIndex = sentence.substring(0, index).length()
-						+ sentence.substring(index, sentence.length()).indexOf(
-								"/");
-
-				if (endIndex > sentence.substring(0, index).length()
-						+ sentence.substring(index, sentence.length()).indexOf(
-								" ")) {
-					endIndex = sentence.substring(0, index).length()
-							+ sentence.substring(index, sentence.length())
-									.indexOf(" ");
-				}
-				if (endIndex < 0) {
-					endIndex = sentence.length();
-				}
-
-				word = sentence.substring(index, endIndex);
-				if (StringUtils.isNotEmpty(word)) {
-					posContainer.addToTokenList(word);
-					posContainer.addToOSCARList("nil");
-					// LOG.info(word+": nil");
-				}
-				index = endIndex + 1;
-
-			}
-			if (index == ne.getStart()) {
-				if (ne.getSurface().contains(" ")) {
-					for (String subWord : ne.getSurface().split(" ")) {
-						posContainer.addToTokenList(subWord);
-						posContainer.addToOSCARList(ne.getType().getName());
-
-					}
-				} else {
-					posContainer.addToTokenList(ne.getSurface());
-					posContainer.addToOSCARList(ne.getType().getName());
-
-				}
-				index = ne.getEnd();
-
-			}
-
-		}
-		if (index < sentence.length()) {
-
-			String subString = sentence.substring(index, sentence.length());
-
-			for (String word : subString.split(" ")) {
-				posContainer.addToTokenList(word);
-				posContainer.addToOSCARList("nil");
-
-			}
-		}
-
-		for (String word : posContainer.getTokenList()) {
-			System.out.println(word);
-		}
-
-		return posContainer;
 	}
 
 }
