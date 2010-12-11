@@ -16,9 +16,10 @@ import org.antlr.runtime.tree.Tree;
 public class RoleIdentifier {
 
 	private String text;
+	private ChemistryPOSTagger chemPos;
 
 	public RoleIdentifier() {
-
+		chemPos = ChemistryPOSTagger.getInstance();
 	}
 
 	public void setText(String text) {
@@ -56,7 +57,7 @@ public class RoleIdentifier {
 	}
 
 	private Document runChemicalTagger() {
-		ChemistryPOSTagger chemPos = ChemistryPOSTagger.getInstance();
+		
 		POSContainer posContainer = chemPos.runTaggers(text);
 		String tagged = posContainer.getTokenTagTupleAsString();
 
