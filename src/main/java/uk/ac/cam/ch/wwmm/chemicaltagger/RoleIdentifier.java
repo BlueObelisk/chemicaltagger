@@ -36,8 +36,11 @@ public class RoleIdentifier {
 				Element chemicalElement = (Element) chemicalNodes.get(j);
 				chemicalName = chemicalName +" "+chemicalElement.getValue();
 			}
-	
-			roleMap.put(chemicalName, role);
+	 
+			int count = 1;
+			while (roleMap.containsKey(chemicalName+"_"+String.valueOf(count)))
+				count = count + 1;
+			roleMap.put(chemicalName+"_"+String.valueOf(count), role);
 		}
 		
 		return roleMap;
@@ -65,8 +68,7 @@ public class RoleIdentifier {
 	}
 
 	public static void main(String[] args) {
-		RoleIdentifier roleIdent = new RoleIdentifier(
-				"THF was dissolved in methanol and added to Potassium Carbonate in water");
+		RoleIdentifier roleIdent = new RoleIdentifier("Accordingly (Scheme ​(Scheme1),1), treatment of the fully O-protected L-ido-cyclooctene 1 with a 5 mol% aqueous solution of osmium(IV) tetroxide [34] in acetone in the presence of N-methylmorpholine oxide and tert-butanol cleanly led to the expected cis-diol 3 in 97% yield.");
 		HashMap<String, String> identifiedRoles = roleIdent.getRoles();
 		System.out.println(identifiedRoles);
 	}

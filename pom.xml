@@ -21,7 +21,8 @@
 			<!--
 				removed antlr generation of *.java to permit build on Hudson if you
 				change the *.g comment this back in again
-			
+			-->
+			<!--
 				<plugin> <groupId>org.antlr</groupId>
 				<artifactId>antlr3-maven-plugin</artifactId> <version>3.2</version>
 				<executions> <execution> <goals> <goal>antlr</goal> </goals>
@@ -32,7 +33,8 @@
 				target/generated-sources/antlr3 </outputDirectory>
 				<verbose>true</verbose> <grammars>*.g</grammars> </configuration>
 				</execution> </executions> </plugin>
-		-->
+			-->
+
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
@@ -57,8 +59,8 @@
 	<dependencies>
 		<dependency>
 			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.13</version>
+			<artifactId>apache-log4j-extras</artifactId>
+			<version>1.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.antlr</groupId>
@@ -80,14 +82,9 @@
 
 		<dependency>
 			<groupId>uk.ac.cam.ch.wwmm.oscar</groupId>
-			<artifactId>oscar4-api</artifactId>
+			<artifactId>oscar4-cli</artifactId>
 			<version>4.0-SNAPSHOT</version>
 		</dependency>
-                <dependency>
-                        <groupId>uk.ac.cam.ch.wwmm.oscar</groupId>
-                        <artifactId>oscar4-opsin</artifactId>
-                        <version>4.0-SNAPSHOT</version>
-                </dependency>
 
 		<dependency>
 			<groupId>taglibs</groupId>
@@ -138,11 +135,5 @@
 			<scope>test</scope>
 
 		</dependency>
-
-        <dependency>
-        	<groupId>commons-math</groupId>
-        	<artifactId>commons-math</artifactId>
-        	<version>20040218.045431</version>
-        </dependency>
 	</dependencies>
 </project>
