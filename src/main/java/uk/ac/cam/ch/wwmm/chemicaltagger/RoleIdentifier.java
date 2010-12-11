@@ -13,12 +13,15 @@ import org.antlr.runtime.tree.Tree;
 
 public class RoleIdentifier {
 
-	private String sentence;
+	private String text;
 
-	public RoleIdentifier(String sentence) {
-		this.sentence = sentence;
+	public RoleIdentifier() {
+		
 	}
 
+	public void setText(String text){
+		this.text = text;
+	}
 	public HashMap<String, String> getRoles() {
 		HashMap<String, String> roleMap = new HashMap<String, String>();
 		
@@ -48,7 +51,7 @@ public class RoleIdentifier {
 
 	private Document runChemicalTagger() {
 		ChemistryPOSTagger chemPos = ChemistryPOSTagger.getInstance();
-		POSContainer posContainer = chemPos.runTaggers(sentence);
+		POSContainer posContainer = chemPos.runTaggers(text);
 		String tagged = posContainer.getTokenTagTupleAsString();
 
 		InputStream in = null;
@@ -68,7 +71,8 @@ public class RoleIdentifier {
 	}
 
 	public static void main(String[] args) {
-		RoleIdentifier roleIdent = new RoleIdentifier("Accordingly (Scheme ​(Scheme1),1), treatment of the fully O-protected L-ido-cyclooctene 1 with a 5 mol% aqueous solution of osmium(IV) tetroxide [34] in acetone in the presence of N-methylmorpholine oxide and tert-butanol cleanly led to the expected cis-diol 3 in 97% yield.");
+		RoleIdentifier roleIdent = new RoleIdentifier();
+        roleIdent.setText("Potassium was washed with acetone. Salt in water");
 		HashMap<String, String> identifiedRoles = roleIdent.getRoles();
 		System.out.println(identifiedRoles);
 	}
