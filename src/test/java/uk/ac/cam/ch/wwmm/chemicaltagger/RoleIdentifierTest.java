@@ -4,6 +4,7 @@ import static uk.ac.cam.ch.wwmm.chemicaltagger.Utils.readSentence;
 
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
+import java.util.List;
 
 import org.junit.Test;
 
@@ -16,7 +17,7 @@ public class RoleIdentifierTest {
 		;
 		RoleIdentifier roleIdent = new RoleIdentifier();
 		roleIdent.setText(sentence);
-		HashMap<String, String> identifiedRoles = roleIdent.getRoles();
+		HashMap<String, List<String>> identifiedRoles = roleIdent.getRoles();
 		System.out.println(identifiedRoles);
 	}
 
@@ -27,7 +28,7 @@ public class RoleIdentifierTest {
 		;
 		RoleIdentifier roleIdent = new RoleIdentifier();
 		roleIdent.setText(sentence);
-		HashMap<String, String> identifiedRoles = roleIdent.getRoles();
+		HashMap<String, List<String>> identifiedRoles = roleIdent.getRoles();
 		System.out.println(identifiedRoles);
 	}
 
@@ -38,7 +39,7 @@ public class RoleIdentifierTest {
 		;
 		RoleIdentifier roleIdent = new RoleIdentifier();
 		roleIdent.setText(sentence);
-		HashMap<String, String> identifiedRoles = roleIdent.getRoles();
+		HashMap<String, List<String>> identifiedRoles = roleIdent.getRoles();
 		System.out.println(identifiedRoles);
 	}
 
@@ -49,7 +50,7 @@ public class RoleIdentifierTest {
 		;
 		RoleIdentifier roleIdent = new RoleIdentifier();
 		roleIdent.setText(sentence);
-		HashMap<String, String> identifiedRoles = roleIdent.getRoles();
+		HashMap<String, List<String>> identifiedRoles = roleIdent.getRoles();
 		System.out.println(identifiedRoles);
 	}
 
@@ -60,7 +61,7 @@ public class RoleIdentifierTest {
 		;
 		RoleIdentifier roleIdent = new RoleIdentifier();
 		roleIdent.setText(sentence);
-		HashMap<String, String> identifiedRoles = roleIdent.getRoles();
+		HashMap<String, List<String>> identifiedRoles = roleIdent.getRoles();
 		System.out.println(identifiedRoles);
 	}
 
@@ -71,7 +72,7 @@ public class RoleIdentifierTest {
 		;
 		RoleIdentifier roleIdent = new RoleIdentifier();
 		roleIdent.setText(sentence);
-		HashMap<String, String> identifiedRoles = roleIdent.getRoles();
+		HashMap<String, List<String>> identifiedRoles = roleIdent.getRoles();
 		System.out.println(identifiedRoles);
 	}
 
@@ -82,7 +83,7 @@ public class RoleIdentifierTest {
 		;
 		RoleIdentifier roleIdent = new RoleIdentifier();
 		roleIdent.setText(sentence);
-		HashMap<String, String> identifiedRoles = roleIdent.getRoles();
+		HashMap<String, List<String>> identifiedRoles = roleIdent.getRoles();
 		System.out.println(identifiedRoles);
 	}
 
@@ -93,7 +94,7 @@ public class RoleIdentifierTest {
 		;
 		RoleIdentifier roleIdent = new RoleIdentifier();
 		roleIdent.setText(sentence);
-		HashMap<String, String> identifiedRoles = roleIdent.getRoles();
+		HashMap<String, List<String>> identifiedRoles = roleIdent.getRoles();
 		System.out.println(identifiedRoles);
 	}
 
@@ -104,7 +105,7 @@ public class RoleIdentifierTest {
 		;
 		RoleIdentifier roleIdent = new RoleIdentifier();
 		roleIdent.setText(sentence);
-		HashMap<String, String> identifiedRoles = roleIdent.getRoles();
+		HashMap<String, List<String>> identifiedRoles = roleIdent.getRoles();
 		System.out.println(identifiedRoles);
 	}
 
@@ -115,7 +116,7 @@ public class RoleIdentifierTest {
 		;
 		RoleIdentifier roleIdent = new RoleIdentifier();
 		roleIdent.setText(sentence);
-		HashMap<String, String> identifiedRoles = roleIdent.getRoles();
+		HashMap<String, List<String>> identifiedRoles = roleIdent.getRoles();
 		System.out.println(identifiedRoles);
 	}
 
