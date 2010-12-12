@@ -7,21 +7,19 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 
-import junit.framework.Assert;
-
 import org.apache.log4j.Logger;
+import org.junit.Assert;
 import org.junit.Test;
 
 public class RoleIdentifierTest {
+
 	private static Logger LOG = Logger.getLogger(RoleIdentifierTest.class);
 
 	@Test
 	public void RoleIdentifierTest1() throws UnsupportedEncodingException {
-
 		String sentence = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/roleIdentifierTest/Sentence1.txt");
 		RoleIdentifier roleIdent = new RoleIdentifier();
-		roleIdent.setText(sentence);
-		HashMap<String, List<String>> identifiedRoles = roleIdent.getRoles();
+		HashMap<String, List<String>> identifiedRoles = roleIdent.getRoles(sentence);
 		int solventCount = getSolventCount(identifiedRoles);
 		Assert.assertEquals("Solvent Count", 1, solventCount);
 		LOG.info(identifiedRoles);
@@ -32,8 +30,7 @@ public class RoleIdentifierTest {
 
 		String sentence = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/roleIdentifierTest/Sentence2.txt");
 		RoleIdentifier roleIdent = new RoleIdentifier();
-		roleIdent.setText(sentence);
-		HashMap<String, List<String>> identifiedRoles = roleIdent.getRoles();
+		HashMap<String, List<String>> identifiedRoles = roleIdent.getRoles(sentence);
 		int solventCount = getSolventCount(identifiedRoles);
 		Assert.assertEquals("Solvent Count", 1, solventCount);
 		LOG.info(identifiedRoles);
@@ -44,8 +41,7 @@ public class RoleIdentifierTest {
 
 		String sentence = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/roleIdentifierTest/Sentence3.txt");
 		RoleIdentifier roleIdent = new RoleIdentifier();
-		roleIdent.setText(sentence);
-		HashMap<String, List<String>> identifiedRoles = roleIdent.getRoles();
+		HashMap<String, List<String>> identifiedRoles = roleIdent.getRoles(sentence);
 		int solventCount = getSolventCount(identifiedRoles);
 		Assert.assertEquals("Solvent Count", 2, solventCount);
 		LOG.info(identifiedRoles);
@@ -53,11 +49,9 @@ public class RoleIdentifierTest {
 
 	@Test
 	public void RoleIdentifierTest4() throws UnsupportedEncodingException {
-
 		String sentence = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/roleIdentifierTest/Sentence4.txt");
 		RoleIdentifier roleIdent = new RoleIdentifier();
-		roleIdent.setText(sentence);
-		HashMap<String, List<String>> identifiedRoles = roleIdent.getRoles();
+		HashMap<String, List<String>> identifiedRoles = roleIdent.getRoles(sentence);
 		int solventCount = getSolventCount(identifiedRoles);
 		Assert.assertEquals("Solvent Count", 1, solventCount);
 		LOG.info(identifiedRoles);
@@ -65,11 +59,9 @@ public class RoleIdentifierTest {
 
 	@Test
 	public void RoleIdentifierTest5() throws UnsupportedEncodingException {
-
 		String sentence = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/roleIdentifierTest/Sentence5.txt");
 		RoleIdentifier roleIdent = new RoleIdentifier();
-		roleIdent.setText(sentence);
-		HashMap<String, List<String>> identifiedRoles = roleIdent.getRoles();
+		HashMap<String, List<String>> identifiedRoles = roleIdent.getRoles(sentence);
 		int solventCount = getSolventCount(identifiedRoles);
 		Assert.assertEquals("Solvent Count", 3, solventCount);
 		LOG.info(identifiedRoles);
@@ -77,11 +69,9 @@ public class RoleIdentifierTest {
 
 	@Test
 	public void RoleIdentifierTest6() throws UnsupportedEncodingException {
-
 		String sentence = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/roleIdentifierTest/Sentence6.txt");
 		RoleIdentifier roleIdent = new RoleIdentifier();
-		roleIdent.setText(sentence);
-		HashMap<String, List<String>> identifiedRoles = roleIdent.getRoles();
+		HashMap<String, List<String>> identifiedRoles = roleIdent.getRoles(sentence);
 		int solventCount = getSolventCount(identifiedRoles);
 		Assert.assertEquals("Solvent Count", 1, solventCount);
 		LOG.info(identifiedRoles);
@@ -89,11 +79,9 @@ public class RoleIdentifierTest {
 
 	@Test
 	public void RoleIdentifierTest7() throws UnsupportedEncodingException {
-
 		String sentence = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/roleIdentifierTest/Sentence7.txt");
 		RoleIdentifier roleIdent = new RoleIdentifier();
-		roleIdent.setText(sentence);
-		HashMap<String, List<String>> identifiedRoles = roleIdent.getRoles();
+		HashMap<String, List<String>> identifiedRoles = roleIdent.getRoles(sentence);
 		int solventCount = getSolventCount(identifiedRoles);
 		Assert.assertEquals("Solvent Count", 1, solventCount);
 		LOG.info(identifiedRoles);
@@ -101,11 +89,9 @@ public class RoleIdentifierTest {
 
 	@Test
 	public void RoleIdentifierTest8() throws UnsupportedEncodingException {
-
 		String sentence = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/roleIdentifierTest/Sentence8.txt");
 		RoleIdentifier roleIdent = new RoleIdentifier();
-		roleIdent.setText(sentence);
-		HashMap<String, List<String>> identifiedRoles = roleIdent.getRoles();
+		HashMap<String, List<String>> identifiedRoles = roleIdent.getRoles(sentence);
 		int solventCount = getSolventCount(identifiedRoles);
 		Assert.assertEquals("Solvent Count", 4, solventCount);
 		LOG.info(identifiedRoles);
@@ -113,11 +99,9 @@ public class RoleIdentifierTest {
 
 	@Test
 	public void RoleIdentifierTest9() throws UnsupportedEncodingException {
-
 		String sentence = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/roleIdentifierTest/Sentence9.txt");
 		RoleIdentifier roleIdent = new RoleIdentifier();
-		roleIdent.setText(sentence);
-		HashMap<String, List<String>> identifiedRoles = roleIdent.getRoles();
+		HashMap<String, List<String>> identifiedRoles = roleIdent.getRoles(sentence);
 		int solventCount = getSolventCount(identifiedRoles);
 		Assert.assertEquals("Solvent Count", 4, solventCount);
 		LOG.info(identifiedRoles);
@@ -125,11 +109,9 @@ public class RoleIdentifierTest {
 
 	@Test
 	public void RoleIdentifierTest10() throws UnsupportedEncodingException {
-
 		String sentence = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/roleIdentifierTest/Sentence10.txt");
 		RoleIdentifier roleIdent = new RoleIdentifier();
-		roleIdent.setText(sentence);
-		HashMap<String, List<String>> identifiedRoles = roleIdent.getRoles();
+		HashMap<String, List<String>> identifiedRoles = roleIdent.getRoles(sentence);
 		int solventCount = getSolventCount(identifiedRoles);
 		Assert.assertEquals("Solvent Count", 0, solventCount);
 		LOG.info(identifiedRoles);
