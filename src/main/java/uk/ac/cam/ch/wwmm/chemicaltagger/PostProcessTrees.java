@@ -20,6 +20,7 @@ public class PostProcessTrees {
 		actionMap.put("VB-CHARGE", "Add");
 		actionMap.put("NN-MIXTURE", "Add");
 		actionMap.put("VB-CONTAIN", "Add");
+		actionMap.put("VB-DILUTE", "Add");
 		actionMap.put("VB-DROP", "Add");
 		actionMap.put("VB-FILL", "Add");
 		// actionMap.put("VB-SUSPEND", "Add");
@@ -318,6 +319,15 @@ public class PostProcessTrees {
 			if (actionElement.getAttributeValue("type").equals("Wash")) {
 
 				addSolventRole(actionElement, "IN-WITH", false);
+			}
+			if (actionElement.getAttributeValue("type").equals("Extract")) {
+
+				addSolventRole(actionElement, "IN-WITH", false);
+			}
+
+			if (actionElement.getAttributeValue("type").equals("Add")) {
+				if (actionElement.toXML().toLowerCase().contains("vb-dilute"))
+					addSolventRole(actionElement, "IN-WITH", false);
 			}
 
 		}

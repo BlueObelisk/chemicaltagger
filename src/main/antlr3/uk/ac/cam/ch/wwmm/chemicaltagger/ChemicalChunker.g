@@ -73,7 +73,7 @@ conjunction
 verbphrase
 	:	verbphraseStructure ->  ^(NODE["VerbPhrase"]  verbphraseStructure);
 verbphraseStructure :  dt? to? inAll? inafter? (md* rbconj? adv* adj? verb+ md* adv* adj? neg? )+ inoff? (cc? comma? prepphrase)*   ;
-verb : vb|vbp|vbg|vbd|vbz|vbn|vbuse|vbsubmerge|vbimmerse|degassMultiVerb|vbsubject|vbadd|vbcharge|vbcontain|vbdrop|vbfill|vbsuspend|vbtreat|vbapparatus|vbconcentrate|vbcool|vbdegass|vbdissolve|vbdry|vbextract|vbfilter |vbheat|vbincrease|vbpartition|vbprecipitate|vbpurify|vbquench|vbrecover|vbremove|vbstir|vbsynthesize|vbwait|vbwash|vbyield|vbchange;
+verb : vb|vbp|vbg|vbd|vbz|vbn|vbuse|vbsubmerge|vbimmerse|degassMultiVerb|vbsubject|vbadd|vbdilute|vbcharge|vbcontain|vbdrop|vbfill|vbsuspend|vbtreat|vbapparatus|vbconcentrate|vbcool|vbdegass|vbdissolve|vbdry|vbextract|vbfilter |vbheat|vbincrease|vbpartition|vbprecipitate|vbpurify|vbquench|vbrecover|vbremove|vbstir|vbsynthesize|vbwait|vbwash|vbyield|vbchange;
 
 degassMultiVerb
 	:	vbdegass cc vbfill;
@@ -81,13 +81,13 @@ number : cd|oscarcd;
 clause	:	wdt|wp_poss|wpo|wpo|wps|wql|wrb|ex|pdt;
 noun 	:	nounStructure (dash nounStructure)*;
 
-nounStructure :  prp|citation|cycles|molecule|apparatus|unnamedmolecule|nnyield|nnstate|nn|nns|nnp|nnadd|preparationphrase|nnexample|oscarcpr|range|amount|mixture|nntime|nnatmosphere|nneq|quantity|nnchementity|measurements|nntemp|nnflash|nngeneral|nnmethod|nnamount|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|nnvol|nnpurify|wdt|wp_poss|wpo|wps|nnsynthesize|nnmixture|reference|oscaront|nndry|number|oscarCompound|nnextract|nnfilter|nnprecipitate|nnremove|fw|fwin|sym|clause;
+nounStructure :  prp|citation|cycles|molecule|apparatus|mixture|unnamedmolecule|nnyield|nnstate|nn|nns|nnp|nnadd|preparationphrase|nnexample|oscarcpr|range|amount|nntime|nnatmosphere|nneq|quantity|nnchementity|measurements|nntemp|nnflash|nngeneral|nnmethod|nnamount|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|nnvol|nnpurify|wdt|wp_poss|wpo|wps|nnsynthesize|nnmixture|reference|oscaront|nndry|number|oscarCompound|nnextract|nnfilter|nnprecipitate|nnremove|fw|fwin|sym|clause;
 range: cd dash cd;
 cycles	:	cycleStructure -> ^(NODE["CYCLES"] cycleStructure)  ;
 cycleStructure	:	cd dashNN? nncycle;  
 dashNN	:	(adj|nn|cd) (dash (adj|nn|cd))*;  
 ratio : (numberratio|nounratio) -> ^(NODE["RATIO"] numberratio? nounratio?)  ;
-numberratio	:	 cd (colon cd)+ ;
+numberratio	:	 cd (colon oscarcd|cd)+ ;
 nounratio 
 	:	 noun  (colon noun)+  ;
 
@@ -99,15 +99,17 @@ citationStructure1:  lrb citationContent rrb;
 citationStructure2: comma lrb citationContent rrb comma;
 citationContent:   (nnp|fw|cd|conjunction) (nnp|fw|cd|conjunction)+ ;
 	
-mixture: (mixtureStructure2|mixtureStructure1) -> ^(NODE["MIXTURE"]  mixtureStructure2? mixtureStructure1?);
+mixture: mixtureRatio?  (mixtureStructure2|mixtureStructure1) -> ^(NODE["MIXTURE"]   mixtureRatio? mixtureStructure2? mixtureStructure1?);
 mixtureStructure2: comma lrb mixtureContent rrb comma;
-mixtureStructure1:  lrb mixtureContent rrb;
-mixtureContent:   (fw|verb|measurements|md|stop|oscarCompound|molecule|unnamedmolecule|dash|sym|cd|noun|inof|inAll|cd|comma|adj|colon|stop) (minimixture|fw|verb|measurements|nnyield|md|stop|oscarCompound|molecule|unnamedmolecule|dash|sym|cd|noun|inof|inAll|cd|comma|adj|colon|stop)+ ;
+mixtureStructure1: lrb mixtureContent rrb;
+mixtureRatio 
+	:	cd colon (cd|oscarcd);
+mixtureContent:   (fw|verb|nn|measurements|md|stop|oscarCompound|molecule|unnamedmolecule|dash|sym|cd|noun|inof|inAll|cd|comma|adj|colon|stop) (minimixture|fw|verb|measurements|nnyield|md|stop|oscarCompound|molecule|unnamedmolecule|dash|sym|cd|noun|inof|inAll|cd|comma|adj|colon|stop)+ ;
 
 minimixture: (mixtureStructure2|mixtureStructure1) -> ^(NODE["MIXTURE"]  mixtureStructure2? mixtureStructure1?);
 minimixtureStructure2: comma lrb mixtureContent rrb comma;
 minimixtureStructure1:  lrb mixtureContent rrb;
-minimixtureContent:   (fw|verb|measurements|md|stop|oscarCompound|molecule|unnamedmolecule|dash|sym|cd|noun|inof|inAll|cd|comma|adj|colon|stop) (fw|verb|measurements|nnyield|md|stop|oscarCompound|molecule|unnamedmolecule|dash|sym|cd|noun|inof|inAll|cd|comma|adj|colon|stop)+ ;
+minimixtureContent:   (fw|nn|verb|measurements|md|stop|oscarCompound|molecule|unnamedmolecule|dash|sym|cd|noun|inof|inAll|cd|comma|adj|colon|stop) (fw|verb|measurements|nnyield|md|stop|oscarCompound|molecule|unnamedmolecule|dash|sym|cd|noun|inof|inAll|cd|comma|adj|colon|stop)+ ;
 
 adj	:	jj|jjr|jjs|jjt|oscarcj|oscarrn;
 adv	:	rb|rbr|rbt|rp|rbs;
@@ -170,7 +172,7 @@ measurementtypes
 	: molar|amount|mass|percent|volume ;	
 
 // The RRB at the end is for leftover brackets from chemicals that didn't parse properly
-oscarCompound :  adj* (oscarCompound1|oscarCompound2|oscarCompound3|oscarCompound4|oscarcm) reference?;
+oscarCompound :  adj* (oscarCompound1|oscarCompound2|oscarCompound3|oscarCompound4|oscarcm) adj? reference?;
 
 oscarCompound4 :	lrb  oscarcm rrb -> ^(NODE["OSCARCM"]  lrb  oscarcm  rrb );
 oscarCompound3 :	oscarcm (dash|apost)+ -> ^(NODE["OSCARCM"]   oscarcm  dash* apost* );
@@ -184,7 +186,11 @@ moleculeamount1
 
 moleculeamount2
 	:(quantity|mixture)* oscarCompound+  (citation|quantity|mixture)* ;	
-moleculeamount : moleculeamount1 | moleculeamount2 ;	
+
+
+moleculeamount3
+	:(quantity|mixture) inof mixtureRatio mixture? oscarCompound ;		
+moleculeamount : moleculeamount3|moleculeamount1 | moleculeamount2 ;	
 molecule          
 	:  moleculeamount-> ^(NODE["MOLECULE"]  moleculeamount );	
 
@@ -291,6 +297,7 @@ vbsubject:'VB-SUBJECT' TOKEN;
 //Add Tokens
 nnadd:'NN-ADD' TOKEN;
 nnmixture:'NN-MIXTURE' TOKEN;
+vbdilute:'VB-DILUTE' TOKEN;	
 vbadd:'VB-ADD' TOKEN;
 vbcharge:'VB-CHARGE' TOKEN;
 vbcontain:'VB-CONTAIN' TOKEN;

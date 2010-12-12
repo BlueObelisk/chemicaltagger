@@ -12,12 +12,15 @@ import nu.xom.Element;
 import nu.xom.Nodes;
 
 import org.antlr.runtime.tree.Tree;
+import org.apache.log4j.Logger;
 
 public class RoleIdentifier {
 
 	private String text;
 	private ChemistryPOSTagger chemPos;
+	private static Logger LOG = Logger.getLogger(RoleIdentifier.class);
 
+	
 	public RoleIdentifier() {
 		chemPos = ChemistryPOSTagger.getInstance();
 	}
@@ -30,7 +33,7 @@ public class RoleIdentifier {
 		HashMap<String, List<String>> roleMap = new HashMap<String, List<String>>();
 		
 		Document parsedDoc = runChemicalTagger();
-		System.out.println(parsedDoc.toXML());
+		LOG.info(parsedDoc.toXML());
 		Nodes nodes = parsedDoc.query("//MOLECULE");
 		for (int i = 0; i < nodes.size(); i++) {
 			List<String> roles = new ArrayList<String>();
@@ -58,9 +61,11 @@ public class RoleIdentifier {
 
 	private Document runChemicalTagger() {
 		
+		LOG.info("Text is "+text);
 		POSContainer posContainer = chemPos.runTaggers(text);
+		
 		String tagged = posContainer.getTokenTagTupleAsString();
-
+		LOG.info("Tagged text is "+tagged);
 		InputStream in = null;
 		try {
 			in = new ByteArrayInputStream(tagged.getBytes("UTF-8"));
@@ -72,6 +77,7 @@ public class RoleIdentifier {
 				in);
 
 		Tree t = chemistrySentenceParser.parseTags();
+		LOG.info(t.toStringTree());
 		ASTtoXML ast2XML = new ASTtoXML();
 		Document doc = ast2XML.convert(t, true);
 		return doc;
@@ -81,6 +87,6 @@ public class RoleIdentifier {
 		RoleIdentifier roleIdent = new RoleIdentifier();
 		roleIdent.setText("Potassium was washed with acetone. Salt in water");
 		HashMap<String, List<String>> identifiedRoles = roleIdent.getRoles();
-		System.out.println(identifiedRoles);
+		LOG.info(identifiedRoles);
 	}
 }

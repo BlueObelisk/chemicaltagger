@@ -56,7 +56,9 @@ public class ChemistrySentenceParserTest {
 		InputStream taggedStream = getInputStream("uk/ac/cam/ch/wwmm/chemicaltagger/parseTest/sentence4.txt");
 		ChemistrySentenceParser chemChunkParser = new ChemistrySentenceParser(
 				taggedStream);
+		
 		Tree t = chemChunkParser.parseTags();
+		System.out.println(t.toStringTree());
 		checkNodes(t);
 
 	}	

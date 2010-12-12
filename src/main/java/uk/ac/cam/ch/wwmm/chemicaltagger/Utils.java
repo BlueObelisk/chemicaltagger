@@ -97,8 +97,8 @@ public class Utils {
 	public static String formatSentence(String sentence) {
 		StringBuilder newSentence = new StringBuilder();
 		sentence=sentence.replace("  ", " ");
-    	sentence = sentence.replace("%", " %").replace(";", " ;");
-
+    	sentence = sentence.replace("%", " %").replace(";", " ;").replace(":", " : ");
+    	
 		String[] words = sentence.split(" ");
 		String abbreviationRegex = "−?[A-Z]+[a-z]*\\.";
 		String concatAmountRegex = "(\\d\\d+(m|k|µ)?(l|L|g|gram|mol|cm3)(s)?$)|(\\d(L|ml|mL|gram|mol|cm3)(s)?$)";
