@@ -16,6 +16,7 @@ import org.apache.log4j.Logger;
 
 public class RoleIdentifier {
 
+	private ParsedDocumentCreator docCreator = null;
 	private String text;
 	private ChemistryPOSTagger chemPos;
 	private static Logger LOG = Logger.getLogger(RoleIdentifier.class);
@@ -25,15 +26,13 @@ public class RoleIdentifier {
 		chemPos = ChemistryPOSTagger.getInstance();
 	}
 
-	public void setText(String text) {
-		this.text = text;
+	public HashMap<String, List<String>> getRoles(String text) {
+		if (docCreator == null) docCreator = new ParsedDocumentCreator();
+		return getRoles(docCreator.runChemicalTagger(text));
 	}
-
-	public HashMap<String, List<String>> getRoles() {
+	
+	public HashMap<String, List<String>> getRoles(Document parsedDoc) {
 		HashMap<String, List<String>> roleMap = new HashMap<String, List<String>>();
-		
-		Document parsedDoc = runChemicalTagger();
-		LOG.info(parsedDoc.toXML());
 		Nodes nodes = parsedDoc.query("//MOLECULE");
 		for (int i = 0; i < nodes.size(); i++) {
 			List<String> roles = new ArrayList<String>();
@@ -53,40 +52,16 @@ public class RoleIdentifier {
 
 			roles.add(role);
 			roleMap.put(chemicalName, roles);
-
 		}
 
 		return roleMap;
 	}
 
-	private Document runChemicalTagger() {
-		
-		LOG.info("Text is "+text);
-		POSContainer posContainer = chemPos.runTaggers(text);
-		
-		String tagged = posContainer.getTokenTagTupleAsString();
-		LOG.info("Tagged text is "+tagged);
-		InputStream in = null;
-		try {
-			in = new ByteArrayInputStream(tagged.getBytes("UTF-8"));
-		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
-				in);
-
-		Tree t = chemistrySentenceParser.parseTags();
-		LOG.info(t.toStringTree());
-		ASTtoXML ast2XML = new ASTtoXML();
-		Document doc = ast2XML.convert(t, true);
-		return doc;
-	}
-
 	public static void main(String[] args) {
 		RoleIdentifier roleIdent = new RoleIdentifier();
-		roleIdent.setText("Potassium was washed with acetone. Salt in water");
-		HashMap<String, List<String>> identifiedRoles = roleIdent.getRoles();
-		LOG.info(identifiedRoles);
+		HashMap<String, List<String>> identifiedRoles = roleIdent.getRoles(
+			"Potassium was washed with acetone. Salt in water"
+		);
+		System.out.println(identifiedRoles);
 	}
 }

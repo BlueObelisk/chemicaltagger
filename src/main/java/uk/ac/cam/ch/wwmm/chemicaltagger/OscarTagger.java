@@ -47,7 +47,6 @@ public class OscarTagger {
 	
 		
 		try {
-
 			oscar.getDictionaryRegistry().register(new OpsinDictionary());
 			oscar.getDictionaryRegistry().register(new PolymerDictionary());
 		} catch (Exception e) {
