@@ -78,7 +78,8 @@ JJ---^round$|^bottom|^green$|^yellow$|^brown$|^thaw$|^orange$---Adjectives
 #Add Tokens
 NN-ADD---^addition$---Add Noun
 NN-MIXTURE---^mixture$|^suspension$---Mixture Noun
-VB-ADD---^(pre|re)?(add|mix|pour|dispers|dilut|introduc)(e|s|ed|ing)?$---Add Verb
+VB-DILUTE---^(pre|re)?(dilut)(e|s|ed|ing)?$---Dilute Verb
+VB-ADD---^(pre|re)?(add|mix|pour|dispers|introduc)(e|s|ed|ing)?$---Add Verb
 VB-CHARGE---^charge(d)?$---Charge Verb
 VB-CONTAIN---^containing$---Contain Verb
 VB-DROP---^dropped?$---Drop Verb
