@@ -1,4 +1,4 @@
-package uk.ac.cam.ch.wwmm.chemicaltagger;
+package uk.ac.cam.ch.wwmm.chemicaltagger.roles;
 
 import java.util.ArrayList;
 import java.util.Collections;

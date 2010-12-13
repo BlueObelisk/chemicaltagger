@@ -11,6 +11,8 @@ import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.junit.Test;
 
+import uk.ac.cam.ch.wwmm.chemicaltagger.roles.RoleIdentifier;
+
 public class RoleIdentifierTest {
 
 	private static Logger LOG = Logger.getLogger(RoleIdentifierTest.class);
