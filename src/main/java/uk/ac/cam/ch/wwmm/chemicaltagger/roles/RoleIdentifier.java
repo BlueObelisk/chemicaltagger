@@ -1,39 +1,34 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger.roles;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
+import java.util.Map;
 
 import nu.xom.Document;
 import nu.xom.Element;
+import nu.xom.Node;
 import nu.xom.Nodes;
 
 import org.apache.log4j.Logger;
 
-import uk.ac.cam.ch.wwmm.chemicaltagger.ChemistryPOSTagger;
+import uk.ac.cam.ch.wwmm.chemicaltagger.extractText.ExtractFromXML;
 
 public class RoleIdentifier {
 
 	private ParsedDocumentCreator docCreator = null;
-	private String text;
-	private ChemistryPOSTagger chemPos;
 	private static Logger LOG = Logger.getLogger(RoleIdentifier.class);
+	private ExtractFromXML sentenceExtractor = new ExtractFromXML();
 
-	
-	public RoleIdentifier() {
-		chemPos = ChemistryPOSTagger.getInstance();
-	}
-
-	public HashMap<String, List<String>> getRoles(String text) {
+	public Collection<NamedEntityWithRoles> getRoles(String text) {
 		if (docCreator == null) docCreator = new ParsedDocumentCreator();
 		return getRoles(docCreator.runChemicalTagger(text));
 	}
 	
-	public HashMap<String, List<String>> getRoles(Document parsedDoc) {
-		HashMap<String, List<String>> roleMap = new HashMap<String, List<String>>();
+	public Collection<NamedEntityWithRoles> getRoles(Document parsedDoc) {
+		// FIXME: implement hashcode/equals properly for NamedEntityWithRoles and use List instead
+		Map<String,NamedEntityWithRoles> roleMap = new HashMap<String,NamedEntityWithRoles>();
 		Nodes nodes = parsedDoc.query("//MOLECULE");
 		for (int i = 0; i < nodes.size(); i++) {
-			List<String> roles = new ArrayList<String>();
 			Element nodeElement = (Element) nodes.get(i);
 			String role = "None";
 			String chemicalName = "";
@@ -45,21 +40,34 @@ public class RoleIdentifier {
 				chemicalName = chemicalName + " " + chemicalElement.getValue();
 			}
 
-			if (roleMap.containsKey(chemicalName))
-				roles = roleMap.get(chemicalName);
+			NamedEntityWithRoles roles = roleMap.get(chemicalName);
+			if (roles == null) {
+				roles = new NamedEntityWithRoles(chemicalName);
+				roleMap.put(chemicalName, roles);
+			}
+			roles.addRole(new Role(role, getParentSentenceAsString(nodeElement.getParent())));
 
-			roles.add(role);
 			roleMap.put(chemicalName, roles);
 		}
 
-		return roleMap;
+		return roleMap.values();
+	}
+	
+	private String getParentSentenceAsString(Node nodeElement) {
+		if (nodeElement == null) return "";
+		if (nodeElement instanceof Element) {
+			if ("Sentence".equals(((Element)nodeElement).getLocalName())) {
+				return sentenceExtractor.getStringValue((Element)nodeElement, " ");
+			}
+		}
+		return getParentSentenceAsString(nodeElement.getParent());
 	}
 
 	public static void main(String[] args) {
 		RoleIdentifier roleIdent = new RoleIdentifier();
-		HashMap<String, List<String>> identifiedRoles = roleIdent.getRoles(
+		Collection<NamedEntityWithRoles> identifiedRoles = roleIdent.getRoles(
 			"Potassium was washed with acetone. Salt in water"
 		);
-		System.out.println(identifiedRoles);
+		LOG.info(identifiedRoles);
 	}
 }
