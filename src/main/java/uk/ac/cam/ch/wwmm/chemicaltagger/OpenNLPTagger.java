@@ -16,6 +16,7 @@ import opennlp.tools.postag.POSDictionary;
 import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
 
+
 public class OpenNLPTagger {
 
 	private static final class INSTANCE_HOLDER {

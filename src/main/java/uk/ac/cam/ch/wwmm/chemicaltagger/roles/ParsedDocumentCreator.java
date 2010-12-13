@@ -1,4 +1,4 @@
-package uk.ac.cam.ch.wwmm.chemicaltagger;
+package uk.ac.cam.ch.wwmm.chemicaltagger.roles;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
@@ -7,6 +7,11 @@ import java.io.UnsupportedEncodingException;
 import nu.xom.Document;
 
 import org.antlr.runtime.tree.Tree;
+
+import uk.ac.cam.ch.wwmm.chemicaltagger.ASTtoXML;
+import uk.ac.cam.ch.wwmm.chemicaltagger.ChemistryPOSTagger;
+import uk.ac.cam.ch.wwmm.chemicaltagger.ChemistrySentenceParser;
+import uk.ac.cam.ch.wwmm.chemicaltagger.POSContainer;
 
 public class ParsedDocumentCreator {
 

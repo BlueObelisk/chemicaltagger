@@ -1,8 +1,5 @@
-package uk.ac.cam.ch.wwmm.chemicaltagger;
+package uk.ac.cam.ch.wwmm.chemicaltagger.roles;
 
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -11,8 +8,9 @@ import nu.xom.Document;
 import nu.xom.Element;
 import nu.xom.Nodes;
 
-import org.antlr.runtime.tree.Tree;
 import org.apache.log4j.Logger;
+
+import uk.ac.cam.ch.wwmm.chemicaltagger.ChemistryPOSTagger;
 
 public class RoleIdentifier {
 
