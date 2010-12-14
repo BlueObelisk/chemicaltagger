@@ -38,6 +38,7 @@ public class ParsedDocumentCreator {
 		Tree t = chemistrySentenceParser.parseTags();
 		ASTtoXML ast2XML = new ASTtoXML();
 		Document doc = ast2XML.convert(t, true);
+		
 		return doc;
 	}
 

@@ -58,7 +58,6 @@ public class ChemistrySentenceParserTest {
 				taggedStream);
 		
 		Tree t = chemChunkParser.parseTags();
-		System.out.println(t.toStringTree());
 		checkNodes(t);
 
 	}	

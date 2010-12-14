@@ -7,6 +7,7 @@ import java.util.List;
 import nu.xom.Attribute;
 import nu.xom.Document;
 import nu.xom.Element;
+import nu.xom.Node;
 import nu.xom.Nodes;
 
 public class PostProcessTrees {
@@ -99,8 +100,9 @@ public class PostProcessTrees {
 			Element newSentenceNode = processSentence(sentenceNode);
 			root.appendChild(newSentenceNode);
 		}
+
 		processDissolve(root);
-		processSolvent(root);
+
 		Document processedDoc = new Document(root);
 		return processedDoc;
 
@@ -114,6 +116,7 @@ public class PostProcessTrees {
 			Attribute attribute = new Attribute("type", "Dissolve");
 
 			dissolveElement.addAttribute(attribute);
+			processSolvent(dissolveElement);
 		}
 		return root;
 	}
@@ -142,7 +145,7 @@ public class PostProcessTrees {
 					if (seenVerb) {
 						if (actionPhrase != null) {
 							addListToNode(actionPhrase, elementList);
-							newSentence.appendChild(actionPhrase);
+							appendActionPhrase(newSentence, actionPhrase);
 							actionPhrase = null;
 
 						} else {
@@ -168,15 +171,10 @@ public class PostProcessTrees {
 			} else if (phraseElement.getLocalName().contains("VerbPhrase")) {
 
 				if (seenVerb) {
-					// System.out
-					// .println("-- I have seen a verb and I am currently a verb");
-					//
-					// System.out
-					// .println("--- ActionPhrase at the moment is  "
-					// + actionPhrase);
+
 					if (actionPhrase != null) {
 						addListToNode(actionPhrase, elementList);
-						newSentence.appendChild(actionPhrase);
+						appendActionPhrase(newSentence, actionPhrase);
 						actionPhrase = null;
 
 					} else {
@@ -195,14 +193,10 @@ public class PostProcessTrees {
 				String elementListContent = elementListToString(elementList);
 
 				if (elementListContent.toLowerCase().contains("timephrase")) {
-					actionPhrase = new Element("ActionPhrase");
 					Attribute attribute = new Attribute("type", "Wait");
-					// System.out.println("* I contain keyword:: "
-					// + actionPhrase.toXML());
-					actionPhrase.addAttribute(attribute);
-
-					addListToNode(actionPhrase, elementList);
-					newSentence.appendChild(actionPhrase);
+					actionPhrase = createActionPhrase(elementList,
+							phraseElement, attribute);
+					appendActionPhrase(newSentence, actionPhrase);
 					actionPhrase = null;
 
 					elementList = new ArrayList<Element>();
@@ -211,15 +205,13 @@ public class PostProcessTrees {
 				if (elementListContent.toLowerCase().contains(
 						"multipleapparatus")) {
 
-					actionPhrase = new Element("ActionPhrase");
 					Attribute attribute = new Attribute("type",
 							"ApparatusAction");
 					// System.out.println("* I contain keyword:: "
 					// + actionPhrase.toXML());
-					actionPhrase.addAttribute(attribute);
-
-					addListToNode(actionPhrase, elementList);
-					newSentence.appendChild(actionPhrase);
+					actionPhrase = createActionPhrase(elementList,
+							phraseElement, attribute);
+					appendActionPhrase(newSentence, actionPhrase);
 					actionPhrase = null;
 
 					elementList = new ArrayList<Element>();
@@ -230,16 +222,11 @@ public class PostProcessTrees {
 					& splitList.contains(phraseElement.getLocalName()
 							.toLowerCase())) {
 
-				// System.out
-				// .println("*** I have seen a verb and I am currently a stop word ");
-				//
-				// System.out.println("**** ActionPhrase at the moment is  "
-				// + actionPhrase);
 				elementList.add(phraseElement);
 				if (actionPhrase != null) {
 
 					addListToNode(actionPhrase, elementList);
-					newSentence.appendChild(actionPhrase);
+					appendActionPhrase(newSentence, actionPhrase);
 					actionPhrase = null;
 
 				} else
@@ -255,20 +242,17 @@ public class PostProcessTrees {
 				if (actionPhrase != null) {
 
 					addListToNode(actionPhrase, elementList);
-					newSentence.appendChild(actionPhrase);
+					appendActionPhrase(newSentence, actionPhrase);
 					elementList = new ArrayList<Element>();
 					actionPhrase = null;
 				}
 				String elementListContent = elementListToString(elementList);
 				if (elementListContent.toLowerCase().contains("timephrase")) {
-					actionPhrase = new Element("ActionPhrase");
+
 					Attribute attribute = new Attribute("type", "Wait");
-					// System.out.println("* I contain keyword:: "
-					// + actionPhrase.toXML());
-					actionPhrase.addAttribute(attribute);
-					elementList.add(phraseElement);
-					addListToNode(actionPhrase, elementList);
-					newSentence.appendChild(actionPhrase);
+					actionPhrase = createActionPhrase(elementList,
+							phraseElement, attribute);
+					appendActionPhrase(newSentence, actionPhrase);
 					actionPhrase = null;
 
 					elementList = new ArrayList<Element>();
@@ -283,7 +267,93 @@ public class PostProcessTrees {
 		if (elementList.size() > 0) {
 			addListToNode(newSentence, elementList);
 		}
+		newSentence = checkForRolePrepPhrase(newSentence);
 		return newSentence;
+	}
+
+	/******************
+	 * Adds ActionPhrase to our new Sentences
+	 * 
+	 * @param newSentence
+	 * @param actionElement
+	 */
+	private void appendActionPhrase(Element newSentence, Element actionElement) {
+
+		actionElement = processSolvent(actionElement);
+		newSentence.appendChild(actionElement);
+
+	}
+
+	/******************
+	 * 
+	 * @param elementList
+	 * @param phraseElement
+	 * @param attribute
+	 * @return
+	 */
+	private Element createActionPhrase(List<Element> elementList,
+			Element phraseElement, Attribute attribute) {
+		Element actionPhrase;
+		actionPhrase = new Element("ActionPhrase");
+		actionPhrase.addAttribute(attribute);
+		elementList.add(phraseElement);
+		addListToNode(actionPhrase, elementList);
+		return actionPhrase;
+	}
+
+	/*
+	 * This checks for rolePrepPhrases which are in the format of 'Using hexane
+	 * as an eluent/solvent'
+	 */
+	private Element checkForRolePrepPhrase(Element newSentence) {
+		Nodes nodes = newSentence.query(".//RolePrepPhrase");
+		if (nodes.size() == 0)
+			return newSentence;
+		else {
+			for (int i = 0; i < nodes.size(); i++) {
+				Node roleNode = nodes.get(i);
+				Element rolePhrase = (Element) roleNode;
+				int roleIndex = newSentence.indexOf(roleNode);
+				String role = getRole(rolePhrase);
+				if (roleIndex > 0) {
+					Element previousElement = (Element) newSentence
+							.getChild(roleIndex - 1);
+					if (previousElement.getLocalName().toLowerCase()
+							.equals("nounphrase"))
+						setRole(previousElement, role);
+				}
+			}
+		}
+		return newSentence;
+	}
+
+	/*
+	 * This gets the role from the rolePrepPhrase (as a solvent/ as an eluent)
+	 */
+
+	private void setRole(Element previousElement, String role) {
+		Nodes moleculeNodes = previousElement.query(".//MOLECULE");
+		for (int i = 0; i < moleculeNodes.size(); i++) {
+			Element moleculeElement = (Element) moleculeNodes.get(i);
+			moleculeElement.addAttribute(new Attribute("role", "Solvent"));
+
+		}
+
+	}
+
+	private String getRole(Element rolePhrase) {
+		String role = null;
+		Nodes roleNameNodes = rolePhrase.query(".//NN-CHEMENTITY");
+		if (roleNameNodes.size() != 1)
+			return null;
+		else {
+			Node roleNameNode = roleNameNodes.get(0);
+			role = roleNameNode.getValue();
+		}
+		if (role.toLowerCase().contains("eluent")
+				|| role.toLowerCase().contains("solvent"))
+			role = "Solvent";
+		return role;
 	}
 
 	private String elementListToString(List<Element> elementList) {
@@ -306,12 +376,21 @@ public class PostProcessTrees {
 
 	}
 
-	private Element processSolvent(Element root) {
-		Nodes nodes = root.query("//ActionPhrase");
+	private Element processSolvent(Element actionElement) {
 
-		for (int i = 0; i < nodes.size(); i++) {
-			Element actionElement = (Element) nodes.get(i);
-			// System.out.println(actionElement.getAttributeValue("type"));
+		/*
+		 * This is for elements that
+		 */
+
+		if (!actionElement.getLocalName().toLowerCase()
+				.contains("actionphrase")) {
+			Nodes actionNodes = actionElement.query(".//ActionPhrase");
+			if (actionNodes.size() == 0)
+				actionElement = null;
+			else
+				actionElement = (Element) actionNodes.get(0);
+		}
+		if (actionElement != null) {
 			if (actionElement.getAttributeValue("type").equals("Dissolve")) {
 
 				addSolventRole(actionElement, "IN-IN", false);
@@ -330,8 +409,33 @@ public class PostProcessTrees {
 					addSolventRole(actionElement, "IN-WITH", false);
 			}
 
+			if (actionElement.getAttributeValue("type").equals("Purify")) {
+				if ((actionElement.query(".//NN-CHROMATOGRAPHY").size() > 0)
+						&& (actionElement.query(".//MIXTURE").size() > 0)) {
+					findMixtureSolvents(actionElement);
+
+				}
+			}
+
 		}
-		return root;
+
+		return actionElement;
+	}
+
+	private void findMixtureSolvents(Element actionElement) {
+		Element mixtureElement = (Element) actionElement.query(".//MIXTURE")
+				.get(0);
+		Nodes moleculeNodes = mixtureElement.query(".//OSCAR-CM");
+		System.out.println("Molecule nodes " + moleculeNodes.size());
+		for (int i = 0; i < moleculeNodes.size(); i++) {
+
+			Element moleculeElement = (Element) moleculeNodes.get(i);
+			Element newElement = (Element) moleculeElement.copy();
+			moleculeElement.setLocalName("MOLECULE");
+			moleculeElement.removeChild(0);
+			moleculeElement.appendChild(newElement);
+			moleculeElement.addAttribute(new Attribute("role", "Solvent"));
+		}
 	}
 
 	private void addSolventRole(Element solventElement, String preposition,

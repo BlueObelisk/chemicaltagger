@@ -58,16 +58,18 @@ dissolvePhrase
 	:	(dissolveStructure1|dissolveStructure2|dissolveStructure3) ->  ^(NODE["DissolvePhrase"] dissolveStructure1? dissolveStructure2? dissolveStructure3?);
 
 dissolveStructure1
-	:	lrb adj? nnp? (molecule|unnamedmolecule) (inin dtTHE? adj? nnp? (molecule|unnamedmolecule))+ rrb ;
+	:	lrb adj? nnp? (molecule|unnamedmolecule) (inin dtTHE? adj? nnp? (molecule|unnamedmolecule) (conjunction molecule)*)+ rrb ;
 dissolveStructure2
-	:	adj? nnp? (molecule|unnamedmolecule) (inin dtTHE? adj? nnp? (molecule|unnamedmolecule))+ ;
+	:	adj? nnp? (molecule|unnamedmolecule) (inin dtTHE? adj? nnp? (molecule|unnamedmolecule) (conjunction molecule)*)+ ;
 
 dissolveStructure3
-	:	adj? nnp (molecule|unnamedmolecule|nnchementity) (inin dtTHE? adj? nnp? (molecule|unnamedmolecule))+ ;
+	:	adj? nnp (molecule|unnamedmolecule|nnchementity) (inin dtTHE? adj? nnp? (molecule|unnamedmolecule) (conjunction molecule)*)+ ;
 
 
 conjunction 
 	:	 cc|comma;
+
+
 
 
 verbphrase
@@ -99,6 +101,7 @@ citationStructure1:  lrb citationContent rrb;
 citationStructure2: comma lrb citationContent rrb comma;
 citationContent:   (nnp|fw|cd|conjunction) (nnp|fw|cd|conjunction)+ ;
 	
+	
 mixture: mixtureRatio?  (mixtureStructure2|mixtureStructure1) -> ^(NODE["MIXTURE"]   mixtureRatio? mixtureStructure2? mixtureStructure1?);
 mixtureStructure2: comma lrb mixtureContent rrb comma;
 mixtureStructure1: lrb mixtureContent rrb;
@@ -117,7 +120,7 @@ adv	:	rb|rbr|rbt|rp|rbs;
 
 
 prepphrase 
-	: 	neg? (prepphraseAtmosphere|prepphraseTime|prepphraseTemp|prepphraseIN|prepphraseOther)  ;
+	: 	neg? (prepphraseAtmosphere|prepphraseTime|prepphraseTemp|prepphraseIN|prepphraseRole|prepphraseOther)  ;
 
 advAdj   
 	:adv|adj;	
@@ -134,6 +137,8 @@ prepPhraseTimeStructure
 prepphraseIN 
 	:inin molecule ->  ^(NODE["PrepPhrase"]  inin  molecule);
 
+prepphraseRole
+	:inas dt? nnchementity ->	^(NODE["RolePrepPhrase"]  inas dt? nnchementity);
 prepphraseAtmosphere 
 	: prepphraseAtmosphereContent ->  ^(NODE["AtmospherePhrase"]  prepphraseAtmosphereContent ) ;
 prepphraseAtmosphereContent

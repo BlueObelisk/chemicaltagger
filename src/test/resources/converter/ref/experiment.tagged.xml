@@ -65,18 +65,18 @@
             <IN-OF>of</IN-OF>
             <OSCAR-CM>methanol</OSCAR-CM>
           </MOLECULE>
+          <CC>and</CC>
+          <MOLECULE>
+            <QUANTITY>
+              <VOLUME>
+                <CD>5</CD>
+                <NN-VOL>ml</NN-VOL>
+              </VOLUME>
+            </QUANTITY>
+            <IN-OF>of</IN-OF>
+            <OSCAR-CM>water</OSCAR-CM>
+          </MOLECULE>
         </DissolvePhrase>
-        <CC>and</CC>
-        <MOLECULE>
-          <QUANTITY>
-            <VOLUME>
-              <CD>5</CD>
-              <NN-VOL>ml</NN-VOL>
-            </VOLUME>
-          </QUANTITY>
-          <IN-OF>of</IN-OF>
-          <OSCAR-CM>water</OSCAR-CM>
-        </MOLECULE>
       </NounPhrase>
     </PrepPhrase>
     <VerbPhrase>
