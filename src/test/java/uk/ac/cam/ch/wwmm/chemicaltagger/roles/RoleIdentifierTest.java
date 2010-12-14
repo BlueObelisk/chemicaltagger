@@ -1,4 +1,4 @@
-package uk.ac.cam.ch.wwmm.chemicaltagger;
+package uk.ac.cam.ch.wwmm.chemicaltagger.roles;
 
 import static uk.ac.cam.ch.wwmm.chemicaltagger.Utils.readSentence;
 
@@ -24,7 +24,7 @@ public class RoleIdentifierTest {
 		Collection<NamedEntityWithRoles> identifiedRoles = roleIdent.getRoles(sentence);
 		int solventCount = getSolventCount(identifiedRoles);
 		Assert.assertEquals("Solvent Count", 1, solventCount);
-		LOG.info(identifiedRoles);
+		printOutRoles(identifiedRoles);
 	}
 
 	@Test
@@ -35,7 +35,7 @@ public class RoleIdentifierTest {
 		Collection<NamedEntityWithRoles> identifiedRoles = roleIdent.getRoles(sentence);
 		int solventCount = getSolventCount(identifiedRoles);
 		Assert.assertEquals("Solvent Count", 1, solventCount);
-		LOG.info(identifiedRoles);
+		printOutRoles(identifiedRoles);
 	}
 
 	@Test
@@ -45,8 +45,8 @@ public class RoleIdentifierTest {
 		RoleIdentifier roleIdent = new RoleIdentifier();
 		Collection<NamedEntityWithRoles> identifiedRoles = roleIdent.getRoles(sentence);
 		int solventCount = getSolventCount(identifiedRoles);
-		Assert.assertEquals("Solvent Count", 2, solventCount);
-		LOG.info(identifiedRoles);
+		Assert.assertEquals("Solvent Count", 4, solventCount);
+		printOutRoles(identifiedRoles);
 	}
 
 	@Test
@@ -55,8 +55,8 @@ public class RoleIdentifierTest {
 		RoleIdentifier roleIdent = new RoleIdentifier();
 		Collection<NamedEntityWithRoles> identifiedRoles = roleIdent.getRoles(sentence);
 		int solventCount = getSolventCount(identifiedRoles);
-		Assert.assertEquals("Solvent Count", 1, solventCount);
-		LOG.info(identifiedRoles);
+		Assert.assertEquals("Solvent Count", 3, solventCount);
+		printOutRoles(identifiedRoles);
 	}
 
 	@Test
@@ -65,8 +65,8 @@ public class RoleIdentifierTest {
 		RoleIdentifier roleIdent = new RoleIdentifier();
 		Collection<NamedEntityWithRoles> identifiedRoles = roleIdent.getRoles(sentence);
 		int solventCount = getSolventCount(identifiedRoles);
-		Assert.assertEquals("Solvent Count", 3, solventCount);
-		LOG.info(identifiedRoles);
+		Assert.assertEquals("Solvent Count",5, solventCount);
+		printOutRoles(identifiedRoles);
 	}
 
 	@Test
@@ -76,7 +76,7 @@ public class RoleIdentifierTest {
 		Collection<NamedEntityWithRoles> identifiedRoles = roleIdent.getRoles(sentence);
 		int solventCount = getSolventCount(identifiedRoles);
 		Assert.assertEquals("Solvent Count", 1, solventCount);
-		LOG.info(identifiedRoles);
+		printOutRoles(identifiedRoles);
 	}
 
 	@Test
@@ -85,8 +85,8 @@ public class RoleIdentifierTest {
 		RoleIdentifier roleIdent = new RoleIdentifier();
 		Collection<NamedEntityWithRoles> identifiedRoles = roleIdent.getRoles(sentence);
 		int solventCount = getSolventCount(identifiedRoles);
-		Assert.assertEquals("Solvent Count", 1, solventCount);
-		LOG.info(identifiedRoles);
+		Assert.assertEquals("Solvent Count", 2, solventCount);
+		printOutRoles(identifiedRoles);
 	}
 
 	@Test
@@ -96,7 +96,7 @@ public class RoleIdentifierTest {
 		Collection<NamedEntityWithRoles> identifiedRoles = roleIdent.getRoles(sentence);
 		int solventCount = getSolventCount(identifiedRoles);
 		Assert.assertEquals("Solvent Count", 4, solventCount);
-		LOG.info(identifiedRoles);
+		printOutRoles(identifiedRoles);
 	}
 
 	@Test
@@ -106,7 +106,7 @@ public class RoleIdentifierTest {
 		Collection<NamedEntityWithRoles> identifiedRoles = roleIdent.getRoles(sentence);
 		int solventCount = getSolventCount(identifiedRoles);
 		Assert.assertEquals("Solvent Count", 4, solventCount);
-		LOG.info(identifiedRoles);
+		printOutRoles(identifiedRoles);
 	}
 
 	@Test
@@ -116,7 +116,39 @@ public class RoleIdentifierTest {
 		Collection<NamedEntityWithRoles> identifiedRoles = roleIdent.getRoles(sentence);
 		int solventCount = getSolventCount(identifiedRoles);
 		Assert.assertEquals("Solvent Count", 0, solventCount);
-		LOG.info(identifiedRoles);
+		printOutRoles(identifiedRoles);
+	}
+
+	@Test
+	public void RoleIdentifierTest11() throws UnsupportedEncodingException {
+		String sentence = "Figure 1 Absorption spectra of 1a–g in cyclohexane and acetonitrile ( 10−5 M )";
+		RoleIdentifier roleIdent = new RoleIdentifier();
+		Collection<NamedEntityWithRoles> identifiedRoles = roleIdent.getRoles(sentence);
+		int solventCount = getSolventCount(identifiedRoles);
+		Assert.assertEquals("Solvent Count", 2, solventCount);
+		printOutRoles(identifiedRoles);
+	}
+
+	
+	@Test
+	public void RoleIdentifierTest12() throws UnsupportedEncodingException {
+		String sentence = "Chloroform ( 50 mL ) was added and the organic phase washed successively with brine ( 70 mL ) and water ( 2 × 70 mL ) , dried over magnesium sulfate and concentrated .";
+		RoleIdentifier roleIdent = new RoleIdentifier();
+		Collection<NamedEntityWithRoles> identifiedRoles = roleIdent.getRoles(sentence);
+		int solventCount = getSolventCount(identifiedRoles);
+		Assert.assertEquals("Solvent Count", 2, solventCount);
+		printOutRoles(identifiedRoles);
+	}
+	private void printOutRoles(Collection<NamedEntityWithRoles> identifiedRoles) {
+		
+        for (NamedEntityWithRoles namedEntityWithRoles : identifiedRoles) {
+			LOG.debug("NamedEntity: "+namedEntityWithRoles.getNamedEntity());
+			for (Role roleName : namedEntityWithRoles.getRoles()) {
+				LOG.debug("Role: "+roleName.getRole());
+			}
+			
+		}
+		
 	}
 
 	private int getSolventCount(Collection<NamedEntityWithRoles> identifiedRoles) {
