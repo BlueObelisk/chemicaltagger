@@ -129,7 +129,6 @@ public class readDoc {
 	}
 
 	private List<String> getSections_Harter(String[] paragraphs) {
-		int sectionCount = 0;
 		String sectionString = "";
 		List<String> sections = new ArrayList<String>();
 		for (int i = 0; i < paragraphs.length; i++) {

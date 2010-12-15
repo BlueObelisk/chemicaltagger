@@ -9,10 +9,6 @@ import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.junit.Test;
 
-import uk.ac.cam.ch.wwmm.chemicaltagger.roles.NamedEntityWithRoles;
-import uk.ac.cam.ch.wwmm.chemicaltagger.roles.Role;
-import uk.ac.cam.ch.wwmm.chemicaltagger.roles.RoleIdentifier;
-
 public class RoleIdentifierTest {
 
 	private static Logger LOG = Logger.getLogger(RoleIdentifierTest.class);
@@ -139,6 +135,37 @@ public class RoleIdentifierTest {
 		Assert.assertEquals("Solvent Count", 2, solventCount);
 		printOutRoles(identifiedRoles);
 	}
+	
+	
+	/*************************
+	 * Test that it doesn't do
+	 * duplicate roles
+	 * @throws UnsupportedEncodingException
+	 */
+	@Test
+	public void RoleIdentifierTest13() throws UnsupportedEncodingException {
+		String sentence = "Figure 1 Concentration-dependent 1H NMR spectra of R-3 in chloroform ( CDCl3 )";
+		RoleIdentifier roleIdent = new RoleIdentifier();
+		Collection<NamedEntityWithRoles> identifiedRoles = roleIdent.getRoles(sentence);
+		int solventCount = getSolventCount(identifiedRoles);
+		printOutRoles(identifiedRoles);
+
+		Assert.assertEquals("Solvent Count", 1, solventCount);
+	}
+
+	@Test
+	public void RoleIdentifierTest14() throws UnsupportedEncodingException {
+		String sentence = "100 ) for the racemization of R-3 ( 1 mM ) in the presence of 1 equivalent of DBU in octane and THF";
+		RoleIdentifier roleIdent = new RoleIdentifier();
+		Collection<NamedEntityWithRoles> identifiedRoles = roleIdent.getRoles(sentence);
+		int solventCount = getSolventCount(identifiedRoles);
+		printOutRoles(identifiedRoles);
+
+		Assert.assertEquals("Solvent Count", 2, solventCount);
+	}
+	
+	 
+	
 	private void printOutRoles(Collection<NamedEntityWithRoles> identifiedRoles) {
 		
         for (NamedEntityWithRoles namedEntityWithRoles : identifiedRoles) {

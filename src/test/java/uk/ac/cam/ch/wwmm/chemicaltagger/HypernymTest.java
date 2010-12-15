@@ -2,9 +2,7 @@ package uk.ac.cam.ch.wwmm.chemicaltagger;
 
 import java.io.UnsupportedEncodingException;
 
-import junit.framework.Assert;
 import nu.xom.Document;
-import nu.xom.Nodes;
 
 import org.apache.log4j.Logger;
 import org.junit.Ignore;

@@ -2,8 +2,6 @@ package uk.ac.cam.ch.wwmm.chemicaltagger.extractText;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 import nu.xom.Builder;
 import nu.xom.Document;
@@ -59,7 +57,7 @@ public class ExtractFromXML {
 	}
 
 	private boolean hasMoreChildren(Element sub) {
-		// TODO Auto-generated method stub
+		
 
 		if (sub.getChildCount() == 0) {
 			return false;
@@ -139,7 +137,6 @@ public class ExtractFromXML {
 	}
 
 	public static void main(String[] args) {
-		List docs = new ArrayList<DocumentContainer>();
 		String path = "src/main/resources/xmlFiles/";
 		File patentDirectory = new File(path);
 		String[] patentDir = patentDirectory.list();
@@ -147,7 +144,7 @@ public class ExtractFromXML {
 
 			String resourcePath = path + file;
 			ExtractFromXML extract = new ExtractFromXML();
-			DocumentContainer docContainer = extract.getContent(resourcePath);
+			extract.getContent(resourcePath);
 
 		}
 

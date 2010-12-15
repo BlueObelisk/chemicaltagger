@@ -23,12 +23,9 @@ import org.antlr.runtime.tree.Tree;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
-
 import uk.ac.cam.ch.wwmm.chemicaltagger.ChemistryPOSTagger;
 import uk.ac.cam.ch.wwmm.chemicaltagger.ChemistrySentenceParser;
-import uk.ac.cam.ch.wwmm.chemicaltagger.OscarTagger;
 import uk.ac.cam.ch.wwmm.chemicaltagger.POSContainer;
-import uk.ac.cam.ch.wwmm.chemicaltagger.Utils;
 
 /********************************************
  * Extracts text from XML Patents
@@ -38,14 +35,14 @@ import uk.ac.cam.ch.wwmm.chemicaltagger.Utils;
 public class ExtractFromEPO {
 
 	private final static Logger LOG = Logger.getLogger(ExtractFromEPO.class);
-	private final static String PATENT_NODE = "ep-patent-document";
+//	private final static String PATENT_NODE = "ep-patent-document";
 	private final static String DESCRIPTION_NODE = "//description";
 	private final static String ID_ATTRIBUTE = "id";
 	private final static String DATEPUB_ATTRIBUTE = "date-publ";
 
 	private final static String INVENTOR_NODE = "//B721";
 	private final static String NAME_NODE = "snm";
-	private final static String ADDRESS_NODE = "*//adr";
+//	private final static String ADDRESS_NODE = "*//adr";
 	private final static String ADDRESS_STREET_NODE = "*//str";
 	private final static String ADDRESS_CITY_NODE = "*//cty";
 	private final static String ADDRESS_COUNTRY_NODE = "*//ctry";
@@ -316,7 +313,7 @@ public class ExtractFromEPO {
 		List<DocumentContainer> docs = new ArrayList<DocumentContainer>();
 		String path = "src/test/resources/uk/ac/cam/ch/wwmm/chemicaltagger/epoPatents/";
 
-		String filePath = "uk/ac/cam/ch/wwmm/chemicaltagger/epoPatents/";
+//		String filePath = "uk/ac/cam/ch/wwmm/chemicaltagger/epoPatents/";
 		File patentDirectory = new File(path);
 		String[] patentDir = patentDirectory.list();
 		System.err.println(patentDir.length);
@@ -326,7 +323,7 @@ public class ExtractFromEPO {
 
 			String resourcePath = path + file;
 			System.err.println(resourcePath);
-			Utils utils = new Utils();
+//			Utils utils = new Utils();
 			
 //			InputStream inStream = new Utils().getInputStream(resourcePath);
 			DocumentContainer docContainer = extractEPO.getInfo(resourcePath);

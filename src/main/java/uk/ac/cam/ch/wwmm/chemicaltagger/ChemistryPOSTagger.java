@@ -1,6 +1,5 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
-import org.apache.log4j.Logger;
 
 
 /**************************************************************
@@ -23,7 +22,7 @@ public class ChemistryPOSTagger {
 	public OscarTagger oscarTagger;
 	public RegexTagger regexTagger;
 	public OpenNLPTagger openNLPTagger;
-	private final Logger LOG = Logger.getLogger(ChemistryPOSTagger.class);
+//	private final Logger LOG = Logger.getLogger(ChemistryPOSTagger.class);
 	private ChemistryPOSTagger() {
 		oscarTagger = new OscarTagger();
 		regexTagger = new RegexTagger();

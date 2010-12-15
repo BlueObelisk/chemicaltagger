@@ -7,7 +7,6 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
 import uk.ac.cam.ch.wwmm.chemicaltagger.WWMMTag.TagType;
-import uk.ac.cam.ch.wwmm.oscar.document.NamedEntity;
 
 /********************************************
  * A container class that stores the grammatical structure of the text .
@@ -21,7 +20,7 @@ public class POSContainer {
 	public List<WWMMTag> regexTagList = new ArrayList<WWMMTag>();
 	public List<WWMMTag> brownTagList = new ArrayList<WWMMTag>();
 	private List<WWMMTag> combinedTagsList = new ArrayList<WWMMTag>();
-	private final Logger LOG = Logger.getLogger(POSContainer.class);
+//	private final Logger LOG = Logger.getLogger(POSContainer.class);
 	private static String SPACE = " ";
 
 	public POSContainer() {
@@ -137,7 +136,6 @@ public class POSContainer {
 	}
 
 	public List<WWMMTag> getOscarList() {
-		// TODO Auto-generated method stub
 		return this.oscarTagList;
 	}
 }
