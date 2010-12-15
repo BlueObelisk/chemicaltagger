@@ -1,7 +1,6 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
 import java.io.BufferedReader;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -76,17 +75,7 @@ public class Utils {
 		}
 	}
 
-	private boolean isNumeric(String input) {
-		boolean flag = false;
 
-		try {
-			Integer.parseInt(input);
-			return true;
-		} catch (Exception e) {
-			return false;
-		}
-
-	}
 
 	/************************************
 	 * First attempt at tidying up sentences. Separates words conjealed together

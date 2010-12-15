@@ -93,7 +93,6 @@ public class PostProcessTrees {
 
 	public Document process(Document doc) {
 		Element root = new Element("Document");
-
 		Nodes nodes = doc.query("//Sentence");
 		for (int i = 0; i < nodes.size(); i++) {
 			Element sentenceNode = (Element) nodes.get(i);

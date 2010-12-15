@@ -2,8 +2,6 @@ package uk.ac.cam.ch.wwmm.chemicaltagger.extractText;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 import nu.xom.Builder;
 import nu.xom.Document;
@@ -85,7 +83,7 @@ public class ExtractFromPatent {
 	}
 
 	public static void main(String[] args) {
-		List docs = new ArrayList<DocumentContainer>();
+//		List docs = new ArrayList<DocumentContainer>();
 		String path = "src/main/resources/patents/";
 		File patentDirectory = new File(path);
 		String[] patentDir = patentDirectory.list();
@@ -93,8 +91,9 @@ public class ExtractFromPatent {
 
 			String resourcePath = path + file;
 			ExtractFromPatent extract = new ExtractFromPatent();
-			DocumentContainer docContainer = extract.getContent(resourcePath);
-			docs.add(docContainer);
+//			DocumentContainer docContainer = extract.getContent(resourcePath);
+			extract.getContent(resourcePath);
+//			docs.add(docContainer);
 
 		}
 

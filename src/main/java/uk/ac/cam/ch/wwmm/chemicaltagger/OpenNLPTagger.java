@@ -61,8 +61,9 @@ public class OpenNLPTagger {
 	private void setUpPosTagger() throws IOException {
 		InputStreamReader tagDictReader = null;
 		try {
+			new Utils();
 			tagDictReader = new InputStreamReader(
-					new Utils().getInputStream("openNlpResources/tagdict"));
+					Utils.getInputStream("openNlpResources/tagdict"));
 //			       Util.getResourceUsingContextClassLoader(
 //			    		   "openNlpResources/tagdict", this.getClass()), "UTF-8");
 		} catch (Exception e) {

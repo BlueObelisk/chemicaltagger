@@ -414,7 +414,6 @@ public class PostProcessTags {
 		}
 
 		if (currentTag.toLowerCase().startsWith("nn-synthesize")) {
-			List<String> beforeList = Utils.addToList("dt dt-the");
 			List<String> afterList = Utils.addToList("in-of nn-method");
 			if  (!stringafter(afterList, i, combinedTags)) {
 				
