@@ -62,7 +62,7 @@ OSCAR-CM---^p$|^n$|^Cl$---Oscar Entity will be removed later
 #Oscar related Tags
 OSCAR-CD---^(ent-)?BOLD--.*BOLD-----bold numbers (representing chemical names)
 OSCAR-CD---^\d+[a-z]-----non-html oscar digits (representing chemical names)
-OSCAR-CJ---^Merrifield$|^crude$|^buffer$|^mono$|^fritted$|^(E|e)xcess|(A|a)mphiphilic$|(f|F)unctionalized$|(p|P)ot$|^cyclic$|(H|h)yperbranched$|^insoluble$|^(p|P)ropargyl$|Arm$|^(s|S)tar$|^anhydrous$|^aq(.|ueous)?$|^organic|^(s|S)at(.|urated)?$|^(Di|Tri|di|tri|poly)block$---Chemical Adjectives                              
+                              
 
 #Verbs
 VB-USE---^using---Use Verb in the Present Term
@@ -73,7 +73,7 @@ VB-IMMERSE---^immersed$---Submerges verb
 
 #Adjective
 JJ---^round$|^bottom|^green$|^yellow$|^brown$|^thaw$|^orange$---Adjectives
-
+JJ-CHEM---^Merrifield$|^crude$|^buffer$|^mono$|^fritted$|^(E|e)xcess|(A|a)mphiphilic$|(f|F)unctionalized$|(p|P)ot$|^cyclic$|(H|h)yperbranched$|^insoluble$|^(p|P)ropargyl$|Arm$|^(s|S)tar$|^anhydrous$|^aq(.|ueous)?$|^organic|^(s|S)at(.|urated)?$|^(Di|Tri|di|tri|poly)block$---Chemical Adjectives
 
 #Add Tokens
 NN-ADD---^addition$---Add Noun

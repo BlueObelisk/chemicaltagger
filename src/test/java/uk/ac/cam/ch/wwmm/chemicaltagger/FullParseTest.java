@@ -41,7 +41,7 @@ public class FullParseTest {
 
 		Tree t = chemistrySentenceParser.parseTags();
 		ASTtoXML ast2XML = new ASTtoXML();
-		Utils.writeXMLToFile(ast2XML.convert(t),"target/file2.xml");
+		Utils.writeXMLToFile(ast2XML.convert(t,true),"target/file2.xml");
 		checkNodes(t);
 	}
 	
@@ -57,7 +57,7 @@ public class FullParseTest {
 
 		Tree t = chemistrySentenceParser.parseTags();
 		ASTtoXML ast2XML = new ASTtoXML();
-		Utils.writeXMLToFile(ast2XML.convert(t),"target/file3.xml");
+		Utils.writeXMLToFile(ast2XML.convert(t,true),"target/file3.xml");
 		checkNodes(t);
 	}
 
@@ -73,7 +73,7 @@ public class FullParseTest {
 
 		Tree t = chemistrySentenceParser.parseTags();
 		ASTtoXML ast2XML = new ASTtoXML();
-		Utils.writeXMLToFile(ast2XML.convert(t),"target/file4.xml");
+		Utils.writeXMLToFile(ast2XML.convert(t,true),"target/file4.xml");
 		checkNodes(t);
 	}
 	@Test
@@ -88,7 +88,7 @@ public class FullParseTest {
 
 		Tree t = chemistrySentenceParser.parseTags();
 		ASTtoXML ast2XML = new ASTtoXML();
-		Utils.writeXMLToFile(ast2XML.convert(t),"target/file5.xml");
+		Utils.writeXMLToFile(ast2XML.convert(t,true),"target/file5.xml");
 		checkNodes(t);
 	}
 	
@@ -104,7 +104,7 @@ public class FullParseTest {
 
 		Tree t = chemistrySentenceParser.parseTags();
 		ASTtoXML ast2XML = new ASTtoXML();
-		Utils.writeXMLToFile(ast2XML.convert(t),"target/file6.xml");
+		Utils.writeXMLToFile(ast2XML.convert(t,true),"target/file6.xml");
 		checkNodes(t);
 	}
 	
@@ -120,7 +120,7 @@ public class FullParseTest {
 
 		Tree t = chemistrySentenceParser.parseTags();
 		ASTtoXML ast2XML = new ASTtoXML();
-		Utils.writeXMLToFile(ast2XML.convert(t),"target/file7.xml");
+		Utils.writeXMLToFile(ast2XML.convert(t,true),"target/file7.xml");
 		checkNodes(t);
 	}
 
@@ -136,7 +136,7 @@ public class FullParseTest {
 
 		Tree t = chemistrySentenceParser.parseTags();
 		ASTtoXML ast2XML = new ASTtoXML();
-		Utils.writeXMLToFile(ast2XML.convert(t),"target/file8.xml");
+		Utils.writeXMLToFile(ast2XML.convert(t,true),"target/file8.xml");
 		checkNodes(t);
 	}
 	
@@ -153,7 +153,7 @@ public class FullParseTest {
 
 		Tree t = chemistrySentenceParser.parseTags();
 		ASTtoXML ast2XML = new ASTtoXML();
-		Utils.writeXMLToFile(ast2XML.convert(t),"target/file9.xml");
+		Utils.writeXMLToFile(ast2XML.convert(t,true),"target/file9.xml");
 		checkNodes(t);
 	}
 	
@@ -180,7 +180,7 @@ public class FullParseTest {
 
 		Tree t = chemistrySentenceParser.parseTags();
 		ASTtoXML ast2XML = new ASTtoXML();
-		Utils.writeXMLToFile(ast2XML.convert(t),"target/file10.xml");
+		Utils.writeXMLToFile(ast2XML.convert(t,true),"target/file10.xml");
 		checkNodes(t);
 	}
 	
@@ -199,7 +199,7 @@ public class FullParseTest {
 
 		Tree t = chemistrySentenceParser.parseTags();
 		ASTtoXML ast2XML = new ASTtoXML();
-		Utils.writeXMLToFile(ast2XML.convert(t),"target/file11.xml");
+		Utils.writeXMLToFile(ast2XML.convert(t,true),"target/file11.xml");
 		checkNodes(t);
 	}
 	@Test
