@@ -114,7 +114,7 @@ minimixtureStructure2: comma lrb mixtureContent rrb comma;
 minimixtureStructure1:  lrb mixtureContent rrb;
 minimixtureContent:   (fw|nn|verb|measurements|md|stop|oscarCompound|molecule|unnamedmolecule|dash|sym|cd|noun|inof|inAll|cd|comma|adj|colon|stop) (fw|verb|measurements|nnyield|md|stop|oscarCompound|molecule|unnamedmolecule|dash|sym|cd|noun|inof|inAll|cd|comma|adj|colon|stop)+ ;
 
-adj	:	jj|jjr|jjs|jjt|oscarcj|oscarrn;
+adj	:	jj|jjr|jjs|jjt|oscarcj|jjchem|oscarrn;
 adv	:	rb|rbr|rbt|rp|rbs;
 // Different PrepPhrases
 
@@ -248,6 +248,7 @@ oscarcpr:'OSCAR-CPR' TOKEN;
 oscaront:	'OSCAR-ONT' TOKEN;
 tmunicode:'TM-UNICODE' TOKEN;
 cdunicode:'CD-UNICODE' TOKEN;
+jjchem: 'JJ-CHEM'  TOKEN;
 
 // Prepositions
 inas:'IN-AS' TOKEN;
