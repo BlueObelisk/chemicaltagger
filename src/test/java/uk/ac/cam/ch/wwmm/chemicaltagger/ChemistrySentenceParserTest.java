@@ -3,8 +3,10 @@ package uk.ac.cam.ch.wwmm.chemicaltagger;
 import java.io.InputStream;
 
 import junit.framework.Assert;
+import nu.xom.Document;
 
 import org.antlr.runtime.tree.Tree;
+import org.apache.commons.io.IOUtils;
 import org.junit.Test;
 
 /*****************************
@@ -101,6 +103,16 @@ public class ChemistrySentenceParserTest {
 		checkNodes(t);
 
 	}	
+	
+	
+	@Test
+	public void testEmptyInput() {
+		InputStream in = IOUtils.toInputStream("");
+		ChemistrySentenceParser chemChunkParser = new ChemistrySentenceParser(in);
+		Document doc = chemChunkParser.parseTagsToDocument();
+		Assert.assertNull(doc);
+	}
+	
 	
 	private InputStream getInputStream(String resourceName){
 		InputStream inStream = this.getClass().getClassLoader().getResourceAsStream(resourceName);

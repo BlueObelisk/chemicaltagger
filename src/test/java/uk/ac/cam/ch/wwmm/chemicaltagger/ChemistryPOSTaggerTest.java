@@ -98,7 +98,14 @@ public class ChemistryPOSTaggerTest {
 
 	}
 
-
+	@Test
+	public void emptyInput() {
+		String sentence = "";
+		posContainer = ChemistryPOSTagger.getInstance().runTaggers(sentence);
+		Assert.assertEquals(0, posContainer.getCombinedTagsList().size());
+		Assert.assertEquals(0, posContainer.getTokenList().size());
+		Assert.assertEquals("", posContainer.getTokenTagTupleAsString());
+	}
     
 
 
