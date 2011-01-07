@@ -1,12 +1,12 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger.roles;
 
-import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
 
 import nu.xom.Document;
 
 import org.antlr.runtime.tree.Tree;
+import org.apache.commons.io.IOUtils;
 
 import uk.ac.cam.ch.wwmm.chemicaltagger.ASTtoXML;
 import uk.ac.cam.ch.wwmm.chemicaltagger.ChemistryPOSTagger;
@@ -23,12 +23,11 @@ public class ParsedDocumentCreator {
 
 	public Document runChemicalTagger(String text) {
 		POSContainer posContainer = chemPos.runTaggers(text);
-		String tagged = posContainer.getTokenTagTupleAsString();
 
-		InputStream in = null;
+		InputStream in =  null;
 		try {
-			in = new ByteArrayInputStream(tagged.getBytes("UTF-8"));
-		} catch (UnsupportedEncodingException e) {
+			in = IOUtils.toInputStream(posContainer.getTokenTagTupleAsString(), "UTF-8");
+		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

@@ -26,18 +26,18 @@ public class ExtractFromXML {
 	/****************************************
 	 * Parses an XML files and saves the output into DocumentContainer
 	 * 
-	 * @param sourceFile
-	 *            (String)
-	 * @return docContainer (DocumentContainer)
+	 * @param xmlTag
+	 *            (Element)
+	 * @return stringValue (String)
 	 ****************************************/
-	public String getStringValue(Element action, String Delimiter) {
+	public String getStringValue(Element xmlTag, String Delimiter) {
 		StringBuilder stringValue = new StringBuilder();
-		for (int i = 0; i < action.getChildCount(); i++) {
-			if (action.getChild(i) instanceof nu.xom.Text) {
-				stringValue.append(action.getChild(i).getValue().trim()+Delimiter);
+		for (int i = 0; i < xmlTag.getChildCount(); i++) {
+			if (xmlTag.getChild(i) instanceof nu.xom.Text) {
+				stringValue.append(xmlTag.getChild(i).getValue().trim()+Delimiter);
 			} else {
-				if (!(action.getChild(i) instanceof nu.xom.ProcessingInstruction)) {
-					Element sub = (Element) action.getChild(i);
+				if (!(xmlTag.getChild(i) instanceof nu.xom.ProcessingInstruction)) {
+					Element sub = (Element) xmlTag.getChild(i);
 
 					if (sub.getChildCount() > 0) {
 						stringValue.append(getStringValue(sub, Delimiter));
