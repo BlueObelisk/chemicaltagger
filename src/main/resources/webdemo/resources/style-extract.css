@@ -1,0 +1,215 @@
+
+body {
+background-color: white;
+margin: 10;
+padding: 5;
+color:#333366;
+font: veranda;
+}
+
+#taggedReaction{
+position: relative;
+font:  times;
+font-size: 16pt;
+color:#333366;
+
+}
+
+textarea {
+position: relative;
+width: 350px;
+height: 150px;
+//color:black;
+font-size: 12pt;
+
+}
+
+.highlighted{
+  color: white;
+  background-color: #333366;
+}
+
+.Add{
+  background-color:#6666CC; 
+  color:white;
+  font-weight:bold;
+}
+
+.Dry{
+  background-color:#FFCC33; 
+  color:white;
+  font-weight:bold;
+}
+
+
+.Dissolve{
+  background-color:#66CC99; 
+  color:white;
+  font-weight:bold;
+}
+.Extract{
+  background-color:#FFCC99; 
+  color:white;
+  font-weight:bold;
+}
+.Stir{
+  background-color:#660033; 
+  color:white;
+  font-weight:bold;
+}
+
+.Concentrate{
+  background-color:#999933; 
+  color:white;
+  font-weight:bold;
+}
+.Mix{
+  background-color:		#778899; 
+  color:white;
+  font-weight:bold;
+}
+.Wash{
+  background-color:#99CCCC; 
+  color:white;
+  font-weight:bold;
+}
+.Purify{
+  background-color:#999999; 
+  color:white;
+  font-weight:bold;
+}
+.Remove{
+  background-color:#CCCC66; 
+  color:white;
+  font-weight:bold;
+}
+
+.Yield{
+  background-color:#339933; 
+  color:white;
+  font-weight:bold;
+}
+
+.Cool{
+  background-color:	#3BB9FF; 
+  color:white;
+  font-weight:bold;
+}
+
+.Heat{
+  background-color:#C12869; 
+  color:white;
+  font-weight:bold;
+}
+.Pour{
+  background-color:	#9E7BFF; 
+  color:white;
+  font-weight:bold;
+}
+.Filter{
+  background-color:#000066; 
+  color:white;
+  font-weight:bold;
+}
+
+.Recover{
+  background-color:#99FF00; 
+  color:white;
+  font-weight:bold;
+}
+
+.Degass{
+  background-color:#990033; 
+  color:white;
+  font-weight:bold;
+}
+.Quench{
+  background-color:#FF3333; 
+  color:white;
+  font-weight:bold;
+}
+
+.Precipitate{
+  background-color:#996633; 
+  color:white;
+  font-weight:bold;
+}
+
+.Wait{
+  background-color:#CC00CC; 
+  color:white;
+  font-weight:bold;
+}
+
+.Split{
+  background-color:#DCDCDC; 
+  color:white;
+  font-weight:bold;
+}
+	
+
+.Equip{
+  background-color:#556B2F; 
+  color:white;
+  font-weight:bold;
+}
+
+.Synthesize{
+  background-color:#333333; 
+  color:white;
+  font-weight:bold;
+}
+
+.Seal{
+  background-color:#CC3300; 
+  color:white;
+  font-weight:bold;
+}
+
+.PrepPhrase{
+  background-color:#CC9966; 
+  color:white;
+  font-weight:bold;
+}
+
+.NounPhrase{
+  background-color:#cccc99; 
+  color:white;
+  font-weight:bold;
+}
+
+.VerbPhrase{
+  background-color:#330033; 
+  color:white;
+  font-weight:bold;
+}
+
+.Solvent{
+  background-color:#666699; 
+  color:white;
+  font-weight:bold;
+}
+
+.Other{
+  background-color:#996666; 
+  color:white;
+  font-weight:bold;
+}
+
+.TempPhrase{
+  background-color:#666699; 
+  color:white;
+  font-weight:bold;
+}
+
+.TimePhrase{
+  background-color:#990033; 
+  color:white;
+  font-weight:bold;
+}
+
+.AtmospherePhrase{
+  background-color:#006666; 
+  color:white;
+  font-weight:bold;
+}

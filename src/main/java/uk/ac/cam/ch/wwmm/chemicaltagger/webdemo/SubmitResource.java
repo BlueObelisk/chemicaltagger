@@ -6,6 +6,7 @@ import java.io.InputStream;
 import nu.xom.Document;
 
 import org.apache.commons.io.IOUtils;
+import org.apache.xml.serializer.utils.Utils;
 import org.restlet.data.Form;
 import org.restlet.data.MediaType;
 import org.restlet.representation.Representation;
@@ -30,8 +31,9 @@ public class SubmitResource extends ServerResource {
         InputStream taggedStream = IOUtils.toInputStream(container.getTokenTagTupleAsString(), "UTF-8");
         ChemistrySentenceParser parser = new ChemistrySentenceParser(taggedStream);
         Document doc = parser.parseTagsToDocument();
-        
-        return new StringRepresentation(doc.toXML(), MediaType.APPLICATION_XML);
+        String html = new XMLtoHTML().convert(doc);
+        System.out.println(html);
+        return new StringRepresentation(html, MediaType.TEXT_HTML);
     }
 
 

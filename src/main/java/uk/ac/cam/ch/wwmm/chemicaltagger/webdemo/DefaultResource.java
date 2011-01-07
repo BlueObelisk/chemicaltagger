@@ -21,6 +21,8 @@ public class DefaultResource extends ServerResource {
         InputStream is = ClassLoader.getSystemResourceAsStream("webdemo/index.html");
         try {
             String s = IOUtils.toString(is);
+            
+
             return new StringRepresentation(s, MediaType.TEXT_HTML);
         } finally {
             is.close();

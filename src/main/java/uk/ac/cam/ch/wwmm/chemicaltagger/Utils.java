@@ -310,7 +310,7 @@ public class Utils {
 	public static InputStream getInputStream(String pathName) {
 		// requires sentence with no newlines except possibly at end
 		InputStream inStream;
-		System.out.println("path=" + pathName);
+		
 		inStream = ClassLoader.getSystemResourceAsStream(pathName);
 
 		return inStream;
