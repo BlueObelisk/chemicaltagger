@@ -16,15 +16,15 @@ import org.antlr.runtime.ANTLRInputStream;
 import org.antlr.runtime.CommonTokenStream;
 import org.antlr.runtime.RecognitionException;
 import org.antlr.runtime.tree.Tree;
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
 import uk.ac.cam.ch.wwmm.pregenerated.ChemicalChunkerLexer;
 import uk.ac.cam.ch.wwmm.pregenerated.ChemicalChunkerParser;
 
 /*****************************************
- * Passes Tagged Sentences to the
- * antlr chunker. And can convert the
- * output to XML Documents.
+ * Passes Tagged Sentences to the antlr chunker. And can convert the output to
+ * XML Documents.
  * 
  * @author pm286, lh359
  *****************************************/
@@ -33,10 +33,13 @@ public class ChemistrySentenceParser extends Thread {
 	private InputStream taggedTokenInStream = null;
 	private final Logger LOG = Logger.getLogger(ChemistrySentenceParser.class);
 	private Document doc = null;
-    private Tree parseTree = null;
+	private Tree parseTree = null;
+
 	/*********************************
 	 * Constructor Class.
-	 * @param  taggedTokenInputFilename (String)
+	 * 
+	 * @param taggedTokenInputFilename
+	 *            (String)
 	 *********************************/
 	public ChemistrySentenceParser(String taggedTokenInputFilename) {
 
@@ -49,31 +52,35 @@ public class ChemistrySentenceParser extends Thread {
 		}
 
 	}
-    /*******************************************
-     * Constructor Class.
-     * @param taggedTokenInStream (InputStream)
-     *******************************************/
+
+	/*******************************************
+	 * Constructor Class.
+	 * 
+	 * @param taggedTokenInStream
+	 *            (InputStream)
+	 *******************************************/
 	public ChemistrySentenceParser(InputStream taggedTokenInStream) {
 		this.taggedTokenInStream = taggedTokenInStream;
 	}
 
-	
-	public void run(){
+	public void run() {
 		parseTags();
 	}
-	
-	public Tree getTree(){
+
+	public Tree getTree() {
 		return parseTree;
 	}
+
 	/********************************************
-	 * Main Function
-	 * Pass inputStream to Antlr and produces an
-	 * astTree as output.
+	 * Main Function Pass inputStream to Antlr and produces an astTree as
+	 * output.
+	 * 
 	 * @return astTree (Tree)
 	 *******************************************/
 	public Tree parseTags() {
 		ChemicalChunkerLexer lexer = null;
 
+		if (taggedTokenInStream == null) return null;
 		ANTLRInputStream input;
 		try {
 			input = new ANTLRInputStream(taggedTokenInStream, "UTF-8");
@@ -99,20 +106,22 @@ public class ChemistrySentenceParser extends Thread {
 	}
 
 	/************************************
-	 * Produces the output of the AntlrParse
-	 * as an XML Document.
+	 * Produces the output of the AntlrParse as an XML Document.
+	 * 
 	 * @return doc (Document)
 	 ************************************/
 	public Document parseTagsToDocument() {
 		Tree t = parseTags();
-		doc = new ASTtoXML().convert(t);
+		if (t == null)
+			doc = null;
+		else
+			doc = new ASTtoXML().convert(t, true);
 
 		return doc;
 	}
 
 	/************************************
-	 * Saves the output of the AntlrParse
-	 * as an XML file.
+	 * Saves the output of the AntlrParse as an XML file.
 	 ************************************/
 	public void parseTagsToXMLFile(String outputFilename) {
 		Document doc = parseTagsToDocument();
