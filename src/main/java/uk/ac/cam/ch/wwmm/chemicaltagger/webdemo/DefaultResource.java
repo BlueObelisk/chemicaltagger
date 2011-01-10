@@ -1,10 +1,8 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger.webdemo;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.HashMap;
 
-import org.apache.commons.io.IOUtils;
 import org.restlet.data.MediaType;
 import org.restlet.representation.Representation;
 import org.restlet.resource.Get;
@@ -16,19 +14,14 @@ import org.restlet.resource.ServerResource;
  */
 public class DefaultResource extends ServerResource {
 
-    @Get("ftl")
-    public Representation getIndex() throws IOException {
-        InputStream is = ClassLoader.getSystemResourceAsStream("webdemo/index.html");
-        WebdemoApplication webDemo = (WebdemoApplication) getApplication();
-        try {
-            String s = IOUtils.toString(is);
-            
+	@Get("ftl")
+	public Representation getIndex() throws IOException {
 
-            return webDemo.getTemplateRepresentation("index.ftl", new HashMap<String, String>(), MediaType.TEXT_HTML);
-            
-        } finally {
-            is.close();
-        }
-    }
+		WebdemoApplication webDemo = (WebdemoApplication) getApplication();
+	
+		return webDemo.getTemplateRepresentation("index.ftl",
+				new HashMap<String, String>(), MediaType.TEXT_HTML);
+
+	}
 
 }
