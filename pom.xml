@@ -1,9 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	<!--
-		NOTE: the antlr3 build is best done on the COMMANDLINE and requires
-		set MAVEN_OPTS=-Xmx1024m
-	-->
+	<!-- NOTE: the antlr3 build is best done on the COMMANDLINE and requires 
+		set MAVEN_OPTS=-Xmx1024m -->
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>chemicalTagger</groupId>
 	<artifactId>chemicalTagger</artifactId>
@@ -18,22 +16,15 @@
 	</repositories>
 	<build>
 		<plugins>
-			<!--
-				removed antlr generation of *.java to permit build on Hudson if you
-				change the *.g comment this back in again
-			-->
-			<!--
-				<plugin> <groupId>org.antlr</groupId>
-				<artifactId>antlr3-maven-plugin</artifactId> <version>3.2</version>
-				<executions> <execution> <goals> <goal>antlr</goal> </goals>
-				<configuration> <sourceDirectory> src/main/antlr3 </sourceDirectory>
-				<conversionTimeout>10000</conversionTimeout> <libDirectory>
-				src/main/antlr3/imports </libDirectory>
-				<messageFormat>antlr</messageFormat> <outputDirectory>
-				target/generated-sources/antlr3 </outputDirectory>
-				<verbose>true</verbose> <grammars>*.g</grammars> </configuration>
-				</execution> </executions> </plugin>
-			-->
+			<!-- removed antlr generation of *.java to permit build on Hudson if you 
+				change the *.g comment this back in again -->
+			<!-- <plugin> <groupId>org.antlr</groupId> <artifactId>antlr3-maven-plugin</artifactId> 
+				<version>3.2</version> <executions> <execution> <goals> <goal>antlr</goal> 
+				</goals> <configuration> <sourceDirectory> src/main/antlr3 </sourceDirectory> 
+				<conversionTimeout>10000</conversionTimeout> <libDirectory> src/main/antlr3/imports 
+				</libDirectory> <messageFormat>antlr</messageFormat> <outputDirectory> target/generated-sources/antlr3 
+				</outputDirectory> <verbose>true</verbose> <grammars>*.g</grammars> </configuration> 
+				</execution> </executions> </plugin> -->
 
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -154,6 +145,11 @@
 		<dependency>
 			<groupId>org.restlet.jee</groupId>
 			<artifactId>org.restlet.ext.servlet</artifactId>
+			<version>2.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.restlet.jee</groupId>
+			<artifactId>org.restlet.ext.freemarker</artifactId>
 			<version>2.0.0</version>
 		</dependency>
 	</dependencies>
