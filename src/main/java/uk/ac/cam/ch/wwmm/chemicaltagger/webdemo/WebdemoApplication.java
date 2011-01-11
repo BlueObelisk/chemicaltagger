@@ -39,6 +39,7 @@ public class WebdemoApplication extends Application {
 		Router router = new Router(getContext());
 		router.attach("/submit", SubmitResource.class);
 		router.attach("/", DefaultResource.class);
+		router.attach("/viewXML", ViewXML.class);
 		getConnectorService().getClientProtocols().add(Protocol.FILE);
 		;
 		Directory dir = new Directory(getContext(), ClassLoader

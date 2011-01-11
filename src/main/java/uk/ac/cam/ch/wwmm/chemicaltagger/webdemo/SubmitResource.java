@@ -2,6 +2,8 @@ package uk.ac.cam.ch.wwmm.chemicaltagger.webdemo;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -13,6 +15,8 @@ import org.restlet.data.MediaType;
 import org.restlet.representation.Representation;
 import org.restlet.resource.Post;
 import org.restlet.resource.ServerResource;
+
+import freemarker.template.utility.StringUtil;
 
 import uk.ac.cam.ch.wwmm.chemicaltagger.ChemistryPOSTagger;
 import uk.ac.cam.ch.wwmm.chemicaltagger.ChemistrySentenceParser;
@@ -26,6 +30,7 @@ public class SubmitResource extends ServerResource {
 
     @Post("form:txt")
     public Representation doForm(Form form) throws IOException {
+    	
         String body = form.getFirstValue("body");
         WebdemoApplication webDemo = (WebdemoApplication) getApplication();
 
@@ -37,6 +42,7 @@ public class SubmitResource extends ServerResource {
         XMLtoHTML xmltoHTML = new XMLtoHTML();
         xmltoHTML.convert(doc);
         
+        model.put("xmlContent",doc.toXML());
         model.put("taggedText",xmltoHTML.getTaggedText());
         model.put("checkBoxes", xmltoHTML.getCheckBoxes());
         

@@ -2,7 +2,8 @@ $(document).ready(function() {
   });
 
 
-function checkedAll (id,checked) {
+
+ function checkedAll (id,checked) {
      
     for (var i =0; i < id.elements.length; i++) 
     {
@@ -11,12 +12,14 @@ function checkedAll (id,checked) {
     }
       }
       
-      function highlight (name,checked) {
+ function highlight (name,checked) {
          $('span[name="'+name+'"]').each(function () {
             if (checked){
                $(this).addClass(name);}
             else {   
                 $(this).removeClass(name);}
     }
- );
-      }
+   );
+   
+  
+  }
