@@ -2,8 +2,6 @@ package uk.ac.cam.ch.wwmm.chemicaltagger.webdemo;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URLDecoder;
-import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,8 +14,6 @@ import org.restlet.representation.Representation;
 import org.restlet.resource.Post;
 import org.restlet.resource.ServerResource;
 
-import freemarker.template.utility.StringUtil;
-
 import uk.ac.cam.ch.wwmm.chemicaltagger.ChemistryPOSTagger;
 import uk.ac.cam.ch.wwmm.chemicaltagger.ChemistrySentenceParser;
 import uk.ac.cam.ch.wwmm.chemicaltagger.POSContainer;
@@ -25,6 +21,7 @@ import uk.ac.cam.ch.wwmm.chemicaltagger.POSContainer;
 /**
  * @author sea36
  * @author dmj30
+ * @author lh359
  */
 public class SubmitResource extends ServerResource {
 
