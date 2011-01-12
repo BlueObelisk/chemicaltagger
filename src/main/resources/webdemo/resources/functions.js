@@ -1,4 +1,9 @@
 $(document).ready(function() {
+    document.getElementsByName("Actions")[0].checked = true;
+    checkedAll(ActionsForm,true);
+    
+  
+
   });
 
 
