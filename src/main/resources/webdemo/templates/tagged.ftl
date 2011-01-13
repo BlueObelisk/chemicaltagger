@@ -2,16 +2,13 @@
 	<html>
 	   <head>
 	     <meta http-equiv='Content-type' content='text/html;charset=UTF-8'/>
-	      <title>ChemicalTagger</title>
+	      <title>ChemicalTagger Results</title>
 	      <link rel='stylesheet' type='text/css' href='res/style-extract.css'/>
 	      <script type='text/javascript' src='res/jquery-latest.js'></script>
 	      <script type='text/javascript' src='res/functions.js'></script>
 	   </head>
 	   <body>
-	         <form action="/viewXML" method="POST" >
-	         <textarea style="display:none" rows="20" cols="10" name="xml" type="hidden">${xmlContent}</textarea>
-	        <input type='submit'  value="View XML">
-	        </form>
+	     <h2>ChemicalTagger Results</h2>
 	     <div id='taggedReaction'>
 	     ${taggedText}
 	     </div>
@@ -28,5 +25,9 @@
 	      </form>
 	
 	     </#list>
+	     <form action="/viewXML" method="POST" >
+	           <textarea style="display:none" rows="20" cols="10" name="xml" type="hidden">${xmlContent}</textarea>
+	           <input type='submit'  value="View XML">
+	     </form>
 	</body>
 	</html>
