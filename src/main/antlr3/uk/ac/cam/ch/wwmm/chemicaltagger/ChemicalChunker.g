@@ -180,9 +180,15 @@ measurementtypes
 oscarCompound :  adj* (oscarCompound1|oscarCompound2|oscarCompound3|oscarCompound4|oscarcm) adj? reference?;
 
 oscarCompound4 :	lrb  oscarcm rrb -> ^(NODE["OSCARCM"]  lrb  oscarcm  rrb );
-oscarCompound3 :	oscarcm (dash|apost)+ -> ^(NODE["OSCARCM"]   oscarcm  dash* apost* );
-oscarCompound2 :	oscarcm (dash oscarcm)+ dash?-> ^(NODE["OSCARCM"]   oscarcm (dash   oscarcm)+ dash? );
+oscarCompound3 :	oscarCompound3Structure -> ^(NODE["OSCARCM"]   oscarCompound3Structure );
+oscarCompound2 :	oscarCompound2Structure -> ^(NODE["OSCARCM"]   oscarCompound2Structure );
 oscarCompound1 :	oscarcm oscarcm+ -> ^(NODE["OSCARCM"]  oscarcm oscarcm+);
+
+
+oscarCompound3Structure 
+	:  oscarcm (dash|apost)+;	 
+oscarCompound2Structure 
+	:  oscarcm (dash oscarcm)+  dash?;	 
 //oscarCompound1 :	oscarcm oscarcm -> ^(NODE["OSCARCM"]  oscarcm oscarcm);
 //moleculeamount1
 //	:measurements (quantity|mixture)? inof oscarCompound;	
