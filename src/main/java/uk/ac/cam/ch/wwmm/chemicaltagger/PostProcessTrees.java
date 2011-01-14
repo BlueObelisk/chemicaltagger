@@ -231,19 +231,21 @@ public class PostProcessTrees {
 				} else
 					addListToNode(newSentence, elementList);
 
-				// System.out.println("***** New sentence is "
-				// + newSentence.toXML());
+
 				elementList = new ArrayList<Element>();
 				seenVerb = false;
 			} else if (splitList.contains(phraseElement.getLocalName()
 					.toLowerCase())) {
-
+				Element newPhraseElement = (Element) phraseElement.copy();
+			    newSentence.appendChild(newPhraseElement);
 				if (actionPhrase != null) {
 
 					addListToNode(actionPhrase, elementList);
 					appendActionPhrase(newSentence, actionPhrase);
 					elementList = new ArrayList<Element>();
 					actionPhrase = null;
+					
+
 				}
 				String elementListContent = elementListToString(elementList);
 				if (elementListContent.toLowerCase().contains("timephrase")) {

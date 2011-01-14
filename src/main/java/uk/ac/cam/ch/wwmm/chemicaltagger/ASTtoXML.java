@@ -44,7 +44,6 @@ public class ASTtoXML {
 	public Document convert(Tree astTree, boolean postProcess) {
 		Element root = new Element("Document");
 		Document doc = null;
-		
 		if (astTree.getChildCount() > 0) {
 			if (StringUtils.isNotEmpty(astTree.getChild(0).getParent()
 					.getText())) {
