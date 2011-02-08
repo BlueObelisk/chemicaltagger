@@ -289,7 +289,6 @@ nntemp:'NN-TEMP' TOKEN;
 nnflash:'NN-FLASH' TOKEN;
 nngeneral:'NN-GENERAL' TOKEN;
 nnmethod:'NN-METHOD' TOKEN;
-//nnamount:'NN-AMOUNT' TOKEN;
 nnpressure:'NN-PRESSURE' TOKEN;
 nncolumn:'NN-COLUMN' TOKEN;
 nnchromatography:'NN-CHROMATOGRAPHY' TOKEN;
@@ -352,8 +351,7 @@ vbheat:'VB-HEAT' TOKEN;
 vbincrease:'VB-INCREASE' TOKEN;
 
 //Immerse tokens
-vbimmerse
-	: 'VB-IMMERSE'  TOKEN;
+vbimmerse:'VB-IMMERSE' TOKEN;
 //Partition Tokens
 vbpartition:'VB-PARTITION' TOKEN;
 
@@ -627,8 +625,7 @@ uh:'UH' TOKEN;
 // Verb, base form
 vb:'VB' TOKEN;
 
-vbp	: 'VBP' TOKEN
-	;
+vbp	: 'VBP' TOKEN;
 
 // Verb, past tense
 vbd:'VBD' TOKEN;
