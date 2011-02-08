@@ -316,7 +316,7 @@ public class PostProcessTrees {
 				Element rolePhrase = (Element) roleNode;
 				int roleIndex = newSentence.indexOf(roleNode);
 				String role = getRole(rolePhrase);
-				if (roleIndex > 0) {
+				if (roleIndex > 0 && role!=null) {
 					Element previousElement = (Element) newSentence
 							.getChild(roleIndex - 1);
 					if (previousElement.getLocalName().toLowerCase()
@@ -336,10 +336,8 @@ public class PostProcessTrees {
 		Nodes moleculeNodes = previousElement.query(".//MOLECULE");
 		for (int i = 0; i < moleculeNodes.size(); i++) {
 			Element moleculeElement = (Element) moleculeNodes.get(i);
-			moleculeElement.addAttribute(new Attribute("role", "Solvent"));
-
+			moleculeElement.addAttribute(new Attribute("role", role));
 		}
-
 	}
 
 	private String getRole(Element rolePhrase) {
