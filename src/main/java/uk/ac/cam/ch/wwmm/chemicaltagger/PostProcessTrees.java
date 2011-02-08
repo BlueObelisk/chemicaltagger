@@ -427,7 +427,7 @@ public class PostProcessTrees {
 		Element mixtureElement = (Element) actionElement.query(".//MIXTURE")
 				.get(0);
 		Nodes moleculeNodes = mixtureElement.query(".//OSCAR-CM");
-		System.out.println("Molecule nodes " + moleculeNodes.size());
+		//System.out.println("Molecule nodes " + moleculeNodes.size());
 		for (int i = 0; i < moleculeNodes.size(); i++) {
 
 			Element moleculeElement = (Element) moleculeNodes.get(i);
