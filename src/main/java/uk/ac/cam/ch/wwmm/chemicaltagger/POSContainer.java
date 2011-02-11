@@ -83,7 +83,7 @@ public class POSContainer {
 					&& !oscarTagList.get(i).getPOS().toLowerCase().equals(
 							"oscar-ont")) {
 				combinedTagsList.add(oscarTagList.get(i));
-			} else if (!regexTagList.get(i).getPOS().equals("nil")) {
+			} else if (regexTagList.size() > 0 && !regexTagList.get(i).getPOS().equals("nil") ) {
 				combinedTagsList.add(regexTagList.get(i));
 			} else {
 				combinedTagsList.add(brownTagList.get(i));
