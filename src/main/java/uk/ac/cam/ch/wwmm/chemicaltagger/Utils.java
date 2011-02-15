@@ -253,7 +253,7 @@ public class Utils {
 			InputStream refStream = ClassLoader
 					.getSystemResourceAsStream(resourceName);
 
-			sentence = IOUtils.toString(refStream);
+			sentence = IOUtils.toString(refStream,"UTF-8");
 		} catch (IOException e) {
 			throw new RuntimeException("Cannot read sentence: " + resourceName);
 		}
