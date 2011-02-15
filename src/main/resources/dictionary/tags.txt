@@ -89,7 +89,7 @@ VB-TREAT---^treat(e|s|ed|ing)?$---Treat Verb
                     
 #Apparatus Tokens
 VB-APPARATUS---(^equip|^seal|clos|^cap|^fitt)(ped|ed|e)?$---Apparatus Verb
-NN-APPARATUS---^trap$|^neck$|^valve$|^adapter$|^inlet$|^outlet$|^condenser$|^stirrer$|^reactor$|^syringe$|^bath$|^oven$|^vessel$|^glove|^box$|^bar$|^tube$|^(S|s)chlenk$|^(F|f)lask(s)?$|^(F|f)unnel?$|^desiccator(s)?$---Apparatus Nouns
+NN-APPARATUS---^trap$|^neck$|^valve$|^adapter$|^inlet|^outlet|^condenser$|^stirrer$|^reactor$|^syringe$|^bath$|^oven$|^vessel$|^glove|^box$|^bar$|^tube$|^(S|s)chlenk$|^(F|f)lask(s)?$|^(F|f)unnel?$|^desiccator(s)?$---Apparatus Nouns
 #Concentrate Tokens
 VB-CONCENTRATE---(^concentrat|^saturat)(ed|e|ing)?$---Concentrate Verb
 NN-CONCENTRATE---^concentration---Concentrate Noun
@@ -164,7 +164,7 @@ COLON---^:---Colon
 COMMA---^,---Comma           
 APOST---^\'|^\'\'$---Apostrophe          
 NEG---^not$---Negation
-DASH---^(\\|\/|\-)$---Dash
+DASH---^(\\|\/|\-|–)$---Dash
 STOP---^(\.|\?|\!|\;)$---Full stops,SemiColons, Exclamation and Question Marks
 NN-PERCENT---^\%$---Percent Sign
 LSQB---^\[$---Left Square Brackets

@@ -12,6 +12,7 @@ import uk.ac.cam.ch.wwmm.chemicaltagger.ASTtoXML;
 import uk.ac.cam.ch.wwmm.chemicaltagger.ChemistryPOSTagger;
 import uk.ac.cam.ch.wwmm.chemicaltagger.ChemistrySentenceParser;
 import uk.ac.cam.ch.wwmm.chemicaltagger.POSContainer;
+import uk.ac.cam.ch.wwmm.chemicaltagger.Utils;
 
 public class ParsedDocumentCreator {
 
@@ -26,7 +27,9 @@ public class ParsedDocumentCreator {
 
 		InputStream in =  null;
 		try {
-			in = IOUtils.toInputStream(posContainer.getTokenTagTupleAsString(), "UTF-8");
+			String tagTuple = posContainer.getTokenTagTupleAsString();
+			System.out.println(tagTuple);
+			in = IOUtils.toInputStream(tagTuple, "UTF-8");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -37,7 +40,7 @@ public class ParsedDocumentCreator {
 		Tree t = chemistrySentenceParser.parseTags();
 		ASTtoXML ast2XML = new ASTtoXML();
 		Document doc = ast2XML.convert(t, true);
-		
+		Utils.writeXMLToFile(doc, "target/roleIdentifier.xml");
 		return doc;
 	}
 

@@ -1,5 +1,11 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
+import java.util.LinkedList;
+import java.util.List;
+
+import uk.ac.cam.ch.wwmm.oscar.document.IToken;
+import uk.ac.cam.ch.wwmm.oscar.document.Token;
+
 
 
 /**************************************************************
@@ -22,11 +28,13 @@ public class ChemistryPOSTagger {
 	public OscarTagger oscarTagger;
 	public RegexTagger regexTagger;
 	public OpenNLPTagger openNLPTagger;
+	public SpectraTagger spectraTagger;
 //	private final Logger LOG = Logger.getLogger(ChemistryPOSTagger.class);
 	private ChemistryPOSTagger() {
 		oscarTagger = new OscarTagger();
 		regexTagger = new RegexTagger();
 		openNLPTagger = OpenNLPTagger.getInstance();
+		spectraTagger = new SpectraTagger();
 	}
 
 	public static ChemistryPOSTagger getInstance() {
@@ -47,12 +55,16 @@ public class ChemistryPOSTagger {
 
 		POSContainer posContainer = new POSContainer();
 		inputSentence = Utils.formatSentence(inputSentence);
+		posContainer.setInputText(inputSentence);
+		posContainer = spectraTagger.runTagger(posContainer);
+		posContainer = oscarTagger.runTagger(posContainer);
 		
-		posContainer = oscarTagger.runTagger(posContainer, inputSentence);
 		posContainer = regexTagger.runTagger(posContainer);
 		posContainer = openNLPTagger.runTagger(posContainer);
 	
 		posContainer.combineTaggers();
+		posContainer.recombineHyphenedTokens();
+
 		posContainer =  new PostProcessTags().correctCombinedTagsList(posContainer);
 		// posContainer.printOutTags();
 //		LOG.info("Tag Token Tuple: " + posContainer.getTokenTagTupleAsString());
@@ -78,4 +90,6 @@ public class ChemistryPOSTagger {
 		posTagger.runTaggers(sentence);
 
 	}
+		
+		
 }
