@@ -1,10 +1,14 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import nu.xom.Element;
 
 import org.apache.commons.lang.StringUtils;
-import org.apache.log4j.Logger;
 
 import uk.ac.cam.ch.wwmm.chemicaltagger.WWMMTag.TagType;
 
@@ -20,7 +24,26 @@ public class POSContainer {
 	public List<WWMMTag> regexTagList = new ArrayList<WWMMTag>();
 	public List<WWMMTag> brownTagList = new ArrayList<WWMMTag>();
 	private List<WWMMTag> combinedTagsList = new ArrayList<WWMMTag>();
-//	private final Logger LOG = Logger.getLogger(POSContainer.class);
+	private Element spectrumElementList ;
+
+	
+	public Element getSpectrumElementList() {
+		return spectrumElementList;
+	}
+
+	public void setSpectrumList(List<Element> spectraList) {
+		
+		spectrumElementList = new Element("SpectrumList");
+        for (Element element : spectraList) {
+			spectrumElementList.appendChild(element);
+		}
+		
+	}
+
+	
+
+	private String inputText ;
+	// private final Logger LOG = Logger.getLogger(POSContainer.class);
 	private static String SPACE = " ";
 
 	public POSContainer() {
@@ -42,7 +65,8 @@ public class POSContainer {
 	}
 
 	public void addToOSCARList(String oscarTag) {
-		if (oscarTag.startsWith("ONT")) oscarTag = "ONT";
+		if (oscarTag.startsWith("ONT"))
+			oscarTag = "ONT";
 		oscarTagList.add(new WWMMTag("OSCAR-" + oscarTag));
 
 	}
@@ -69,7 +93,7 @@ public class POSContainer {
 	public List<WWMMTag> getCombinedTagsList() {
 		return combinedTagsList;
 	}
-	
+
 	public void setCombinedTagsList(List<WWMMTag> newCombinedTagsList) {
 		this.combinedTagsList = newCombinedTagsList;
 	}
@@ -80,10 +104,11 @@ public class POSContainer {
 	public void combineTaggers() {
 		for (int i = 0; i < oscarTagList.size(); i++) {
 			if (!oscarTagList.get(i).getPOS().toLowerCase().equals("oscar-nil")
-					&& !oscarTagList.get(i).getPOS().toLowerCase().equals(
-							"oscar-ont")) {
+					&& !oscarTagList.get(i).getPOS().toLowerCase()
+							.equals("oscar-ont")) {
 				combinedTagsList.add(oscarTagList.get(i));
-			} else if (regexTagList.size() > 0 && !regexTagList.get(i).getPOS().equals("nil") ) {
+			} else if (regexTagList.size() > 0
+					&& !regexTagList.get(i).getPOS().equals("nil")) {
 				combinedTagsList.add(regexTagList.get(i));
 			} else {
 				combinedTagsList.add(brownTagList.get(i));
@@ -100,7 +125,6 @@ public class POSContainer {
 	public String getTokenTagTupleAsString() {
 		StringBuilder tokenTagTupleString = new StringBuilder();
 
-		
 		for (int i = 0; i < wordTokenList.size(); i++) {
 			if (StringUtils.isNotEmpty(combinedTagsList.get(i).POS)
 					&& StringUtils.isNotEmpty(wordTokenList.get(i))) {
@@ -132,10 +156,127 @@ public class POSContainer {
 
 	public void setTokenList(List<String> newTokenList) {
 		this.wordTokenList = newTokenList;
-		
+
 	}
 
 	public List<WWMMTag> getOscarList() {
 		return this.oscarTagList;
 	}
+
+	public void recombineHyphenedTokens() {
+		String previousTag = "";
+		String nextTag = "";
+		List<String> nonHyphenTags = Arrays.asList("dash comma cc".split(" "));
+		Map<Integer, List<Integer>> indexMap = new HashMap<Integer, List<Integer>>();
+		for (int currentIndex = 0; currentIndex < wordTokenList.size(); currentIndex++) {
+			List<Integer> indexList = new ArrayList<Integer>();
+
+			if (combinedTagsList.get(currentIndex).getPOS().toLowerCase()
+					.equals("dash")) {
+				if (currentIndex == 0
+						&& currentIndex + 1 < wordTokenList.size()) {
+					indexList.add(currentIndex);
+					indexList.add(currentIndex + 1);
+					indexMap.put(indexList.get(0), indexList);
+				} else if (currentIndex + 1 == wordTokenList.size()) {
+					indexList.add(currentIndex - 1);
+					indexList.add(currentIndex);
+					indexMap.put(indexList.get(0), indexList);
+				} else {
+					previousTag = combinedTagsList.get(currentIndex - 1)
+							.getPOS();
+					nextTag = combinedTagsList.get(currentIndex + 1).getPOS();
+					if (!(previousTag.startsWith("OSCAR-CM") & nextTag
+							.startsWith("OSCAR-CM") & !wordTokenList.get(currentIndex+1).startsWith("-"))) {
+						if (nonHyphenTags.contains(nextTag.toLowerCase())) {
+							indexList.add(currentIndex - 1);
+							indexList.add(currentIndex);
+							indexMap.put(indexList.get(0), indexList);
+						} else if (nonHyphenTags.contains(previousTag
+								.toLowerCase())) {
+							indexList.add(currentIndex);
+							indexList.add(currentIndex + 1);
+							indexMap.put(indexList.get(0), indexList);
+						} else {
+
+							indexList.add(currentIndex - 1);
+							indexList.add(currentIndex);
+							indexList.add(currentIndex + 1);
+							indexMap.put(indexList.get(0), indexList);
+
+						}
+					}
+				}
+
+			}
+
+		}
+
+		combineTokens(indexMap);
+
+	}
+
+	private void combineTokens(Map<Integer, List<Integer>> indexMap) {
+		if (indexMap.size() > 0) {
+
+			List<String> newWordTokenList = new ArrayList<String>();
+			List<WWMMTag> newCombinedTagsList = new ArrayList<WWMMTag>();
+
+			for (int i = 0; i < wordTokenList.size(); i++) {
+				StringBuilder multiTokenWord = new StringBuilder();
+				String tagName;
+
+				if (!indexMap.keySet().contains(i)) {
+					newWordTokenList.add(wordTokenList.get(i));
+					newCombinedTagsList.add(combinedTagsList.get(i));
+				} else {
+					List<Integer> indexList = indexMap.get(i);
+					tagName = getTagName(indexList);
+					for (Integer integer : indexList) {
+						multiTokenWord.append(wordTokenList.get(integer));
+					}
+					newWordTokenList.add(multiTokenWord.toString());
+					newCombinedTagsList.add(new WWMMTag(tagName));
+					i = i + indexList.size() - 1;
+				}
+			}
+			setTokenList(newWordTokenList);
+			setCombinedTagsList(newCombinedTagsList);
+
+		}
+
+	}
+
+	private String getTagName(List<Integer> indexList) {
+		String tagName = "";
+
+		List<String> jjChemList = Arrays.asList("JJ VBN".toLowerCase().split(
+				" "));
+
+		for (Integer integer : indexList) {
+			String tag = combinedTagsList.get(integer).getPOS();
+//			System.out.println(tag + " " + wordTokenList.get(integer));
+			if (!tagName.toLowerCase().startsWith("oscar") & tag.contains("-")) 
+				tagName = tag;
+			
+			if (tagName.equals("") & !tag.toLowerCase().equals("dash"))
+				tagName = tag;
+			if (jjChemList.contains(tag.toLowerCase()))
+				tagName = "JJ-CHEM";
+
+		}
+		// TODO Auto-generated method stub
+		return tagName;
+	}
+	
+
+	public void setInputText(String inputText) {
+
+		this.inputText = inputText;
+	}
+	public String getInputText() {
+		return inputText;
+	}
+
+	
 }

@@ -11,6 +11,8 @@ import nu.xom.Nodes;
 
 import org.apache.log4j.Logger;
 
+import antlr.Utils;
+
 import uk.ac.cam.ch.wwmm.chemicaltagger.extractText.ExtractFromXML;
 
 public class RoleIdentifier {
@@ -25,10 +27,9 @@ public class RoleIdentifier {
 	}
 	
 	public Collection<NamedEntityWithRoles> getRoles(Document parsedDoc) {
-		// FIXME: implement hashcode/equals properly for NamedEntityWithRoles and use List instead
-//		LOG.debug(parsedDoc.toXML());
+
 		Map<String,NamedEntityWithRoles> roleMap = new HashMap<String,NamedEntityWithRoles>();
-		
+		uk.ac.cam.ch.wwmm.chemicaltagger.Utils.writeXMLToFile(parsedDoc, "target/roles.xml");
 		Nodes nodes = parsedDoc.query("//MOLECULE");
 		for (int i = 0; i < nodes.size(); i++) {
 			Element nodeElement = (Element) nodes.get(i);

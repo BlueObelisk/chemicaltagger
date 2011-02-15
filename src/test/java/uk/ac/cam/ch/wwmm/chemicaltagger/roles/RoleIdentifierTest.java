@@ -101,7 +101,7 @@ public class RoleIdentifierTest {
 		RoleIdentifier roleIdent = new RoleIdentifier();
 		Collection<NamedEntityWithRoles> identifiedRoles = roleIdent.getRoles(sentence);
 		int solventCount = getSolventCount(identifiedRoles);
-		Assert.assertEquals("Solvent Count", 4, solventCount);
+		Assert.assertEquals("Solvent Count", 6, solventCount);
 		printOutRoles(identifiedRoles);
 	}
 

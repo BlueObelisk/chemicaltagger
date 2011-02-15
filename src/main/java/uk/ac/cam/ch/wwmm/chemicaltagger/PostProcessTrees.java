@@ -313,14 +313,19 @@ public class PostProcessTrees {
 		else {
 			for (int i = 0; i < nodes.size(); i++) {
 				Node roleNode = nodes.get(i);
+				
 				Element rolePhrase = (Element) roleNode;
-				int roleIndex = newSentence.indexOf(roleNode);
+				Element parentPhrase = (Element)rolePhrase.getParent();
+				
+				int roleIndex = parentPhrase.indexOf(roleNode);
+				
 				String role = getRole(rolePhrase);
 				if (roleIndex > 0 && role!=null) {
-					Element previousElement = (Element) newSentence
+					Element previousElement = (Element) parentPhrase
 							.getChild(roleIndex - 1);
 					if (previousElement.getLocalName().toLowerCase()
-							.equals("nounphrase"))
+							.equals("nounphrase") || previousElement.getLocalName().toLowerCase()
+							.equals("prepphrase"))
 						setRole(previousElement, role);
 				}
 			}
@@ -333,6 +338,7 @@ public class PostProcessTrees {
 	 */
 
 	private void setRole(Element previousElement, String role) {
+		System.out.println(previousElement.toXML());
 		Nodes moleculeNodes = previousElement.query(".//MOLECULE");
 		for (int i = 0; i < moleculeNodes.size(); i++) {
 			Element moleculeElement = (Element) moleculeNodes.get(i);

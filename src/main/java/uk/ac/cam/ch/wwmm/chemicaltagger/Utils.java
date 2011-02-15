@@ -7,7 +7,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -16,6 +15,7 @@ import java.util.regex.Pattern;
 import nu.xom.Document;
 import nu.xom.Serializer;
 
+import org.apache.commons.io.IOUtils;
 import org.xmlcml.cml.base.CMLConstants;
 import org.xmlcml.euclid.Util;
 
@@ -75,8 +75,6 @@ public class Utils {
 		}
 	}
 
-
-
 	/************************************
 	 * First attempt at tidying up sentences. Separates words conjealed together
 	 * 
@@ -85,9 +83,10 @@ public class Utils {
 	 *************************************/
 	public static String formatSentence(String sentence) {
 		StringBuilder newSentence = new StringBuilder();
-		sentence=sentence.replace("  ", " ");
-    	sentence = sentence.replace("%", " %").replace(";", " ;").replace(":", " : ");
-    	
+		sentence = sentence.replace("  ", " ");
+		sentence = sentence.replace("%", " %").replace(";", " ;")
+				.replace(":", " : ");
+
 		String[] words = sentence.split(" ");
 		String abbreviationRegex = "−?[A-Z]+[a-z]*\\.";
 		String concatAmountRegex = "(\\d\\d+(m|k|µ)?(l|L|g|gram|mol|cm3)(s)?$)|(\\d(L|ml|mL|gram|mol|cm3)(s)?$)";
@@ -113,12 +112,12 @@ public class Utils {
 				}
 			}
 
-			
-			if ((string.endsWith(";") && !htmlList.contains(string.toLowerCase()))) {
+			if ((string.endsWith(";") && !htmlList.contains(string
+					.toLowerCase()))) {
 				string = string.substring(0, string.length() - 1);
 				suffix = " ;" + suffix;
 			}
-			
+
 			if ((string.endsWith(".") && string.contains("°C"))) {
 				string = string.substring(0, string.length() - 1);
 				suffix = " ." + suffix;
@@ -139,10 +138,9 @@ public class Utils {
 				}
 
 			} else if (string.trim().endsWith(")")) {
-				String subString = string.substring(0, string.length() - 1);
-				int i = Util.indexOfBalancedBracket('(', string);
-				if (i < 0) {
+				String subString = string.substring(0, string.length()-1);
 
+				if (subString.indexOf('(') < 0) {
 					string = subString;
 					suffix = " )" + suffix;
 				}
@@ -255,9 +253,7 @@ public class Utils {
 			InputStream refStream = ClassLoader
 					.getSystemResourceAsStream(resourceName);
 
-			BufferedReader br = new BufferedReader(new InputStreamReader(
-					refStream, Charset.forName("UTF-8")));
-			sentence = br.readLine();
+			sentence = IOUtils.toString(refStream);
 		} catch (IOException e) {
 			throw new RuntimeException("Cannot read sentence: " + resourceName);
 		}
@@ -310,7 +306,7 @@ public class Utils {
 	public static InputStream getInputStream(String pathName) {
 		// requires sentence with no newlines except possibly at end
 		InputStream inStream;
-		
+
 		inStream = ClassLoader.getSystemResourceAsStream(pathName);
 
 		return inStream;

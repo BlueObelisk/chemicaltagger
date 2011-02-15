@@ -2,6 +2,7 @@ package uk.ac.cam.ch.wwmm.chemicaltagger;
 
 import nu.xom.Document;
 import nu.xom.Element;
+import nu.xom.Text;
 
 import org.antlr.runtime.tree.Tree;
 import org.apache.commons.lang.StringUtils;
@@ -100,6 +101,12 @@ public class ASTtoXML {
 				} catch (Exception e) {
 					LOG.debug("Can't Parse " + e.getMessage());
 				}
+			}
+			else{
+				Element unmatched = new Element("UnmatchedPhrase");
+				unmatched.appendChild(astTree.getChild(i).getText());
+				node.appendChild(unmatched);
+				
 			}
 
 		}
