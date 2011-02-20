@@ -66,8 +66,6 @@ public class ChemistryPOSTagger {
 		posContainer.recombineHyphenedTokens();
 
 		posContainer =  new PostProcessTags().correctCombinedTagsList(posContainer);
-		// posContainer.printOutTags();
-//		LOG.info("Tag Token Tuple: " + posContainer.getTokenTagTupleAsString());
 		return posContainer;
 	}
 

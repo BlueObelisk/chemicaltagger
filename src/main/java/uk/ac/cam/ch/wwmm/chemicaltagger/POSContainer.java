@@ -2,7 +2,7 @@ package uk.ac.cam.ch.wwmm.chemicaltagger;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -24,25 +24,22 @@ public class POSContainer {
 	public List<WWMMTag> regexTagList = new ArrayList<WWMMTag>();
 	public List<WWMMTag> brownTagList = new ArrayList<WWMMTag>();
 	private List<WWMMTag> combinedTagsList = new ArrayList<WWMMTag>();
-	private Element spectrumElementList ;
+	private Element spectrumElementList;
 
-	
 	public Element getSpectrumElementList() {
 		return spectrumElementList;
 	}
 
 	public void setSpectrumList(List<Element> spectraList) {
-		
+
 		spectrumElementList = new Element("SpectrumList");
-        for (Element element : spectraList) {
+		for (Element element : spectraList) {
 			spectrumElementList.appendChild(element);
 		}
-		
+
 	}
 
-	
-
-	private String inputText ;
+	private String inputText;
 	// private final Logger LOG = Logger.getLogger(POSContainer.class);
 	private static String SPACE = " ";
 
@@ -166,10 +163,14 @@ public class POSContainer {
 	public void recombineHyphenedTokens() {
 		String previousTag = "";
 		String nextTag = "";
+		List<Integer> totalIndexList = new ArrayList<Integer>();
 		List<String> nonHyphenTags = Arrays.asList("dash comma cc".split(" "));
-		Map<Integer, List<Integer>> indexMap = new HashMap<Integer, List<Integer>>();
+		List<Integer> indexList = new ArrayList<Integer>();
+		Map<Integer, List<Integer>> indexMap = new LinkedHashMap<Integer, List<Integer>>();
 		for (int currentIndex = 0; currentIndex < wordTokenList.size(); currentIndex++) {
-			List<Integer> indexList = new ArrayList<Integer>();
+			if (indexList.size() > 0)
+				totalIndexList.addAll(indexList);
+			indexList = new ArrayList<Integer>();
 
 			if (combinedTagsList.get(currentIndex).getPOS().toLowerCase()
 					.equals("dash")) {
@@ -186,16 +187,32 @@ public class POSContainer {
 					previousTag = combinedTagsList.get(currentIndex - 1)
 							.getPOS();
 					nextTag = combinedTagsList.get(currentIndex + 1).getPOS();
-					if (!(previousTag.startsWith("OSCAR-CM") & nextTag
-							.startsWith("OSCAR-CM") & !wordTokenList.get(currentIndex+1).startsWith("-"))) {
-						if (nonHyphenTags.contains(nextTag.toLowerCase())) {
-							indexList.add(currentIndex - 1);
+					if (!(previousTag.startsWith("OSCAR-CM")
+							& nextTag.startsWith("OSCAR-CM") & !wordTokenList
+							.get(currentIndex + 1).startsWith("-"))) {
+						if (totalIndexList.contains(currentIndex - 1)) {
+
+							List<Integer> keySet = new ArrayList<Integer>(
+									indexMap.keySet());
+							indexList = new ArrayList<Integer>();
+							indexList = indexMap
+									.get(keySet.get(keySet.size() - 1));
 							indexList.add(currentIndex);
+							if (currentIndex + 1 < wordTokenList.size())
+								indexList.add(currentIndex + 1);
 							indexMap.put(indexList.get(0), indexList);
+
 						} else if (nonHyphenTags.contains(previousTag
 								.toLowerCase())) {
 							indexList.add(currentIndex);
 							indexList.add(currentIndex + 1);
+							indexMap.put(indexList.get(0), indexList);
+
+						} else if (nonHyphenTags
+								.contains(nextTag.toLowerCase())) {
+
+							indexList.add(currentIndex - 1);
+							indexList.add(currentIndex);
 							indexMap.put(indexList.get(0), indexList);
 						} else {
 
@@ -255,10 +272,10 @@ public class POSContainer {
 
 		for (Integer integer : indexList) {
 			String tag = combinedTagsList.get(integer).getPOS();
-//			System.out.println(tag + " " + wordTokenList.get(integer));
-			if (!tagName.toLowerCase().startsWith("oscar") & tag.contains("-")) 
+			// System.out.println(tag + " " + wordTokenList.get(integer));
+			if (!tagName.toLowerCase().startsWith("oscar") & tag.contains("-"))
 				tagName = tag;
-			
+
 			if (tagName.equals("") & !tag.toLowerCase().equals("dash"))
 				tagName = tag;
 			if (jjChemList.contains(tag.toLowerCase()))
@@ -268,15 +285,14 @@ public class POSContainer {
 		// TODO Auto-generated method stub
 		return tagName;
 	}
-	
 
 	public void setInputText(String inputText) {
 
 		this.inputText = inputText;
 	}
+
 	public String getInputText() {
 		return inputText;
 	}
 
-	
 }

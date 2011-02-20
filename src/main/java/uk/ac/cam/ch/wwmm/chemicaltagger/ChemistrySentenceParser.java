@@ -16,6 +16,7 @@ import org.antlr.runtime.ANTLRInputStream;
 import org.antlr.runtime.CommonTokenStream;
 import org.antlr.runtime.RecognitionException;
 import org.antlr.runtime.tree.Tree;
+import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
@@ -34,6 +35,7 @@ public class ChemistrySentenceParser extends Thread {
 	private final Logger LOG = Logger.getLogger(ChemistrySentenceParser.class);
 	private Document doc = null;
 	private Tree parseTree = null;
+	private POSContainer posContainer = null;
 
 	/*********************************
 	 * Constructor Class.
@@ -63,14 +65,25 @@ public class ChemistrySentenceParser extends Thread {
 		this.taggedTokenInStream = taggedTokenInStream;
 	}
 
+	public ChemistrySentenceParser(POSContainer posContainer) {
+		this.posContainer = posContainer;
+		try {
+			this.taggedTokenInStream = IOUtils.toInputStream(posContainer.getTokenTagTupleAsString(), "UTF-8");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
 	public void run() {
 		parseTags();
 	}
 
-	public Tree getTree() {
+	public Tree getParseTree() {
 		return parseTree;
 	}
 
+	
 	/********************************************
 	 * Main Function Pass inputStream to Antlr and produces an astTree as
 	 * output.
@@ -120,14 +133,7 @@ public class ChemistrySentenceParser extends Thread {
 		return doc;
 	}
 
-	/************************************
-	 * Saves the output of the AntlrParse as an XML file.
-	 ************************************/
-	public void parseTagsToXMLFile(String outputFilename) {
-		Document doc = parseTagsToDocument();
-		Utils.writeXMLToFile(doc, outputFilename);
 
-	}
 
 	public static void main(String[] args) throws Exception {
 		String taggedTokenInputFilename = null;
@@ -144,7 +150,14 @@ public class ChemistrySentenceParser extends Thread {
 		}
 		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
 				taggedTokenInputFilename);
-		chemistrySentenceParser.parseTagsToXMLFile(outputXMLFilename);
+		
 
 	}
+
+	public Document getDocument() {
+		// TODO Auto-generated method stub
+		return new ASTtoXML().convert(parseTree, true);
+	}
+
+	
 }

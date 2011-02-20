@@ -1,18 +1,14 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
-import nu.xom.Element;
 import uk.ac.cam.ch.wwmm.oscar.Oscar;
 import uk.ac.cam.ch.wwmm.oscar.chemnamedict.core.PolymerDictionary;
 import uk.ac.cam.ch.wwmm.oscar.document.IToken;
 import uk.ac.cam.ch.wwmm.oscar.document.ITokenSequence;
 import uk.ac.cam.ch.wwmm.oscar.document.NamedEntity;
 import uk.ac.cam.ch.wwmm.oscar.opsin.OpsinDictionary;
-import uk.ac.cam.ch.wwmm.oscardata.DataAnnotation;
-import uk.ac.cam.ch.wwmm.oscardata.DataParser;
 
 /*****************************************************
  * Runs the OSCAR tagger .
@@ -69,10 +65,10 @@ public class OscarTagger {
 
 			String sentence = posContainer.getInputText();
 			sentence = oscar.normalize(sentence);
-			
-			tokens = oscar.tokenize(sentence);
-			
-			neList = oscar.recognizeNamedEntities(tokens);
+
+			tokens = oscar.tokenise(sentence);
+
+			neList = oscar.recogniseNamedEntities(tokens);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -92,17 +88,20 @@ public class OscarTagger {
 
 					boolean foundNE = false;
 					for (NamedEntity ne : neList) {
-						if (ne.getStart() == tok.getStart()) {
-							if (ne.getEnd() >= tok.getEnd()) {
-								word = ne.getSurface();
-								tag = ne.getType().getName();
-								foundNE = true;
-								endIndex = ne.getEnd();
-								for (String subWord : word.split(" ")) {
-									posContainer.addToTokenList(subWord);
-									posContainer.addToOSCARList(tag);
-								}
+						if (!ne.getType().getName().toLowerCase()
+								.contains("cpr")) {
+							if (ne.getStart() == tok.getStart()) {
+								if (ne.getEnd() >= tok.getEnd()) {
+									word = ne.getSurface();
+									tag = ne.getType().getName();
+									foundNE = true;
+									endIndex = ne.getEnd();
+									for (String subWord : word.split(" ")) {
+										posContainer.addToTokenList(subWord);
+										posContainer.addToOSCARList(tag);
+									}
 
+								}
 							}
 						}
 					}
