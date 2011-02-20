@@ -7,7 +7,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -16,6 +15,7 @@ import java.util.regex.Pattern;
 import nu.xom.Document;
 import nu.xom.Serializer;
 
+import org.apache.commons.io.IOUtils;
 import org.xmlcml.cml.base.CMLConstants;
 import org.xmlcml.euclid.Util;
 
@@ -138,7 +138,7 @@ public class Utils {
 				}
 
 			} else if (string.trim().endsWith(")")) {
-				String subString = string.substring(0, string.length() - 1);
+				String subString = string.substring(0, string.length()-1);
 
 				if (subString.indexOf('(') < 0) {
 					string = subString;
@@ -253,9 +253,7 @@ public class Utils {
 			InputStream refStream = ClassLoader
 					.getSystemResourceAsStream(resourceName);
 
-			BufferedReader br = new BufferedReader(new InputStreamReader(
-					refStream, Charset.forName("UTF-8")));
-			sentence = br.readLine();
+			sentence = IOUtils.toString(refStream,"UTF-8");
 		} catch (IOException e) {
 			throw new RuntimeException("Cannot read sentence: " + resourceName);
 		}

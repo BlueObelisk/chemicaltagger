@@ -31,6 +31,9 @@ public class RegexTagger {
 		initializeRules();
 	}
 
+	public RegexTagger(String tagFile) {
+		this.tagFile = tagFile;
+	}
 	/**************************************************************
 	 * Initialises the rules for the regular expression tagger
 	 ***************************************************************/

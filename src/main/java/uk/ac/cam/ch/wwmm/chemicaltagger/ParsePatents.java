@@ -58,7 +58,7 @@ public class ParsePatents {
 
 			ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
 					taggedInputStream);
-			chemistrySentenceParser.parseTagsToXMLFile(outputXMLFilename);
+			
 
 		}
 	}
