@@ -27,6 +27,8 @@ public class ChemistryPOSTagger {
 	public String sentence;
 	public OscarTagger oscarTagger;
 	public RegexTagger regexTagger;
+
+
 	public OpenNLPTagger openNLPTagger;
 	public SpectraTagger spectraTagger;
 //	private final Logger LOG = Logger.getLogger(ChemistryPOSTagger.class);
@@ -69,6 +71,9 @@ public class ChemistryPOSTagger {
 		return posContainer;
 	}
 
+	public void setRegexTagger(RegexTagger regexTagger) {
+		this.regexTagger = regexTagger;
+	}
 		public static void main(String[] args) throws Exception {
 
 		ChemistryPOSTagger posTagger = new ChemistryPOSTagger();
