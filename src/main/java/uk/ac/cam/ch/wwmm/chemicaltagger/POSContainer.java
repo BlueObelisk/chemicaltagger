@@ -68,8 +68,8 @@ public class POSContainer {
 
 	}
 
-	public void addToOSCARList(String oscarTag, Enum type) {
-		oscarTagList.add(new WWMMTag("OSCAR-" + oscarTag, (TagType) type));
+	public void addToOSCARList(String oscarTag, TagType type) {
+		oscarTagList.add(new WWMMTag("OSCAR-" + oscarTag, type));
 	}
 
 	public void addToRegexList(String regexTag) {
@@ -164,7 +164,7 @@ public class POSContainer {
 		String previousTag = "";
 		String nextTag = "";
 		List<Integer> totalIndexList = new ArrayList<Integer>();
-		List<String> nonHyphenTags = Arrays.asList("dash comma cc stop".split(" "));
+		List<String> nonHyphenTags = Arrays.asList(new String[]{"dash", "comma", "cc", "stop"});
 		List<Integer> indexList = new ArrayList<Integer>();
 		Map<Integer, List<Integer>> indexMap = new LinkedHashMap<Integer, List<Integer>>();
 		for (int currentIndex = 0; currentIndex < wordTokenList.size(); currentIndex++) {
@@ -267,8 +267,7 @@ public class POSContainer {
 	private String getTagName(List<Integer> indexList) {
 		String tagName = "";
 
-		List<String> jjChemList = Arrays.asList("JJ VBN".toLowerCase().split(
-				" "));
+		List<String> jjChemList = Arrays.asList(new String[]{"jj", "vbn"});
 
 		for (Integer integer : indexList) {
 			String tag = combinedTagsList.get(integer).getPOS();
