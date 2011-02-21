@@ -20,7 +20,7 @@ import org.apache.log4j.Logger;
  *****************************************************/
 public class RegexTagger {
 
-	private List<Rule> rules;
+	protected List<Rule> rules;
 	public String tagFile = "dictionary/tags.txt";
 	private final Logger LOG = Logger.getLogger(RegexTagger.class);
 
@@ -37,7 +37,7 @@ public class RegexTagger {
 	/**************************************************************
 	 * Initialises the rules for the regular expression tagger
 	 ***************************************************************/
-	private void initializeRules() {
+	protected void initializeRules() {
 		rules = new ArrayList<Rule>();
 		String line;
 		try {
@@ -103,12 +103,12 @@ public class RegexTagger {
 	/**************************************************************
 	 * The Rule class . Compiles regex rules. Used later for the regex tagger.
 	 ***************************************************************/
-	static class Rule {
+	protected static class Rule {
 
 		final String name;
 		final Pattern pattern;
 
-		Rule(String name, String regex) {
+		public Rule(String name, String regex) {
 			this.name = name;
 			pattern = Pattern.compile(regex);
 		}

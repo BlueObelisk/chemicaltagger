@@ -164,7 +164,7 @@ public class POSContainer {
 		String previousTag = "";
 		String nextTag = "";
 		List<Integer> totalIndexList = new ArrayList<Integer>();
-		List<String> nonHyphenTags = Arrays.asList("dash comma cc".split(" "));
+		List<String> nonHyphenTags = Arrays.asList("dash comma cc stop".split(" "));
 		List<Integer> indexList = new ArrayList<Integer>();
 		Map<Integer, List<Integer>> indexMap = new LinkedHashMap<Integer, List<Integer>>();
 		for (int currentIndex = 0; currentIndex < wordTokenList.size(); currentIndex++) {
@@ -272,7 +272,6 @@ public class POSContainer {
 
 		for (Integer integer : indexList) {
 			String tag = combinedTagsList.get(integer).getPOS();
-			// System.out.println(tag + " " + wordTokenList.get(integer));
 			if (!tagName.toLowerCase().startsWith("oscar") & tag.contains("-"))
 				tagName = tag;
 

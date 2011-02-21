@@ -134,16 +134,28 @@ public class PostProcessTags {
 					&& !currentTag.toLowerCase().startsWith("nn-cycle")
 					&& !currentTag.toLowerCase().startsWith("nn-temp")
 					&& !currentTag.toLowerCase().startsWith("nn-pressure")
-					&& !currentTag.toLowerCase().startsWith("nn-time")) {
-				List<String> beforeList = Utils.addToList("dt jj dt-the");
-				List<String> afterList = Utils
-						.addToList("vbd jj nn-chementity nn-mixture nn-apparatus nn comma");
+					&& !currentTag.toLowerCase().startsWith("nn-time")
+				    && !currentTag.toLowerCase().startsWith("nn-vacuum")) {
+				List<String> beforeList = Utils.addToList("dt jj jj-chem dt-the");
+				List<String> afterListJJ = Utils
+						.addToList("jj nn-chementity nn-mixture nn-apparatus nn jj-chem");
+				List<String> afterListChem = Utils
+				.addToList("vbd stop comma");
 
+				List<String> afterListNN = Utils
+				.addToList("stop comma");
 				
-				if (stringbefore(beforeList, i, combinedTags)
-						&& (stringafter(afterList, i, combinedTags) || i == combinedTags
-								.size())) {
+				if  (stringbefore(beforeList, i, combinedTags) && (i == combinedTags.size() || stringafter(afterListNN, i, combinedTags)) && !currentTag.toLowerCase().startsWith("nn-"))
+					newTag = "NN"; 
+				
+				else if (stringbefore(beforeList, i, combinedTags)
+						&& (stringafter(afterListChem, i, combinedTags))) {
 					newTag = "NN-CHEMENTITY";
+				}
+				else if (stringbefore(beforeList, i, combinedTags)
+						&& (stringafter(afterListJJ, i, combinedTags) 
+								&& !currentTag.toLowerCase().startsWith("nn-chementity"))) {
+					newTag = "JJ";
 				}
 			}
 		}
@@ -275,7 +287,7 @@ public class PostProcessTags {
 		if (currentTag.toLowerCase().startsWith("vb")
 				&& !currentToken.toLowerCase().endsWith("ing")) {
 
-			List<String> beforeList = Utils.addToList("dt dt-the in-in");
+			List<String> beforeList = Utils.addToList("dt dt-the in-in in-of rb");
 			List<String> afterList = Utils
 					.addToList("nn oscar-cm nns nn-chementity oscar-cj jj-chem jj nnp nn-state nn-apparatus");
 
@@ -292,7 +304,11 @@ public class PostProcessTags {
 					else if (stringbefore(beforeList, i, combinedTags)
 							&& stringafter(afterList, i, combinedTags)) {
 						newTag = "JJ";
-					} else if (stringbefore(beforeList, i, combinedTags)) {
+					} 
+					else if (stringbefore(beforeList, i, combinedTags)
+							&& combinedTags.get(i+1).getPOS().toLowerCase().startsWith("nn")) {
+						newTag = "JJ";
+					}else if (combinedTags.get(i-1).getPOS().toLowerCase().startsWith("dt")) {
 						newTag = "NN";
 					}
 				}

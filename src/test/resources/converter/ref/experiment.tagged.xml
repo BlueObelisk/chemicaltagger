@@ -3,7 +3,7 @@
 	<Sentence>
 		<NounPhrase>
 			<DT-THE>The</DT-THE>
-			<NN-CHEMENTITY>title</NN-CHEMENTITY>
+			<JJ>title</JJ>
 			<NN-CHEMENTITY>compound</NN-CHEMENTITY>
 		</NounPhrase>
 		<VerbPhrase>
@@ -131,7 +131,7 @@
 	<Sentence>
 		<NounPhrase>
 			<DT-THE>The</DT-THE>
-			<NN>resultant</NN>
+			<JJ>resultant</JJ>
 			<NN-CHEMENTITY>mixture</NN-CHEMENTITY>
 		</NounPhrase>
 		<VerbPhrase>
