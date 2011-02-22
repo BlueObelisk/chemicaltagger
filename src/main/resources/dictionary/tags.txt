@@ -3,8 +3,7 @@
 TM-UNICODE---®---Unicode Characters
 CD-UNICODE---×|&lt---Unicode Cardinal Digits
 CD---^(\d|-)?\d+\.?\d*$--- Cardinal Digits
-
-DT-THE---^(t|T)he$---The determiner 'THE';
+DT-THE---^the$---The determiner 'THE';
 
 # Prepositions
 IN-AS---^as$---The preposition 'AS'
@@ -77,7 +76,7 @@ JJ-CHEM---^Merrifield$|^crude$|^buffer$|^mono$|^fritted$|^(E|e)xcess|(A|a)mphiph
 
 #Add Tokens
 NN-ADD---^addition$---Add Noun
-NN-MIXTURE---^mixture$|^suspension$---Mixture Noun
+NN-MIXTURE---^mixture$|^(s|S)uspension$---Mixture Noun
 VB-DILUTE---^(pre|re)?(dilut)(e|s|ed|ing)?$---Dilute Verb
 VB-ADD---^(pre|re)?(add|mix|pour|dispers|introduc)(e|s|ed|ing)?$---Add Verb
 VB-CHARGE---^charge(d)?$---Charge Verb
@@ -145,8 +144,8 @@ VB-STIR---(pre|re)?(stir)(red|ring)?---Stir Verb
 
 #Synthesize Tokens
 VB-SYNTHESIZE---(pre|re)?(react|synthesize|synthesise|polymerize|polymerise|prepare)(s|d|ed)?$---Synthesize Verb
-NN-SYNTHESIZE---(pre|re|co)?(Hydrolysis|hydrolysis|condens|synthesiz|synthesis|(p|P)olymeris|(p|P)olymeriz|prepar|reaction)(ation|e|ed|ing)?$---Synthesize Noun
-NN-SYNTHESIZE---ROMP--Synthesize Noun
+NN-SYNTHESIZE---(pre|re|co)?(hydrolysis|condens|synthesiz|synthesis|polymeris|polymeriz|prepar|reaction)(ation|e|ed|ing)?$---Synthesize Noun
+NN-SYNTHESIZE---ROMP$--Synthesize Noun
 #Wait Tokens
 VB-WAIT---(wait|left)(ing)?---Wait Verb
 

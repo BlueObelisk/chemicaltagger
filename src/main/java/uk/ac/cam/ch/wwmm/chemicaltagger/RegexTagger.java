@@ -75,18 +75,22 @@ public class RegexTagger {
 	 * Main Function. Runs the regular expression tagger against the text and
 	 * stores the tags in POSContainer
 	 *****************************************************/
+	/**
+	 * @param posContainer
+	 * @return
+	 */
 	public POSContainer runTagger(POSContainer posContainer) {
 
 		List<String> tokenList = posContainer.getTokenList();
 		for (String token : tokenList) {
 			try {
-				token = token.toLowerCase();
 				Matcher m = Pattern.compile("dummy").matcher(token);
-
+                
 				String tag = "nil";
 				for (Rule r : rules) {
-					if (m.usePattern(r.pattern).lookingAt()) {
-						tag = r.name;
+					
+					if (m.usePattern(r.getPattern()).lookingAt()) {
+						tag = r.getName();
 						break;
 					}
 				}
@@ -102,15 +106,35 @@ public class RegexTagger {
 
 	/**************************************************************
 	 * The Rule class . Compiles regex rules. Used later for the regex tagger.
+	 * 
 	 ***************************************************************/
 	protected static class Rule {
 
-		final String name;
-		final Pattern pattern;
+		private String name;
+		private Pattern pattern;
+
+		public String getName() {
+			return name;
+		}
+
+		public Pattern getPattern() {
+			return pattern;
+		}
 
 		public Rule(String name, String regex) {
+			setRule(name,regex,true);
+		}
+		
+		public Rule(String name, String regex,boolean caseInsensitive) {
+			setRule(name,regex,caseInsensitive);
+		}
+		
+
+
+		private void setRule(String name, String regex,boolean caseInsensitive) {
 			this.name = name;
-			pattern = Pattern.compile(regex);
+			if (caseInsensitive) pattern = Pattern.compile("(?i)"+regex);
+			else pattern = Pattern.compile(regex);
 		}
 	}
 
