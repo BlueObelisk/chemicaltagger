@@ -1,10 +1,5 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
-import java.util.LinkedList;
-import java.util.List;
-
-import uk.ac.cam.ch.wwmm.oscar.document.IToken;
-import uk.ac.cam.ch.wwmm.oscar.document.Token;
 
 
 
