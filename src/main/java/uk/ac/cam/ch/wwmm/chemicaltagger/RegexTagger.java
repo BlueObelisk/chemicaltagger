@@ -133,7 +133,8 @@ public class RegexTagger {
 
 		private void setRule(String name, String regex,boolean caseInsensitive) {
 			this.name = name;
-			if (caseInsensitive) pattern = Pattern.compile("(?i)"+regex);
+			
+			if (caseInsensitive) pattern = Pattern.compile(regex,Pattern.CASE_INSENSITIVE);
 			else pattern = Pattern.compile(regex);
 		}
 	}
