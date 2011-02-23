@@ -91,7 +91,8 @@ public class ConverterTest {
 		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(in);
 		Document doc = new Document(new Element(DOCUMENT_ELEMENT));
 		try {
-			Tree t = chemistrySentenceParser.parseTags();
+			chemistrySentenceParser.parseTags(); Tree t = chemistrySentenceParser.getParseTree();
+			
 			ASTtoXML ast2XML = new ASTtoXML();
 			doc = ast2XML.convert(t);
 		} catch (Exception e) {

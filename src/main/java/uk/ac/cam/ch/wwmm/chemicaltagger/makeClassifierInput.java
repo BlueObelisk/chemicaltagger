@@ -57,7 +57,8 @@ public class makeClassifierInput {
 					ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
 							in);
 
-					Tree t = chemistrySentenceParser.parseTags();
+					chemistrySentenceParser.parseTags();
+					Tree t = chemistrySentenceParser.getParseTree() ;
 					ASTtoXML ast2XML = new ASTtoXML();
 					Utils.writeXMLToFile(ast2XML.convert(t,true), "target/ACTA-" + parentDir[i].getName()
 							+ "-" + nextDir[j].getName() + ".xml");

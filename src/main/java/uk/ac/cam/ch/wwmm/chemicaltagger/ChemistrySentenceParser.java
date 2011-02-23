@@ -68,7 +68,8 @@ public class ChemistrySentenceParser extends Thread {
 	public ChemistrySentenceParser(POSContainer posContainer) {
 		this.posContainer = posContainer;
 		try {
-			this.taggedTokenInStream = IOUtils.toInputStream(posContainer.getTokenTagTupleAsString(), "UTF-8");
+			this.taggedTokenInStream = IOUtils.toInputStream(
+					posContainer.getTokenTagTupleAsString(), "UTF-8");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -83,57 +84,40 @@ public class ChemistrySentenceParser extends Thread {
 		return parseTree;
 	}
 
-	
 	/********************************************
 	 * Main Function Pass inputStream to Antlr and produces an astTree as
 	 * output.
 	 * 
 	 * @return astTree (Tree)
 	 *******************************************/
-	public Tree parseTags() {
+	public void parseTags() {
 		ChemicalChunkerLexer lexer = null;
 
-		if (taggedTokenInStream == null) return null;
-		ANTLRInputStream input;
-		try {
-			input = new ANTLRInputStream(taggedTokenInStream, "UTF-8");
-		} catch (IOException ioexception) {
-			throw new RuntimeException("Antlr input Stream Error: "
-					+ ioexception.getMessage());
+		if (taggedTokenInStream == null)
+			parseTree = null;
+		else {
+			ANTLRInputStream input;
+			try {
+				input = new ANTLRInputStream(taggedTokenInStream, "UTF-8");
+			} catch (IOException ioexception) {
+				throw new RuntimeException("Antlr input Stream Error: "
+						+ ioexception.getMessage());
+			}
+
+			lexer = new ChemicalChunkerLexer(input);
+			CommonTokenStream tokens = new CommonTokenStream(lexer);
+			ChemicalChunkerParser parser = new ChemicalChunkerParser(tokens);
+			ChemicalChunkerParser.document_return result = null;
+			try {
+				result = parser.document();
+			} catch (RecognitionException e) {
+				throw new RuntimeException("Antlr input Stream Error: "
+						+ e.getMessage());
+
+			}
+			parseTree = (Tree) result.getTree();
 		}
-
-		lexer = new ChemicalChunkerLexer(input);
-		CommonTokenStream tokens = new CommonTokenStream(lexer);
-		ChemicalChunkerParser parser = new ChemicalChunkerParser(tokens);
-		ChemicalChunkerParser.document_return result = null;
-		try {
-			result = parser.document();
-		} catch (RecognitionException e) {
-			throw new RuntimeException("Antlr input Stream Error: "
-					+ e.getMessage());
-
-		}
-		parseTree = (Tree) result.getTree();
-		return parseTree;
-
 	}
-
-	/************************************
-	 * Produces the output of the AntlrParse as an XML Document.
-	 * 
-	 * @return doc (Document)
-	 ************************************/
-	public Document parseTagsToDocument() {
-		Tree t = parseTags();
-		if (t == null)
-			doc = null;
-		else
-			doc = new ASTtoXML().convert(t, true);
-
-		return doc;
-	}
-
-
 
 	public static void main(String[] args) throws Exception {
 		String taggedTokenInputFilename = null;
@@ -150,7 +134,6 @@ public class ChemistrySentenceParser extends Thread {
 		}
 		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
 				taggedTokenInputFilename);
-		
 
 	}
 
@@ -159,5 +142,4 @@ public class ChemistrySentenceParser extends Thread {
 		return new ASTtoXML().convert(parseTree, true);
 	}
 
-	
 }

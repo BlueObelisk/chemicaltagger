@@ -35,14 +35,14 @@ import uk.ac.cam.ch.wwmm.chemicaltagger.POSContainer;
 public class ExtractFromEPO {
 
 	private final static Logger LOG = Logger.getLogger(ExtractFromEPO.class);
-//	private final static String PATENT_NODE = "ep-patent-document";
+	// private final static String PATENT_NODE = "ep-patent-document";
 	private final static String DESCRIPTION_NODE = "//description";
 	private final static String ID_ATTRIBUTE = "id";
 	private final static String DATEPUB_ATTRIBUTE = "date-publ";
 
 	private final static String INVENTOR_NODE = "//B721";
 	private final static String NAME_NODE = "snm";
-//	private final static String ADDRESS_NODE = "*//adr";
+	// private final static String ADDRESS_NODE = "*//adr";
 	private final static String ADDRESS_STREET_NODE = "*//str";
 	private final static String ADDRESS_CITY_NODE = "*//cty";
 	private final static String ADDRESS_COUNTRY_NODE = "*//ctry";
@@ -67,9 +67,7 @@ public class ExtractFromEPO {
 
 	public ExtractFromEPO() {
 
-		
 	}
-
 
 	/****************************************
 	 * Parses an XML files and saves the output into DocumentContainer
@@ -79,17 +77,16 @@ public class ExtractFromEPO {
 	 * @return docContainer (DocumentContainer)
 	 ****************************************/
 	public DocumentContainer getInfo(String inputPath) {
-		
+
 		Document doc = null;
 		DocumentContainer docContainer = new DocumentContainer();
 		try {
-			System.out.println("Path="+inputPath);
-			
+			System.out.println("Path=" + inputPath);
+
 			Reader read = new FileReader(new File(inputPath));
 			System.out.println(read.read());
 			doc = new Builder().build(read);
-            
-		
+
 		} catch (ParsingException ex) {
 			LOG.fatal("ParsingException " + ex.getMessage(),
 					new RuntimeException());
@@ -286,8 +283,8 @@ public class ExtractFromEPO {
 		String spectra = "";
 		Nodes spectrum = description.get(0).query("//spectrum");
 		for (int i = 0; i < spectrum.size(); i++) {
-			String cleanSpectrum = spectrum.get(i).getValue().trim().replace(
-					"\n", "");
+			String cleanSpectrum = spectrum.get(i).getValue().trim()
+					.replace("\n", "");
 			if (StringUtils.isNotEmpty(cleanSpectrum)) {
 				spectra = spectra + " " + cleanSpectrum;
 			}
@@ -313,7 +310,7 @@ public class ExtractFromEPO {
 		List<DocumentContainer> docs = new ArrayList<DocumentContainer>();
 		String path = "src/test/resources/uk/ac/cam/ch/wwmm/chemicaltagger/epoPatents/";
 
-//		String filePath = "uk/ac/cam/ch/wwmm/chemicaltagger/epoPatents/";
+		// String filePath = "uk/ac/cam/ch/wwmm/chemicaltagger/epoPatents/";
 		File patentDirectory = new File(path);
 		String[] patentDir = patentDirectory.list();
 		System.err.println(patentDir.length);
@@ -323,9 +320,9 @@ public class ExtractFromEPO {
 
 			String resourcePath = path + file;
 			System.err.println(resourcePath);
-//			Utils utils = new Utils();
-			
-//			InputStream inStream = new Utils().getInputStream(resourcePath);
+			// Utils utils = new Utils();
+
+			// InputStream inStream = new Utils().getInputStream(resourcePath);
 			DocumentContainer docContainer = extractEPO.getInfo(resourcePath);
 			docs.add(docContainer);
 
@@ -346,14 +343,16 @@ public class ExtractFromEPO {
 		antlrErrorWriter.flush();
 
 		for (DocumentContainer doc : docs) {
-			POSContainer posContainer = ChemistryPOSTagger.getInstance().runTaggers(doc.getContent());
+			POSContainer posContainer = ChemistryPOSTagger.getInstance()
+					.runTaggers(doc.getContent());
 			String tagged = posContainer.getTokenTagTupleAsString();
 
 			InputStream in = new ByteArrayInputStream(tagged.getBytes("UTF-8"));
 			ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
 					in);
 
-			Tree t = chemistrySentenceParser.parseTags();
+			chemistrySentenceParser.parseTags();
+			Tree t = chemistrySentenceParser.getParseTree();
 			String errors = checkNodes(t, doc.getId(), errorStream);
 			antlrErrorWriter.append(errors);
 			antlrErrorWriter.flush();

@@ -54,7 +54,7 @@ public class ExtractFromXMLTest {
 				ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
 						in);
 
-				Tree t = chemistrySentenceParser.parseTags();
+				chemistrySentenceParser.parseTags(); Tree t = chemistrySentenceParser.getParseTree();
 				ASTtoXML ast2XML = new ASTtoXML();
 				Utils.writeXMLToFile(ast2XML.convert(t),
 						"target/taggedExperiment.xml");
