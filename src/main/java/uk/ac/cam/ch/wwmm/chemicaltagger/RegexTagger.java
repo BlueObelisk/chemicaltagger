@@ -42,8 +42,6 @@ public class RegexTagger {
 		String line;
 		try {
 
-			// BufferedReader in = new BufferedReader(new FileReader(tagFile));
-			// PMR
 			InputStream is = this.getClass().getClassLoader()
 					.getResourceAsStream(tagFile);
 			BufferedReader in = new BufferedReader(new InputStreamReader(is,
