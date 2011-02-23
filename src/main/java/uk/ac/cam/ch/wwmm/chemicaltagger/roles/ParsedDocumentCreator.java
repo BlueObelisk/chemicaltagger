@@ -37,7 +37,8 @@ public class ParsedDocumentCreator {
 		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
 				in);
 
-		Tree t = chemistrySentenceParser.parseTags();
+		chemistrySentenceParser.parseTags();
+		Tree t = chemistrySentenceParser.getParseTree();
 		ASTtoXML ast2XML = new ASTtoXML();
 		Document doc = ast2XML.convert(t, true);
 		Utils.writeXMLToFile(doc, "target/roleIdentifier.xml");

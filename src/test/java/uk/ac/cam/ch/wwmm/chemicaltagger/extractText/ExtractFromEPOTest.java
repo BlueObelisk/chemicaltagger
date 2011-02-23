@@ -130,7 +130,7 @@ public class ExtractFromEPOTest {
 			ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
 					in);
 
-			Tree t = chemistrySentenceParser.parseTags();
+			chemistrySentenceParser.parseTags(); Tree t = chemistrySentenceParser.getParseTree();
 			String errors = checkNodes(t, doc.getId(), errorStream);
 			antlrErrorWriter.append(errors);
 			antlrErrorWriter.flush();

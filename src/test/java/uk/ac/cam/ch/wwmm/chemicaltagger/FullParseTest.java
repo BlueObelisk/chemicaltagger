@@ -205,7 +205,8 @@ public class FullParseTest {
 				.runTaggers(text);
 		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
 				posContainer);
-		Tree t = chemistrySentenceParser.parseTags();
+		chemistrySentenceParser.parseTags();
+		Tree t = chemistrySentenceParser.getParseTree();
 		checkNodes(t);
 	}
 
@@ -213,7 +214,8 @@ public class FullParseTest {
 	public void testFullSentence22() throws UnsupportedEncodingException {
 		String text = "HyperBranched Polymerization . A typical polymerization procedure was as follows . Cp2TiCl2 ( 25 mg , 0.1 × 10 -3 M ) , Zn ( 7 mg , 0.1 × 10 -3 M ) and dioxane ( 0.5 mL ) were added into a 5 mL glass tube , and then the reaction solution was degassed using three freeze-vacuum-thaw cycles , and reacted at room temperature for 10 min , until the solution turned lime green . GMA ( 0.355 g , 2.5 × 10 -3 M ) , St ( 0.260 g , 2.5 × 10 -3 M ) , CuBr 2 ( 23 mg , 0.1 × 10 -3 M ) and bpy ( 48 mg , 0.3 × 10 -3 M ) were added into the reaction solution , and the tube was again degassed using three freeze-vacuum-thaw cycles . The tube was then sealed under a vacuum , and the sealed tube was immersed in an oil bath at 90 °C . After polymerization for 4 h , the tube was rapidly cooled to room temperature . The polymer solution in THF was passed through a short column of neutral alumina to remove the metal salt . After two precipitations by addition of the polymer solution into petroleum ether ( 30-60 °C ) , the hyperbranched P(GMA-co-St)-Brn(HP(GMA-St)-Brn) was obtained in a 51 % yield after filtration and drying in a vacuum oven at 30 °C overnight . The monomer conversion was determined gravimetrically . was 78000 and was 1.19 .";
 
-		POSContainer posContainer = ChemistryPOSTagger.getInstance().runTaggers(text);
+		POSContainer posContainer = ChemistryPOSTagger.getInstance()
+				.runTaggers(text);
 		System.out.println(posContainer.getTokenTagTupleAsString());
 		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
 				posContainer);
@@ -223,7 +225,6 @@ public class FullParseTest {
 		Utils.writeXMLToFile(doc, "target/fileExperiment.xml");
 		checkNodes(t);
 	}
-
 
 	@Test
 	public void testFullSentence23() throws UnsupportedEncodingException {
@@ -249,7 +250,8 @@ public class FullParseTest {
 				.runTaggers(text);
 		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
 				posContainer);
-		Tree t = chemistrySentenceParser.parseTags();
+		chemistrySentenceParser.parseTags();
+		Tree t = chemistrySentenceParser.getParseTree();
 		Document doc = new ASTtoXML().convert(t);
 		Utils.writeXMLToFile(doc, "target/file25.xml");
 		Assert.assertEquals(1, doc.query("//Sentence").size());
@@ -263,7 +265,8 @@ public class FullParseTest {
 				.runTaggers(text);
 		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
 				posContainer);
-		Tree t = chemistrySentenceParser.parseTags();
+		chemistrySentenceParser.parseTags();
+		Tree t = chemistrySentenceParser.getParseTree();
 
 		Document doc = new ASTtoXML().convert(t, true);
 		Utils.writeXMLToFile(doc, "target/file26.xml");
@@ -281,7 +284,8 @@ public class FullParseTest {
 				.runTaggers(text);
 		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
 				posContainer);
-		Tree t = chemistrySentenceParser.parseTags();
+		chemistrySentenceParser.parseTags();
+		Tree t = chemistrySentenceParser.getParseTree();
 		System.out.println(t.toStringTree());
 		Document doc = new ASTtoXML().convert(t, true);
 		Utils.writeXMLToFile(doc, "target/file27.xml");

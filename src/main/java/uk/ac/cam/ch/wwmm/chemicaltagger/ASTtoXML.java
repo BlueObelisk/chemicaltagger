@@ -2,7 +2,6 @@ package uk.ac.cam.ch.wwmm.chemicaltagger;
 
 import nu.xom.Document;
 import nu.xom.Element;
-import nu.xom.Text;
 
 import org.antlr.runtime.tree.Tree;
 import org.apache.commons.lang.StringUtils;
@@ -17,7 +16,7 @@ import org.apache.log4j.Logger;
 public class ASTtoXML {
 
 	final Logger LOG = Logger.getLogger(ASTtoXML.class);
-
+    private static int TEXT_NODE = 10;
 	public ASTtoXML() {
 	}
 
@@ -89,7 +88,7 @@ public class ASTtoXML {
 
 			String text = astTree.getChild(i).getText();
 			int type = astTree.getChild(i).getType();
-			if (type == 10) {
+			if (type == TEXT_NODE) {
 				newNode.appendChild(text);
 			} else if (type != 0) {
 				text = Utils.makeNCName(text);

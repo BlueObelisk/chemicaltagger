@@ -181,14 +181,10 @@ public class PostProcessTrees {
 
 					}
 					elementList = new ArrayList<Element>();
-					// System.out.println("---- New sentence is "
-					// + newSentence.toXML());
-
 				}
 				elementList.add(phraseElement);
 
 				seenVerb = true;
-				// System.out.println("** I contain a verb:: ");
 				String elementListContent = elementListToString(elementList);
 
 				if (elementListContent.toLowerCase().contains("timephrase")) {
@@ -206,8 +202,6 @@ public class PostProcessTrees {
 
 					Attribute attribute = new Attribute("type",
 							"ApparatusAction");
-					// System.out.println("* I contain keyword:: "
-					// + actionPhrase.toXML());
 					actionPhrase = createActionPhrase(elementList,
 							phraseElement, attribute);
 					appendActionPhrase(newSentence, actionPhrase);
@@ -216,7 +210,6 @@ public class PostProcessTrees {
 					elementList = new ArrayList<Element>();
 					seenVerb = false;
 				}
-				// elementList = new ArrayList<Element>();
 			} else if (seenVerb
 					& splitList.contains(phraseElement.getLocalName()
 							.toLowerCase())) {

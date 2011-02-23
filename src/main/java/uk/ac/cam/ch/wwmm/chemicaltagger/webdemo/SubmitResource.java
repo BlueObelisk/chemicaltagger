@@ -34,7 +34,8 @@ public class SubmitResource extends ServerResource {
         POSContainer container = ChemistryPOSTagger.getInstance().runTaggers(body);
         InputStream taggedStream = IOUtils.toInputStream(container.getTokenTagTupleAsString(), "UTF-8");
         ChemistrySentenceParser parser = new ChemistrySentenceParser(taggedStream);
-        Document doc = parser.parseTagsToDocument();
+        parser.parseTags();
+        Document doc = parser.getDocument();
         Map<String,Object> model = new HashMap<String, Object>();
         XMLtoHTML xmltoHTML = new XMLtoHTML();
         xmltoHTML.convert(doc);
