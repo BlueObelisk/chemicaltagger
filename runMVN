@@ -1,0 +1,7 @@
+#!/bin/bash
+cp pom.xml pomNoAntlr.xml
+cp pomAntlr.xml pom.xml
+mvn clean test
+mv -f target/generated-sources/antlr3/uk/ac/cam/ch/wwmm/chemicaltagger/ChemicalChunker* src/main/java/uk/ac/cam/ch/wwmm/pregenerated/
+cp pomNoAntlr.xml pom.xml
+mvn clean test 

@@ -12,10 +12,7 @@ glob:cInChI-1
 glob:__Test__*
 glob:patent*
 glob:*~
-glob:pomNoAntlr.xml
-glob:pomAntlr.xml
 glob:log
-glob:runMVN
 glob:todo
 glob:taggedPatents*
 glob:.settings/org.eclipse.jdt.core.prefs
