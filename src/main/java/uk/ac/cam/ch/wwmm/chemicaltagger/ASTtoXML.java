@@ -47,8 +47,7 @@ public class ASTtoXML {
 		Element root = new Element("Document");
 		Document doc = null;
 		if (astTree.getChildCount() > 0) {
-			if (StringUtils.isNotEmpty(astTree.getChild(0).getParent()
-					.getText())) {
+			if (StringUtils.isNotEmpty(astTree.getText())) {
 				Element sentenceNode = new Element("Sentence");
 				root.appendChild(getNodes(astTree, sentenceNode));
 				doc = new Document(root);
