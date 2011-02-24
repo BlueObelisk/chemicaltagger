@@ -236,7 +236,7 @@ public class FullParseTest {
 		chemistrySentenceParser.parseTags();
 		Tree t = chemistrySentenceParser.getParseTree();
 		Document doc = chemistrySentenceParser.getDocument();
-		Utils.writeXMLToFile(doc, "target/file24.xml");
+		Utils.writeXMLToFile(doc, "target/file23.xml");
 
 		Assert.assertEquals("Input string is equal to output content", text
 				.replace(" ", "").toLowerCase(), doc.getValue().toLowerCase());
@@ -253,7 +253,7 @@ public class FullParseTest {
 		chemistrySentenceParser.parseTags();
 		Tree t = chemistrySentenceParser.getParseTree();
 		Document doc = new ASTtoXML().convert(t);
-		Utils.writeXMLToFile(doc, "target/file25.xml");
+		Utils.writeXMLToFile(doc, "target/file24.xml");
 		Assert.assertEquals(1, doc.query("//Sentence").size());
 		checkNodes(t);
 	}
@@ -269,7 +269,7 @@ public class FullParseTest {
 		Tree t = chemistrySentenceParser.getParseTree();
 
 		Document doc = new ASTtoXML().convert(t, true);
-		Utils.writeXMLToFile(doc, "target/file26.xml");
+		Utils.writeXMLToFile(doc, "target/file25.xml");
 
 		Assert.assertEquals("Input string is equal to output content", text
 				.replace(" ", "").toLowerCase(), doc.getValue().toLowerCase());
@@ -288,7 +288,7 @@ public class FullParseTest {
 		Tree t = chemistrySentenceParser.getParseTree();
 		System.out.println(t.toStringTree());
 		Document doc = new ASTtoXML().convert(t, true);
-		Utils.writeXMLToFile(doc, "target/file27.xml");
+		Utils.writeXMLToFile(doc, "target/file26.xml");
 
 		Assert.assertEquals("Input string is equal to output content", text
 				.replace(" ", "").toLowerCase(), doc.getValue().toLowerCase());
@@ -308,7 +308,6 @@ public class FullParseTest {
 		for (int i = 0; i < nodeCount; i++) {
 			String text = astTree.getChild(i).getText();
 			int type = astTree.getChild(i).getType();
-			// Log.info("****Text=" + text + " type==" + type);
 			Assert.assertNotSame("Antlr Parse Fails for the for the text '"
 					+ text + "'", 0, type);
 			checkNodes(astTree.getChild(i));
