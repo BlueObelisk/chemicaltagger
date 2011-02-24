@@ -16,15 +16,7 @@
 	</repositories>
 	<build>
 		<plugins>
-			<!-- removed antlr generation of *.java to permit build on Hudson if you 
-				change the *.g comment this back in again -->
-			<!-- <plugin> <groupId>org.antlr</groupId> <artifactId>antlr3-maven-plugin</artifactId> 
-				<version>3.2</version> <executions> <execution> <goals> <goal>antlr</goal> 
-				</goals> <configuration> <sourceDirectory> src/main/antlr3 </sourceDirectory> 
-				<conversionTimeout>10000</conversionTimeout> <libDirectory> src/main/antlr3/imports 
-				</libDirectory> <messageFormat>antlr</messageFormat> <outputDirectory> target/generated-sources/antlr3 
-				</outputDirectory> <verbose>true</verbose> <grammars>*.g</grammars> </configuration> 
-				</execution> </executions> </plugin> -->
+		
 
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -158,4 +150,39 @@
 			<version>2.0.0</version>
 		</dependency>
 	</dependencies>
+	
+	<profiles>
+		<profile>
+			<id>rebuildGrammar</id>
+			
+			<build>
+				<plugins>
+					<!-- removed antlr generation of *.java to permit build on Hudson if you 
+						change the *.g comment this back in again -->
+					<plugin>
+						<groupId>org.antlr</groupId>
+						<artifactId>antlr3-maven-plugin</artifactId>
+						<version>3.2</version>
+						<executions>
+							<execution>
+								<goals>
+									<goal>antlr</goal>
+								</goals>
+								<configuration>
+									<sourceDirectory>src/main/antlr3/</sourceDirectory>
+									<conversionTimeout>10000</conversionTimeout>
+									<libDirectory>src/main/antlr3/</libDirectory>
+									<messageFormat>antlr</messageFormat>
+									<outputDirectory>src/main/java/</outputDirectory>
+									<verbose>true</verbose>
+									<grammars>*.g</grammars>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>
