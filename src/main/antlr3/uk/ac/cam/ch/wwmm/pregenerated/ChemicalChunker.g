@@ -34,6 +34,7 @@ MOLECULE;
 UNNAMEDMOLECULE;
 QUANTITY;
 }
+
 	
 @header {
     package uk.ac.cam.ch.wwmm.pregenerated;
@@ -57,9 +58,9 @@ TOKEN : (ACHAR|'?'|';'| '_'|',' |'.'|')'|'('|'/'|'-'|'='|':'|'%'|'\''|'{'|'}'|'[
 
 document: sentences+-> ^(Sentence  sentences )+ ;
 
-sentences:  (sentence|unmatchedPhrase)+    (comma|stop)*;
+sentences:  (sentenceStructure|unmatchedPhrase)+    (comma|stop)*;
 
-sentence:  (nounphrase|verbphrase|prepphrase)+ (advAdj|colon) * (conjunction|rbconj)*;
+sentenceStructure:  (nounphrase|verbphrase|prepphrase)+ (advAdj|colon) * (conjunction|rbconj)*;
 
 
 unmatchedPhrase
