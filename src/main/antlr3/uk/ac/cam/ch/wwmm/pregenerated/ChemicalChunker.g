@@ -49,10 +49,10 @@ fragment ACHAR	:	('A'..'Z') | ('a'..'z');
 // fragment ACHAR : ~('\\'|'"') ; 
 
 fragment DIGIT	: ('0'..'9');
-fragment UNICODE	:  '\u00B0'..'\ufffe';
+fragment UNICODE	:  '\u00A0'..'\ufffe';
 
 //TOKEN	:	(ACHAR|DIGIT|UNICODE)+;
-TOKEN : (ACHAR|'?'|';'| '_'|',' |'.'|')'|'('|'/'|'-'|'='|':'|'%'|'\''|'{'|'}'|'['|']'|'>'|'<'|'@'|'+'|'|'|'®'|DIGIT|UNICODE)+;
+TOKEN : (ACHAR|'?'|';'| '_'|',' |'.'|')'|'('|'/'|'-'|'='|':'|'%'|'\''|'{'|'}'|'['|']'|'>'|'<'|'@'|'+'|'|'|DIGIT|UNICODE)+;
 
 
 
@@ -73,6 +73,7 @@ unmatchedTokens
 nounphrase
 	:	nounphraseStructure ->  ^(NounPhrase  nounphraseStructure);	
 	
+
 nounphraseStructure 
 	:	nounphraseStructure1|nounphraseStructure2;
 nounphraseStructure1
