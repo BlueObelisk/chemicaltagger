@@ -30,11 +30,11 @@ import uk.ac.cam.ch.wwmm.pregenerated.ChemicalChunkerParser;
  *****************************************/
 public class ChemistrySentenceParser extends Thread {
 
-	private InputStream taggedTokenInStream = null;
+	protected InputStream taggedTokenInStream = null;
 	private final Logger LOG = Logger.getLogger(ChemistrySentenceParser.class);
 	private Document doc = null;
-	private Tree parseTree = null;
-	private POSContainer posContainer = null;
+	protected Tree parseTree = null;
+	protected POSContainer posContainer = null;
 
 	/*********************************
 	 * Constructor Class.
@@ -137,7 +137,6 @@ public class ChemistrySentenceParser extends Thread {
 	}
 
 	public Document getDocument() {
-		// TODO Auto-generated method stub
 		return new ASTtoXML().convert(parseTree, true);
 	}
 
