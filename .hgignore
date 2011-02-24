@@ -20,6 +20,7 @@ glob:.settings/org.maven.ide.eclipse.prefs
 glob:*ChemicalChunker.tokens
 glob:*.tokens
 glob:*.exe
+glob:*~
 \.orig\..*$
 \.orig$
 \.chg\..*$
