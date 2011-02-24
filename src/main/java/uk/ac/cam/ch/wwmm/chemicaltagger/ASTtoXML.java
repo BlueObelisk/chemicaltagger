@@ -3,6 +3,7 @@ package uk.ac.cam.ch.wwmm.chemicaltagger;
 import nu.xom.Document;
 import nu.xom.Element;
 
+import org.antlr.runtime.Token;
 import org.antlr.runtime.tree.Tree;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
@@ -83,31 +84,28 @@ public class ASTtoXML {
 	public Element getNodes(Tree astTree, Element node) {
 
 		int nodeCount = astTree.getChildCount();
-		Element newNode = null;
 
 		for (int i = 0; i < nodeCount; i++) {
-
-			String text = astTree.getChild(i).getText();
-			int type = astTree.getChild(i).getType();
+			Tree astChild = astTree.getChild(i);
+			String text = astChild.getText();
+			int type = astChild.getType();
 			if (type == ChemicalChunkerParser.TOKEN) {
-				newNode.appendChild(text);
-			} else if (type != 0) {
+				node.appendChild(text);
+			} else if (type != Token.INVALID_TOKEN_TYPE) {
 				text = Utils.makeNCName(text);
 				try {
-					newNode = new Element(text);
+					Element newNode = new Element(text);
 					node.appendChild(newNode);
-					getNodes(astTree.getChild(i), newNode);
+					getNodes(astChild, newNode);
 				} catch (Exception e) {
 					LOG.debug("Can't Parse " + e.getMessage());
 				}
 			}
 			else{
 				Element unmatched = new Element("UnmatchedPhrase");
-				unmatched.appendChild(astTree.getChild(i).getText());
+				unmatched.appendChild(text);
 				node.appendChild(unmatched);
-				
 			}
-
 		}
 		return node;
 	}
