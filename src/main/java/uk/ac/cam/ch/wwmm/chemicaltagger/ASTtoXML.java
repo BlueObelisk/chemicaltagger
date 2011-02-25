@@ -19,6 +19,7 @@ import uk.ac.cam.ch.wwmm.pregenerated.ChemicalChunkerParser;
 public class ASTtoXML {
 
 	final Logger LOG = Logger.getLogger(ASTtoXML.class);
+
 	public ASTtoXML() {
 	}
 
@@ -57,7 +58,8 @@ public class ASTtoXML {
 		}
 		if (postProcess) {
 			PostProcessTrees procTree = new PostProcessTrees();
-			if (doc == null) return null;
+			if (doc == null)
+				return null;
 			doc = procTree.process(doc);
 		}
 		return doc;
@@ -88,19 +90,21 @@ public class ASTtoXML {
 			Tree astChild = astTree.getChild(i);
 			String text = astChild.getText();
 			int type = astChild.getType();
-			if (type == ChemicalChunkerParser.TOKEN) {
-				node.appendChild(text);
-			} else if (type != Token.INVALID_TOKEN_TYPE) {
-				text = Utils.makeNCName(text);
-				try {
-					Element newNode = new Element(text);
-					node.appendChild(newNode);
-					getNodes(astChild, newNode);
-				} catch (Exception e) {
-					LOG.debug("Can't Parse " + e.getMessage());
+			if (type != Token.INVALID_TOKEN_TYPE) {
+				if (astChild.getChildCount() == 0) {
+					// if (type == ChemicalChunkerParser.TOKEN) {
+					node.appendChild(text);
+				} else {
+					text = Utils.makeNCName(text);
+					try {
+						Element newNode = new Element(text);
+						node.appendChild(newNode);
+						getNodes(astChild, newNode);
+					} catch (Exception e) {
+						LOG.debug("Can't Parse " + e.getMessage());
+					}
 				}
-			}
-			else{
+			} else {
 				Element unmatched = new Element("UnmatchedPhrase");
 				unmatched.appendChild(text);
 				node.appendChild(unmatched);

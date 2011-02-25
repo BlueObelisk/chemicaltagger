@@ -172,7 +172,7 @@ public class RecombineTokensTest {
 		POSContainer posContainer = new POSContainer();
 		String inputSentence = "The resultant mixture was added dropwise to Cu(II) nitrate hexahydrate (1.00 mmol ) .";
 
-		String expectedOutput = "DT-THE The JJ resultant NN-CHEMENTITY mixture VBD was VB-ADD added RB dropwise TO to OSCAR-CM Cu(II) OSCAR-CM nitrate OSCAR-CM hexahydrate -LRB- ( CD 1.00 NN-AMOUNT mmol -RRB- ) STOP .";
+		String expectedOutput = "DT-THE The JJ-COMPOUND resultant NN-CHEMENTITY mixture VBD was VB-ADD added RB dropwise TO to OSCAR-CM Cu(II) OSCAR-CM nitrate OSCAR-CM hexahydrate -LRB- ( CD 1.00 NN-AMOUNT mmol -RRB- ) STOP .";
 		inputSentence = Utils.formatSentence(inputSentence);
 
         posContainer.setInputText(inputSentence);
