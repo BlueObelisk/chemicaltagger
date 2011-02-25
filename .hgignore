@@ -17,8 +17,6 @@ glob:todo
 glob:taggedPatents*
 glob:.settings/org.eclipse.jdt.core.prefs
 glob:.settings/org.maven.ide.eclipse.prefs
-glob:*ChemicalChunker.tokens
-glob:*.tokens
 glob:*.exe
 glob:*~
 \.orig\..*$
