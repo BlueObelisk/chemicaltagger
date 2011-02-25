@@ -32,7 +32,6 @@ public class ChemistrySentenceParser extends Thread {
 
 	protected InputStream taggedTokenInStream = null;
 	private final Logger LOG = Logger.getLogger(ChemistrySentenceParser.class);
-	private Document doc = null;
 	protected Tree parseTree = null;
 	protected POSContainer posContainer = null;
 
