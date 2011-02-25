@@ -331,7 +331,6 @@ public class PostProcessTrees {
 	 */
 
 	private void setRole(Element previousElement, String role) {
-		System.out.println(previousElement.toXML());
 		Nodes moleculeNodes = previousElement.query(".//MOLECULE");
 		for (int i = 0; i < moleculeNodes.size(); i++) {
 			Element moleculeElement = (Element) moleculeNodes.get(i);

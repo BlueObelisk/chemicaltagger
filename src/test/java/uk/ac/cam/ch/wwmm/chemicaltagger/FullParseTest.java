@@ -216,7 +216,6 @@ public class FullParseTest {
 
 		POSContainer posContainer = ChemistryPOSTagger.getInstance()
 				.runTaggers(text);
-		System.out.println(posContainer.getTokenTagTupleAsString());
 		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
 				posContainer);
 		chemistrySentenceParser.parseTags();
@@ -286,7 +285,6 @@ public class FullParseTest {
 				posContainer);
 		chemistrySentenceParser.parseTags();
 		Tree t = chemistrySentenceParser.getParseTree();
-		System.out.println(t.toStringTree());
 		Document doc = new ASTtoXML().convert(t, true);
 		Utils.writeXMLToFile(doc, "target/file26.xml");
 
