@@ -212,7 +212,9 @@ public class PostProcessTags {
 			if (stringbefore(beforeList, i, combinedTags)) {
 				newTag = "NN-YIELD";
 			}
-
+			List<String> afterList = Utils.addToList("nn-chementity");
+            if (stringafter(afterList, i, combinedTags))
+            	newTag = "JJ-COMPOUND";
 		}
 
 		if (currentTag.toLowerCase().startsWith("vbd")) {
