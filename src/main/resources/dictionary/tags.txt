@@ -106,7 +106,7 @@ VB-DISSOLVE---^(re)?dissolv(ed|e|ing)?---Dissolve Verb
 VB-DRY---^(freeze|re)?(-)?dr(y|ied|ying)?$---Dry Verb
 NN-DRY---^dryness$---Dry Noun
 #Extract Tokens
-VB-EXTRACT---extract(ed|ing)?---Extract Verb
+VB-EXTRACT---^extract(ed|ing)?$---Extract Verb
 NN-EXTRACT---extraction---Extract Noun
 
 #Filter Tokens
