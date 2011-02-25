@@ -251,10 +251,12 @@ unnamedmoleculeamount3
 
 unnamedmoleculeamount4
 	:(quantity|mixture) nnchementity;	
+
+unnamedmoleculeamount5	:
+          jjcomp nnchementity oscarcd? (quantity|mixture)* ;	
+	
 unnamedmoleculeamount
-	:(unnamedmoleculeamount1 | unnamedmoleculeamount2 | unnamedmoleculeamount3|unnamedmoleculeamount4) ;	
-
-
+	:(unnamedmoleculeamount5|unnamedmoleculeamount1 | unnamedmoleculeamount2 | unnamedmoleculeamount3|unnamedmoleculeamount4) ;
 unnamedmolecule 
 	: unnamedmoleculeamount -> ^(UNNAMEDMOLECULE unnamedmoleculeamount);	
 		
@@ -283,7 +285,7 @@ oscaront:'OSCAR-ONT' TOKEN -> ^('OSCAR-ONT' TOKEN);
 tmunicode:'TM-UNICODE' TOKEN -> ^('TM-UNICODE' TOKEN);
 cdunicode:'CD-UNICODE' TOKEN -> ^('CD-UNICODE' TOKEN);
 jjchem:'JJ-CHEM' TOKEN -> ^('JJ-CHEM' TOKEN);
-
+jjcomp:'JJ-COMPOUND' TOKEN -> ^('JJ-COMPOUND' TOKEN);
 // Prepositions
 inas:'IN-AS' TOKEN -> ^('IN-AS' TOKEN);
 inbefore:'IN-BEFORE' TOKEN -> ^('IN-BEFORE' TOKEN);
