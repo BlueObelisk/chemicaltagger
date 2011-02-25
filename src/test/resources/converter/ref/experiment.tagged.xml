@@ -3,8 +3,10 @@
 	<Sentence>
 		<NounPhrase>
 			<DT-THE>The</DT-THE>
-			<JJ>title</JJ>
-			<NN-CHEMENTITY>compound</NN-CHEMENTITY>
+			<UNNAMEDMOLECULE>
+				<JJ-COMPOUND>title</JJ-COMPOUND>
+				<NN-CHEMENTITY>compound</NN-CHEMENTITY>
+			</UNNAMEDMOLECULE>
 		</NounPhrase>
 		<VerbPhrase>
 			<VBD>was</VBD>
@@ -131,8 +133,10 @@
 	<Sentence>
 		<NounPhrase>
 			<DT-THE>The</DT-THE>
-			<JJ>resultant</JJ>
-			<NN-CHEMENTITY>mixture</NN-CHEMENTITY>
+			<UNNAMEDMOLECULE>
+				<JJ-COMPOUND>resultant</JJ-COMPOUND>
+				<NN-CHEMENTITY>mixture</NN-CHEMENTITY>
+			</UNNAMEDMOLECULE>
 		</NounPhrase>
 		<VerbPhrase>
 			<VBD>was</VBD>
