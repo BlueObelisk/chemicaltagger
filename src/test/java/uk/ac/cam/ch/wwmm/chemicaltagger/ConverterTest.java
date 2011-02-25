@@ -36,8 +36,6 @@ public class ConverterTest {
 		}
 		OutputStream outStream = new FileOutputStream(fileOut);
 		CMLUtil.debug(out.getRootElement(), outStream, 0);
-		System.out.println(ref.getRootElement().toXML());
-		System.out.println("OUT=="+out.getRootElement().toXML());
 		JumboTestUtils.assertEqualsCanonically(
 				"chemical tagger", ref.getRootElement(), out.getRootElement(), true);
 	}

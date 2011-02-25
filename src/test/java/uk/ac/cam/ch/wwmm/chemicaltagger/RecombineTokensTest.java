@@ -204,7 +204,7 @@ public class RecombineTokensTest {
 		posContainer.recombineHyphenedTokens();
 
 		posContainer =  new PostProcessTags().correctCombinedTagsList(posContainer);
-		System.out.println(StringUtils.join(posContainer.getTokenList().listIterator()," "));
+
 		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""),StringUtils.join(posContainer.getTokenList().listIterator(),"").toLowerCase());
 	
 
@@ -227,7 +227,7 @@ public class RecombineTokensTest {
 		posContainer.recombineHyphenedTokens();
 
 		posContainer =  new PostProcessTags().correctCombinedTagsList(posContainer);
-		System.out.println(StringUtils.join(posContainer.getTokenList().listIterator()," "));
+
 		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""),StringUtils.join(posContainer.getTokenList().listIterator(),"").toLowerCase());
 	}
 }
