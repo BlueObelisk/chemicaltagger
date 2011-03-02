@@ -30,8 +30,8 @@ FW---^et(.)?$|^al(.)?$|^et(.)?al(.)?$
 NN---^wt.$---Weight
 NN-STATE---powder|glass|liquid|oil|solid|gas|syrup|crystal|gum|needle|prisms---Physical States
 NN-TIME---^period(s)?$|^min(utes|.)?$|^hour(s)?|^month(s)?|^week(s|end)?$|^seconds$|^d$|^h$|^days$|.*night|hr(s)?|^(t|T)ime$---Time Token
-NN-MASS---(\d\d+)?(m|k|\xce\xbc)?(g|gram)(s)?$---Grams
-NN-AMOUNT---(\d\d+)?(m|k|\xce\xbc)?mol(s)?$---Mols
+NN-MASS---(\d\d+)?(m|k|\xce\xbc|μ)?(g|gram)(s)?$---Grams
+NN-AMOUNT---(\d\d+)?(m|k|\xce\xbc|μ)?mol(s)?$---Mols
 NN-MOLAR---^(\d+)?(^M)$---Molar
 NN-ATMOSPHERE---(a|A)tmosphere(s)?$---Atmosphere
 NN-EQ---^eq\.$---Equivalence
