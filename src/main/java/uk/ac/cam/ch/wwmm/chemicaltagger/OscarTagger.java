@@ -3,6 +3,8 @@ package uk.ac.cam.ch.wwmm.chemicaltagger;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.lang.StringUtils;
+
 import uk.ac.cam.ch.wwmm.oscar.Oscar;
 import uk.ac.cam.ch.wwmm.oscar.chemnamedict.core.PolymerDictionary;
 import uk.ac.cam.ch.wwmm.oscar.document.IToken;
@@ -19,6 +21,7 @@ import uk.ac.cam.ch.wwmm.oscar.opsin.OpsinDictionary;
 public class OscarTagger {
 
 	private Oscar oscar;
+	private List<ITokenSequence> tokens;
 
 	/****************************
 	 * Public Constructor
@@ -51,6 +54,24 @@ public class OscarTagger {
 		}
 	}
 
+	public POSContainer runTokeniser(POSContainer posContainer) {
+		tokens = new ArrayList<ITokenSequence>();
+		String sentence = posContainer.getInputText();
+		sentence = oscar.normalize(sentence);
+		tokens = oscar.tokenise(sentence);
+		for (ITokenSequence tokenSequence : tokens) {
+			for (IToken tok : tokenSequence.getTokens()) {
+
+				for (String subWord : tok.getSurface().trim().split(" ")) {
+					if (StringUtils.isNotEmpty(subWord))
+						posContainer.addToTokenList(subWord);
+				}
+			}
+		}
+		return posContainer;
+	}
+
+	
 	/*****************************************************
 	 * Main Function. Runs OSCAR over a string and process the XML output Stores
 	 * the tokens and tags to the POSContainer class which is returned
@@ -60,59 +81,36 @@ public class OscarTagger {
 	public POSContainer runTagger(POSContainer posContainer) {
 
 		List<NamedEntity> neList = new ArrayList<NamedEntity>();
-		List<ITokenSequence> tokens = new ArrayList<ITokenSequence>();
-		try {
 
-			String sentence = posContainer.getInputText();
-			sentence = oscar.normalize(sentence);
-
-			tokens = oscar.tokenise(sentence);
-
-			neList = oscar.recogniseNamedEntities(tokens);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		neList = oscar.recogniseNamedEntities(tokens);
 
 		neList = removePartialMatches(neList);
 
-		String word = "";
+		List<String> tokenList = posContainer.getTokenList();
+		List<WWMMTag> oscarList = new ArrayList<WWMMTag>();
+
 		String tag = "nil";
-		int endIndex = -1;
-		for (ITokenSequence tokenSequence : tokens) {
-			for (IToken tok : tokenSequence.getTokens()) {
+		for (int i = 0; i < tokenList.size(); i++) {
+			oscarList.add(new WWMMTag(tag));
+		}
+		for (NamedEntity ne : neList) {
+			if (!ne.getType().getName().toLowerCase().contains("cpr") && !ne.getType().getName().toLowerCase().contains("ont")) {
+				List<IToken> tokens = ne.getTokens();
 
-				if (tok.getStart() >= endIndex) {
-					word = tok.getSurface();
-					endIndex = tok.getEnd();
-					tag = "nil";
+				for (IToken iToken : tokens) {
+					if (tokenList.contains(iToken.getSurface())) {
 
-					boolean foundNE = false;
-					for (NamedEntity ne : neList) {
-						if (!ne.getType().getName().toLowerCase()
-								.contains("cpr")) {
-							if (ne.getStart() == tok.getStart()) {
-								if (ne.getEnd() >= tok.getEnd()) {
-									word = ne.getSurface();
-									tag = ne.getType().getName();
-									foundNE = true;
-									endIndex = ne.getEnd();
-									for (String subWord : word.split(" ")) {
-										posContainer.addToTokenList(subWord);
-										posContainer.addToOSCARList(tag);
-									}
-
-								}
-							}
+						if (tokenList.get(iToken.getId()).contains(
+								iToken.getSurface())) {
+							oscarList.set(iToken.getId(), new WWMMTag("OSCAR-"
+									+ ne.getType().getName()));
 						}
 					}
-					if (!foundNE) {
-
-						posContainer.addToTokenList(word);
-						posContainer.addToOSCARList(tag);
-					}
 				}
+
 			}
 		}
+		posContainer.setOscarTagList(oscarList);
 		return posContainer;
 
 	}

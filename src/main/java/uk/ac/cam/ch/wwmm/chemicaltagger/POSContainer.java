@@ -21,10 +21,20 @@ public class POSContainer {
 
 	public List<String> wordTokenList = new ArrayList<String>();
 	public List<WWMMTag> oscarTagList = new ArrayList<WWMMTag>();
+
+	public void setOscarTagList(List<WWMMTag> oscarTagList) {
+		this.oscarTagList = oscarTagList;
+	}
+
 	public List<WWMMTag> regexTagList = new ArrayList<WWMMTag>();
 	public List<WWMMTag> brownTagList = new ArrayList<WWMMTag>();
 	private List<WWMMTag> combinedTagsList = new ArrayList<WWMMTag>();
 	private Element spectrumElementList;
+	private boolean prioritiseOscar = true;
+
+	public void setPrioritiseOscar(boolean prioritiseOscar) {
+		this.prioritiseOscar = prioritiseOscar;
+	}
 
 	public Element getSpectrumElementList() {
 		return spectrumElementList;
@@ -62,8 +72,7 @@ public class POSContainer {
 	}
 
 	public void addToOSCARList(String oscarTag) {
-		if (oscarTag.startsWith("ONT"))
-			oscarTag = "ONT";
+
 		oscarTagList.add(new WWMMTag("OSCAR-" + oscarTag));
 
 	}
@@ -80,7 +89,7 @@ public class POSContainer {
 	public void addToBrownListFromStringArray(String[] brownTags) {
 		for (String string : brownTags) {
 			if (StringUtils.isEmpty(string)) {
-				brownTagList.add(new WWMMTag("NN-UNKNOWN"));
+				brownTagList.add(new WWMMTag("NN"));
 			} else {
 				brownTagList.add(new WWMMTag(string));
 			}
@@ -99,17 +108,31 @@ public class POSContainer {
 	 * Combines the output of all 3 taggers.
 	 ***************************************/
 	public void combineTaggers() {
-		for (int i = 0; i < oscarTagList.size(); i++) {
-			if (!oscarTagList.get(i).getPOS().toLowerCase().equals("oscar-nil")
-					&& !oscarTagList.get(i).getPOS().toLowerCase()
-							.equals("oscar-ont")) {
-				combinedTagsList.add(oscarTagList.get(i));
-			} else if (regexTagList.size() > 0
-					&& !regexTagList.get(i).getPOS().equals("nil")) {
-				combinedTagsList.add(regexTagList.get(i));
+		List<List<WWMMTag>> tagOrder = new ArrayList<List<WWMMTag>>();
+		if (prioritiseOscar) {
+			tagOrder.add(oscarTagList);
+			tagOrder.add(regexTagList);
+		} else {
+			tagOrder.add(regexTagList);
+			tagOrder.add(oscarTagList);
+		}
+		tagOrder.add(brownTagList);
+
+		List<WWMMTag> firstTagger = tagOrder.get(0);
+
+		for (int i = 0; i < firstTagger.size(); i++) {
+			if (!firstTagger.get(i).getPOS().toLowerCase().equals("nil")) {
+				combinedTagsList.add(firstTagger.get(i));
 			} else {
-				combinedTagsList.add(brownTagList.get(i));
+				for (int taggedIndex = 1; taggedIndex < tagOrder.size(); taggedIndex++) {
+					List<WWMMTag> backOffTagger = tagOrder.get(taggedIndex);
+					if (!backOffTagger.get(i).getPOS().equals("nil")) {
+						combinedTagsList.add(backOffTagger.get(i));
+						taggedIndex = tagOrder.size();
+					}
+				}
 			}
+
 		}
 
 	}
@@ -164,7 +187,8 @@ public class POSContainer {
 		String previousTag = "";
 		String nextTag = "";
 		List<Integer> totalIndexList = new ArrayList<Integer>();
-		List<String> nonHyphenTags = Arrays.asList(new String[]{"dash", "comma", "cc", "stop"});
+		List<String> nonHyphenTags = Arrays.asList(new String[] { "dash",
+				"comma", "cc", "stop" });
 		List<Integer> indexList = new ArrayList<Integer>();
 		Map<Integer, List<Integer>> indexMap = new LinkedHashMap<Integer, List<Integer>>();
 		for (int currentIndex = 0; currentIndex < wordTokenList.size(); currentIndex++) {
@@ -267,7 +291,7 @@ public class POSContainer {
 	private String getTagName(List<Integer> indexList) {
 		String tagName = "";
 
-		List<String> jjChemList = Arrays.asList(new String[]{"jj", "vbn"});
+		List<String> jjChemList = Arrays.asList(new String[] { "jj", "vbn" });
 
 		for (Integer integer : indexList) {
 			String tag = combinedTagsList.get(integer).getPOS();

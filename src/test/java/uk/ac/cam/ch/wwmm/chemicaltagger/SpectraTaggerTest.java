@@ -2,22 +2,16 @@ package uk.ac.cam.ch.wwmm.chemicaltagger;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
 
 import junit.framework.Assert;
-
 import nu.xom.Document;
-import nu.xom.Element;
 
 import org.antlr.runtime.tree.Tree;
 import org.apache.commons.io.IOUtils;
-import org.junit.Before;
 import org.junit.Test;
 
 public class SpectraTaggerTest {
 
-	private SpectraTagger spectraTagger;
-	private static String SPACE = " ";
 
 	@Test
 	public void sentence1() throws IOException {
