@@ -42,23 +42,29 @@ public class ChemistryPOSTagger {
 		this.sentence = sentence;
 	}
 
+	
+	public POSContainer runTaggers(String inputSentence) {
+		return runTaggers(inputSentence,true);
+	}
 	/*****************************************************
 	 * Main Module.
 	 * 
 	 * Initialises POSContainer.
 	 * 
 	 *****************************************************/
-	public POSContainer runTaggers(String inputSentence) {
+	public POSContainer runTaggers(String inputSentence,boolean prioritiseOscar) {
 
 		POSContainer posContainer = new POSContainer();
 		inputSentence = Utils.formatSentence(inputSentence);
 		posContainer.setInputText(inputSentence);
 		posContainer = spectraTagger.runTagger(posContainer);
+		
+		posContainer = oscarTagger.runTokeniser(posContainer);
 		posContainer = oscarTagger.runTagger(posContainer);
 		
 		posContainer = regexTagger.runTagger(posContainer);
 		posContainer = openNLPTagger.runTagger(posContainer);
-	
+		posContainer.setPrioritiseOscar(prioritiseOscar);
 		posContainer.combineTaggers();
 		posContainer.recombineHyphenedTokens();
 
