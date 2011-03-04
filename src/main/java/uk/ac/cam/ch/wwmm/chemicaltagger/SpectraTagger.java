@@ -17,7 +17,7 @@ public class SpectraTagger {
 	
 	
 	public POSContainer runTagger(POSContainer posContainer){
-		Tokeniser tokeniser = Tokeniser.getInstance();
+		Tokeniser tokeniser = Tokeniser.getDefaultInstance();
 		ProcessingDocument procDoc = ProcessingDocumentFactory.getInstance()
 				.makeTokenisedDocument(tokeniser, posContainer.getInputText());
 
