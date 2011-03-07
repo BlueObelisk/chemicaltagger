@@ -39,7 +39,7 @@ NN-VOL---(\d\d+)?(m|k|\xce\xbc|µ)?(l|L)$|cm3---Volume
 #this is for non-spaced volumes like 3ml
 NN-VOL---d+(m|k|\xce\xbc|µ)(l|L|cm3)$---Volume
 NN-CHEMENTITY---^(p|P)(H|h)$|^resin$|^salt$|^material$|^product$|^oligomers$|^(M|m)acroinitiator$|^nanotubes$|^(s|S)eptum$|^(i|I)nitiator$|(M|m)onomer$|^ice$|^petroleum|metal|^eluent$|(co|Co)?polymer(s)?$|generation|solution|solvent|complex|layer|residue|gel|plug|catalyst|compound(s)?|.+®|^Å$---Chemical entities not marked up by OSCAR
-NN-TEMP---\d*(\xb0|&#0176|\xc3\x97|o|°|º)(C|c)|room$|temperature$|rt$|RT$|^deg$|^degrees$---Temperature Token
+NN-TEMP---\d*(\xb0|&#0176|\xc3\x97|o|°|º)(C|c)$|room$|temperature$|rt$|RT$|^deg$|^degrees$---Temperature Token
 NN-TEMP---^K$---Temperature Token
 NN-FLASH---^flash$---Flash
 NN-GENERAL---^(G|g)eneral$---General term
@@ -55,11 +55,9 @@ NN-EXAMPLE---^(e|E)xample(s)?$---Example Token
 
 #Not really chementities or Oscar-cm.. but need to be fixed
 NN-CHEMENTITY---^b$|^m$---will be removed
-OSCAR-CM---^p$|^n$|^Cl$---Oscar Entity will be removed later
 
 
 #Oscar related Tags
-OSCAR-CD---^(ent-)?BOLD--.*BOLD-----bold numbers (representing chemical names)
 OSCAR-CD---^\d+[a-z]-----non-html oscar digits (representing chemical names)
                               
 
@@ -163,7 +161,7 @@ COLON---^:---Colon
 COMMA---^,---Comma           
 APOST---^\'|^\'\'$---Apostrophe          
 NEG---^not$---Negation
-DASH---^(\\|\/|\-|–)$---Dash
+DASH---^(\\|\/|\-|–|\+)$---Dash
 STOP---^(\.|\?|\!|\;)$---Full stops,SemiColons, Exclamation and Question Marks
 NN-PERCENT---^\%$---Percent Sign
 LSQB---^\[$---Left Square Brackets

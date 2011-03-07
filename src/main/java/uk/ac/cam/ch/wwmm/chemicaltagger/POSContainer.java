@@ -10,6 +10,8 @@ import nu.xom.Element;
 
 import org.apache.commons.lang.StringUtils;
 
+import antlr.TokenWithIndex;
+
 import uk.ac.cam.ch.wwmm.chemicaltagger.WWMMTag.TagType;
 
 /********************************************
@@ -119,7 +121,6 @@ public class POSContainer {
 		tagOrder.add(brownTagList);
 
 		List<WWMMTag> firstTagger = tagOrder.get(0);
-
 		for (int i = 0; i < firstTagger.size(); i++) {
 			if (!firstTagger.get(i).getPOS().toLowerCase().equals("nil")) {
 				combinedTagsList.add(firstTagger.get(i));
