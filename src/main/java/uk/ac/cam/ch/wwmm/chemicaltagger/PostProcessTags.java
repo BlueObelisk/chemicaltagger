@@ -392,6 +392,13 @@ public class PostProcessTags {
 				&& StringUtils.equalsIgnoreCase(currentToken, "M")) {
 			newTag = "NN-MOLAR";
 		}
+		if (StringUtils.equalsIgnoreCase(currentTag, "nps")	&& i ==0) {
+			List<String> beforeList = Utils.addToList("stop");
+
+			if (i == 0 || stringbefore(beforeList, i, combinedTags))newTag = "NNS";
+		}
+		
+		
 		if (currentToken.equals("M")) {
 
 			List<String> beforeList = Utils.addToList("cd");
