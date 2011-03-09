@@ -124,7 +124,7 @@ NN-PRECIPITATE---(re)?(precipitat|crystaliz|crystalis)(ation|ion)?$---Precipitat
 
 #Purify Tokens
 
-VB-PURIFY---(re)?(purif|dialis|dialyz|dializ|distill)(ed|e|y|ied|ying|ing)?$---Purify Verb
+VB-PURIFY---(re)?(purif|dialis|dialyz|dializ|distill|chromatographed)(ed|e|y|ied|ying|ing)?$---Purify Verb
 NN-PURIFY---(re)?(distill|purific|dialysis)(ation)?$---Purify Noun
 
 #Quench Tokens
