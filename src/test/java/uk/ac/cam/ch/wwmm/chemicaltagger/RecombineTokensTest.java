@@ -54,7 +54,7 @@ public class RecombineTokensTest {
 	public void testRecombineSentence2() {
 		POSContainer posContainer = new POSContainer();
 		String inputSentence = "The synthetic procedure for partially EA- or BA-modified HPEI is exemplified for HPEI25K-EA 0.79: 1.00 g of HPEI25K";
-		String expectedOutput = "DT-THE The JJ synthetic NN-METHOD procedure IN-FOR for RB partially NN EA- CC or JJ-CHEM BA-modified OSCAR-CM HPEI VBZ is VBN exemplified IN-FOR for OSCAR-CM HPEI25K-EA CD 0.79 COLON : CD 1.00 NN-MASS g IN-OF of OSCAR-CM HPEI25K";
+		String expectedOutput = "DT-THE The JJ synthetic NN-METHOD procedure IN-FOR for RB partially NNP EA- CC or JJ-CHEM BA-modified OSCAR-CM HPEI VBZ is VBN exemplified IN-FOR for OSCAR-CM HPEI25K-EA CD 0.79 COLON : CD 1.00 NN-MASS g IN-OF of OSCAR-CM HPEI25K";
 		inputSentence = Utils.formatSentence(inputSentence);
 
         posContainer.setInputText(inputSentence);

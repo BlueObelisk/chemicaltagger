@@ -404,6 +404,12 @@ public class PostProcessTags {
 			}
 		}
 		
+		if (i !=0 && StringUtils.equalsIgnoreCase(currentTag, "nn")) {
+			
+			List<String> beforeList = Utils.addToList("stop");
+			if  (Character.isUpperCase(currentToken.charAt(0)) && !stringbefore(beforeList, i, combinedTags)) newTag = "NNP";
+			
+		}
 		
 		if (currentToken.equals("M")) {
 
