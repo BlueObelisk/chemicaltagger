@@ -10,6 +10,8 @@ import uk.ac.cam.ch.wwmm.oscar.chemnamedict.core.PolymerDictionary;
 import uk.ac.cam.ch.wwmm.oscar.document.IToken;
 import uk.ac.cam.ch.wwmm.oscar.document.ITokenSequence;
 import uk.ac.cam.ch.wwmm.oscar.document.NamedEntity;
+import uk.ac.cam.ch.wwmm.oscar.document.Token;
+import uk.ac.cam.ch.wwmm.oscar.document.TokenSequence;
 import uk.ac.cam.ch.wwmm.oscar.opsin.OpsinDictionary;
 
 /*****************************************************
@@ -71,6 +73,7 @@ public class OscarTagger {
 	}
 
 	
+
 	/*****************************************************
 	 * Main Function. Runs OSCAR over a string and process the XML output Stores
 	 * the tokens and tags to the POSContainer class which is returned

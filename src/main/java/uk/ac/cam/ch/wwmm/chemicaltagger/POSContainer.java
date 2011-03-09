@@ -209,12 +209,14 @@ public class POSContainer {
 					indexList.add(currentIndex);
 					indexMap.put(indexList.get(0), indexList);
 				} else {
+
 					previousTag = combinedTagsList.get(currentIndex - 1)
 							.getPOS();
 					nextTag = combinedTagsList.get(currentIndex + 1).getPOS();
+
 					if (!(previousTag.startsWith("OSCAR-CM")
 							& nextTag.startsWith("OSCAR-CM") & !wordTokenList
-							.get(currentIndex + 1).startsWith("-"))) {
+							.get(currentIndex + 1).startsWith("-")) && !(nextTag.startsWith("CD") && previousTag.startsWith("NN"))) {
 						if (totalIndexList.contains(currentIndex - 1)) {
 
 							List<Integer> keySet = new ArrayList<Integer>(

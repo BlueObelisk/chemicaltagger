@@ -87,17 +87,20 @@ public class Utils {
 		sentence = sentence.replace("%", " %").replace(";", " ;")
 				.replace(":", " : ");
 
+		sentence = sentence.replace("–", "-");
 		String[] words = sentence.split(" ");
 		String abbreviationRegex = "−?[A-Z]+[a-z]*\\.";
 		String concatAmountRegex = "(\\d\\d+(m|k|µ)?(l|L|g|gram|mol|cm3)(s)?$)|(\\d(L|ml|mL|gram|mol|cm3)(s)?$)";
 		String concatTempRegex = "\\d+(\\xb0|&#0176|\\xc3\\x97|o|°|º)(C|c)";
+		String hyphenDirectionNumber = "^[A-Z]\\-\\d+";
 		List<String> abvList = addToList("et. al. etc. e.g. i.e. vol. ca. wt. aq.");
 		List<String> htmlList = addToList("gt; lt;");
 		List<String> nextTokenList = addToList("gram vol %");
 		Pattern abbreviationPattern = Pattern.compile(abbreviationRegex);
 		Pattern concatAmountPattern = Pattern.compile(concatAmountRegex);
 		Pattern concatTempPattern = Pattern.compile(concatTempRegex);
-
+		Pattern concatHyphenDirectionPattern = Pattern.compile(hyphenDirectionNumber);
+		
 		int index = 0;
 		for (String string : words) {
 			String prefix = " ";
@@ -164,11 +167,18 @@ public class Utils {
 			if (concatTempMatcher.find()) {
 				string = splitTemparature(string);
 			}
+			Matcher concatHyphenDirectionMatcher = concatHyphenDirectionPattern.matcher(string);
+			if (concatHyphenDirectionMatcher.find()) {
+				string = string.replace("-"," - ");
+			}
+			
 			if (string.equals("K.") && index > 0) {
 				if (isNumber(words[index - 1])) {
 					string = "K .";
 				}
 			}
+			
+			
 			index++;
 
 			newSentence.append(prefix + string + suffix);
