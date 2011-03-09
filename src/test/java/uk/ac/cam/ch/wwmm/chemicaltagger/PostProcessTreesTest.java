@@ -43,7 +43,7 @@ public class PostProcessTreesTest {
 
 	}
 	@Test
-	public void PurifyPatternTest() throws UnsupportedEncodingException {
+	public void purifyPatternTest() throws UnsupportedEncodingException {
 		
 		String sentence = "the mixture was purified by column chromatography (hexane/AcOEt, 7/3) and added to the solution.";
 		Document doc = new ParsedDocumentCreator().runChemicalTagger(sentence);
@@ -53,7 +53,7 @@ public class PostProcessTreesTest {
 	}
 	
 	@Test
-	public void RolePrepPhraseTest() throws UnsupportedEncodingException {
+	public void rolePrepPhraseTest() throws UnsupportedEncodingException {
 		String sentence = "the mixture was purified using hexane as an eluent";
 		Document doc = new ParsedDocumentCreator().runChemicalTagger(sentence);
 		Nodes roles = doc.query(".//MOLECULE[@role='Solvent']");
@@ -61,5 +61,15 @@ public class PostProcessTreesTest {
 
 		Assert.assertEquals(1,roles.size());
 	}
+	
+	
+	@Test
+	public void testActionPhraseWithNoVerbPhrase() throws UnsupportedEncodingException {
+		String sentence = "Purification by flash chromatography (Isco CombiFlash) (0-20% heptane/EtOAc) yielded 4-(4-chlorobenzyl)thiophene-2-carbaldehyde: 835 mg, 28% yield.";
+		Document doc = new ParsedDocumentCreator().runChemicalTagger(sentence);
+		Assert.assertEquals(1,doc.query(".//ActionPhrase [@type='Purify']").size());//has NN-PURIFY instead of VB-PURIFY
+		Assert.assertEquals(1,doc.query(".//ActionPhrase [@type='Yield']").size());
+	}
+	
 
 }
