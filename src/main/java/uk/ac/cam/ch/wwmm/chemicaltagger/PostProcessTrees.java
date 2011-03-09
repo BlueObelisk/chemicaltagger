@@ -140,7 +140,7 @@ public class PostProcessTrees {
 			// System.out.println("--Phrase is " + phraseElement.toXML());
 			String actionElementName = findFirstActionElementName(elementNames);
 			if (actionElementName!=null) {
-				if (phraseElement.getLocalName().contains("VerbPhrase")) {
+				if (phraseElement.getLocalName().contains("VerbPhrase") || phraseContainsANounThatActsLikeAVerb(elementNames)) {
 
 					if (seenVerb) {
 						if (actionPhrase != null) {
@@ -264,6 +264,21 @@ public class PostProcessTrees {
 		}
 		newSentence = checkForRolePrepPhrase(newSentence);
 		return newSentence;
+	}
+
+	/**
+	 * Detects cases where a noun is being used a bit like a verb
+	 * e.g. "Purification by flash chromatography" instead of "The compound was purified by flash chromatography"
+	 * @param elementNames
+	 * @return
+	 */
+	private boolean phraseContainsANounThatActsLikeAVerb(List<String> elementNames) {
+		if (elementNames.contains("NN-ADD")|| elementNames.contains("NN-CONCENTRATE")
+				|| elementNames.contains("NN-EXTRACT") || elementNames.contains("NN-FILTER")
+					|| elementNames.contains("NN-PURIFY") || elementNames.contains("NN-REMOVE")){
+			return true;
+		}
+		return false;
 	}
 
 	/**
