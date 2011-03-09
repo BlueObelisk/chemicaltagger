@@ -2,17 +2,18 @@ package uk.ac.cam.ch.wwmm.chemicaltagger;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 
 import nu.xom.Attribute;
 import nu.xom.Document;
 import nu.xom.Element;
+import nu.xom.Elements;
 import nu.xom.Node;
 import nu.xom.Nodes;
 
 public class PostProcessTrees {
 	public final static HashMap<String, String> actionMap = new HashMap<String, String>();
-	private String actionName;
 
 	public PostProcessTrees() {
 		// Add Tokens
@@ -135,10 +136,10 @@ public class PostProcessTrees {
 
 			Element phraseElement = (Element) sentenceNode.getChild(i);
 
-			String content = phraseElement.toXML();
+			List<String> elementNames = getElementAndDescendantElementNameList(phraseElement);
 			// System.out.println("--Phrase is " + phraseElement.toXML());
-			if (containsKeyword(content)) {
-
+			String actionElementName = findFirstActionElementName(elementNames);
+			if (actionElementName!=null) {
 				if (phraseElement.getLocalName().contains("VerbPhrase")) {
 
 					if (seenVerb) {
@@ -160,7 +161,7 @@ public class PostProcessTrees {
 				String elementListContent = elementListToString(elementList);
 				if (!elementListContent.toLowerCase().contains("nn-example")) {
 					actionPhrase = new Element("ActionPhrase");
-					Attribute attribute = new Attribute("type", actionName);
+					Attribute attribute = new Attribute("type", actionMap.get(actionElementName));
 					// System.out.println("* I contain keyword:: "
 					// + actionName);
 					actionPhrase.addAttribute(attribute);
@@ -263,6 +264,32 @@ public class PostProcessTrees {
 		}
 		newSentence = checkForRolePrepPhrase(newSentence);
 		return newSentence;
+	}
+
+	/**
+	 * Given an element returns in document order the element's descendants localnames.
+	 * The startingElement's localname will be the first in the list
+	 * @param startingElement
+	 * @return
+	 */
+	private List<String> getElementAndDescendantElementNameList(Element startingElement) {
+		List<String> elementNames = new ArrayList<String>();
+		elementNames.add(startingElement.getLocalName());
+		LinkedList<Element> stack = new LinkedList<Element>();
+		Elements children =startingElement.getChildElements();
+		for (int i = children.size() -1; i >= 0; i--) {
+			stack.add(children.get(i));
+		}
+		while (stack.size()>0){
+			Element currentElement =stack.removeLast();
+			elementNames.add(currentElement.getLocalName());
+			children =currentElement.getChildElements();
+			for (int i = children.size() -1; i >= 0; i--) {
+				Element child =children.get(i);
+				stack.add(child);
+			}
+		}
+		return elementNames;
 	}
 
 	/******************
@@ -455,14 +482,13 @@ public class PostProcessTrees {
 
 	}
 
-	private boolean containsKeyword(String content) {
+	private String findFirstActionElementName(List<String> elementNames) {
 		for (String keyword : actionMap.keySet()) {
-			if (content.contains(keyword)) {
-				actionName = actionMap.get(keyword);
-				return true;
+			if (elementNames.contains(keyword)) {
+				return keyword;
 			}
 		}
-		return false;
+		return null;
 	}
 
 }
