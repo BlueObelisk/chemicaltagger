@@ -61,7 +61,7 @@ public class PostProcessTrees {
 
 		// Precipitate Tokens
 		actionMap.put("VB-PRECIPITATE", "Precipitate");
-		actionMap.put("VB-PRECIPITATE", "Precipitate");
+		actionMap.put("NN-PRECIPITATE", "Precipitate");
 		// Purify Tokens
 
 		actionMap.put("VB-PURIFY", "Purify");
