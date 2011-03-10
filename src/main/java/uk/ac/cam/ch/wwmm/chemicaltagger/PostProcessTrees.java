@@ -14,6 +14,14 @@ import nu.xom.Nodes;
 
 public class PostProcessTrees {
 	private HashMap<String, String> actionMap = new HashMap<String, String>();
+	static List<String> splitList = new ArrayList<String>();
+	
+	static{
+		splitList.add("comma");
+		splitList.add("cc");
+		splitList.add("stop");
+		splitList.add("rb-conj");
+	}
 
 	public HashMap<String, String> getActionMap() {
 		return actionMap;
@@ -138,11 +146,6 @@ public class PostProcessTrees {
 	private Element processSentence(Element sentenceNode) {
 		Element newSentence = new Element("Sentence");
 		List<Element> elementList = new ArrayList<Element>();
-		List<String> splitList = new ArrayList<String>();
-		splitList.add("comma");
-		splitList.add("cc");
-		splitList.add("stop");
-		splitList.add("rb-conj");
 
 		boolean seenVerb = false;
 		Element actionPhrase = null;
@@ -171,8 +174,8 @@ public class PostProcessTrees {
 					seenVerb = true;
 
 				}
-				String elementListContent = elementListToString(elementList);
-				if (!elementListContent.toLowerCase().contains("nn-example")) {
+				List<String> elementListElementNames = elementListToLowerCaseElementNameList(elementList);
+				if (!elementListElementNames.contains("nn-example")) {
 					actionPhrase = new Element("ActionPhrase");
 					Attribute attribute = new Attribute("type", actionMap.get(actionElementName));
 					// System.out.println("* I contain keyword:: "
@@ -199,9 +202,9 @@ public class PostProcessTrees {
 				elementList.add(phraseElement);
 
 				seenVerb = true;
-				String elementListContent = elementListToString(elementList);
+				List<String> elementListElementNames = elementListToLowerCaseElementNameList(elementList);
 
-				if (elementListContent.toLowerCase().contains("timephrase")) {
+				if (elementListElementNames.contains("timephrase")) {
 					Attribute attribute = new Attribute("type", "Wait");
 					actionPhrase = createActionPhrase(elementList,
 							phraseElement, attribute);
@@ -211,7 +214,7 @@ public class PostProcessTrees {
 					elementList = new ArrayList<Element>();
 					seenVerb = false;
 				}
-				if (elementListContent.toLowerCase().contains(
+				if (elementListElementNames.contains(
 						"multipleapparatus")) {
 
 					Attribute attribute = new Attribute("type",
@@ -254,8 +257,8 @@ public class PostProcessTrees {
 					
 
 				}
-				String elementListContent = elementListToString(elementList);
-				if (elementListContent.toLowerCase().contains("timephrase")) {
+				List<String> elementListElementNames = elementListToLowerCaseElementNameList(elementList);
+				if (elementListElementNames.contains("timephrase")) {
 
 					Attribute attribute = new Attribute("type", "Wait");
 					actionPhrase = createActionPhrase(elementList,
@@ -342,8 +345,7 @@ public class PostProcessTrees {
 	 */
 	private Element createActionPhrase(List<Element> elementList,
 			Element phraseElement, Attribute attribute) {
-		Element actionPhrase;
-		actionPhrase = new Element("ActionPhrase");
+		Element actionPhrase = new Element("ActionPhrase");
 		actionPhrase.addAttribute(attribute);
 		elementList.add(phraseElement);
 		addListToNode(actionPhrase, elementList);
@@ -408,15 +410,12 @@ public class PostProcessTrees {
 		return role;
 	}
 
-	private String elementListToString(List<Element> elementList) {
-		// TODO Auto-generated method stub
-		String elementContent = "";
+	private List<String> elementListToLowerCaseElementNameList(List<Element> elementList) {
+		List<String> elementNames = new ArrayList<String>();
 		for (Element element : elementList) {
-			elementContent = elementContent + element.toXML();
+			elementNames.add(element.getLocalName().toLowerCase());
 		}
-
-		return elementContent;
-
+		return elementNames;
 	}
 
 	private void addListToNode(Element parentNode, List<Element> elementList) {
@@ -457,7 +456,7 @@ public class PostProcessTrees {
 			}
 
 			if (actionElement.getAttributeValue("type").equals("Add")) {
-				if (actionElement.toXML().toLowerCase().contains("vb-dilute"))
+				if (getElementAndDescendantElementNameList(actionElement).contains("VB-DILUTE"))
 					addSolventRole(actionElement, "IN-WITH", false);
 			}
 
