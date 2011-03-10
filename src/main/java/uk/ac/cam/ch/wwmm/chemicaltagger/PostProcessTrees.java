@@ -63,7 +63,7 @@ public class PostProcessTrees {
 		actionMap.put("VB-DISSOLVE", "Dissolve");
 		// Dry Tokens
 		actionMap.put("VB-DRY", "Dry");
-		actionMap.put("NN-DRY", "Dry");
+		//actionMap.put("NN-DRY", "Dry"); dryness doesn't make sense as an action
 		// Extract Tokens
 		actionMap.put("VB-EXTRACT", "Extract");
 		actionMap.put("NN-EXTRACT", "Extract");
@@ -147,47 +147,15 @@ public class PostProcessTrees {
 		Element newSentence = new Element("Sentence");
 		List<Element> elementList = new ArrayList<Element>();
 
-		boolean seenVerb = false;
+		boolean seenVerbOrAtionNoun = false;//a verb or a noun like purification
 		Element actionPhrase = null;
 		for (int i = 0; i < sentenceNode.getChildCount(); i++) {
 
 			Element phraseElement = (Element) sentenceNode.getChild(i);
 
-			List<String> elementNames = getElementAndDescendantElementNameList(phraseElement);
-			String actionElementName = findFirstActionElementName(elementNames);
-			if (actionElementName!=null) {
-				if (phraseElement.getLocalName().equals("VerbPhrase") || phraseContainsANounThatActsLikeAVerb(elementNames)) {
-
-					if (seenVerb) {
-						if (actionPhrase != null) {
-							addListToNode(actionPhrase, elementList);
-							appendActionPhrase(newSentence, actionPhrase);
-							actionPhrase = null;
-
-						} else {
-							addListToNode(newSentence, elementList);
-
-						}
-						elementList = new ArrayList<Element>();
-
-					}
-					seenVerb = true;
-
-				}
-				List<String> elementListElementNames = elementListToLowerCaseElementNameList(elementList);
-				if (!elementListElementNames.contains("nn-example")) {
-					actionPhrase = new Element("ActionPhrase");
-					Attribute attribute = new Attribute("type", actionMap.get(actionElementName));
-					// System.out.println("* I contain keyword:: "
-					// + actionName);
-					actionPhrase.addAttribute(attribute);
-					elementList.add(phraseElement);
-				}
-
-			} else if (phraseElement.getLocalName().contains("VerbPhrase")) {
-
-				if (seenVerb) {
-
+			String actionElementName = findFirstActionElementName(phraseElement);
+			if (actionElementName != null || phraseElement.getLocalName().equals("VerbPhrase")) {
+				if (seenVerbOrAtionNoun) {
 					if (actionPhrase != null) {
 						addListToNode(actionPhrase, elementList);
 						appendActionPhrase(newSentence, actionPhrase);
@@ -198,36 +166,50 @@ public class PostProcessTrees {
 
 					}
 					elementList = new ArrayList<Element>();
+
 				}
-				elementList.add(phraseElement);
+				seenVerbOrAtionNoun = true;
 
-				seenVerb = true;
-				List<String> elementListElementNames = elementListToLowerCaseElementNameList(elementList);
-
-				if (elementListElementNames.contains("timephrase")) {
-					Attribute attribute = new Attribute("type", "Wait");
-					actionPhrase = createActionPhrase(elementList,
-							phraseElement, attribute);
-					appendActionPhrase(newSentence, actionPhrase);
-					actionPhrase = null;
-
-					elementList = new ArrayList<Element>();
-					seenVerb = false;
+				if (actionElementName !=null){
+					List<String> elementNames = elementListToSelfAndDescendentElementNames(elementList);
+					if (!elementNames.contains("NN-EXAMPLE")) {
+						actionPhrase = new Element("ActionPhrase");
+						Attribute attribute = new Attribute("type", actionMap.get(actionElementName));
+						// System.out.println("* I contain keyword:: "
+						// + actionName);
+						actionPhrase.addAttribute(attribute);
+						elementList.add(phraseElement);
+					}
 				}
-				if (elementListElementNames.contains(
-						"multipleapparatus")) {
-
-					Attribute attribute = new Attribute("type",
-							"ApparatusAction");
-					actionPhrase = createActionPhrase(elementList,
-							phraseElement, attribute);
-					appendActionPhrase(newSentence, actionPhrase);
-					actionPhrase = null;
-
-					elementList = new ArrayList<Element>();
-					seenVerb = false;
+				else {
+					elementList.add(phraseElement);
+	
+					List<String> elementNames = elementListToSelfAndDescendentElementNames(elementList);
+	
+					if (elementNames.contains("TimePhrase")) {
+						Attribute attribute = new Attribute("type", "Wait");
+						actionPhrase = createActionPhrase(elementList,
+								phraseElement, attribute);
+						appendActionPhrase(newSentence, actionPhrase);
+						actionPhrase = null;
+	
+						elementList = new ArrayList<Element>();
+						seenVerbOrAtionNoun = false;
+					}
+					if (elementNames.contains("MultipleApparatus")) {
+	
+						Attribute attribute = new Attribute("type",
+								"ApparatusAction");
+						actionPhrase = createActionPhrase(elementList,
+								phraseElement, attribute);
+						appendActionPhrase(newSentence, actionPhrase);
+						actionPhrase = null;
+	
+						elementList = new ArrayList<Element>();
+						seenVerbOrAtionNoun = false;
+					}
 				}
-			} else if (seenVerb
+			} else if (seenVerbOrAtionNoun
 					& splitList.contains(phraseElement.getLocalName()
 							.toLowerCase())) {
 
@@ -243,7 +225,7 @@ public class PostProcessTrees {
 
 
 				elementList = new ArrayList<Element>();
-				seenVerb = false;
+				seenVerbOrAtionNoun = false;
 			} else if (splitList.contains(phraseElement.getLocalName()
 					.toLowerCase())) {
 				Element newPhraseElement = (Element) phraseElement.copy();
@@ -257,8 +239,8 @@ public class PostProcessTrees {
 					
 
 				}
-				List<String> elementListElementNames = elementListToLowerCaseElementNameList(elementList);
-				if (elementListElementNames.contains("timephrase")) {
+				List<String> elementNames = elementListToSelfAndDescendentElementNames(elementList);
+				if (elementNames.contains("TimePhrase")) {
 
 					Attribute attribute = new Attribute("type", "Wait");
 					actionPhrase = createActionPhrase(elementList,
@@ -280,47 +262,6 @@ public class PostProcessTrees {
 		}
 		newSentence = checkForRolePrepPhrase(newSentence);
 		return newSentence;
-	}
-
-	/**
-	 * Detects cases where a noun is being used a bit like a verb
-	 * e.g. "Purification by flash chromatography" instead of "The compound was purified by flash chromatography"
-	 * @param elementNames
-	 * @return
-	 */
-	private boolean phraseContainsANounThatActsLikeAVerb(List<String> elementNames) {
-		if (elementNames.contains("NN-ADD")|| elementNames.contains("NN-CONCENTRATE")
-				|| elementNames.contains("NN-EXTRACT") || elementNames.contains("NN-FILTER")
-					|| elementNames.contains("NN-PURIFY") || elementNames.contains("NN-REMOVE")){
-			return true;
-		}
-		return false;
-	}
-
-	/**
-	 * Given an element returns in document order the element's descendants localnames.
-	 * The startingElement's localname will be the first in the list
-	 * @param startingElement
-	 * @return
-	 */
-	private List<String> getElementAndDescendantElementNameList(Element startingElement) {
-		List<String> elementNames = new ArrayList<String>();
-		elementNames.add(startingElement.getLocalName());
-		LinkedList<Element> stack = new LinkedList<Element>();
-		Elements children =startingElement.getChildElements();
-		for (int i = children.size() -1; i >= 0; i--) {
-			stack.add(children.get(i));
-		}
-		while (stack.size()>0){
-			Element currentElement =stack.removeLast();
-			elementNames.add(currentElement.getLocalName());
-			children =currentElement.getChildElements();
-			for (int i = children.size() -1; i >= 0; i--) {
-				Element child =children.get(i);
-				stack.add(child);
-			}
-		}
-		return elementNames;
 	}
 
 	/******************
@@ -410,10 +351,36 @@ public class PostProcessTrees {
 		return role;
 	}
 
-	private List<String> elementListToLowerCaseElementNameList(List<Element> elementList) {
+	private List<String> elementListToSelfAndDescendentElementNames(List<Element> elementList) {
 		List<String> elementNames = new ArrayList<String>();
 		for (Element element : elementList) {
-			elementNames.add(element.getLocalName().toLowerCase());
+			elementNames.addAll(getElementAndDescendantElementNameList(element));
+		}
+		return elementNames;
+	}
+	
+	/**
+	 * Given an element returns in document order the element's descendants localnames.
+	 * The startingElement's localname will be the first in the list
+	 * @param startingElement
+	 * @return
+	 */
+	private List<String> getElementAndDescendantElementNameList(Element startingElement) {
+		List<String> elementNames = new ArrayList<String>();
+		elementNames.add(startingElement.getLocalName());
+		LinkedList<Element> stack = new LinkedList<Element>();
+		Elements children =startingElement.getChildElements();
+		for (int i = children.size() -1; i >= 0; i--) {
+			stack.add(children.get(i));
+		}
+		while (stack.size()>0){
+			Element currentElement =stack.removeLast();
+			elementNames.add(currentElement.getLocalName());
+			children =currentElement.getChildElements();
+			for (int i = children.size() -1; i >= 0; i--) {
+				Element child =children.get(i);
+				stack.add(child);
+			}
 		}
 		return elementNames;
 	}
@@ -456,7 +423,7 @@ public class PostProcessTrees {
 			}
 
 			if (actionElement.getAttributeValue("type").equals("Add")) {
-				if (getElementAndDescendantElementNameList(actionElement).contains("VB-DILUTE"))
+				if (actionElement.query(".//VB-DILUTE").size() > 0)
 					addSolventRole(actionElement, "IN-WITH", false);
 			}
 
@@ -509,10 +476,29 @@ public class PostProcessTrees {
 
 	}
 
-	private String findFirstActionElementName(List<String> elementNames) {
-		for (String keyword : actionMap.keySet()) {
-			if (elementNames.contains(keyword)) {
-				return keyword;
+	/**
+	 * Given an element searches through its descendants in document order and returns the first
+	 * element with a localname corresponding to an entry in the actionMap
+	 * or null if none of their names are present in the actionMap
+	 * @param startingElement
+	 * @return
+	 */
+	private String findFirstActionElementName(Element startingElement) {
+		LinkedList<Element> stack = new LinkedList<Element>();
+		Elements children =startingElement.getChildElements();
+		for (int i = children.size() -1; i >= 0; i--) {
+			stack.add(children.get(i));
+		}
+		while (stack.size()>0){
+			Element currentElement =stack.removeLast();
+			String elementName = currentElement.getLocalName();
+			if (actionMap.containsKey(elementName)){
+				return elementName;
+			}
+			children =currentElement.getChildElements();
+			for (int i = children.size() -1; i >= 0; i--) {
+				Element child =children.get(i);
+				stack.add(child);
 			}
 		}
 		return null;
