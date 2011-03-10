@@ -112,7 +112,9 @@ public class PostProcessTrees {
 		// Yield Tokens
 		actionMap.put("VB-YIELD", "Yield");
 
-		
+		actionMap.put("TimePhrase", "Wait");
+		actionMap.put("MultipleApparatus", "ApparatusAction");
+
 	}
 	public Document process(Document doc) {
 		Element root = new Element("Document");
@@ -172,7 +174,7 @@ public class PostProcessTrees {
 
 				if (actionElementName !=null){
 					List<String> elementNames = elementListToSelfAndDescendentElementNames(elementList);
-					if (!elementNames.contains("NN-EXAMPLE")) {
+					if (!elementNames.contains("NN-EXAMPLE")) {//TODO what is this if statement for, it causes this phrase element to be ignored?!?!
 						actionPhrase = new Element("ActionPhrase");
 						Attribute attribute = new Attribute("type", actionMap.get(actionElementName));
 						// System.out.println("* I contain keyword:: "
@@ -183,78 +185,25 @@ public class PostProcessTrees {
 				}
 				else {
 					elementList.add(phraseElement);
-	
-					List<String> elementNames = elementListToSelfAndDescendentElementNames(elementList);
-	
-					if (elementNames.contains("TimePhrase")) {
-						Attribute attribute = new Attribute("type", "Wait");
-						actionPhrase = createActionPhrase(elementList,
-								phraseElement, attribute);
-						appendActionPhrase(newSentence, actionPhrase);
-						actionPhrase = null;
-	
-						elementList = new ArrayList<Element>();
-						seenVerbOrAtionNoun = false;
-					}
-					if (elementNames.contains("MultipleApparatus")) {
-	
-						Attribute attribute = new Attribute("type",
-								"ApparatusAction");
-						actionPhrase = createActionPhrase(elementList,
-								phraseElement, attribute);
-						appendActionPhrase(newSentence, actionPhrase);
-						actionPhrase = null;
-	
-						elementList = new ArrayList<Element>();
-						seenVerbOrAtionNoun = false;
-					}
 				}
-			} else if (seenVerbOrAtionNoun
-					& splitList.contains(phraseElement.getLocalName()
-							.toLowerCase())) {
-
+			} else if (splitList.contains(phraseElement.getLocalName().toLowerCase())) {
 				elementList.add(phraseElement);
 				if (actionPhrase != null) {
-
-					addListToNode(actionPhrase, elementList);
-					appendActionPhrase(newSentence, actionPhrase);
-					actionPhrase = null;
-
-				} else
-					addListToNode(newSentence, elementList);
-
-
-				elementList = new ArrayList<Element>();
-				seenVerbOrAtionNoun = false;
-			} else if (splitList.contains(phraseElement.getLocalName()
-					.toLowerCase())) {
-				Element newPhraseElement = (Element) phraseElement.copy();
-			    newSentence.appendChild(newPhraseElement);
-				if (actionPhrase != null) {
-
 					addListToNode(actionPhrase, elementList);
 					appendActionPhrase(newSentence, actionPhrase);
 					elementList = new ArrayList<Element>();
 					actionPhrase = null;
-					
 
+				} else{
+					//add nodes to sentence if a verbOrAtionNoun has been seen, otherwise keep waiting for an action term
+					if (seenVerbOrAtionNoun){
+						addListToNode(newSentence, elementList);
+						elementList = new ArrayList<Element>();
+					}
 				}
-				List<String> elementNames = elementListToSelfAndDescendentElementNames(elementList);
-				if (elementNames.contains("TimePhrase")) {
-
-					Attribute attribute = new Attribute("type", "Wait");
-					actionPhrase = createActionPhrase(elementList,
-							phraseElement, attribute);
-					appendActionPhrase(newSentence, actionPhrase);
-					actionPhrase = null;
-
-					elementList = new ArrayList<Element>();
-				}
-
 			} else {
 				elementList.add(phraseElement);
 			}
-
 		}
 
 		if (elementList.size() > 0) {
@@ -275,22 +224,6 @@ public class PostProcessTrees {
 		actionElement = processSolvent(actionElement);
 		newSentence.appendChild(actionElement);
 
-	}
-
-	/******************
-	 * 
-	 * @param elementList
-	 * @param phraseElement
-	 * @param attribute
-	 * @return
-	 */
-	private Element createActionPhrase(List<Element> elementList,
-			Element phraseElement, Attribute attribute) {
-		Element actionPhrase = new Element("ActionPhrase");
-		actionPhrase.addAttribute(attribute);
-		elementList.add(phraseElement);
-		addListToNode(actionPhrase, elementList);
-		return actionPhrase;
 	}
 
 	/*
