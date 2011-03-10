@@ -34,6 +34,7 @@ public class RegexTagger {
 	public RegexTagger(String tagFile) {
 		this.tagFile = tagFile;
 	}
+
 	/**************************************************************
 	 * Initialises the rules for the regular expression tagger
 	 ***************************************************************/
@@ -83,10 +84,10 @@ public class RegexTagger {
 		for (String token : tokenList) {
 			try {
 				Matcher m = Pattern.compile("dummy").matcher(token);
-                
+
 				String tag = "nil";
 				for (Rule r : rules) {
-					
+		
 					if (m.usePattern(r.getPattern()).lookingAt()) {
 						tag = r.getName();
 						break;
@@ -120,20 +121,20 @@ public class RegexTagger {
 		}
 
 		public Rule(String name, String regex) {
-			setRule(name,regex,true);
+			setRule(name, regex, true);
 		}
-		
-		public Rule(String name, String regex,boolean caseInsensitive) {
-			setRule(name,regex,caseInsensitive);
+
+		public Rule(String name, String regex, boolean caseInsensitive) {
+			setRule(name, regex, caseInsensitive);
 		}
-		
 
-
-		private void setRule(String name, String regex,boolean caseInsensitive) {
+		private void setRule(String name, String regex, boolean caseInsensitive) {
 			this.name = name;
-			
-			if (caseInsensitive) pattern = Pattern.compile(regex,Pattern.CASE_INSENSITIVE);
-			else pattern = Pattern.compile(regex);
+
+			if (caseInsensitive)
+				pattern = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
+			else
+				pattern = Pattern.compile(regex);
 		}
 	}
 

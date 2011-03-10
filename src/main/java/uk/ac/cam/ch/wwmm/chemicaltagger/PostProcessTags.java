@@ -224,7 +224,7 @@ public class PostProcessTags {
 			List<String> afterList = Utils.addToList("oscar-cj jj-chem nn");
 
 			if (stringbefore(beforeList, i, combinedTags)
-					&& stringafter(afterList, i, combinedTags)) {
+					&& stringafter(afterList, i, combinedTags)&& !currentTag.toLowerCase().startsWith("nn-")) {
 				newTag = "JJ";
 			}
 
@@ -411,6 +411,13 @@ public class PostProcessTags {
 			
 		}
 		
+		if (i !=0 && currentTag.toLowerCase().startsWith("vb")) {
+			
+			List<String> beforeList = Utils.addToList("stop rrb comma");
+			List<String> afterList = Utils.addToList("nnp nns nn nnp-acronym");
+			if  (Character.isUpperCase(currentToken.charAt(0)) && !stringbefore(beforeList, i, combinedTags) && stringafter(afterList, i, combinedTags)) newTag = "JJ-CHEM";
+			
+		}
 		if (currentToken.equals("M")) {
 
 			List<String> beforeList = Utils.addToList("cd");

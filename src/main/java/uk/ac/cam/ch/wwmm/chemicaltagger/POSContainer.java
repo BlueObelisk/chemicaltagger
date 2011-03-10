@@ -8,6 +8,8 @@ import java.util.Map;
 
 import nu.xom.Element;
 
+import opennlp.tools.ngram.TokenList;
+
 import org.apache.commons.lang.StringUtils;
 
 import antlr.TokenWithIndex;
