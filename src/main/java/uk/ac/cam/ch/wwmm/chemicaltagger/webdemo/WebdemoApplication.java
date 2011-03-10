@@ -97,7 +97,7 @@ public class WebdemoApplication extends Application {
 		ChemistryPOSTagger.getInstance().runTaggers("");
 		ChemistrySentenceParser chemParser = new ChemistrySentenceParser(IOUtils.toInputStream(""));
 		chemParser.parseTags();
-		chemParser.getDocument();
+		chemParser.makeXMLDocument();
 	}
 
 }

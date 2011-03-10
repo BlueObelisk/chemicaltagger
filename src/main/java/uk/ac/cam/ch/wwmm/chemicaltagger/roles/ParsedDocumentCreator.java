@@ -28,20 +28,15 @@ public class ParsedDocumentCreator {
 		InputStream in =  null;
 		try {
 			String tagTuple = posContainer.getTokenTagTupleAsString();
-			System.out.println(tagTuple);
 			in = IOUtils.toInputStream(tagTuple, "UTF-8");
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
 				in);
 
 		chemistrySentenceParser.parseTags();
-		Tree t = chemistrySentenceParser.getParseTree();
-		ASTtoXML ast2XML = new ASTtoXML();
-		Document doc = ast2XML.convert(t, true);
-		Utils.writeXMLToFile(doc, "target/roleIdentifier.xml");
+		Document doc = chemistrySentenceParser.makeXMLDocument();
 		return doc;
 	}
 
