@@ -24,7 +24,7 @@ public class PostProcessTreesTest {
 	@Test
 	public void testProcessACTAFile() throws ValidityException, ParsingException, IOException{
 		PostProcessTrees postProcess = new PostProcessTrees();
-		InputStream xmlStream = new Utils().getInputStream("uk/ac/cam/ch/wwmm/chemicaltagger/postProcessTrees/ACTA-f-00fc0883.xml");
+		InputStream xmlStream = Utils.getInputStream("uk/ac/cam/ch/wwmm/chemicaltagger/postProcessTrees/ACTA-f-00fc0883.xml");
 		Document doc = new Builder().build(xmlStream);
 		Document newDoc = postProcess.process(doc);
 		
@@ -35,7 +35,7 @@ public class PostProcessTreesTest {
 	@Test
 	public void testProcessParagraph() throws ValidityException, ParsingException, IOException{
 		PostProcessTrees postProcess = new PostProcessTrees();
-		InputStream xmlStream = new Utils().getInputStream("uk/ac/cam/ch/wwmm/chemicaltagger/postProcessTrees/file5.xml");
+		InputStream xmlStream = Utils.getInputStream("uk/ac/cam/ch/wwmm/chemicaltagger/postProcessTrees/file5.xml");
 		Document doc = new Builder().build(xmlStream);
 		Document newDoc = postProcess.process(doc);
 //		Utils.writeXMLToFile(newDoc,"target/testPara.xml");
@@ -67,8 +67,15 @@ public class PostProcessTreesTest {
 	public void testActionPhraseWithNoVerbPhrase() throws UnsupportedEncodingException {
 		String sentence = "Purification by flash chromatography (Isco CombiFlash) (0-20% heptane/EtOAc) yielded 4-(4-chlorobenzyl)thiophene-2-carbaldehyde: 835 mg, 28% yield.";
 		Document doc = new ParsedDocumentCreator().runChemicalTagger(sentence);
-		Assert.assertEquals(1,doc.query(".//ActionPhrase [@type='Purify']").size());//has NN-PURIFY instead of VB-PURIFY
-		Assert.assertEquals(1,doc.query(".//ActionPhrase [@type='Yield']").size());
+		Assert.assertEquals(1,doc.query(".//ActionPhrase[@type='Purify']").size());//has NN-PURIFY instead of VB-PURIFY
+		Assert.assertEquals(1,doc.query(".//ActionPhrase[@type='Yield']").size());
+	}
+	
+	@Test
+	public void testTimeActionPhrase() throws UnsupportedEncodingException {
+		String sentence = "The chemical reaction took 5 minutes.";
+		Document doc = new ParsedDocumentCreator().runChemicalTagger(sentence);
+		Assert.assertEquals(1,doc.query(".//ActionPhrase[@type='Wait']").size());
 	}
 	
 
