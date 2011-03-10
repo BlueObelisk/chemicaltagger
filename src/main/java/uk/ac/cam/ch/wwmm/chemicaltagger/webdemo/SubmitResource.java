@@ -35,7 +35,7 @@ public class SubmitResource extends ServerResource {
         InputStream taggedStream = IOUtils.toInputStream(container.getTokenTagTupleAsString(), "UTF-8");
         ChemistrySentenceParser parser = new ChemistrySentenceParser(taggedStream);
         parser.parseTags();
-        Document doc = parser.getDocument();
+        Document doc = parser.makeXMLDocument();
         Map<String,Object> model = new HashMap<String, Object>();
         XMLtoHTML xmltoHTML = new XMLtoHTML();
         xmltoHTML.convert(doc);

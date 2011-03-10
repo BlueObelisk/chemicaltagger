@@ -135,7 +135,7 @@ public class ChemistrySentenceParser extends Thread {
 
 	}
 
-	public Document getDocument() {
+	public Document makeXMLDocument() {
 		return new ASTtoXML().convert(parseTree, true);
 	}
 

@@ -19,7 +19,7 @@ public class FullParseTest {
 				posContainer);
 		chemistrySentenceParser.parseTags();
 		Tree t = chemistrySentenceParser.getParseTree();
-		Document doc = chemistrySentenceParser.getDocument();
+		Document doc = chemistrySentenceParser.makeXMLDocument();
 		Utils.writeXMLToFile(doc, "target/file1.xml");
 
 		checkNodes(t);
@@ -34,7 +34,7 @@ public class FullParseTest {
 				posContainer);
 		chemistrySentenceParser.parseTags();
 		Tree t = chemistrySentenceParser.getParseTree();
-		Document doc = chemistrySentenceParser.getDocument();
+		Document doc = chemistrySentenceParser.makeXMLDocument();
 		Utils.writeXMLToFile(doc, "target/file2.xml");
 		checkNodes(t);
 	}
@@ -48,7 +48,7 @@ public class FullParseTest {
 				posContainer);
 		chemistrySentenceParser.parseTags();
 		Tree t = chemistrySentenceParser.getParseTree();
-		Document doc = chemistrySentenceParser.getDocument();
+		Document doc = chemistrySentenceParser.makeXMLDocument();
 		Utils.writeXMLToFile(doc, "target/file3.xml");
 
 		checkNodes(t);
@@ -63,7 +63,7 @@ public class FullParseTest {
 				posContainer);
 		chemistrySentenceParser.parseTags();
 		Tree t = chemistrySentenceParser.getParseTree();
-		Document doc = chemistrySentenceParser.getDocument();
+		Document doc = chemistrySentenceParser.makeXMLDocument();
 		Utils.writeXMLToFile(doc, "target/file4.xml");
 
 		checkNodes(t);
@@ -78,7 +78,7 @@ public class FullParseTest {
 				posContainer);
 		chemistrySentenceParser.parseTags();
 		Tree t = chemistrySentenceParser.getParseTree();
-		Document doc = chemistrySentenceParser.getDocument();
+		Document doc = chemistrySentenceParser.makeXMLDocument();
 		Utils.writeXMLToFile(doc, "target/file5.xml");
 		checkNodes(t);
 	}
@@ -92,7 +92,7 @@ public class FullParseTest {
 				posContainer);
 		chemistrySentenceParser.parseTags();
 		Tree t = chemistrySentenceParser.getParseTree();
-		Document doc = chemistrySentenceParser.getDocument();
+		Document doc = chemistrySentenceParser.makeXMLDocument();
 		Utils.writeXMLToFile(doc, "target/file6.xml");
 
 		checkNodes(t);
@@ -107,7 +107,7 @@ public class FullParseTest {
 				posContainer);
 		chemistrySentenceParser.parseTags();
 		Tree t = chemistrySentenceParser.getParseTree();
-		Document doc = chemistrySentenceParser.getDocument();
+		Document doc = chemistrySentenceParser.makeXMLDocument();
 		Utils.writeXMLToFile(doc, "target/file7.xml");
 
 		checkNodes(t);
@@ -122,7 +122,7 @@ public class FullParseTest {
 				posContainer);
 		chemistrySentenceParser.parseTags();
 		Tree t = chemistrySentenceParser.getParseTree();
-		Document doc = chemistrySentenceParser.getDocument();
+		Document doc = chemistrySentenceParser.makeXMLDocument();
 		Utils.writeXMLToFile(doc, "target/file8.xml");
 
 		checkNodes(t);
@@ -137,7 +137,7 @@ public class FullParseTest {
 				posContainer);
 		chemistrySentenceParser.parseTags();
 		Tree t = chemistrySentenceParser.getParseTree();
-		Document doc = chemistrySentenceParser.getDocument();
+		Document doc = chemistrySentenceParser.makeXMLDocument();
 		Utils.writeXMLToFile(doc, "target/file9.xml");
 
 		checkNodes(t);
@@ -165,7 +165,7 @@ public class FullParseTest {
 				posContainer);
 		chemistrySentenceParser.parseTags();
 		Tree t = chemistrySentenceParser.getParseTree();
-		Document doc = chemistrySentenceParser.getDocument();
+		Document doc = chemistrySentenceParser.makeXMLDocument();
 		Utils.writeXMLToFile(doc, "target/file10.xml");
 
 		checkNodes(t);
@@ -182,7 +182,7 @@ public class FullParseTest {
 				posContainer);
 		chemistrySentenceParser.parseTags();
 		Tree t = chemistrySentenceParser.getParseTree();
-		Document doc = chemistrySentenceParser.getDocument();
+		Document doc = chemistrySentenceParser.makeXMLDocument();
 		Utils.writeXMLToFile(doc, "target/file11.xml");
 		checkNodes(t);
 	}
@@ -220,7 +220,7 @@ public class FullParseTest {
 				posContainer);
 		chemistrySentenceParser.parseTags();
 		Tree t = chemistrySentenceParser.getParseTree();
-		Document doc = chemistrySentenceParser.getDocument();
+		Document doc = chemistrySentenceParser.makeXMLDocument();
 		Utils.writeXMLToFile(doc, "target/fileExperiment.xml");
 		checkNodes(t);
 	}
@@ -234,7 +234,7 @@ public class FullParseTest {
 				posContainer);
 		chemistrySentenceParser.parseTags();
 		Tree t = chemistrySentenceParser.getParseTree();
-		Document doc = chemistrySentenceParser.getDocument();
+		Document doc = chemistrySentenceParser.makeXMLDocument();
 		Utils.writeXMLToFile(doc, "target/file23.xml");
 
 		Assert.assertEquals("Input string is equal to output content", text
