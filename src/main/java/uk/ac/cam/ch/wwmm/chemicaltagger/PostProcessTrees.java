@@ -153,7 +153,7 @@ public class PostProcessTrees {
 			List<String> elementNames = getElementAndDescendantElementNameList(phraseElement);
 			String actionElementName = findFirstActionElementName(elementNames);
 			if (actionElementName!=null) {
-				if (phraseElement.getLocalName().contains("VerbPhrase") || phraseContainsANounThatActsLikeAVerb(elementNames)) {
+				if (phraseElement.getLocalName().equals("VerbPhrase") || phraseContainsANounThatActsLikeAVerb(elementNames)) {
 
 					if (seenVerb) {
 						if (actionPhrase != null) {
