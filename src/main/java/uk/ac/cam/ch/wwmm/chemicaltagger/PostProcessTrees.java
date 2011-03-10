@@ -13,9 +13,23 @@ import nu.xom.Node;
 import nu.xom.Nodes;
 
 public class PostProcessTrees {
-	public final static HashMap<String, String> actionMap = new HashMap<String, String>();
+	private HashMap<String, String> actionMap = new HashMap<String, String>();
+
+	public HashMap<String, String> getActionMap() {
+		return actionMap;
+	}
+
+	
+	public PostProcessTrees(HashMap<String, String> postProcessActionMap) {
+		this.actionMap = postProcessActionMap;
+	}
 
 	public PostProcessTrees() {
+		actionMap = new HashMap<String, String>();
+		loadDefaultActionMap();
+	}
+
+	public void loadDefaultActionMap(){
 		// Add Tokens
 		actionMap.put("VB-ADD", "Add");
 		actionMap.put("NN-ADD", "Add");
@@ -90,8 +104,8 @@ public class PostProcessTrees {
 		// Yield Tokens
 		actionMap.put("VB-YIELD", "Yield");
 
+		
 	}
-
 	public Document process(Document doc) {
 		Element root = new Element("Document");
 		Nodes nodes = doc.query("//Sentence");
@@ -137,7 +151,6 @@ public class PostProcessTrees {
 			Element phraseElement = (Element) sentenceNode.getChild(i);
 
 			List<String> elementNames = getElementAndDescendantElementNameList(phraseElement);
-			// System.out.println("--Phrase is " + phraseElement.toXML());
 			String actionElementName = findFirstActionElementName(elementNames);
 			if (actionElementName!=null) {
 				if (phraseElement.getLocalName().contains("VerbPhrase") || phraseContainsANounThatActsLikeAVerb(elementNames)) {

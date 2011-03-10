@@ -1,5 +1,7 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
+import java.util.HashMap;
+
 import nu.xom.Document;
 import nu.xom.Element;
 
@@ -7,8 +9,6 @@ import org.antlr.runtime.Token;
 import org.antlr.runtime.tree.Tree;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
-
-import uk.ac.cam.ch.wwmm.pregenerated.ChemicalChunkerParser;
 
 /*****************************
  * 
@@ -58,6 +58,40 @@ public class ASTtoXML {
 		}
 		if (postProcess) {
 			PostProcessTrees procTree = new PostProcessTrees();
+			if (doc == null)
+				return null;
+			doc = procTree.process(doc);
+		}
+		return doc;
+	}
+
+	
+	/********************************************
+	 * Main Function Converts astTree to XML Document.
+	 * And postprocesses the treenodes using
+	 * a userdefine hashmap
+	 *  Calls the recursive
+	 * function getNodes.
+	 * 
+	 * 
+	 * @param astTree
+	 *            (Tree)
+	 * @return doc (Document)
+	 *******************************************/
+	public Document convert(Tree astTree, boolean postProcess,HashMap<String, String> postProcessDictionary) {
+		Element root = new Element("Document");
+		Document doc = null;
+		if (astTree.getChildCount() > 0) {
+			if (StringUtils.isNotEmpty(astTree.getText())) {
+				Element sentenceNode = new Element("Sentence");
+				root.appendChild(getNodes(astTree, sentenceNode));
+				doc = new Document(root);
+
+			} else
+				doc = new Document(getNodes(astTree, root));
+		}
+		if (postProcess) {
+			PostProcessTrees procTree = new PostProcessTrees(postProcessDictionary);
 			if (doc == null)
 				return null;
 			doc = procTree.process(doc);
