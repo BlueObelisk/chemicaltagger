@@ -219,6 +219,16 @@ public class PostProcessTrees {
 						addListToNode(newSentence, elementList);
 						elementList = new ArrayList<Element>();
 					}
+					else{
+	                   List<String> elementNames = elementListToSelfAndDescendentElementNames(elementList);
+	                   if (elementNames.contains("TimePhrase")) {
+	                	   Attribute attribute = new Attribute("type", "Wait");
+	                	   actionPhrase = createActionPhrase(elementList, attribute);
+	                       appendActionPhrase(newSentence, actionPhrase);
+	                       actionPhrase = null;
+	                       elementList = new ArrayList<Element>();
+	                   }
+					}
 				}
 				seenVerbOrAtionNoun = false;
 			} else {
