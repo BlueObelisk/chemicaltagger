@@ -43,7 +43,7 @@ public class PostProcessTreesTest {
 
 	}
 	@Test
-	public void purifyPatternTest() throws UnsupportedEncodingException {
+	public void purifyPatternTest(){
 		
 		String sentence = "the mixture was purified by column chromatography (hexane/AcOEt, 7/3) and added to the solution.";
 		Document doc = new ParsedDocumentCreator().runChemicalTagger(sentence);
@@ -53,7 +53,7 @@ public class PostProcessTreesTest {
 	}
 	
 	@Test
-	public void rolePrepPhraseTest() throws UnsupportedEncodingException {
+	public void rolePrepPhraseTest(){
 		String sentence = "the mixture was purified using hexane as an eluent";
 		Document doc = new ParsedDocumentCreator().runChemicalTagger(sentence);
 		Nodes roles = doc.query(".//MOLECULE[@role='Solvent']");
@@ -64,7 +64,7 @@ public class PostProcessTreesTest {
 	
 	
 	@Test
-	public void testActionPhraseWithNoVerbPhrase() throws UnsupportedEncodingException {
+	public void testActionPhraseWithNoVerbPhrase(){
 		String sentence = "Purification by flash chromatography (Isco CombiFlash) (0-20% heptane/EtOAc) yielded 4-(4-chlorobenzyl)thiophene-2-carbaldehyde: 835 mg, 28% yield.";
 		Document doc = new ParsedDocumentCreator().runChemicalTagger(sentence);
 		Assert.assertEquals(1,doc.query(".//ActionPhrase[@type='Purify']").size());//has NN-PURIFY instead of VB-PURIFY
@@ -72,11 +72,20 @@ public class PostProcessTreesTest {
 	}
 	
 	@Test
-	public void testTimeActionPhrase() throws UnsupportedEncodingException {
+	public void testTimeActionPhrase(){
 		String sentence = "The chemical reaction took 5 minutes.";
 		Document doc = new ParsedDocumentCreator().runChemicalTagger(sentence);
 		Assert.assertEquals(1,doc.query(".//ActionPhrase[@type='Wait']").size());
 	}
 	
+	@Test
+	public void testApparatusAction(){
+		String sentence = "ethylene and 4-fluoroanisole as an internal standard were placed in a Teflon sealed tube.";
+		Document doc = new ParsedDocumentCreator().runChemicalTagger(sentence);
+		Nodes actionPhraseNode = doc.query(".//ActionPhrase[@type='ApparatusAction']");
+		Assert.assertEquals(1, actionPhraseNode.size());
+		Assert.assertEquals(1, actionPhraseNode.get(0).query(".//VB-APPARATUS[text()='sealed']").size());
+		Assert.assertEquals(1, actionPhraseNode.get(0).query(".//NN-APPARATUS[text()='tube']").size());
+	}
 
 }

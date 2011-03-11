@@ -111,10 +111,6 @@ public class PostProcessTrees {
 		actionMap.put("VB-WASH", "Wash");
 		// Yield Tokens
 		actionMap.put("VB-YIELD", "Yield");
-
-		actionMap.put("TimePhrase", "Wait");
-		actionMap.put("MultipleApparatus", "ApparatusAction");
-
 	}
 	public Document process(Document doc) {
 		Element root = new Element("Document");
@@ -185,6 +181,29 @@ public class PostProcessTrees {
 				}
 				else {
 					elementList.add(phraseElement);
+                    List<String> elementNames = elementListToSelfAndDescendentElementNames(elementList);
+                    
+                    if (elementNames.contains("TimePhrase")) {
+                            Attribute attribute = new Attribute("type", "Wait");
+                            actionPhrase = createActionPhrase(elementList, attribute);
+                            appendActionPhrase(newSentence, actionPhrase);
+                            actionPhrase = null;
+
+                            elementList = new ArrayList<Element>();
+                            seenVerbOrAtionNoun = false;
+                    }
+                    else if (elementNames.contains("MultipleApparatus")) {
+
+                            Attribute attribute = new Attribute("type",
+                                            "ApparatusAction");
+                            actionPhrase = createActionPhrase(elementList, attribute);
+                            appendActionPhrase(newSentence, actionPhrase);
+                            actionPhrase = null;
+
+                            elementList = new ArrayList<Element>();
+                            seenVerbOrAtionNoun = false;
+                    }
+
 				}
 			} else if (splitList.contains(phraseElement.getLocalName().toLowerCase())) {
 				elementList.add(phraseElement);
@@ -326,6 +345,21 @@ public class PostProcessTrees {
 		}
 
 	}
+	
+	/**
+	 * Creates an actionPhrase element with the given children and attribute
+	 * @param children
+	 * @param phraseElement
+	 * @param attribute
+	 * @return
+	 */
+    private Element createActionPhrase(List<Element> children, Attribute attribute) {
+	    Element actionPhrase = new Element("ActionPhrase");
+	    actionPhrase.addAttribute(attribute);
+	    addListToNode(actionPhrase, children);
+	    return actionPhrase;
+	}
+
 
 	private Element processSolvent(Element actionElement) {
 
