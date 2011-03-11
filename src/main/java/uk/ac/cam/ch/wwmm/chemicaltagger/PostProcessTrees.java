@@ -220,6 +220,7 @@ public class PostProcessTrees {
 						elementList = new ArrayList<Element>();
 					}
 				}
+				seenVerbOrAtionNoun = false;
 			} else {
 				elementList.add(phraseElement);
 			}
