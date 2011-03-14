@@ -7,6 +7,7 @@ import java.io.UnsupportedEncodingException;
 import junit.framework.Assert;
 import nu.xom.Builder;
 import nu.xom.Document;
+import nu.xom.Element;
 import nu.xom.Nodes;
 import nu.xom.ParsingException;
 import nu.xom.ValidityException;
@@ -92,8 +93,32 @@ public class PostProcessTreesTest {
 	public void testNNExamplePrecludingActionPhrase(){
 		String sentence = "An example of the synthesis of foo is as follows.";
 		Document doc = new ParsedDocumentCreator().runChemicalTagger(sentence);
-		System.out.println(doc.toXML());
 		Assert.assertEquals(0,doc.query(".//ActionPhrase").size());
+	}
+	
+	@Test
+	public void testCommaNotIncludedInActionPhrases(){
+		String sentence = "Something was synthesised, then something was added.";
+		Document doc = new ParsedDocumentCreator().runChemicalTagger(sentence);
+		Nodes children = doc.query("//Sentence/*");
+		Assert.assertEquals(5,children.size());
+		for (int i = 0; i < children.size(); i++) {
+			if (i==0){
+				Assert.assertEquals("ActionPhrase",((Element)children.get(i)).getLocalName());
+			}
+			else if (i==1){
+				Assert.assertEquals("COMMA",((Element)children.get(i)).getLocalName());
+			}
+			else if (i==2){
+				Assert.assertEquals("RB-CONJ",((Element)children.get(i)).getLocalName());
+			}
+			else if (i==3){
+				Assert.assertEquals("ActionPhrase",((Element)children.get(i)).getLocalName());
+			}
+			else if (i==4){
+				Assert.assertEquals("STOP",((Element)children.get(i)).getLocalName());
+			}
+		}
 	}
 
 }

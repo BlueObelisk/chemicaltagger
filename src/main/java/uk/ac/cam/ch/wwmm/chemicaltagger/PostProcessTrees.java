@@ -203,7 +203,6 @@ public class PostProcessTrees {
 
 				}
 			} else if (splitList.contains(phraseElement.getLocalName().toLowerCase())) {
-				elementList.add(phraseElement);
 				if (actionPhrase != null) {
 					addListToNode(actionPhrase, elementList);
 					appendActionPhrase(newSentence, actionPhrase);
@@ -226,6 +225,12 @@ public class PostProcessTrees {
 	                       elementList = new ArrayList<Element>();
 	                   }
 					}
+				}
+				if (elementList.isEmpty()){
+				    newSentence.appendChild(new Element(phraseElement));
+				}
+				else{
+					elementList.add(phraseElement);
 				}
 				seenVerbOrAtionNoun = false;
 			} else {
