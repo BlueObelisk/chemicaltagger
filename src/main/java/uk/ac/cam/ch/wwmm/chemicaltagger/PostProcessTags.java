@@ -263,6 +263,13 @@ public class PostProcessTags {
 
 		}
 
+		if (currentTag.toLowerCase().startsWith("nn-mixture")) {
+
+			List<String> afterList = Utils.addToList("in-of");
+			
+			if (!stringafter(afterList, i, combinedTags)) newTag = "NN-CHEMENTITY";
+
+		}
 		/********
 		 * Gerunds
 		 */
