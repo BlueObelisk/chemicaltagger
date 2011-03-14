@@ -189,17 +189,17 @@ public class PostProcessTrees {
                             elementList = new ArrayList<Element>();
                             seenVerbOrAtionNoun = false;
                     }
-                    else if (elementNames.contains("MultipleApparatus")) {
-
-                            Attribute attribute = new Attribute("type",
-                                            "ApparatusAction");
-                            actionPhrase = createActionPhrase(elementList, attribute);
-                            appendActionPhrase(newSentence, actionPhrase);
-                            actionPhrase = null;
-
-                            elementList = new ArrayList<Element>();
-                            seenVerbOrAtionNoun = false;
-                    }
+//                    else if (elementNames.contains("MultipleApparatus")) {
+//
+//                            Attribute attribute = new Attribute("type",
+//                                            "ApparatusAction");
+//                            actionPhrase = createActionPhrase(elementList, attribute);
+//                            appendActionPhrase(newSentence, actionPhrase);
+//                            actionPhrase = null;
+//
+//                            elementList = new ArrayList<Element>();
+//                            seenVerbOrAtionNoun = false;
+//                    }
 
 				}
 			} else if (splitList.contains(phraseElement.getLocalName().toLowerCase())) {

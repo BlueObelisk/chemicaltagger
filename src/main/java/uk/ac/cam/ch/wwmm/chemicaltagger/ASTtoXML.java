@@ -139,9 +139,9 @@ public class ASTtoXML {
 					}
 				}
 			} else {
-				Element unmatched = new Element("UnmatchedPhrase");
-				unmatched.appendChild(text);
-				node.appendChild(unmatched);
+//				Element unmatched = new Element("UnmatchedPhrase");
+//				unmatched.appendChild(text);
+//				node.appendChild(unmatched);
 			}
 		}
 		return node;
