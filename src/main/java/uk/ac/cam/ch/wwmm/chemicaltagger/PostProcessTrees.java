@@ -440,6 +440,7 @@ public class PostProcessTrees {
 			boolean seenPreposition) {
 
 		for (int i = 0; i < solventElement.getChildCount(); i++) {
+			if (!solventElement.getLocalName().contains("Unmatched")){
 			Element child = (Element) solventElement.getChild(i);
 			if (child.getLocalName().toLowerCase().contains("phrase")) {
 				addSolventRole(child, preposition, seenPreposition);
@@ -453,7 +454,7 @@ public class PostProcessTrees {
 			if (child.getLocalName().equals(preposition))
 				seenPreposition = true;
 		}
-
+		}
 	}
 
 	/**
