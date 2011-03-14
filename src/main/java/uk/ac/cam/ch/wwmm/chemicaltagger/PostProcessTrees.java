@@ -168,21 +168,18 @@ public class PostProcessTrees {
 				}
 				seenVerbOrAtionNoun = true;
 
+				elementList.add(phraseElement);
+                List<String> elementNames = elementListToSelfAndDescendentElementNames(elementList);
 				if (actionElementName !=null){
-					List<String> elementNames = elementListToSelfAndDescendentElementNames(elementList);
-					if (!elementNames.contains("NN-EXAMPLE")) {//TODO what is this if statement for, it causes this phrase element to be ignored?!?!
+					if (!elementNames.contains("NN-EXAMPLE")) {//prevents "example of synthesis" like phrases being misidentified as action phrases
 						actionPhrase = new Element("ActionPhrase");
 						Attribute attribute = new Attribute("type", actionMap.get(actionElementName));
 						// System.out.println("* I contain keyword:: "
 						// + actionName);
 						actionPhrase.addAttribute(attribute);
-						elementList.add(phraseElement);
 					}
 				}
 				else {
-					elementList.add(phraseElement);
-                    List<String> elementNames = elementListToSelfAndDescendentElementNames(elementList);
-                    
                     if (elementNames.contains("TimePhrase")) {
                             Attribute attribute = new Attribute("type", "Wait");
                             actionPhrase = createActionPhrase(elementList, attribute);

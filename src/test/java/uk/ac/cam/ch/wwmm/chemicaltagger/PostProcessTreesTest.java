@@ -87,5 +87,13 @@ public class PostProcessTreesTest {
 		Assert.assertEquals(1, actionPhraseNode.get(0).query(".//VB-APPARATUS[text()='sealed']").size());
 		Assert.assertEquals(1, actionPhraseNode.get(0).query(".//NN-APPARATUS[text()='tube']").size());
 	}
+	
+	@Test
+	public void testNNExamplePrecludingActionPhrase(){
+		String sentence = "An example of the synthesis of foo is as follows.";
+		Document doc = new ParsedDocumentCreator().runChemicalTagger(sentence);
+		System.out.println(doc.toXML());
+		Assert.assertEquals(0,doc.query(".//ActionPhrase").size());
+	}
 
 }
