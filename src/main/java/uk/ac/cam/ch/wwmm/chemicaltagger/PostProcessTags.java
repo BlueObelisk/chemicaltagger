@@ -178,10 +178,6 @@ public class PostProcessTags {
 
 		}
 
-		if (currentToken.equals("w")) {
-			newTag = "NN-CHEMENTITY";
-
-		}
 		if (currentTag.toLowerCase().startsWith("vbn")
 				|| currentTag.toLowerCase().startsWith("vbg")
 				|| currentTag.toLowerCase().startsWith("vb-")
@@ -224,7 +220,8 @@ public class PostProcessTags {
 			List<String> afterList = Utils.addToList("oscar-cj jj-chem nn");
 
 			if (stringbefore(beforeList, i, combinedTags)
-					&& stringafter(afterList, i, combinedTags)&& !currentTag.toLowerCase().startsWith("nn-")) {
+					&& stringafter(afterList, i, combinedTags)
+					&& !currentTag.toLowerCase().startsWith("nn-")) {
 				newTag = "JJ";
 			}
 
@@ -266,8 +263,9 @@ public class PostProcessTags {
 		if (currentTag.toLowerCase().startsWith("nn-mixture")) {
 
 			List<String> afterList = Utils.addToList("in-of");
-			
-			if (!stringafter(afterList, i, combinedTags)) newTag = "NN-CHEMENTITY";
+
+			if (!stringafter(afterList, i, combinedTags))
+				newTag = "NN-CHEMENTITY";
 
 		}
 		/********
@@ -403,27 +401,43 @@ public class PostProcessTags {
 				&& StringUtils.equalsIgnoreCase(currentToken, "M")) {
 			newTag = "NN-MOLAR";
 		}
-		if (i !=0 && StringUtils.equalsIgnoreCase(currentTag, "nns")) {
-			
+		if (i != 0 && StringUtils.equalsIgnoreCase(currentTag, "nns")) {
+
 			List<String> beforeList = Utils.addToList("stop");
-			if (currentToken.endsWith("s") && Character.isUpperCase(currentToken.charAt(0))){
-			if (!stringbefore(beforeList, i, combinedTags))newTag = "NPS";
+			if (currentToken.endsWith("s")
+					&& Character.isUpperCase(currentToken.charAt(0))) {
+				if (!stringbefore(beforeList, i, combinedTags))
+					newTag = "NPS";
 			}
 		}
-		
-		if (i !=0 && StringUtils.equalsIgnoreCase(currentTag, "nn")) {
-			
-			List<String> beforeList = Utils.addToList("stop");
-			if  (Character.isUpperCase(currentToken.charAt(0)) && !stringbefore(beforeList, i, combinedTags)) newTag = "NNP";
-			
+
+		if (StringUtils.equalsIgnoreCase(currentTag, "rb")
+				&& currentToken.length() < 2) {
+
+			if (Character.isUpperCase(currentToken.charAt(0)))
+				newTag = "NNP";
+			else
+				newTag = "NN";
+
 		}
-		
-		if (i !=0 && currentTag.toLowerCase().startsWith("vb")) {
-			
+		if (i != 0 && StringUtils.equalsIgnoreCase(currentTag, "nn")) {
+
+			List<String> beforeList = Utils.addToList("stop");
+			if (Character.isUpperCase(currentToken.charAt(0))
+					&& !stringbefore(beforeList, i, combinedTags))
+				newTag = "NNP";
+
+		}
+
+		if (i != 0 && currentTag.toLowerCase().startsWith("vb")) {
+
 			List<String> beforeList = Utils.addToList("stop rrb comma");
 			List<String> afterList = Utils.addToList("nnp nns nn nnp-acronym");
-			if  (Character.isUpperCase(currentToken.charAt(0)) && !stringbefore(beforeList, i, combinedTags) && stringafter(afterList, i, combinedTags)) newTag = "JJ-CHEM";
-			
+			if (Character.isUpperCase(currentToken.charAt(0))
+					&& !stringbefore(beforeList, i, combinedTags)
+					&& stringafter(afterList, i, combinedTags))
+				newTag = "JJ-CHEM";
+
 		}
 		if (currentToken.equals("M")) {
 
@@ -466,10 +480,16 @@ public class PostProcessTags {
 
 		if (currentTag.toLowerCase().startsWith("nn-synthesize")) {
 			List<String> afterList = Utils.addToList("in-of nn-method");
-			if  (!stringafter(afterList, i, combinedTags)) {
-				
-				 newTag = "NN-CHEMENTITY";
+			if (!stringafter(afterList, i, combinedTags)) {
+
+				newTag = "NN-CHEMENTITY";
 			}
+		}
+
+		if (i != 0 && currentTag.toLowerCase().startsWith("nn-add")) {
+			List<String> beforeList = Utils.addToList("stop comma colon");
+			if (!stringbefore(beforeList, i, combinedTags) && Character.isUpperCase(currentToken.charAt(0)))	newTag = "NNP";
+
 		}
 
 		if (currentToken.toLowerCase().equals("addition")) {
@@ -504,10 +524,10 @@ public class PostProcessTags {
 
 		}
 
-		if (currentToken.equals("D") & currentTag.toLowerCase().equals("nn-time")) {
+		if (currentToken.equals("D")
+				& currentTag.toLowerCase().equals("nn-time")) {
 
-			List<String> beforeList = Utils
-					.addToList("in-in");
+			List<String> beforeList = Utils.addToList("in-in");
 			if (stringbefore(beforeList, i, combinedTags)) {
 				newTag = "NN";
 			}

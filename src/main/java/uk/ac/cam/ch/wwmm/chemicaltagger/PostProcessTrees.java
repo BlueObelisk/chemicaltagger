@@ -20,6 +20,7 @@ public class PostProcessTrees {
 		splitList.add("comma");
 		splitList.add("cc");
 		splitList.add("stop");
+		splitList.add("colon");
 		splitList.add("rb-conj");
 	}
 
