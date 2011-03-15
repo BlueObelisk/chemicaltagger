@@ -60,7 +60,7 @@ document: sentences+-> ^(Sentence  sentences )+ ;
 
 sentences:  (sentenceStructure|unmatchedPhrase)+    (comma|stop)*;
 
-sentenceStructure:  (nounphrase|verbphrase|prepphrase)+ (advAdj|colon) * (conjunction|rbconj)*;
+sentenceStructure:  (nounphrase|verbphrase|prepphrase|prepphraseAfter)+ (advAdj|colon) * (conjunction|rbconj)*;
 
 
 unmatchedPhrase
@@ -153,7 +153,7 @@ prepphrase
 advAdj   
 	:adv|adj;	
 prepphraseOther
-	: advAdj* inAll+  nounphrase ->  ^(PrepPhrase  advAdj* inAll+  nounphrase);
+	: advAdj* inMost+  nounphrase ->  ^(PrepPhrase  advAdj* inMost+  nounphrase);
 prepphraseOf 
 	: inof  nounphrase->  ^(PrepPhrase  inof  nounphrase);
 
@@ -172,12 +172,16 @@ prepphraseAtmosphere
 prepphraseAtmosphereContent
 	:inunder  dt? advAdj* molecule nnatmosphere?	;
 	
+inMost	: in|inas|inbefore|inby|infor|infrom|inin|ininto|inof|inoff|inon|inover|inunder|invia|inwith|inwithout|to;
 
 inAll	: in|inafter|inas|inbefore|inby|infor|infrom|inin|ininto|inof|inoff|inon|inover|inunder|invia|inwith|inwithout|to;
 prepphraseTemp:  prepphraseTempContent ->  ^(TempPhrase   prepphraseTempContent);
 
 prepphraseTempContent
 	:  advAdj? inAll? dt? advAdj? cd? nntemp+;	
+	
+prepphraseAfter
+	:  advAdj? inafter  nounphrase ->  ^(PrepPhrase  advAdj* inafter  nounphrase);	
 	
 			
 amount	: cd+ nnamount -> ^(AMOUNT   cd+ nnamount );
@@ -221,7 +225,7 @@ oscarCompound2Structure
 //moleculeamount1
 //	:measurements (quantity|mixture)? inof oscarCompound;	
 moleculeamount1
-	:(quantity|mixture)+ inof oscarCompound;	
+	:(quantity|mixture)+ inof oscarCompound mixture?;	
 
 moleculeamount2
 	:(quantity|mixture)* oscarCompound+  (citation|quantity|mixture)* ;	
