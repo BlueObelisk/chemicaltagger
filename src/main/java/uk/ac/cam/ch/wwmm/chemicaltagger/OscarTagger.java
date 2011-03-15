@@ -10,9 +10,6 @@ import uk.ac.cam.ch.wwmm.oscar.chemnamedict.core.PolymerDictionary;
 import uk.ac.cam.ch.wwmm.oscar.document.IToken;
 import uk.ac.cam.ch.wwmm.oscar.document.ITokenSequence;
 import uk.ac.cam.ch.wwmm.oscar.document.NamedEntity;
-import uk.ac.cam.ch.wwmm.oscar.document.Token;
-import uk.ac.cam.ch.wwmm.oscar.document.TokenSequence;
-import uk.ac.cam.ch.wwmm.oscar.opsin.OpsinDictionary;
 
 /*****************************************************
  * Runs the OSCAR tagger .
@@ -22,7 +19,7 @@ import uk.ac.cam.ch.wwmm.oscar.opsin.OpsinDictionary;
 
 public class OscarTagger {
 
-	private Oscar oscar;
+	private Oscar oscar ;
 	private List<ITokenSequence> tokens;
 
 	/****************************

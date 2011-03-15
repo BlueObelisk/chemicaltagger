@@ -16,7 +16,7 @@
 	</repositories>
 	<build>
 		<plugins>
-		
+
 
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -82,11 +82,6 @@
 
 		<dependency>
 			<groupId>uk.ac.cam.ch.wwmm.oscar</groupId>
-			<artifactId>oscar4-cli</artifactId>
-			<version>4.0-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>uk.ac.cam.ch.wwmm.oscar</groupId>
 			<artifactId>oscar4-data</artifactId>
 			<version>4.0-SNAPSHOT</version>
 		</dependency>
@@ -149,12 +144,17 @@
 			<artifactId>org.restlet.ext.freemarker</artifactId>
 			<version>2.0.0</version>
 		</dependency>
+		<dependency>
+			<groupId>uk.ac.cam.ch.wwmm.oscar</groupId>
+			<artifactId>oscar4-api</artifactId>
+			<version>4.0-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
-	
+
 	<profiles>
 		<profile>
 			<id>rebuildGrammar</id>
-			
+
 			<build>
 				<plugins>
 					<plugin>
@@ -178,7 +178,7 @@
 							</execution>
 						</executions>
 					</plugin>
-					
+
 				</plugins>
 			</build>
 		</profile>
