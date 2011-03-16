@@ -142,6 +142,7 @@ public class PostProcessTrees {
 		return root;
 	}
 
+
 	private Element processSentence(Element sentenceNode) {
 		Element newSentence = new Element("Sentence");
 		List<Element> elementList = new ArrayList<Element>();
@@ -155,54 +156,45 @@ public class PostProcessTrees {
 			String actionElementName = findFirstActionElementName(phraseElement);
 			if (actionElementName != null || phraseElement.getLocalName().equals("VerbPhrase")) {
 				if (seenVerbOrAtionNoun) {
-					if (actionPhrase != null) {
+					if (actionPhrase != null) {//This the start of a new phrase, so add all seen elements into the previous actionPhrase
 						addListToNode(actionPhrase, elementList);
 						appendActionPhrase(newSentence, actionPhrase);
 						actionPhrase = null;
-
 					} else {
 						addListToNode(newSentence, elementList);
-
 					}
 					elementList = new ArrayList<Element>();
-
 				}
 				seenVerbOrAtionNoun = true;
 
 				elementList.add(phraseElement);
                 List<String> elementNames = elementListToSelfAndDescendentElementNames(elementList);
-				if (actionElementName !=null){
-					if (!elementNames.contains("NN-EXAMPLE")) {//prevents "example of synthesis" like phrases being misidentified as action phrases
+                if (!elementNames.contains("NN-EXAMPLE")){//prevents "example of synthesis" like phrases being misidentified as action phrases
+					if (actionElementName !=null) {
 						actionPhrase = new Element("ActionPhrase");
 						Attribute attribute = new Attribute("type", actionMap.get(actionElementName));
-						// System.out.println("* I contain keyword:: "
-						// + actionName);
+						// System.out.println("* I contain keyword:: " + actionName);
 						actionPhrase.addAttribute(attribute);
 					}
-				}
-				else {
-                    if (elementNames.contains("TimePhrase")) {
-                            Attribute attribute = new Attribute("type", "Wait");
-                            actionPhrase = createActionPhrase(elementList, attribute);
-                            appendActionPhrase(newSentence, actionPhrase);
-                            actionPhrase = null;
+					else if (elementNames.contains("TimePhrase")) {
+                        Attribute attribute = new Attribute("type", "Wait");
+                        actionPhrase = createActionPhrase(elementList, attribute);
+                        appendActionPhrase(newSentence, actionPhrase);
+                        actionPhrase = null;
 
-                            elementList = new ArrayList<Element>();
-                            seenVerbOrAtionNoun = false;
-                    }
-                    else if (elementNames.contains("MultipleApparatus")) {
+                        elementList = new ArrayList<Element>();
+                        seenVerbOrAtionNoun = false;
+	                }
+	                else if (elementNames.contains("MultipleApparatus")) {
+                        Attribute attribute = new Attribute("type", "ApparatusAction");
+                        actionPhrase = createActionPhrase(elementList, attribute);
+                        appendActionPhrase(newSentence, actionPhrase);
+                        actionPhrase = null;
 
-                            Attribute attribute = new Attribute("type",
-                                            "ApparatusAction");
-                            actionPhrase = createActionPhrase(elementList, attribute);
-                            appendActionPhrase(newSentence, actionPhrase);
-                            actionPhrase = null;
-
-                            elementList = new ArrayList<Element>();
-                            seenVerbOrAtionNoun = false;
-                    }
-
-				}
+                        elementList = new ArrayList<Element>();
+                        seenVerbOrAtionNoun = false;
+	                }
+                }
 			} else if (splitList.contains(phraseElement.getLocalName().toLowerCase())) {
 				if (actionPhrase != null) {
 					addListToNode(actionPhrase, elementList);
@@ -227,7 +219,7 @@ public class PostProcessTrees {
 	                   }
 					}
 				}
-				if (elementList.isEmpty()){
+				if (elementList.isEmpty()){//append the punctuation directly if they are not within a phrase
 				    newSentence.appendChild(new Element(phraseElement));
 				}
 				else{
