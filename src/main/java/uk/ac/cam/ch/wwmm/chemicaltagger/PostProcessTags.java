@@ -173,6 +173,9 @@ public class PostProcessTags {
 			}
 		}
 
+		if (currentTag.toLowerCase().startsWith("vb") && Utils.containsNumber(currentToken)) {
+			newTag= "NN";
+		}
 		if (currentToken.startsWith("Contain")) {
 			newTag = "JJ";
 
