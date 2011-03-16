@@ -321,4 +321,13 @@ public class Utils {
 
 		return inStream;
 	}
+
+	public static boolean containsNumber(String currentToken) {
+		for (char c : currentToken.toCharArray()) {
+			if (Character.isDigit(c)){
+				return true;
+			}
+		}
+		return false;
+	}
 }
