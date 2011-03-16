@@ -2,7 +2,6 @@ package uk.ac.cam.ch.wwmm.chemicaltagger;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
 
 import junit.framework.Assert;
 import nu.xom.Builder;
@@ -71,24 +70,7 @@ public class PostProcessTreesTest {
 		Assert.assertEquals(1,doc.query(".//ActionPhrase[@type='Purify']").size());//has NN-PURIFY instead of VB-PURIFY
 		Assert.assertEquals(1,doc.query(".//ActionPhrase[@type='Yield']").size());
 	}
-	
-	@Test
-	public void testTimeActionPhrase(){
-		String sentence = "The chemical reaction took 5 minutes.";
-		Document doc = new ParsedDocumentCreator().runChemicalTagger(sentence);
-		Assert.assertEquals(1,doc.query(".//ActionPhrase[@type='Wait']").size());
-	}
-	
-	@Test
-	public void testApparatusAction(){
-		String sentence = "ethylene and 4-fluoroanisole as an internal standard were placed in a Teflon sealed tube.";
-		Document doc = new ParsedDocumentCreator().runChemicalTagger(sentence);
-		Nodes actionPhraseNode = doc.query(".//ActionPhrase[@type='ApparatusAction']");
-		Assert.assertEquals(1, actionPhraseNode.size());
-		Assert.assertEquals(1, actionPhraseNode.get(0).query(".//VB-APPARATUS[text()='sealed']").size());
-		Assert.assertEquals(1, actionPhraseNode.get(0).query(".//NN-APPARATUS[text()='tube']").size());
-	}
-	
+
 	@Test
 	public void testNNExamplePrecludingActionPhrase(){
 		String sentence = "An example of the synthesis of foo is as follows.";
@@ -120,5 +102,33 @@ public class PostProcessTreesTest {
 			}
 		}
 	}
+	
+	//Time phrase and multiple apparatus have special treatment
+	@Test
+	public void testTimeActionPhrase1(){
+		String sentence = "The chemical reaction took 5 minutes.";
+		Document doc = new ParsedDocumentCreator().runChemicalTagger(sentence);
+		Assert.assertEquals(1,doc.query(".//ActionPhrase[@type='Wait']").size());
+	}
+	
+	@Test
+	public void testTimeActionPhrase2(){//Wait action phrase should end at the comma
+		String sentence = "After 5 minutes, something happened";
+		Document doc = new ParsedDocumentCreator().runChemicalTagger(sentence);
+		Assert.assertEquals(1,doc.query(".//ActionPhrase[@type='Wait'][following-sibling::*[1][local-name()='COMMA']]").size());
+	}
+
+	@Test
+	public void testApparatusAction(){
+		String sentence = "ethylene and 4-fluoroanisole as an internal standard were placed in a Teflon sealed tube.";
+		Document doc = new ParsedDocumentCreator().runChemicalTagger(sentence);
+		Nodes actionPhraseNode = doc.query(".//ActionPhrase[@type='ApparatusAction']");
+		System.out.println(doc.toXML());
+		Assert.assertEquals(1, actionPhraseNode.size());
+		Assert.assertEquals(1, actionPhraseNode.get(0).query(".//VB-APPARATUS[text()='sealed']").size());
+		Assert.assertEquals(1, actionPhraseNode.get(0).query(".//NN-APPARATUS[text()='tube']").size());
+	}
+	@Test
+
 
 }
