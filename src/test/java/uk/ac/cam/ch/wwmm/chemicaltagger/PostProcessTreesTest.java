@@ -123,9 +123,15 @@ public class PostProcessTreesTest {
 		String sentence = "ethylene and 4-fluoroanisole as an internal standard were placed in a Teflon sealed tube.";
 		Document doc = new ParsedDocumentCreator().runChemicalTagger(sentence);
 		Nodes actionPhraseNode = doc.query(".//ActionPhrase[@type='ApparatusAction']");
-		System.out.println(doc.toXML());
 		Assert.assertEquals(1, actionPhraseNode.size());
 		Assert.assertEquals(1, actionPhraseNode.get(0).query(".//VB-APPARATUS[text()='sealed']").size());
 		Assert.assertEquals(1, actionPhraseNode.get(0).query(".//NN-APPARATUS[text()='tube']").size());
 	}
+	@Test
+	public void testApparatusAction2(){
+		String sentence = "The chemical reaction was performed in a conical flask.";
+		Document doc = new ParsedDocumentCreator().runChemicalTagger(sentence);
+		Assert.assertEquals(1,doc.query(".//ActionPhrase[@type='ApparatusAction']").size());
+	}
+
 }
