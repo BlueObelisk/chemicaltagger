@@ -128,7 +128,4 @@ public class PostProcessTreesTest {
 		Assert.assertEquals(1, actionPhraseNode.get(0).query(".//VB-APPARATUS[text()='sealed']").size());
 		Assert.assertEquals(1, actionPhraseNode.get(0).query(".//NN-APPARATUS[text()='tube']").size());
 	}
-	@Test
-
-
 }
