@@ -38,7 +38,7 @@ NN-EQ---^eq\.$---Equivalence
 NN-VOL---(\d\d+)?(m|k|\xce\xbc|µ)?(l|L)$|cm3---Volume
 #this is for non-spaced volumes like 3ml
 NN-VOL---d+(m|k|\xce\xbc|µ)(l|L|cm3)$---Volume
-NN-CHEMENTITY---^(p|P)(H|h)$|^resin$|^salt$|^material$|^product$|^oligomers$|^(M|m)acroinitiator$|^nanotubes$|^(s|S)eptum$|^(i|I)nitiator$|(M|m)onomer$|^ice$|^petroleum|metal|^eluent$|(co|Co)?polymer(s)?$|generation|solution|solvent|complex|layer|residue|gel|plug|catalyst|compound(s)?|.+®|^Å$---Chemical entities not marked up by OSCAR
+NN-CHEMENTITY---^(p|P)(H|h)$|^resin$|^salt$|^material$|^retrievals$|^product$|^oligomers$|^(M|m)acroinitiator$|^nanotubes$|^(s|S)eptum$|^(i|I)nitiator$|(M|m)onomer$|^ice$|^petroleum|metal|^eluent$|(co|Co)?polymer(s)?$|generation|solution|solvent|complex|layer|residue|gel|plug|catalyst|compound(s)?|.+®|^Å$---Chemical entities not marked up by OSCAR
 NN-TEMP---\d*(\xb0|&#0176|\xc3\x97|o|°|º)(C|c)$|room$|temperature$|rt$|RT$|^deg$|^degrees$---Temperature Token
 NN-TEMP---^K$---Temperature Token
 NN-FLASH---^flash$---Flash
@@ -151,7 +151,7 @@ VB-WAIT---(wait|left)(ing)?---Wait Verb
 VB-WASH---^(wash|elut|rins)(ed|e|ing)?---Wait Verb
 
 #Yield Tokens
-VB-YIELD---^(yield|afford|result|provid|obtain|give|gave|isolat|leav|giv)(ed|e|ing)?---Yield Verb
+VB-YIELD---^(yield|afford|result|provid|obtain|gave|isolat|leav|giv)(es|ed|e|ing)?---Yield Verb
 
 
 #Misc Tokens mainly to replace characters that are not markup friendly
