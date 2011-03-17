@@ -22,11 +22,11 @@ public class ExtractFromEPOTest {
 
 	@Ignore
 	@Test
-	public void testGetPatentContent() {
+	public void testGetPatentContent() throws IOException {
 
 		ExtractFromEPO epoExtract = new ExtractFromEPO();
 		String pathName = "uk/ac/cam/ch/wwmm/chemicaltagger/extractTest/epoPatents/EPO1191614B1.xml";
-		InputStream inputSource = new Utils().getInputStream(pathName);
+		InputStream inputSource = new Utils().getInputStream(getClass(),pathName);
 		DocumentContainer epoContent = epoExtract.getInfo(pathName);
 		System.out.println("ID::" + epoContent.getId());
 		System.out.println("Publication Date::" + epoContent.getPubDate());
@@ -103,7 +103,7 @@ public class ExtractFromEPOTest {
 			String resourcePath = filePath + file;
 			//System.err.println(resourcePath);
 			Utils utils = new Utils();
-			InputStream inStream = utils.getInputStream(resourcePath);
+			InputStream inStream = utils.getInputStream(getClass(),resourcePath);
 			DocumentContainer docContainer = extractEPO.getInfo(resourcePath);
 			docs.add(docContainer);
 

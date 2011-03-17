@@ -24,7 +24,7 @@ public class PostProcessTreesTest {
 	@Test
 	public void testProcessACTAFile() throws ValidityException, ParsingException, IOException{
 		PostProcessTrees postProcess = new PostProcessTrees();
-		InputStream xmlStream = Utils.getInputStream("uk/ac/cam/ch/wwmm/chemicaltagger/postProcessTrees/ACTA-f-00fc0883.xml");
+		InputStream xmlStream = Utils.getInputStream(getClass(),"/uk/ac/cam/ch/wwmm/chemicaltagger/postProcessTrees/ACTA-f-00fc0883.xml");
 		Document doc = new Builder().build(xmlStream);
 		Document newDoc = postProcess.process(doc);
 		
@@ -35,7 +35,7 @@ public class PostProcessTreesTest {
 	@Test
 	public void testProcessParagraph() throws ValidityException, ParsingException, IOException{
 		PostProcessTrees postProcess = new PostProcessTrees();
-		InputStream xmlStream = Utils.getInputStream("uk/ac/cam/ch/wwmm/chemicaltagger/postProcessTrees/file5.xml");
+		InputStream xmlStream = Utils.getInputStream(getClass(),"/uk/ac/cam/ch/wwmm/chemicaltagger/postProcessTrees/file5.xml");
 		Document doc = new Builder().build(xmlStream);
 		Document newDoc = postProcess.process(doc);
 //		Utils.writeXMLToFile(newDoc,"target/testPara.xml");

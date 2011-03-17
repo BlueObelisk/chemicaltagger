@@ -62,12 +62,11 @@ public class OpenNLPTagger {
 		InputStreamReader tagDictReader = null;
 		try {
 			new Utils();
-			tagDictReader = new InputStreamReader(
-					Utils.getInputStream("openNlpResources/tagdict"));
+			tagDictReader = new InputStreamReader(Utils.getInputStream(getClass(), "/openNlpResources/tagdict"));
 //			       Util.getResourceUsingContextClassLoader(
 //			    		   "openNlpResources/tagdict", this.getClass()), "UTF-8");
 		} catch (Exception e) {
-				throw new RuntimeException("Cannot open src/main/resources/openNlpResources/tagdict" , e);
+				throw new RuntimeException("openNlpResources/tagdict" , e);
 		}
 		POSDictionary tagDict = new POSDictionary(new BufferedReader(tagDictReader), true);
 		posTagger = new PosTagger(tempFile.getCanonicalPath(), tagDict);
