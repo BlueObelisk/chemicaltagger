@@ -297,7 +297,7 @@ public class PostProcessTags {
 		}
 
 		if (currentTag.toLowerCase().startsWith("vb")
-				&& !currentToken.toLowerCase().endsWith("ing")) {
+				&& !currentToken.toLowerCase().endsWith("ing") ) {
 
 			List<String> beforeList = Utils
 					.addToList("dt dt-the in-in in-of rb");
