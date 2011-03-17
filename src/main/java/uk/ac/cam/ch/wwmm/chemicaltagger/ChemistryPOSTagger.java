@@ -60,8 +60,11 @@ public class ChemistryPOSTagger {
 		posContainer = spectraTagger.runTagger(posContainer);
 		
 		posContainer = oscarTagger.runTokeniser(posContainer);
+
 		posContainer = oscarTagger.runTagger(posContainer);
+
 		posContainer = regexTagger.runTagger(posContainer);
+
 		posContainer = openNLPTagger.runTagger(posContainer);
 		posContainer.setPrioritiseOscar(prioritiseOscar);
 

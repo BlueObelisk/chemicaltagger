@@ -312,12 +312,14 @@ public class Utils {
 	 * @param pathName
 	 *            qualified file name e.g. uk/ac/cam/ch/wwmm/foo.txt
 	 * @return
+	 * @throws IOException 
 	 */
-	public static InputStream getInputStream(String pathName) {
+	public static InputStream getInputStream(Class<?> context, String pathName) throws IOException {
 		// requires sentence with no newlines except possibly at end
-		InputStream inStream;
-
-		inStream = ClassLoader.getSystemResourceAsStream(pathName);
+		InputStream inStream = context.getResourceAsStream(pathName);
+		if (inStream == null) {
+			throw new IOException("File not found: "+pathName+" (using context "+context.getName()+")");
+		}
 
 		return inStream;
 	}

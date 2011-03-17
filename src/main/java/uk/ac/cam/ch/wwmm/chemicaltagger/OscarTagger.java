@@ -19,7 +19,7 @@ import uk.ac.cam.ch.wwmm.oscar.document.NamedEntity;
 
 public class OscarTagger {
 
-	private Oscar oscar ;
+	private Oscar oscar;
 	private List<ITokenSequence> tokens;
 
 	/****************************
@@ -59,17 +59,21 @@ public class OscarTagger {
 		tokens = oscar.tokenise(sentence);
 		for (ITokenSequence tokenSequence : tokens) {
 			for (IToken tok : tokenSequence.getTokens()) {
-
-				for (String subWord : tok.getSurface().trim().split(" ")) {
-					if (StringUtils.isNotEmpty(subWord))
-						posContainer.addToTokenList(subWord);
+				// add back apostrophes' if cut-off from the previous word
+				if (tok.getSurface().equals("\"")) {
+				   int lastIndex = posContainer.getTokenList().size() - 1;
+                   String previousWord = posContainer.getTokenList().get(lastIndex);
+                   posContainer.getTokenList().set(lastIndex, previousWord+"\"");
+				} else {
+					for (String subWord : tok.getSurface().trim().split(" ")) {
+						if (StringUtils.isNotEmpty(subWord))
+							posContainer.addToTokenList(subWord);
+					}
 				}
 			}
 		}
 		return posContainer;
 	}
-
-	
 
 	/*****************************************************
 	 * Main Function. Runs OSCAR over a string and process the XML output Stores
@@ -93,7 +97,8 @@ public class OscarTagger {
 			oscarList.add(new WWMMTag(tag));
 		}
 		for (NamedEntity ne : neList) {
-			if (!ne.getType().getName().toLowerCase().contains("cpr") && !ne.getType().getName().toLowerCase().contains("ont")) {
+			if (!ne.getType().getName().toLowerCase().contains("cpr")
+					&& !ne.getType().getName().toLowerCase().contains("ont")) {
 				List<IToken> tokens = ne.getTokens();
 
 				for (IToken iToken : tokens) {
