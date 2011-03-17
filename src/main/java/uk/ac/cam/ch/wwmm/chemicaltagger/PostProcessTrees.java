@@ -48,7 +48,7 @@ public class PostProcessTrees {
 		actionMap.put("VB-DILUTE", "Add");
 		actionMap.put("VB-DROP", "Add");
 		actionMap.put("VB-FILL", "Add");
-		// actionMap.put("VB-SUSPEND", "Add");
+//	    actionMap.put("VB-SUSPEND", "ApparatusAction");
 		actionMap.put("VB-TREAT", "Add");
 		// Apparatus Tokens
 		actionMap.put("VB-APPARATUS", "ApparatusAction");

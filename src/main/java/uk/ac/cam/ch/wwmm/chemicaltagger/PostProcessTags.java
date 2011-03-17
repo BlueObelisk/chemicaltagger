@@ -280,7 +280,7 @@ public class PostProcessTags {
 
 			List<String> afterList = Utils
 					.addToList("nn oscar-cm nns nn-chementity oscar-cj jj-chem jj nnp nn-state nn-apparatus");
-			List<String> beforeList = Utils.addToList("dt dt-the");
+			List<String> beforeList = Utils.addToList("dt dt-the cd");
 
 			List<String> notList = Utils.addToList("in-of");
 			if (stringafter(afterList, i, combinedTags)
@@ -495,6 +495,11 @@ public class PostProcessTags {
 
 		}
 
+		if (currentTag.toLowerCase().startsWith("jj") ||currentTag.toLowerCase().startsWith("nnp")) {
+			List<String> afterList = Utils.addToList("nn-campaign");
+			if (stringafter(afterList, i, combinedTags) && Character.isUpperCase(currentToken.charAt(0)))	newTag = "NNP";
+
+		}
 		if (currentToken.toLowerCase().equals("addition")) {
 			List<String> beforeList = Utils.addToList("in-in");
 			List<String> afterList = Utils.addToList("comma stop");
