@@ -119,8 +119,8 @@ VB-INCREASE---(increas|rais)(e|ed|ing)?---Increase Verb
 VB-PARTITION---(partition|separat|split)(e|ed|ing|ting)?---Partition Verb
 
 #Precipitate Tokens
-VB-PRECIPITATE---(re)?(precipitat|crystaliz|crystalis)(e|ed|ing)?$---Precipitate Verb
-NN-PRECIPITATE---(re)?(precipitat|crystaliz|crystalis)(ation|ion)?$---Precipitate Noun
+VB-PRECIPITATE---(re)?(precipitat|crystall?i[zs])(e|ed|ing)?$---Precipitate Verb
+NN-PRECIPITATE---(re)?(precipitat|crystall?i[zs])(ation|ion)?$---Precipitate Noun
 
 #Purify Tokens
 
