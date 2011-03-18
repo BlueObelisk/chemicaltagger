@@ -497,7 +497,7 @@ public class PostProcessTags {
 
 		if (currentTag.toLowerCase().startsWith("jj") ||currentTag.toLowerCase().startsWith("nnp")) {
 			List<String> afterList = Utils.addToList("nn-campaign");
-			if (stringafter(afterList, i, combinedTags) && Character.isUpperCase(currentToken.charAt(0)))	newTag = "NNP";
+			if ((stringafter(afterList, i, combinedTags) || string2after(afterList, i, combinedTags)) && Character.isUpperCase(currentToken.charAt(0)))	newTag = "NNP";
 
 		}
 		if (currentToken.toLowerCase().equals("addition")) {
