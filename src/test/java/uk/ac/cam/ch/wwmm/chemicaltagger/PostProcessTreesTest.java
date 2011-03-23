@@ -11,7 +11,6 @@ import nu.xom.Nodes;
 import nu.xom.ParsingException;
 import nu.xom.ValidityException;
 
-import org.apache.log4j.Logger;
 import org.junit.Test;
 
 import uk.ac.cam.ch.wwmm.chemicaltagger.roles.ParsedDocumentCreator;
@@ -19,7 +18,6 @@ import uk.ac.cam.ch.wwmm.chemicaltagger.roles.ParsedDocumentCreator;
 
 public class PostProcessTreesTest {
 	
-	private static Logger LOG = Logger.getLogger(PostProcessTreesTest.class);
 
 	@Test
 	public void testProcessACTAFile() throws ValidityException, ParsingException, IOException{

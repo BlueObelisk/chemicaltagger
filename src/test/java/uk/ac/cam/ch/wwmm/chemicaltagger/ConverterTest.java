@@ -1,6 +1,5 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
-import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -80,13 +79,8 @@ public class ConverterTest {
 		POSContainer posContainer = ChemistryPOSTagger.getInstance().runTaggers(text);
 		String tagged = posContainer.getTokenTagTupleAsString();
 
-		InputStream in = null;
-		try {
-			in = new ByteArrayInputStream(tagged.getBytes("UTF-8"));
-		} catch (Exception e) {
-			throw new RuntimeException("cannot read chemical input: "+tagged, e);
-		}
-		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(in);
+		
+		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(tagged);
 		Document doc = new Document(new Element(DOCUMENT_ELEMENT));
 		try {
 			chemistrySentenceParser.parseTags(); Tree t = chemistrySentenceParser.getParseTree();

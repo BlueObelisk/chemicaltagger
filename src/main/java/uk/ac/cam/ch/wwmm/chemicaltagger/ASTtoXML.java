@@ -11,7 +11,8 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
 /*****************************
- * Converts ASTTrees to XML.
+ * Converts ANTLR ASTTrees into
+ *  XML Documents.
  * 
  * @author lh359
  *****************************/
@@ -25,7 +26,8 @@ public class ASTtoXML {
 	}
 
 	/********************************************
-	 * Main Function Converts astTree to XML Document.
+	 * Overloading Method that converts astTree 
+	 * to XML Document with ActionPhrases Included
 	 * 
 	 * @param astTree (Tree)
 	 *            
@@ -37,11 +39,12 @@ public class ASTtoXML {
 	}
 
 	/********************************************
-	 * Main Function Converts astTree to XML Document. Calls the recursive
+	 * Main Function Converts astTree to XML Document.
+	 * Calls the recursive
 	 * function getNodes.
 	 * 
-	 * @param astTree
-	 *            (Tree)
+	 * @param astTree (Tree)
+	 * @param postProcess (boolean)
 	 * @return doc (Document)
 	 *******************************************/
 	public Document convert(Tree astTree, boolean postProcess) {

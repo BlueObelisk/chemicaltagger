@@ -4,9 +4,6 @@
  */
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -17,54 +14,55 @@ import org.antlr.runtime.CommonTokenStream;
 import org.antlr.runtime.RecognitionException;
 import org.antlr.runtime.tree.Tree;
 import org.apache.commons.io.IOUtils;
-import org.apache.log4j.Logger;
 
 import uk.ac.cam.ch.wwmm.pregenerated.ChemicalChunkerLexer;
 import uk.ac.cam.ch.wwmm.pregenerated.ChemicalChunkerParser;
 
 /*****************************************
- * Passes Tagged Sentences to the antlr chunker. And can convert the output to
- * XML Documents.
+ * Passes tagged sentences to the ANTLR grammar. And converts the output to XML
+ * Documents.
  * 
  * @author pm286, lh359
  *****************************************/
 public class ChemistrySentenceParser extends Thread {
 
-	protected InputStream taggedTokenInStream = null;
-	private final Logger LOG = Logger.getLogger(ChemistrySentenceParser.class);
-	protected Tree parseTree = null;
-	protected POSContainer posContainer = null;
+	private InputStream taggedTokenInStream = null;
+	private Tree parseTree = null;
 
 	/*********************************
 	 * Constructor Class.
 	 * 
-	 * @param taggedTokenInputFilename
-	 *            (String)
+	 * @param taggedTokenInputStream
+	 *            (File)
 	 *********************************/
-	public ChemistrySentenceParser(String taggedTokenInputFilename) {
-
-		File file = new File(taggedTokenInputFilename);
-		try {
-			this.taggedTokenInStream = new FileInputStream(file);
-		} catch (FileNotFoundException ex) {
-
-			LOG.debug("File not found exception : " + ex.getMessage());
-		}
+	public ChemistrySentenceParser(InputStream taggedTokenInputStream) {
+            this.taggedTokenInStream = taggedTokenInputStream;
+		
 
 	}
 
 	/*******************************************
 	 * Constructor Class.
 	 * 
-	 * @param taggedTokenInStream
+	 * @param taggedTokenString
 	 *            (InputStream)
 	 *******************************************/
-	public ChemistrySentenceParser(InputStream taggedTokenInStream) {
-		this.taggedTokenInStream = taggedTokenInStream;
+	public ChemistrySentenceParser(String taggedTokenString) {
+		try {
+			this.taggedTokenInStream = IOUtils.toInputStream(taggedTokenString,
+					"UTF-8");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
+	/*******************************************
+	 * Constructor Class.
+	 * 
+	 * @param posContainer
+	 *            (POSContainer)
+	 *******************************************/
 	public ChemistrySentenceParser(POSContainer posContainer) {
-		this.posContainer = posContainer;
 		try {
 			this.taggedTokenInStream = IOUtils.toInputStream(
 					posContainer.getTokenTagTupleAsString(), "UTF-8");
@@ -72,6 +70,18 @@ public class ChemistrySentenceParser extends Thread {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+
+	public InputStream getTaggedTokenInStream() {
+		return taggedTokenInStream;
+	}
+
+	public void setTaggedTokenInStream(InputStream taggedTokenInStream) {
+		this.taggedTokenInStream = taggedTokenInStream;
+	}
+
+	public void setParseTree(Tree parseTree) {
+		this.parseTree = parseTree;
 	}
 
 	public void run() {
@@ -115,24 +125,6 @@ public class ChemistrySentenceParser extends Thread {
 			}
 			parseTree = (Tree) result.getTree();
 		}
-	}
-
-	public static void main(String[] args) throws Exception {
-		String taggedTokenInputFilename = null;
-		String outputXMLFilename = null;
-
-		if (args.length > 1) {
-			taggedTokenInputFilename = args[0];
-			outputXMLFilename = args[1];
-
-		} else {
-			taggedTokenInputFilename = "src/main/resources/antlr/chemicalInput.txt";
-			outputXMLFilename = "target/astTree.xml";
-
-		}
-		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
-				taggedTokenInputFilename);
-
 	}
 
 	public Document makeXMLDocument() {
