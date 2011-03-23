@@ -26,7 +26,6 @@ public class ChemistryPOSTagger {
 
 	public OpenNLPTagger openNLPTagger;
 	public SpectraTagger spectraTagger;
-//	private final Logger LOG = Logger.getLogger(ChemistryPOSTagger.class);
 	private ChemistryPOSTagger() {
 		oscarTagger = new OscarTagger();
 		regexTagger = new RegexTagger();
