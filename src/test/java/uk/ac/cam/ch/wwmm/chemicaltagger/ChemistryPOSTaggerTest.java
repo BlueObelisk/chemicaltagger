@@ -2,8 +2,6 @@ package uk.ac.cam.ch.wwmm.chemicaltagger;
 
 import static uk.ac.cam.ch.wwmm.chemicaltagger.Utils.readSentence;
 
-import java.io.UnsupportedEncodingException;
-
 import org.junit.Assert;
 import org.junit.Test;
 

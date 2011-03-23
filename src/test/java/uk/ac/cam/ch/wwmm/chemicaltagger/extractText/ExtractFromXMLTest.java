@@ -22,7 +22,6 @@ public class ExtractFromXMLTest {
 	@Test
 	public void testGetPatentContent() {
 
-		ExtractFromEPO epoExtract = new ExtractFromEPO();
 		String path = "src/test/resources/uk/ac/cam/ch/wwmm/chemicaltagger/xmlFiles/";
 
 		File patentDirectory = new File(path);

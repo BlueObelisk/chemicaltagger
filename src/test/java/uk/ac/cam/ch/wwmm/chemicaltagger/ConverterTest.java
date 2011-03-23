@@ -92,7 +92,7 @@ public class ConverterTest {
 			chemistrySentenceParser.parseTags(); Tree t = chemistrySentenceParser.getParseTree();
 			
 			ASTtoXML ast2XML = new ASTtoXML();
-			doc = ast2XML.convert(t);
+			doc = ast2XML.convert(t,false);
 		} catch (Exception e) {
 			throw new RuntimeException("Cannot parse with ANTLR: ", e);
 		}

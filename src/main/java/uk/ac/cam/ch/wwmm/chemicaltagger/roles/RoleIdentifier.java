@@ -11,8 +11,6 @@ import nu.xom.Nodes;
 
 import org.apache.log4j.Logger;
 
-import antlr.Utils;
-
 import uk.ac.cam.ch.wwmm.chemicaltagger.extractText.ExtractFromXML;
 
 public class RoleIdentifier {

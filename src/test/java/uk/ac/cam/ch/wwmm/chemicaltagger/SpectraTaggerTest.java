@@ -26,7 +26,7 @@ public class SpectraTaggerTest {
 
 		chemistrySentenceParser.parseTags();
 		Tree t = chemistrySentenceParser.getParseTree();
-		Document doc = new ASTtoXML().convert(t, true);
+		Document doc = new ASTtoXML().convert(t);
 
 		doc.getRootElement().appendChild(posContainer.getSpectrumElementList());
 

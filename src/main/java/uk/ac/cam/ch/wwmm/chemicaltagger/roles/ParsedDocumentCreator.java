@@ -5,14 +5,11 @@ import java.io.InputStream;
 
 import nu.xom.Document;
 
-import org.antlr.runtime.tree.Tree;
 import org.apache.commons.io.IOUtils;
 
-import uk.ac.cam.ch.wwmm.chemicaltagger.ASTtoXML;
 import uk.ac.cam.ch.wwmm.chemicaltagger.ChemistryPOSTagger;
 import uk.ac.cam.ch.wwmm.chemicaltagger.ChemistrySentenceParser;
 import uk.ac.cam.ch.wwmm.chemicaltagger.POSContainer;
-import uk.ac.cam.ch.wwmm.chemicaltagger.Utils;
 
 public class ParsedDocumentCreator {
 
