@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC
+    "-//Puppy Crawl//DTD Check Configuration 1.1//EN"
+    "http://www.puppycrawl.com/dtds/configuration_1_1.dtd">
+
+<module name="Checker">
+
+	<module name="JavadocPackage" />
+
+	<module name="FileLength">
+		<property name="max" value="1500" />
+	</module>
+
+	<module name="TreeWalker">
+
+		<module name="JavadocMethod" />
+		<module name="JavadocType" />
+		<module name="JavadocStyle">
+			<property name="checkHtml" value="false" />
+			<property name="checkEmptyJavadoc" value="true" />
+		</module>
+
+		<module name="ConstantName" />
+		<module name="LocalFinalVariableName" />
+		<module name="LocalVariableName" />
+		<module name="MemberName" />
+		<module name="MethodName" />
+		<module name="PackageName" />
+		<module name="ParameterName" />
+		<module name="StaticVariableName" />
+		<module name="TypeName" />
+
+		<module name="AvoidStarImport" />
+		<module name="IllegalImport" />
+		<module name="RedundantImport" />
+		<module name="UnusedImports" />
+
+
+
+		<module name="LineLength">
+			<property name="max" value="130" />
+		</module>
+		<module name="MethodLength" />
+		<module name="ParameterNumber" />
+
+		<module name="EmptyForIteratorPad" />
+		<module name="OperatorWrap" />
+		<module name="ParenPad" />
+		<module name="TypecastParenPad" />
+
+		<module name="ModifierOrder" />
+		<module name="RedundantModifier" />
+
+		<module name="AvoidNestedBlocks" />
+		<module name="EmptyBlock" />
+		<module name="LeftCurly" />
+		<module name="NeedBraces" />
+		<module name="RightCurly" />
+
+		<module name="AvoidInlineConditionals" />
+		<module name="DoubleCheckedLocking" />
+		<module name="EmptyStatement" />
+		<module name="EqualsHashCode" />
+		<module name="HiddenField" />
+		<module name="IllegalInstantiation" />
+		<module name="InnerAssignment" />
+		<module name="MagicNumber" />
+		<module name="MissingSwitchDefault" />
+		<module name="RedundantThrows" />
+		<module name="SimplifyBooleanExpression" />
+		<module name="SimplifyBooleanReturn" />
+
+		<module name="DesignForExtension" />
+		<module name="FinalClass" />
+		<module name="HideUtilityClassConstructor" />
+		<module name="InterfaceIsType" />
+		<module name="VisibilityModifier" />
+
+		<module name="ArrayTypeStyle" />
+		<module name="FinalParameters" />
+		<module name="TodoComment" />
+		<module name="UpperEll" />
+
+		<module name="TodoComment">
+			<property name="format" value="TODO" />
+		</module>
+
+
+	</module>
+
+</module>

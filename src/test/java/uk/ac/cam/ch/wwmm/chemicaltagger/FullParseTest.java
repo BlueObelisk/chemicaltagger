@@ -267,7 +267,7 @@ public class FullParseTest {
 		chemistrySentenceParser.parseTags();
 		Tree t = chemistrySentenceParser.getParseTree();
 
-		Document doc = new ASTtoXML().convert(t, true);
+		Document doc = new ASTtoXML().convert(t);
 		Utils.writeXMLToFile(doc, "target/file25.xml");
 
 		Assert.assertEquals("Input string is equal to output content", text
@@ -285,7 +285,7 @@ public class FullParseTest {
 				posContainer);
 		chemistrySentenceParser.parseTags();
 		Tree t = chemistrySentenceParser.getParseTree();
-		Document doc = new ASTtoXML().convert(t, true);
+		Document doc = new ASTtoXML().convert(t);
 		Utils.writeXMLToFile(doc, "target/file26.xml");
 
 		Assert.assertEquals("Input string is equal to output content", text

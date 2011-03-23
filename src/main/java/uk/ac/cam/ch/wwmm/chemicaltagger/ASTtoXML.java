@@ -11,29 +11,29 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
 /*****************************
- * 
  * Converts ASTTrees to XML.
  * 
  * @author lh359
  *****************************/
+
 public class ASTtoXML {
 
 	final Logger LOG = Logger.getLogger(ASTtoXML.class);
 
+	
 	public ASTtoXML() {
 	}
 
 	/********************************************
-	 * Main Function Converts astTree to XML Document. Calls the recursive
-	 * function getNodes.
+	 * Main Function Converts astTree to XML Document.
 	 * 
-	 * @param astTree
-	 *            (Tree)
+	 * @param astTree (Tree)
+	 *            
 	 * @return doc (Document)
 	 *******************************************/
-	public Document convert(Tree astTree) {
+	public final Document convert(Tree astTree) {
 
-		return convert(astTree, false);
+		return convert(astTree, true);
 	}
 
 	/********************************************

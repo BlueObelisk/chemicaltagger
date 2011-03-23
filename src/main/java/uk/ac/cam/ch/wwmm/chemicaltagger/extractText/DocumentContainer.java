@@ -1,7 +1,5 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger.extractText;
 
-import java.util.ArrayList;
-import java.util.List;
 
 
 /********************************************
@@ -19,27 +17,6 @@ public class DocumentContainer {
     private String taggedContent = "";
     private String nmr = "";
     private String tlc ="";
-
-    private String pubDate ="";
-	private List<NonPatentReferenceContainer> nonPatentRefContainerList = new ArrayList<NonPatentReferenceContainer>();
-	private List<String> patentRefList = new ArrayList<String>();
-
-	public void setInventorContainerList(List<PersonContainer> inventorContainerList) {
-		this.inventorContainerList = inventorContainerList;
-	}
-
-	public void setGranteeContainerList(List<PersonContainer> granteeContainerList) {
-		this.granteeContainerList = granteeContainerList;
-	}
-
-	public void setAttorneyContainerList(List<PersonContainer> attorneyContainerList) {
-		this.attorneyContainerList = attorneyContainerList;
-	}
-
-	private List<PersonContainer> inventorContainerList = new ArrayList<PersonContainer>();
-	private List<PersonContainer> granteeContainerList= new ArrayList<PersonContainer>();
-	private List<PersonContainer> attorneyContainerList= new ArrayList<PersonContainer>();
-
 
 
 
@@ -103,53 +80,8 @@ public class DocumentContainer {
 		
 	}
 
-	public void setPubDate(String pubDate) {
-		this.pubDate = pubDate;
-		
-	}
-    public String getPubDate() {
-		return pubDate;
-	}
-    
-	public List<String> getPatentRefList() {
-		return patentRefList;
-	}
 
-	public void addToPatentRefList(String patentRef) {
-		patentRefList.add(patentRef);
-	}
-    
-	public List<NonPatentReferenceContainer> getNonPatentRefContainerList() {
-		return nonPatentRefContainerList;
-	}
 
-	public void addToNonPatentContainerRefList(NonPatentReferenceContainer nonPatentReference) {
-		nonPatentRefContainerList.add(nonPatentReference);
-	}
-
-	public List<PersonContainer> getInventorContainerList() {
-		return inventorContainerList;
-	}
-
-	public void addToInventorContainerList(PersonContainer inventor) {
-		inventorContainerList.add(inventor);
-	}
-
-	public List<PersonContainer> getGranteeContainerList() {
-		return granteeContainerList;
-	}
-
-	public void addToGranteeContainerList(PersonContainer grantee) {
-		granteeContainerList.add(grantee);
-	}
-
-	public List<PersonContainer> getAttorneyContainerList() {
-		return attorneyContainerList;
-	}
-
-	public void addToAttorneyContainerList(PersonContainer attorney) {
-		attorneyContainerList.add(attorney);
-	}
 
 	
 }
