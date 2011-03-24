@@ -18,9 +18,9 @@ import org.apache.commons.io.IOUtils;
 import uk.ac.cam.ch.wwmm.pregenerated.ChemicalChunkerLexer;
 import uk.ac.cam.ch.wwmm.pregenerated.ChemicalChunkerParser;
 
-/*****************************************
- * Passes tagged sentences to the ANTLR grammar. And converts the output to XML
- * Documents.
+/***********************************************
+ * Passes tagged sentences to the ANTLR grammar. 
+ * And converts the output to an XML document.
  * 
  * @author pm286, lh359
  *****************************************/
@@ -29,58 +29,69 @@ public class ChemistrySentenceParser extends Thread {
 	private InputStream taggedTokenInStream = null;
 	private Tree parseTree = null;
 
-	/*********************************
-	 * Constructor Class.
+	/**********************************************
+	 * Constructor method for inputStream objects.
 	 * 
-	 * @param taggedTokenInputStream
-	 *            (File)
-	 *********************************/
-	public ChemistrySentenceParser(InputStream taggedTokenInputStream) {
+	 * @param taggedTokenInputStream (InputStream)
+	 *********************************************/
+	public ChemistrySentenceParser(final InputStream taggedTokenInputStream) {
             this.taggedTokenInStream = taggedTokenInputStream;
 		
 
 	}
 
 	/*******************************************
-	 * Constructor Class.
+	 * Constructor method for String objects.
 	 * 
-	 * @param taggedTokenString
-	 *            (InputStream)
+	 * @param taggedTokenString (String)
 	 *******************************************/
-	public ChemistrySentenceParser(String taggedTokenString) {
+	public ChemistrySentenceParser(final String taggedTokenString) {
 		try {
-			this.taggedTokenInStream = IOUtils.toInputStream(taggedTokenString,
-					"UTF-8");
+			this.taggedTokenInStream = IOUtils.toInputStream(taggedTokenString,"UTF-8");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
-	/*******************************************
-	 * Constructor Class.
+	/************************************************
+	 * Constructor method for POSContainer objects.
 	 * 
-	 * @param posContainer
-	 *            (POSContainer)
+	 * @param posContainer  (POSContainer)
 	 *******************************************/
-	public ChemistrySentenceParser(POSContainer posContainer) {
+	public ChemistrySentenceParser(final POSContainer posContainer) {
 		try {
 			this.taggedTokenInStream = IOUtils.toInputStream(
 					posContainer.getTokenTagTupleAsString(), "UTF-8");
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 
+	/********************************************
+	 * Getter method for taggedTokenInputStream.
+	 ******************************************/
 	public InputStream getTaggedTokenInStream() {
 		return taggedTokenInStream;
 	}
 
-	public void setTaggedTokenInStream(InputStream taggedTokenInStream) {
+	/*******************************************
+	 * Setter method for taggedTokenInputStream.
+	 *****************************************/
+	public void setTaggedTokenInStream(final InputStream taggedTokenInStream) {
 		this.taggedTokenInStream = taggedTokenInStream;
 	}
 
-	public void setParseTree(Tree parseTree) {
+	/**************************************
+	 * Getter method for parseTree.
+	 **************************************/
+	public Tree getParseTree() {
+		return parseTree;
+	}
+
+	/**************************************
+	 * Setter method for parseTree.
+	 **************************************/
+	public void setParseTree(final Tree parseTree) {
 		this.parseTree = parseTree;
 	}
 
@@ -88,15 +99,11 @@ public class ChemistrySentenceParser extends Thread {
 		parseTags();
 	}
 
-	public Tree getParseTree() {
-		return parseTree;
-	}
-
 	/********************************************
-	 * Main Function Pass inputStream to Antlr and produces an astTree as
-	 * output.
+	 * Passes an inputstream to ANTLR and produces
+	 * a parse tree.
 	 * 
-	 * @return astTree (Tree)
+	 * @return parseTree (Tree)
 	 *******************************************/
 	public void parseTags() {
 		ChemicalChunkerLexer lexer = null;
@@ -119,7 +126,7 @@ public class ChemistrySentenceParser extends Thread {
 			try {
 				result = parser.document();
 			} catch (RecognitionException e) {
-				throw new RuntimeException("Antlr input Stream Error: "
+				throw new RuntimeException("Antlr parser Error: "
 						+ e.getMessage());
 
 			}
@@ -127,6 +134,10 @@ public class ChemistrySentenceParser extends Thread {
 		}
 	}
 
+	/*********************************************
+	 * Creates an XML document from the parseTree.
+	 * @return document (Document)
+	 *******************************************/
 	public Document makeXMLDocument() {
 		return new ASTtoXML().convert(parseTree);
 	}

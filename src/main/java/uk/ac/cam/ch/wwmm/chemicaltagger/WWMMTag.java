@@ -27,9 +27,7 @@ public class WWMMTag {
 		return Confidence;
 	}
 
-	public TagType getType() {
-		return type;
-	}
+
 
 	Double Confidence = null;
 	TagType type = TagType.START_END;

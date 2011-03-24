@@ -48,7 +48,6 @@ public class PostProcessTrees {
 		actionMap.put("VB-DILUTE", "Add");
 		actionMap.put("VB-DROP", "Add");
 		actionMap.put("VB-FILL", "Add");
-//	    actionMap.put("VB-SUSPEND", "ApparatusAction");
 		actionMap.put("VB-TREAT", "Add");
 		// Apparatus Tokens
 		actionMap.put("VB-APPARATUS", "ApparatusAction");
@@ -64,7 +63,6 @@ public class PostProcessTrees {
 		actionMap.put("VB-DISSOLVE", "Dissolve");
 		// Dry Tokens
 		actionMap.put("VB-DRY", "Dry");
-		//actionMap.put("NN-DRY", "Dry"); dryness doesn't make sense as an action
 		// Extract Tokens
 		actionMap.put("VB-EXTRACT", "Extract");
 		actionMap.put("NN-EXTRACT", "Extract");
@@ -74,10 +72,8 @@ public class PostProcessTrees {
 		actionMap.put("NN-FILTER", "Filter");
 
 		// Heat Tokens
-
 		actionMap.put("VB-HEAT", "Heat");
 		actionMap.put("VB-INCREASE", "Heat");
-
 		actionMap.put("VB-SUBMERGE", "Heat");
 		// Partition Tokens
 		actionMap.put("VB-PARTITION", "Partition");
@@ -85,8 +81,8 @@ public class PostProcessTrees {
 		// Precipitate Tokens
 		actionMap.put("VB-PRECIPITATE", "Precipitate");
 		actionMap.put("NN-PRECIPITATE", "Precipitate");
+		
 		// Purify Tokens
-
 		actionMap.put("VB-PURIFY", "Purify");
 		actionMap.put("NN-PURIFY", "Purify");
 
@@ -113,12 +109,14 @@ public class PostProcessTrees {
 		// Yield Tokens
 		actionMap.put("VB-YIELD", "Yield");
 	}
+	
+	
 	public Document process(Document doc) {
 		Element root = new Element("Document");
 		Nodes nodes = doc.query("//Sentence");
 		for (int i = 0; i < nodes.size(); i++) {
 			Element sentenceNode = (Element) nodes.get(i);
-			Element newSentenceNode = processSentence(sentenceNode);
+			Element newSentenceNode = addActionPhrases(sentenceNode);
 			root.appendChild(newSentenceNode);
 		}
 
@@ -143,7 +141,7 @@ public class PostProcessTrees {
 	}
 
 
-	private Element processSentence(Element sentenceNode) {
+	private Element addActionPhrases(Element sentenceNode) {
 		Element newSentence = new Element("Sentence");
 		List<Element> elementList = new ArrayList<Element>();
 

@@ -16,9 +16,9 @@ public class RecombineTokensTest {
 	@BeforeClass
 	public static void setup(){
 		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getInstance();
-		oscarTagger = posTagger.oscarTagger;
-		regexTagger = posTagger.regexTagger;
-		openNLPTagger = posTagger.openNLPTagger;
+		oscarTagger = posTagger.getOscarTagger();
+		regexTagger = posTagger.getRegexTagger();
+		openNLPTagger = posTagger.getOpenNLPTagger();
 	}
 	
 	@AfterClass
