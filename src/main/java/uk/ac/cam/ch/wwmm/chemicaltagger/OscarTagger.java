@@ -14,7 +14,7 @@ import uk.ac.cam.ch.wwmm.oscar.document.NamedEntity;
 /*****************************************************
  * Runs the OSCAR tagger .
  * 
- * @author lh359, dmj30,jat45
+ * @author lh359, dmj30
  *****************************************************/
 
 public class OscarTagger {
@@ -22,8 +22,8 @@ public class OscarTagger {
 	private Oscar oscar;
 	private List<ITokenSequence> tokens;
 
-	/****************************
-	 * Public Constructor
+	/*****************************
+	 * Default constructor method.
 	 ***************************/
 	public OscarTagger() {
 		initialiseOSCAR();
@@ -31,27 +31,18 @@ public class OscarTagger {
 	}
 
 	/*****************************************************
-	 * Creates the OSCAR workspace Taken from the Spectra-T textmining modules
-	 * 
-	 * @author jat45
+	 * Initialises OSCAR.
 	 *****************************************************/
 	private void initialiseOSCAR() {
-
-		try {
-			oscar = new Oscar();
-		} catch (Exception e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-
-		try {
-			oscar.getDictionaryRegistry().register(new PolymerDictionary());
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		oscar = new Oscar();
+		oscar.getDictionaryRegistry().register(new PolymerDictionary());
+		
 	}
 
+	/*****************************************************
+	 * Tokenises an inputText using OSCAR tokeniser.
+	 * TODO pull the tokeniser into a separate class
+	 *****************************************************/
 	public POSContainer runTokeniser(POSContainer posContainer) {
 		tokens = new ArrayList<ITokenSequence>();
 		String sentence = posContainer.getInputText();

@@ -19,35 +19,35 @@ import org.apache.log4j.Logger;
 
 public class ASTtoXML {
 
-	final Logger LOG = Logger.getLogger(ASTtoXML.class);
+	private final static Logger LOG = Logger.getLogger(ASTtoXML.class);
 
-	
+	/********************************************
+	 * Default constructor method.
+	 *******************************************/
 	public ASTtoXML() {
 	}
 
 	/********************************************
 	 * Overloading Method that converts astTree 
-	 * to XML Document with ActionPhrases Included
+	 * to XML Document with ActionPhrases Included.
 	 * 
 	 * @param astTree (Tree)
 	 *            
 	 * @return doc (Document)
 	 *******************************************/
-	public final Document convert(Tree astTree) {
+	public final Document convert(final Tree astTree) {
 
 		return convert(astTree, true);
 	}
 
 	/********************************************
-	 * Main Function Converts astTree to XML Document.
-	 * Calls the recursive
-	 * function getNodes.
+	 * Converts AST Trees to XML Document.
 	 * 
 	 * @param astTree (Tree)
-	 * @param postProcess (boolean)
+	 * @param annotateActionPhrases (boolean)
 	 * @return doc (Document)
 	 *******************************************/
-	public Document convert(Tree astTree, boolean postProcess) {
+	public final Document convert(final Tree astTree, final boolean annotateActionPhrases) {
 		Element root = new Element("Document");
 		Document doc = null;
 		if (astTree.getChildCount() > 0) {
@@ -56,13 +56,15 @@ public class ASTtoXML {
 				root.appendChild(getNodes(astTree, sentenceNode));
 				doc = new Document(root);
 
-			} else
+			} else {
 				doc = new Document(getNodes(astTree, root));
+			}
 		}
-		if (postProcess) {
+		if (annotateActionPhrases) {
 			PostProcessTrees procTree = new PostProcessTrees();
-			if (doc == null)
+			if (doc == null){
 				return null;
+			}
 			doc = procTree.process(doc);
 		}
 		return doc;
@@ -70,18 +72,16 @@ public class ASTtoXML {
 
 	
 	/********************************************
-	 * Main Function Converts astTree to XML Document.
-	 * And postprocesses the treenodes using
-	 * a userdefine hashmap
-	 *  Calls the recursive
-	 * function getNodes.
+	 * Converts astTree to XML Document.
+	 * Postprocesses the treenodes with a userdefined 
+	 * hashmap. 
 	 * 
-	 * 
-	 * @param astTree
-	 *            (Tree)
+	 * @param astTree (Tree)
+	 * @param annotateActionPhrases (boolean)
+	 * @param actionPhraseDictionary (HashMap)
 	 * @return doc (Document)
 	 *******************************************/
-	public Document convert(Tree astTree, boolean postProcess,HashMap<String, String> postProcessDictionary) {
+	public final Document convert(final Tree astTree, final boolean annotateActionPhrases,final HashMap<String, String> actionPhraseDictionary) {
 		Element root = new Element("Document");
 		Document doc = null;
 		if (astTree.getChildCount() > 0) {
@@ -90,36 +90,29 @@ public class ASTtoXML {
 				root.appendChild(getNodes(astTree, sentenceNode));
 				doc = new Document(root);
 
-			} else
+			} else {
 				doc = new Document(getNodes(astTree, root));
+			}
 		}
-		if (postProcess) {
-			PostProcessTrees procTree = new PostProcessTrees(postProcessDictionary);
-			if (doc == null)
+		if (annotateActionPhrases) {
+			PostProcessTrees procTree = new PostProcessTrees(actionPhraseDictionary);
+			if (doc == null) {
 				return null;
+			}
 			doc = procTree.process(doc);
 		}
 		return doc;
 	}
 
-	/************************
-	 * Set the types of phrases
-	 * 
-	 * @param doc
-	 * @return
-	 */
-
 	/**********************************************
-	 * A recursive function that goes through the leaves of the tree to create
-	 * XML nodes.
+	 * A recursive function that goes through the 
+	 * leaves of the tree to create XML nodes.
 	 * 
-	 * @param astTree
-	 *            (Tree)
-	 * @param node
-	 *            (Element)
+	 * @param astTree (Tree)
+	 * @param node (Element)
 	 * @return node (Element)
 	 **********************************************/
-	public Element getNodes(Tree astTree, Element node) {
+	public final Element getNodes(final Tree astTree, final Element node) {
 
 		int nodeCount = astTree.getChildCount();
 
@@ -129,7 +122,6 @@ public class ASTtoXML {
 			int type = astChild.getType();
 			if (type != Token.INVALID_TOKEN_TYPE) {
 				if (astChild.getChildCount() == 0) {
-					// if (type == ChemicalChunkerParser.TOKEN) {
 					node.appendChild(text);
 				} else {
 					text = Utils.makeNCName(text);
