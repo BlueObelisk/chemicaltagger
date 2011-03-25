@@ -105,7 +105,7 @@ public class ChemistryPOSTaggerTest {
 		String sentence = "";
 		posContainer = ChemistryPOSTagger.getInstance().runTaggers(sentence);
 		Assert.assertEquals(0, posContainer.getCombinedTagsList().size());
-		Assert.assertEquals(0, posContainer.getTokenList().size());
+		Assert.assertEquals(0, posContainer.getWordTokenList().size());
 		Assert.assertEquals("", posContainer.getTokenTagTupleAsString());
 	}
     
@@ -113,12 +113,12 @@ public class ChemistryPOSTaggerTest {
 
 
 	private void checkLengthofTags() {
-		Assert.assertEquals(posContainer.regexTagList.size(),
-				posContainer.oscarTagList.size());
-		Assert.assertEquals(posContainer.oscarTagList.size(),
-				posContainer.regexTagList.size());
-		Assert.assertEquals(posContainer.regexTagList.size(),
-				posContainer.brownTagList.size());
+		Assert.assertEquals(posContainer.getRegexTagList().size(),
+				posContainer.getOscarTagList().size());
+		Assert.assertEquals(posContainer.getOscarTagList().size(),
+				posContainer.getRegexTagList().size());
+		Assert.assertEquals(posContainer.getRegexTagList().size(),
+				posContainer.getBrownTagList().size());
 	}
 
 }

@@ -7,16 +7,16 @@ import org.apache.commons.lang.StringUtils;
 import org.xmlcml.euclid.Util;
 
 public class PostProcessTags {
-	// private final Logger LOG = Logger.getLogger(PostProcessTags.class);
 
 	/**************************************************
 	 * Corrects MisNamed Tags
 	 * 
 	 * Needs to be refactored and/or separated into different modules.
 	 **************************************************/
+	
 	public POSContainer correctCombinedTagsList(POSContainer posContainer) {
 
-		List<String> tokenList = posContainer.getTokenList();
+		List<String> tokenList = posContainer.getWordTokenList();
 		List<WWMMTag> combinedTags = posContainer.getCombinedTagsList();
 
 		List<String> newTokenList = new ArrayList<String>();
@@ -24,7 +24,6 @@ public class PostProcessTags {
 
 		boolean ignoreNextBracket = false;
 
-		// System.out.println("Before correcting tags:"+posContainer.getTokenTagTupleAsString());
 		for (int i = 0; i < combinedTags.size(); i++) {
 			String currentTag = combinedTags.get(i).getPOS();
 			String currentToken = tokenList.get(i);

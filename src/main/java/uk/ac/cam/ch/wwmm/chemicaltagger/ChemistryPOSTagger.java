@@ -30,7 +30,12 @@ public final class ChemistryPOSTagger {
 	private static class TaggerHolder {
 		private static final ChemistryPOSTagger INSTANCE = new ChemistryPOSTagger();
 	}
-
+	/**************************************
+	 * @return ChemistryPOSTaggerInstance
+	 ***************************************/
+	public static ChemistryPOSTagger getInstance() {
+		return TaggerHolder.INSTANCE;
+	}
 	/**************************************
 	 * Private Constructor Class.
 	 ***************************************/
@@ -61,7 +66,6 @@ public final class ChemistryPOSTagger {
 
 	/**************************************
 	 * Getter method for OscarTagger.
-	 * 
 	 * @return oscarTagger (OscarTagger)
 	 ***************************************/
 	public OscarTagger getOscarTagger() {
@@ -69,7 +73,6 @@ public final class ChemistryPOSTagger {
 	}
 	/**************************************
 	 * Setter method for OscarTagger.
-	 * 
 	 * @param oscarTagger (OscarTagger)
 	 ***************************************/
 	public void setOscarTagger(final OscarTagger oscarTagger) {
@@ -92,12 +95,7 @@ public final class ChemistryPOSTagger {
 		this.openNLPTagger = openNLPTagger;
 	}
 	
-	/**************************************
-	 * @return ChemistryPOSTaggerInstance
-	 ***************************************/
-	public static ChemistryPOSTagger getInstance() {
-		return TaggerHolder.INSTANCE;
-	}
+
 
 
 	/*****************************************************

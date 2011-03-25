@@ -11,7 +11,7 @@ public class RegexTaggerTest {
 	
 	
     private RegexTagger regexTagger;
-	private static String SPACE = " ";
+	private final static String SPACE = " ";
 	@Before
 	public void setUp() {
 		if (regexTagger == null) {
@@ -33,25 +33,25 @@ public class RegexTaggerTest {
 		StringBuilder regexTaggedSentence = new StringBuilder(); 
         String cleanSentence = Utils.formatSentence(sentence);
         POSContainer posContainer = new POSContainer();
-        posContainer.addToTokenListFromSentenceString(cleanSentence);
+        posContainer.createWordTokenListFromSentence(cleanSentence);
         posContainer = regexTagger.runTagger(posContainer);
         
         /****************************
          * Check that lengths of 
          * token and tags are the same
          ****************************/
-        Assert.assertEquals(posContainer.wordTokenList.size(), posContainer.regexTagList.size());
+        Assert.assertEquals(posContainer.getWordTokenList().size(), posContainer.getRegexTagList().size());
         
         /************************
          * Append the tokens recoginesed
          * by the regexTagger to regexTaggedSentence
          ***********************/
         
-		for (int i = 0; i < posContainer.regexTagList.size(); i++) {
-			if (!posContainer.regexTagList.get(i).getPOS().equals("nil")){
-				regexTaggedSentence.append(posContainer.regexTagList.get(i).getPOS());
+		for (int i = 0; i < posContainer.getRegexTagList().size(); i++) {
+			if (!posContainer.getRegexTagList().get(i).getPOS().equals("nil")){
+				regexTaggedSentence.append(posContainer.getRegexTagList().get(i).getPOS());
 				regexTaggedSentence.append(SPACE);
-				regexTaggedSentence.append(posContainer.wordTokenList.get(i));
+				regexTaggedSentence.append(posContainer.getWordTokenList().get(i));
 				regexTaggedSentence.append(SPACE);
 
 			}

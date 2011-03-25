@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
 import java.io.IOException;
@@ -23,7 +19,7 @@ import uk.ac.cam.ch.wwmm.pregenerated.ChemicalChunkerParser;
  * And converts the output to an XML document.
  * 
  * @author pm286, lh359
- *****************************************/
+ **********************************************/
 public class ChemistrySentenceParser extends Thread {
 
 	private InputStream taggedTokenInStream = null;

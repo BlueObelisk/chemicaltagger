@@ -19,7 +19,7 @@ import org.apache.log4j.Logger;
 
 public class ASTtoXML {
 
-	private final static Logger LOG = Logger.getLogger(ASTtoXML.class);
+	private static final Logger LOG = Logger.getLogger(ASTtoXML.class);
 
 	/********************************************
 	 * Default constructor method.
@@ -95,7 +95,8 @@ public class ASTtoXML {
 			}
 		}
 		if (annotateActionPhrases) {
-			PostProcessTrees procTree = new PostProcessTrees(actionPhraseDictionary);
+			PostProcessTrees procTree = new PostProcessTrees();
+			procTree.setActionMap(actionPhraseDictionary);
 			if (doc == null) {
 				return null;
 			}
