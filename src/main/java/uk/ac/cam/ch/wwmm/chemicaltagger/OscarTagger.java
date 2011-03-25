@@ -36,12 +36,15 @@ public class OscarTagger {
 	private void initialiseOSCAR() {
 		oscar = new Oscar();
 		oscar.getDictionaryRegistry().register(new PolymerDictionary());
-		
+
 	}
 
 	/*****************************************************
-	 * Tokenises an inputText using OSCAR tokeniser.
-	 * TODO pull the tokeniser into a separate class
+	 * Tokenises an inputText using OSCAR tokeniser. 
+	 * TODO pull the tokeniser
+	 * into a separate class
+	 * @param  posContainer (POSContainer)
+	 * @return posContainer (POSContainer)
 	 *****************************************************/
 	public POSContainer runTokeniser(POSContainer posContainer) {
 		tokens = new ArrayList<ITokenSequence>();
@@ -52,9 +55,11 @@ public class OscarTagger {
 			for (IToken tok : tokenSequence.getTokens()) {
 				// add back apostrophes' if cut-off from the previous word
 				if (tok.getSurface().equals("\"")) {
-				   int lastIndex = posContainer.getTokenList().size() - 1;
-                   String previousWord = posContainer.getTokenList().get(lastIndex);
-                   posContainer.getTokenList().set(lastIndex, previousWord+"\"");
+					int lastIndex = posContainer.getWordTokenList().size() - 1;
+					String previousWord = posContainer.getWordTokenList().get(
+							lastIndex);
+					posContainer.getWordTokenList().set(lastIndex,
+							previousWord + "\"");
 				} else {
 					for (String subWord : tok.getSurface().trim().split(" ")) {
 						if (StringUtils.isNotEmpty(subWord))
@@ -66,21 +71,19 @@ public class OscarTagger {
 		return posContainer;
 	}
 
-	/*****************************************************
-	 * Main Function. Runs OSCAR over a string and process the XML output Stores
-	 * the tokens and tags to the POSContainer class which is returned
+	/***********************************************
+	 * Runs OSCAR over a list of tokens.
 	 * 
-	 * @author dmj30, lh359
-	 *****************************************************/
+	 * @param  posContainer (POSContainer)
+	 * @return posContainer (POSContainer)
+	 ***********************************************/
 	public POSContainer runTagger(POSContainer posContainer) {
 
 		List<NamedEntity> neList = new ArrayList<NamedEntity>();
 
 		neList = oscar.recogniseNamedEntities(tokens);
 
-		neList = removePartialMatches(neList);
-
-		List<String> tokenList = posContainer.getTokenList();
+		List<String> tokenList = posContainer.getWordTokenList();
 		List<WWMMTag> oscarList = new ArrayList<WWMMTag>();
 
 		String tag = "nil";
@@ -108,40 +111,6 @@ public class OscarTagger {
 		posContainer.setOscarTagList(oscarList);
 		return posContainer;
 
-	}
-
-	private List<NamedEntity> removePartialMatches(List<NamedEntity> neList) {
-		List<NamedEntity> newNeList = new ArrayList<NamedEntity>();
-
-		for (NamedEntity namedEntity : neList) {
-			boolean isPartial = false;
-			boolean isCM = false;
-			int start = namedEntity.getStart();
-			int end = namedEntity.getEnd();
-			for (NamedEntity otherNamedEntity : neList) {
-				if (otherNamedEntity.getStart() == start) {
-					if (otherNamedEntity.getEnd() > end) {
-						isPartial = true;
-					}
-					if (otherNamedEntity.getType().getName().contains("CM")
-							& !namedEntity.getType().getName().contains("CM"))
-						isCM = true;
-
-				}
-				if (otherNamedEntity.getEnd() == end) {
-
-					if (otherNamedEntity.getStart() < start) {
-						isPartial = true;
-					}
-
-				}
-			}
-			if (!isPartial & !isCM) {
-				newNeList.add(namedEntity);
-			}
-		}
-
-		return newNeList;
 	}
 
 }

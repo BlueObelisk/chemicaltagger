@@ -104,14 +104,14 @@ public class OpenNLPTagger {
 	 * stores the tags in POSContainer.
 	 *****************************************************/
 	public POSContainer runTagger(POSContainer posContainer) {
-		List<String> tokenList = posContainer.getTokenList();
+		List<String> tokenList = posContainer.getWordTokenList();
 		String[] tokens = new String[tokenList.size()];
 		for (int i = 0; i < tokenList.size(); i++) {
 			tokens[i] = tokenList.get(i);
 		}
 
 		String[] tags = posTagger.tag(tokens);
-		posContainer.addToBrownListFromStringArray(tags);
+		posContainer.createBrownListFromStringArray(tags);
 
 		return posContainer;
 	}

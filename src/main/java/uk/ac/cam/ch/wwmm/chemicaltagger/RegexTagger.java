@@ -22,7 +22,7 @@ public class RegexTagger {
 
 	protected List<Rule> rules;
 	public String tagFile = "dictionary/tags.txt";
-	private final Logger LOG = Logger.getLogger(RegexTagger.class);
+	private static final Logger LOG = Logger.getLogger(RegexTagger.class);
 
 	/****************************
 	 * Public Constructor
@@ -70,17 +70,14 @@ public class RegexTagger {
 
 	}
 
-	/*****************************************************
-	 * Main Function. Runs the regular expression tagger against the text and
-	 * stores the tags in POSContainer
-	 *****************************************************/
-	/**
-	 * @param posContainer
-	 * @return
-	 */
+	/*********************************************************
+	 * Runs the regular expression tagger against the tokens.
+	 * @param posContainer (POSContainer)
+	 * @return posContainer (POSContainer)
+	/*********************************************************/
 	public POSContainer runTagger(POSContainer posContainer) {
 
-		List<String> tokenList = posContainer.getTokenList();
+		List<String> tokenList = posContainer.getWordTokenList();
 		for (String token : tokenList) {
 			try {
 				Matcher m = Pattern.compile("dummy").matcher(token);
@@ -105,7 +102,6 @@ public class RegexTagger {
 
 	/**************************************************************
 	 * The Rule class . Compiles regex rules. Used later for the regex tagger.
-	 * 
 	 ***************************************************************/
 	protected static class Rule {
 

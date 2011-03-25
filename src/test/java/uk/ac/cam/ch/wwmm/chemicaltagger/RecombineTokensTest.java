@@ -209,18 +209,18 @@ public class RecombineTokensTest {
 		posContainer = oscarTagger.runTokeniser(posContainer);
 
 		posContainer = oscarTagger.runTagger(posContainer);
-		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""),StringUtils.join(posContainer.getTokenList().listIterator(),"").toLowerCase());
+		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""),StringUtils.join(posContainer.getWordTokenList().listIterator(),"").toLowerCase());
 
 		posContainer = regexTagger.runTagger(posContainer);
-		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""),StringUtils.join(posContainer.getTokenList().listIterator(),"").toLowerCase());
+		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""),StringUtils.join(posContainer.getWordTokenList().listIterator(),"").toLowerCase());
 		posContainer = openNLPTagger.runTagger(posContainer);
-		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""),StringUtils.join(posContainer.getTokenList().listIterator(),"").toLowerCase());
+		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""),StringUtils.join(posContainer.getWordTokenList().listIterator(),"").toLowerCase());
 		posContainer.combineTaggers();
 		posContainer.recombineHyphenedTokens();
 
 		posContainer =  new PostProcessTags().correctCombinedTagsList(posContainer);
 
-		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""),StringUtils.join(posContainer.getTokenList().listIterator(),"").toLowerCase());
+		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""),StringUtils.join(posContainer.getWordTokenList().listIterator(),"").toLowerCase());
 	
 
 	}
@@ -234,17 +234,17 @@ public class RecombineTokensTest {
 		posContainer = oscarTagger.runTokeniser(posContainer);
 
 		posContainer = oscarTagger.runTagger(posContainer);
-		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""),StringUtils.join(posContainer.getTokenList().listIterator(),"").toLowerCase());
+		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""),StringUtils.join(posContainer.getWordTokenList().listIterator(),"").toLowerCase());
 
 		posContainer = regexTagger.runTagger(posContainer);
-		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""),StringUtils.join(posContainer.getTokenList().listIterator(),"").toLowerCase());
+		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""),StringUtils.join(posContainer.getWordTokenList().listIterator(),"").toLowerCase());
 		posContainer = openNLPTagger.runTagger(posContainer);
-		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""),StringUtils.join(posContainer.getTokenList().listIterator(),"").toLowerCase());
+		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""),StringUtils.join(posContainer.getWordTokenList().listIterator(),"").toLowerCase());
 		posContainer.combineTaggers();
 		posContainer.recombineHyphenedTokens();
 
 		posContainer =  new PostProcessTags().correctCombinedTagsList(posContainer);
 
-		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""),StringUtils.join(posContainer.getTokenList().listIterator(),"").toLowerCase());
+		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""),StringUtils.join(posContainer.getWordTokenList().listIterator(),"").toLowerCase());
 	}
 }
