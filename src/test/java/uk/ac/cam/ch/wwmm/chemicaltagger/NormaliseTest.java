@@ -6,13 +6,13 @@ import org.junit.Assert;
 import org.junit.Test;
 
 
-public class FormatSentenceTest {
+public class NormaliseTest {
 	
 	
 	@Test	
 	public void sentence1() {
 		String sentence = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/formatTest/sentence1.txt");
-        String cleanSentence = Utils.formatSentence(sentence);
+        String cleanSentence = Formatter.normaliseText(sentence);
 		String ref = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/formatTest/ref1.txt");
 		Assert.assertEquals(ref,cleanSentence);
 

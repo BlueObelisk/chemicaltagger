@@ -111,7 +111,7 @@ public class OpenNLPTagger {
 		}
 
 		String[] tags = posTagger.tag(tokens);
-		posContainer.createBrownListFromStringArray(tags);
+		posContainer.createBrownTagListFromStringArray(tags);
 
 		return posContainer;
 	}

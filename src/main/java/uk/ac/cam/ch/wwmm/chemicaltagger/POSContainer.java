@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
 import nu.xom.Element;
 
@@ -85,7 +84,7 @@ public class POSContainer {
 	public List<String> getWordTokenList() {
 		return wordTokenList;	
 	}
-	
+
 	/**************************************
 	 * Setter method for OscarTagList.
 	 * @param oscarTagList (List<WWMMTag>)
@@ -155,31 +154,63 @@ public class POSContainer {
 		return spectrumElementList;
 	}
 	
+	/**************************************
+	 * Setter method for CombinedTagsList.
+	 * @param combinedTagsList (List<WWMMTag>)
+	 ***************************************/
+	public void setCombinedTagsList(List<WWMMTag> combinedTagsList) {
+		this.combinedTagsList = combinedTagsList;
+	}
 
+	/**************************************
+	 * Setter method for CombinedTagsList.
+	 * @param combinedTagsList (List<WWMMTag>)
+	 ***************************************/
+	public List<WWMMTag> getCombinedTagsList() {
+		return combinedTagsList;
+	}
+
+	/**************************************
+	 * Adds token to wordTokenList.
+	 * @param token (String)
+	 ***************************************/
 	public void addToTokenList(String token) {
 		getWordTokenList().add(token);
 	}
 
+	/**************************************
+	 * Creates a wordTokenList from a sentence string.
+	 * @param sentence (String)
+	 ***************************************/
 	public void createWordTokenListFromSentence(String sentence) {
 		for (String token : sentence.split(" ")) {
 			getWordTokenList().add(token);
 		}
 	}
 
-
+	/**************************************
+	 * Adds tags to oscarTagList.
+	 * @param oscarTag (String)
+	 ***************************************/
 	public void addToOSCARList(String oscarTag) {
-
 		getOscarTagList().add(new WWMMTag("OSCAR-" + oscarTag));
-
 	}
 
 
-	public void addToRegexList(String regexTag) {
+	/**************************************
+	 * Adds tags to regexTagList.
+	 * @param regexTag (String)
+	 ***************************************/
+	public void addToRegexTagList(String regexTag) {
 		getRegexTagList().add(new WWMMTag(regexTag));
 
 	}
 
-	public void createBrownListFromStringArray(String[] brownTags) {
+	/**************************************
+	 * Creates the brownTagList from the openNLP string Array format.
+	 * @param brownTags (String[])
+	 ***************************************/
+	public void createBrownTagListFromStringArray(String[] brownTags) {
 		for (String string : brownTags) {
 			if (StringUtils.isEmpty(string)) {
 				getBrownTagList().add(new WWMMTag("NN"));
@@ -189,13 +220,6 @@ public class POSContainer {
 		}
 	}
 
-	public List<WWMMTag> getCombinedTagsList() {
-		return combinedTagsList;
-	}
-
-	public void setCombinedTagsList(List<WWMMTag> newCombinedTagsList) {
-		this.combinedTagsList = newCombinedTagsList;
-	}
 
 	/***************************************
 	 * Combines the output of all 3 taggers.
@@ -251,30 +275,12 @@ public class POSContainer {
 
 	}
 
-	public void printOutTags() {
+	
 
-		System.out.println("Token List is " + this.getWordTokenList());
-		for (int i = 0; i < getWordTokenList().size(); i++) {
-			System.out.println("WORD:" + getWordTokenList().get(i));
-			System.out.println("\t>>OSCAR TAG: " + getOscarTagList().get(i).POS);
-			System.out.println("\t>>REGEX TAG: " + getRegexTagList().get(i).POS);
-			System.out.println("\t>>OPENNLP TAG: " + getBrownTagList().get(i).POS);
-			System.out.println("\t>>COMBINED TAG: "
-					+ combinedTagsList.get(i).POS);
-
-		}
-
-	}
-
-	public void setTokenList(List<String> newTokenList) {
-		this.setWordTokenList(newTokenList);
-
-	}
-
-	public List<WWMMTag> getOscarList() {
-		return this.getOscarTagList();
-	}
-
+	/*********************************************
+	 * Combines non-chemical hyphened tokens that have been split by OSCAR.
+	 * Indexes the tokens that need combining and then calls combineTokens.
+	 *********************************************/
 	public void recombineHyphenedTokens() {
 		String previousTag = "";
 		String nextTag = "";
@@ -282,7 +288,7 @@ public class POSContainer {
 		List<String> nonHyphenTags = Arrays.asList(new String[] { "dash",
 				"comma", "cc", "stop" });
 		List<Integer> indexList = new ArrayList<Integer>();
-		Map<Integer, List<Integer>> indexMap = new LinkedHashMap<Integer, List<Integer>>();
+		LinkedHashMap<Integer, List<Integer>> indexMap = new LinkedHashMap<Integer, List<Integer>>();
 		for (int currentIndex = 0; currentIndex < getWordTokenList().size(); currentIndex++) {
 			if (indexList.size() > 0)
 				totalIndexList.addAll(indexList);
@@ -351,7 +357,11 @@ public class POSContainer {
 
 	}
 
-	private void combineTokens(Map<Integer, List<Integer>> indexMap) {
+	/*****************************************
+	 * Combines the tokens based on the indices in indexMap.
+	 * @param indexMap (LinkedHashMap)
+	*****************************************/
+	private void combineTokens(LinkedHashMap<Integer, List<Integer>> indexMap) {
 		if (indexMap.size() > 0) {
 
 			List<String> newWordTokenList = new ArrayList<String>();
@@ -375,13 +385,19 @@ public class POSContainer {
 					i = i + indexList.size() - 1;
 				}
 			}
-			setTokenList(newWordTokenList);
+			setWordTokenList(newWordTokenList);
 			setCombinedTagsList(newCombinedTagsList);
 
 		}
 
 	}
 
+	/*****************************************
+	 * Creates a new tagname for the combined tokens.
+	 * Sets the tag to JJ-CHEM if one of the tags are an 
+	 * adjective or verb in the past tense.
+	 * @param indexList (List<Integer>)
+	*****************************************/
 	private String getTagName(List<Integer> indexList) {
 		String tagName = "";
 

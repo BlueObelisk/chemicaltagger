@@ -90,7 +90,7 @@ public class RegexTagger {
 						break;
 					}
 				}
-				posContainer.addToRegexList(tag);
+				posContainer.addToRegexTagList(tag);
 
 			} catch (Exception e) {
 				LOG.debug("Null pointer right there" + tokenList);

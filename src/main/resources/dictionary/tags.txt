@@ -142,8 +142,7 @@ VB-STIR---(pre|re)?(stir)(red|ring)?---Stir Verb
 
 #Synthesize Tokens
 VB-SYNTHESIZE---(pre|re)?(react|synthesize|synthesise|polymerize|polymerise|prepare)(s|d|ed)?$---Synthesize Verb
-NN-SYNTHESIZE---(pre|re|co)?(hydrolysis|condens|synthesiz|synthesis|polymeris|polymeriz|prepar|reaction)(ation|e|ed|ing)?$---Synthesize Noun
-NN-SYNTHESIZE---ROMP$--Synthesize Noun
+NN-SYNTHESIZE---(pre|re|co)?(hydrolysis|condens|synthesiz|synthesis|polymeris|polymeriz|prepar|reaction|^romp|^atrp)(ation|e|ed|ing)?$---Synthesize Noun
 #Wait Tokens
 VB-WAIT---(wait|left)(ing)?---Wait Verb
 
