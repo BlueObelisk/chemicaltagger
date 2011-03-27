@@ -10,35 +10,42 @@ import uk.ac.cam.ch.wwmm.oscardata.DataAnnotation;
 import uk.ac.cam.ch.wwmm.oscardata.DataParser;
 import uk.ac.cam.ch.wwmm.oscartokeniser.Tokeniser;
 
-
+/*****************************************************
+ * Runs the oscar SpectraTagger to pull out the NMR Spectra.
+ * 
+ * @author lh359, dl387
+ *****************************************************/
 public class SpectraTagger {
-	
-	
-	
-	
-	public POSContainer runTagger(POSContainer posContainer){
-		Tokeniser tokeniser = Tokeniser.getDefaultInstance();
-		ProcessingDocument procDoc = ProcessingDocumentFactory.getInstance()
-				.makeTokenisedDocument(tokeniser, posContainer.getInputText());
 
-		
+	
+	/*******************************************************
+	 * Tags the NMR Spectra in a chemistry text.
+	 * @param  posContainer (POSContainer)
+	 * @return posContainer (POSContainer)
+	 *******************************************************/
+	public POSContainer runTagger(POSContainer posContainer) {
+		Tokeniser tokeniser = Tokeniser.getDefaultInstance();
+		ProcessingDocument procDoc = ProcessingDocumentFactory.getInstance().makeTokenisedDocument(tokeniser, posContainer.getInputText());
+
 		List<DataAnnotation> annotations = DataParser.findData(procDoc);
 
 		StringBuilder newInputText = new StringBuilder();
 		String sentence = posContainer.getInputText();
 		int offset = 0;
-	
+
 		List<Element> spectraList = new ArrayList<Element>();
 		for (DataAnnotation dataAnnotation : annotations) {
-			if (dataAnnotation.getAnnotatedElement().getLocalName().equals("spectrum")){
-			   spectraList.add(dataAnnotation.getAnnotatedElement());
-			   newInputText.append(sentence.substring(offset,dataAnnotation.getStart()));
-			   offset = dataAnnotation.getEnd();
-			   
+			if (dataAnnotation.getAnnotatedElement().getLocalName().equals(
+					"spectrum")) {
+				spectraList.add(dataAnnotation.getAnnotatedElement());
+				newInputText.append(sentence.substring(offset, dataAnnotation
+						.getStart()));
+				offset = dataAnnotation.getEnd();
+
 			}
-			 
+
 		}
-		newInputText.append(sentence.substring(offset,sentence.length()));
+		newInputText.append(sentence.substring(offset, sentence.length()));
 		posContainer.setInputText(newInputText.toString());
 		posContainer.setSpectrumList(spectraList);
 		return posContainer;

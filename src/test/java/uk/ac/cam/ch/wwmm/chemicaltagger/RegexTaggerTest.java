@@ -31,7 +31,7 @@ public class RegexTaggerTest {
 	
 	private String regexTag(String sentence) {
 		StringBuilder regexTaggedSentence = new StringBuilder(); 
-        String cleanSentence = Utils.formatSentence(sentence);
+        String cleanSentence = Formatter.normaliseText(sentence);
         POSContainer posContainer = new POSContainer();
         posContainer.createWordTokenListFromSentence(cleanSentence);
         posContainer = regexTagger.runTagger(posContainer);

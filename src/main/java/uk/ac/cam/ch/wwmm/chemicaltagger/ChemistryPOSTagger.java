@@ -118,17 +118,22 @@ public final class ChemistryPOSTagger {
 	public POSContainer runTaggers(String inputSentence,final boolean prioritiseOscar) {
 
 		POSContainer posContainer = new POSContainer();
-		inputSentence = Utils.formatSentence(inputSentence);
+		inputSentence = Formatter.normaliseText(inputSentence);
 		posContainer.setInputText(inputSentence);
 		posContainer = spectraTagger.runTagger(posContainer);
 		posContainer = oscarTagger.runTokeniser(posContainer);
 		posContainer = oscarTagger.runTagger(posContainer);
 		posContainer = regexTagger.runTagger(posContainer);
 		posContainer = openNLPTagger.runTagger(posContainer);
+
 		posContainer.setPrioritiseOscar(prioritiseOscar);
 		posContainer.combineTaggers();
+
 		posContainer.recombineHyphenedTokens();
+
 		posContainer =  new PostProcessTags().correctCombinedTagsList(posContainer);
+		
+
 		return posContainer;
 	}
 		

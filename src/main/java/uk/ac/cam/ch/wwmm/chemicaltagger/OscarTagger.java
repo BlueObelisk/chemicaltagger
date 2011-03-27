@@ -96,7 +96,7 @@ public class OscarTagger {
 				List<IToken> tokens = ne.getTokens();
 
 				for (IToken iToken : tokens) {
-					if (tokenList.contains(iToken.getSurface())) {
+					if (tokenList.contains(iToken.getSurface()) & !iToken.getSurface().contains("\u00B0")) {
 
 						if (tokenList.get(iToken.getId()).contains(
 								iToken.getSurface())) {
