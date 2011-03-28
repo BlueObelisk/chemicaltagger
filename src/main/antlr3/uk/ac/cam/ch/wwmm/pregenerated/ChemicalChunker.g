@@ -70,9 +70,8 @@ unmatchedToken //all base tokens other than comma and stop
 	:	(number|advAdj|oscaront|tmunicode|cdunicode|jjcomp|inAll|
 	nnexample|nnstate|nntime|nnmass|nnmolar|nnamount|nnatmosphere|nneq|nnvol|nnchementity|nntemp|nnflash|nngeneral|nnmethod|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|
 	oscarcm|verb|nnadd|nnmixture|nnapparatus|nnconcentrate|nndry|nnextract|nnfilter|nnprecipitate|nnpurify|nnremove|nnsynthesize|nnyield|colon|apost|neg|dash|nnpercent|lsqb|rsqb|lrb|rrb|
-	abl|abn|abx|ap|at|be|bed|bedz|beg|bem|ben|ber|bez|cc|cs|dotok|dod|doz|dt|dtTHE|dti|dts|dtx|ex|fw|fwin|hv|hvd|hvg|hvn|md|nc|nn|nn_poss|nns|nns_poss|np|nnp|np_poss|nps|nps_poss|nr|od|pn|pn_poss|
-	pp_poss|pp_poss_poss|ppl|ppls|prp|prp_poss|ppo|pps|ppss|ql|qlp|rbconj|rn|sym|uh|wdt|wp_poss|wpo|wps|wql|wrb|pdt);	
-
+	abl|abn|abx|ap|at|be|bed|bedz|beg|bem|ben|ber|bez|cc|cs|dotok|dod|doz|dt|dtTHE|dti|dts|dtx|fw|fwin|hv|hvd|hvg|hvn|md|nc|nn|nn_poss|nns|nns_poss|np|nnp|np_poss|nps|nps_poss|nr|od|pn|pn_poss|
+	pp_poss|pp_poss_poss|ppl|ppls|prp|prp_poss|ppo|pps|ppss|ql|qlp|rbconj|rn|sym|uh|clause);	
 
 nounphrase
 	:	nounphraseStructure ->  ^(NounPhrase  nounphraseStructure);	
@@ -110,10 +109,11 @@ verb : vb|vbp|vbg|vbd|vbz|vbn|vbuse|vbsubmerge|vbimmerse|degassMultiVerb|vbsubje
 degassMultiVerb
 	:	vbdegass cc vbfill;
 number : cd|oscarcd|oscarcpr;	
-clause	:	wdt|wp_poss|wpo|wpo|wps|wql|wrb|ex|pdt;
+clause	:	wdt|wp_poss|wpo|wps|wql|wrb|ex|pdt;
 noun 	:	nounStructure (dash nounStructure)*;
 
 nounStructure :  prp|prp_poss|citation|cycles|molecule|apparatus|mixture|unnamedmolecule|nnyield|nnstate|nn|nns|nnp|nnadd|preparationphrase|nnexample|oscarcpr|range|amount|nntime|nnatmosphere|tmunicode|nneq|quantity|nnchementity|measurements|nntemp|nnflash|nngeneral|nnmethod|nnamount|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|nnvol|nnpurify|wdt|wp_poss|wpo|wps|nnsynthesize|nnmixture|reference|oscaront|nndry|number|oscarCompound|nnextract|nnfilter|nnprecipitate|nnremove|fw|fwin|sym|clause;
+
 range: number dash number;
 cycles	:	cycleStructure -> ^(CYCLES cycleStructure)  ;
 cycleStructure	:	cd dashNN? nncycle;  
