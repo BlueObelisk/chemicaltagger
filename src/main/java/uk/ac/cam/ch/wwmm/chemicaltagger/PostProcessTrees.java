@@ -20,7 +20,7 @@ import nu.xom.Nodes;
 public class PostProcessTrees {
 	private HashMap<String, String> actionMap = new HashMap<String, String>();
 	private static List<String> splitList = new ArrayList<String>();
-
+    private boolean includeWaitPhrase = true;     
 	static{
 		splitList.add("comma");
 		splitList.add("cc");
@@ -50,6 +50,7 @@ public class PostProcessTrees {
 	 ********************************/
 	public void setActionMap(HashMap<String, String> actionMap) {
 		this.actionMap = actionMap;
+		includeWaitPhrase = false;
 	}
 	
 	/********************************
@@ -206,7 +207,7 @@ public class PostProcessTrees {
 						// System.out.println("* I contain keyword:: " + actionName);
 						actionPhrase.addAttribute(attribute);
 					}
-					else if (elementNames.contains("TimePhrase")) {
+					else if (elementNames.contains("TimePhrase") && includeWaitPhrase) {
                         Attribute attribute = new Attribute("type", "Wait");
                         actionPhrase = createActionPhrase(elementList, attribute);
                         appendActionPhrase(newSentence, actionPhrase);
@@ -240,7 +241,7 @@ public class PostProcessTrees {
 					}
 					else{
 	                   List<String> elementNames = elementListToSelfAndDescendentElementNames(elementList);
-	                   if (elementNames.contains("TimePhrase")) {
+	                   if (elementNames.contains("TimePhrase") && includeWaitPhrase) {
 	                	   Attribute attribute = new Attribute("type", "Wait");
 	                	   actionPhrase = createActionPhrase(elementList, attribute);
 	                       appendActionPhrase(newSentence, actionPhrase);
