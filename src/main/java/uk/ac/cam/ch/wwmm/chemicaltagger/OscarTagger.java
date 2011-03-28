@@ -49,7 +49,8 @@ public class OscarTagger {
 	public POSContainer runTokeniser(POSContainer posContainer) {
 		tokens = new ArrayList<ITokenSequence>();
 		String sentence = posContainer.getInputText();
-		sentence = oscar.normalize(sentence);
+		//TODO oscar.normalise isn't implemented yet!
+//		sentence = oscar.normalise(sentence);
 		tokens = oscar.tokenise(sentence);
 		for (ITokenSequence tokenSequence : tokens) {
 			for (IToken tok : tokenSequence.getTokens()) {
