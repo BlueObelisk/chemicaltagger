@@ -24,6 +24,7 @@ public final class ChemistryPOSTagger {
 	private OpenNLPTagger openNLPTagger;
 	private SpectraTagger spectraTagger;
 
+	private boolean runSpectraTagger = false;
 	/**************************************
 	 * Private Singleton holder.
 	 ***************************************/
@@ -40,13 +41,23 @@ public final class ChemistryPOSTagger {
 	 * Private Constructor Class.
 	 ***************************************/
 	private ChemistryPOSTagger() {
-		setOscarTagger(new OscarTagger());
-		setRegexTagger(new RegexTagger());
-		setOpenNLPTagger(OpenNLPTagger.getInstance());
+		oscarTagger = new OscarTagger();
+		regexTagger = new RegexTagger();
+		openNLPTagger = OpenNLPTagger.getInstance();
 		spectraTagger = new SpectraTagger();
 	}
 	
 
+	
+	/**************************************
+	 * Setter method for runSpectraTagger.
+	 * runSpectraTagger is set to false by
+	 * default because of memory issues.
+	 * @param runSpectraTagger (boolean)
+	 ***************************************/
+	public void setRunSpectraTagger(boolean runSpectraTagger) {
+		this.runSpectraTagger = true;
+	}
 	/**************************************
 	 * Getter method for RegexTagger.
 	 * @return regexTagger (RegexTagger)
@@ -120,7 +131,9 @@ public final class ChemistryPOSTagger {
 		POSContainer posContainer = new POSContainer();
 		inputSentence = Formatter.normaliseText(inputSentence);
 		posContainer.setInputText(inputSentence);
+		if (runSpectraTagger){
 		posContainer = spectraTagger.runTagger(posContainer);
+		}
 		posContainer = oscarTagger.runTokeniser(posContainer);
 		posContainer = oscarTagger.runTagger(posContainer);
 		posContainer = regexTagger.runTagger(posContainer);
