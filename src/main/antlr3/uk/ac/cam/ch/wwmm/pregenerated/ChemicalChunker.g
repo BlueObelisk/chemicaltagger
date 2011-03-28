@@ -64,10 +64,14 @@ sentenceStructure:  (nounphrase|verbphrase|prepphrase|prepphraseAfter)+ (advAdj|
 
 
 unmatchedPhrase
-	:	 unmatchedTokens -> ^(Unmatched unmatchedTokens)+;
+	:	 unmatchedToken -> ^(Unmatched unmatchedToken);
 	
-unmatchedTokens
-	:	(fw|noun|tmunicode|verb|inAll|dt|dtTHE|oscarcd|oscarcm|oscarrn|oscaront|brackets|sym|colon|md|neg|number|comma|advAdj|rbconj|reference);	
+unmatchedToken //all base tokens other than comma and stop
+	:	(number|advAdj|oscaront|tmunicode|cdunicode|jjcomp|inAll|
+	nnexample|nnstate|nntime|nnmass|nnmolar|nnamount|nnatmosphere|nneq|nnvol|nnchementity|nntemp|nnflash|nngeneral|nnmethod|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|
+	oscarcm|verb|nnadd|nnmixture|nnapparatus|nnconcentrate|nndry|nnextract|nnfilter|nnprecipitate|nnpurify|nnremove|nnsynthesize|nnyield|colon|apost|neg|dash|nnpercent|lsqb|rsqb|lrb|rrb|
+	abl|abn|abx|ap|at|be|bed|bedz|beg|bem|ben|ber|bez|cc|cs|dotok|dod|doz|dt|dtTHE|dti|dts|dtx|ex|fw|fwin|hv|hvd|hvg|hvn|md|nc|nn|nn_poss|nns|nns_poss|np|nnp|np_poss|nps|nps_poss|nr|od|pn|pn_poss|
+	pp_poss|pp_poss_poss|ppl|ppls|prp|prp_poss|ppo|pps|ppss|ql|qlp|rbconj|rn|sym|uh|wdt|wp_poss|wpo|wps|wql|wrb|pdt);	
 
 
 nounphrase
