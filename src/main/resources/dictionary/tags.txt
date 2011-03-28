@@ -53,6 +53,7 @@ NN-CYCLE---^(c|C)?ycle(s)?$---Column Token
 NN-TIMES---^(t|T)imes$---Times Token
 NN-EXAMPLE---^(e|E)xample(s)?$---Example Token
 
+
 #Not really chementities or Oscar-cm.. but need to be fixed
 NN-CHEMENTITY---^b$|^m$---will be removed
 
@@ -150,7 +151,7 @@ VB-WAIT---(wait|left)(ing)?---Wait Verb
 VB-WASH---^(wash|elut|rins)(ed|e|ing)?---Wait Verb
 
 #Yield Tokens
-VB-YIELD---^(yield|afford|result|provid|obtain|gave|isolat|leav|giv)(es|ed|e|ing)?---Yield Verb
+VB-YIELD---^(yield|afford|result|provid|obtain|gave|isolat|form(ed|ing)|leav|giv)(es|ed|e|ing)?---Yield Verb
 
 
 #Misc Tokens mainly to replace characters that are not markup friendly

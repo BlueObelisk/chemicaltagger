@@ -5,7 +5,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.apache.commons.lang.StringUtils;
-import org.xmlcml.euclid.Util;
 
 /**************************************************
  * Corrects Mistagged tokens.
@@ -28,7 +27,6 @@ public class PostProcessTags {
 			String currentTag = combinedTags.get(i).getPOS();
 			String currentToken = tokenList.get(i);
 			String newTag = combinedTags.get(i).getPOS();
-			newTag = correctMisTaggedChemistry(currentTag, currentToken, newTag);
 			newTag = correctMisTaggedVerbs(tokenList, combinedTags, i,
 					currentTag, currentToken, newTag);
 			newTag = correctMisTaggedMisc(combinedTags, i, currentTag,
@@ -44,37 +42,7 @@ public class PostProcessTags {
 		return posContainer;
 	}
 
-	/************************************************
-	 * Corrects the mistagged oscar tokens.
-	 * @param currentTag (String)
-	 * @param currentToken (String)
-	 * @param newTag (String)
-	 * @return newTag (String)
-	 *********************************************/
-	private String correctMisTaggedChemistry(String currentTag,
-			String currentToken, String newTag) {
-//		if (StringUtils.equalsIgnoreCase(currentTag, "oscar-cm")
-//				|| StringUtils.equalsIgnoreCase(currentTag, "oscar-ont")) {
-//			List<String> synthList = Arrays.asList("atrp romp".split(" "));
-//			List<String> tempList = Arrays.asList("°c k ºc".split(" "));
-//			List<String> volList = Arrays.asList("ml");
-//
-//			if (synthList.contains(currentToken.toLowerCase())) {
-//				newTag = "NN-SYNTHESIZE";
-//			}
-//			if (tempList.contains(currentToken.toLowerCase())) {
-//				newTag = "NN-TEMP";
-//			}
-//			if (volList.contains(currentToken.toLowerCase())) {
-//				newTag = "NN-VOL";
-//			}
-//			if (StringUtils.equalsIgnoreCase(currentToken, "a")) {
-//				newTag = "DT";
-//			}
-//
-//		}
-		return newTag;
-	}
+
 
 	/*************************************
 	 * Corrects the mistagged verbs.
@@ -89,9 +57,9 @@ public class PostProcessTags {
 	private String correctMisTaggedVerbs(List<String> tokenList,
 			List<WWMMTag> combinedTags, int i, String currentTag,
 			String currentToken, String newTag) {
-		// polymerization should not be chementity
 		if (currentTag.toLowerCase().startsWith("vb-")
 				|| currentTag.toLowerCase().startsWith("nn")) {
+//			if (!currentTag.toLowerCase().startsWith("nn-")){
 			if (!currentTag.toLowerCase().startsWith("nn-state")
 					&& !currentTag.toLowerCase().startsWith("nn-apparatus")
 					&& !currentTag.toLowerCase().startsWith("nn-cycle")
@@ -132,14 +100,17 @@ public class PostProcessTags {
 				if (!stringafter(notafterList, i, combinedTags))
 					newTag = "NN-CHEMENTITY";
 			}
+			if (i != 0) {
+				int beforeIndex = i - 1;
+				if (tokenList.get(beforeIndex).endsWith("ing")) {
+					newTag = "NN-CHEMENTITY";
+				}
+
+			}
 		}
 
 		if (currentTag.toLowerCase().startsWith("vb") && Utils.containsNumber(currentToken)) {
 			newTag= "NN";
-		}
-		if (currentToken.startsWith("Contain")) {
-			newTag = "JJ";
-
 		}
 
 		if (currentTag.toLowerCase().startsWith("vbn")
@@ -156,14 +127,6 @@ public class PostProcessTags {
 
 		}
 
-		if (currentToken.toLowerCase().startsWith("form")) {
-
-			List<String> beforeList = Arrays.asList("vbd");
-			if (stringbefore(beforeList, i, combinedTags)) {
-				newTag = "VB-YIELD";
-			}
-
-		}
 
 		if (currentTag.toLowerCase().startsWith("vb-yield")) {
 
@@ -176,18 +139,7 @@ public class PostProcessTags {
 				newTag = "JJ-COMPOUND";
 		}
 
-		if (currentTag.toLowerCase().startsWith("vbd")) {
 
-			List<String> beforeList = Arrays.asList("oscar-cm");
-			List<String> afterList = Arrays.asList("oscar-cj jj-chem nn".split(" "));
-
-			if (stringbefore(beforeList, i, combinedTags)
-					&& stringafter(afterList, i, combinedTags)
-					&& !currentTag.toLowerCase().startsWith("nn-")) {
-				newTag = "JJ";
-			}
-
-		}
 
 		if (currentTag.toLowerCase().startsWith("vb-filter")) {
 
@@ -210,17 +162,6 @@ public class PostProcessTags {
 			}
 
 		}
-		if (currentTag.toLowerCase().startsWith("vb-precipitate")) {
-
-			if (i != 0) {
-				int beforeIndex = i - 1;
-				if (tokenList.get(beforeIndex).endsWith("ing")) {
-					newTag = "NN-CHEMENTITY";
-				}
-
-			}
-
-		}
 
 		if (currentTag.toLowerCase().startsWith("nn-mixture")) {
 
@@ -238,7 +179,7 @@ public class PostProcessTags {
 						.toLowerCase().endsWith("ed"))) {
 
 			List<String> afterList = Arrays.asList("nn oscar-cm nns nn-chementity oscar-cj jj-chem jj nnp nn-state nn-apparatus".split(" "));
-			List<String> beforeList = Arrays.asList("dt dt-the cd".split(" "));
+			List<String> beforeList = Arrays.asList("dt dt-the cd oscar-cm".split(" "));
 
 			List<String> notList = Arrays.asList("in-of");
 			if (stringafter(afterList, i, combinedTags)
@@ -432,13 +373,7 @@ public class PostProcessTags {
 			}
 		}
 
-//		if (currentTag.toLowerCase().startsWith("nn-synthesize")) {
-//			List<String> afterList = Arrays.asList("in-of nn-method".split(" "));
-//			if (!stringafter(afterList, i, combinedTags)) {
-//
-//				newTag = "NN-CHEMENTITY";
-//			}
-//		}
+
 
 		if (i != 0 && currentTag.toLowerCase().startsWith("nn-add")) {
 			List<String> beforeList = Arrays.asList("stop comma colon".split(" "));
@@ -491,6 +426,9 @@ public class PostProcessTags {
 			}
 
 		}
+
+
+		
 		return newTag;
 
 	}
