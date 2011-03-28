@@ -14,6 +14,13 @@
 			<url>https://maven.ch.cam.ac.uk/m2repo</url>
 		</repository>
 	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>ucc-repo</id>
+			<name>UCC Repository</name>
+			<url>https://maven.ch.cam.ac.uk/m2repo</url>
+		</pluginRepository>
+	</pluginRepositories>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -147,7 +154,7 @@
 					<plugin>
 						<groupId>org.antlr</groupId>
 						<artifactId>antlr3-maven-plugin</artifactId>
-						<version>3.2</version>
+						<version>3.2wwmm</version>
 						<executions>
 							<execution>
 								<goals>
