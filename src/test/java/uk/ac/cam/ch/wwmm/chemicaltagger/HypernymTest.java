@@ -8,7 +8,6 @@ import org.apache.log4j.Logger;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import uk.ac.cam.ch.wwmm.chemicaltagger.roles.ParsedDocumentCreator;
 
 public class HypernymTest {
 
@@ -25,18 +24,18 @@ public class HypernymTest {
 		
 		
 		String sentence = "such acids as ferric chloride";
-		Document doc = new ParsedDocumentCreator().runChemicalTagger(sentence);
+		Document doc = Utils.runChemicalTagger(sentence);
 		LOG.debug(doc.toXML());
 	
 		
 		sentence = "alternative nonpolar solvents including toluene, heptane, hexane, and xylene";
-		doc = new ParsedDocumentCreator().runChemicalTagger(sentence);
+		doc = Utils.runChemicalTagger(sentence);
 		LOG.debug(doc.toXML());
 	
 		
 		
 		sentence = "acetone or other ketones";
-		doc = new ParsedDocumentCreator().runChemicalTagger(sentence);
+		doc = Utils.runChemicalTagger(sentence);
 		LOG.debug(doc.toXML());
 	}
 
