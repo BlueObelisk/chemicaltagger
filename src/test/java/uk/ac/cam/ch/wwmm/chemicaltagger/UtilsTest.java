@@ -1,6 +1,7 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
 import static junit.framework.Assert.assertEquals;
+import junit.framework.Assert;
 
 import org.junit.Test;
 
@@ -18,5 +19,16 @@ public class UtilsTest {
 	public void utf8Encoding() {
 		String string = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/utilsTest/utf-8.txt");
 		assertEquals(2, string.length());
+	}
+	
+	@Test
+	public void testRemoveMarkup(){
+        String sentence  = "This is an example that uses <b>bold</b> and <i>italics</i> letters as well as <sub>sub</sub> and <sup>sup</sup>";
+        String expected = "This is an example that uses bold and italics letters as well as sub and sup";
+        String actual = Utils.cleanHTMLText(sentence);
+        System.out.println();
+        Assert.assertEquals("Removed markup",expected, actual);
+
+		
 	}
 }

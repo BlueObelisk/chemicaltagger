@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<!-- NOTE: the antlr3 build is best done on the COMMANDLINE and requires 
-		set MAVEN_OPTS=-Xmx1024m-->
+		set MAVEN_OPTS=-Xmx1024m -->
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>chemicalTagger</groupId>
 	<artifactId>chemicalTagger</artifactId>
@@ -111,11 +111,6 @@
 			<version>2.4.0</version>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.poi</groupId>
-			<artifactId>poi-scratchpad</artifactId>
-			<version>3.5-beta5</version>
-		</dependency>
-		<dependency>
 			<groupId>xom</groupId>
 			<artifactId>xom</artifactId>
 			<version>1.1</version>
@@ -142,6 +137,11 @@
 			<groupId>uk.ac.cam.ch.wwmm.oscar</groupId>
 			<artifactId>oscar4-api</artifactId>
 			<version>4.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jsoup</groupId>
+			<artifactId>jsoup</artifactId>
+			<version>1.2.1</version>
 		</dependency>
 	</dependencies>
 
