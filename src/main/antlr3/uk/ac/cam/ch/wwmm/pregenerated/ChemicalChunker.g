@@ -4,6 +4,7 @@ options {
     language=Java;
     output = AST;
    backtrack= true;
+   memoize = true;
 
 }
 tokens{
