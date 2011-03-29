@@ -146,4 +146,22 @@ public class Utils {
 		}
 		return false;
 	}
+
+	/*******************************************
+	 * Convenience method for running chemicalTagger 
+	 * @param text (String)
+	 * @return doc (Document)
+	 *****************************************/
+	public static Document runChemicalTagger(String text) {
+		ChemistryPOSTagger chemPos = ChemistryPOSTagger.getInstance();
+	
+		POSContainer posContainer = chemPos.runTaggers(text);
+	
+		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
+				posContainer);
+	
+		chemistrySentenceParser.parseTags();
+		Document doc = chemistrySentenceParser.makeXMLDocument();
+		return doc;
+	}
 }

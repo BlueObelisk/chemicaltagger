@@ -3,7 +3,6 @@ package uk.ac.cam.ch.wwmm.chemicaltagger.extractText;
 import java.io.File;
 
 import org.antlr.runtime.tree.Tree;
-import org.apache.log4j.Logger;
 import org.junit.Test;
 
 import uk.ac.cam.ch.wwmm.chemicaltagger.ASTtoXML;
@@ -14,7 +13,6 @@ import uk.ac.cam.ch.wwmm.chemicaltagger.Utils;
 
 public class ExtractFromXMLTest {
 
-	private final Logger LOG = Logger.getLogger(ExtractFromXMLTest.class);
 
 	@Test
 	public void testGetPatentContent() {
