@@ -52,7 +52,7 @@ fragment DIGIT	: ('0'..'9');
 fragment UNICODE	:  '\u00A0'..'\ufffe';
 
 //TOKEN	:	(ACHAR|DIGIT|UNICODE)+;
-TOKEN : (ACHAR|'?'|';'| '_'|',' |'.'|')'|'('|'/'|'-'|'='|':'|'%'|'\''|'{'|'}'|'['|']'|'>'|'<'|'@'|'+'|'|'|DIGIT|UNICODE)+;
+TOKEN : (ACHAR|'?'|'&'|';'| '_'|',' |'.'|')'|'('|'/'|'-'|'='|':'|'%'|'\''|'{'|'}'|'['|']'|'>'|'<'|'@'|'+'|'|'|DIGIT|UNICODE)+;
 
 
 
@@ -70,7 +70,7 @@ unmatchedToken //all base tokens other than comma and stop
 	:	(number|advAdj|oscaront|tmunicode|cdunicode|jjcomp|inAll|
 	nnexample|nnstate|nntime|nnmass|nnmolar|nnamount|nnatmosphere|nneq|nnvol|nnchementity|nntemp|nnflash|nngeneral|nnmethod|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|
 	oscarcm|verb|nnadd|nnmixture|nnapparatus|nnconcentrate|nndry|nnextract|nnfilter|nnprecipitate|nnpurify|nnremove|nnsynthesize|nnyield|colon|apost|neg|dash|nnpercent|lsqb|rsqb|lrb|rrb|
-	abl|abn|abx|ap|at|be|bed|bedz|beg|bem|ben|ber|bez|cc|cs|dotok|dod|doz|dt|dtTHE|dti|dts|dtx|fw|fwin|hv|hvd|hvg|hvn|md|nc|nn|nn_poss|nns|nns_poss|np|nnp|np_poss|nps|nps_poss|nr|od|pn|pn_poss|
+	abl|abn|abx|ap|at|be|bed|bedz|beg|bem|ben|ber|bez|cc|cs|dotok|dod|doz|dt|dtTHE|dti|dts|dtx|fw|fwin|hv|hvd|hvg|hvn|md|nc|nn|nn_poss|nns|nns_poss|np|nnp|np_poss|nps|nps_poss|nr|pn|pn_poss|
 	pp_poss|pp_poss_poss|ppl|ppls|prp|prp_poss|ppo|pps|ppss|ql|qlp|rbconj|rn|sym|uh|clause);	
 
 nounphrase
@@ -108,7 +108,7 @@ verb : vb|vbp|vbg|vbd|vbz|vbn|vbuse|vbsubmerge|vbimmerse|degassMultiVerb|vbsubje
 
 degassMultiVerb
 	:	vbdegass cc vbfill;
-number : cd|oscarcd|oscarcpr;	
+number : cd|oscarcd|oscarcpr|od;	
 clause	:	wdt|wp_poss|wpo|wps|wql|wrb|ex|pdt;
 noun 	:	nounStructure (dash nounStructure)*;
 
