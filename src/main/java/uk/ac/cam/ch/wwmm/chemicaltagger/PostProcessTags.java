@@ -20,13 +20,13 @@ public class PostProcessTags {
 	public POSContainer correctCombinedTagsList(POSContainer posContainer) {
 
 		List<String> tokenList = posContainer.getWordTokenList();
-		List<WWMMTag> combinedTags = posContainer.getCombinedTagsList();
+		List<String> combinedTags = posContainer.getCombinedTagsList();
 		List<String> newTokenList = new ArrayList<String>();
-		List<WWMMTag> newCombinedTagsList = new ArrayList<WWMMTag>();
+		List<String> newCombinedTagsList = new ArrayList<String>();
 		for (int i = 0; i < combinedTags.size(); i++) {
-			String currentTag = combinedTags.get(i).getPOS();
+			String currentTag = combinedTags.get(i);
 			String currentToken = tokenList.get(i);
-			String newTag = combinedTags.get(i).getPOS();
+			String newTag = combinedTags.get(i);
 			newTag = correctMisTaggedVerbs(tokenList, combinedTags, i,
 					currentTag, currentToken, newTag);
 			newTag = correctMisTaggedMisc(combinedTags, i, currentTag,
@@ -34,7 +34,7 @@ public class PostProcessTags {
 			newTag = correctMisTaggedDigits(combinedTags, i, currentTag,
 					currentToken, newTag);
 
-            newCombinedTagsList.add(new WWMMTag(newTag));
+            newCombinedTagsList.add(newTag);
             newTokenList.add(currentToken);
 		}
 		posContainer.setWordTokenList(newTokenList);
@@ -55,7 +55,7 @@ public class PostProcessTags {
 	 * @return newTag (String)
 	 *************************************/
 	private String correctMisTaggedVerbs(List<String> tokenList,
-			List<WWMMTag> combinedTags, int i, String currentTag,
+			List<String> combinedTags, int i, String currentTag,
 			String currentToken, String newTag) {
 		if (currentTag.toLowerCase().startsWith("vb-")
 				|| currentTag.toLowerCase().startsWith("nn")) {
@@ -213,10 +213,10 @@ public class PostProcessTags {
 							&& stringafter(afterList, i, combinedTags)) {
 						newTag = "JJ";
 					} else if (stringbefore(beforeList, i, combinedTags)
-							&& combinedTags.get(i + 1).getPOS().toLowerCase()
+							&& combinedTags.get(i + 1).toLowerCase()
 									.startsWith("nn")) {
 						newTag = "JJ";
-					} else if (combinedTags.get(i - 1).getPOS().toLowerCase()
+					} else if (combinedTags.get(i - 1).toLowerCase()
 							.startsWith("dt")) {
 						newTag = "NN";
 					}
@@ -237,7 +237,7 @@ public class PostProcessTags {
 	 * @param newTag (String)
 	 * @return newTag (String)
 	 *************************************/
-	private String correctMisTaggedDigits(List<WWMMTag> combinedTags, int i,
+	private String correctMisTaggedDigits(List<String> combinedTags, int i,
 			String currentTag, String currentToken, String newTag) {
 		if (StringUtils.equalsIgnoreCase(currentTag, "cd")) {
 			List<String> beforeList = Arrays.asList("in-of jj nn-chementity comma".split(" "));
@@ -290,7 +290,7 @@ public class PostProcessTags {
 	 * @param newTag (String)
 	 * @return newTag (String)
 	 *************************************/
-	private String correctMisTaggedMisc(List<WWMMTag> combinedTags, int i,
+	private String correctMisTaggedMisc(List<String> combinedTags, int i,
 			String currentTag, String currentToken, String newTag) {
 		if (StringUtils.equalsIgnoreCase(currentTag, "nnp")
 				&& StringUtils.equalsIgnoreCase(currentToken, "M")) {
@@ -442,11 +442,11 @@ public class PostProcessTags {
 	 * @return before(boolean)
 	 ***********************************/
 	private boolean stringbefore(List<String> beforeList, int index,
-			List<WWMMTag> combinedTags) {
+			List<String> combinedTags) {
 		boolean before = false;
 		if (index != 0) {
 			int beforeIndex = index - 1;
-			if (beforeList.contains(combinedTags.get(beforeIndex).getPOS()
+			if (beforeList.contains(combinedTags.get(beforeIndex)
 					.toLowerCase())) {
 				before = true;
 			}
@@ -464,12 +464,12 @@ public class PostProcessTags {
 	 * @return
 	 **********************************/
 	private boolean stringafter(List<String> afterList, int index,
-			List<WWMMTag> combinedTags) {
+			List<String> combinedTags) {
 		boolean after = false;
 		int afterIndex = index + 1;
 
 		if (afterIndex < combinedTags.size()) {
-			if (afterList.contains(combinedTags.get(afterIndex).getPOS()
+			if (afterList.contains(combinedTags.get(afterIndex)
 					.toLowerCase())) {
 				after = true;
 			}
@@ -487,12 +487,12 @@ public class PostProcessTags {
 	 * @return
 	 **********************************/
 	private boolean string2after(List<String> afterList, int index,
-			List<WWMMTag> combinedTags) {
+			List<String> combinedTags) {
 		boolean after = false;
 		int after2Index = index + 2;
 
 		if (after2Index < combinedTags.size()) {
-			if (afterList.contains(combinedTags.get(after2Index).getPOS()
+			if (afterList.contains(combinedTags.get(after2Index)
 					.toLowerCase())) {
 				after = true;
 			}

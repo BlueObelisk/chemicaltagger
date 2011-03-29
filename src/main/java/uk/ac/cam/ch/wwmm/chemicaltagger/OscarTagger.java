@@ -85,11 +85,11 @@ public class OscarTagger {
 		neList = oscar.recogniseNamedEntities(tokens);
 
 		List<String> tokenList = posContainer.getWordTokenList();
-		List<WWMMTag> oscarList = new ArrayList<WWMMTag>();
+		List<String> oscarList = new ArrayList<String>();
 
 		String tag = "nil";
 		for (int i = 0; i < tokenList.size(); i++) {
-			oscarList.add(new WWMMTag(tag));
+			oscarList.add(tag);
 		}
 		for (NamedEntity ne : neList) {
 			if (!ne.getType().getName().toLowerCase().contains("cpr")
@@ -101,8 +101,7 @@ public class OscarTagger {
 
 						if (tokenList.get(iToken.getId()).contains(
 								iToken.getSurface())) {
-							oscarList.set(iToken.getId(), new WWMMTag("OSCAR-"
-									+ ne.getType().getName()));
+							oscarList.set(iToken.getId(), "OSCAR-"+ne.getType().getName());
 						}
 					}
 				}
