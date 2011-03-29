@@ -19,7 +19,6 @@
 			<property name="checkHtml" value="false" />
 			<property name="checkEmptyJavadoc" value="true" />
 		</module>
-
 		<module name="ConstantName" />
 		<module name="LocalFinalVariableName" />
 		<module name="LocalVariableName" />

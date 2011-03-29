@@ -184,5 +184,6 @@ public class Formatter {
 		}
 		return isStopWordAfter;
 	}
+	
 
 }
