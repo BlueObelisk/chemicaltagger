@@ -23,10 +23,10 @@ public class POSContainer {
 	private boolean prioritiseOscar = true;
 
 	private List<String> wordTokenList = new ArrayList<String>();
-	private List<WWMMTag> oscarTagList = new ArrayList<WWMMTag>();
-	private List<WWMMTag> regexTagList = new ArrayList<WWMMTag>();
-	private List<WWMMTag> brownTagList = new ArrayList<WWMMTag>();
-	private List<WWMMTag> combinedTagsList = new ArrayList<WWMMTag>();
+	private List<String> oscarTagList = new ArrayList<String>();
+	private List<String> regexTagList = new ArrayList<String>();
+	private List<String> brownTagList = new ArrayList<String>();
+	private List<String> combinedTagsList = new ArrayList<String>();
 	private Element spectrumElementList;
 
 	/******************************
@@ -87,50 +87,50 @@ public class POSContainer {
 
 	/**************************************
 	 * Setter method for OscarTagList.
-	 * @param oscarTagList (List<WWMMTag>)
+	 * @param oscarTagList (List<String>)
 	 ***************************************/
-	public void setOscarTagList(List<WWMMTag> oscarTagList) {
+	public void setOscarTagList(List<String> oscarTagList) {
 		this.oscarTagList = oscarTagList;
 	}
 	
 	/**************************************
 	 * Getter method for OscarTagList.
-	 * @return oscarTagList (List<WWMMTag>)
+	 * @return oscarTagList (List<String>)
 	 ***************************************/
-	public List<WWMMTag> getOscarTagList() {
+	public List<String> getOscarTagList() {
 		return oscarTagList;
 	}
 
 	/**************************************
 	 * Setter method for RegexTagList.
-	 * @param regexTagList (List<WWMMTag>)
+	 * @param regexTagList (List<String>)
 	 ***************************************/
-	public void setRegexTagList(List<WWMMTag> regexTagList) {
+	public void setRegexTagList(List<String> regexTagList) {
 		this.regexTagList = regexTagList;
 	}
 
 	/**************************************
 	 * Getter method for RegexTagList.
-	 * @return regexTagList (List<WWMMTag>)
+	 * @return regexTagList (List<String>)
 	 ***************************************/
-	public List<WWMMTag> getRegexTagList() {
+	public List<String> getRegexTagList() {
 		return regexTagList;
 	}
 
 
 	/**************************************
 	 * Setter method for BrownTagList.
-	 * @param brownTagList (List<WWMMTag>)
+	 * @param brownTagList (List<String>)
 	 ***************************************/
-	public void setBrownTagList(List<WWMMTag> brownTagList) {
+	public void setBrownTagList(List<String> brownTagList) {
 		this.brownTagList = brownTagList;
 	}
 
 	/**************************************
 	 * Getter method for BrownTagList.
-	 * @return brownTagList (List<WWMMTag>)
+	 * @return brownTagList (List<String>)
 	 ***************************************/
-	public List<WWMMTag> getBrownTagList() {
+	public List<String> getBrownTagList() {
 		return brownTagList;
 	}
 
@@ -156,17 +156,17 @@ public class POSContainer {
 	
 	/**************************************
 	 * Setter method for CombinedTagsList.
-	 * @param combinedTagsList (List<WWMMTag>)
+	 * @param combinedTagsList (List<String>)
 	 ***************************************/
-	public void setCombinedTagsList(List<WWMMTag> combinedTagsList) {
+	public void setCombinedTagsList(List<String> combinedTagsList) {
 		this.combinedTagsList = combinedTagsList;
 	}
 
 	/**************************************
 	 * Setter method for CombinedTagsList.
-	 * @param combinedTagsList (List<WWMMTag>)
+	 * @param combinedTagsList (List<String>)
 	 ***************************************/
-	public List<WWMMTag> getCombinedTagsList() {
+	public List<String> getCombinedTagsList() {
 		return combinedTagsList;
 	}
 
@@ -193,7 +193,7 @@ public class POSContainer {
 	 * @param oscarTag (String)
 	 ***************************************/
 	public void addToOSCARList(String oscarTag) {
-		getOscarTagList().add(new WWMMTag("OSCAR-" + oscarTag));
+		getOscarTagList().add("OSCAR-" + oscarTag);
 	}
 
 
@@ -202,7 +202,7 @@ public class POSContainer {
 	 * @param regexTag (String)
 	 ***************************************/
 	public void addToRegexTagList(String regexTag) {
-		getRegexTagList().add(new WWMMTag(regexTag));
+		getRegexTagList().add(regexTag);
 
 	}
 
@@ -213,9 +213,9 @@ public class POSContainer {
 	public void createBrownTagListFromStringArray(String[] brownTags) {
 		for (String string : brownTags) {
 			if (StringUtils.isEmpty(string)) {
-				getBrownTagList().add(new WWMMTag("NN"));
+				getBrownTagList().add("NN");
 			} else {
-				getBrownTagList().add(new WWMMTag(string));
+				getBrownTagList().add(string);
 			}
 		}
 	}
@@ -225,7 +225,7 @@ public class POSContainer {
 	 * Combines the output of all 3 taggers.
 	 ***************************************/
 	public void combineTaggers() {
-		List<List<WWMMTag>> tagOrder = new ArrayList<List<WWMMTag>>();
+		List<List<String>> tagOrder = new ArrayList<List<String>>();
 		if (prioritiseOscar) {
 			tagOrder.add(getOscarTagList());
 			tagOrder.add(getRegexTagList());
@@ -235,14 +235,14 @@ public class POSContainer {
 		}
 		tagOrder.add(getBrownTagList());
 
-		List<WWMMTag> firstTagger = tagOrder.get(0);
+		List<String> firstTagger = tagOrder.get(0);
 		for (int i = 0; i < firstTagger.size(); i++) {
-			if (!firstTagger.get(i).getPOS().toLowerCase().equals("nil")) {
+			if (!firstTagger.get(i).toLowerCase().equals("nil")) {
 				combinedTagsList.add(firstTagger.get(i));
 			} else {
 				for (int taggedIndex = 1; taggedIndex < tagOrder.size(); taggedIndex++) {
-					List<WWMMTag> backOffTagger = tagOrder.get(taggedIndex);
-					if (!backOffTagger.get(i).getPOS().equals("nil")) {
+					List<String> backOffTagger = tagOrder.get(taggedIndex);
+					if (!backOffTagger.get(i).equals("nil")) {
 						combinedTagsList.add(backOffTagger.get(i));
 						taggedIndex = tagOrder.size();
 					}
@@ -262,9 +262,9 @@ public class POSContainer {
 		StringBuilder tokenTagTupleString = new StringBuilder();
 
 		for (int i = 0; i < getWordTokenList().size(); i++) {
-			if (StringUtils.isNotEmpty(combinedTagsList.get(i).POS)
+			if (StringUtils.isNotEmpty(combinedTagsList.get(i))
 					&& StringUtils.isNotEmpty(getWordTokenList().get(i))) {
-				tokenTagTupleString.append(combinedTagsList.get(i).POS);
+				tokenTagTupleString.append(combinedTagsList.get(i));
 				tokenTagTupleString.append(SPACE);
 				tokenTagTupleString.append(getWordTokenList().get(i));
 				tokenTagTupleString.append(SPACE);
@@ -294,7 +294,7 @@ public class POSContainer {
 				totalIndexList.addAll(indexList);
 			indexList = new ArrayList<Integer>();
 
-			if (combinedTagsList.get(currentIndex).getPOS().toLowerCase()
+			if (combinedTagsList.get(currentIndex).toLowerCase()
 					.equals("dash")) {
 				if (currentIndex == 0
 						&& currentIndex + 1 < getWordTokenList().size()) {
@@ -308,8 +308,8 @@ public class POSContainer {
 				} else {
 
 					previousTag = combinedTagsList.get(currentIndex - 1)
-							.getPOS();
-					nextTag = combinedTagsList.get(currentIndex + 1).getPOS();
+							;
+					nextTag = combinedTagsList.get(currentIndex + 1);
 
 					if (!(previousTag.startsWith("OSCAR-CM")
 							& nextTag.startsWith("OSCAR-CM") & !getWordTokenList()
@@ -365,7 +365,7 @@ public class POSContainer {
 		if (indexMap.size() > 0) {
 
 			List<String> newWordTokenList = new ArrayList<String>();
-			List<WWMMTag> newCombinedTagsList = new ArrayList<WWMMTag>();
+			List<String> newCombinedTagsList = new ArrayList<String>();
 
 			for (int i = 0; i < getWordTokenList().size(); i++) {
 				StringBuilder multiTokenWord = new StringBuilder();
@@ -381,7 +381,7 @@ public class POSContainer {
 						multiTokenWord.append(getWordTokenList().get(integer));
 					}
 					newWordTokenList.add(multiTokenWord.toString());
-					newCombinedTagsList.add(new WWMMTag(tagName));
+					newCombinedTagsList.add(tagName);
 					i = i + indexList.size() - 1;
 				}
 			}
@@ -404,7 +404,7 @@ public class POSContainer {
 		List<String> jjChemList = Arrays.asList(new String[] { "jj", "vbn" });
 
 		for (Integer integer : indexList) {
-			String tag = combinedTagsList.get(integer).getPOS();
+			String tag = combinedTagsList.get(integer);
 			if (!tagName.toLowerCase().startsWith("oscar") & tag.contains("-"))
 				tagName = tag;
 

@@ -48,8 +48,8 @@ public class RegexTaggerTest {
          ***********************/
         
 		for (int i = 0; i < posContainer.getRegexTagList().size(); i++) {
-			if (!posContainer.getRegexTagList().get(i).getPOS().equals("nil")){
-				regexTaggedSentence.append(posContainer.getRegexTagList().get(i).getPOS());
+			if (!posContainer.getRegexTagList().get(i).equals("nil")){
+				regexTaggedSentence.append(posContainer.getRegexTagList().get(i));
 				regexTaggedSentence.append(SPACE);
 				regexTaggedSentence.append(posContainer.getWordTokenList().get(i));
 				regexTaggedSentence.append(SPACE);
