@@ -24,29 +24,33 @@ import org.xmlcml.cml.base.CMLConstants;
 public class Utils {
 
 	/******************************************
-	 * Replaces all non-XML characters with _ 
+	 * Replaces all non-XML characters with _
+	 * 
 	 * @param text (String)
-	 * @return text (String)
+	 * @return ncName (String)
 	 *******************************************/
 	public static String makeNCName(String text) {
+		String ncName = text;
 		if (text == null) {
-			text = "emptyName";
-		} else if (text.trim().length() == 0) {
-			text = "emptyName";
+			ncName = "emptyName";
+		} else if (ncName.trim().length() == 0) {
+			ncName = "emptyName";
 		} else {
-			text = text.trim();
-			char c = text.charAt(0);
+			ncName = ncName.trim();
+			char c = ncName.charAt(0);
 			if (!Character.isLetter(c) && c != '_') {
-				text = '_' + text;
+				ncName = '_' + ncName;
 			}
-			text = text.replaceAll("[^A-Za-z0-9_.-]", CMLConstants.S_UNDER);
+			ncName = ncName.replaceAll("[^A-Za-z0-9_.-]", CMLConstants.S_UNDER);
 		}
-		return text;
+		return ncName;
 	}
 
 	/******************************************
-	 * Writes out an XML document to a file. 
-	 * @param doc (Document)
+	 * Writes out an XML document to a file.
+	 * 
+	 * @param doc
+	 *            (Document)
 	 * @return xmlFilename (String)
 	 *******************************************/
 	public static void writeXMLToFile(Document doc, String xmlFilename) {
@@ -61,10 +65,11 @@ public class Utils {
 		}
 	}
 
-	
 	/******************************************
 	 * Cleans up text from html characters.
-	 * @param paragraph (String)
+	 * 
+	 * @param paragraph
+	 *            (String)
 	 *******************************************/
 	public static String cleanHTMLText(String paragraph) {
 
@@ -73,11 +78,12 @@ public class Utils {
 		return cleanedParagraph;
 	}
 
-	
 	/***********************************************************
-	 * Loads a "sentence" file consisting of a single line of text.
-	 * Has to be qualified file name e.g. uk/ac/cam/ch/wwmm/foo.txt.
-	 * @param resourceName (String)
+	 * Loads a "sentence" file consisting of a single line of text. Has to be
+	 * qualified file name e.g. uk/ac/cam/ch/wwmm/foo.txt.
+	 * 
+	 * @param resourceName
+	 *            (String)
 	 * @return sentence (String)
 	 **************************************************************/
 	public static String readSentence(String resourceName) {
@@ -87,7 +93,7 @@ public class Utils {
 			InputStream refStream = ClassLoader
 					.getSystemResourceAsStream(resourceName);
 
-			sentence = IOUtils.toString(refStream,"UTF-8");
+			sentence = IOUtils.toString(refStream, "UTF-8");
 		} catch (IOException e) {
 			throw new RuntimeException("Cannot read sentence: " + resourceName);
 		}
@@ -95,11 +101,12 @@ public class Utils {
 	}
 
 	/**************************************************************
-	 * Returns the content of the resource as an inputstream
+	 * Returns the content of the resource as an inputstream.
 	 * 
-	 * @param pathName  (String)
+	 * @param pathName
+	 *            (String)
 	 * @return sentence (String)
-	 * @throws IOException 
+	 * @throws IOException
 	 **************************************************************/
 	public static String getPathAsInputStream(String pathName)
 			throws IOException {
@@ -117,30 +124,35 @@ public class Utils {
 	}
 
 	/**************************************************************
-	 * Returns the content of the resource as an inputstream
+	 * Returns the content of the resource as an inputstream.
 	 * 
-	 * @param pathName  (String)
+	 * @param pathName
+	 *            (String)
 	 * @return sentence (String)
-	 * @throws IOException 
+	 * @throws IOException
 	 **************************************************************/
-	public static InputStream getInputStream(Class<?> context, String pathName) throws IOException {
-		
+	public static InputStream getInputStream(Class<?> context, String pathName)
+			throws IOException {
+
 		InputStream inStream = context.getResourceAsStream(pathName);
 		if (inStream == null) {
-			throw new IOException("File not found: "+pathName+" (using context "+context.getName()+")");
+			throw new IOException("File not found: " + pathName
+					+ " (using context " + context.getName() + ")");
 		}
 
 		return inStream;
 	}
 
 	/***********************************
-	 * Checks if a string contains a number
-	 * @param currentString (String)
+	 * Checks if a string contains a number.
+	 * 
+	 * @param currentString
+	 *            (String)
 	 * @return boolean
-	***********************************/
+	 ***********************************/
 	public static boolean containsNumber(String currentString) {
 		for (char c : currentString.toCharArray()) {
-			if (Character.isDigit(c)){
+			if (Character.isDigit(c)) {
 				return true;
 			}
 		}
@@ -148,18 +160,32 @@ public class Utils {
 	}
 
 	/*******************************************
-	 * Convenience method for running chemicalTagger 
+	 * Overloading method for running chemicalTagger
+	 * Sets runSpectraTagger to false by default.
 	 * @param text (String)
 	 * @return doc (Document)
 	 *****************************************/
 	public static Document runChemicalTagger(String text) {
+		return runChemicalTagger(text, false);
+
+	}
+
+	/*******************************************
+	 * Convenience method for running chemicalTagger
+	 * Includes a flag for setting spectraTagger.
+	 * @param text (String)
+	 * @param runSpectraTagger (boolean)
+	 * @return doc (Document)
+	 *****************************************/
+	public static Document runChemicalTagger(String text,
+			boolean runSpectraTagger) {
 		ChemistryPOSTagger chemPos = ChemistryPOSTagger.getInstance();
-	
+
 		POSContainer posContainer = chemPos.runTaggers(text);
-	
+
 		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
 				posContainer);
-	
+
 		chemistrySentenceParser.parseTags();
 		Document doc = chemistrySentenceParser.makeXMLDocument();
 		return doc;

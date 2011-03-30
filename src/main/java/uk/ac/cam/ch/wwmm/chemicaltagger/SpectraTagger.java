@@ -1,6 +1,7 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import nu.xom.Element;
@@ -32,16 +33,14 @@ public class SpectraTagger {
 		StringBuilder newInputText = new StringBuilder();
 		String sentence = posContainer.getInputText();
 		int offset = 0;
-
+        List<String> spectraKeywords = Arrays.asList("spectrum hrms rf".split(" "));
 		List<Element> spectraList = new ArrayList<Element>();
 		for (DataAnnotation dataAnnotation : annotations) {
-			if (dataAnnotation.getAnnotatedElement().getLocalName().equals(
-					"spectrum")) {
+			if (spectraKeywords.contains(dataAnnotation.getAnnotatedElement().getLocalName()) || (dataAnnotation.getAnnotatedElement().getLocalName().equals("property") && spectraKeywords.contains(dataAnnotation.getAnnotatedElement().getAttribute("type"))))  {
 				spectraList.add(dataAnnotation.getAnnotatedElement());
 				newInputText.append(sentence.substring(offset, dataAnnotation
 						.getStart()));
 				offset = dataAnnotation.getEnd();
-
 			}
 
 		}

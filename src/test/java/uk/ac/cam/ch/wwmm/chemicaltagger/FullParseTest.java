@@ -1,315 +1,449 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
-import java.io.UnsupportedEncodingException;
-
 import junit.framework.Assert;
 import nu.xom.Document;
+import nu.xom.Nodes;
 
 import org.antlr.runtime.tree.Tree;
 import org.junit.Test;
 
+/*****************************************************
+ * Tests the tagging and parsing within ChemicalTagger.
+ * Also checks that input is the same as output and nothing gets lost in the processing.
+ * AST tree using the TestUtils.checkForErrorNodes(astTree) module.
+ * 
+ * @author lh359, dl387
+ *****************************/
 public class FullParseTest {
 
 	@Test
-	public void testFullSentence1() throws UnsupportedEncodingException {
-		String text = "A solution of 124C (7.0 g, 32.4 mmol) in concentrate H2SO4 (9.5 mL) was added to a solution of concentrate H2SO4 (9.5 mL) and fuming HNO3 (13 mL) and the mixture was heated at 60°C for 30 min. After cooling to room temperature, the reaction mixture was added to iced 6M solution of NaOH (150 mL) and neutralized to pH 6 with 1N NaOH solution. The reaction mixture was extracted with dichloromethane (4x100 mL). The combined organic phases were dried over Na2SO4, filtered and concentrated to give 124D as a solid.";
-		POSContainer posContainer = ChemistryPOSTagger.getInstance()
-				.runTaggers(text);
-		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
-				posContainer);
+	public void testFullParse1()  {
+		String text = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/paragraph1.txt");
+		String expectedTags = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/ref1.txt");
+		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getInstance();
+		posTagger.setRunSpectraTaggerFlag(true);
+		POSContainer posContainer = posTagger.runTaggers(text);
+		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
+		Assert.assertEquals("Tagging Output",expectedTags, posContainer.getTokenTagTupleAsString());
+		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(posContainer);
 		chemistrySentenceParser.parseTags();
 		Tree t = chemistrySentenceParser.getParseTree();
+		UtilityMethods.checkForErrorNodes(t);
 		Document doc = chemistrySentenceParser.makeXMLDocument();
-		Utils.writeXMLToFile(doc, "target/file1.xml");
-
-		checkNodes(t);
+		Nodes sentenceNodes = doc.query("//Sentence");
+		Nodes actionNodes = doc.query("//ActionPhrase");
+		Nodes moleculeNodes = doc.query("//MOLECULE");
+		UtilityMethods.writeOut(moleculeNodes, "moleculeParagraph1.txt");
+		UtilityMethods.writeOut(actionNodes, "actionsParagraph1.txt");
+		Assert.assertEquals("Sentence node size",4, sentenceNodes.size());
+		Assert.assertEquals("Action node size",10, actionNodes.size());
+		Assert.assertEquals("Molecule node size",7, moleculeNodes.size());
+		Assert.assertEquals("Input string is equal to output content", text.replace(" ", "").toLowerCase(), doc.getValue().toLowerCase());
 	}
 
 	@Test
-	public void testFullSentence2() throws UnsupportedEncodingException {
-		String text = "A mixture of 124D (0.75 g, 2.9 mmol), iron (0.48 g, 8.6 mmol) and ammonium chloride (0.46 g, 8.6 mmol) in EtOH/H2O (10 mL/3 mL) was refluxed (bath temperature 90°C) for 4 h. After cooling to room temperature, the reaction mixture was diluted with water, extracted with dichloromethane three times. The combined organic phases were dried over Na2SO4, filtered and concentrated to give 124E as a oil.";
-		POSContainer posContainer = ChemistryPOSTagger.getInstance()
-				.runTaggers(text);
-		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
-				posContainer);
+	public void testFullParse2()  {
+		String text = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/paragraph2.txt");
+		String expectedTags = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/ref2.txt");
+		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getInstance();
+		posTagger.setRunSpectraTaggerFlag(true);
+		POSContainer posContainer = posTagger.runTaggers(text);
+		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
+		Assert.assertEquals("Tagging Output",expectedTags, posContainer.getTokenTagTupleAsString());
+		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(posContainer);
 		chemistrySentenceParser.parseTags();
 		Tree t = chemistrySentenceParser.getParseTree();
+		UtilityMethods.checkForErrorNodes(t);
 		Document doc = chemistrySentenceParser.makeXMLDocument();
-		Utils.writeXMLToFile(doc, "target/file2.xml");
-		checkNodes(t);
+		Nodes sentenceNodes = doc.query("//Sentence");
+		Nodes actionNodes = doc.query("//ActionPhrase");
+		Nodes moleculeNodes = doc.query("//MOLECULE");
+		UtilityMethods.writeOut(moleculeNodes, "moleculeParagraph2.txt");
+		UtilityMethods.writeOut(actionNodes, "actionsParagraph2.txt");
+		Assert.assertEquals("Sentence node size",3, sentenceNodes.size());
+		Assert.assertEquals("Action node size",10, actionNodes.size());
+		Assert.assertEquals("Molecule node size",6, moleculeNodes.size());
+		Assert.assertEquals("Input string is equal to output content", text.replace(" ", "").toLowerCase(), doc.getValue().toLowerCase());
 	}
 
 	@Test
-	public void testFullSentence3() throws UnsupportedEncodingException {
-		String text = "To a mixture of 124E (1.97 g, 9.0 mmol) and sodium iodide (0.27 g, 1.8 mmol) in 70% H2SO4 (30 mL) at 110°C under nitrogen was added acrolein (1.1 mL, 13.6 mmol) via syringe pump (1 mL/h). The reaction was stirred for another 30 min at 110°C after complete addition. After cooling to room temperature, the reaction mixture was diluted with ice water (50 mL) then added to an aqueous solution (500 mL) of Na2CO3 (60 g) slowly. This mixture was extracted with chloroform (3x200 mL). The combined organic phases were dried over Na2SO4, filtered and concentrated. The residue was purified by flush chromatography (hexanes/ethyl acetate) to give 124F as a solid.";
-		POSContainer posContainer = ChemistryPOSTagger.getInstance()
-				.runTaggers(text);
-		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
-				posContainer);
+	public void testFullParse3()  {
+		String text = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/paragraph3.txt");
+		String expectedTags = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/ref3.txt");
+		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getInstance();
+		posTagger.setRunSpectraTaggerFlag(true);
+		POSContainer posContainer = posTagger.runTaggers(text);
+		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
+		Assert.assertEquals("Tagging Output",expectedTags, posContainer.getTokenTagTupleAsString());
+		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(posContainer);
 		chemistrySentenceParser.parseTags();
 		Tree t = chemistrySentenceParser.getParseTree();
+		UtilityMethods.checkForErrorNodes(t);
 		Document doc = chemistrySentenceParser.makeXMLDocument();
+		Nodes sentenceNodes = doc.query("//Sentence");
+		Nodes actionNodes = doc.query("//ActionPhrase");
+		Nodes moleculeNodes = doc.query("//MOLECULE");
+		UtilityMethods.writeOut(moleculeNodes, "moleculeParagraph3.txt");
+		UtilityMethods.writeOut(actionNodes, "actionsParagraph3.txt");
+		Assert.assertEquals("Sentence node size",6, sentenceNodes.size());
+		Assert.assertEquals("Action node size",15, actionNodes.size());
+		Assert.assertEquals("Molecule node size",8, moleculeNodes.size());
 		Utils.writeXMLToFile(doc, "target/file3.xml");
-
-		checkNodes(t);
+		Assert.assertEquals("Input string is equal to output content", text.replace(" ", "").toLowerCase(), doc.getValue().toLowerCase());
 	}
 
 	@Test
-	public void testFullSentence4() throws UnsupportedEncodingException {
-		String text = "A mixture of 124G (150 mg, 0.64 mmol), 3,5-dichlorobenzylamine (153 mg, 0.87 mmol) and aluminum chloride (27 mg, 0.20 mmol) in toluene (8 mL) was refluxed for 4 h under nitrogen. After cooling to room temperature, the reaction mixture was treated with aqueous saturated NaHCO3 solution and ethylenediaminetetraacetic acid (1 g, 3.4 mmol) to pH 7. The mixture was extracted with chloroform four times. The combined organic phases were dried over Na2SO4 and concentrated. The residue was purified by preparative reverse-phase HPLC to give 124H.";
-		POSContainer posContainer = ChemistryPOSTagger.getInstance()
-				.runTaggers(text);
-		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
-				posContainer);
+	public void testFullParse4()  {
+		String text = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/paragraph4.txt");
+		String expectedTags = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/ref4.txt");
+		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getInstance();
+		posTagger.setRunSpectraTaggerFlag(true);
+		POSContainer posContainer = posTagger.runTaggers(text);
+		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
+		Assert.assertEquals("Tagging Output",expectedTags, posContainer.getTokenTagTupleAsString());
+		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(posContainer);
 		chemistrySentenceParser.parseTags();
 		Tree t = chemistrySentenceParser.getParseTree();
+		UtilityMethods.checkForErrorNodes(t);
 		Document doc = chemistrySentenceParser.makeXMLDocument();
+		Nodes sentenceNodes = doc.query("//Sentence");
+		Nodes actionNodes = doc.query("//ActionPhrase");
+		Nodes moleculeNodes = doc.query("//MOLECULE");
+		UtilityMethods.writeOut(moleculeNodes, "moleculeParagraph4.txt");
+		UtilityMethods.writeOut(actionNodes, "actionsParagraph4.txt");
+		Assert.assertEquals("Sentence node size",5, sentenceNodes.size());
+		Assert.assertEquals("Action node size",10, actionNodes.size());
+		Assert.assertEquals("Molecule node size",8, moleculeNodes.size());
+		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
 		Utils.writeXMLToFile(doc, "target/file4.xml");
-
-		checkNodes(t);
+		Assert.assertEquals("Input string is equal to output content", text.replace(" ", "").toLowerCase(), doc.getValue().toLowerCase());
 	}
 
 	@Test
-	public void testFullSentence5() throws UnsupportedEncodingException {
-		String text = "A mixture of 8-hydroxyquinoline-7-carboxylic acid (0.50 g, 2.64 mmol), benzylamine (0.34 g, 3.17 mmol), 1-hydroxybenzotriazole (0.45 g, 2.91 mmol), 1-(3-dimethylaminopropyl)-3-ethylcarbodiimide hydrochloride (0.56 g, 2.91 mmol), and triethylamine (1.6 mL, 11.6 mmol) in DMF (15 mL) was heated at 80 °C overnight. The reaction mixture was concentrated under vacuum. The residue was dissolved in methanol and subjected to HPLC purification on C-18 stationary phase eluted with water/acetonitrile/TFA mobile phase. Collection and lyophilization of appropriate fractions provide the title compound as yellow solid.";
-		POSContainer posContainer = ChemistryPOSTagger.getInstance()
-				.runTaggers(text);
-		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
-				posContainer);
+	public void testFullParse5()  {
+		String text = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/paragraph5.txt");
+		String expectedTags = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/ref5.txt");
+		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getInstance();
+		posTagger.setRunSpectraTaggerFlag(true);
+		POSContainer posContainer = posTagger.runTaggers(text);
+		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
+		text = posContainer.getInputText();
+		Assert.assertEquals("Tagging Output",expectedTags, posContainer.getTokenTagTupleAsString());
+		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(posContainer);
 		chemistrySentenceParser.parseTags();
 		Tree t = chemistrySentenceParser.getParseTree();
+		UtilityMethods.checkForErrorNodes(t);
 		Document doc = chemistrySentenceParser.makeXMLDocument();
-		Utils.writeXMLToFile(doc, "target/file5.xml");
-		checkNodes(t);
+		Nodes sentenceNodes = doc.query("//Sentence");
+		Nodes actionNodes = doc.query("//ActionPhrase");
+		Nodes moleculeNodes = doc.query("//MOLECULE");
+		UtilityMethods.writeOut(moleculeNodes, "moleculeParagraph5.txt");
+		UtilityMethods.writeOut(actionNodes, "actionsParagraph5.txt");
+		Assert.assertEquals("Sentence node size",4, sentenceNodes.size());
+		Assert.assertEquals("Action node size",8, actionNodes.size());
+		Assert.assertEquals("Molecule node size",9, moleculeNodes.size());
+		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
+
+		Assert.assertEquals("Input string is equal to output content", text.replace(" ", "").toLowerCase(), doc.getValue().toLowerCase());
 	}
 
 	@Test
-	public void testFullSentence6() throws UnsupportedEncodingException {
-		String text = "A slurry of the ester from example 113 step 1 (0.50g, 0.177 mmol) and 4-fluorobenzylamine (0.243g, 1.94 mmol) in toluene (2 mL) were heated at reflux for 20 hrs. Upon cooling to room temperature, the resulting solids were collected by filtration and washed with methanol (3ml) and then with diethyl ether (5ml) to afford the title compound as a white solid.";
-		POSContainer posContainer = ChemistryPOSTagger.getInstance()
-				.runTaggers(text);
-		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
-				posContainer);
+	public void testFullParse6()  {
+		String text = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/paragraph6.txt");
+		String expectedTags = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/ref6.txt");
+		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getInstance();
+		posTagger.setRunSpectraTaggerFlag(true);
+		POSContainer posContainer = posTagger.runTaggers(text);
+		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
+		text = posContainer.getInputText();
+		Assert.assertEquals("Tagging Output",expectedTags, posContainer.getTokenTagTupleAsString());
+		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(posContainer);
 		chemistrySentenceParser.parseTags();
 		Tree t = chemistrySentenceParser.getParseTree();
+		UtilityMethods.checkForErrorNodes(t);
 		Document doc = chemistrySentenceParser.makeXMLDocument();
+		Nodes sentenceNodes = doc.query("//Sentence");
+		Nodes actionNodes = doc.query("//ActionPhrase");
+		Nodes moleculeNodes = doc.query("//MOLECULE");
+		UtilityMethods.writeOut(moleculeNodes, "moleculeParagraph6.txt");
+		UtilityMethods.writeOut(actionNodes, "actionsParagraph6.txt");
+		Assert.assertEquals("Sentence node size",2, sentenceNodes.size());
+		Assert.assertEquals("Action node size",6, actionNodes.size());
+		Assert.assertEquals("Molecule node size",5, moleculeNodes.size());
+		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
 		Utils.writeXMLToFile(doc, "target/file6.xml");
-
-		checkNodes(t);
+		Assert.assertEquals("Input string is equal to output content", text.replace(" ", "").toLowerCase(), doc.getValue().toLowerCase());
 	}
 
 	@Test
-	public void testFullSentence7() throws UnsupportedEncodingException {
-		String text = "A mixture of 5-chloro-8-hydroxyquinoline-7-carboxylic acid (0.50 g, 2.24 mmol), benzylamine (0.29 g, 2.68 mmol), 1-hydroxy-7-azabenzotriazole (0.36 g, 2.68 mmol), 1-(3-dimethylaminopropyl)-3-ethylcarbodiimide hydrochloride (0.51 g, 2.68 mmol), and triethylamine (0.62 mL, 4.47 mmol) in DMF (15 mL) was stirred at room temperature overnight. The reaction mixture was concentrated under vacuum. The residue was dissolved in DMSO and subjected to HPLC purification on C-18 stationary phase eluted with water/acetonitrile/TFA mobile phase. Collection and lyophilization of appropriate fractions provide the title compound as yellow solid.";
-		POSContainer posContainer = ChemistryPOSTagger.getInstance()
-				.runTaggers(text);
-		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
-				posContainer);
+	public void testFullParse7()  {
+		String text = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/paragraph7.txt");
+		String expectedTags = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/ref7.txt");
+		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getInstance();
+		posTagger.setRunSpectraTaggerFlag(true);
+		POSContainer posContainer = posTagger.runTaggers(text);
+		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
+		text = posContainer.getInputText();
+		Assert.assertEquals("Tagging Output",expectedTags, posContainer.getTokenTagTupleAsString());
+		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(posContainer);
 		chemistrySentenceParser.parseTags();
 		Tree t = chemistrySentenceParser.getParseTree();
+		UtilityMethods.checkForErrorNodes(t);
 		Document doc = chemistrySentenceParser.makeXMLDocument();
+		Nodes sentenceNodes = doc.query("//Sentence");
+		Nodes actionNodes = doc.query("//ActionPhrase");
+		Nodes moleculeNodes = doc.query("//MOLECULE");
+		UtilityMethods.writeOut(moleculeNodes, "moleculeParagraph7.txt");
+		UtilityMethods.writeOut(actionNodes, "actionsParagraph7.txt");
+		Assert.assertEquals("Sentence node size",4, sentenceNodes.size());
+		Assert.assertEquals("Action node size",8, actionNodes.size());
+		Assert.assertEquals("Molecule node size",9, moleculeNodes.size());
+		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
 		Utils.writeXMLToFile(doc, "target/file7.xml");
-
-		checkNodes(t);
+		Assert.assertEquals("Input string is equal to output content", text.replace(" ", "").toLowerCase(), doc.getValue().toLowerCase());
 	}
 
 	@Test
-	public void testFullSentence8() throws UnsupportedEncodingException {
-		String text = "Into a 10 mL pressure vessel equipped with a magnetic stir bar was placed 0.1 g (.266 mmol) 5-bromo-N-(4-fluorobenzyl)-8-hydroxy-1,6-naphthyridine-7-carboxamide (see Example 126), 0.031 g (.27 mmol) N,N-dimethyl-2-(methylamino)acetamide, .726 mL (.8 mmol) N,N-diisopropylethylamine and 5 mL DMF. The vessel was sealed and heated on an oil bath to 135°C for 18 hrs., after which the mixture was cooled and the solvent removed in vacuo. The residue was purified by reverse phase HPLC on a C18 column using acetonitrile/water as eluent to give 5-[[2-(dimethylamino)-2-oxoethyl](methyl)amino]-N-(4-fluorobenzyl)-8-hydroxy-1,6-naphthyridine-7-carboxamide.";
-		POSContainer posContainer = ChemistryPOSTagger.getInstance()
-				.runTaggers(text);
-		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
-				posContainer);
+	public void testFullParse8()  {
+		String text = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/paragraph8.txt");
+		String expectedTags = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/ref8.txt");
+		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getInstance();
+		posTagger.setRunSpectraTaggerFlag(true);
+		POSContainer posContainer = posTagger.runTaggers(text);
+		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
+		Assert.assertEquals("Tagging Output",expectedTags, posContainer.getTokenTagTupleAsString());
+		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(posContainer);
 		chemistrySentenceParser.parseTags();
 		Tree t = chemistrySentenceParser.getParseTree();
+		UtilityMethods.checkForErrorNodes(t);
 		Document doc = chemistrySentenceParser.makeXMLDocument();
+		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
+		Nodes sentenceNodes = doc.query("//Sentence");
+		Nodes actionNodes = doc.query("//ActionPhrase");
+		Nodes moleculeNodes = doc.query("//MOLECULE");
+		UtilityMethods.writeOut(moleculeNodes, "moleculeParagraph8.txt");
+		UtilityMethods.writeOut(actionNodes, "actionsParagraph8.txt");
+		Assert.assertEquals("Sentence node size",4, sentenceNodes.size());
+		Assert.assertEquals("Action node size",7, actionNodes.size());
+		Assert.assertEquals("Molecule node size",6, moleculeNodes.size());
+		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
 		Utils.writeXMLToFile(doc, "target/file8.xml");
-
-		checkNodes(t);
+		Assert.assertEquals("Input string is equal to output content", text.replace(" ", "").toLowerCase(), doc.getValue().toLowerCase());
 	}
 
 	@Test
-	public void testFullSentence9() throws UnsupportedEncodingException {
-		String text = "Isopropyl 3-(hydroxymethyl)pyridine-2-carboxylate, (200 g, 1.02 mol; prepared as in −P. Ornstein et. al. J. Med. Chem. 1989, 32, 827), methyl N-[(4-methylphenyl)sulfonyl]glycinate (249g, 1.02 mol), and triphenylphosphine (403g, 1.5 mol) were dissolved in dry THF (3000mls) and cooled to zero degrees under N2. The diethylazodicarboxylate (DEAD) (267.6 g, 1.5 mol) was dissolved in dry THF (250 mls) and placed in a 500 ml addition funnel. The DEAD was added dropwise over 1 hour. The ice bath was removed and the reaction was allowed to warm slowly to RT . After 2 hours, the reaction was checked by HPLC and some glycinate remained. More starting reagents were added and the reaction was left to stir at RT. After 30 min, the reaction was checked again and saw a very small amount of the glycinate remaining. Concentrated reaction down to a reddish-orange oil that was carried onto the next step. Addition of 10 mL methanol.";
-		POSContainer posContainer = ChemistryPOSTagger.getInstance()
-				.runTaggers(text);
-		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
-				posContainer);
+	public void testFullParse9()  {
+		String text = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/paragraph9.txt");
+		String expectedTags = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/ref9.txt");
+		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getInstance();
+		posTagger.setRunSpectraTaggerFlag(true);
+		POSContainer posContainer = posTagger.runTaggers(text);
+		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
+		Assert.assertEquals("Tagging Output",expectedTags, posContainer.getTokenTagTupleAsString());
+		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(posContainer);
 		chemistrySentenceParser.parseTags();
 		Tree t = chemistrySentenceParser.getParseTree();
+		UtilityMethods.checkForErrorNodes(t);
 		Document doc = chemistrySentenceParser.makeXMLDocument();
+		Nodes sentenceNodes = doc.query("//Sentence");
+		Nodes actionNodes = doc.query("//ActionPhrase");
+		Nodes moleculeNodes = doc.query("//MOLECULE");
+		UtilityMethods.writeOut(moleculeNodes, "moleculeParagraph9.txt");
+		UtilityMethods.writeOut(actionNodes, "actionsParagraph9.txt");
+		Assert.assertEquals("Sentence node size",9, sentenceNodes.size());
+		Assert.assertEquals("Action node size",16, actionNodes.size());
+		Assert.assertEquals("Molecule node size",11, moleculeNodes.size());
+		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
+		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
 		Utils.writeXMLToFile(doc, "target/file9.xml");
-
-		checkNodes(t);
+		Assert.assertEquals("Input string is equal to output content", text.replace(" ", "").toLowerCase(), doc.getValue().toLowerCase());
 	}
 
 	@Test
-	public void testFullSentence10() throws UnsupportedEncodingException {
-		String text = "A solution of tetraol 113 (74 mg, 0.30 mmol) was taken up in dry DMF (2 mL) and cooled to 0ºC. Imidazole (40 mg, 0.60 mmol) was added and allowed to dissolve followed by a solution of TIPSCl (0.08 mL, 0.36 mmol) and DMAP (2.0 mg, 20 ?mol) in DMF (1 mL). The reaction mixture was heated at 50 ºC for 18 hrs then quenched by addition of saturated NH4Cl(aq)  (2 mL) and diluted with  (3 mL). The aqueous layer was extracted with EtOAc (3 x 10 mL) and the combined organic layers washed with 10% aqueous LiCl (5 x 10 mL), saturated brine (5 mL), dried (MgSO4), filtered and concentrated in vacuo to give the crude product as a yellow oil. Flash chromatography using CH2Cl2/MeOH (98:2) afforded the title compound 115 as a clear oil (101 mg, 83%); Rf 0.56 (CH2Cl2/MeOH 90:10);  +16.0 (c 0.3 in CHCl3); IR (film) ?max/cm–1 3380 (OH), 2943 (CH), 2924 (CH), 2893 (CH), 2866 (CH), 1464, 1382, 1247, 1094, 1035, 1013, 996, 945, 883, 770, 734,  and 658; 1H (600 MHz), CDCl3: ? = 4.98 (1H, s, 37C=CHAHB), 4.89 (1H, s, 37-C=CHAHB), 4.13 (1H, br s, OH), 4.07 (1H, s, 38-CH), 3.86 (1H, dt, J = 10.2, 4.9 Hz, 45-CHAHB), 3.76 (1H, td, J = 10.2, 3.6 Hz, 45-CHAHB), 3.29–3.24 (1H, m, 42-CH), 3.20 (2H, obs. t, J = 8.0 Hz, 43CH, 41-CH), 3.15 (1H, dd, J = 10.2, 1.4 Hz, 39-CH), 2.84 (1H, br s, OH), 2.38 (1H, br s, OH), 1.99–1.86 (2H, m, 44CHAHB, 40-CH), 1.86–1.78 (1H, m, 44-CHAHB), 1.74 (3H, s, 36-CH3) and 1.14?1.02 (24H, m, 40CHCH3, ((SiCH(CH3)2)3); 13C (150 MHz), CDCl3: ? = 145.7 (37C=CH2), 111.0 (37C=CH2), 81.2 (39-CH), 78.2 (43-CH or 41CH), 77.8 (42-CH), 75.6 (43-CH or 41-CH), 73.1 (38-CH), 60.2 (45-CH2), 37.9 (40-CH), 36.8 (44-CH2), 19.3 (36CH3), 17.9 (6C, SiCH(CH3)2), 12.8 (40-CHCH3) and 11.8 (3C, SiCH(CH3)2); m/z (+ESI) Found [M+H]+ 403.2898; C21H43O5Si requires 403.2880, ? 4.5 ppm. "
-				+ "(2-((2R,3R,4R,5R,6R)-3,4-Bis(4-methoxybenzyloxy)-6-((R)-1-(4-methoxy benzyloxy)-2-methylallyl)-5-methyltetrahydro-2H-pyran-2-yl)ethoxy)(tert-butyl)dimethylsilane 116 "
-				+ "A solution of triol 114 (60 mg, 0.17 mmol) in dry DMF (2 mL) was cooled to 0 ºC.  (41 mg, 1.0 mmol) was added and "
-				+ "the suspension was allowed to warm to room temperature. After 1 h, PMBBr (0.15 mL, 1.0 mmol) and TBAI (11 mg, 30 ?mol)"
-				+ "were added sequentially and the reaction mixture was stirred for 18 h at ambient temperature. "
-				+ "The reaction was then cooled to 0 ºC and quenched by addition of saturated NH4Cl(aq) (5 mL) and diluted "
-				+ "with  (5 mL). The aqueous layer was extracted with EtOAc (3 x 30 mL) and the combined organic layers "
-				+ "washed with 10% aqueous LiCl (3 x 30 mL), saturated brine (30 mL), dried (MgSO4) and concentrated under reduced "
-				+ "pressure to give the crude product as a yellow oil. Flash chromatography @"
-				+ " using petrol/EtOAc (95:5) afforded the title compound 116 as a white foam (105 mg, 85%) ; ";
-
-		// (2-((2R,3R,4R,5R,6R)-3,4-Bis(4-methoxybenzyloxy)-6-((R)-1-(4-methoxy
-		// benzyloxy)-2-methylallyl)-5-methyltetrahydro-2H-pyran-2-yl) ethoxy)
-		// triisopropylsilane 117";
-		POSContainer posContainer = ChemistryPOSTagger.getInstance()
-				.runTaggers(text);
-		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
-				posContainer);
+	public void testFullParse10()  {
+		String text = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/paragraph10.txt");
+		String expectedTags = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/ref10.txt");
+		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getInstance();
+		posTagger.setRunSpectraTaggerFlag(true);
+		POSContainer posContainer = posTagger.runTaggers(text);
+		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
+		text = posContainer.getInputText();
+		Assert.assertEquals("Tagging Output",expectedTags, posContainer.getTokenTagTupleAsString());
+		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(posContainer);
 		chemistrySentenceParser.parseTags();
 		Tree t = chemistrySentenceParser.getParseTree();
-		Document doc = chemistrySentenceParser.makeXMLDocument();
-		Utils.writeXMLToFile(doc, "target/file10.xml");
-
-		checkNodes(t);
+		UtilityMethods.checkForErrorNodes(t);
+		Document doc = chemistrySentenceParser.makeXMLDocument();		
+		Nodes sentenceNodes = doc.query("//Sentence");
+		Nodes actionNodes = doc.query("//ActionPhrase");
+		Nodes moleculeNodes = doc.query("//MOLECULE");
+		UtilityMethods.writeOut(moleculeNodes, "moleculeParagraph10.txt");
+		UtilityMethods.writeOut(actionNodes, "actionsParagraph10.txt");
+		Assert.assertEquals("Sentence node size",11, sentenceNodes.size());
+		Assert.assertEquals("Action node size",30, actionNodes.size());
+		Assert.assertEquals("Molecule node size",23, moleculeNodes.size());
+		Assert.assertEquals("Input string is equal to output content", text.replace(" ", "").toLowerCase(), doc.getValue().toLowerCase());
 	}
 
 	@Test
-	public void testFullSentence11() throws UnsupportedEncodingException {
-		String text = "The residue was dissolved in 5.1ml toluene and tetrakis[2-(2-pyridinyl- N)phenyl- C]-di- -chlorodiiridium (III) (0.20 g, 0.19 mmol) and triethylamine (43.8 µl, 0.32 mmol) were added.";
-		text = "The residue was dissolved in 5.1ml toluene and tetrakis[2-(2-pyridinyl-N)phenyl-C]-di-chlorodiiridium(III) (0.20 g, 0.19 mmol) and triethylamine (43.8 µl, 0.32 mmol) were added.";
-
-		POSContainer posContainer = ChemistryPOSTagger.getInstance()
-				.runTaggers(text);
-		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
-				posContainer);
+	public void testFullParse11()  {
+		String text = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/paragraph11.txt");
+		String expectedTags = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/ref11.txt");
+		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getInstance();
+		posTagger.setRunSpectraTaggerFlag(true);
+		POSContainer posContainer = posTagger.runTaggers(text);
+		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
+		Assert.assertEquals("Tagging Output",expectedTags, posContainer.getTokenTagTupleAsString());
+		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(posContainer);
 		chemistrySentenceParser.parseTags();
 		Tree t = chemistrySentenceParser.getParseTree();
+		UtilityMethods.checkForErrorNodes(t);
 		Document doc = chemistrySentenceParser.makeXMLDocument();
+		Nodes sentenceNodes = doc.query("//Sentence");
+		Nodes actionNodes = doc.query("//ActionPhrase");
+		Nodes moleculeNodes = doc.query("//MOLECULE");
+		UtilityMethods.writeOut(moleculeNodes, "moleculeParagraph11.txt");
+		UtilityMethods.writeOut(actionNodes, "actionsParagraph11.txt");
+		Assert.assertEquals("Sentence node size",1, sentenceNodes.size());
+		Assert.assertEquals("Action node size",2, actionNodes.size());
+		Assert.assertEquals("Molecule node size",3, moleculeNodes.size());
 		Utils.writeXMLToFile(doc, "target/file11.xml");
-		checkNodes(t);
+		Assert.assertEquals("Input string is equal to output content", text.replace(" ", "").toLowerCase(), doc.getValue().toLowerCase());
 	}
 
 	@Test
-	public void testFullSentence20() throws UnsupportedEncodingException {
-		String text = "the cat sat on the mat";
-		POSContainer posContainer = ChemistryPOSTagger.getInstance()
-				.runTaggers(text);
-		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
-				posContainer);
-		chemistrySentenceParser.parseTags();
-		// CMLUtil.debug(doc.getRootElement(), "DDDDD");
-	}
-
-	@Test
-	public void testFullSentence21() throws UnsupportedEncodingException {
-		String text = "the cat slept on the mat";
-		POSContainer posContainer = ChemistryPOSTagger.getInstance()
-				.runTaggers(text);
-		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
-				posContainer);
+	public void testFullParse12()  {
+		String text = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/paragraph12.txt");
+		String expectedTags = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/ref12.txt");
+		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getInstance();
+		posTagger.setRunSpectraTaggerFlag(true);
+		POSContainer posContainer = posTagger.runTaggers(text);
+		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
+		Assert.assertEquals("Tagging Output",expectedTags, posContainer.getTokenTagTupleAsString());
+		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(posContainer);
 		chemistrySentenceParser.parseTags();
 		Tree t = chemistrySentenceParser.getParseTree();
-		checkNodes(t);
-	}
-
-	@Test
-	public void testFullSentence22() throws UnsupportedEncodingException {
-		String text = "HyperBranched Polymerization . A typical polymerization procedure was as follows . Cp2TiCl2 ( 25 mg , 0.1 × 10 -3 M ) , Zn ( 7 mg , 0.1 × 10 -3 M ) and dioxane ( 0.5 mL ) were added into a 5 mL glass tube , and then the reaction solution was degassed using three freeze-vacuum-thaw cycles , and reacted at room temperature for 10 min , until the solution turned lime green . GMA ( 0.355 g , 2.5 × 10 -3 M ) , St ( 0.260 g , 2.5 × 10 -3 M ) , CuBr 2 ( 23 mg , 0.1 × 10 -3 M ) and bpy ( 48 mg , 0.3 × 10 -3 M ) were added into the reaction solution , and the tube was again degassed using three freeze-vacuum-thaw cycles . The tube was then sealed under a vacuum , and the sealed tube was immersed in an oil bath at 90 °C . After polymerization for 4 h , the tube was rapidly cooled to room temperature . The polymer solution in THF was passed through a short column of neutral alumina to remove the metal salt . After two precipitations by addition of the polymer solution into petroleum ether ( 30-60 °C ) , the hyperbranched P(GMA-co-St)-Brn(HP(GMA-St)-Brn) was obtained in a 51 % yield after filtration and drying in a vacuum oven at 30 °C overnight . The monomer conversion was determined gravimetrically . was 78000 and was 1.19 .";
-
-		POSContainer posContainer = ChemistryPOSTagger.getInstance()
-				.runTaggers(text);
-		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
-				posContainer);
-		chemistrySentenceParser.parseTags();
-		Tree t = chemistrySentenceParser.getParseTree();
+		UtilityMethods.checkForErrorNodes(t);
 		Document doc = chemistrySentenceParser.makeXMLDocument();
-		Utils.writeXMLToFile(doc, "target/fileExperiment.xml");
-		checkNodes(t);
+		Nodes sentenceNodes = doc.query("//Sentence");
+		Nodes nounPhraseNodes = doc.query("//NounPhrase");
+		Nodes verbPhraseNodes = doc.query("//VerbPhrase");
+		UtilityMethods.writeOut(verbPhraseNodes, "verbPhrases12.txt");
+		UtilityMethods.writeOut(nounPhraseNodes, "nounPhrases12.txt");
+		Assert.assertEquals("Sentence node size",1, sentenceNodes.size());
+		Assert.assertEquals("NounPhrases size",2, nounPhraseNodes.size());
+		Assert.assertEquals("VerbPhrases size",1, verbPhraseNodes.size());
+		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
+		Assert.assertEquals("Input string is equal to output content", text.replace(" ", "").toLowerCase(), doc.getValue().toLowerCase());
 	}
 
 	@Test
-	public void testFullSentence23() throws UnsupportedEncodingException {
-		String text = "Potassium carbonate (0.63 g, 4.56 mmol) and thiophenol (0.19 g, 1.69 mmol) were added to 2-nitrobenzene sulfonamide . dmap was dissolved in thf";
-		POSContainer posContainer = ChemistryPOSTagger.getInstance()
-				.runTaggers(text);
-		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
-				posContainer);
+	public void testFullParse13()  {
+		String text = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/paragraph13.txt");
+		String expectedTags = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/ref13.txt");
+		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getInstance();
+		posTagger.setRunSpectraTaggerFlag(true);
+		POSContainer posContainer = posTagger.runTaggers(text);
+		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
+		Assert.assertEquals("Tagging Output",expectedTags, posContainer.getTokenTagTupleAsString());
+		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(posContainer);
 		chemistrySentenceParser.parseTags();
 		Tree t = chemistrySentenceParser.getParseTree();
+		UtilityMethods.checkForErrorNodes(t);
 		Document doc = chemistrySentenceParser.makeXMLDocument();
-		Utils.writeXMLToFile(doc, "target/file23.xml");
-
-		Assert.assertEquals("Input string is equal to output content", text
-				.replace(" ", "").toLowerCase(), doc.getValue().toLowerCase());
-		checkNodes(t);
+		Nodes sentenceNodes = doc.query("//Sentence");
+		Nodes nounPhraseNodes = doc.query("//NounPhrase");
+		Nodes verbPhraseNodes = doc.query("//VerbPhrase");
+		UtilityMethods.writeOut(verbPhraseNodes, "verbPhrases13.txt");
+		UtilityMethods.writeOut(nounPhraseNodes, "nounPhrases13.txt");
+		Assert.assertEquals("Sentence node size",1, sentenceNodes.size());
+		Assert.assertEquals("NounPhrases size",2, nounPhraseNodes.size());
+		Assert.assertEquals("VerbPhrases size",1, verbPhraseNodes.size());
+		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
+		Assert.assertEquals("Input string is equal to output content", text.replace(" ", "").toLowerCase(), doc.getValue().toLowerCase());
 	}
 
+
+
 	@Test
-	public void testFullSentence24() throws UnsupportedEncodingException {
-		String text = "γ-Tocotrienol and γ-Tocopherol Are Primarily Metabolized to Conjugated 2-(β-carboxyethyl)-6-Hydroxy-2,7,8-Trimethylchroman and Sulfated Long-Chain Carboxychromanols in Rats and eaten for breakfast";
-		POSContainer posContainer = ChemistryPOSTagger.getInstance()
-				.runTaggers(text);
-		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
-				posContainer);
+	public void testFullParse14()  {
+		String text = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/paragraph14.txt");
+		String expectedTags = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/ref14.txt");
+		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getInstance();
+		posTagger.setRunSpectraTaggerFlag(true);
+		POSContainer posContainer = posTagger.runTaggers(text);
+		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
+		Assert.assertEquals("Tagging Output",expectedTags, posContainer.getTokenTagTupleAsString());
+		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(posContainer);
 		chemistrySentenceParser.parseTags();
 		Tree t = chemistrySentenceParser.getParseTree();
-		Document doc = new ASTtoXML().convert(t);
-		Utils.writeXMLToFile(doc, "target/file24.xml");
+		UtilityMethods.checkForErrorNodes(t);
+		Document doc = chemistrySentenceParser.makeXMLDocument();
+		Nodes sentenceNodes = doc.query("//Sentence");
+		Nodes actionNodes = doc.query("//ActionPhrase");
+		Nodes moleculeNodes = doc.query("//MOLECULE");
+		UtilityMethods.writeOut(moleculeNodes, "moleculeParagraph14.txt");
+		UtilityMethods.writeOut(actionNodes, "actionsParagraph14.txt");
+        Assert.assertEquals("Sentence node size",1, sentenceNodes.size());
+		Assert.assertEquals("Action node size",0, actionNodes.size());
+		Assert.assertEquals("Molecule node size",5, moleculeNodes.size());
+		Utils.writeXMLToFile(doc, "target/file14.xml");
 		Assert.assertEquals(1, doc.query("//Sentence").size());
-		checkNodes(t);
+		Assert.assertEquals("Input string is equal to output content", text.replace(" ", "").toLowerCase(), doc.getValue().toLowerCase());
 	}
 
 	@Test
-	public void testFullSentence25() throws UnsupportedEncodingException {
-		String text = "After this time the mixture was concentrated under reduced pressure and the resulting residue was dissolved in ethyl acetate (40 mL), washed with water (20 mL) and brine (20 mL), and dried over sodium sulfate.";
-		POSContainer posContainer = ChemistryPOSTagger.getInstance()
-				.runTaggers(text);
-		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
-				posContainer);
+	public void testFullParse15()  {
+		String text = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/paragraph15.txt");
+		String expectedTags = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/ref15.txt");
+		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getInstance();
+		posTagger.setRunSpectraTaggerFlag(true);
+		POSContainer posContainer = posTagger.runTaggers(text);
+		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
+		Assert.assertEquals("Tagging Output",expectedTags, posContainer.getTokenTagTupleAsString());
+		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(posContainer);
 		chemistrySentenceParser.parseTags();
 		Tree t = chemistrySentenceParser.getParseTree();
-
-		Document doc = new ASTtoXML().convert(t);
-		Utils.writeXMLToFile(doc, "target/file25.xml");
-
-		Assert.assertEquals("Input string is equal to output content", text
-				.replace(" ", "").toLowerCase(), doc.getValue().toLowerCase());
-		checkNodes(t);
+		UtilityMethods.checkForErrorNodes(t);
+		Document doc = chemistrySentenceParser.makeXMLDocument();
+		Nodes sentenceNodes = doc.query("//Sentence");
+		Nodes actionNodes = doc.query("//ActionPhrase");
+		Nodes moleculeNodes = doc.query("//MOLECULE");
+		UtilityMethods.writeOut(moleculeNodes, "moleculeParagraph15.txt");
+		UtilityMethods.writeOut(actionNodes, "actionsParagraph15.txt");
+        Assert.assertEquals("Sentence node size",1, sentenceNodes.size());
+		Assert.assertEquals("Action node size",4, actionNodes.size());
+		Assert.assertEquals("Molecule node size",4, moleculeNodes.size());
+		Assert.assertEquals("Input string is equal to output content", text.replace(" ", "").toLowerCase(), doc.getValue().toLowerCase());
 
 	}
 
 	@Test
-	public void testFullSentence26() throws UnsupportedEncodingException {
-		String text = "The residue obtained was purified by flash chromatography (silica gel, 0-5% methanol/methylene chloride).";
-		POSContainer posContainer = ChemistryPOSTagger.getInstance()
-				.runTaggers(text);
-		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
-				posContainer);
+	public void testFullParse16()  {
+		String text = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/paragraph16.txt");
+		String expectedTags = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/ref16.txt");
+		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getInstance();
+		posTagger.setRunSpectraTaggerFlag(true);
+		POSContainer posContainer = posTagger.runTaggers(text);
+		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
+		Assert.assertEquals("Tagging Output",expectedTags, posContainer.getTokenTagTupleAsString());
+		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(posContainer);
 		chemistrySentenceParser.parseTags();
 		Tree t = chemistrySentenceParser.getParseTree();
-		Document doc = new ASTtoXML().convert(t);
-		Utils.writeXMLToFile(doc, "target/file26.xml");
-
-		Assert.assertEquals("Input string is equal to output content", text
-				.replace(" ", "").toLowerCase(), doc.getValue().toLowerCase());
-		checkNodes(t);
+		UtilityMethods.checkForErrorNodes(t);
+		Document doc = chemistrySentenceParser.makeXMLDocument();
+		Nodes sentenceNodes = doc.query("//Sentence");
+		Nodes actionNodes = doc.query("//ActionPhrase");
+		Nodes moleculeNodes = doc.query("//MOLECULE");
+		UtilityMethods.writeOut(moleculeNodes, "moleculeParagraph16.txt");
+		UtilityMethods.writeOut(actionNodes, "actionsParagraph16.txt");
+		Assert.assertEquals("Sentence node size",1, sentenceNodes.size());
+		Assert.assertEquals("Action node size",1, actionNodes.size());
+		Assert.assertEquals("Molecule node size",0, moleculeNodes.size());
+		Utils.writeXMLToFile(doc, "target/file16.xml");
+		Assert.assertEquals("Input string is equal to output content", text.replace(" ", "").toLowerCase(), doc.getValue().toLowerCase());
 
 	}
 
-	/*****************************
-	 * CheckNodes(Tree astTree)
-	 * 
-	 * @param astTree
-	 *            Goes through the nodes of a tree and checks for unexpected
-	 *            tokens(when type=0)
-	 *****************************/
-	private void checkNodes(Tree astTree) {
-		int nodeCount = astTree.getChildCount();
-		for (int i = 0; i < nodeCount; i++) {
-			String text = astTree.getChild(i).getText();
-			int type = astTree.getChild(i).getType();
-			Assert.assertNotSame("Antlr Parse Fails for the for the text '"
-					+ text + "'", 0, type);
-			checkNodes(astTree.getChild(i));
 
-		}
-	}
 }

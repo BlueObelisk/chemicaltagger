@@ -15,7 +15,7 @@ package uk.ac.cam.ch.wwmm.chemicaltagger;
  * It then combines the output of OSCAR, Regex and OpenNLP
  * taggers and then performs postprocessing on tags
  * 
- * @author lh359, dmj30
+ * @author lh359, dmj30, dl387
  ***************************************************************/
 public final class ChemistryPOSTagger {
 
@@ -24,7 +24,7 @@ public final class ChemistryPOSTagger {
 	private OpenNLPTagger openNLPTagger;
 	private SpectraTagger spectraTagger;
 
-	private boolean runSpectraTagger = false;
+	private boolean runSpectraTaggerFlag = false;
 	/**************************************
 	 * Private Singleton holder.
 	 ***************************************/
@@ -55,8 +55,8 @@ public final class ChemistryPOSTagger {
 	 * default because of memory issues.
 	 * @param runSpectraTagger (boolean)
 	 ***************************************/
-	public void setRunSpectraTagger(boolean runSpectraTagger) {
-		this.runSpectraTagger = true;
+	public void setRunSpectraTaggerFlag(boolean runSpectraTagger) {
+		this.runSpectraTaggerFlag = true;
 	}
 	/**************************************
 	 * Getter method for RegexTagger.
@@ -117,7 +117,7 @@ public final class ChemistryPOSTagger {
 	 * @return POSContainer
 	 *****************************************************/
 	public POSContainer runTaggers(final String inputSentence) {
-		return runTaggers(inputSentence,true);
+		return runTaggers(inputSentence,false);
 	}
 	
 	/*****************************************************
@@ -128,10 +128,11 @@ public final class ChemistryPOSTagger {
 	 *****************************************************/
 	public POSContainer runTaggers(String inputSentence,final boolean prioritiseOscar) {
 
+		
 		POSContainer posContainer = new POSContainer();
 		inputSentence = Formatter.normaliseText(inputSentence);
 		posContainer.setInputText(inputSentence);
-		if (runSpectraTagger){
+		if (runSpectraTaggerFlag){
 		posContainer = spectraTagger.runTagger(posContainer);
 		}
 		posContainer = oscarTagger.runTokeniser(posContainer);
@@ -140,13 +141,9 @@ public final class ChemistryPOSTagger {
 		posContainer = openNLPTagger.runTagger(posContainer);
 
 		posContainer.setPrioritiseOscar(prioritiseOscar);
-		posContainer.combineTaggers();
-
+		posContainer.combineTaggers();	
 		posContainer.recombineHyphenedTokens();
-
 		posContainer =  new PostProcessTags().correctCombinedTagsList(posContainer);
-		
-
 		return posContainer;
 	}
 		
