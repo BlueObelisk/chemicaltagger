@@ -88,7 +88,6 @@ public class FullParseTest {
 		Assert.assertEquals("Sentence node size",6, sentenceNodes.size());
 		Assert.assertEquals("Action node size",15, actionNodes.size());
 		Assert.assertEquals("Molecule node size",8, moleculeNodes.size());
-		Utils.writeXMLToFile(doc, "target/file3.xml");
 		Assert.assertEquals("Input string is equal to output content", text.replace(" ", "").toLowerCase(), doc.getValue().toLowerCase());
 	}
 
@@ -115,7 +114,6 @@ public class FullParseTest {
 		Assert.assertEquals("Action node size",10, actionNodes.size());
 		Assert.assertEquals("Molecule node size",8, moleculeNodes.size());
 		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
-		Utils.writeXMLToFile(doc, "target/file4.xml");
 		Assert.assertEquals("Input string is equal to output content", text.replace(" ", "").toLowerCase(), doc.getValue().toLowerCase());
 	}
 
@@ -143,7 +141,6 @@ public class FullParseTest {
 		Assert.assertEquals("Action node size",8, actionNodes.size());
 		Assert.assertEquals("Molecule node size",9, moleculeNodes.size());
 		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
-
 		Assert.assertEquals("Input string is equal to output content", text.replace(" ", "").toLowerCase(), doc.getValue().toLowerCase());
 	}
 
@@ -171,7 +168,6 @@ public class FullParseTest {
 		Assert.assertEquals("Action node size",6, actionNodes.size());
 		Assert.assertEquals("Molecule node size",5, moleculeNodes.size());
 		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
-		Utils.writeXMLToFile(doc, "target/file6.xml");
 		Assert.assertEquals("Input string is equal to output content", text.replace(" ", "").toLowerCase(), doc.getValue().toLowerCase());
 	}
 
@@ -199,7 +195,6 @@ public class FullParseTest {
 		Assert.assertEquals("Action node size",8, actionNodes.size());
 		Assert.assertEquals("Molecule node size",9, moleculeNodes.size());
 		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
-		Utils.writeXMLToFile(doc, "target/file7.xml");
 		Assert.assertEquals("Input string is equal to output content", text.replace(" ", "").toLowerCase(), doc.getValue().toLowerCase());
 	}
 
@@ -227,7 +222,6 @@ public class FullParseTest {
 		Assert.assertEquals("Action node size",7, actionNodes.size());
 		Assert.assertEquals("Molecule node size",6, moleculeNodes.size());
 		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
-		Utils.writeXMLToFile(doc, "target/file8.xml");
 		Assert.assertEquals("Input string is equal to output content", text.replace(" ", "").toLowerCase(), doc.getValue().toLowerCase());
 	}
 
@@ -255,7 +249,6 @@ public class FullParseTest {
 		Assert.assertEquals("Molecule node size",11, moleculeNodes.size());
 		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
 		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
-		Utils.writeXMLToFile(doc, "target/file9.xml");
 		Assert.assertEquals("Input string is equal to output content", text.replace(" ", "").toLowerCase(), doc.getValue().toLowerCase());
 	}
 
@@ -307,7 +300,6 @@ public class FullParseTest {
 		Assert.assertEquals("Sentence node size",1, sentenceNodes.size());
 		Assert.assertEquals("Action node size",2, actionNodes.size());
 		Assert.assertEquals("Molecule node size",3, moleculeNodes.size());
-		Utils.writeXMLToFile(doc, "target/file11.xml");
 		Assert.assertEquals("Input string is equal to output content", text.replace(" ", "").toLowerCase(), doc.getValue().toLowerCase());
 	}
 
@@ -387,7 +379,6 @@ public class FullParseTest {
         Assert.assertEquals("Sentence node size",1, sentenceNodes.size());
 		Assert.assertEquals("Action node size",0, actionNodes.size());
 		Assert.assertEquals("Molecule node size",5, moleculeNodes.size());
-		Utils.writeXMLToFile(doc, "target/file14.xml");
 		Assert.assertEquals(1, doc.query("//Sentence").size());
 		Assert.assertEquals("Input string is equal to output content", text.replace(" ", "").toLowerCase(), doc.getValue().toLowerCase());
 	}
@@ -440,7 +431,6 @@ public class FullParseTest {
 		Assert.assertEquals("Sentence node size",1, sentenceNodes.size());
 		Assert.assertEquals("Action node size",1, actionNodes.size());
 		Assert.assertEquals("Molecule node size",0, moleculeNodes.size());
-		Utils.writeXMLToFile(doc, "target/file16.xml");
 		Assert.assertEquals("Input string is equal to output content", text.replace(" ", "").toLowerCase(), doc.getValue().toLowerCase());
 
 	}
