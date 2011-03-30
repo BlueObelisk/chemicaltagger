@@ -16,7 +16,7 @@ import org.apache.log4j.Logger;
 /*****************************************************
  * Runs the regular expression tagger .
  * 
- * @author lh359, pm286
+ * @author lh359, dl387, pm286
  *****************************************************/
 public class RegexTagger {
 

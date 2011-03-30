@@ -401,7 +401,7 @@ public class POSContainer {
 	private String getTagName(List<Integer> indexList) {
 		String tagName = "";
 
-		List<String> jjChemList = Arrays.asList(new String[] { "jj", "vbn" });
+		List<String> jjChemList = Arrays.asList(new String[] { "jj", "vbn","jj-chem" });
 
 		for (Integer integer : indexList) {
 			String tag = combinedTagsList.get(integer);

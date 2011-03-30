@@ -59,17 +59,16 @@ public class PostProcessTags {
 			String currentToken, String newTag) {
 		if (currentTag.toLowerCase().startsWith("vb-")
 				|| currentTag.toLowerCase().startsWith("nn")) {
-//			if (!currentTag.toLowerCase().startsWith("nn-")){
 			if (!currentTag.toLowerCase().startsWith("nn-state")
 					&& !currentTag.toLowerCase().startsWith("nn-apparatus")
 					&& !currentTag.toLowerCase().startsWith("nn-cycle")
 					&& !currentTag.toLowerCase().startsWith("nn-temp")
 					&& !currentTag.toLowerCase().startsWith("nn-pressure")
 					&& !currentTag.toLowerCase().startsWith("nn-time")
+					&& !currentTag.toLowerCase().startsWith("nn-molar")
 					&& !currentTag.toLowerCase().startsWith("nn-vacuum")) {
 				List<String> beforeList = Arrays.asList("dt jj jj-chem dt-the".split(" "));
 				List<String> afterListJJ = Arrays.asList("jj nn-chementity nn-mixture nn-apparatus nn jj-chem".split(" "));
-				List<String> afterListChem = Arrays.asList("vbd stop comma".split(" "));
 
 				List<String> afterListNN = Arrays.asList("stop comma".split(" "));
 
@@ -79,10 +78,7 @@ public class PostProcessTags {
 						&& !currentTag.toLowerCase().startsWith("nn-"))
 					newTag = "NN";
 
-				else if (stringbefore(beforeList, i, combinedTags)
-						&& (stringafter(afterListChem, i, combinedTags))) {
-					newTag = "NN-CHEMENTITY";
-				} else if (stringbefore(beforeList, i, combinedTags)
+			else if (stringbefore(beforeList, i, combinedTags)
 						&& (stringafter(afterListJJ, i, combinedTags) && !currentTag
 								.toLowerCase().startsWith("nn-chementity"))) {
 					newTag = "JJ-CHEM";
@@ -94,6 +90,7 @@ public class PostProcessTags {
 			List<String> beforeList = Arrays.asList("jj oscar-cj jj-chem".split(" "));
 			List<String> afterList = Arrays.asList("in-of");
 			List<String> notafterList = Arrays.asList("nn-time");
+			
 			if (stringbefore(beforeList, i, combinedTags)
 					&& (stringafter(afterList, i, combinedTags) || i == combinedTags
 							.size())) {
@@ -107,6 +104,16 @@ public class PostProcessTags {
 				}
 
 			}
+		}
+
+		if (currentTag.toLowerCase().startsWith("vb-precipitate")||currentTag.toLowerCase().startsWith("vb-synthesize")||currentTag.toLowerCase().startsWith("nn-synthesize")) {
+			List<String> beforeList = Arrays.asList("dt-the dt".split(" "));
+			List<String> afterList = Arrays.asList("vbd");
+		
+			if (stringbefore(beforeList, i, combinedTags)
+					&& (stringafter(afterList, i, combinedTags))){
+						newTag = "NN-CHEMENTITY";
+					}
 		}
 
 		if (currentTag.toLowerCase().startsWith("vb") && Utils.containsNumber(currentToken)) {
@@ -216,10 +223,11 @@ public class PostProcessTags {
 							&& combinedTags.get(i + 1).toLowerCase()
 									.startsWith("nn")) {
 						newTag = "JJ";
-					} else if (combinedTags.get(i - 1).toLowerCase()
-							.startsWith("dt")) {
-						newTag = "NN";
-					}
+					} 
+//					else if (combinedTags.get(i - 1).toLowerCase()
+//							.startsWith("dt")) {
+//						newTag = "NN";
+//					}
 				}
 			}
 		}
@@ -237,9 +245,8 @@ public class PostProcessTags {
 	 * @param newTag (String)
 	 * @return newTag (String)
 	 *************************************/
-	private String correctMisTaggedDigits(List<String> combinedTags, int i,
-			String currentTag, String currentToken, String newTag) {
-		if (StringUtils.equalsIgnoreCase(currentTag, "cd")) {
+	private String correctMisTaggedDigits(List<String> combinedTags, int i,	String currentTag, String currentToken, String newTag) {
+		if (StringUtils.equalsIgnoreCase(currentTag, "cd")|| (currentTag.toLowerCase().startsWith("nn-") && Utils.containsNumber(currentToken))) {
 			List<String> beforeList = Arrays.asList("in-of jj nn-chementity comma".split(" "));
 			List<String> afterList = Arrays.asList("-lrb- stop comma".split(" "));
 			if (stringbefore(beforeList, i, combinedTags)
@@ -273,7 +280,7 @@ public class PostProcessTags {
 			List<String> afterList = Arrays.asList("nn-vol nn-mass".split(" "));
 
 			if (stringafter(afterList, i, combinedTags)
-					|| currentToken.contains(".") || currentToken.length() > 3) {
+					|| currentToken.contains(".") || currentToken.length() > 4) {
 				newTag = "CD";
 			}
 		}

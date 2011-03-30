@@ -18,7 +18,7 @@ import uk.ac.cam.ch.wwmm.pregenerated.ChemicalChunkerParser;
  * Passes tagged sentences to the ANTLR grammar. 
  * And converts the output to an XML document.
  * 
- * @author pm286, lh359
+ * @author pm286, dl387, lh359
  **********************************************/
 public class ChemistrySentenceParser extends Thread {
 

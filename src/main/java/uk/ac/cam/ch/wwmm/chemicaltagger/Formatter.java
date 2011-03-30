@@ -138,7 +138,7 @@ public class Formatter {
 			if (Character.isLetter(ch)) {
 				letters = letters + ch;
 			}
-			if (Character.isDigit(ch)) {
+			else {
 				numbers = numbers + ch;
 			}
 
