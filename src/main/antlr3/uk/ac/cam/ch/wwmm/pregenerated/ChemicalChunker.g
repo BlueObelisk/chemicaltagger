@@ -59,9 +59,9 @@ TOKEN : (ACHAR|'?'|'&'|';'| '_'|',' |'.'|')'|'('|'/'|'-'|'='|':'|'%'|'\''|'{'|'}
 
 document: sentences+-> ^(Sentence  sentences )+ ;
 
-sentences:  (sentenceStructure|unmatchedPhrase)+    (comma|stop)*;
+sentences:  (sentenceStructure|unmatchedPhrase)+ stop*;
 
-sentenceStructure:  (nounphrase|verbphrase|prepphrase|prepphraseAfter)+ (advAdj|colon) * (conjunction|rbconj)*;
+sentenceStructure:  (nounphrase|verbphrase|prepphrase|prepphraseAfter)+ (advAdj|colon)* (conjunction|rbconj|comma)*;
 
 
 unmatchedPhrase
@@ -72,7 +72,7 @@ unmatchedToken //all base tokens other than comma and stop
 	nnexample|nnstate|nntime|nnmass|nnmolar|nnamount|nnatmosphere|nneq|nnvol|nnchementity|nntemp|nnflash|nngeneral|nnmethod|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|
 	oscarcm|verb|nnadd|nnmixture|nnapparatus|nnconcentrate|nndry|nnextract|nnfilter|nnprecipitate|nnpurify|nnremove|nnsynthesize|nnyield|colon|apost|neg|dash|nnpercent|lsqb|rsqb|lrb|rrb|
 	abl|abn|abx|ap|at|be|bed|bedz|beg|bem|ben|ber|bez|cc|cs|dotok|dod|doz|dt|dtTHE|dti|dts|dtx|fw|fwin|hv|hvd|hvg|hvn|md|nc|nn|nn_poss|nns|nns_poss|np|nnp|np_poss|nps|nps_poss|nr|pn|pn_poss|
-	pp_poss|pp_poss_poss|ppl|ppls|prp|prp_poss|ppo|pps|ppss|ql|qlp|rbconj|rn|sym|uh|clause);	
+	pp_poss|pp_poss_poss|ppl|ppls|prp|prp_poss|ppo|pps|ppss|ql|qlp|rbconj|rn|sym|uh|clause|comma);	
 
 nounphrase
 	:	nounphraseStructure ->  ^(NounPhrase  nounphraseStructure);	
