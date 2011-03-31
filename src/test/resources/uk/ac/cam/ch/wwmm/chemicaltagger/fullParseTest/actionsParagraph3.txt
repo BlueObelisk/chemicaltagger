@@ -1,0 +1,15 @@
+Add: To a mixture of 124E ( 1.97 g , 9.0 mmol ) and sodium iodide ( 0.27 g , 1.8 mmol ) in 70 % H2SO4 ( 30 mL ) at 110 °C under nitrogen 
+Dissolve: sodium iodide ( 0.27 g , 1.8 mmol ) in 70 % H2SO4 ( 30 mL ) 
+Add: was added acrolein ( 1.1 mL , 13.6 mmol ) via syringe pump ( 1 mL/h ) 
+Stir: The reaction was stirred for another 30 min at 110 °C 
+Add: after complete addition 
+Cool: After cooling to room temperature 
+Add: the reaction mixture was diluted with ice water ( 50 mL ) 
+Add: then added to an aqueous solution ( 500 mL ) of Na2CO3 ( 60 g ) slowly 
+Extract: This mixture was extracted with chloroform ( 3x200 mL ) 
+Dry: The combined organic phases were dried over Na2SO4 
+Filter: filtered 
+Concentrate: concentrated 
+Purify: The residue was purified 
+Degass: by flush chromatography ( hexanes / ethyl acetate ) 
+Yield: to give 124F as a solid 

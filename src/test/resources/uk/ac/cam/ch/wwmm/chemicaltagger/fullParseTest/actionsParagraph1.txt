@@ -1,0 +1,10 @@
+Add: A solution of 124C ( 7.0 g , 32.4 mmol ) in concentrate H2SO4 ( 9.5 mL ) was added to a solution of concentrate H2SO4 ( 9.5 mL ) and fuming HNO3 ( 13 mL ) 
+Dissolve: 124C ( 7.0 g , 32.4 mmol ) in concentrate H2SO4 ( 9.5 mL ) 
+Heat: the mixture was heated at 60 °C for 30 min 
+Cool: After cooling to room temperature 
+Add: the reaction mixture was added to iced 6M solution of NaOH ( 150 mL ) 
+Extract: The reaction mixture was extracted with dichloromethane ( 4x100 mL ) 
+Dry: The combined organic phases were dried over Na2SO4 
+Filter: filtered 
+Concentrate: concentrated 
+Yield: to give 124D as a solid 

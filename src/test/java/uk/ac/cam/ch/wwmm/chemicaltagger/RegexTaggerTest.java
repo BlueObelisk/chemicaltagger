@@ -7,6 +7,11 @@ import org.junit.Before;
 import org.junit.Test;
 
 
+/***********************************************
+ * Tests the SpectraTagger Class
+ * @author lh359, dl387
+ ***********************************************/
+
 public class RegexTaggerTest {
 	
 	

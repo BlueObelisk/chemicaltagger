@@ -1,0 +1,3 @@
+None: 5.1 ml toluene 
+None: tetrakis[2-(2-pyridinyl-N)phenyl-C]-di-chlorodiiridium(III) ( 0.20 g , 0.19 mmol ) 
+None: triethylamine ( 43.8 µl , 0.32 mmol ) 

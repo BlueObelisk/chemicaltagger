@@ -1,0 +1,16 @@
+Synthesize: Isopropyl 3-(hydroxymethyl)pyridine-2-carboxylate , ( 200 g , 1.02 mol ; prepared as in −P . Ornstein et. al. J . Med . Chem . 1989 , 32 , 827 ) , methyl N-[(4-methylphenyl)sulfonyl]glycinate ( 249 g , 1.02 mol ) , and triphenylphosphine ( 403 g , 1.5 mol ) 
+Dissolve: were dissolved in dry THF ( 3000 mls ) 
+Cool: cooled to zero degrees under N2 
+Dissolve: The diethylazodicarboxylate ( DEAD ) ( 267.6 g , 1.5 mol ) was dissolved in dry THF ( 250 mls ) 
+Add: placed in a 500 ml addition funnel 
+Add: The DEAD was added dropwise over 1 hour 
+Remove: The ice bath was removed 
+Heat: to warm slowly to RT 
+Wait: After 2 hours 
+Add: were added 
+Wait: the reaction was left 
+Stir: to stir at RT 
+Wait: After 30 min 
+Concentrate: Concentrated 
+Synthesize: reaction down to a reddish-orange oil that 
+Add: Addition of 10 mL methanol 

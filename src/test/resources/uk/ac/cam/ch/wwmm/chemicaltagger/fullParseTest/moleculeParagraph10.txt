@@ -1,0 +1,23 @@
+None: tetraol 
+None: dry DMF ( 2 mL ) 
+None: Imidazole ( 40 mg , 0.60 mmol ) 
+None: TIPSCl ( 0.08 mL , 0.36 mmol ) 
+None: DMAP ( 2.0 mg , 20 ?mol ) 
+None: DMF ( 1 mL ) 
+None: NH4Cl(aq) ( 2 mL ) 
+None: EtOAc ( 3 x 10 mL ) 
+None: 10 % aqueous LiCl ( 5 x 10 mL ) 
+None: brine ( 5 mL ) 
+None: ( MgSO4 ) 
+None: CH2Cl2 / MeOH ( 98 : 2 ) 
+None: 2-((2R,3R,4R,5R,6R)-3,4-Bis(4-methoxybenzyloxy)-6-((R)-1-(4-methoxy 
+None: triol 
+None: DMF ( 2 mL ) 
+None: PMBBr ( 0.15 mL , 1.0 mmol ) 
+None: TBAI 
+None: NH4Cl(aq) ( 5 mL ) 
+None: EtOAc ( 3 x 30 mL ) 
+None: 10 % aqueous LiCl ( 3 x 30 mL ) 
+None: brine ( 30 mL ) 
+None: ( MgSO4 ) 
+None: petrol/EtOAc ( 95 : 5 ) 
