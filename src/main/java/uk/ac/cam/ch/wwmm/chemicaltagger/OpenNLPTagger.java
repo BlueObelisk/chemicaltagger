@@ -69,10 +69,9 @@ public class OpenNLPTagger {
 			
 			// openNlp throws a weird NumberFormatException if the temp file
 			// name doesn't end in .bin (!)
-			tempFile = File.createTempFile("tag", ".bin");
+			tempFile = File.createTempFile("tag", ".bin",new File("src/main/resources/uk/ac/cam/ch/wwmm/chemicaltagger/openNLPTagger/"));
 			tempFile.deleteOnExit();
-			InputStream is = getClass().getClassLoader().getResourceAsStream(
-					"openNlpResources/tag.bin");
+			InputStream is = Utils.getInputStream(getClass(), "/uk/ac/cam/ch/wwmm/chemicaltagger/openNLPTagger/tag.bin");
 			OutputStream os = new FileOutputStream(tempFile);
 			IOUtils.copy(is, os);
 		} catch (IOException e) {
@@ -89,10 +88,10 @@ public class OpenNLPTagger {
 		try {
 			new Utils();
 			tagDictReader = new InputStreamReader(Utils.getInputStream(
-					getClass(), "/openNlpResources/tagdict"));
+					getClass(), "/uk/ac/cam/ch/wwmm/chemicaltagger/openNLPTagger/tagdict"));
 
 		} catch (Exception e) {
-			throw new RuntimeException("openNlpResources/tagdict", e);
+			throw new RuntimeException("/uk/ac/cam/ch/wwmm/chemicaltagger/openNLPTagger/tagdict", e);
 		}
 		POSDictionary tagDict = new POSDictionary(new BufferedReader(
 				tagDictReader), true);

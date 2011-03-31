@@ -2,7 +2,6 @@ package uk.ac.cam.ch.wwmm.chemicaltagger;
 
 import junit.framework.Assert;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 
@@ -26,13 +25,6 @@ public class PostProcessTagsTest {
           Assert.assertEquals(expected,posContainer.getTokenTagTupleAsString());
  	}
 
-	@Ignore
-	@Test
-	public void testMistaggedNouns() {
-		
-          String sentence = "TROWARA microwave radiometer";
-  		  String expected = "NNP TROWARA NN microwave NN radiometer";
-          POSContainer posContainer = ChemistryPOSTagger.getInstance().runTaggers(sentence);
-         Assert.assertEquals(expected,posContainer.getTokenTagTupleAsString());
- 	}
+	
+	
 }
