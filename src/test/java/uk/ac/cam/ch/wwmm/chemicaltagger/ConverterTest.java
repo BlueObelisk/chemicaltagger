@@ -1,7 +1,6 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -21,15 +20,14 @@ public class ConverterTest {
 
 	@Test
 	public void runMe() throws Exception {
-		String fileIn = "src/test/resources/converter/in/experiment.xml";
 		new File("target/converter/out/").mkdirs();
 		String fileOut = "target/converter/out/experiment.tagged.xml";
-		String fileRef = "src/test/resources/converter/ref/experiment.tagged.xml";
-		InputStream in = new FileInputStream(fileIn);
-		Document out = createTagged(in);
+		InputStream refStream = Utils.getInputStream(this.getClass(), "/uk/ac/cam/ch/wwmm/chemicaltagger/converter/ref/experiment.tagged.xml");
+		InputStream inStream = Utils.getInputStream(this.getClass(), "/uk/ac/cam/ch/wwmm/chemicaltagger/converter/in/experiment.xml");
+		Document out = createTagged(inStream);
 		Document ref = null;
 		try {
-			ref = new Builder().build(new File(fileRef));
+			ref = new Builder().build(refStream);
 		} catch (Exception e) {
 			throw new RuntimeException("bug ", e);
 		}

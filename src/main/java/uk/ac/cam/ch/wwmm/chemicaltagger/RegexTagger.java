@@ -21,7 +21,7 @@ import org.apache.log4j.Logger;
 public class RegexTagger {
 
 	protected List<Rule> rules;
-	public String tagFile = "dictionary/tags.txt";
+	public String tagFilePath = "/uk/ac/cam/ch/wwmm/chemicaltagger/regexTagger/regexTags.txt";
 	private static final Logger LOG = Logger.getLogger(RegexTagger.class);
 
 	/****************************
@@ -32,7 +32,7 @@ public class RegexTagger {
 	}
 
 	public RegexTagger(String tagFile) {
-		this.tagFile = tagFile;
+		this.tagFilePath = tagFile;
 	}
 
 	/**************************************************************
@@ -43,8 +43,7 @@ public class RegexTagger {
 		String line;
 		try {
 
-			InputStream is = this.getClass().getClassLoader()
-					.getResourceAsStream(tagFile);
+			InputStream is = Utils.getInputStream(getClass(), tagFilePath);
 			BufferedReader in = new BufferedReader(new InputStreamReader(is,
 					Charset.forName("UTF-8")));
 
