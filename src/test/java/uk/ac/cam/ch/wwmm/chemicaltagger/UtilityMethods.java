@@ -1,7 +1,7 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
-import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +10,7 @@ import nu.xom.Element;
 import nu.xom.Nodes;
 
 import org.antlr.runtime.tree.Tree;
-
+import org.apache.commons.io.IOUtils;
 
 /*****************************
  * Static methods used in the test classes.
@@ -21,7 +21,8 @@ import org.antlr.runtime.tree.Tree;
 public class UtilityMethods {
 
 	/*************************************************************
-	 * Checks whether the text children of the astTree are the same as the text present in the tagged text.
+	 * Checks whether the text children of the astTree are the same as the text
+	 * present in the tagged text.
 	 * 
 	 * @param astTree
 	 * @param taggedText
@@ -30,9 +31,9 @@ public class UtilityMethods {
 		List<String> textChildren = new ArrayList<String>();
 		List<String> referenceChildren = new ArrayList<String>();
 		UtilityMethods.getTextChildrenFromAst(astTree, textChildren);
-		String[] reference  =taggedText.split(" ");
+		String[] reference = taggedText.split(" ");
 		for (int i = 0; i < reference.length; i++) {
-			if (i%2==1){
+			if (i % 2 == 1) {
 				referenceChildren.add(reference[i]);
 			}
 		}
@@ -43,8 +44,11 @@ public class UtilityMethods {
 	}
 
 	/*****************************************************************************
-	 * Goes through the nodes of a tree and checks for unexpected tokens(when type=0).
-	 * @param astTree(Tree)
+	 * Goes through the nodes of a tree and checks for unexpected tokens(when
+	 * type=0).
+	 * 
+	 * @param astTree
+	 *            (Tree)
 	 *****************************************************************************/
 	static void checkForErrorNodes(Tree astTree) {
 		int nodeCount = astTree.getChildCount();
@@ -54,12 +58,13 @@ public class UtilityMethods {
 			Assert.assertNotSame("Antlr Parse Fails for the for the text '"
 					+ text + "'", 0, type);
 			checkForErrorNodes(astTree.getChild(i));
-	
+
 		}
 	}
 
 	/************************************************
 	 * Gets the children from an Abstract Tree.
+	 * 
 	 * @param astTree
 	 * @param textChildren
 	 *************************************************/
@@ -69,37 +74,45 @@ public class UtilityMethods {
 			Tree child = astTree.getChild(i);
 			getTextChildrenFromAst(child, textChildren);
 		}
-		if (nodeCount==0){
+		if (nodeCount == 0) {
 			textChildren.add(astTree.getText());
 		}
 	}
-	
+
 	/************************************************
-	 *Write out files
-	 *************************************************/
-	static void writeOut(Nodes nodes, String name) {
-		FileWriter fileWriter = null;
-		try {
-			fileWriter = new FileWriter("target/"+name);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		for (int i = 0; i < nodes.size(); i++) {
-			try {
-				fileWriter.write(ExtractFromXML.getStringValue((Element) nodes.get(i), " ")+"\n");
-			    fileWriter.flush();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		try {
-			fileWriter.close();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+	 * Compares the contents of the nodes with the expected outputs.
+	 * @param parsedNodes
+	 * @param fileName
+	 **************************************************/
 	
+	@SuppressWarnings("unchecked")
+	static void compareParsedToExpectedOutput(Nodes parsedNodes, String fileName) {
+
+		List<String> expectedList = new ArrayList<String>();
+		List<String> actualList = new ArrayList<String>(); 
+		try {
+			InputStream in  = Utils.getInputStream(new UtilityMethods().getClass(), fileName);
+			expectedList = IOUtils.readLines(in,"UTF-8");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		for (int i = 0; i < parsedNodes.size(); i++) {
+
+			String type = "None";
+			Element nodeElement = (Element) parsedNodes.get(i);
+			if (nodeElement.getAttribute("type") != null)
+				type = nodeElement.getAttribute("type").getValue();
+                actualList.add(type+": "+ExtractFromXML.getStringValue(nodeElement, " "));
+		}
+		List<String> tmpExpectedList = new ArrayList(expectedList);
+		// Checks if expectedList contains all the nodes of actualList
+		expectedList.removeAll(actualList);
+        Assert.assertTrue("ExpectedList has all nodes from the actualList", expectedList.isEmpty());
+	
+    	// Checks if actualList contains all the nodes of expectedList
+		actualList.removeAll(tmpExpectedList);
+        Assert.assertTrue("ActualList has all nodes from the expectedList", actualList.isEmpty());
+	}
+
+
 }

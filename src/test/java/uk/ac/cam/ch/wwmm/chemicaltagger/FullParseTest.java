@@ -9,8 +9,8 @@ import org.junit.Test;
 
 /*****************************************************
  * Tests the tagging and parsing within ChemicalTagger.
- * Also checks that input is the same as output and nothing gets lost in the processing.
- * AST tree using the TestUtils.checkForErrorNodes(astTree) module.
+ * Tests, normalising, tagging, antlr parsing, the output of the XML Document and 
+ * checks that nothing gets lost in the processing.
  * 
  * @author lh359, dl387
  *****************************/
@@ -33,8 +33,8 @@ public class FullParseTest {
 		Nodes sentenceNodes = doc.query("//Sentence");
 		Nodes actionNodes = doc.query("//ActionPhrase");
 		Nodes moleculeNodes = doc.query("//MOLECULE");
-		UtilityMethods.writeOut(moleculeNodes, "moleculeParagraph1.txt");
-		UtilityMethods.writeOut(actionNodes, "actionsParagraph1.txt");
+		UtilityMethods.compareParsedToExpectedOutput(moleculeNodes, "/uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/moleculeParagraph1.txt");
+		UtilityMethods.compareParsedToExpectedOutput(actionNodes, "/uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/actionsParagraph1.txt");
 		Assert.assertEquals("Sentence node size",4, sentenceNodes.size());
 		Assert.assertEquals("Action node size",10, actionNodes.size());
 		Assert.assertEquals("Molecule node size",7, moleculeNodes.size());
@@ -58,8 +58,8 @@ public class FullParseTest {
 		Nodes sentenceNodes = doc.query("//Sentence");
 		Nodes actionNodes = doc.query("//ActionPhrase");
 		Nodes moleculeNodes = doc.query("//MOLECULE");
-		UtilityMethods.writeOut(moleculeNodes, "moleculeParagraph2.txt");
-		UtilityMethods.writeOut(actionNodes, "actionsParagraph2.txt");
+		UtilityMethods.compareParsedToExpectedOutput(moleculeNodes, "/uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/moleculeParagraph2.txt");
+		UtilityMethods.compareParsedToExpectedOutput(actionNodes, "/uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/actionsParagraph2.txt");
 		Assert.assertEquals("Sentence node size",3, sentenceNodes.size());
 		Assert.assertEquals("Action node size",10, actionNodes.size());
 		Assert.assertEquals("Molecule node size",6, moleculeNodes.size());
@@ -83,8 +83,8 @@ public class FullParseTest {
 		Nodes sentenceNodes = doc.query("//Sentence");
 		Nodes actionNodes = doc.query("//ActionPhrase");
 		Nodes moleculeNodes = doc.query("//MOLECULE");
-		UtilityMethods.writeOut(moleculeNodes, "moleculeParagraph3.txt");
-		UtilityMethods.writeOut(actionNodes, "actionsParagraph3.txt");
+		UtilityMethods.compareParsedToExpectedOutput(moleculeNodes, "/uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/moleculeParagraph3.txt");
+		UtilityMethods.compareParsedToExpectedOutput(actionNodes, "/uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/actionsParagraph3.txt");
 		Assert.assertEquals("Sentence node size",6, sentenceNodes.size());
 		Assert.assertEquals("Action node size",15, actionNodes.size());
 		Assert.assertEquals("Molecule node size",8, moleculeNodes.size());
@@ -108,8 +108,8 @@ public class FullParseTest {
 		Nodes sentenceNodes = doc.query("//Sentence");
 		Nodes actionNodes = doc.query("//ActionPhrase");
 		Nodes moleculeNodes = doc.query("//MOLECULE");
-		UtilityMethods.writeOut(moleculeNodes, "moleculeParagraph4.txt");
-		UtilityMethods.writeOut(actionNodes, "actionsParagraph4.txt");
+		UtilityMethods.compareParsedToExpectedOutput(moleculeNodes, "/uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/moleculeParagraph4.txt");
+		UtilityMethods.compareParsedToExpectedOutput(actionNodes, "/uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/actionsParagraph4.txt");
 		Assert.assertEquals("Sentence node size",5, sentenceNodes.size());
 		Assert.assertEquals("Action node size",10, actionNodes.size());
 		Assert.assertEquals("Molecule node size",8, moleculeNodes.size());
@@ -135,8 +135,8 @@ public class FullParseTest {
 		Nodes sentenceNodes = doc.query("//Sentence");
 		Nodes actionNodes = doc.query("//ActionPhrase");
 		Nodes moleculeNodes = doc.query("//MOLECULE");
-		UtilityMethods.writeOut(moleculeNodes, "moleculeParagraph5.txt");
-		UtilityMethods.writeOut(actionNodes, "actionsParagraph5.txt");
+		UtilityMethods.compareParsedToExpectedOutput(moleculeNodes, "/uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/moleculeParagraph5.txt");
+		UtilityMethods.compareParsedToExpectedOutput(actionNodes, "/uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/actionsParagraph5.txt");
 		Assert.assertEquals("Sentence node size",4, sentenceNodes.size());
 		Assert.assertEquals("Action node size",8, actionNodes.size());
 		Assert.assertEquals("Molecule node size",9, moleculeNodes.size());
@@ -162,8 +162,8 @@ public class FullParseTest {
 		Nodes sentenceNodes = doc.query("//Sentence");
 		Nodes actionNodes = doc.query("//ActionPhrase");
 		Nodes moleculeNodes = doc.query("//MOLECULE");
-		UtilityMethods.writeOut(moleculeNodes, "moleculeParagraph6.txt");
-		UtilityMethods.writeOut(actionNodes, "actionsParagraph6.txt");
+		UtilityMethods.compareParsedToExpectedOutput(moleculeNodes, "/uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/moleculeParagraph6.txt");
+		UtilityMethods.compareParsedToExpectedOutput(actionNodes, "/uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/actionsParagraph6.txt");
 		Assert.assertEquals("Sentence node size",2, sentenceNodes.size());
 		Assert.assertEquals("Action node size",6, actionNodes.size());
 		Assert.assertEquals("Molecule node size",5, moleculeNodes.size());
@@ -189,8 +189,8 @@ public class FullParseTest {
 		Nodes sentenceNodes = doc.query("//Sentence");
 		Nodes actionNodes = doc.query("//ActionPhrase");
 		Nodes moleculeNodes = doc.query("//MOLECULE");
-		UtilityMethods.writeOut(moleculeNodes, "moleculeParagraph7.txt");
-		UtilityMethods.writeOut(actionNodes, "actionsParagraph7.txt");
+		UtilityMethods.compareParsedToExpectedOutput(moleculeNodes, "/uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/moleculeParagraph7.txt");
+		UtilityMethods.compareParsedToExpectedOutput(actionNodes, "/uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/actionsParagraph7.txt");
 		Assert.assertEquals("Sentence node size",4, sentenceNodes.size());
 		Assert.assertEquals("Action node size",8, actionNodes.size());
 		Assert.assertEquals("Molecule node size",9, moleculeNodes.size());
@@ -216,8 +216,8 @@ public class FullParseTest {
 		Nodes sentenceNodes = doc.query("//Sentence");
 		Nodes actionNodes = doc.query("//ActionPhrase");
 		Nodes moleculeNodes = doc.query("//MOLECULE");
-		UtilityMethods.writeOut(moleculeNodes, "moleculeParagraph8.txt");
-		UtilityMethods.writeOut(actionNodes, "actionsParagraph8.txt");
+		UtilityMethods.compareParsedToExpectedOutput(moleculeNodes, "/uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/moleculeParagraph8.txt");
+		UtilityMethods.compareParsedToExpectedOutput(actionNodes, "/uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/actionsParagraph8.txt");
 		Assert.assertEquals("Sentence node size",4, sentenceNodes.size());
 		Assert.assertEquals("Action node size",7, actionNodes.size());
 		Assert.assertEquals("Molecule node size",6, moleculeNodes.size());
@@ -242,8 +242,8 @@ public class FullParseTest {
 		Nodes sentenceNodes = doc.query("//Sentence");
 		Nodes actionNodes = doc.query("//ActionPhrase");
 		Nodes moleculeNodes = doc.query("//MOLECULE");
-		UtilityMethods.writeOut(moleculeNodes, "moleculeParagraph9.txt");
-		UtilityMethods.writeOut(actionNodes, "actionsParagraph9.txt");
+		UtilityMethods.compareParsedToExpectedOutput(moleculeNodes, "/uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/moleculeParagraph9.txt");
+		UtilityMethods.compareParsedToExpectedOutput(actionNodes, "/uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/actionsParagraph9.txt");
 		Assert.assertEquals("Sentence node size",9, sentenceNodes.size());
 		Assert.assertEquals("Action node size",16, actionNodes.size());
 		Assert.assertEquals("Molecule node size",11, moleculeNodes.size());
@@ -270,8 +270,8 @@ public class FullParseTest {
 		Nodes sentenceNodes = doc.query("//Sentence");
 		Nodes actionNodes = doc.query("//ActionPhrase");
 		Nodes moleculeNodes = doc.query("//MOLECULE");
-		UtilityMethods.writeOut(moleculeNodes, "moleculeParagraph10.txt");
-		UtilityMethods.writeOut(actionNodes, "actionsParagraph10.txt");
+		UtilityMethods.compareParsedToExpectedOutput(moleculeNodes, "/uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/moleculeParagraph10.txt");
+		UtilityMethods.compareParsedToExpectedOutput(actionNodes, "/uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/actionsParagraph10.txt");
 		Assert.assertEquals("Sentence node size",11, sentenceNodes.size());
 		Assert.assertEquals("Action node size",30, actionNodes.size());
 		Assert.assertEquals("Molecule node size",23, moleculeNodes.size());
@@ -295,8 +295,8 @@ public class FullParseTest {
 		Nodes sentenceNodes = doc.query("//Sentence");
 		Nodes actionNodes = doc.query("//ActionPhrase");
 		Nodes moleculeNodes = doc.query("//MOLECULE");
-		UtilityMethods.writeOut(moleculeNodes, "moleculeParagraph11.txt");
-		UtilityMethods.writeOut(actionNodes, "actionsParagraph11.txt");
+		UtilityMethods.compareParsedToExpectedOutput(moleculeNodes, "/uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/moleculeParagraph11.txt");
+		UtilityMethods.compareParsedToExpectedOutput(actionNodes, "/uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/actionsParagraph11.txt");
 		Assert.assertEquals("Sentence node size",1, sentenceNodes.size());
 		Assert.assertEquals("Action node size",2, actionNodes.size());
 		Assert.assertEquals("Molecule node size",3, moleculeNodes.size());
@@ -320,8 +320,8 @@ public class FullParseTest {
 		Nodes sentenceNodes = doc.query("//Sentence");
 		Nodes nounPhraseNodes = doc.query("//NounPhrase");
 		Nodes verbPhraseNodes = doc.query("//VerbPhrase");
-		UtilityMethods.writeOut(verbPhraseNodes, "verbPhrases12.txt");
-		UtilityMethods.writeOut(nounPhraseNodes, "nounPhrases12.txt");
+		UtilityMethods.compareParsedToExpectedOutput(verbPhraseNodes, "/uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/verbPhrases12.txt");
+		UtilityMethods.compareParsedToExpectedOutput(nounPhraseNodes, "/uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/nounPhrases12.txt");
 		Assert.assertEquals("Sentence node size",1, sentenceNodes.size());
 		Assert.assertEquals("NounPhrases size",2, nounPhraseNodes.size());
 		Assert.assertEquals("VerbPhrases size",1, verbPhraseNodes.size());
@@ -346,8 +346,8 @@ public class FullParseTest {
 		Nodes sentenceNodes = doc.query("//Sentence");
 		Nodes nounPhraseNodes = doc.query("//NounPhrase");
 		Nodes verbPhraseNodes = doc.query("//VerbPhrase");
-		UtilityMethods.writeOut(verbPhraseNodes, "verbPhrases13.txt");
-		UtilityMethods.writeOut(nounPhraseNodes, "nounPhrases13.txt");
+		UtilityMethods.compareParsedToExpectedOutput(nounPhraseNodes, "/uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/nounPhrases13.txt");
+		UtilityMethods.compareParsedToExpectedOutput(verbPhraseNodes, "/uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/verbPhrases13.txt");
 		Assert.assertEquals("Sentence node size",1, sentenceNodes.size());
 		Assert.assertEquals("NounPhrases size",2, nounPhraseNodes.size());
 		Assert.assertEquals("VerbPhrases size",1, verbPhraseNodes.size());
@@ -374,8 +374,8 @@ public class FullParseTest {
 		Nodes sentenceNodes = doc.query("//Sentence");
 		Nodes actionNodes = doc.query("//ActionPhrase");
 		Nodes moleculeNodes = doc.query("//MOLECULE");
-		UtilityMethods.writeOut(moleculeNodes, "moleculeParagraph14.txt");
-		UtilityMethods.writeOut(actionNodes, "actionsParagraph14.txt");
+		UtilityMethods.compareParsedToExpectedOutput(moleculeNodes, "/uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/moleculeParagraph14.txt");
+		UtilityMethods.compareParsedToExpectedOutput(actionNodes, "/uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/actionsParagraph14.txt");
         Assert.assertEquals("Sentence node size",1, sentenceNodes.size());
 		Assert.assertEquals("Action node size",0, actionNodes.size());
 		Assert.assertEquals("Molecule node size",5, moleculeNodes.size());
@@ -400,8 +400,8 @@ public class FullParseTest {
 		Nodes sentenceNodes = doc.query("//Sentence");
 		Nodes actionNodes = doc.query("//ActionPhrase");
 		Nodes moleculeNodes = doc.query("//MOLECULE");
-		UtilityMethods.writeOut(moleculeNodes, "moleculeParagraph15.txt");
-		UtilityMethods.writeOut(actionNodes, "actionsParagraph15.txt");
+		UtilityMethods.compareParsedToExpectedOutput(moleculeNodes, "/uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/moleculeParagraph15.txt");
+		UtilityMethods.compareParsedToExpectedOutput(actionNodes, "/uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/actionsParagraph15.txt");
         Assert.assertEquals("Sentence node size",1, sentenceNodes.size());
 		Assert.assertEquals("Action node size",4, actionNodes.size());
 		Assert.assertEquals("Molecule node size",4, moleculeNodes.size());
@@ -426,8 +426,8 @@ public class FullParseTest {
 		Nodes sentenceNodes = doc.query("//Sentence");
 		Nodes actionNodes = doc.query("//ActionPhrase");
 		Nodes moleculeNodes = doc.query("//MOLECULE");
-		UtilityMethods.writeOut(moleculeNodes, "moleculeParagraph16.txt");
-		UtilityMethods.writeOut(actionNodes, "actionsParagraph16.txt");
+		UtilityMethods.compareParsedToExpectedOutput(moleculeNodes, "/uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/moleculeParagraph16.txt");
+		UtilityMethods.compareParsedToExpectedOutput(actionNodes, "/uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/actionsParagraph16.txt");
 		Assert.assertEquals("Sentence node size",1, sentenceNodes.size());
 		Assert.assertEquals("Action node size",1, actionNodes.size());
 		Assert.assertEquals("Molecule node size",0, moleculeNodes.size());

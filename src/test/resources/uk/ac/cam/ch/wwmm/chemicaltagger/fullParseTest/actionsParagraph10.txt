@@ -1,0 +1,30 @@
+Cool: cooled to 0 ºC 
+Add: Imidazole ( 40 mg , 0.60 mmol ) was added 
+Dissolve: to dissolve followed by a solution of TIPSCl ( 0.08 mL , 0.36 mmol ) and DMAP ( 2.0 mg , 20 ?mol ) in DMF ( 1 mL ) 
+Dissolve: DMAP ( 2.0 mg , 20 ?mol ) in DMF ( 1 mL ) 
+Heat: The reaction mixture was heated at 50 ºC for 18 hrs 
+Quench: then quenched by addition of saturated NH4Cl(aq) ( 2 mL ) 
+Add: diluted with ( 3 mL ) 
+Extract: The aqueous layer was extracted with EtOAc ( 3 x 10 mL ) 
+Wash: the combined organic layers washed with 10 % aqueous LiCl ( 5 x 10 mL ) , saturated brine ( 5 mL ) 
+Dry: dried ( MgSO4 ) 
+Filter: filtered 
+Concentrate: concentrated in vacuo 
+Yield: to give the crude product as a yellow oil 
+Yield: afforded the title compound 115 as a clear oil ( 101 mg , 83 % ) 
+Cool: ( 2-((2R,3R,4R,5R,6R)-3,4-Bis(4-methoxybenzyloxy)-6-((R)-1-(4-methoxy benzyloxy)-2-methylallyl)-5-methyltetrahydro-2H-pyran-2-yl)ethoxy)(tert-butyl)dimethylsilane 116 A solution of triol 114 ( 60 mg , 0.17 mmol ) in dry DMF ( 2 mL ) was cooled to 0 ºC 
+Dissolve: 114 ( 60 mg , 0.17 mmol ) in dry DMF ( 2 mL ) 
+Add: ( 41 mg , 1.0 mmol ) was added 
+Heat: to warm to room temperature 
+Wait: After 1 h 
+Add: PMBBr ( 0.15 mL , 1.0 mmol ) and TBAI ( 11 mg , 30 ?mol)were added sequentially 
+Stir: the reaction mixture was stirred for 18 h at ambient temperature 
+Cool: The reaction was then cooled to 0 ºC 
+Quench: quenched by addition of saturated NH4Cl(aq) ( 5 mL ) 
+Add: diluted with ( 5 mL ) 
+Extract: The aqueous layer was extracted with EtOAc ( 3 x 30 mL ) 
+Wash: the combined organic layers washed with 10 % aqueous LiCl ( 3 x 30 mL ) , saturated brine ( 30 mL ) 
+Dry: dried ( MgSO4 ) 
+Concentrate: concentrated under reduced pressure 
+Yield: to give the crude product as a yellow oil 
+Yield: afforded the title compound 116 as a white foam ( 105 mg , 85 % ) 

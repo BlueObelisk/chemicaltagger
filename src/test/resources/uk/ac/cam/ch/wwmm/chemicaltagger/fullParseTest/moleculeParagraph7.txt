@@ -1,0 +1,9 @@
+None: 5-chloro-8-hydroxyquinoline-7-carboxylic acid ( 0.50 g , 2.24 mmol ) 
+None: benzylamine ( 0.29 g , 2.68 mmol ) 
+None: 1-hydroxy-7-azabenzotriazole ( 0.36 g , 2.68 mmol ) 
+None: 1-(3-dimethylaminopropyl)-3-ethylcarbodiimide hydrochloride ( 0.51 g , 2.68 mmol ) 
+None: triethylamine ( 0.62 mL , 4.47 mmol ) 
+None: DMF ( 15 mL ) 
+None: DMSO 
+None: C-18 stationary 
+None: water / acetonitrile / TFA mobile 

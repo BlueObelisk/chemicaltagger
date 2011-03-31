@@ -1,0 +1,6 @@
+None: iron ( 0.48 g , 8.6 mmol ) 
+None: ammonium chloride ( 0.46 g , 8.6 mmol ) 
+None: EtOH / H2O ( 10 mL / 3 mL ) 
+None: water 
+None: dichloromethane 
+None: Na2SO4 

@@ -1,0 +1,10 @@
+Add: A mixture of 124D ( 0.75 g , 2.9 mmol ) , iron ( 0.48 g , 8.6 mmol ) and ammonium chloride ( 0.46 g , 8.6 mmol ) in EtOH / H2O ( 10 mL / 3 mL ) 
+Dissolve: ammonium chloride ( 0.46 g , 8.6 mmol ) in EtOH / H2O ( 10 mL / 3 mL ) 
+Heat: was refluxed ( bath temperature 90 °C ) for 4 h 
+Cool: After cooling to room temperature 
+Add: the reaction mixture was diluted with water 
+Extract: extracted with dichloromethane three times 
+Dry: The combined organic phases were dried over Na2SO4 
+Filter: filtered 
+Concentrate: concentrated 
+Yield: to give 124E as a oil 

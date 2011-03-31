@@ -1,0 +1,5 @@
+None: ester 
+None: 4-fluorobenzylamine ( 0.243 g , 1.94 mmol ) 
+None: toluene ( 2 mL ) 
+None: methanol ( 3 ml ) 
+None: diethyl ether ( 5 ml ) 

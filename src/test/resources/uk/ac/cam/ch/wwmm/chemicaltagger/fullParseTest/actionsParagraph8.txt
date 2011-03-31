@@ -1,0 +1,7 @@
+ApparatusAction: Into a 10 mL pressure vessel equipped with a magnetic stir bar 
+ApparatusAction: The vessel was sealed 
+Heat: heated on an oil bath to 135 °C for 18 hrs 
+Cool: , after which the mixture was cooled 
+Remove: the solvent removed in vacuo 
+Purify: The residue was purified by reverse phase HPLC on a C18 column 
+Yield: to give 5-[[2-(dimethylamino)-2-oxoethyl](methyl)amino]-N-(4-fluorobenzyl)-8-hydroxy-1,6-naphthyridine-7-carboxamide 

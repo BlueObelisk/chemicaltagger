@@ -1,0 +1,10 @@
+Add: A mixture of 124G ( 150 mg , 0.64 mmol ) , 3,5-dichlorobenzylamine ( 153 mg , 0.87 mmol ) and aluminum chloride ( 27 mg , 0.20 mmol ) in toluene ( 8 mL ) 
+Dissolve: aluminum chloride ( 27 mg , 0.20 mmol ) in toluene ( 8 mL ) 
+Heat: was refluxed for 4 h under nitrogen 
+Cool: After cooling to room temperature 
+Add: the reaction mixture was treated with aqueous saturated NaHCO3 solution and ethylenediaminetetraacetic acid ( 1 g , 3.4 mmol ) to pH 7 
+Extract: The mixture was extracted with chloroform four times 
+Dry: The combined organic phases were dried over Na2SO4 
+Concentrate: concentrated 
+Purify: The residue was purified by preparative reverse-phase HPLC 
+Yield: to give 124H 
