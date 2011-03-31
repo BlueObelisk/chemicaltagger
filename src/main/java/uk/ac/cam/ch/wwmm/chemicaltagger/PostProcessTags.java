@@ -224,10 +224,7 @@ public class PostProcessTags {
 									.startsWith("nn")) {
 						newTag = "JJ";
 					} 
-//					else if (combinedTags.get(i - 1).toLowerCase()
-//							.startsWith("dt")) {
-//						newTag = "NN";
-//					}
+
 				}
 			}
 		}
@@ -325,8 +322,7 @@ public class PostProcessTags {
 		if (i != 0 && StringUtils.equalsIgnoreCase(currentTag, "nn")) {
 
 			List<String> beforeList = Arrays.asList("stop");
-			if (Character.isUpperCase(currentToken.charAt(0))
-					&& !stringbefore(beforeList, i, combinedTags))
+			if (Character.isUpperCase(currentToken.charAt(0))&& !stringbefore(beforeList, i, combinedTags))
 				newTag = "NNP";
 
 		}

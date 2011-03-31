@@ -18,7 +18,7 @@ public class Formatter {
 	 *************************************/
 	public static String normaliseText(String sentence){
 		StringBuilder newSentence = new StringBuilder();
-		sentence = sentence.replace("  ", " ");
+		sentence = sentence.replaceAll("\\s+", " ");
 		sentence = sentence.replace("%", " %").replace(";", " ;")
 				.replace(":", " : ");
 
@@ -28,7 +28,7 @@ public class Formatter {
 		String concatAmountRegex = "(\\d\\d+(m|k|µ)?(l|L|g|gram|mol|cm3)(s)?$)|(\\d(L|ml|mL|gram|mol|cm3)(s)?$)";
 		String concatTempRegex = "\\d+(\\xb0|&#0176|\\xc3\\x97|o|°|º)(C|c)";
 		String hyphenDirectionNumber = "^[A-Z]\\-\\d+";
-		List<String> abvList = Arrays.asList("et. al. etc. e.g. i.e. vol. ca. wt. aq.".split(" "));
+		List<String> abvList = Arrays.asList("et. al. etc. e.g. i.e. vol. ca. wt. aq. mt.".split(" "));
 		List<String> htmlList = Arrays.asList("gt; lt;".split(" "));
 		List<String> nextTokenList = Arrays.asList("gram vol %".split(" "));
 		Pattern abbreviationPattern = Pattern.compile(abbreviationRegex);
