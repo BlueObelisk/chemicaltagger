@@ -7,6 +7,10 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+/************************************
+ * Tests the RecombineTokens Class.
+ * @author lh359
+ ************************************/
 public class RecombineTokensTest {
 
 	private static OscarTagger oscarTagger;
@@ -34,41 +38,38 @@ public class RecombineTokensTest {
 	@Test
 	public void testRecombineSentence1() {
 		POSContainer posContainer = new POSContainer();
-		String inputSentence = "To a three-necked round-bottomed flask fitted with a Dean-stark trap, a nitrogen inlet/outlet, and magnetic stirrer was added ";
+		String inputSentence = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/recombineTokens/sentence1.txt");
+		String expectedOutput = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/recombineTokens/ref1.txt");
 		inputSentence = Formatter.normaliseText(inputSentence);
         posContainer.setInputText(inputSentence);
 		posContainer = oscarTokeniser.tokenise(posContainer);
 		posContainer = oscarTagger.runTagger(posContainer);
-
 		posContainer = regexTagger.runTagger(posContainer);
 		posContainer = openNLPTagger.runTagger(posContainer);
-
 		posContainer.combineTaggers();
 		int beforeRecombined = posContainer.getCombinedTagsList().size();
-		posContainer.recombineHyphenedTokens();
+		posContainer = RecombineTokens.recombineHyphenedTokens(posContainer);
 		int afterRecombined = posContainer.getCombinedTagsList().size();
 		Assert.assertNotSame("Different Size of combined List",
 				beforeRecombined, afterRecombined);
-	
+		Assert.assertEquals("Combined all the hyphenated words",expectedOutput, posContainer.getTokenTagTupleAsString());
+
 	}
 
 	@Test
 	public void testRecombineSentence2() {
 		POSContainer posContainer = new POSContainer();
-		String inputSentence = "The synthetic procedure for partially EA- or BA-modified HPEI is exemplified for HPEI25K-EA 0.79: 1.00 g of HPEI25K";
-		String expectedOutput = "DT-THE The JJ synthetic NN-METHOD procedure IN-FOR for RB partially NNP EA- CC or JJ-CHEM BA-modified OSCAR-CM HPEI VBZ is VBN exemplified IN-FOR for OSCAR-CM HPEI25K-EA CD 0.79 COLON : CD 1.00 NN-MASS g IN-OF of OSCAR-CM HPEI25K";
+		String inputSentence = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/recombineTokens/sentence2.txt");
+		String expectedOutput = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/recombineTokens/ref2.txt");
 		inputSentence = Formatter.normaliseText(inputSentence);
         posContainer.setInputText(inputSentence);
 		posContainer = oscarTokeniser.tokenise(posContainer);
-
 		posContainer = oscarTagger.runTagger(posContainer);
-
 		posContainer = regexTagger.runTagger(posContainer);
 		posContainer = openNLPTagger.runTagger(posContainer);
-
 		posContainer.combineTaggers();
 		int beforeRecombined = posContainer.getCombinedTagsList().size();
-		posContainer.recombineHyphenedTokens();
+		posContainer = RecombineTokens.recombineHyphenedTokens(posContainer);
 		int afterRecombined = posContainer.getCombinedTagsList().size();
 		Assert.assertNotSame(beforeRecombined, afterRecombined);
 		posContainer =  new PostProcessTags().correctCombinedTagsList(posContainer);
@@ -78,21 +79,17 @@ public class RecombineTokensTest {
 	@Test
 	public void testRecombineSentence3() {
 		POSContainer posContainer = new POSContainer();
-		String inputSentence = "to give a white precipitate of diblock copolymer PNBE- -PSt";
-		String expectedOutput = "TO to VB-YIELD give DT a JJ white NN-CHEMENTITY precipitate IN-OF of JJ-CHEM diblock NN-CHEMENTITY copolymer OSCAR-CM PNBE--PSt";
+		String inputSentence = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/recombineTokens/sentence3.txt");
+		String expectedOutput = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/recombineTokens/ref3.txt");
 		inputSentence = Formatter.normaliseText(inputSentence);
-
         posContainer.setInputText(inputSentence);
 		posContainer = oscarTokeniser.tokenise(posContainer);
-
 		posContainer = oscarTagger.runTagger(posContainer);
-
 		posContainer = regexTagger.runTagger(posContainer);
 		posContainer = openNLPTagger.runTagger(posContainer);
-
 		posContainer.combineTaggers();
 		int beforeRecombined = posContainer.getCombinedTagsList().size();
-		posContainer.recombineHyphenedTokens();
+		posContainer = RecombineTokens.recombineHyphenedTokens(posContainer);
 		int afterRecombined = posContainer.getCombinedTagsList().size();
 		Assert.assertNotSame(beforeRecombined, afterRecombined);
 		posContainer =  new PostProcessTags().correctCombinedTagsList(posContainer);
@@ -104,23 +101,17 @@ public class RecombineTokensTest {
 	@Test
 	public void testRecombineSentence4() {
 		POSContainer posContainer = new POSContainer();
-		String inputSentence = "the reaction solution was degassed using three freeze-vacuum-thaw cycles.";
-
-		String expectedOutput = "DT-THE the JJ-CHEM reaction NN-CHEMENTITY solution VBD was VB-DEGASS degassed VB-USE using CD three JJ-CHEM freeze-vacuum-thaw NN-CYCLE cycles STOP .";
-		 
+		String inputSentence = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/recombineTokens/sentence4.txt");
+		String expectedOutput = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/recombineTokens/ref4.txt");
 		inputSentence = Formatter.normaliseText(inputSentence);
-
         posContainer.setInputText(inputSentence);
 		posContainer = oscarTokeniser.tokenise(posContainer);
-
 		posContainer = oscarTagger.runTagger(posContainer);
-
 		posContainer = regexTagger.runTagger(posContainer);
 		posContainer = openNLPTagger.runTagger(posContainer);
-
 		posContainer.combineTaggers();
 		int beforeRecombined = posContainer.getCombinedTagsList().size();
-		posContainer.recombineHyphenedTokens();
+		posContainer = RecombineTokens.recombineHyphenedTokens(posContainer);
 		int afterRecombined = posContainer.getCombinedTagsList().size();
 		Assert.assertNotSame(beforeRecombined, afterRecombined);
 		posContainer =  new PostProcessTags().correctCombinedTagsList(posContainer);
@@ -130,22 +121,17 @@ public class RecombineTokensTest {
 	@Test
 	public void testRecombineSentence5() {
 		POSContainer posContainer = new POSContainer();
-		String inputSentence = "This is a five-part-multi-tokened-word";
-
-		String expectedOutput = "DT This VBZ is DT a JJ-CHEM five-part-multi-tokened-word";
+		String inputSentence = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/recombineTokens/sentence5.txt");
+		String expectedOutput = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/recombineTokens/ref5.txt");
 		inputSentence = Formatter.normaliseText(inputSentence);
-
         posContainer.setInputText(inputSentence);
 		posContainer = oscarTokeniser.tokenise(posContainer);
-
 		posContainer = oscarTagger.runTagger(posContainer);
-
 		posContainer = regexTagger.runTagger(posContainer);
 		posContainer = openNLPTagger.runTagger(posContainer);
-
 		posContainer.combineTaggers();
 		int beforeRecombined = posContainer.getCombinedTagsList().size();
-		posContainer.recombineHyphenedTokens();
+		posContainer = RecombineTokens.recombineHyphenedTokens(posContainer);
 		int afterRecombined = posContainer.getCombinedTagsList().size();
 		Assert.assertNotSame(beforeRecombined, afterRecombined);
 		posContainer =  new PostProcessTags().correctCombinedTagsList(posContainer);
@@ -153,47 +139,18 @@ public class RecombineTokensTest {
 	}
 	
 	
-	@Test
-	public void testRecombinedSentence6(){
-		POSContainer posContainer = new POSContainer();
-		String inputSentence = "HyperBranched Polymerization . A typical polymerization procedure was as follows . Cp2TiCl2 ( 25 mg , 0.1 \u00D7 10 -3 M ) , Zn ( 7 mg , 0.1 \u00D7 10 -3 M ) and dioxane ( 0.5 mL ) were added into a 5 mL glass tube , and then the reaction solution was degassed using three freeze-vacuum-thaw cycles , and reacted at room temperature for 10 min , until the solution turned lime green . GMA ( 0.355 g , 2.5 \u00D7 10 -3 M ) , St ( 0.260 g , 2.5 \u00D7 10 -3 M ) , CuBr 2 ( 23 mg , 0.1 \u00D7 10 -3 M ) and bpy ( 48 mg , 0.3 \u00D7 10 -3 M ) were added into the reaction solution , and the tube was again degassed using three freeze-vacuum-thaw cycles . The tube was then sealed under a vacuum , and the sealed tube was immersed in an oil bath at 90 \u00B0C . After polymerization for 4 h , the tube was rapidly cooled to room temperature . The polymer solution in THF was passed through a short column of neutral alumina to remove the metal salt . After two precipitations by addition of the polymer solution into petroleum ether ( 30-60 \u00B0C ) , the hyperbranched P(GMA-co-St)-Brn(HP(GMA-St)-Brn) was obtained in a 51 % yield after filtration and drying in a vacuum oven at 30 \u00B0C overnight . The monomer conversion was determined gravimetrically . was 78000 and was 1.19 .";
-		inputSentence = Formatter.normaliseText(inputSentence);
-		String expectedOutput = "JJ-CHEM HyperBranched NN-SYNTHESIZE Polymerization STOP . DT A JJ typical NN-SYNTHESIZE polymerization NN-METHOD procedure VBD was IN-AS as VBZ follows STOP . OSCAR-CM Cp2TiCl2 -LRB- ( CD 25 NN-MASS mg COMMA , CD 0.1 CD-UNICODE \u00D7 CD 10 CD -3 NN-MOLAR M -RRB- ) COMMA , OSCAR-CM Zn -LRB- ( CD 7 NN-MASS mg COMMA , CD 0.1 CD-UNICODE \u00D7 CD 10 CD -3 NN-MOLAR M -RRB- ) CC and OSCAR-CM dioxane -LRB- ( CD 0.5 NN-VOL mL -RRB- ) VBD were VB-ADD added IN-INTO into DT a CD 5 NN-VOL mL NN-STATE glass NN-APPARATUS tube COMMA , CC and RB-CONJ then DT-THE the JJ-CHEM reaction NN-CHEMENTITY solution VBD was VB-DEGASS degassed VB-USE using CD three JJ-CHEM freeze-vacuum-thaw NN-CYCLE cycles COMMA , CC and VB-SYNTHESIZE reacted IN at NN-TEMP room NN-TEMP temperature IN-FOR for CD 10 NN-TIME min COMMA , IN until DT-THE the NN-CHEMENTITY solution VBD turned JJ lime JJ green STOP . NNP GMA -LRB- ( CD 0.355 NN-MASS g COMMA , CD 2.5 CD-UNICODE \u00D7 CD 10 CD -3 NN-MOLAR M -RRB- ) COMMA , OSCAR-CM St -LRB- ( CD 0.260 NN-MASS g COMMA , CD 2.5 CD-UNICODE \u00D7 CD 10 CD -3 NN-MOLAR M -RRB- ) COMMA , NNP CuBr CD-ALPHANUM 2 -LRB- ( CD 23 NN-MASS mg COMMA , CD 0.1 CD-UNICODE \u00D7 CD 10 CD -3 NN-MOLAR M -RRB- ) CC and OSCAR-CM bpy -LRB- ( CD 48 NN-MASS mg COMMA , CD 0.3 CD-UNICODE \u00D7 CD 10 CD -3 NN-MOLAR M -RRB- ) VBD were VB-ADD added IN-INTO into DT-THE the JJ-CHEM reaction NN-CHEMENTITY solution COMMA , CC and DT-THE the NN-APPARATUS tube VBD was RB again VB-DEGASS degassed VB-USE using CD three JJ-CHEM freeze-vacuum-thaw NN-CYCLE cycles STOP . DT-THE The NN-APPARATUS tube VBD was RB-CONJ then VB-APPARATUS sealed IN-UNDER under DT a NN-VACUUM vacuum COMMA , CC and DT-THE the JJ sealed NN-APPARATUS tube VBD was VB-IMMERSE immersed IN-IN in DT an NN-STATE oil NN-APPARATUS bath IN at CD 90 NN-TEMP \u00B0C STOP . IN-AFTER After NN-SYNTHESIZE polymerization IN-FOR for CD 4 NN-TIME h COMMA , DT-THE the NN-APPARATUS tube VBD was RB rapidly VB-COOL cooled TO to NN-TEMP room NN-TEMP temperature STOP . DT-THE The NN-CHEMENTITY polymer NN-CHEMENTITY solution IN-IN in OSCAR-CM THF VBD was VBN passed IN through DT a JJ short NN-COLUMN column IN-OF of JJ neutral OSCAR-CM alumina TO to VB-REMOVE remove DT-THE the NN-CHEMENTITY metal OSCAR-CM salt STOP . IN-AFTER After CD two NN-PRECIPITATE precipitations IN-BY by NN-ADD addition IN-OF of DT-THE the NN-CHEMENTITY polymer NN-CHEMENTITY solution IN-INTO into NN-CHEMENTITY petroleum OSCAR-CM ether -LRB- ( JJ 30-60 NN-TEMP \u00B0C -RRB- ) COMMA , DT-THE the JJ-CHEM hyperbranched OSCAR-CM P(GMA-co-St)-Brn(HP(GMA-St)-Brn) VBD was VB-YIELD obtained IN-IN in DT a CD 51 NN-PERCENT % NN-YIELD yield IN-AFTER after NN-FILTER filtration CC and VB-DRY drying IN-IN in DT a NN-VACUUM vacuum NN-APPARATUS oven IN at CD 30 NN-TEMP \u00B0C NN-TIME overnight STOP . DT-THE The NN-CHEMENTITY monomer NN conversion VBD was VBN determined RB gravimetrically STOP . VBD was CD 78000 CC and VBD was CD 1.19 STOP .";
-
-        posContainer.setInputText(inputSentence);
-		posContainer = oscarTokeniser.tokenise(posContainer);
-
-		posContainer = oscarTagger.runTagger(posContainer);
-
-		posContainer = regexTagger.runTagger(posContainer);
-		posContainer = openNLPTagger.runTagger(posContainer);
-
-		posContainer.combineTaggers();
-
-		int beforeRecombined = posContainer.getCombinedTagsList().size();
-		posContainer.recombineHyphenedTokens();
-		int afterRecombined = posContainer.getCombinedTagsList().size();
-		posContainer =  new PostProcessTags().correctCombinedTagsList(posContainer);
-		Assert.assertEquals("Combined all the hyphenated words",expectedOutput, posContainer.getTokenTagTupleAsString());
-		Assert.assertNotSame(beforeRecombined, afterRecombined);
-
-	}
+	
 	@Test
 	public void testOxidationRecombineSentence() {
 		POSContainer posContainer = new POSContainer();
-		String inputSentence = "The resultant mixture was added dropwise to Cu(II) nitrate hexahydrate (1.00 mmol ) .";
-
-		String expectedOutput = "DT-THE The JJ-COMPOUND resultant NN-CHEMENTITY mixture VBD was VB-ADD added RB dropwise TO to OSCAR-CM Cu(II) OSCAR-CM nitrate OSCAR-CM hexahydrate -LRB- ( CD 1.00 NN-AMOUNT mmol -RRB- ) STOP .";
+		String inputSentence = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/recombineTokens/oxidation.txt");
+		String expectedOutput = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/recombineTokens/oxidationRef.txt");
 		inputSentence = Formatter.normaliseText(inputSentence);
-
         posContainer.setInputText(inputSentence);
 		posContainer = oscarTokeniser.tokenise(posContainer);
-
 		posContainer = oscarTagger.runTagger(posContainer);
-
 		posContainer = regexTagger.runTagger(posContainer);
 		posContainer = openNLPTagger.runTagger(posContainer);
-
 		posContainer.combineTaggers();
 		posContainer =  new PostProcessTags().correctCombinedTagsList(posContainer);
 		Assert.assertEquals("Combined all the hyphenated words",expectedOutput, posContainer.getTokenTagTupleAsString());
@@ -202,24 +159,19 @@ public class RecombineTokensTest {
 	@Test
 	public void testForMissingInput1() {
 		POSContainer posContainer = new POSContainer();
-		String inputSentence = "The residue obtained was purified by flash chromatography (silica gel, 0-5% methanol/methylene chloride).";
+		String inputSentence = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/recombineTokens/missingInput1.txt");
 		inputSentence = Formatter.normaliseText(inputSentence);
-
         posContainer.setInputText(inputSentence);
 		posContainer = oscarTokeniser.tokenise(posContainer);
-
 		posContainer = oscarTagger.runTagger(posContainer);
 		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""),StringUtils.join(posContainer.getWordTokenList().listIterator(),"").toLowerCase());
-
 		posContainer = regexTagger.runTagger(posContainer);
 		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""),StringUtils.join(posContainer.getWordTokenList().listIterator(),"").toLowerCase());
 		posContainer = openNLPTagger.runTagger(posContainer);
 		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""),StringUtils.join(posContainer.getWordTokenList().listIterator(),"").toLowerCase());
 		posContainer.combineTaggers();
-		posContainer.recombineHyphenedTokens();
-
+		posContainer = RecombineTokens.recombineHyphenedTokens(posContainer);
 		posContainer =  new PostProcessTags().correctCombinedTagsList(posContainer);
-
 		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""),StringUtils.join(posContainer.getWordTokenList().listIterator(),"").toLowerCase());
 	
 
@@ -227,24 +179,19 @@ public class RecombineTokensTest {
 	@Test
 	public void testForMissingInput2() {
 		POSContainer posContainer = new POSContainer();
-		String inputSentence = "This is a 5-part-multi-tokened-word.";
+		String inputSentence = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/recombineTokens/missingInput2.txt");
 		inputSentence = Formatter.normaliseText(inputSentence);
-
         posContainer.setInputText(inputSentence);
 		posContainer = oscarTokeniser.tokenise(posContainer);
-
 		posContainer = oscarTagger.runTagger(posContainer);
 		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""),StringUtils.join(posContainer.getWordTokenList().listIterator(),"").toLowerCase());
-
 		posContainer = regexTagger.runTagger(posContainer);
 		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""),StringUtils.join(posContainer.getWordTokenList().listIterator(),"").toLowerCase());
 		posContainer = openNLPTagger.runTagger(posContainer);
 		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""),StringUtils.join(posContainer.getWordTokenList().listIterator(),"").toLowerCase());
 		posContainer.combineTaggers();
-		posContainer.recombineHyphenedTokens();
-
+		posContainer = RecombineTokens.recombineHyphenedTokens(posContainer);
 		posContainer =  new PostProcessTags().correctCombinedTagsList(posContainer);
-
 		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""),StringUtils.join(posContainer.getWordTokenList().listIterator(),"").toLowerCase());
 	}
 }

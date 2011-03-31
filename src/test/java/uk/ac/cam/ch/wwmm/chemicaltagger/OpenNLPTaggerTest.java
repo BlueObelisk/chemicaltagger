@@ -5,7 +5,11 @@ import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 
-
+/************************************
+ * Tests the OpenNLP Class.
+ * @author dmj30
+ *
+ ***********************************/
 public class OpenNLPTaggerTest {
 
 	@Test

@@ -5,7 +5,10 @@ import junit.framework.Assert;
 
 import org.junit.Test;
 
-
+/************************************
+ * Tests the Utils Class.
+ * @author lh359, dmj30, dl387
+ ************************************/
 public class UtilsTest {
 
 	@Test
