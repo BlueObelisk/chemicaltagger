@@ -109,7 +109,7 @@ verb : vb|vbp|vbg|vbd|vbz|vbn|vbuse|vbsubmerge|vbimmerse|degassMultiVerb|vbsubje
 
 degassMultiVerb
 	:	vbdegass cc vbfill;
-number : cd|oscarcd|oscarcpr|od;	
+number : cd|cdAlphanum|oscarcpr|od;	
 clause	:	wdt|wp_poss|wpo|wps|wql|wrb|ex|pdt;
 noun 	:	nounStructure (dash nounStructure)*;
 
@@ -120,7 +120,7 @@ cycles	:	cycleStructure -> ^(CYCLES cycleStructure)  ;
 cycleStructure	:	cd dashNN? nncycle;  
 dashNN	:	(adj|nn|cd) (dash (adj|nn|cd))*;  
 ratio : (numberratio|nounratio) -> ^(RATIO numberratio? nounratio?)  ;
-numberratio	:	 cd (colon oscarcd|cd)+ ;
+numberratio	:	 cd (colon cdAlphanum|cd)+ ;
 nounratio 
 	:	 noun  (colon noun)+  ;
 
@@ -139,7 +139,7 @@ mixtureStructure3
 	:	lrb  nnpercent rrb;
 	
 mixtureRatio 
-	:	cd colon (cd|oscarcd);
+	:	cd colon (cd|cdAlphanum);
 mixtureContent:   (fw|verb|nn|measurements|md|nnpercent|stop|oscarCompound|molecule|unnamedmolecule|dash|sym|cd|noun|inof|inAll|cd|comma|adj|colon|stop) (minimixture|fw|verb|measurements|nnyield|md|nnpercent|stop|oscarCompound|molecule|unnamedmolecule|dash|sym|cd|noun|inof|inAll|cd|comma|adj|colon|stop)+ ;
 
 minimixture: (mixtureStructure2|mixtureStructure1) -> ^(MIXTURE  mixtureStructure2? mixtureStructure1?);
@@ -243,13 +243,13 @@ molecule
 	:  moleculeamount-> ^(MOLECULE  moleculeamount );	
 
 //unnamedmoleculeamount1
-//	:measurements quantity? inof (oscarcd|cd);	
+//	:measurements quantity? inof (cdAlphanum|cd);	
 
-oscarcdType	:  lrb (oscarcd|cd) rrb;	
+cdAlphanumType	:  lrb (cdAlphanum|cd) rrb;	
 unnamedmoleculeamount1
-	: quantity inof (oscarcd|cd);
+	: quantity inof (cdAlphanum|cd);
 unnamedmoleculeamount2
-	:(oscarcd|oscarcdType) (citation|quantity|mixture)*;	
+	:(cdAlphanum|cdAlphanumType) (citation|quantity|mixture)*;	
 		
 //unnamedmoleculeamount3
 //	:measurements quantity? inof (jj? noun)+;	
@@ -262,7 +262,7 @@ unnamedmoleculeamount4
 	:(quantity|mixture) nnchementity;	
 
 unnamedmoleculeamount5	:
-          jjcomp nnchementity oscarcd? (quantity|mixture)* ;	
+          jjcomp nnchementity cdAlphanum? (quantity|mixture)* ;	
 	
 unnamedmoleculeamount
 	:(unnamedmoleculeamount5|unnamedmoleculeamount1 | unnamedmoleculeamount2 | unnamedmoleculeamount3|unnamedmoleculeamount4) ;
@@ -277,7 +277,7 @@ quantity1
 quantity2
 	:  measurements (comma  measurements)*  ;
 method:
-    (nngeneral|nn)? nnmethod (oscarcd|cd)?  ;
+    (nngeneral|nn)? nnmethod (cdAlphanum|cd)?  ;
     brackets 
     	:	(lrb|rrb|lsqb|rsqb)+;
 
@@ -286,7 +286,7 @@ method:
 
 
 //Tags---Pattern---Description
-oscarcd:'OSCAR-CD' TOKEN -> ^('OSCAR-CD' TOKEN);
+cdAlphanum:'CD-ALPHANUM' TOKEN -> ^('CD-ALPHANUM' TOKEN);
 oscarcj:'OSCAR-CJ' TOKEN -> ^('OSCAR-CJ' TOKEN);
 oscarrn:'OSCAR-RN' TOKEN -> ^('OSCAR-RN' TOKEN);
 oscarcpr:'OSCAR-CPR' TOKEN -> ^('OSCAR-CPR' TOKEN);

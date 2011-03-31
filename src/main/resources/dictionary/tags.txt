@@ -58,7 +58,7 @@ NN-CHEMENTITY---^b$|^m$---will be removed
 
 
 #Oscar related Tags                          
-OSCAR-CD---^\d+[A-Z|a-z]-----non-html oscar digits (representing chemical names)
+CD-ALPHANUM---^\d+[A-Z|a-z]-----non-html oscar digits (representing chemical names)
 
 #Verbs
 VB-USE---^using---Use Verb in the Present Term
