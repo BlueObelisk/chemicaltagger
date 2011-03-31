@@ -106,9 +106,9 @@ public class PostProcessTags {
 			}
 		}
 
-		if (currentTag.toLowerCase().startsWith("vb-precipitate")||currentTag.toLowerCase().startsWith("vb-synthesize")||currentTag.toLowerCase().startsWith("nn-synthesize")) {
+		if (currentTag.toLowerCase().startsWith("vb-")||currentTag.toLowerCase().startsWith("nn-synthesize")) {
 			List<String> beforeList = Arrays.asList("dt-the dt".split(" "));
-			List<String> afterList = Arrays.asList("vbd");
+			List<String> afterList = Arrays.asList("vbd vbp".split(" "));
 		
 			if (stringbefore(beforeList, i, combinedTags)
 					&& (stringafter(afterList, i, combinedTags))){
