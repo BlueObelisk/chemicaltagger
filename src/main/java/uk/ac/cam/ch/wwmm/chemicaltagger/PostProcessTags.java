@@ -249,7 +249,7 @@ public class PostProcessTags {
 			if (stringbefore(beforeList, i, combinedTags)
 					&& (stringafter(afterList, i, combinedTags) || i == combinedTags
 							.size())) {
-				newTag = "OSCAR-CD";
+				newTag = "CD-ALPHANUM";
 			}
 		}
 
@@ -259,7 +259,7 @@ public class PostProcessTags {
 			List<String> afterList = Arrays.asList("-rrb-");
 			if (stringbefore(beforeList, i, combinedTags)
 					&& (stringafter(afterList, i, combinedTags))) {
-				newTag = "OSCAR-CD";
+				newTag = "CD-ALPHANUM";
 			}
 		}
 		if (currentTag.toLowerCase().equals("cd")) {
@@ -268,11 +268,11 @@ public class PostProcessTags {
 
 			if (stringafter(afterList, i, combinedTags)
 					&& !currentToken.contains(".") && currentToken.length() < 4) {
-				newTag = "OSCAR-CD";
+				newTag = "CD-ALPHANUM";
 			}
 		}
 
-		if (currentTag.toLowerCase().equals("oscar-cd")) {
+		if (currentTag.toLowerCase().equals("cd-alphanum")) {
 
 			List<String> afterList = Arrays.asList("nn-vol nn-mass".split(" "));
 
