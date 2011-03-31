@@ -1,0 +1,1 @@
+TO To DT a JJ-CHEM three-necked JJ-CHEM round-bottomed NN-APPARATUS flask VB-APPARATUS fitted IN-WITH with DT a JJ-CHEM Dean-stark NN-APPARATUS trap COMMA , DT a OSCAR-CM nitrogen NN-APPARATUS inlet/outlet COMMA , CC and JJ magnetic NN-APPARATUS stirrer VBD was VB-ADD added STOP .

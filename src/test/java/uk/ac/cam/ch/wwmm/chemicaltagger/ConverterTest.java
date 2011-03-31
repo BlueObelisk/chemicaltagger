@@ -15,6 +15,11 @@ import org.junit.Test;
 import org.xmlcml.cml.base.CMLUtil;
 import org.xmlcml.cml.testutil.JumboTestUtils;
 
+/*****************************
+ * Tests that an experimental paragraph is parsed properly and checks the XML output.
+ * @author pm286
+ *****************************/
+
 public class ConverterTest {
 	private static final String DOCUMENT_ELEMENT = "Document";
 
@@ -22,8 +27,12 @@ public class ConverterTest {
 	public void runMe() throws Exception {
 		new File("target/converter/out/").mkdirs();
 		String fileOut = "target/converter/out/experiment.tagged.xml";
-		InputStream refStream = Utils.getInputStream(this.getClass(), "/uk/ac/cam/ch/wwmm/chemicaltagger/converter/ref/experiment.tagged.xml");
-		InputStream inStream = Utils.getInputStream(this.getClass(), "/uk/ac/cam/ch/wwmm/chemicaltagger/converter/in/experiment.xml");
+		InputStream refStream = Utils
+				.getInputStream(this.getClass(),
+						"/uk/ac/cam/ch/wwmm/chemicaltagger/converter/ref/experiment.tagged.xml");
+		InputStream inStream = Utils
+				.getInputStream(this.getClass(),
+						"/uk/ac/cam/ch/wwmm/chemicaltagger/converter/in/experiment.xml");
 		Document out = createTagged(inStream);
 		Document ref = null;
 		try {
@@ -66,7 +75,6 @@ public class ConverterTest {
 		try {
 			chemistrySentenceParser.parseTags();
 			Tree t = chemistrySentenceParser.getParseTree();
-
 			ASTtoXML ast2XML = new ASTtoXML();
 			doc = ast2XML.convert(t, false);
 		} catch (Exception e) {

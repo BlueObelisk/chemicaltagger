@@ -4,7 +4,10 @@ import junit.framework.Assert;
 
 import org.junit.Test;
 
-
+/************************************
+ * Tests the PostProcessingTags Class.
+ * @author lh359
+ ************************************/
 public class PostProcessTagsTest {
 	
 	@Test

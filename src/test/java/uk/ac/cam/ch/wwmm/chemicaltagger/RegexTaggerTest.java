@@ -8,7 +8,7 @@ import org.junit.Test;
 
 
 /***********************************************
- * Tests the SpectraTagger Class
+ * Tests the RegexTagger Class
  * @author lh359, dl387
  ***********************************************/
 

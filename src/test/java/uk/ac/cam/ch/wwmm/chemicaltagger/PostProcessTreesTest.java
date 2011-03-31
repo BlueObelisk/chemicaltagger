@@ -14,7 +14,10 @@ import nu.xom.ValidityException;
 import org.junit.Test;
 
 
-
+/************************************
+ * Tests the PostProcessingTrees Class.
+ * @author lh359
+ ************************************/
 public class PostProcessTreesTest {
 	
 

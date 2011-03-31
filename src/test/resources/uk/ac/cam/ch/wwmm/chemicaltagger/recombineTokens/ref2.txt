@@ -1,0 +1,1 @@
+DT-THE The JJ synthetic NN-METHOD procedure IN-FOR for RB partially NNP EA- CC or JJ-CHEM BA-modified OSCAR-CM HPEI VBZ is VBN exemplified IN-FOR for OSCAR-CM HPEI25K-EA CD 0.79 COLON : CD 1.00 NN-MASS g IN-OF of OSCAR-CM HPEI25K
