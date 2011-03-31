@@ -1,6 +1,7 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
 import uk.ac.cam.ch.wwmm.oscar.Oscar;
+import uk.ac.cam.ch.wwmm.oscar.chemnamedict.ChemNameDictRegistry;
 
 
 
