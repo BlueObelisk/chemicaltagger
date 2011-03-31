@@ -104,7 +104,7 @@ public class UtilityMethods {
 				type = nodeElement.getAttribute("type").getValue();
                 actualList.add(type+": "+ExtractFromXML.getStringValue(nodeElement, " "));
 		}
-		List<String> tmpExpectedList = new ArrayList(expectedList);
+		List<String> tmpExpectedList = new ArrayList<String>(expectedList);
 		// Checks if expectedList contains all the nodes of actualList
 		expectedList.removeAll(actualList);
         Assert.assertTrue("ExpectedList has all nodes from the actualList", expectedList.isEmpty());

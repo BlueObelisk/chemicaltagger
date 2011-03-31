@@ -9,6 +9,8 @@ import nu.xom.Element;
 
 import org.apache.commons.lang.StringUtils;
 
+import uk.ac.cam.ch.wwmm.oscar.document.ITokenSequence;
+
 /********************************************
  * A container class that stores the 
  * grammatical structure of the text .
@@ -28,6 +30,7 @@ public class POSContainer {
 	private List<String> brownTagList = new ArrayList<String>();
 	private List<String> combinedTagsList = new ArrayList<String>();
 	private Element spectrumElementList;
+	private List<ITokenSequence> tokenSequenceList;
 
 	/******************************
 	 * Default constructor method.
@@ -84,7 +87,23 @@ public class POSContainer {
 	public List<String> getWordTokenList() {
 		return wordTokenList;	
 	}
+	
+	/**************************************
+	 * Setter method for TokenSequenceList.
+	 * @param tokenSequenceList (List<ITokenSequence>)
+	 ***************************************/	
+	public void setTokenSequenceList(List<ITokenSequence> tokenSequenceList) {
+		this.tokenSequenceList = tokenSequenceList;
+		
+	}
 
+	/**************************************
+	 * Getter method for TokenSequenceList.
+	 * @return tokenSequenceList (List<ITokenSequence>)
+	 ***************************************/
+	public List<ITokenSequence> getTokenSequenceList() {
+		return tokenSequenceList;
+	}
 	/**************************************
 	 * Setter method for OscarTagList.
 	 * @param oscarTagList (List<String>)
@@ -416,6 +435,8 @@ public class POSContainer {
 		}
 		return tagName;
 	}
+
+
 
 
 
