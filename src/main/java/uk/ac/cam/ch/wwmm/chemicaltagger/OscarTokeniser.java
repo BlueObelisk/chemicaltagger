@@ -6,8 +6,8 @@ import java.util.List;
 import org.apache.commons.lang.StringUtils;
 
 import uk.ac.cam.ch.wwmm.oscar.Oscar;
-import uk.ac.cam.ch.wwmm.oscar.document.IToken;
-import uk.ac.cam.ch.wwmm.oscar.document.ITokenSequence;
+import uk.ac.cam.ch.wwmm.oscar.document.Token;
+import uk.ac.cam.ch.wwmm.oscar.document.TokenSequence;
 
 public class OscarTokeniser {
 
@@ -26,17 +26,17 @@ public class OscarTokeniser {
 	 * @return posContainer (POSContainer)
 	 *****************************************************/
 	public POSContainer tokenise(POSContainer posContainer) {
-		List<ITokenSequence> tokSequenceList = new ArrayList<ITokenSequence>();
+		List<TokenSequence> tokSequenceList = new ArrayList<TokenSequence>();
 		List<String> wordTokenList = new ArrayList<String>();
 		String sentence = posContainer.getInputText();
 		// Oscar doesn't do normalisation just yet
 		// sentence = oscar.normalise(sentence);
 
 		tokSequenceList = oscar.tokenise(sentence);
-		for (ITokenSequence tokenSequence : tokSequenceList) {
-			for (IToken tok : tokenSequence.getTokens()) {
+		for (TokenSequence tokenSequence : tokSequenceList) {
+			for (Token token : tokenSequence.getTokens()) {
 
-				for (String subWord : tok.getSurface().trim().split(" ")) {
+				for (String subWord : token.getSurface().trim().split(" ")) {
 					if (StringUtils.isNotEmpty(subWord))
 						wordTokenList.add(subWord);
 				}

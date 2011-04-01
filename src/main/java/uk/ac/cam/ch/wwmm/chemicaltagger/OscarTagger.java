@@ -5,8 +5,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import uk.ac.cam.ch.wwmm.oscar.Oscar;
-import uk.ac.cam.ch.wwmm.oscar.document.IToken;
 import uk.ac.cam.ch.wwmm.oscar.document.NamedEntity;
+import uk.ac.cam.ch.wwmm.oscar.document.Token;
 
 /*****************************************************
  * Runs the OSCAR tagger .
@@ -45,11 +45,11 @@ public class OscarTagger {
 		}
 		for (NamedEntity ne : neList) {
 			if (!ignoreOscarList.contains(ne.getType().getName().toLowerCase())) {
-				List<IToken> tokens = ne.getTokens();
+				List<Token> tokens = ne.getTokens();
                  
-				for (IToken iToken : tokens) {
-						if (tokenList.get(iToken.getId()).contains(iToken.getSurface())) {
-							oscarList.set(iToken.getId(), "OSCAR-"+ne.getType().getName());
+				for (Token token : tokens) {
+						if (tokenList.get(token.getIndex()).contains(token.getSurface())) {
+							oscarList.set(token.getIndex(), "OSCAR-"+ne.getType().getName());
 						}
 					}
 				

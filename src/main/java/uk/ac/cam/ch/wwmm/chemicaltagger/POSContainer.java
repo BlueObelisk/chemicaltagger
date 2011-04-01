@@ -7,7 +7,7 @@ import nu.xom.Element;
 
 import org.apache.commons.lang.StringUtils;
 
-import uk.ac.cam.ch.wwmm.oscar.document.ITokenSequence;
+import uk.ac.cam.ch.wwmm.oscar.document.TokenSequence;
 
 /********************************************
  * A container class that stores the 
@@ -28,7 +28,7 @@ public class POSContainer {
 	private List<String> brownTagList = new ArrayList<String>();
 	private List<String> combinedTagsList = new ArrayList<String>();
 	private Element spectrumElementList;
-	private List<ITokenSequence> tokenSequenceList;
+	private List<TokenSequence> tokenSequenceList;
 
 	/******************************
 	 * Default constructor method.
@@ -88,18 +88,18 @@ public class POSContainer {
 	
 	/**************************************
 	 * Setter method for TokenSequenceList.
-	 * @param tokenSequenceList (List<ITokenSequence>)
+	 * @param tokenSequenceList (List<TokenSequence>)
 	 ***************************************/	
-	public void setTokenSequenceList(List<ITokenSequence> tokenSequenceList) {
+	public void setTokenSequenceList(List<TokenSequence> tokenSequenceList) {
 		this.tokenSequenceList = tokenSequenceList;
 		
 	}
 
 	/**************************************
 	 * Getter method for TokenSequenceList.
-	 * @return tokenSequenceList (List<ITokenSequence>)
+	 * @return tokenSequenceList (List<TokenSequence>)
 	 ***************************************/
-	public List<ITokenSequence> getTokenSequenceList() {
+	public List<TokenSequence> getTokenSequenceList() {
 		return tokenSequenceList;
 	}
 	/**************************************
