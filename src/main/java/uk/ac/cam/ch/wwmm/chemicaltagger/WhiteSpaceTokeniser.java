@@ -5,8 +5,6 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
-import uk.ac.cam.ch.wwmm.oscar.document.IToken;
-import uk.ac.cam.ch.wwmm.oscar.document.ITokenSequence;
 import uk.ac.cam.ch.wwmm.oscar.document.Token;
 import uk.ac.cam.ch.wwmm.oscar.document.TokenSequence;
 
@@ -46,7 +44,7 @@ public class WhiteSpaceTokeniser {
 	 *****************************************/
 	public POSContainer tokenise(POSContainer posContainer){
 		List<String> wordTokenList = tokenise(posContainer.getInputText());
-		List<ITokenSequence> tokenSequenceList = convertToOscarTokenSequences(wordTokenList, posContainer.getInputText());		
+		List<TokenSequence> tokenSequenceList = convertToOscarTokenSequences(wordTokenList, posContainer.getInputText());		
 		posContainer.setWordTokenList(wordTokenList);
 		posContainer.setTokenSequenceList(tokenSequenceList);
 		return posContainer;
@@ -56,9 +54,9 @@ public class WhiteSpaceTokeniser {
 	 * Converts a list of words into a list of Oscar TokenSequences.
 	 * @param wordTokenList
 	 ********************************************/
-	private  List<ITokenSequence> convertToOscarTokenSequences(List<String> wordTokenList, String inputText) {
-		List<IToken> oscarTokens = convertWordlistToOscarTokens(wordTokenList);
-		List<ITokenSequence> tokenSequenceList = makeTokenSequences(inputText, oscarTokens);
+	private  List<TokenSequence> convertToOscarTokenSequences(List<String> wordTokenList, String inputText) {
+		List<Token> oscarTokens = convertWordlistToOscarTokens(wordTokenList);
+		List<TokenSequence> tokenSequenceList = makeTokenSequences(inputText, oscarTokens);
 		return tokenSequenceList;
 	}
 
@@ -68,25 +66,25 @@ public class WhiteSpaceTokeniser {
 	 * @param wordTokenList (List<String>)
 	 * @return oscarTokens (List<IToken>)
 	 ***********************************************/
-	private List<IToken> convertWordlistToOscarTokens(List<String> wordTokenList) {
+	private List<Token> convertWordlistToOscarTokens(List<String> wordTokenList) {
 
-		int id = 0;
+		int index = 0;
 		int sentenceIndex = 0;
-		List<IToken> oscarTokens = new LinkedList<IToken>();
+		List<Token> oscarTokens = new LinkedList<Token>();
 		boolean endFlag = true;
 
 		for (String word : wordTokenList)  {
 			int startIndex = sentenceIndex;
 			int endIndex = sentenceIndex+word.length();
-			IToken oscarToken = new Token(word, startIndex, endIndex, null, null, null);
+			Token oscarToken = new Token(word, startIndex, endIndex, null, null, null);
 			
 			
-			oscarToken.setId(id);
+			oscarToken.setIndex(index);
 			oscarTokens.add(oscarToken);
 			sentenceIndex = endIndex+1;
-			id++;
+			index++;
 			if (word.equals(".") & !endFlag) {
-				id = 0;
+				index = 0;
 				endFlag = true;
 			}
 		}
@@ -97,12 +95,12 @@ public class WhiteSpaceTokeniser {
      * Creates a list of tokenSequences from the Oscar tokens. 
      * @param surfaceText (String)
      * @param oscarTokens (List<IToken>)
-     * @return tokSequenceList (List<ITokenSequence>)
+     * @return tokSequenceList (List<TokenSequence>)
      *****************************************************/
-	private List<ITokenSequence> makeTokenSequences(String surfaceText,	List<IToken> oscarTokens) {
+	private List<TokenSequence> makeTokenSequences(String surfaceText,	List<Token> oscarTokens) {
 
 		TokenSequence tokSeq = new TokenSequence(surfaceText, 0, null, oscarTokens);
-		List<ITokenSequence> tokSequenceList = new ArrayList<ITokenSequence>();
+		List<TokenSequence> tokSequenceList = new ArrayList<TokenSequence>();
 		tokSequenceList.add(tokSeq);
 		tokSequenceList = postProcess(tokSequenceList);
 
@@ -112,13 +110,13 @@ public class WhiteSpaceTokeniser {
 	/***************************************************
      * PostProcessing the tokenSequenceList by adding tokenSequences to each token within the tokenList.
      * The TokenSequences are used by the Oscar Tokens for lookahead.
-     * @param  tokSequenceList    (List<ITokenSequence>)
-     * @return newTokSequenceList (List<ITokenSequence>)
+     * @param  tokSequenceList    (List<TokenSequence>)
+     * @return newTokSequenceList (List<TokenSequence>)
      *****************************************************/
-	private List<ITokenSequence> postProcess(List<ITokenSequence> tokSequenceList) {
-		List<ITokenSequence> newTokSequenceList = new ArrayList<ITokenSequence>();
-		for (ITokenSequence tokenSequence : tokSequenceList) {
-			for (IToken token : tokenSequence.getTokens()) {
+	private List<TokenSequence> postProcess(List<TokenSequence> tokSequenceList) {
+		List<TokenSequence> newTokSequenceList = new ArrayList<TokenSequence>();
+		for (TokenSequence tokenSequence : tokSequenceList) {
+			for (Token token : tokenSequence.getTokens()) {
 				token.setTokenSequence(tokenSequence);
 			}
 			TokenSequence newTokenSequence = new TokenSequence(
