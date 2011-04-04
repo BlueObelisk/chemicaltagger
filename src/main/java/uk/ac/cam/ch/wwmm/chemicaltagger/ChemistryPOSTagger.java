@@ -3,8 +3,6 @@ package uk.ac.cam.ch.wwmm.chemicaltagger;
 import uk.ac.cam.ch.wwmm.oscar.Oscar;
 
 
-
-
 /**************************************************************
  * Converts string input into tokenised and tagged text.
  * 
@@ -22,23 +20,20 @@ import uk.ac.cam.ch.wwmm.oscar.Oscar;
 public final class ChemistryPOSTagger {
 
 	static final boolean DEFAULT_PRIORITISE_OSCAR = false;
-	static final boolean DEFAULT_USE_OSCAR_TOKENISER = true;
 	static final boolean DEFAULT_USE_SPECTRA_TAGGER = false;
 		
-	
 	private OscarTagger oscarTagger;
 	private RegexTagger regexTagger;
 	private OpenNLPTagger openNLPTagger;
 	private ChemicalTaggerTokeniser ctTokeniser;
 	
-	
-
 	/**************************************
 	 * Private Singleton holder.
 	 ***************************************/
 	private static class TaggerHolder {
 		private static final ChemistryPOSTagger INSTANCE = new ChemistryPOSTagger();
 	}
+	
 	/**************************************
 	 * Gets the default ChemistryPOSTagger instance - recommended for
 	 * standard ChemicalTagger processing.
@@ -53,7 +48,8 @@ public final class ChemistryPOSTagger {
 	/**
 	 * Custom constructor for setting up non-standard ChemicalTagger operations
 	 */
-	public ChemistryPOSTagger (ChemicalTaggerTokeniser ctTokeniser,OscarTagger oscarTagger, RegexTagger regexTagger,OpenNLPTagger openNLPTagger) {
+	public ChemistryPOSTagger (ChemicalTaggerTokeniser ctTokeniser, 
+			OscarTagger oscarTagger, RegexTagger regexTagger, OpenNLPTagger openNLPTagger) {
 		
 		this.ctTokeniser = ctTokeniser;
 		this.oscarTagger = oscarTagger;
@@ -61,21 +57,13 @@ public final class ChemistryPOSTagger {
 		this.openNLPTagger = openNLPTagger;
 	}
 	
-
-	
 	private ChemistryPOSTagger() {
 		Oscar oscar = new Oscar();
-		if (DEFAULT_USE_OSCAR_TOKENISER){
-			ctTokeniser = new OscarTokeniser(oscar);
-		}		
-		else {
-			ctTokeniser = new WhiteSpaceTokeniser();
-		}
+		ctTokeniser = new OscarTokeniser(oscar);
 		oscarTagger = new OscarTagger(oscar);
 		regexTagger = new RegexTagger();
 		openNLPTagger = OpenNLPTagger.getInstance();
 	}
-	
 
 
 	/**************************************
@@ -85,8 +73,6 @@ public final class ChemistryPOSTagger {
 	public ChemicalTaggerTokeniser getCTTokeniser() {
 		return ctTokeniser;
 	}
-	
-	
 	
 	/**************************************
 	 * Getter method for RegexTagger.
@@ -104,8 +90,6 @@ public final class ChemistryPOSTagger {
 		return oscarTagger;
 	}
 	
-	
-
 	/**************************************
 	 * Getter method for OpenNLPTagger.
 	 * @return openNLPTagger (OpenNLPTagger)
@@ -115,10 +99,10 @@ public final class ChemistryPOSTagger {
 	}
 	
 	
-	
 	/*****************************************************
-	 * Overloading Method for runTaggers with prioritiseOscar
-	 * set to false and useOscarTokeniser set to true.
+	 * Overloading method for runTaggers passing the default flags
+	 * for prioritiseOscar and useSpectraTagger to
+	 * {@link ChemistryPOSTagger#runTaggers(String, boolean, boolean)}
 	 * 
 	 * @param inputSentence(String)
 	 * @return POSContainer
@@ -126,6 +110,7 @@ public final class ChemistryPOSTagger {
 	public POSContainer runTaggers(final String inputSentence) {
 		return runTaggers(inputSentence, DEFAULT_PRIORITISE_OSCAR, DEFAULT_USE_SPECTRA_TAGGER);
 	}
+	
 	
 	/*****************************************************
 	 * Normalises the inputSentence then runs Tokeniser and Taggers on them.
@@ -146,7 +131,6 @@ public final class ChemistryPOSTagger {
 		posContainer =  new PostProcessTags().correctCombinedTagsList(posContainer);
 		return posContainer;
 	}
-	
 	
 	
 	/*******************************************
