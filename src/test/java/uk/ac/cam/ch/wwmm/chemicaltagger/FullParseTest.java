@@ -254,7 +254,7 @@ public class FullParseTest {
 		Assert.assertEquals("Input string is equal to output content", text.replace(" ", "").toLowerCase(), doc.getValue().toLowerCase());
 	}
 
-	@Ignore
+	
 	@Test
 	public void testFullParse10()  {
 		String text = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/paragraph10.txt");

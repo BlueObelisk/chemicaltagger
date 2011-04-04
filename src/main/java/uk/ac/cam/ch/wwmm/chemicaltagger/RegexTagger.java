@@ -120,6 +120,7 @@ public class RegexTagger {
 		}
 
 		public Rule(String name, String regex, boolean caseInsensitive) {
+//			System.out.println(name+" "+regex);
 			setRule(name, regex, caseInsensitive);
 		}
 
