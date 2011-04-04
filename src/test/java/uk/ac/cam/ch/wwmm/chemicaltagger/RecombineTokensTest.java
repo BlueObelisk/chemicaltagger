@@ -19,7 +19,7 @@ public class RecombineTokensTest {
 	private static OscarTokeniser oscarTokeniser;
 	@BeforeClass
 	public static void setup(){
-		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getInstance();
+		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getDefaultInstance();
 		oscarTokeniser = posTagger.getOscarTokeniser();
 		oscarTagger = posTagger.getOscarTagger();
 		regexTagger = posTagger.getRegexTagger();

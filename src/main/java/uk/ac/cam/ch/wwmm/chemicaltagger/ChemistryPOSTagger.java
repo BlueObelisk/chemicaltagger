@@ -21,14 +21,15 @@ import uk.ac.cam.ch.wwmm.oscar.Oscar;
  ***************************************************************/
 public final class ChemistryPOSTagger {
 
+	static final boolean DEFAULT_PRIORITISE_OSCAR = false;
+	static final boolean DEFAULT_USE_OSCAR_TOKENISER = true;
+	static final boolean DEFAULT_USE_SPECTRA_TAGGER = false;
+		
 	private OscarTokeniser oscarTokeniser;
     private WhiteSpaceTokeniser whiteSpaceTokeniser;
 	private OscarTagger oscarTagger;
 	private RegexTagger regexTagger;
 	private OpenNLPTagger openNLPTagger;
-	private SpectraTagger spectraTagger;
-	private boolean runSpectraTaggerFlag = false;
-	private boolean useOscarTokeniser = true;
 	
 	
 	
@@ -40,14 +41,31 @@ public final class ChemistryPOSTagger {
 		private static final ChemistryPOSTagger INSTANCE = new ChemistryPOSTagger();
 	}
 	/**************************************
-	 * @return ChemistryPOSTaggerInstance
+	 * Gets the default ChemistryPOSTagger instance - recommended for
+	 * standard ChemicalTagger processing.
+	 * 
+	 * @return ChemistryPOSTagger instance
 	 ***************************************/
-	public static ChemistryPOSTagger getInstance() {
+	public static ChemistryPOSTagger getDefaultInstance() {
 		return TaggerHolder.INSTANCE;
 	}
-	/**************************************
-	 * Private Constructor Class.
-	 ***************************************/
+
+	
+	/**
+	 * Custom constructor for setting up non-standard ChemicalTagger operations
+	 */
+	public ChemistryPOSTagger (OscarTokeniser oscarTokeniser, WhiteSpaceTokeniser whiteSpaceTokeniser,
+			OscarTagger oscarTagger, RegexTagger regexTagger,
+			OpenNLPTagger openNLPTagger) {
+		
+		this.oscarTokeniser = oscarTokeniser;
+		this.whiteSpaceTokeniser = whiteSpaceTokeniser;
+		this.oscarTagger = oscarTagger;
+		this.regexTagger = regexTagger;
+		this.openNLPTagger = openNLPTagger;
+	}
+	
+	
 	private ChemistryPOSTagger() {
 		Oscar oscar = new Oscar();
 		whiteSpaceTokeniser = new WhiteSpaceTokeniser();
@@ -55,17 +73,9 @@ public final class ChemistryPOSTagger {
 		oscarTagger = new OscarTagger(oscar);
 		regexTagger = new RegexTagger();
 		openNLPTagger = OpenNLPTagger.getInstance();
-		spectraTagger = new SpectraTagger();
 	}
 	
 
-	/**************************************
-	 * Setter method for OscarTokeniser.
-	 * @param oscarTokeniser (OscarTokeniser)
-	 ***************************************/
-	public void setOscarTokeniser(OscarTokeniser oscarTokeniser) {
-		this.oscarTokeniser = oscarTokeniser;
-	}
 
 	/**************************************
 	 * Getter method for OscarTokeniser.
@@ -74,14 +84,7 @@ public final class ChemistryPOSTagger {
 	public OscarTokeniser getOscarTokeniser() {
 		return oscarTokeniser;
 	}
-
-	/**************************************
-	 * Setter method for WhiteSpaceTokeniser.
-	 * @param WhiteSpaceTokeniser (WhiteSpaceTokeniser)
-	 ***************************************/
-	public void setWhiteSpaceTokeniser(WhiteSpaceTokeniser whiteSpaceTokeniser) {
-		this.whiteSpaceTokeniser = whiteSpaceTokeniser;
-	}
+	
 	
 	/**************************************
 	 * Getter method for WhiteSpaceTokeniser.
@@ -90,24 +93,7 @@ public final class ChemistryPOSTagger {
 	public WhiteSpaceTokeniser getWhiteSpaceTokeniser() {
 		return whiteSpaceTokeniser;
 	}
-
-	/**************************************
-	 * Setter method for runSpectraTagger.
-	 * runSpectraTagger is set to false by
-	 * default because of memory issues.
-	 * @param runSpectraTagger (boolean)
-	 ***************************************/
-	public void setRunSpectraTaggerFlag(boolean runSpectraTagger) {
-		this.runSpectraTaggerFlag = true;
-	}
 	
-	/********************************
-	 * Setter method for useOscarTokeniser.
-	 * @param useOscarTokeniser
-	 *********************************/
-	public void setUseOscarTokeniser(boolean useOscarTokeniser) {
-		this.useOscarTokeniser = useOscarTokeniser;
-	}
 	/**************************************
 	 * Getter method for RegexTagger.
 	 * @return regexTagger (RegexTagger)
@@ -115,15 +101,7 @@ public final class ChemistryPOSTagger {
 	public RegexTagger getRegexTagger() {
 		return regexTagger;
 	}
-
-	/**************************************
-	 * Setter method for RegexTagger.
-	 * @param regexTagger (RegexTagger)
-	 ***************************************/
-	public void setRegexTagger(final RegexTagger regexTagger) {
-		this.regexTagger = regexTagger;
-	}
-
+	
 	/**************************************
 	 * Getter method for OscarTagger.
 	 * @return oscarTagger (OscarTagger)
@@ -131,13 +109,8 @@ public final class ChemistryPOSTagger {
 	public OscarTagger getOscarTagger() {
 		return oscarTagger;
 	}
-	/**************************************
-	 * Setter method for OscarTagger.
-	 * @param oscarTagger (OscarTagger)
-	 ***************************************/
-	public void setOscarTagger(final OscarTagger oscarTagger) {
-		this.oscarTagger = oscarTagger;
-	}
+	
+	
 
 	/**************************************
 	 * Getter method for OpenNLPTagger.
@@ -147,24 +120,18 @@ public final class ChemistryPOSTagger {
 		return openNLPTagger;
 	}
 	
-	/**************************************
-	 * Setter method for OpenNLPTagger.
-	 * @param openNLPTagger (OpenNLPTagger)
-	 ***************************************/
-	public void setOpenNLPTagger(final OpenNLPTagger openNLPTagger) {
-		this.openNLPTagger = openNLPTagger;
-	}
 	
-
+	
 	/*****************************************************
 	 * Overloading Method for runTaggers with prioritiseOscar
-	 * set to True.
+	 * set to false and useOscarTokeniser set to true.
 	 * 
 	 * @param inputSentence(String)
 	 * @return POSContainer
 	 *****************************************************/
 	public POSContainer runTaggers(final String inputSentence) {
-		return runTaggers(inputSentence,false);
+		return runTaggers(inputSentence, DEFAULT_PRIORITISE_OSCAR,
+				DEFAULT_USE_OSCAR_TOKENISER, DEFAULT_USE_SPECTRA_TAGGER);
 	}
 	
 	/*****************************************************
@@ -173,10 +140,11 @@ public final class ChemistryPOSTagger {
 	 * Prioritises OSCAR tags if prioritiseOscar is True
 	 * else it prioritises regexTagger.
 	 *****************************************************/
-	public POSContainer runTaggers(String inputSentence,final boolean prioritiseOscar) {
+	public POSContainer runTaggers(String inputSentence, final boolean prioritiseOscar,
+			boolean useOscarTokeniser, boolean useSpectraTagger) {
 		
 		POSContainer posContainer = new POSContainer();
-		posContainer = normaliseAndTokeniseInput(inputSentence, posContainer);		
+		posContainer = normaliseAndTokeniseInput(inputSentence, posContainer, useOscarTokeniser, useSpectraTagger);		
 		posContainer = oscarTagger.runTagger(posContainer);
 		posContainer = regexTagger.runTagger(posContainer);
 		posContainer = openNLPTagger.runTagger(posContainer);
@@ -187,20 +155,23 @@ public final class ChemistryPOSTagger {
 		return posContainer;
 	}
 	
+	
+	
 	/*******************************************
 	 * Normalises the inputText, extracts the spectra if required and then passes it to the relevant tokeniser.
 	 * @param inputSentence (String)
 	 * @param posContainer  (POSContainer)
 	 * @return posContainer (POSContainer)
 	 */
-	private POSContainer normaliseAndTokeniseInput(String inputSentence,POSContainer posContainer) {
+	private POSContainer normaliseAndTokeniseInput(String inputSentence,POSContainer posContainer,
+			boolean useOscarTokeniser, boolean useSpectraTagger) {
 		inputSentence = Formatter.normaliseText(inputSentence);
 		posContainer.setInputText(inputSentence);
-		if (runSpectraTaggerFlag){
-		    posContainer = spectraTagger.runTagger(posContainer);
+		if (useSpectraTagger){
+		    posContainer = SpectraTagger.runTagger(posContainer);
 		}
 		if (useOscarTokeniser){
-			posContainer = oscarTokeniser.tokenise(posContainer);	
+			posContainer = oscarTokeniser.tokenise(posContainer);
 		}
 		else {
 			posContainer = whiteSpaceTokeniser.tokenise(posContainer);

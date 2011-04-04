@@ -66,7 +66,7 @@ public class ConverterTest {
 	}
 
 	private Document createTagged(String text) {
-		POSContainer posContainer = ChemistryPOSTagger.getInstance()
+		POSContainer posContainer = ChemistryPOSTagger.getDefaultInstance()
 				.runTaggers(text);
 		String tagged = posContainer.getTokenTagTupleAsString();
 		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
