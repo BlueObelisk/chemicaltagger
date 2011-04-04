@@ -15,7 +15,7 @@ import uk.ac.cam.ch.wwmm.oscar.document.TokenSequence;
  * @author lh359
  *
  *****************************************/
-public class WhiteSpaceTokeniser {
+public class WhiteSpaceTokeniser implements ChemicalTaggerTokeniser {
 	
 	
 	/*****************************
