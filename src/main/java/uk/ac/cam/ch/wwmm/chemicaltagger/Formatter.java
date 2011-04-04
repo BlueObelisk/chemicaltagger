@@ -26,7 +26,7 @@ public class Formatter {
 		String[] words = sentence.split(" ");
 		String abbreviationRegex = "−?[A-Z]+[a-z]*\\.";
 		String concatAmountRegex = "(\\d\\d+(m|k|µ)?(l|L|g|gram|mol|cm3)(s)?$)|(\\d(L|ml|mL|gram|mol|cm3)(s)?$)";
-		String concatTempRegex = "\\d+(\\xb0|&#0176|\\xc3\\x97|o|°|º)(C|c)";
+		String concatTempRegex = "\\d+(\\xb0|&#0176|\\xc3\\x97|o|\u00b0|\u00ba)(C|c)";
 		String hyphenDirectionNumber = "^[A-Z]\\-\\d+";
 		String slashDirectionNumber = "^[A-Z]\\/\\d*$";
 
@@ -47,7 +47,7 @@ public class Formatter {
 			string = string.replace(" ", "");
 			Matcher abbreviationMatcher = abbreviationPattern.matcher(string);
 			if ((string.endsWith(".")) && (!abbreviationMatcher.find())
-					&& (!abvList.contains(string))) {
+					&& (!abvList.contains(string.toLowerCase()))) {
 				if (!stopWordAfter(words, index, nextTokenList)) {
 					string = string.substring(0, string.length() - 1);
 					suffix = " ." + suffix;
@@ -60,6 +60,11 @@ public class Formatter {
 				suffix = " ;" + suffix;
 			}
 
+			/*
+			 * TODO Not convinced by this - in the regex there's a second
+			 * degree symbol, and inline unicode characters aren't a good 
+			 * idea
+			 */
 			if ((string.endsWith(".") && string.contains("°C"))) {
 				string = string.substring(0, string.length() - 1);
 				suffix = " ." + suffix;
