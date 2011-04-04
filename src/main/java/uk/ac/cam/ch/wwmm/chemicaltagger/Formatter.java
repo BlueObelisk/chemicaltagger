@@ -10,6 +10,18 @@ import org.xmlcml.euclid.Util;
 
 public class Formatter {
 	
+	private static final List<String> abvList = Arrays.asList("et. al. etc. e.g. i.e. vol. ca. wt. aq. mt.".split(" "));
+	private static final List<String> htmlList = Arrays.asList("gt; lt;".split(" "));
+	private static final List<String> nextTokenList = Arrays.asList("gram vol %".split(" "));
+	
+	private static final Pattern whitespacePattern = Pattern.compile("\\s+");
+	
+	private static final Pattern abbreviationPattern = Pattern.compile("−?[A-Z]+[a-z]*\\.");
+	private static final Pattern concatAmountPattern = Pattern.compile("(\\d\\d+(m|k|µ)?(l|L|g|gram|mol|cm3)(s)?$)|(\\d(L|ml|mL|gram|mol|cm3)(s)?$)");
+	private static final Pattern concatTempPattern = Pattern.compile("\\d+(\\xb0|&#0176|\\xc3\\x97|o|\u00b0|\u00ba)(C|c)");
+	private static final Pattern concatHyphenDirectionPattern = Pattern.compile("^[A-Z]\\-\\d+");
+	private static final Pattern concatSlashDirectionPattern = Pattern.compile("^[A-Z]\\/\\d*$");
+	
 	/************************************
 	 * Normalises sentences.
 	 * Adds spaces between characters where required.
@@ -18,28 +30,13 @@ public class Formatter {
 	 *************************************/
 	public static String normaliseText(String sentence){
 		StringBuilder newSentence = new StringBuilder();
-		sentence = sentence.replaceAll("\\s+", " ");
+		sentence = whitespacePattern.matcher(sentence).replaceAll(" "); 
 		sentence = sentence.replace("%", " %").replace(";", " ;")
 				.replace(":", " : ");
 
 		sentence = sentence.replace("–", "-");
 		String[] words = sentence.split(" ");
-		String abbreviationRegex = "−?[A-Z]+[a-z]*\\.";
-		String concatAmountRegex = "(\\d\\d+(m|k|µ)?(l|L|g|gram|mol|cm3)(s)?$)|(\\d(L|ml|mL|gram|mol|cm3)(s)?$)";
-		String concatTempRegex = "\\d+(\\xb0|&#0176|\\xc3\\x97|o|\u00b0|\u00ba)(C|c)";
-		String hyphenDirectionNumber = "^[A-Z]\\-\\d+";
-		String slashDirectionNumber = "^[A-Z]\\/\\d*$";
 
-		List<String> abvList = Arrays.asList("et. al. etc. e.g. i.e. vol. ca. wt. aq. mt.".split(" "));
-		List<String> htmlList = Arrays.asList("gt; lt;".split(" "));
-		List<String> nextTokenList = Arrays.asList("gram vol %".split(" "));
-		Pattern abbreviationPattern = Pattern.compile(abbreviationRegex);
-		Pattern concatAmountPattern = Pattern.compile(concatAmountRegex);
-		Pattern concatTempPattern = Pattern.compile(concatTempRegex);
-		Pattern concatHyphenDirectionPattern = Pattern.compile(hyphenDirectionNumber);
-		Pattern concatSlashDirectionPattern = Pattern.compile(slashDirectionNumber);
-
-		
 		int index = 0;
 		for (String string : words) {
 			String prefix = " ";
