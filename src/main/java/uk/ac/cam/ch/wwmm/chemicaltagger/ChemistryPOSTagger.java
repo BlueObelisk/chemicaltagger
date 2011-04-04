@@ -25,12 +25,11 @@ public final class ChemistryPOSTagger {
 	static final boolean DEFAULT_USE_OSCAR_TOKENISER = true;
 	static final boolean DEFAULT_USE_SPECTRA_TAGGER = false;
 		
-	private OscarTokeniser oscarTokeniser;
-    private WhiteSpaceTokeniser whiteSpaceTokeniser;
+	
 	private OscarTagger oscarTagger;
 	private RegexTagger regexTagger;
 	private OpenNLPTagger openNLPTagger;
-	
+	private ChemicalTaggerTokeniser ctTokeniser;
 	
 	
 
@@ -54,22 +53,24 @@ public final class ChemistryPOSTagger {
 	/**
 	 * Custom constructor for setting up non-standard ChemicalTagger operations
 	 */
-	public ChemistryPOSTagger (OscarTokeniser oscarTokeniser, WhiteSpaceTokeniser whiteSpaceTokeniser,
-			OscarTagger oscarTagger, RegexTagger regexTagger,
-			OpenNLPTagger openNLPTagger) {
+	public ChemistryPOSTagger (ChemicalTaggerTokeniser ctTokeniser,OscarTagger oscarTagger, RegexTagger regexTagger,OpenNLPTagger openNLPTagger) {
 		
-		this.oscarTokeniser = oscarTokeniser;
-		this.whiteSpaceTokeniser = whiteSpaceTokeniser;
+		this.ctTokeniser = ctTokeniser;
 		this.oscarTagger = oscarTagger;
 		this.regexTagger = regexTagger;
 		this.openNLPTagger = openNLPTagger;
 	}
 	
+
 	
 	private ChemistryPOSTagger() {
 		Oscar oscar = new Oscar();
-		whiteSpaceTokeniser = new WhiteSpaceTokeniser();
-		oscarTokeniser = new OscarTokeniser(oscar);
+		if (DEFAULT_USE_OSCAR_TOKENISER){
+			ctTokeniser = new OscarTokeniser(oscar);
+		}		
+		else {
+			ctTokeniser = new WhiteSpaceTokeniser();
+		}
 		oscarTagger = new OscarTagger(oscar);
 		regexTagger = new RegexTagger();
 		openNLPTagger = OpenNLPTagger.getInstance();
@@ -78,21 +79,14 @@ public final class ChemistryPOSTagger {
 
 
 	/**************************************
-	 * Getter method for OscarTokeniser.
-	 * @return oscarTokeniser (OscarTokeniser)
+	 * Getter method for ChemicalTaggerTokeniser.
+	 * @return ctTokeniser (ChemicalTaggerTokeniser)
 	 ***************************************/
-	public OscarTokeniser getOscarTokeniser() {
-		return oscarTokeniser;
+	public ChemicalTaggerTokeniser getCTTokeniser() {
+		return ctTokeniser;
 	}
 	
 	
-	/**************************************
-	 * Getter method for WhiteSpaceTokeniser.
-	 * @return WhiteSpaceTokeniser (WhiteSpaceTokeniser)
-	 ***************************************/
-	public WhiteSpaceTokeniser getWhiteSpaceTokeniser() {
-		return whiteSpaceTokeniser;
-	}
 	
 	/**************************************
 	 * Getter method for RegexTagger.
@@ -130,8 +124,7 @@ public final class ChemistryPOSTagger {
 	 * @return POSContainer
 	 *****************************************************/
 	public POSContainer runTaggers(final String inputSentence) {
-		return runTaggers(inputSentence, DEFAULT_PRIORITISE_OSCAR,
-				DEFAULT_USE_OSCAR_TOKENISER, DEFAULT_USE_SPECTRA_TAGGER);
+		return runTaggers(inputSentence, DEFAULT_PRIORITISE_OSCAR, DEFAULT_USE_SPECTRA_TAGGER);
 	}
 	
 	/*****************************************************
@@ -140,11 +133,10 @@ public final class ChemistryPOSTagger {
 	 * Prioritises OSCAR tags if prioritiseOscar is True
 	 * else it prioritises regexTagger.
 	 *****************************************************/
-	public POSContainer runTaggers(String inputSentence, final boolean prioritiseOscar,
-			boolean useOscarTokeniser, boolean useSpectraTagger) {
+	public POSContainer runTaggers(String inputSentence, final boolean prioritiseOscar, boolean useSpectraTagger) {
 		
 		POSContainer posContainer = new POSContainer();
-		posContainer = normaliseAndTokeniseInput(inputSentence, posContainer, useOscarTokeniser, useSpectraTagger);		
+		posContainer = normaliseAndTokeniseInput(inputSentence, posContainer, useSpectraTagger);		
 		posContainer = oscarTagger.runTagger(posContainer);
 		posContainer = regexTagger.runTagger(posContainer);
 		posContainer = openNLPTagger.runTagger(posContainer);
@@ -161,21 +153,16 @@ public final class ChemistryPOSTagger {
 	 * Normalises the inputText, extracts the spectra if required and then passes it to the relevant tokeniser.
 	 * @param inputSentence (String)
 	 * @param posContainer  (POSContainer)
+	 * @param useSpectraTagger (boolean)
 	 * @return posContainer (POSContainer)
 	 */
-	private POSContainer normaliseAndTokeniseInput(String inputSentence,POSContainer posContainer,
-			boolean useOscarTokeniser, boolean useSpectraTagger) {
+	private POSContainer normaliseAndTokeniseInput(String inputSentence,POSContainer posContainer, boolean useSpectraTagger) {
 		inputSentence = Formatter.normaliseText(inputSentence);
 		posContainer.setInputText(inputSentence);
 		if (useSpectraTagger){
 		    posContainer = SpectraTagger.runTagger(posContainer);
 		}
-		if (useOscarTokeniser){
-			posContainer = oscarTokeniser.tokenise(posContainer);
-		}
-		else {
-			posContainer = whiteSpaceTokeniser.tokenise(posContainer);
-		}
+		posContainer = ctTokeniser.tokenise(posContainer);
 		return posContainer;
 	}
 		

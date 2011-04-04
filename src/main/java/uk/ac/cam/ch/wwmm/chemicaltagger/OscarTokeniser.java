@@ -9,7 +9,7 @@ import uk.ac.cam.ch.wwmm.oscar.Oscar;
 import uk.ac.cam.ch.wwmm.oscar.document.Token;
 import uk.ac.cam.ch.wwmm.oscar.document.TokenSequence;
 
-public class OscarTokeniser {
+public class OscarTokeniser implements ChemicalTaggerTokeniser {
 
 	Oscar oscar;
 
