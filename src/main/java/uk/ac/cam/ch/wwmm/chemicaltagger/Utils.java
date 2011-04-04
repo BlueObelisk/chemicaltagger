@@ -179,7 +179,7 @@ public class Utils {
 	 *****************************************/
 	public static Document runChemicalTagger(String text,
 			boolean runSpectraTagger) {
-		ChemistryPOSTagger chemPos = ChemistryPOSTagger.getInstance();
+		ChemistryPOSTagger chemPos = ChemistryPOSTagger.getDefaultInstance();
 
 		POSContainer posContainer = chemPos.runTaggers(text);
 

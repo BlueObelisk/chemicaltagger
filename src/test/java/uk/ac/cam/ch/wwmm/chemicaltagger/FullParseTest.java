@@ -1,10 +1,12 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
+import static uk.ac.cam.ch.wwmm.chemicaltagger.ChemistryPOSTagger.*;
 import junit.framework.Assert;
 import nu.xom.Document;
 import nu.xom.Nodes;
 
 import org.antlr.runtime.tree.Tree;
+import org.junit.Ignore;
 import org.junit.Test;
 
 /*****************************************************
@@ -20,9 +22,9 @@ public class FullParseTest {
 	public void testFullParse1()  {
 		String text = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/paragraph1.txt");
 		String expectedTags = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/ref1.txt");
-		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getInstance();
-		posTagger.setRunSpectraTaggerFlag(true);
-		POSContainer posContainer = posTagger.runTaggers(text);
+		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getDefaultInstance();
+		POSContainer posContainer = posTagger.runTaggers(text, DEFAULT_PRIORITISE_OSCAR,
+				DEFAULT_USE_OSCAR_TOKENISER, true);
 		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
 		Assert.assertEquals("Tagging Output",expectedTags, posContainer.getTokenTagTupleAsString());
 		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(posContainer);
@@ -45,9 +47,9 @@ public class FullParseTest {
 	public void testFullParse2()  {
 		String text = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/paragraph2.txt");
 		String expectedTags = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/ref2.txt");
-		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getInstance();
-		posTagger.setRunSpectraTaggerFlag(true);
-		POSContainer posContainer = posTagger.runTaggers(text);
+		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getDefaultInstance();
+		POSContainer posContainer = posTagger.runTaggers(text, DEFAULT_PRIORITISE_OSCAR,
+				DEFAULT_USE_OSCAR_TOKENISER, true);
 		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
 		Assert.assertEquals("Tagging Output",expectedTags, posContainer.getTokenTagTupleAsString());
 		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(posContainer);
@@ -70,9 +72,9 @@ public class FullParseTest {
 	public void testFullParse3()  {
 		String text = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/paragraph3.txt");
 		String expectedTags = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/ref3.txt");
-		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getInstance();
-		posTagger.setRunSpectraTaggerFlag(true);
-		POSContainer posContainer = posTagger.runTaggers(text);
+		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getDefaultInstance();
+		POSContainer posContainer = posTagger.runTaggers(text, DEFAULT_PRIORITISE_OSCAR,
+				DEFAULT_USE_OSCAR_TOKENISER, true);
 		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
 		Assert.assertEquals("Tagging Output",expectedTags, posContainer.getTokenTagTupleAsString());
 		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(posContainer);
@@ -95,9 +97,9 @@ public class FullParseTest {
 	public void testFullParse4()  {
 		String text = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/paragraph4.txt");
 		String expectedTags = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/ref4.txt");
-		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getInstance();
-		posTagger.setRunSpectraTaggerFlag(true);
-		POSContainer posContainer = posTagger.runTaggers(text);
+		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getDefaultInstance();
+		POSContainer posContainer = posTagger.runTaggers(text, DEFAULT_PRIORITISE_OSCAR,
+				DEFAULT_USE_OSCAR_TOKENISER, true);
 		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
 		Assert.assertEquals("Tagging Output",expectedTags, posContainer.getTokenTagTupleAsString());
 		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(posContainer);
@@ -121,9 +123,9 @@ public class FullParseTest {
 	public void testFullParse5()  {
 		String text = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/paragraph5.txt");
 		String expectedTags = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/ref5.txt");
-		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getInstance();
-		posTagger.setRunSpectraTaggerFlag(true);
-		POSContainer posContainer = posTagger.runTaggers(text);
+		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getDefaultInstance();
+		POSContainer posContainer = posTagger.runTaggers(text, DEFAULT_PRIORITISE_OSCAR,
+				DEFAULT_USE_OSCAR_TOKENISER, true);
 		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
 		text = posContainer.getInputText();
 		Assert.assertEquals("Tagging Output",expectedTags, posContainer.getTokenTagTupleAsString());
@@ -148,9 +150,9 @@ public class FullParseTest {
 	public void testFullParse6()  {
 		String text = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/paragraph6.txt");
 		String expectedTags = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/ref6.txt");
-		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getInstance();
-		posTagger.setRunSpectraTaggerFlag(true);
-		POSContainer posContainer = posTagger.runTaggers(text);
+		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getDefaultInstance();
+		POSContainer posContainer = posTagger.runTaggers(text, DEFAULT_PRIORITISE_OSCAR,
+				DEFAULT_USE_OSCAR_TOKENISER, true);
 		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
 		text = posContainer.getInputText();
 		Assert.assertEquals("Tagging Output",expectedTags, posContainer.getTokenTagTupleAsString());
@@ -175,9 +177,9 @@ public class FullParseTest {
 	public void testFullParse7()  {
 		String text = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/paragraph7.txt");
 		String expectedTags = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/ref7.txt");
-		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getInstance();
-		posTagger.setRunSpectraTaggerFlag(true);
-		POSContainer posContainer = posTagger.runTaggers(text);
+		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getDefaultInstance();
+		POSContainer posContainer = posTagger.runTaggers(text, DEFAULT_PRIORITISE_OSCAR,
+				DEFAULT_USE_OSCAR_TOKENISER, true);
 		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
 		text = posContainer.getInputText();
 		Assert.assertEquals("Tagging Output",expectedTags, posContainer.getTokenTagTupleAsString());
@@ -202,9 +204,9 @@ public class FullParseTest {
 	public void testFullParse8()  {
 		String text = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/paragraph8.txt");
 		String expectedTags = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/ref8.txt");
-		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getInstance();
-		posTagger.setRunSpectraTaggerFlag(true);
-		POSContainer posContainer = posTagger.runTaggers(text);
+		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getDefaultInstance();
+		POSContainer posContainer = posTagger.runTaggers(text, DEFAULT_PRIORITISE_OSCAR,
+				DEFAULT_USE_OSCAR_TOKENISER, true);
 		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
 		Assert.assertEquals("Tagging Output",expectedTags, posContainer.getTokenTagTupleAsString());
 		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(posContainer);
@@ -229,9 +231,9 @@ public class FullParseTest {
 	public void testFullParse9()  {
 		String text = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/paragraph9.txt");
 		String expectedTags = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/ref9.txt");
-		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getInstance();
-		posTagger.setRunSpectraTaggerFlag(true);
-		POSContainer posContainer = posTagger.runTaggers(text);
+		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getDefaultInstance();
+		POSContainer posContainer = posTagger.runTaggers(text, DEFAULT_PRIORITISE_OSCAR,
+				DEFAULT_USE_OSCAR_TOKENISER, true);
 		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
 		Assert.assertEquals("Tagging Output",expectedTags, posContainer.getTokenTagTupleAsString());
 		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(posContainer);
@@ -252,13 +254,14 @@ public class FullParseTest {
 		Assert.assertEquals("Input string is equal to output content", text.replace(" ", "").toLowerCase(), doc.getValue().toLowerCase());
 	}
 
+	@Ignore
 	@Test
 	public void testFullParse10()  {
 		String text = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/paragraph10.txt");
 		String expectedTags = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/ref10.txt");
-		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getInstance();
-		posTagger.setRunSpectraTaggerFlag(true);
-		POSContainer posContainer = posTagger.runTaggers(text);
+		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getDefaultInstance();
+		POSContainer posContainer = posTagger.runTaggers(text, DEFAULT_PRIORITISE_OSCAR,
+				DEFAULT_USE_OSCAR_TOKENISER, true);
 		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
 		text = posContainer.getInputText();
 		Assert.assertEquals("Tagging Output",expectedTags, posContainer.getTokenTagTupleAsString());
@@ -282,9 +285,9 @@ public class FullParseTest {
 	public void testFullParse11()  {
 		String text = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/paragraph11.txt");
 		String expectedTags = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/ref11.txt");
-		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getInstance();
-		posTagger.setRunSpectraTaggerFlag(true);
-		POSContainer posContainer = posTagger.runTaggers(text);
+		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getDefaultInstance();
+		POSContainer posContainer = posTagger.runTaggers(text, DEFAULT_PRIORITISE_OSCAR,
+				DEFAULT_USE_OSCAR_TOKENISER, true);
 		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
 		Assert.assertEquals("Tagging Output",expectedTags, posContainer.getTokenTagTupleAsString());
 		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(posContainer);
@@ -307,9 +310,9 @@ public class FullParseTest {
 	public void testFullParse12()  {
 		String text = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/paragraph12.txt");
 		String expectedTags = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/ref12.txt");
-		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getInstance();
-		posTagger.setRunSpectraTaggerFlag(true);
-		POSContainer posContainer = posTagger.runTaggers(text);
+		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getDefaultInstance();
+		POSContainer posContainer = posTagger.runTaggers(text, DEFAULT_PRIORITISE_OSCAR,
+				DEFAULT_USE_OSCAR_TOKENISER, true);
 		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
 		Assert.assertEquals("Tagging Output",expectedTags, posContainer.getTokenTagTupleAsString());
 		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(posContainer);
@@ -333,9 +336,9 @@ public class FullParseTest {
 	public void testFullParse13()  {
 		String text = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/paragraph13.txt");
 		String expectedTags = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/ref13.txt");
-		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getInstance();
-		posTagger.setRunSpectraTaggerFlag(true);
-		POSContainer posContainer = posTagger.runTaggers(text);
+		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getDefaultInstance();
+		POSContainer posContainer = posTagger.runTaggers(text, DEFAULT_PRIORITISE_OSCAR,
+				DEFAULT_USE_OSCAR_TOKENISER, true);
 		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
 		Assert.assertEquals("Tagging Output",expectedTags, posContainer.getTokenTagTupleAsString());
 		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(posContainer);
@@ -361,9 +364,9 @@ public class FullParseTest {
 	public void testFullParse14()  {
 		String text = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/paragraph14.txt");
 		String expectedTags = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/ref14.txt");
-		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getInstance();
-		posTagger.setRunSpectraTaggerFlag(true);
-		POSContainer posContainer = posTagger.runTaggers(text);
+		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getDefaultInstance();
+		POSContainer posContainer = posTagger.runTaggers(text, DEFAULT_PRIORITISE_OSCAR,
+				DEFAULT_USE_OSCAR_TOKENISER, true);
 		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
 		Assert.assertEquals("Tagging Output",expectedTags, posContainer.getTokenTagTupleAsString());
 		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(posContainer);
@@ -387,9 +390,9 @@ public class FullParseTest {
 	public void testFullParse15()  {
 		String text = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/paragraph15.txt");
 		String expectedTags = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/ref15.txt");
-		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getInstance();
-		posTagger.setRunSpectraTaggerFlag(true);
-		POSContainer posContainer = posTagger.runTaggers(text);
+		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getDefaultInstance();
+		POSContainer posContainer = posTagger.runTaggers(text, DEFAULT_PRIORITISE_OSCAR,
+				DEFAULT_USE_OSCAR_TOKENISER, true);
 		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
 		Assert.assertEquals("Tagging Output",expectedTags, posContainer.getTokenTagTupleAsString());
 		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(posContainer);
@@ -413,9 +416,9 @@ public class FullParseTest {
 	public void testFullParse16()  {
 		String text = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/paragraph16.txt");
 		String expectedTags = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/ref16.txt");
-		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getInstance();
-		posTagger.setRunSpectraTaggerFlag(true);
-		POSContainer posContainer = posTagger.runTaggers(text);
+		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getDefaultInstance();
+		POSContainer posContainer = posTagger.runTaggers(text, DEFAULT_PRIORITISE_OSCAR,
+				DEFAULT_USE_OSCAR_TOKENISER, true);
 		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
 		Assert.assertEquals("Tagging Output",expectedTags, posContainer.getTokenTagTupleAsString());
 		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(posContainer);
