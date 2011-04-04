@@ -28,6 +28,8 @@ public class Formatter {
 		String concatAmountRegex = "(\\d\\d+(m|k|µ)?(l|L|g|gram|mol|cm3)(s)?$)|(\\d(L|ml|mL|gram|mol|cm3)(s)?$)";
 		String concatTempRegex = "\\d+(\\xb0|&#0176|\\xc3\\x97|o|°|º)(C|c)";
 		String hyphenDirectionNumber = "^[A-Z]\\-\\d+";
+		String slashDirectionNumber = "^[A-Z]\\/\\d*$";
+
 		List<String> abvList = Arrays.asList("et. al. etc. e.g. i.e. vol. ca. wt. aq. mt.".split(" "));
 		List<String> htmlList = Arrays.asList("gt; lt;".split(" "));
 		List<String> nextTokenList = Arrays.asList("gram vol %".split(" "));
@@ -35,6 +37,8 @@ public class Formatter {
 		Pattern concatAmountPattern = Pattern.compile(concatAmountRegex);
 		Pattern concatTempPattern = Pattern.compile(concatTempRegex);
 		Pattern concatHyphenDirectionPattern = Pattern.compile(hyphenDirectionNumber);
+		Pattern concatSlashDirectionPattern = Pattern.compile(slashDirectionNumber);
+
 		
 		int index = 0;
 		for (String string : words) {
@@ -106,7 +110,10 @@ public class Formatter {
 			if (concatHyphenDirectionMatcher.find()) {
 				string = string.replace("-"," - ");
 			}
-			
+			Matcher concatSlashDirectionMatcher = concatSlashDirectionPattern.matcher(string);
+			if (concatSlashDirectionMatcher.find()) {
+				string = string.replace("/"," / ");
+			}
 			if (string.equals("K.") && index > 0) {
 				if (StringUtils.isNumeric(words[index - 1])) {
 					string = "K .";

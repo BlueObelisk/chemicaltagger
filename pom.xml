@@ -7,6 +7,20 @@
 	<artifactId>chemicalTagger</artifactId>
 	<name>chemicalTagger</name>
 	<version>0.0.1-SNAPSHOT</version>
+	<developers>
+                <developer>
+                        <id>lh359</id>
+                        <name>Lezan Hawizy</name>
+                </developer>
+                <developer>
+                        <id>dmj30</id>
+                        <name>David Jessop</name>
+                </developer>
+                <developer>
+                        <id>dl387</id>
+                        <name>Daniel Lowe</name>
+                </developer>
+	</developers>
 	<repositories>
 		<repository>
 			<id>ucc-repo</id>
@@ -29,8 +43,8 @@
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
-					<source>1.5</source>
-					<target>1.5</target>
+					<source>1.6</source>
+					<target>1.6</target>
 				</configuration>
 			</plugin>
 			<plugin>

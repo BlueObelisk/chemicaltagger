@@ -1,8 +1,8 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger;
-import static uk.ac.cam.ch.wwmm.chemicaltagger.ChemistryPOSTagger.*;
+import static uk.ac.cam.ch.wwmm.chemicaltagger.ChemistryPOSTagger.DEFAULT_PRIORITISE_OSCAR;
+import static uk.ac.cam.ch.wwmm.chemicaltagger.ChemistryPOSTagger.DEFAULT_USE_SPECTRA_TAGGER;
 import junit.framework.Assert;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 /************************************
@@ -11,7 +11,6 @@ import org.junit.Test;
  ************************************/
 public class WhiteSpaceTokeniserTest {
 	
-	@Ignore
 	@Test
 	public void testWhiteSpaceTokenisation() {
 		String sentence = "It was at Mt. xyz station (44°11' N-10°42' E) .";
@@ -23,7 +22,6 @@ public class WhiteSpaceTokeniserTest {
         Assert.assertEquals("WhiteSpace Tokenisation result",expected, posContainer.getTokenTagTupleAsString());
 	}
 	
-	@Ignore
 	@Test
 	public void testWhiteSpaceTokenisationWithChemicals() {
 		String sentence = "Water samples were collected from Mt. xyz .";
