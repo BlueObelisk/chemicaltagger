@@ -81,7 +81,9 @@ public class ASTtoXML {
 	 * @param actionPhraseDictionary (HashMap)
 	 * @return doc (Document)
 	 *******************************************/
-	public final Document convert(final Tree astTree, final boolean annotateActionPhrases,final HashMap<String, String> actionPhraseDictionary) {
+	public final Document convert(final Tree astTree, final boolean annotateActionPhrases,
+			final HashMap<String, String> actionPhraseDictionary) {
+		
 		Element root = new Element("Document");
 		Document doc = null;
 		if (astTree.getChildCount() > 0) {

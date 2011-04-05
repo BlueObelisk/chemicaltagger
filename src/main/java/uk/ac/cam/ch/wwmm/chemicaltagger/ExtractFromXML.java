@@ -8,6 +8,8 @@ import nu.xom.Document;
 import nu.xom.Element;
 import nu.xom.Nodes;
 import nu.xom.ParsingException;
+import nu.xom.ProcessingInstruction;
+import nu.xom.Text;
 import nu.xom.ValidityException;
 
 /********************************************
@@ -25,32 +27,29 @@ public class ExtractFromXML {
 	 *            (Element)
 	 * @return stringValue (String)
 	 ****************************************/
-	public static String getStringValue(Element xmlTag, String Delimiter) {
+	public static String getStringValue(Element xmlTag, String delimiter) {
 		StringBuilder stringValue = new StringBuilder();
 		for (int i = 0; i < xmlTag.getChildCount(); i++) {
-			if (xmlTag.getChild(i) instanceof nu.xom.Text) {
+			if (xmlTag.getChild(i) instanceof Text) {
 				stringValue.append(xmlTag.getChild(i).getValue().trim()
-						+ Delimiter);
+						+ delimiter);
 			} else {
-				if (!(xmlTag.getChild(i) instanceof nu.xom.ProcessingInstruction)) {
+				if (!(xmlTag.getChild(i) instanceof ProcessingInstruction)) {
 					Element sub = (Element) xmlTag.getChild(i);
 
 					if (sub.getChildCount() > 0) {
-						stringValue.append(getStringValue(sub, Delimiter));
+						stringValue.append(getStringValue(sub, delimiter));
 					} else if (hasMoreChildren(sub)) {
-						stringValue.append(getStringValue(sub, Delimiter));
+						stringValue.append(getStringValue(sub, delimiter));
 					} else {
-						stringValue.append(sub.getValue() + Delimiter);
+						stringValue.append(sub.getValue() + delimiter);
 					}
 				}
 			}
 		}
 
-		/***************
-		 * Replace the non-breaking space with a normal space
-		 */
-		return stringValue.toString().replace(" ", " ").replace("=", "=")
-				.replace("   ", " ");
+//		 Replace the non-breaking space with a normal space
+		return stringValue.toString().replace("\u00a0", " ").replace("   ", " ");
 	}
 
 	private static boolean hasMoreChildren(Element sub) {
