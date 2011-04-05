@@ -7,6 +7,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import nu.xom.Document;
 import nu.xom.Serializer;
@@ -14,6 +16,7 @@ import nu.xom.Serializer;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.jsoup.Jsoup;
+import org.jsoup.safety.Whitelist;
 import org.xmlcml.cml.base.CMLConstants;
 
 /********************************************
@@ -22,6 +25,8 @@ import org.xmlcml.cml.base.CMLConstants;
  * @author lh359, pm286
  ********************************************/
 public class Utils {
+	
+	private static final Pattern exponentXMLPattern = Pattern.compile("(-?\\d+)<sup>(-?\\d+)</sup>");
 
 	/******************************************
 	 * Replaces all non-XML characters with _
@@ -68,14 +73,31 @@ public class Utils {
 	/******************************************
 	 * Cleans up text from html characters.
 	 * 
-	 * @param paragraph
-	 *            (String)
+	 * @param paragraph (String)
 	 *******************************************/
 	public static String cleanHTMLText(String paragraph) {
 
 		String cleanedParagraph = StringEscapeUtils.unescapeHtml(paragraph);
-		cleanedParagraph = Jsoup.parse(cleanedParagraph).text();
+		cleanedParagraph = convertExponentials(cleanedParagraph);
+		cleanedParagraph = Jsoup.clean(cleanedParagraph,new Whitelist());
+		cleanedParagraph =Jsoup.parse(cleanedParagraph).text();
 		return cleanedParagraph;
+	}
+
+	/**********************************
+	 * Converts exponents in the format of 10<sup>16</sup> to 10 exp=16.
+	 * This is mainly to avoid loss when cleaning xml tags.
+	 * @param xmlExponential
+	 * @return cleanedParagraph (String).
+	 */
+	private static String convertExponentials(String xmlExponential) {
+		String nonXMLExponential = xmlExponential;
+		Matcher exponentialMatcher = exponentXMLPattern.matcher(xmlExponential);
+		if (exponentialMatcher.find()){
+		  nonXMLExponential = exponentialMatcher.replaceAll(exponentialMatcher.group(1)+"^"+exponentialMatcher.group(2));
+		  
+		}
+		return nonXMLExponential;
 	}
 
 	/***********************************************************
