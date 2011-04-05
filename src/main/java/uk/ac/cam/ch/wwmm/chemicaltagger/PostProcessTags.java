@@ -83,14 +83,14 @@ public class PostProcessTags {
 				List<String> afterListNN = Arrays.asList("stop comma"
 						.split(" "));
 
-				if (stringbefore(beforeList, i, combinedTags)
-						&& (i == combinedTags.size() || stringafter(
+				if (stringBefore(beforeList, i, combinedTags)
+						&& (i == combinedTags.size() || stringAfter(
 								afterListNN, i, combinedTags))
 						&& !currentTag.toLowerCase().startsWith("nn-"))
 					newTag = "NN";
 
-				else if (stringbefore(beforeList, i, combinedTags)
-						&& (stringafter(afterListJJ, i, combinedTags) && !currentTag
+				else if (stringBefore(beforeList, i, combinedTags)
+						&& (stringAfter(afterListJJ, i, combinedTags) && !currentTag
 								.toLowerCase().startsWith("nn-chementity"))) {
 					newTag = "JJ-CHEM";
 				}
@@ -103,10 +103,10 @@ public class PostProcessTags {
 			List<String> afterList = Arrays.asList("in-of");
 			List<String> notafterList = Arrays.asList("nn-time");
 
-			if (stringbefore(beforeList, i, combinedTags)
-					&& (stringafter(afterList, i, combinedTags) || i == combinedTags
+			if (stringBefore(beforeList, i, combinedTags)
+					&& (stringAfter(afterList, i, combinedTags) || i == combinedTags
 							.size())) {
-				if (!stringafter(notafterList, i, combinedTags))
+				if (!stringAfter(notafterList, i, combinedTags))
 					newTag = "NN-CHEMENTITY";
 			}
 			if (i != 0) {
@@ -123,8 +123,8 @@ public class PostProcessTags {
 			List<String> beforeList = Arrays.asList("dt-the dt".split(" "));
 			List<String> afterList = Arrays.asList("vb".split(" "));
 
-			if (stringbefore(beforeList, i, combinedTags)
-					&& (stringafterStartsWith(afterList, i, combinedTags))) {
+			if (stringBefore(beforeList, i, combinedTags)
+					&& (stringAfterStartsWith(afterList, i, combinedTags))) {
 				newTag = "NN-CHEMENTITY";
 			}
 		}
@@ -141,12 +141,12 @@ public class PostProcessTags {
 
 			List<String> afterList = Arrays
 					.asList("oscar-cm nns nn-chementity oscar-cj jj-chem nnp"
-							.split(" "));
+						.split(" "));
 			List<String> beforeList = Arrays
 					.asList("dt rb rb-conj dt-the stop in-with in-of in-under"
 							.split(" "));
-			if (stringafter(afterList, i, combinedTags)
-					&& stringbefore(beforeList, i, combinedTags)) {
+			if (stringAfter(afterList, i, combinedTags)
+					&& stringBefore(beforeList, i, combinedTags)) {
 				newTag = "JJ-CHEM";
 			}
 
@@ -155,11 +155,11 @@ public class PostProcessTags {
 		if (currentTag.toLowerCase().startsWith("vb-yield")) {
 
 			List<String> beforeList = Arrays.asList("nn-percent");
-			if (stringbefore(beforeList, i, combinedTags)) {
+			if (stringBefore(beforeList, i, combinedTags)) {
 				newTag = "NN-YIELD";
 			}
 			List<String> afterList = Arrays.asList("nn-chementity");
-			if (stringafter(afterList, i, combinedTags))
+			if (stringAfter(afterList, i, combinedTags))
 				newTag = "JJ-COMPOUND";
 		}
 
@@ -167,7 +167,7 @@ public class PostProcessTags {
 
 			List<String> beforeList = Arrays.asList("oscar-cj jj-chem"
 					.split(" "));
-			if (stringbefore(beforeList, i, combinedTags)) {
+			if (stringBefore(beforeList, i, combinedTags)) {
 				newTag = "NN";
 			}
 
@@ -178,9 +178,9 @@ public class PostProcessTags {
 			List<String> beforeList = Arrays.asList("to");
 			List<String> beforebeforeList = Arrays.asList("vb-heat");
 			List<String> afterList = Arrays.asList("stop");
-			if (stringbefore(beforeList, i, combinedTags)
-					&& stringbefore(beforebeforeList, i - 1, combinedTags)
-					&& stringafter(afterList, i, combinedTags)) {
+			if (stringBefore(beforeList, i, combinedTags)
+					&& stringBefore(beforebeforeList, i - 1, combinedTags)
+					&& stringAfter(afterList, i, combinedTags)) {
 				newTag = "NN";
 			}
 
@@ -190,7 +190,7 @@ public class PostProcessTags {
 
 			List<String> afterList = Arrays.asList("in-of");
 
-			if (!stringafter(afterList, i, combinedTags))
+			if (!stringAfter(afterList, i, combinedTags))
 				newTag = "NN-CHEMENTITY";
 
 		}
@@ -208,14 +208,14 @@ public class PostProcessTags {
 					.split(" "));
 
 			List<String> notList = Arrays.asList("in-of");
-			if (stringafter(afterList, i, combinedTags)
-					&& stringbefore(beforeList, i, combinedTags)) {
+			if (stringAfter(afterList, i, combinedTags)
+					&& stringBefore(beforeList, i, combinedTags)) {
 				newTag = "JJ";
 			}
 
 			else if (currentToken.toLowerCase().endsWith("ing")
-					&& stringbefore(beforeList, i, combinedTags)
-					&& !stringafter(notList, i, combinedTags)) {
+					&& stringBefore(beforeList, i, combinedTags)
+					&& !stringAfter(notList, i, combinedTags)) {
 				newTag = "JJ-CHEM";
 			}
 
@@ -235,15 +235,15 @@ public class PostProcessTags {
 
 			if (i != 0) {
 				if (!tokenList.get(i - 1).equals("that")) {
-					if (stringafter(chemafterList, i, combinedTags)
-							& stringbefore(beforeList, i, combinedTags)) {
+					if (stringAfter(chemafterList, i, combinedTags)
+							& stringBefore(beforeList, i, combinedTags)) {
 						newTag = "JJ-CHEM";
 					}
 
-					else if (stringbefore(beforeList, i, combinedTags)
-							&& stringafter(afterList, i, combinedTags)) {
+					else if (stringBefore(beforeList, i, combinedTags)
+							&& stringAfter(afterList, i, combinedTags)) {
 						newTag = "JJ";
-					} else if (stringbefore(beforeList, i, combinedTags)
+					} else if (stringBefore(beforeList, i, combinedTags)
 							&& combinedTags.get(i + 1).toLowerCase()
 									.startsWith("nn")) {
 						newTag = "JJ";
@@ -281,8 +281,8 @@ public class PostProcessTags {
 					.asList("in-of jj nn-chementity comma".split(" "));
 			List<String> afterList = Arrays.asList("-lrb- stop comma"
 					.split(" "));
-			if (stringbefore(beforeList, i, combinedTags)
-					&& (stringafter(afterList, i, combinedTags) || i == combinedTags
+			if (stringBefore(beforeList, i, combinedTags)
+					&& (stringAfter(afterList, i, combinedTags) || i == combinedTags
 							.size())) {
 				newTag = "CD-ALPHANUM";
 			}
@@ -292,8 +292,8 @@ public class PostProcessTags {
 				|| currentToken.toLowerCase().startsWith("ii")) {
 			List<String> beforeList = Arrays.asList("-lrb-");
 			List<String> afterList = Arrays.asList("-rrb-");
-			if (stringbefore(beforeList, i, combinedTags)
-					&& (stringafter(afterList, i, combinedTags))) {
+			if (stringBefore(beforeList, i, combinedTags)
+					&& (stringAfter(afterList, i, combinedTags))) {
 				newTag = "CD-ALPHANUM";
 			}
 		}
@@ -302,7 +302,7 @@ public class PostProcessTags {
 			List<String> afterList = Arrays.asList("stop comma -lrb-"
 					.split(" "));
 
-			if (stringafter(afterList, i, combinedTags)
+			if (stringAfter(afterList, i, combinedTags)
 					&& !currentToken.contains(".") && currentToken.length() < 4) {
 				newTag = "CD-ALPHANUM";
 			}
@@ -312,7 +312,7 @@ public class PostProcessTags {
 
 			List<String> afterList = Arrays.asList("nn-vol nn-mass".split(" "));
 
-			if (stringafter(afterList, i, combinedTags)
+			if (stringAfter(afterList, i, combinedTags)
 					|| currentToken.contains(".") || currentToken.length() > 4) {
 				newTag = "CD";
 			}
@@ -347,7 +347,7 @@ public class PostProcessTags {
 			List<String> beforeList = Arrays.asList("stop");
 			if (currentToken.endsWith("s")
 					&& Character.isUpperCase(currentToken.charAt(0))) {
-				if (!stringbefore(beforeList, i, combinedTags))
+				if (!stringBefore(beforeList, i, combinedTags))
 					newTag = "NPS";
 			}
 		}
@@ -365,7 +365,7 @@ public class PostProcessTags {
 
 			List<String> beforeList = Arrays.asList("stop");
 			if (Character.isUpperCase(currentToken.charAt(0))
-					&& !stringbefore(beforeList, i, combinedTags))
+					&& !stringBefore(beforeList, i, combinedTags))
 				newTag = "NNP";
 
 		}
@@ -379,8 +379,8 @@ public class PostProcessTags {
 			List<String> afterList = Arrays.asList("nnp nns nn nnp-acronym"
 					.split(" "));
 			if (Character.isUpperCase(currentToken.charAt(0))
-					&& !stringbefore(beforeList, i, combinedTags)
-					&& stringafter(afterList, i, combinedTags))
+					&& !stringBefore(beforeList, i, combinedTags)
+					&& stringAfter(afterList, i, combinedTags))
 				newTag = "JJ-CHEM";
 
 		}
@@ -388,7 +388,7 @@ public class PostProcessTags {
 
 			List<String> beforeList = Arrays.asList("cd");
 
-			if (stringbefore(beforeList, i, combinedTags)) {
+			if (stringBefore(beforeList, i, combinedTags)) {
 				newTag = "NN-MOLAR";
 			}
 		}
@@ -397,7 +397,7 @@ public class PostProcessTags {
 
 			List<String> beforeList = Arrays.asList("cd");
 
-			if (stringbefore(beforeList, i, combinedTags)) {
+			if (stringBefore(beforeList, i, combinedTags)) {
 				newTag = "NN-TEMP";
 			}
 		}
@@ -408,7 +408,7 @@ public class PostProcessTags {
 
 			List<String> afterList = Arrays.asList("vbd");
 
-			if (stringafter(afterList, i, combinedTags)) {
+			if (stringAfter(afterList, i, combinedTags)) {
 				newTag = "NN-CHEMENTITY";
 			}
 		}
@@ -418,8 +418,8 @@ public class PostProcessTags {
 					.split(" "));
 			List<String> afterList = Arrays.asList("in-of");
 
-			if (!stringbefore(beforeList, i, combinedTags)
-					&& (stringafter(afterList, i, combinedTags))) {
+			if (!stringBefore(beforeList, i, combinedTags)
+					&& (stringAfter(afterList, i, combinedTags))) {
 				newTag = "NN";
 			}
 		}
@@ -427,7 +427,7 @@ public class PostProcessTags {
 		if (i != 0 && currentTag.toLowerCase().startsWith("nn-add")) {
 			List<String> beforeList = Arrays.asList("stop comma colon"
 					.split(" "));
-			if (!stringbefore(beforeList, i, combinedTags)
+			if (!stringBefore(beforeList, i, combinedTags)
 					&& Character.isUpperCase(currentToken.charAt(0)))
 				newTag = "NNP";
 
@@ -436,7 +436,7 @@ public class PostProcessTags {
 		if (currentTag.toLowerCase().startsWith("jj")
 				|| currentTag.toLowerCase().startsWith("nnp")) {
 			List<String> afterList = Arrays.asList("nn-campaign");
-			if ((stringafter(afterList, i, combinedTags) || string2after(
+			if ((stringAfter(afterList, i, combinedTags) || string2after(
 					afterList, i, combinedTags))
 					&& Character.isUpperCase(currentToken.charAt(0)))
 				newTag = "NNP";
@@ -446,8 +446,8 @@ public class PostProcessTags {
 			List<String> beforeList = Arrays.asList("in-in");
 			List<String> afterList = Arrays.asList("comma stop".split(" "));
 
-			if (stringbefore(beforeList, i, combinedTags)
-					&& (stringafter(afterList, i, combinedTags))) {
+			if (stringBefore(beforeList, i, combinedTags)
+					&& (stringAfter(afterList, i, combinedTags))) {
 				newTag = "NN";
 			}
 		}
@@ -457,7 +457,7 @@ public class PostProcessTags {
 			List<String> afterList = Arrays.asList("in-from");
 
 			List<String> after2List = Arrays.asList("nnp");
-			if (stringafter(afterList, i, combinedTags)
+			if (stringAfter(afterList, i, combinedTags)
 					&& (string2after(after2List, i, combinedTags))) {
 				newTag = "VB";
 			}
@@ -467,8 +467,8 @@ public class PostProcessTags {
 			List<String> afterList = Arrays.asList("nn-apparatus");
 			List<String> beforeList = Arrays
 					.asList("dt nn-apparatus rb-conj dt-the".split(" "));
-			if (stringafter(afterList, i, combinedTags)
-					&& stringbefore(beforeList, i, combinedTags)) {
+			if (stringAfter(afterList, i, combinedTags)
+					&& stringBefore(beforeList, i, combinedTags)) {
 				newTag = "JJ-CHEM";
 			}
 
@@ -478,7 +478,7 @@ public class PostProcessTags {
 				& currentTag.toLowerCase().equals("nn-time")) {
 
 			List<String> beforeList = Arrays.asList("in-in");
-			if (stringbefore(beforeList, i, combinedTags)) {
+			if (stringBefore(beforeList, i, combinedTags)) {
 				newTag = "NN";
 			}
 
@@ -496,18 +496,17 @@ public class PostProcessTags {
 	 * @param combinedTags
 	 * @return before(boolean)
 	 ***********************************/
-	private boolean stringbefore(List<String> beforeList, int index,
+	private boolean stringBefore(List<String> beforeList, int index,
 			List<String> combinedTags) {
-		boolean before = false;
+		
 		if (index != 0) {
 			int beforeIndex = index - 1;
 			if (beforeList
 					.contains(combinedTags.get(beforeIndex).toLowerCase())) {
-				before = true;
+				return true;
 			}
-
 		}
-		return before;
+		return false;
 	}
 
 	/**********************************
@@ -518,18 +517,16 @@ public class PostProcessTags {
 	 * @param combinedTags
 	 * @return
 	 **********************************/
-	private boolean stringafter(List<String> afterList, int index,
+	private boolean stringAfter(List<String> afterList, int index,
 			List<String> combinedTags) {
-		boolean after = false;
-		int afterIndex = index + 1;
 
+		int afterIndex = index + 1;
 		if (afterIndex < combinedTags.size()) {
 			if (afterList.contains(combinedTags.get(afterIndex).toLowerCase())) {
-				after = true;
+				return true;
 			}
-
 		}
-		return after;
+		return false;
 	}
 
 	/**********************************
@@ -541,20 +538,18 @@ public class PostProcessTags {
 	 * @param combinedTags
 	 * @return
 	 **********************************/
-	private boolean stringafterStartsWith(List<String> afterList, int index,
+	private boolean stringAfterStartsWith(List<String> afterList, int index,
 			List<String> combinedTags) {
-		boolean after = false;
+		
 		int afterIndex = index + 1;
-
 		if (afterIndex < combinedTags.size()) {
 			for (String nextWord : afterList) {
-
 				if (combinedTags.get(afterIndex).toLowerCase().startsWith(nextWord)) {
-					after = true;
+					return true;
 				}
 			}
 		}
-		return after;
+		return false;
 	}
 
 	/**********************************
@@ -567,16 +562,14 @@ public class PostProcessTags {
 	 **********************************/
 	private boolean string2after(List<String> afterList, int index,
 			List<String> combinedTags) {
-		boolean after = false;
-		int after2Index = index + 2;
 
+		int after2Index = index + 2;
 		if (after2Index < combinedTags.size()) {
 			if (afterList.contains(combinedTags.get(after2Index).toLowerCase())) {
-				after = true;
+				return true;
 			}
-
 		}
-		return after;
+		return false;
 	}
 
 }
