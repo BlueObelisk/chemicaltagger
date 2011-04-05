@@ -10,7 +10,7 @@ import org.xmlcml.euclid.Util;
 
 public class Formatter {
 	
-	private static final List<String> abvList = Arrays.asList("et. al. etc. e.g. i.e. vol. ca. wt. aq. mt.".split(" "));
+	private static final List<String> abvList = Arrays.asList("et. al. etc. e.g. i.e. vol. ca. wt. aq. mt. e.g.:".split(" "));
 	private static final List<String> htmlList = Arrays.asList("gt; lt;".split(" "));
 	private static final List<String> nextTokenList = Arrays.asList("gram vol %".split(" "));
 	
