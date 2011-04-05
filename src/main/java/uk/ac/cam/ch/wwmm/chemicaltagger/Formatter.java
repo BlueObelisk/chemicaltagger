@@ -18,7 +18,7 @@ public class Formatter {
 	
 	private static final Pattern abbreviationPattern = Pattern.compile("−?[A-Z]+[a-z]*\\.");
 	private static final Pattern concatAmountPattern = Pattern.compile("(\\d\\d+(m|k|µ)?(l|L|g|gram|mol|cm3)(s)?$)|(\\d(L|ml|mL|gram|mol|cm3)(s)?$)");
-	private static final Pattern concatTempPattern = Pattern.compile("\\d+(\\xb0|&#0176|\\xc3\\x97|o|\u00b0|\u00ba)(C|c)");
+	private static final Pattern concatTempPattern = Pattern.compile("\\d+(o|\u00b0|\u00ba)(C|c)");
 	private static final Pattern concatHyphenDirectionPattern = Pattern.compile("^[A-Z]\\-\\d+");
 	private static final Pattern concatSlashDirectionPattern = Pattern.compile("^[A-Z]\\/\\d*$");
 	
@@ -30,18 +30,17 @@ public class Formatter {
 	 *************************************/
 	public static String normaliseText(String sentence){
 		StringBuilder newSentence = new StringBuilder();
-		sentence = whitespacePattern.matcher(sentence).replaceAll(" "); 
 		sentence = sentence.replace("%", " %").replace(";", " ;")
 				.replace(":", " : ");
 
 		sentence = sentence.replace("–", "-");
-		String[] words = sentence.split(" ");
+		String[] words = whitespacePattern.split(sentence);
 
 		int index = 0;
 		for (String string : words) {
 			String prefix = " ";
 			String suffix = " ";
-			string = string.replace(" ", "");
+			
 			Matcher abbreviationMatcher = abbreviationPattern.matcher(string);
 			if ((string.endsWith(".")) && (!abbreviationMatcher.find())
 					&& (!abvList.contains(string.toLowerCase()))) {
@@ -57,12 +56,7 @@ public class Formatter {
 				suffix = " ;" + suffix;
 			}
 
-			/*
-			 * TODO Not convinced by this - in the regex there's a second
-			 * degree symbol, and inline unicode characters aren't a good 
-			 * idea
-			 */
-			if ((string.endsWith(".") && string.contains("°C"))) {
+			if (string.endsWith(".") && (string.contains("\u00b0") || string.contains("\u00ba"))) {
 				string = string.substring(0, string.length() - 1);
 				suffix = " ." + suffix;
 			}
