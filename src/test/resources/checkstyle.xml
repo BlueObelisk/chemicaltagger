@@ -12,6 +12,7 @@
 	</module>
 
 	<module name="TreeWalker">
+        <property name="cacheFile" value="target/cachefile"/>
 
 		<module name="JavadocMethod" />
 		<module name="JavadocType" />
@@ -60,7 +61,6 @@
 		<module name="DoubleCheckedLocking" />
 		<module name="EmptyStatement" />
 		<module name="EqualsHashCode" />
-		<module name="HiddenField" />
 		<module name="IllegalInstantiation" />
 		<module name="InnerAssignment" />
 		<module name="MagicNumber" />

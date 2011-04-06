@@ -1,8 +1,16 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
-
+/**************************************
+ * An interface for tokenisers.
+ * @author lh359
+ *
+ */
 public interface ChemicalTaggerTokeniser {
-
-	public POSContainer tokenise(POSContainer posContainer) ;
+    /****************************
+     * Tokeniser method.
+     * @param posContainer (POSContainer)
+     * @return posContainer  (POSContainer)
+     */
+	POSContainer tokenise(POSContainer posContainer) ;
 	
 }

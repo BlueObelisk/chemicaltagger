@@ -10,17 +10,17 @@ import org.xmlcml.euclid.Util;
 
 public class Formatter {
 	
-	private static final List<String> abvList = Arrays.asList("et. al. etc. e.g. i.e. vol. ca. wt. aq. mt. e.g.:".split(" "));
-	private static final List<String> htmlList = Arrays.asList("gt; lt;".split(" "));
-	private static final List<String> nextTokenList = Arrays.asList("gram vol %".split(" "));
+	private static final List<String> ABV_LIST = Arrays.asList("et. al. etc. e.g. i.e. vol. ca. wt. aq. mt. e.g.:".split(" "));
+	private static final List<String> HTML_LIST = Arrays.asList("gt; lt;".split(" "));
+	private static final List<String> NEXTTOKEN_LIST = Arrays.asList("gram vol %".split(" "));
 	
-	private static final Pattern whitespacePattern = Pattern.compile("\\s+");
+	private static final Pattern WHITESPACE_PATTERN = Pattern.compile("\\s+");
 	
-	private static final Pattern abbreviationPattern = Pattern.compile("−?[A-Z]+[a-z]*\\.");
-	private static final Pattern concatAmountPattern = Pattern.compile("(\\d\\d+(m|k|µ)?(l|L|g|gram|mol|cm3)(s)?$)|(\\d(L|ml|mL|gram|mol|cm3)(s)?$)");
-	private static final Pattern concatTempPattern = Pattern.compile("\\d+(o|\u00b0|\u00ba)(C|c)");
-	private static final Pattern concatHyphenDirectionPattern = Pattern.compile("^[A-Z]\\-\\d+");
-	private static final Pattern concatSlashDirectionPattern = Pattern.compile("^[A-Z]\\/\\d*$");
+	private static final Pattern ABBREVIATION_PATTERN = Pattern.compile("−?[A-Z]+[a-z]*\\.");
+	private static final Pattern CONCAT_AMOUNT_PATTERN = Pattern.compile("(\\d\\d+(m|k|µ)?(l|L|g|gram|mol|cm3)(s)?$)|(\\d(L|ml|mL|gram|mol|cm3)(s)?$)");
+	private static final Pattern CONCAT_TEMP_PATTERN = Pattern.compile("\\d+(o|\u00b0|\u00ba)(C|c)");
+	private static final Pattern CONCAT_HYPHENED_DIRECTION_PATTERN = Pattern.compile("^[A-Z]\\-\\d+");
+	private static final Pattern CONCAT_SLASH_DIRECTION_PATTERN = Pattern.compile("^[A-Z]\\/\\d*$");
 	
 	/************************************
 	 * Normalises sentences.
@@ -34,23 +34,23 @@ public class Formatter {
 				.replace(":", " : ");
 
 		sentence = sentence.replace("–", "-");
-		String[] words = whitespacePattern.split(sentence);
+		String[] words = WHITESPACE_PATTERN.split(sentence);
 
 		int index = 0;
 		for (String string : words) {
 			String prefix = " ";
 			String suffix = " ";
 			
-			Matcher abbreviationMatcher = abbreviationPattern.matcher(string);
+			Matcher abbreviationMatcher = ABBREVIATION_PATTERN.matcher(string);
 			if ((string.endsWith(".")) && (!abbreviationMatcher.find())
-					&& (!abvList.contains(string.toLowerCase()))) {
-				if (!stopWordAfter(words, index, nextTokenList)) {
+					&& (!ABV_LIST.contains(string.toLowerCase()))) {
+				if (!stopWordAfter(words, index, NEXTTOKEN_LIST)) {
 					string = string.substring(0, string.length() - 1);
 					suffix = " ." + suffix;
 				}
 			}
 
-			if ((string.endsWith(";") && !htmlList.contains(string
+			if ((string.endsWith(";") && !HTML_LIST.contains(string
 					.toLowerCase()))) {
 				string = string.substring(0, string.length() - 1);
 				suffix = " ;" + suffix;
@@ -93,20 +93,20 @@ public class Formatter {
 				suffix = " )" + suffix;
 			}
 
-			Matcher concatAmountMatcher = concatAmountPattern.matcher(string);
+			Matcher concatAmountMatcher = CONCAT_AMOUNT_PATTERN.matcher(string);
 			if (concatAmountMatcher.find()) {
 				string = splitAmounts(string);
 			}
 
-			Matcher concatTempMatcher = concatTempPattern.matcher(string);
+			Matcher concatTempMatcher = CONCAT_TEMP_PATTERN.matcher(string);
 			if (concatTempMatcher.find()) {
 				string = splitTemperature(string);
 			}
-			Matcher concatHyphenDirectionMatcher = concatHyphenDirectionPattern.matcher(string);
+			Matcher concatHyphenDirectionMatcher = CONCAT_HYPHENED_DIRECTION_PATTERN.matcher(string);
 			if (concatHyphenDirectionMatcher.find()) {
 				string = string.replace("-"," - ");
 			}
-			Matcher concatSlashDirectionMatcher = concatSlashDirectionPattern.matcher(string);
+			Matcher concatSlashDirectionMatcher = CONCAT_SLASH_DIRECTION_PATTERN.matcher(string);
 			if (concatSlashDirectionMatcher.find()) {
 				string = string.replace("/"," / ");
 			}
