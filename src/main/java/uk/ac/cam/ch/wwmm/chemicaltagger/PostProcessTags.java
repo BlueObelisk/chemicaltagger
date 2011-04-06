@@ -73,7 +73,8 @@ public class PostProcessTags {
 					&& !currentTag.toLowerCase().startsWith("nn-pressure")
 					&& !currentTag.toLowerCase().startsWith("nn-time")
 					&& !currentTag.toLowerCase().startsWith("nn-molar")
-					&& !currentTag.toLowerCase().startsWith("nn-vacuum")) {
+					&& !currentTag.toLowerCase().startsWith("nn-vacuum")
+				    && !currentTag.toLowerCase().startsWith("nnp"))  {
 				List<String> beforeList = Arrays.asList("dt jj jj-chem dt-the"
 						.split(" "));
 				List<String> afterListJJ = Arrays
