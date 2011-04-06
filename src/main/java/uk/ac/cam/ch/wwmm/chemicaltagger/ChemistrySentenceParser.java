@@ -65,33 +65,41 @@ public class ChemistrySentenceParser extends Thread {
 
 	/********************************************
 	 * Getter method for taggedTokenInputStream.
+	 * @return taggedTokenInStream (InputStream)
 	 ******************************************/
-	public InputStream getTaggedTokenInStream() {
+	public final InputStream getTaggedTokenInStream() {
 		return taggedTokenInStream;
 	}
 
 	/*******************************************
 	 * Setter method for taggedTokenInputStream.
-	 *****************************************/
-	public void setTaggedTokenInStream(final InputStream taggedTokenInStream) {
+	 * 
+	 * @param taggedTokenInStream (InputStream)
+	 ***********************************/
+	public final void setTaggedTokenInStream(final InputStream taggedTokenInStream) {
 		this.taggedTokenInStream = taggedTokenInStream;
 	}
 
 	/**************************************
 	 * Getter method for parseTree.
+	 * @return parseTree (Tree)
 	 **************************************/
-	public Tree getParseTree() {
+	public final Tree getParseTree() {
 		return parseTree;
 	}
 
 	/**************************************
 	 * Setter method for parseTree.
+	 * @param parseTree (Tree)
 	 **************************************/
-	public void setParseTree(final Tree parseTree) {
+	public final void setParseTree(final Tree parseTree) {
 		this.parseTree = parseTree;
 	}
 
-	public void run() {
+	/******************
+	 * Runs the thread.
+	 */
+	public final void run() {
 		parseTags();
 	}
 
@@ -99,13 +107,13 @@ public class ChemistrySentenceParser extends Thread {
 	 * Passes an inputstream to ANTLR and produces
 	 * a parse tree.
 	 * 
-	 * @return parseTree (Tree)
 	 *******************************************/
 	public void parseTags() {
 		ChemicalChunkerLexer lexer = null;
 
-		if (taggedTokenInStream == null)
+		if (taggedTokenInStream == null) {
 			parseTree = null;
+		}	
 		else {
 			ANTLRInputStream input;
 			try {

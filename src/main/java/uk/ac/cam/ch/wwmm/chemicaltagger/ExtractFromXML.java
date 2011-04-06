@@ -10,24 +10,26 @@ import nu.xom.Nodes;
 import nu.xom.ParsingException;
 import nu.xom.ProcessingInstruction;
 import nu.xom.Text;
-import nu.xom.ValidityException;
 
 /********************************************
- * Extracts text from XML Patents
+ * Extracts text from XML Patents.
  * 
  * @author lh359
  ********************************************/
-public class ExtractFromXML {
+public final class ExtractFromXML {
 
-
+	/**************************
+	 * Hides Utility Class Constructor.
+	 */
+    private ExtractFromXML(){};
 	/****************************************
-	 * Parses an XML files and saves the output into DocumentContainer
+	 * Parses an XML files and saves the output into DocumentContainer.
 	 * 
-	 * @param xmlTag
-	 *            (Element)
+	 * @param xmlTag (Element)
+	 * @param delimiter (String)
 	 * @return stringValue (String)
 	 ****************************************/
-	public static String getStringValue(Element xmlTag, String delimiter) {
+	public static String getStringValue(final Element xmlTag, final String delimiter) {
 		StringBuilder stringValue = new StringBuilder();
 		for (int i = 0; i < xmlTag.getChildCount(); i++) {
 			if (xmlTag.getChild(i) instanceof Text) {
@@ -52,7 +54,12 @@ public class ExtractFromXML {
 		return stringValue.toString().replace("\u00a0", " ").replace("   ", " ");
 	}
 
-	private static boolean hasMoreChildren(Element sub) {
+	/************************************
+	 *  Checks for child Nodes.
+	 * @param sub (Element)
+	 * @return boolean
+	 */
+	private static boolean hasMoreChildren(final Element sub) {
 
 		if (sub.getChildCount() == 0) {
 			return false;
@@ -66,17 +73,16 @@ public class ExtractFromXML {
 
 
 	/*********************************
-	 * Returns the content of a searchTag from an XML File
+	 * Returns the content of a searchTag from an XML File.
 	 * 
 	 * @param in (InputStream)
 	 * @param searchTag
 	 *            (String)
 	 * @return content (String)
-	 * @throws IOException 
 	 * @throws ParsingException 
-	 * @throws ValidityException 
+	 * @throws IOException 
 	 **********************************/
-	public static String getContent(InputStream in, String searchTag) throws ValidityException, ParsingException, IOException {
+	public static String getContent(final InputStream in, final String searchTag) throws ParsingException, IOException{
 
 		Document doc = new Builder().build(in);
 		Nodes sections = doc.query(searchTag);
@@ -98,8 +104,9 @@ public class ExtractFromXML {
 					} else {
 						content += " . " + cleanNode;
 					}
-				} else
+				} else {
 					content = cleanNode;
+				}	
 			}
 
 		}
