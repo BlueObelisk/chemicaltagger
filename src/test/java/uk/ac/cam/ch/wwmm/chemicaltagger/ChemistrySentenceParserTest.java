@@ -106,6 +106,7 @@ public class ChemistrySentenceParserTest {
 		ChemistrySentenceParser chemChunkParser = new ChemistrySentenceParser(in);
 		chemChunkParser.parseTags();
 		Document doc = chemChunkParser.makeXMLDocument();
+		
 		Assert.assertNull(doc);
 	}
 

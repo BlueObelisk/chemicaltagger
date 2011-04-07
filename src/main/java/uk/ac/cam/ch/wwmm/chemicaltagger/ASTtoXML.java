@@ -62,7 +62,7 @@ public class ASTtoXML {
 			}
 		}
 		else{
-			doc = new Document(root);
+			doc = null;
 		}
 		if (annotateActionPhrases) {
 			PostProcessTrees procTree = new PostProcessTrees();

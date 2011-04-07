@@ -56,7 +56,7 @@ public class POSContainer {
 
 	/**************************************
 	 * Setter method for prioritiseOscar.
-	 * @param prioritiseOscart (boolean)
+	 * @param prioritiseOscar (boolean)
 	 ***************************************/
 	public void setPrioritiseOscar(boolean prioritiseOscar) {
 		this.prioritiseOscar = prioritiseOscar;
@@ -180,8 +180,8 @@ public class POSContainer {
 	}
 
 	/**************************************
-	 * Setter method for CombinedTagsList.
-	 * @param combinedTagsList (List<String>)
+	 * Getter method for CombinedTagsList.
+	 * @return combinedTagsList (List<String>)
 	 ***************************************/
 	public List<String> getCombinedTagsList() {
 		return combinedTagsList;
@@ -271,7 +271,7 @@ public class POSContainer {
 	}
 
 	/*********************************************
-	 * Gets the output of the string and tag as: "TAG TOKEN"
+	 * Gets the output of the string and tag as: "TAG TOKEN".
 	 * 
 	 * @return tokenTagTupleString (String).
 	 *********************************************/
