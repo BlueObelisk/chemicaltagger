@@ -65,7 +65,6 @@ VB-USE---^using---Use Verb in the Present Term
 VB-CHANGE---^changed---Change Verb in the Present Term
 VB-SUBMERGE---^submerge(d)?$---Submerges verb
 VB-SUBJECT---^subject(ed)?---Subject Verb in past form
-VB-IMMERSE---^immersed$---Submerges verb
 
 #Adjective
 JJ---^round$|^bottom|^green$|^yellow$|^brown$|^thaw$|^orange$---Adjectives
@@ -114,6 +113,9 @@ NN-FILTER---filtration---Filter Noun
 VB-HEAT---(heat|warm|reflux|^flam|^maintain)(ed|ing|e)?$---Heat Verb
 VB-INCREASE---(increas|rais)(e|ed|ing)?---Increase Verb
 
+#Immerse Tokens
+VB-IMMERSE---^immersed$---Submerges verb
+
 #Partition Tokens
 VB-PARTITION---(partition|separat|split)(e|ed|ing|ting)?---Partition Verb
 
@@ -142,6 +144,7 @@ VB-STIR---(pre|re)?(stir)(red|ring)?---Stir Verb
 #Synthesize Tokens
 VB-SYNTHESIZE---(pre|re)?(react|synthesize|synthesise|polymerize|polymerise|prepare)(s|d|ed)?$---Synthesize Verb
 NN-SYNTHESIZE---(pre|re|co)?(hydrolysis|condens|synthesiz|synthesis|polymeris|polymeriz|prepar|reaction|^romp|^atrp)(ation|e|ed|ing)?$---Synthesize Noun
+
 #Wait Tokens
 VB-WAIT---(wait|left)(ing)?---Wait Verb
 
@@ -150,7 +153,6 @@ VB-WASH---^(wash|elut|rins)(ed|e|ing)?---Wait Verb
 
 #Yield Tokens
 VB-YIELD---^(yield|afford|result|provid|obtain|gave|isolat|form(ed|ing)|leav|giv)(es|ed|e|ing)?---Yield Verb
-
 
 #Misc Tokens mainly to replace characters that are not markup friendly
 RB---.*wise$|.*ly$---Adverbs like dropwise
