@@ -106,7 +106,8 @@ public class ChemistrySentenceParserTest {
 		ChemistrySentenceParser chemChunkParser = new ChemistrySentenceParser(in);
 		chemChunkParser.parseTags();
 		Document doc = chemChunkParser.makeXMLDocument();
-		Assert.assertEquals("Document should be empty", 0, doc.getRootElement().getChildElements().size());
+        Assert.assertEquals("Document should be empty", 0, doc.getRootElement().getChildElements().size());
+
 	}
 
 }
