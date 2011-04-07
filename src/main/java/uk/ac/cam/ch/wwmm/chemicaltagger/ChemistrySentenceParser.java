@@ -7,9 +7,7 @@ import nu.xom.Document;
 
 import org.antlr.runtime.ANTLRInputStream;
 import org.antlr.runtime.CommonTokenStream;
-import org.antlr.runtime.RecognitionException;
 import org.antlr.runtime.tree.Tree;
-import org.apache.commons.io.IOUtils;
 
 import uk.ac.cam.ch.wwmm.pregenerated.ChemicalChunkerLexer;
 import uk.ac.cam.ch.wwmm.pregenerated.ChemicalChunkerParser;
@@ -20,130 +18,80 @@ import uk.ac.cam.ch.wwmm.pregenerated.ChemicalChunkerParser;
  * 
  * @author pm286, dl387, lh359
  **********************************************/
-public class ChemistrySentenceParser extends Thread {
-
-	private InputStream taggedTokenInStream = null;
-	private Tree parseTree = null;
+public class ChemistrySentenceParser extends SentenceParser {
 
 	/**********************************************
 	 * Constructor method for inputStream objects.
 	 * 
 	 * @param taggedTokenInputStream (InputStream)
 	 *********************************************/
-	public ChemistrySentenceParser(final InputStream taggedTokenInputStream) {
-            this.taggedTokenInStream = taggedTokenInputStream;
-		
-
+	public ChemistrySentenceParser(InputStream taggedTokenInputStream) {
+		super(taggedTokenInputStream);
 	}
+
 
 	/*******************************************
 	 * Constructor method for String objects.
 	 * 
 	 * @param taggedTokenString (String)
 	 *******************************************/
-	public ChemistrySentenceParser(final String taggedTokenString) {
-		try {
-			this.taggedTokenInStream = IOUtils.toInputStream(taggedTokenString,"UTF-8");
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+	public ChemistrySentenceParser(String taggedTokenString) {
+		super(taggedTokenString);
 	}
-
+	
 	/************************************************
 	 * Constructor method for POSContainer objects.
 	 * 
 	 * @param posContainer  (POSContainer)
 	 *******************************************/
-	public ChemistrySentenceParser(final POSContainer posContainer) {
-		try {
-			this.taggedTokenInStream = IOUtils.toInputStream(
-					posContainer.getTokenTagTupleAsString(), "UTF-8");
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+	public ChemistrySentenceParser(POSContainer posContainer) {
+		super(posContainer);
 	}
 
-	/********************************************
-	 * Getter method for taggedTokenInputStream.
-	 * @return taggedTokenInStream (InputStream)
-	 ******************************************/
-	public final InputStream getTaggedTokenInStream() {
-		return taggedTokenInStream;
-	}
-
-	/*******************************************
-	 * Setter method for taggedTokenInputStream.
-	 * 
-	 * @param taggedTokenInStream (InputStream)
-	 ***********************************/
-	public final void setTaggedTokenInStream(final InputStream taggedTokenInStream) {
-		this.taggedTokenInStream = taggedTokenInStream;
-	}
-
-	/**************************************
-	 * Getter method for parseTree.
-	 * @return parseTree (Tree)
-	 **************************************/
-	public final Tree getParseTree() {
-		return parseTree;
-	}
-
-	/**************************************
-	 * Setter method for parseTree.
-	 * @param parseTree (Tree)
-	 **************************************/
-	public final void setParseTree(final Tree parseTree) {
-		this.parseTree = parseTree;
-	}
-
-	/******************
-	 * Runs the thread.
-	 */
-	public final void run() {
-		parseTags();
-	}
-
+	@Override
 	/********************************************
 	 * Passes an inputstream to ANTLR and produces
 	 * a parse tree.
 	 * 
 	 *******************************************/
 	public void parseTags() {
-		ChemicalChunkerLexer lexer = null;
+	     ChemicalChunkerLexer lexer = null;
 
-		if (taggedTokenInStream == null) {
-			parseTree = null;
-		}	
-		else {
-			ANTLRInputStream input;
-			try {
-				input = new ANTLRInputStream(taggedTokenInStream, "UTF-8");
-			} catch (IOException ioexception) {
-				throw new RuntimeException("Antlr input Stream Error: "
-						+ ioexception.getMessage());
-			}
+         if (getTaggedTokenInStream() == null) {
+                 setParseTree(null);
+         }       
+         else {
+                 ANTLRInputStream input;
+                 try {
+                         input = new ANTLRInputStream(getTaggedTokenInStream(), "UTF-8");
+                 } catch (IOException ioexception) {
+                         throw new RuntimeException("Antlr input Stream Error: "
+                                         + ioexception.getMessage());
+                 }
 
-			lexer = new ChemicalChunkerLexer(input);
-			CommonTokenStream tokens = new CommonTokenStream(lexer);
-			ChemicalChunkerParser parser = new ChemicalChunkerParser(tokens);
-			ChemicalChunkerParser.document_return result = null;
-			try {
-				result = parser.document();
-			} catch (RecognitionException e) {
-				throw new RuntimeException("Antlr parser Error: "
-						+ e.getMessage());
-
-			}
-			parseTree = (Tree) result.getTree();
-		}
+                 lexer = new ChemicalChunkerLexer(input);
+                 CommonTokenStream tokens = new CommonTokenStream(lexer);
+                 ChemicalChunkerParser parser = new ChemicalChunkerParser(tokens);
+                 ChemicalChunkerParser.document_return result = null;
+                 try {
+                         result = parser.document();
+                 } catch (org.antlr.runtime.RecognitionException e) {
+					e.printStackTrace();
+				}
+                 setParseTree((Tree) result.getTree());
+         }
+		
 	}
 
+	@Override
 	/*********************************************
 	 * Creates an XML document from the parseTree.
 	 * @return document (Document)
 	 *******************************************/
 	public Document makeXMLDocument() {
-		return new ASTtoXML().convert(parseTree);
+		return new ASTtoXML().convert(getParseTree());
 	}
+
+
 
 }

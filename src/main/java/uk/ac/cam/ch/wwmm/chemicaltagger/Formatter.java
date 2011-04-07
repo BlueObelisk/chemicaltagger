@@ -8,20 +8,29 @@ import java.util.regex.Pattern;
 import org.apache.commons.lang.StringUtils;
 import org.xmlcml.euclid.Util;
 
+/*********************************************
+ * Preprocesses text before it gets passed to tokenisation and tagging classes.
+ * @author lh359, dmj30, dl387.
+ *
+ */
 public class Formatter {
 	
-	private static final List<String> ABV_LIST = Arrays.asList("et. al. etc. e.g. i.e. vol. ca. wt. aq. mt. e.g.:".split(" "));
-	private static final List<String> HTML_LIST = Arrays.asList("gt; lt;".split(" "));
-	private static final List<String> NEXTTOKEN_LIST = Arrays.asList("gram vol %".split(" "));
+	private static List<String> ABV_LIST = Arrays.asList("et. al. etc. e.g. i.e. vol. ca. wt. aq. mt. e.g.:".split(" "));
+	private static List<String> HTML_LIST = Arrays.asList("gt; lt;".split(" "));
+	private static List<String> NEXTTOKEN_LIST = Arrays.asList("gram vol %".split(" "));
+	private static Pattern WHITESPACE_PATTERN = Pattern.compile("\\s+");
+	private static Pattern ABBREVIATION_PATTERN = Pattern.compile("−?[A-Z]+[a-z]*\\.");
+	private static Pattern CONCAT_AMOUNT_PATTERN = Pattern.compile("(\\d\\d+(m|k|µ)?(l|L|g|gram|mol|cm3)(s)?$)|(\\d(L|ml|mL|gram|mol|cm3)(s)?$)");
+	private static Pattern CONCAT_TEMP_PATTERN = Pattern.compile("\\d+(o|\u00b0|\u00ba)(C|c)");
+	private static Pattern CONCAT_HYPHENED_DIRECTION_PATTERN = Pattern.compile("^[A-Z]\\-\\d+");
+	private static Pattern CONCAT_SLASH_DIRECTION_PATTERN = Pattern.compile("^[A-Z]\\/\\d*$");
 	
-	private static final Pattern WHITESPACE_PATTERN = Pattern.compile("\\s+");
-	
-	private static final Pattern ABBREVIATION_PATTERN = Pattern.compile("−?[A-Z]+[a-z]*\\.");
-	private static final Pattern CONCAT_AMOUNT_PATTERN = Pattern.compile("(\\d\\d+(m|k|µ)?(l|L|g|gram|mol|cm3)(s)?$)|(\\d(L|ml|mL|gram|mol|cm3)(s)?$)");
-	private static final Pattern CONCAT_TEMP_PATTERN = Pattern.compile("\\d+(o|\u00b0|\u00ba)(C|c)");
-	private static final Pattern CONCAT_HYPHENED_DIRECTION_PATTERN = Pattern.compile("^[A-Z]\\-\\d+");
-	private static final Pattern CONCAT_SLASH_DIRECTION_PATTERN = Pattern.compile("^[A-Z]\\/\\d*$");
-	
+	/**************************
+	 * Hides Utility Class Constructor.
+	 */
+	private Formatter(){
+		
+	}
 	/************************************
 	 * Normalises sentences.
 	 * Adds spaces between characters where required.
@@ -30,8 +39,7 @@ public class Formatter {
 	 *************************************/
 	public static String normaliseText(String sentence){
 		StringBuilder newSentence = new StringBuilder();
-		sentence = sentence.replace("%", " %").replace(";", " ;")
-				.replace(":", " : ");
+		sentence = sentence.replace("%", " %").replace(";", " ;").replace(":", " : ");
 
 		sentence = sentence.replace("–", "-");
 		String[] words = WHITESPACE_PATTERN.split(sentence);
@@ -144,7 +152,6 @@ public class Formatter {
 			else {
 				numbers = numbers + ch;
 			}
-
 		}
 		newAmountString = numbers + " " + letters;
 		return newAmountString;
@@ -173,9 +180,11 @@ public class Formatter {
 
 
 	/**********************************************
-	 * Checks if it is followed
-	 * @param temperatureString (String)
-	 * @return newTemperatureString (String)
+	 * Checks if it is followed by a stopword.
+	 * @param words (String[])
+	 * @param index (int)
+	 * @param nextTokenList (List<String>)
+	 * @return isStopWordAfter (boolean)
 	 **********************************************/
 	private static boolean stopWordAfter(String[] words, int index,
 			List<String> nextTokenList) {

@@ -24,13 +24,13 @@ public class OpenNLPTagger {
 	/**************************************
 	 * Private Singleton holder.
 	 ***************************************/
-	private static final class INSTANCE_HOLDER {
+	private static class INSTANCE_HOLDER {
 		private static OpenNLPTagger myInstance = new OpenNLPTagger();
 	}
 
 	private File tempFile;
 	private PosTagger posTagger;
-	private final static Logger LOG = Logger.getLogger(OscarTagger.class);
+	private static Logger LOG = Logger.getLogger(OscarTagger.class);
 
 	/**************************************
 	 * Private Constructor Class.
@@ -46,6 +46,7 @@ public class OpenNLPTagger {
 	}
 
 	/**************************************
+	 * Returns an OpenNLPTagger singleton.
 	 * @return OpenNLPTaggerInstance.
 	 ***************************************/
 	public static OpenNLPTagger getInstance() {
@@ -84,9 +85,10 @@ public class OpenNLPTagger {
             }
     }
     
-	/*******************************************
-	 * Loads the Brown corpus tags to POSTagger.
-	 ***************************************/
+    /**************************************
+     * Loads the Penn Treebank tagset to POSTagger.
+	 * @throws IOException
+	 * ***************************************/
 	private void setUpPosTagger() throws IOException {
 		InputStreamReader tagDictReader = null;
 		new Utils();
@@ -100,6 +102,8 @@ public class OpenNLPTagger {
 	/*****************************************************
 	 * Runs the OpenNLP brown tagger against the text and stores the tags in
 	 * POSContainer.
+	 * @param posContainer (POSContainer)
+	 * @return posContainer (POSContainer) 
 	 *****************************************************/
 	public POSContainer runTagger(POSContainer posContainer) {
 		List<String> tokenList = posContainer.getWordTokenList();

@@ -26,7 +26,7 @@ import org.xmlcml.cml.base.CMLConstants;
  ********************************************/
 public class Utils {
 	
-	private static final Pattern exponentXMLPattern = Pattern.compile("(-?\\d+)<sup>(-?\\d+)</sup>");
+	private static Pattern exponentXMLPattern = Pattern.compile("(-?\\d+)<sup>(-?\\d+)</sup>");
 
 	/******************************************
 	 * Replaces all non-XML characters with _
