@@ -57,7 +57,7 @@ unmatchedPhrase
 	:	 unmatchedToken -> ^(Unmatched unmatchedToken);
 	
 unmatchedToken //all base tokens other than comma and stop
-	:	(number|advAdj|oscaront|tmunicode|cdunicode|jjcomp|inAll|
+	:	(number|advAdj|tmunicode|cdunicode|jjcomp|inAll|
 	nnexample|nnstate|nntime|nnmass|nnmolar|nnamount|nnatmosphere|nneq|nnvol|nnchementity|nntemp|nnflash|nngeneral|nnmethod|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|
 	oscarcm|verb|nnadd|nnmixture|nnapparatus|nnconcentrate|nndry|nnextract|nnfilter|nnprecipitate|nnpurify|nnremove|nnsynthesize|nnyield|colon|apost|neg|dash|nnpercent|lsqb|rsqb|lrb|rrb|
 	cc|dt|dtTHE|fw|md|nn|nns|nnp|prp|prp_poss|rbconj|sym|uh|clause|comma|ls|nnps|pos|wp);	
@@ -97,11 +97,11 @@ verb : vb|vbp|vbg|vbd|vbz|vbn|vbuse|vbsubmerge|vbimmerse|degassMultiVerb|vbsubje
 
 degassMultiVerb
 	:	vbdegass cc vbfill;
-number : cd|cdAlphanum|oscarcpr;	
+number : cd|cdAlphanum;	
 clause	:	wdt|wp_poss|wrb|ex|pdt|wp;
 noun 	:	nounStructure (dash nounStructure)*;
 
-nounStructure :  prp|prp_poss|citation|cycles|molecule|apparatus|mixture|unnamedmolecule|nnyield|nnstate|nn|nns|nnp|nnadd|preparationphrase|nnexample|oscarcpr|range|amount|nntime|nnatmosphere|tmunicode|nneq|quantity|nnchementity|measurements|nntemp|nnflash|nngeneral|nnmethod|nnamount|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|nnvol|nnpurify|nnsynthesize|nnmixture|reference|oscaront|nndry|number|oscarCompound|nnextract|nnfilter|nnprecipitate|nnremove|fw|sym|clause|ls|nnps|pos;
+nounStructure :  prp|prp_poss|citation|cycles|molecule|apparatus|mixture|unnamedmolecule|nnyield|nnstate|nn|nns|nnp|nnadd|preparationphrase|nnexample|range|amount|nntime|nnatmosphere|tmunicode|nneq|quantity|nnchementity|measurements|nntemp|nnflash|nngeneral|nnmethod|nnamount|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|nnvol|nnpurify|nnsynthesize|nnmixture|reference|nndry|number|oscarCompound|nnextract|nnfilter|nnprecipitate|nnremove|fw|sym|clause|ls|nnps|pos|oscarase;
 
 range: number dash number;
 cycles	:	cycleStructure -> ^(CYCLES cycleStructure)  ;
@@ -277,8 +277,7 @@ method:
 cdAlphanum:'CD-ALPHANUM' TOKEN -> ^('CD-ALPHANUM' TOKEN);
 oscarcj:'OSCAR-CJ' TOKEN -> ^('OSCAR-CJ' TOKEN);
 oscarrn:'OSCAR-RN' TOKEN -> ^('OSCAR-RN' TOKEN);
-oscarcpr:'OSCAR-CPR' TOKEN -> ^('OSCAR-CPR' TOKEN);
-oscaront:'OSCAR-ONT' TOKEN -> ^('OSCAR-ONT' TOKEN);
+oscarase:'OSCAR-ASE' TOKEN -> ^('OSCAR-ASE' TOKEN);
 tmunicode:'TM-UNICODE' TOKEN -> ^('TM-UNICODE' TOKEN);
 cdunicode:'CD-UNICODE' TOKEN -> ^('CD-UNICODE' TOKEN);
 jjchem:'JJ-CHEM' TOKEN -> ^('JJ-CHEM' TOKEN);
