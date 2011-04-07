@@ -19,7 +19,7 @@ import org.apache.log4j.Logger;
 
 public class ASTtoXML {
 
-	private static final Logger LOG = Logger.getLogger(ASTtoXML.class);
+	private static Logger LOG = Logger.getLogger(ASTtoXML.class);
 
 	/********************************************
 	 * Default constructor method.
@@ -35,7 +35,7 @@ public class ASTtoXML {
 	 *            
 	 * @return doc (Document)
 	 *******************************************/
-	public final Document convert(final Tree astTree) {
+	public Document convert(Tree astTree) {
 
 		return convert(astTree, true);
 	}
@@ -47,7 +47,7 @@ public class ASTtoXML {
 	 * @param annotateActionPhrases (boolean)
 	 * @return doc (Document)
 	 *******************************************/
-	public final Document convert(final Tree astTree, final boolean annotateActionPhrases) {
+	public Document convert(Tree astTree, boolean annotateActionPhrases) {
 		Element root = new Element("Document");
 		Document doc = null;
 		
@@ -82,8 +82,8 @@ public class ASTtoXML {
 	 * @param actionPhraseDictionary (HashMap)
 	 * @return doc (Document)
 	 *******************************************/
-	public final Document convert(final Tree astTree, final boolean annotateActionPhrases,
-			final HashMap<String, String> actionPhraseDictionary) {
+	public Document convert(Tree astTree, boolean annotateActionPhrases,
+			HashMap<String, String> actionPhraseDictionary) {
 		
 		Element root = new Element("Document");
 		Document doc;
@@ -103,9 +103,7 @@ public class ASTtoXML {
 		if (annotateActionPhrases) {
 			PostProcessTrees procTree = new PostProcessTrees();
 			procTree.setActionMap(actionPhraseDictionary);
-			if (doc == null) {
-				return null;
-			}
+			
 			doc = procTree.process(doc);
 		}
 		return doc;
@@ -119,7 +117,7 @@ public class ASTtoXML {
 	 * @param node (Element)
 	 * @return node (Element)
 	 **********************************************/
-	public final Element getNodes(final Tree astTree, final Element node) {
+	public Element getNodes(Tree astTree, Element node) {
 
 		int nodeCount = astTree.getChildCount();
 

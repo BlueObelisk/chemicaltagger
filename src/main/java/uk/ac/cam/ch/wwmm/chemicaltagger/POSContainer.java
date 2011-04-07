@@ -17,7 +17,7 @@ import uk.ac.cam.ch.wwmm.oscar.document.TokenSequence;
  ********************************************/
 public class POSContainer {
 
-	private final static String SPACE = " ";
+	private static String SPACE = " ";
 	
 	private String inputText;
 	private boolean prioritiseOscar = true;

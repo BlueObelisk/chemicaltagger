@@ -22,7 +22,7 @@ public class RegexTagger {
 
 	protected List<Rule> rules;
 	public String tagFilePath = "/uk/ac/cam/ch/wwmm/chemicaltagger/regexTagger/regexTags.txt";
-	private static final Logger LOG = Logger.getLogger(RegexTagger.class);
+	private static Logger LOG = Logger.getLogger(RegexTagger.class);
 
 	/****************************
 	 * Public Constructor

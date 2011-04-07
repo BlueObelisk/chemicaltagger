@@ -16,7 +16,7 @@ import nu.xom.Text;
  * 
  * @author lh359
  ********************************************/
-public final class ExtractFromXML {
+public class ExtractFromXML {
 
 	/**************************
 	 * Hides Utility Class Constructor.
@@ -29,7 +29,7 @@ public final class ExtractFromXML {
 	 * @param delimiter (String)
 	 * @return stringValue (String)
 	 ****************************************/
-	public static String getStringValue(final Element xmlTag, final String delimiter) {
+	public static String getStringValue(Element xmlTag, String delimiter) {
 		StringBuilder stringValue = new StringBuilder();
 		for (int i = 0; i < xmlTag.getChildCount(); i++) {
 			if (xmlTag.getChild(i) instanceof Text) {
@@ -59,7 +59,7 @@ public final class ExtractFromXML {
 	 * @param sub (Element)
 	 * @return boolean
 	 */
-	private static boolean hasMoreChildren(final Element sub) {
+	private static boolean hasMoreChildren(Element sub) {
 
 		if (sub.getChildCount() == 0) {
 			return false;
@@ -82,7 +82,7 @@ public final class ExtractFromXML {
 	 * @throws ParsingException 
 	 * @throws IOException 
 	 **********************************/
-	public static String getContent(final InputStream in, final String searchTag) throws ParsingException, IOException{
+	public static String getContent(InputStream in, String searchTag) throws ParsingException, IOException{
 
 		Document doc = new Builder().build(in);
 		Nodes sections = doc.query(searchTag);

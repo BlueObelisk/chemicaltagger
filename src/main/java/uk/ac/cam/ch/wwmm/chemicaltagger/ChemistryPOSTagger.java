@@ -17,10 +17,10 @@ import uk.ac.cam.ch.wwmm.oscar.Oscar;
  * 
  * @author lh359, dmj30, dl387
  ***************************************************************/
-public final class ChemistryPOSTagger {
+public class ChemistryPOSTagger {
 
-	static final boolean DEFAULT_PRIORITISE_OSCAR = false;
-	static final boolean DEFAULT_USE_SPECTRA_TAGGER = false;
+	static boolean DEFAULT_PRIORITISE_OSCAR = false;
+	static boolean DEFAULT_USE_SPECTRA_TAGGER = false;
 		
 	private OscarTagger oscarTagger;
 	private RegexTagger regexTagger;
@@ -31,7 +31,7 @@ public final class ChemistryPOSTagger {
 	 * Private Singleton holder.
 	 ***************************************/
 	private static class TaggerHolder {
-		private static final ChemistryPOSTagger INSTANCE = new ChemistryPOSTagger();
+		private static ChemistryPOSTagger INSTANCE = new ChemistryPOSTagger();
 	}
 	
 	/**************************************
@@ -54,7 +54,7 @@ public final class ChemistryPOSTagger {
 	 * @param openNLPTagger (OpenNLPTagger)
 	 */
 	
-	public ChemistryPOSTagger (final ChemicalTaggerTokeniser ctTokeniser, final OscarTagger oscarTagger, final RegexTagger regexTagger, final OpenNLPTagger openNLPTagger) {
+	public ChemistryPOSTagger (ChemicalTaggerTokeniser ctTokeniser, OscarTagger oscarTagger, RegexTagger regexTagger, OpenNLPTagger openNLPTagger) {
 		
 		this.ctTokeniser = ctTokeniser;
 		this.oscarTagger = oscarTagger;
@@ -115,7 +115,7 @@ public final class ChemistryPOSTagger {
 	 * @param inputSentence (String)
 	 * @return POSContainer (POSContainer)
 	 *****************************************************/
-	public POSContainer runTaggers(final String inputSentence) {
+	public POSContainer runTaggers(String inputSentence) {
 		return runTaggers(inputSentence, DEFAULT_PRIORITISE_OSCAR, DEFAULT_USE_SPECTRA_TAGGER);
 	}
 	
@@ -132,7 +132,7 @@ public final class ChemistryPOSTagger {
 	 * @return posContainer (POSContainer)
 	 *****************************************************/
 	
-	public POSContainer runTaggers(final String inputSentence, final boolean prioritiseOscar, final boolean useSpectraTagger) {
+	public POSContainer runTaggers(String inputSentence, boolean prioritiseOscar, boolean useSpectraTagger) {
 		
 		POSContainer posContainer = new POSContainer();
 		posContainer = normaliseAndTokeniseInput(inputSentence, posContainer, useSpectraTagger);		
@@ -154,7 +154,7 @@ public final class ChemistryPOSTagger {
 	 * @param useSpectraTagger (boolean)
 	 * @return posContainer (POSContainer)
 	 */
-	private POSContainer normaliseAndTokeniseInput(String inputSentence, POSContainer posContainer, final boolean useSpectraTagger) {
+	private POSContainer normaliseAndTokeniseInput(String inputSentence, POSContainer posContainer, boolean useSpectraTagger) {
 		inputSentence = Formatter.normaliseText(inputSentence);
 		posContainer.setInputText(inputSentence);
 		if (useSpectraTagger){
