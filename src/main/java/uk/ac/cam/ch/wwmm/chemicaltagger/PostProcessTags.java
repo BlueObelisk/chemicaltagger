@@ -237,7 +237,7 @@ public class PostProcessTags {
 			if (i != 0) {
 				if (!tokenList.get(i - 1).equals("that")) {
 					if (stringAfter(chemafterList, i, combinedTags)
-							& stringBefore(beforeList, i, combinedTags)) {
+							&& stringBefore(beforeList, i, combinedTags)) {
 						newTag = "JJ-CHEM";
 					}
 
@@ -476,7 +476,7 @@ public class PostProcessTags {
 		}
 
 		if (currentToken.equals("D")
-				& currentTag.toLowerCase().equals("nn-time")) {
+				&& currentTag.toLowerCase().equals("nn-time")) {
 
 			List<String> beforeList = Arrays.asList("in-in");
 			if (stringBefore(beforeList, i, combinedTags)) {

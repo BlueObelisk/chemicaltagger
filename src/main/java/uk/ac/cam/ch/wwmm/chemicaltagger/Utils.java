@@ -134,13 +134,17 @@ public class Utils {
 			throws IOException {
 
 		String sentence = null;
+		BufferedReader br = null;
 		try {
 
-			BufferedReader br = new BufferedReader(new InputStreamReader(
+			br = new BufferedReader(new InputStreamReader(
 					new FileInputStream(new File(pathName)), "UTF-8"));
 			sentence = br.readLine();
 		} catch (IOException e) {
 			throw new RuntimeException("Cannot read sentence: " + pathName);
+		}
+		finally{
+			IOUtils.closeQuietly(br);
 		}
 		return sentence.trim();
 	}
