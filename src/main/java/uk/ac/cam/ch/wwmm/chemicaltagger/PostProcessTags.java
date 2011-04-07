@@ -349,7 +349,7 @@ public class PostProcessTags {
 			if (currentToken.endsWith("s")
 					&& Character.isUpperCase(currentToken.charAt(0))) {
 				if (!stringBefore(beforeList, i, combinedTags))
-					newTag = "NPS";
+					newTag = "NNPS";
 			}
 		}
 
