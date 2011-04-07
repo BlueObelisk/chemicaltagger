@@ -48,17 +48,12 @@ public class PostProcessTags {
 	/*************************************
 	 * Corrects the mistagged verbs.
 	 * 
-	 * @param tokenList
-	 *            (List<String>)
-	 * @param List
-	 *            (List <WWMMTag> combinedTags)
-	 * @param int i (Integer)
-	 * @param currentTag
-	 *            (String)
-	 * @param currentToken
-	 *            (String)
-	 * @param newTag
-	 *            (String)
+	 * @param tokenList  (List<String>)
+	 * @param combinedTags  (List <String>)
+	 * @param i (Integer)
+	 * @param currentTag (String)
+	 * @param currentToken (String)
+	 * @param newTag (String)
 	 * @return newTag (String)
 	 *************************************/
 	private String correctMisTaggedVerbs(List<String> tokenList,
@@ -87,8 +82,10 @@ public class PostProcessTags {
 				if (stringBefore(beforeList, i, combinedTags)
 						&& (i == combinedTags.size() || stringAfter(
 								afterListNN, i, combinedTags))
-						&& !currentTag.toLowerCase().startsWith("nn-"))
+						&& !currentTag.toLowerCase().startsWith("nn-")) {
 					newTag = "NN";
+				}
+					
 
 				else if (stringBefore(beforeList, i, combinedTags)
 						&& (stringAfter(afterListJJ, i, combinedTags) && !currentTag
@@ -107,8 +104,9 @@ public class PostProcessTags {
 			if (stringBefore(beforeList, i, combinedTags)
 					&& (stringAfter(afterList, i, combinedTags) || i == combinedTags
 							.size())) {
-				if (!stringAfter(notafterList, i, combinedTags))
+				if (!stringAfter(notafterList, i, combinedTags)){
 					newTag = "NN-CHEMENTITY";
+				}	
 			}
 			if (i != 0) {
 				int beforeIndex = i - 1;
@@ -160,8 +158,9 @@ public class PostProcessTags {
 				newTag = "NN-YIELD";
 			}
 			List<String> afterList = Arrays.asList("nn-chementity");
-			if (stringAfter(afterList, i, combinedTags))
+			if (stringAfter(afterList, i, combinedTags)){
 				newTag = "JJ-COMPOUND";
+			}
 		}
 
 		if (currentTag.toLowerCase().startsWith("vb-filter")) {
@@ -191,8 +190,9 @@ public class PostProcessTags {
 
 			List<String> afterList = Arrays.asList("in-of");
 
-			if (!stringAfter(afterList, i, combinedTags))
+			if (!stringAfter(afterList, i, combinedTags)) {
 				newTag = "NN-CHEMENTITY";
+			}
 
 		}
 		/********
@@ -202,37 +202,25 @@ public class PostProcessTags {
 				&& (currentToken.toLowerCase().endsWith("ing") || currentToken
 						.toLowerCase().endsWith("ed"))) {
 
-			List<String> afterList = Arrays
-					.asList("nn oscar-cm nns nn-chementity oscar-cj jj-chem jj nnp nn-state nn-apparatus"
-							.split(" "));
-			List<String> beforeList = Arrays.asList("dt dt-the cd oscar-cm"
-					.split(" "));
+			List<String> afterList = Arrays.asList("nn oscar-cm nns nn-chementity oscar-cj jj-chem jj nnp nn-state nn-apparatus".split(" "));
+			List<String> beforeList = Arrays.asList("dt dt-the cd oscar-cm".split(" "));
 
 			List<String> notList = Arrays.asList("in-of");
-			if (stringAfter(afterList, i, combinedTags)
-					&& stringBefore(beforeList, i, combinedTags)) {
+			if (stringAfter(afterList, i, combinedTags) 	&& stringBefore(beforeList, i, combinedTags)) {
 				newTag = "JJ";
 			}
 
-			else if (currentToken.toLowerCase().endsWith("ing")
-					&& stringBefore(beforeList, i, combinedTags)
-					&& !stringAfter(notList, i, combinedTags)) {
+			else if (currentToken.toLowerCase().endsWith("ing") && stringBefore(beforeList, i, combinedTags) && !stringAfter(notList, i, combinedTags)) {
 				newTag = "JJ-CHEM";
 			}
 
 		}
 
-		if (currentTag.toLowerCase().startsWith("vb")
-				&& !currentToken.toLowerCase().endsWith("ing")) {
+		if (currentTag.toLowerCase().startsWith("vb") && !currentToken.toLowerCase().endsWith("ing")) {
 
-			List<String> beforeList = Arrays.asList("dt dt-the in-in in-of rb"
-					.split(" "));
-			List<String> afterList = Arrays
-					.asList("nn oscar-cm nns nn-chementity oscar-cj jj-chem jj nnp nn-state nn-apparatus"
-							.split(" "));
-			List<String> chemafterList = Arrays
-					.asList("oscar-cm nn-chementity oscar-cj jj-chem"
-							.split(" "));
+			List<String> beforeList = Arrays.asList("dt dt-the in-in in-of rb".split(" "));
+			List<String> afterList = Arrays.asList("nn oscar-cm nns nn-chementity oscar-cj jj-chem jj nnp nn-state nn-apparatus".split(" "));
+			List<String> chemafterList = Arrays.asList("oscar-cm nn-chementity oscar-cj jj-chem".split(" "));
 
 			if (i != 0) {
 				if (!tokenList.get(i - 1).equals("that")) {
@@ -258,19 +246,14 @@ public class PostProcessTags {
 	}
 
 	/*************************************
-	 * Corrects the mistagged digits.
+	 * Corrects the mistagged verbs.
 	 * 
-	 * @param tokenList
-	 *            (List<String>)
-	 * @param List
-	 *            (List <WWMMTag> combinedTags)
-	 * @param int i (Integer)
-	 * @param currentTag
-	 *            (String)
-	 * @param currentToken
-	 *            (String)
-	 * @param newTag
-	 *            (String)
+	 * @param tokenList  (List<String>)
+	 * @param combinedTags  (List <String>)
+	 * @param i (Integer)
+	 * @param currentTag (String)
+	 * @param currentToken (String)
+	 * @param newTag (String)
 	 * @return newTag (String)
 	 *************************************/
 	private String correctMisTaggedDigits(List<String> combinedTags, int i,
@@ -322,19 +305,14 @@ public class PostProcessTags {
 	}
 
 	/*************************************
-	 * Corrects the non-chemistry tags.
+	 * Corrects the mistagged verbs.
 	 * 
-	 * @param tokenList
-	 *            (List<String>)
-	 * @param List
-	 *            (List <WWMMTag> combinedTags)
-	 * @param int i (Integer)
-	 * @param currentTag
-	 *            (String)
-	 * @param currentToken
-	 *            (String)
-	 * @param newTag
-	 *            (String)
+	 * @param tokenList  (List<String>)
+	 * @param combinedTags  (List <String>)
+	 * @param i (Integer)
+	 * @param currentTag (String)
+	 * @param currentToken (String)
+	 * @param newTag (String)
 	 * @return newTag (String)
 	 *************************************/
 	private String correctMisTaggedMisc(List<String> combinedTags, int i,
@@ -559,7 +537,7 @@ public class PostProcessTags {
 	 * @param afterList
 	 * @param index
 	 * @param combinedTags
-	 * @return
+	 * @return boolean
 	 **********************************/
 	private boolean string2after(List<String> afterList, int index,
 			List<String> combinedTags) {
