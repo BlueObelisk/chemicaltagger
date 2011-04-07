@@ -50,6 +50,7 @@ public class ASTtoXML {
 	public final Document convert(final Tree astTree, final boolean annotateActionPhrases) {
 		Element root = new Element("Document");
 		Document doc = null;
+		
 		if (astTree.getChildCount() > 0) {
 			if (StringUtils.isNotEmpty(astTree.getText())) {
 				Element sentenceNode = new Element("Sentence");
@@ -85,7 +86,7 @@ public class ASTtoXML {
 			final HashMap<String, String> actionPhraseDictionary) {
 		
 		Element root = new Element("Document");
-		Document doc = null;
+		Document doc;
 		if (astTree.getChildCount() > 0) {
 			if (StringUtils.isNotEmpty(astTree.getText())) {
 				Element sentenceNode = new Element("Sentence");
@@ -95,6 +96,9 @@ public class ASTtoXML {
 			} else {
 				doc = new Document(getNodes(astTree, root));
 			}
+		}
+		else{
+			doc = new Document(root);
 		}
 		if (annotateActionPhrases) {
 			PostProcessTrees procTree = new PostProcessTrees();
