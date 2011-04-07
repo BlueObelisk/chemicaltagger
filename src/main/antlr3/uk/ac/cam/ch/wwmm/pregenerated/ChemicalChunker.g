@@ -60,8 +60,7 @@ unmatchedToken //all base tokens other than comma and stop
 	:	(number|advAdj|oscaront|tmunicode|cdunicode|jjcomp|inAll|
 	nnexample|nnstate|nntime|nnmass|nnmolar|nnamount|nnatmosphere|nneq|nnvol|nnchementity|nntemp|nnflash|nngeneral|nnmethod|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|
 	oscarcm|verb|nnadd|nnmixture|nnapparatus|nnconcentrate|nndry|nnextract|nnfilter|nnprecipitate|nnpurify|nnremove|nnsynthesize|nnyield|colon|apost|neg|dash|nnpercent|lsqb|rsqb|lrb|rrb|
-	abl|abn|abx|ap|at|be|bed|bedz|beg|bem|ben|ber|bez|cc|cs|dotok|dod|doz|dt|dtTHE|dti|dts|dtx|fw|fwin|hv|hvd|hvg|hvn|md|nc|nn|nn_poss|nns|nns_poss|np|nnp|np_poss|nps|nps_poss|nr|pn|pn_poss|
-	pp_poss|pp_poss_poss|ppl|ppls|prp|prp_poss|ppo|pps|ppss|ql|qlp|rbconj|rn|sym|uh|clause|comma);	
+	cc|dt|dtTHE|fw|md|nn|nns|nnp|prp|prp_poss|rbconj|sym|uh|clause|comma|ls|nnps|pos|wp);	
 
 nounphrase
 	:	nounphraseStructure ->  ^(NounPhrase  nounphraseStructure);	
@@ -98,11 +97,11 @@ verb : vb|vbp|vbg|vbd|vbz|vbn|vbuse|vbsubmerge|vbimmerse|degassMultiVerb|vbsubje
 
 degassMultiVerb
 	:	vbdegass cc vbfill;
-number : cd|cdAlphanum|oscarcpr|od;	
-clause	:	wdt|wp_poss|wpo|wps|wql|wrb|ex|pdt;
+number : cd|cdAlphanum|oscarcpr;	
+clause	:	wdt|wp_poss|wrb|ex|pdt|wp;
 noun 	:	nounStructure (dash nounStructure)*;
 
-nounStructure :  prp|prp_poss|citation|cycles|molecule|apparatus|mixture|unnamedmolecule|nnyield|nnstate|nn|nns|nnp|nnadd|preparationphrase|nnexample|oscarcpr|range|amount|nntime|nnatmosphere|tmunicode|nneq|quantity|nnchementity|measurements|nntemp|nnflash|nngeneral|nnmethod|nnamount|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|nnvol|nnpurify|wdt|wp_poss|wpo|wps|nnsynthesize|nnmixture|reference|oscaront|nndry|number|oscarCompound|nnextract|nnfilter|nnprecipitate|nnremove|fw|fwin|sym|clause;
+nounStructure :  prp|prp_poss|citation|cycles|molecule|apparatus|mixture|unnamedmolecule|nnyield|nnstate|nn|nns|nnp|nnadd|preparationphrase|nnexample|oscarcpr|range|amount|nntime|nnatmosphere|tmunicode|nneq|quantity|nnchementity|measurements|nntemp|nnflash|nngeneral|nnmethod|nnamount|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|nnvol|nnpurify|nnsynthesize|nnmixture|reference|oscaront|nndry|number|oscarCompound|nnextract|nnfilter|nnprecipitate|nnremove|fw|sym|clause|ls|nnps|pos;
 
 range: number dash number;
 cycles	:	cycleStructure -> ^(CYCLES cycleStructure)  ;
@@ -136,8 +135,8 @@ minimixtureStructure2: comma lrb mixtureContent rrb comma;
 minimixtureStructure1:  lrb mixtureContent rrb;
 minimixtureContent:   (fw|nn|verb|measurements|nnpercent|md|stop|oscarCompound|molecule|unnamedmolecule|dash|sym|cd|noun|inof|inAll|cd|comma|adj|colon|stop) (fw|verb|measurements|nnyield|nnpercent|md|stop|oscarCompound|molecule|unnamedmolecule|dash|sym|cd|noun|inof|inAll|cd|comma|adj|colon|stop)+ ;
 
-adj	:	jj|jjr|jjs|jjt|oscarcj|jjchem|oscarrn;
-adv	:	rb|rbr|rbt|rp|rbs;
+adj	:	jj|jjr|jjs|oscarcj|jjchem|oscarrn;
+adv	:	rb|rbr|rp|rbs;
 // Different PrepPhrases
 
 
@@ -303,12 +302,11 @@ inover:'IN-OVER' TOKEN -> ^('IN-OVER' TOKEN);
 inoff:'IN-OFF' TOKEN -> ^('IN-OFF' TOKEN);
 
 //Modified Nouns
-nnexample:'NN-EXAMPLE' TOKEN -> ^('NN-EXAMPLE' TOKEN);
 nnstate:'NN-STATE' TOKEN -> ^('NN-STATE' TOKEN);
 nntime:'NN-TIME' TOKEN -> ^('NN-TIME' TOKEN);
 nnmass:'NN-MASS' TOKEN -> ^('NN-MASS' TOKEN);
-nnmolar:'NN-MOLAR' TOKEN -> ^('NN-MOLAR' TOKEN);
 nnamount:'NN-AMOUNT' TOKEN -> ^('NN-AMOUNT' TOKEN);
+nnmolar:'NN-MOLAR' TOKEN -> ^('NN-MOLAR' TOKEN);
 nnatmosphere:'NN-ATMOSPHERE' TOKEN -> ^('NN-ATMOSPHERE' TOKEN);
 nneq:'NN-EQ' TOKEN -> ^('NN-EQ' TOKEN);
 nnvol:'NN-VOL' TOKEN -> ^('NN-VOL' TOKEN);
@@ -323,6 +321,7 @@ nnchromatography:'NN-CHROMATOGRAPHY' TOKEN -> ^('NN-CHROMATOGRAPHY' TOKEN);
 nnvacuum:'NN-VACUUM' TOKEN -> ^('NN-VACUUM' TOKEN);
 nncycle:'NN-CYCLE' TOKEN -> ^('NN-CYCLE' TOKEN);
 nntimes:'NN-TIMES' TOKEN -> ^('NN-TIMES' TOKEN);
+nnexample:'NN-EXAMPLE' TOKEN -> ^('NN-EXAMPLE' TOKEN);
 
 //Not really Oscar-cm.. but need to be fixed
 oscarcm:'OSCAR-CM' TOKEN -> ^('OSCAR-CM' TOKEN);
@@ -380,6 +379,7 @@ vbincrease:'VB-INCREASE' TOKEN -> ^('VB-INCREASE' TOKEN);
 
 //Immerse tokens
 vbimmerse:'VB-IMMERSE' TOKEN -> ^('VB-IMMERSE' TOKEN);
+
 //Partition Tokens
 vbpartition:'VB-PARTITION' TOKEN -> ^('VB-PARTITION' TOKEN);
 
@@ -419,7 +419,10 @@ vbyield:'VB-YIELD' TOKEN -> ^('VB-YIELD' TOKEN);
 
 //Yield Tokens
 nnyield:'NN-YIELD' TOKEN -> ^('NN-YIELD' TOKEN);
+
 //Misc Tokens mainly to replace characters that are not markup friendly
+// Conjunctive Adverbs
+rbconj:'RB-CONJ' TOKEN -> ^('RB-CONJ' TOKEN);
 colon:'COLON' TOKEN -> ^('COLON' TOKEN);
 comma:'COMMA' TOKEN -> ^('COMMA' TOKEN);
 apost:'APOST' TOKEN -> ^('APOST' TOKEN);
@@ -430,49 +433,13 @@ nnpercent:'NN-PERCENT' TOKEN -> ^('NN-PERCENT' TOKEN);
 lsqb:'LSQB' TOKEN -> ^('LSQB' TOKEN);
 rsqb:'RSQB' TOKEN -> ^('RSQB' TOKEN);
 
+//The determiner 'the';
+dtTHE:'DT-THE' TOKEN -> ^('DT-THE' TOKEN);
+
 lrb:'-LRB-' TOKEN -> ^('-LRB-' TOKEN);
 rrb:'-RRB-' TOKEN -> ^('-RRB-' TOKEN);
 
-//Brown Corpus Tokens
-
-// Pre-qualifier (quite, rather)
-abl:'ABL' TOKEN -> ^('ABL' TOKEN);
-
-// Pre-quantifier (half, all)
-abn:'ABN' TOKEN -> ^('ABN' TOKEN);
-
-// Pre-quantifier (both)
-abx:'ABX' TOKEN -> ^('ABX' TOKEN);
-
-// Post-determiner (many, several, next)
-ap:'AP' TOKEN -> ^('AP' TOKEN);
-
-// Article (a, the, no)
-at:'AT' TOKEN -> ^('AT' TOKEN);
-
-// Be
-be:'BE' TOKEN -> ^('BE' TOKEN);
-
-// Were
-bed:'BED' TOKEN -> ^('BED' TOKEN);
-
-// Was
-bedz:'BEDZ' TOKEN -> ^('BEDZ' TOKEN);
-
-// Being
-beg:'BEG' TOKEN -> ^('BEG' TOKEN);
-
-// Am
-bem:'BEM' TOKEN -> ^('BEM' TOKEN);
-
-// Been
-ben:'BEN' TOKEN -> ^('BEN' TOKEN);
-
-// Are, art
-ber:'BER' TOKEN -> ^('BER' TOKEN);
-
-// Is
-bez:'BEZ' TOKEN -> ^('BEZ' TOKEN);
+//Penn Treebank Tokens
 
 // Coordinating conjunction (and, or)
 cc:'CC' TOKEN -> ^('CC' TOKEN);
@@ -480,53 +447,14 @@ cc:'CC' TOKEN -> ^('CC' TOKEN);
 // Cardinal numeral (one, two, 2, etc.)
 cd:'CD' TOKEN -> ^('CD' TOKEN);
 
-// Subordinating conjunction (if, although)
-cs:'CS' TOKEN -> ^('CS' TOKEN);
-
-// Do
-dotok:'DO' TOKEN -> ^('DO' TOKEN);
-
-// Did
-dod:'DOD' TOKEN -> ^('DOD' TOKEN);
-
-// Does
-doz:'DOZ' TOKEN -> ^('DOZ' TOKEN);
-
 // Singular determiner/quantifier (this, that)
 dt:'DT' TOKEN -> ^('DT' TOKEN);
-
-
-// Singular determiner/quantifier (this, that)
-dtTHE:'DT-THE' TOKEN -> ^('DT-THE' TOKEN);
-// Singular or plural determiner/quantifier (some, any)
-dti:'DTI' TOKEN -> ^('DTI' TOKEN);
-
-// Plural determiner (these, those)
-dts:'DTS' TOKEN -> ^('DTS' TOKEN);
-
-// Determiner/double conjunction (either)
-dtx:'DTX' TOKEN -> ^('DTX' TOKEN);
 
 // Existential there
 ex:'EX' TOKEN -> ^('EX' TOKEN);
 
 // Foreign word (hyphenated before regular tag)
 fw:'FW' TOKEN -> ^('FW' TOKEN);
-
-// Foreign word (hyphenated before regular tag)
-fwin:'FW-IN' TOKEN -> ^('FW-IN' TOKEN);
-
-// Have
-hv:'HV' TOKEN -> ^('HV' TOKEN);
-
-// Had (past tense)
-hvd:'HVD' TOKEN -> ^('HVD' TOKEN);
-
-// Having
-hvg:'HVG' TOKEN -> ^('HVG' TOKEN);
-
-// Had (past participle)
-hvn:'HVN' TOKEN -> ^('HVN' TOKEN);
 
 // Preposition
 in:'IN' TOKEN -> ^('IN' TOKEN);
@@ -540,86 +468,35 @@ jjr:'JJR' TOKEN -> ^('JJR' TOKEN);
 // Semantically superlative adjective (chief, top)
 jjs:'JJS' TOKEN -> ^('JJS' TOKEN);
 
-// Morphologically superlative adjective (biggest)
-jjt:'JJT' TOKEN -> ^('JJT' TOKEN);
+// List item marker 
+ls:'LS' TOKEN -> ^('LS' TOKEN);
 
 // Modal auxiliary (can, should, will)
 md:'MD' TOKEN -> ^('MD' TOKEN);
 
-// Cited word (hyphenated after regular tag)
-nc:'NC' TOKEN -> ^('NC' TOKEN);
-
 // Singular or mass noun
 nn:'NN' TOKEN -> ^('NN' TOKEN);
-
-// Possessive singular noun
-nn_poss:'NN$' TOKEN -> ^('NN$' TOKEN);
 
 // Plural noun
 nns:'NNS' TOKEN -> ^('NNS' TOKEN);
 
-// Possessive plural noun
-nns_poss:'NNS$' TOKEN -> ^('NNS$' TOKEN);
-
-// Proper noun or part of name phrase
-np:'NP' TOKEN -> ^('NP' TOKEN);
-
-
 // Proper noun or part of name phrase
 nnp:'NNP' TOKEN -> ^('NNP' TOKEN);
 
+// Proper noun, plural 
+nnps:'NNPS' TOKEN -> ^('NNPS' TOKEN);
 
-// Possessive proper noun
-np_poss:'NP$' TOKEN -> ^('NP$' TOKEN);
+//Predeterminer
+pdt:'PDT' TOKEN -> ^('PDT' TOKEN);
 
-// Plural proper noun
-nps:'NPS' TOKEN -> ^('NPS' TOKEN);
+// Possessive ending 
+pos:'POS' TOKEN -> ^('POS' TOKEN);
 
-// Possessive plural proper noun
-nps_poss:'NPS$' TOKEN -> ^('NPS$' TOKEN);
-
-// Adverbial noun (home, today, west)
-nr:'NR' TOKEN -> ^('NR' TOKEN);
-
-// Ordinal numeral (first, 2nd)
-od:'OD' TOKEN -> ^('OD' TOKEN);
-
-// Nominal pronoun (everybody, nothing)
-pn:'PN' TOKEN -> ^('PN' TOKEN);
-
-// Possessive nominal pronoun
-pn_poss:'PN$' TOKEN -> ^('PN$' TOKEN);
-
-// Possessive personal pronoun (my, our)
-pp_poss:'PP$' TOKEN -> ^('PP$' TOKEN);
-
-// Second (nominal) possessive pronoun (mine, ours)
-pp_poss_poss:'PP$$' TOKEN -> ^('PP$$' TOKEN);
-
-// Singular reflexive/intensive personal pronoun (myself)
-ppl:'PPL' TOKEN -> ^('PPL' TOKEN);
-
-// Plural reflexive/intensive personal pronoun (ourselves)
-ppls:'PPLS' TOKEN -> ^('PPLS' TOKEN);
-
+//Personal pronoun
 prp:'PRP' TOKEN -> ^('PRP' TOKEN);
 
-
+//Possessive pronoun
 prp_poss:'PRP$' TOKEN -> ^('PRP$' TOKEN);
-// Objective personal pronoun (me, him, it, them)
-ppo:'PPO' TOKEN -> ^('PPO' TOKEN);
-
-// 3rd. singular nominative pronoun (he, she, it, one)
-pps:'PPS' TOKEN -> ^('PPS' TOKEN);
-
-// Other nominative personal pronoun (i, we, they, you)
-ppss:'PPSS' TOKEN -> ^('PPSS' TOKEN);
-
-// Qualifier (very, fairly)
-ql:'QL' TOKEN -> ^('QL' TOKEN);
-
-// Post-qualifier (enough, indeed)
-qlp:'QLP' TOKEN -> ^('QLP' TOKEN);
 
 // Adverb
 rb:'RB' TOKEN -> ^('RB' TOKEN);
@@ -627,23 +504,13 @@ rb:'RB' TOKEN -> ^('RB' TOKEN);
 // Comparative adverb
 rbr:'RBR' TOKEN -> ^('RBR' TOKEN);
 
-// Conjunctive Adverbs
-rbconj:'RB-CONJ' TOKEN -> ^('RB-CONJ' TOKEN);
-
-// Superlative adverb
-rbt:'RBT' TOKEN -> ^('RBT' TOKEN);
-
 // Superlative adverb
 rbs:'RBS' TOKEN -> ^('RBS' TOKEN);
-
-
-// Nominal adverb (here, then, indoors)
-rn:'RN' TOKEN -> ^('RN' TOKEN);
 
 // Adverb/particle (about, off, up)
 rp:'RP' TOKEN -> ^('RP' TOKEN);
 
-
+// Symbol
 sym:'SYM' TOKEN -> ^('SYM' TOKEN);
 
 // Infinitive marker to
@@ -655,8 +522,6 @@ uh:'UH' TOKEN -> ^('UH' TOKEN);
 // Verb, base form
 vb:'VB' TOKEN -> ^('VB' TOKEN);
 
-vbp:'VBP' TOKEN -> ^('VBP' TOKEN);
-
 // Verb, past tense
 vbd:'VBD' TOKEN -> ^('VBD' TOKEN);
 
@@ -666,26 +531,20 @@ vbg:'VBG' TOKEN -> ^('VBG' TOKEN);
 // Verb, past participle
 vbn:'VBN' TOKEN -> ^('VBN' TOKEN);
 
+// Verb, non-3rd person singular present
+vbp:'VBP' TOKEN -> ^('VBP' TOKEN);
+
 // Verb, 3rd. singular present
 vbz:'VBZ' TOKEN -> ^('VBZ' TOKEN);
 
-// Wh- determiner (what, which)
+// Wh- determiner (which, that)
 wdt:'WDT' TOKEN -> ^('WDT' TOKEN);
+
+// wh- pronoun (what, who, whom)
+wp:'WP' TOKEN -> ^('WP' TOKEN);
 
 // Possessive wh- pronoun (whose)
 wp_poss:'WP$' TOKEN -> ^('WP$' TOKEN);
 
-
-// Objective wh- pronoun (whom, which, that)
-wpo:'WPO' TOKEN -> ^('WPO' TOKEN);
-
-// Nominative wh- pronoun (who, which, that)
-wps:'WPS' TOKEN -> ^('WPS' TOKEN);
-
-// Wh- qualifier (how)
-wql:'WQL' TOKEN -> ^('WQL' TOKEN);
-
 // Wh- adverb (how, where, when)
 wrb:'WRB' TOKEN -> ^('WRB' TOKEN);
-
-pdt:'PDT' TOKEN -> ^('PDT' TOKEN);

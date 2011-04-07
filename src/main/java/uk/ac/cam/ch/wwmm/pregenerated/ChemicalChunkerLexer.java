@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 14:05:07 uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g 2011-04-07 14:52:28
+// $ANTLR 3.2 Sep 23, 2009 14:05:07 uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g 2011-04-07 17:05:30
 package uk.ac.cam.ch.wwmm.pregenerated;
 
 import org.antlr.runtime.*;
@@ -7,32 +7,34 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class ChemicalChunkerLexer extends Lexer {
+    public static final int DissolvePhrase=8;
     public static final int T__159=159;
     public static final int T__158=158;
     public static final int T__160=160;
     public static final int T__167=167;
-    public static final int T__168=168;
     public static final int EOF=-1;
+    public static final int T__168=168;
     public static final int T__165=165;
     public static final int T__166=166;
     public static final int T__163=163;
     public static final int T__164=164;
+    public static final int QUANTITY=29;
     public static final int T__161=161;
-    public static final int T__162=162;
     public static final int TOKEN=31;
+    public static final int T__162=162;
     public static final int T__93=93;
     public static final int T__94=94;
     public static final int T__91=91;
-    public static final int CYCLES=10;
     public static final int T__92=92;
+    public static final int CYCLES=10;
     public static final int T__148=148;
     public static final int T__90=90;
     public static final int T__147=147;
     public static final int T__149=149;
     public static final int AMOUNT=19;
     public static final int T__154=154;
-    public static final int CITATION=12;
     public static final int T__155=155;
+    public static final int CITATION=12;
     public static final int T__156=156;
     public static final int T__99=99;
     public static final int T__157=157;
@@ -52,6 +54,8 @@ public class ChemicalChunkerLexer extends Lexer {
     public static final int T__81=81;
     public static final int T__82=82;
     public static final int T__83=83;
+    public static final int MultipleApparatus=7;
+    public static final int APPARATUS=24;
     public static final int T__141=141;
     public static final int T__85=85;
     public static final int T__142=142;
@@ -61,25 +65,26 @@ public class ChemicalChunkerLexer extends Lexer {
     public static final int T__86=86;
     public static final int T__145=145;
     public static final int T__89=89;
+    public static final int MOLAR=23;
+    public static final int TimePhrase=15;
     public static final int T__146=146;
     public static final int T__88=88;
-    public static final int TimePhrase=15;
-    public static final int MOLAR=23;
     public static final int T__143=143;
     public static final int T__144=144;
-    public static final int T__126=126;
     public static final int PrepPhrase=14;
+    public static final int T__126=126;
     public static final int T__125=125;
     public static final int T__128=128;
     public static final int T__127=127;
-    public static final int T__71=71;
     public static final int WS=30;
+    public static final int T__71=71;
     public static final int T__129=129;
     public static final int T__72=72;
-    public static final int T__70=70;
     public static final int RATIO=11;
+    public static final int T__70=70;
     public static final int T__76=76;
     public static final int T__75=75;
+    public static final int AtmospherePhrase=17;
     public static final int T__130=130;
     public static final int T__74=74;
     public static final int T__131=131;
@@ -91,41 +96,46 @@ public class ChemicalChunkerLexer extends Lexer {
     public static final int T__78=78;
     public static final int T__135=135;
     public static final int T__77=77;
-    public static final int T__215=215;
-    public static final int T__216=216;
+    public static final int T__68=68;
+    public static final int T__69=69;
     public static final int NounPhrase=6;
-    public static final int T__213=213;
-    public static final int T__214=214;
-    public static final int T__219=219;
+    public static final int T__66=66;
+    public static final int T__67=67;
+    public static final int T__64=64;
+    public static final int T__65=65;
     public static final int TempPhrase=18;
-    public static final int T__217=217;
-    public static final int T__218=218;
+    public static final int T__62=62;
+    public static final int T__63=63;
     public static final int T__118=118;
     public static final int T__119=119;
     public static final int T__116=116;
     public static final int T__117=117;
     public static final int T__114=114;
-    public static final int VerbPhrase=9;
     public static final int T__115=115;
+    public static final int VerbPhrase=9;
     public static final int T__124=124;
     public static final int T__123=123;
     public static final int T__122=122;
     public static final int T__121=121;
     public static final int T__120=120;
     public static final int UNNAMEDMOLECULE=28;
-    public static final int T__202=202;
-    public static final int T__203=203;
-    public static final int T__204=204;
-    public static final int T__205=205;
-    public static final int T__206=206;
+    public static final int T__61=61;
+    public static final int T__60=60;
+    public static final int MULTIPLE=25;
+    public static final int T__55=55;
+    public static final int T__56=56;
+    public static final int T__57=57;
+    public static final int T__58=58;
+    public static final int T__51=51;
+    public static final int T__52=52;
     public static final int MOLECULE=27;
-    public static final int T__207=207;
-    public static final int T__208=208;
-    public static final int T__209=209;
+    public static final int T__53=53;
+    public static final int T__54=54;
     public static final int T__107=107;
     public static final int T__108=108;
     public static final int T__109=109;
     public static final int T__103=103;
+    public static final int T__59=59;
     public static final int T__104=104;
     public static final int T__105=105;
     public static final int T__106=106;
@@ -133,96 +143,39 @@ public class ChemicalChunkerLexer extends Lexer {
     public static final int T__110=110;
     public static final int T__113=113;
     public static final int T__112=112;
-    public static final int T__210=210;
-    public static final int T__212=212;
-    public static final int T__211=211;
+    public static final int T__50=50;
+    public static final int T__42=42;
+    public static final int T__43=43;
     public static final int Unmatched=5;
+    public static final int T__40=40;
     public static final int RolePrepPhrase=16;
+    public static final int T__41=41;
+    public static final int T__46=46;
+    public static final int T__47=47;
+    public static final int T__44=44;
+    public static final int PERCENT=21;
+    public static final int T__45=45;
+    public static final int T__48=48;
+    public static final int T__49=49;
     public static final int T__102=102;
     public static final int T__101=101;
     public static final int T__100=100;
     public static final int MIXTURE=13;
-    public static final int VOLUME=22;
-    public static final int Sentence=4;
-    public static final int MASS=20;
-    public static final int DissolvePhrase=8;
-    public static final int QUANTITY=29;
-    public static final int MultipleApparatus=7;
-    public static final int APPARATUS=24;
-    public static final int T__200=200;
-    public static final int T__201=201;
-    public static final int AtmospherePhrase=17;
-    public static final int T__68=68;
-    public static final int T__69=69;
-    public static final int T__66=66;
-    public static final int T__67=67;
-    public static final int T__64=64;
-    public static final int T__65=65;
-    public static final int T__62=62;
-    public static final int T__63=63;
-    public static final int T__61=61;
-    public static final int T__60=60;
-    public static final int MULTIPLE=25;
-    public static final int T__55=55;
-    public static final int T__56=56;
-    public static final int T__57=57;
-    public static final int T__199=199;
-    public static final int T__58=58;
-    public static final int T__198=198;
-    public static final int T__51=51;
-    public static final int T__197=197;
-    public static final int T__52=52;
-    public static final int T__196=196;
-    public static final int T__53=53;
-    public static final int T__195=195;
-    public static final int T__54=54;
-    public static final int T__194=194;
-    public static final int T__193=193;
-    public static final int T__192=192;
-    public static final int T__191=191;
-    public static final int T__190=190;
-    public static final int T__59=59;
-    public static final int T__50=50;
-    public static final int T__42=42;
-    public static final int T__184=184;
-    public static final int T__43=43;
-    public static final int T__183=183;
-    public static final int T__40=40;
-    public static final int T__186=186;
-    public static final int T__41=41;
-    public static final int T__185=185;
-    public static final int T__188=188;
-    public static final int T__46=46;
-    public static final int T__187=187;
-    public static final int T__47=47;
-    public static final int T__44=44;
-    public static final int PERCENT=21;
-    public static final int T__189=189;
-    public static final int T__45=45;
-    public static final int T__48=48;
-    public static final int T__49=49;
-    public static final int T__180=180;
-    public static final int T__182=182;
-    public static final int T__181=181;
-    public static final int T__175=175;
-    public static final int T__174=174;
-    public static final int T__173=173;
-    public static final int T__172=172;
     public static final int T__32=32;
-    public static final int T__179=179;
+    public static final int T__172=172;
     public static final int T__33=33;
-    public static final int T__178=178;
     public static final int T__34=34;
-    public static final int T__177=177;
     public static final int T__35=35;
-    public static final int T__176=176;
     public static final int T__36=36;
     public static final int T__37=37;
     public static final int T__38=38;
     public static final int T__39=39;
     public static final int T__171=171;
+    public static final int VOLUME=22;
     public static final int T__170=170;
+    public static final int Sentence=4;
     public static final int T__169=169;
+    public static final int MASS=20;
     public static final int OSCARCM=26;
 
     // delegates
@@ -768,10 +721,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__57;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:34:7: ( 'NN-EXAMPLE' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:34:9: 'NN-EXAMPLE'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:34:7: ( 'NN-STATE' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:34:9: 'NN-STATE'
             {
-            match("NN-EXAMPLE"); 
+            match("NN-STATE"); 
 
 
             }
@@ -789,10 +742,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__58;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:35:7: ( 'NN-STATE' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:35:9: 'NN-STATE'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:35:7: ( 'NN-TIME' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:35:9: 'NN-TIME'
             {
-            match("NN-STATE"); 
+            match("NN-TIME"); 
 
 
             }
@@ -810,10 +763,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__59;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:36:7: ( 'NN-TIME' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:36:9: 'NN-TIME'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:36:7: ( 'NN-MASS' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:36:9: 'NN-MASS'
             {
-            match("NN-TIME"); 
+            match("NN-MASS"); 
 
 
             }
@@ -831,10 +784,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__60;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:37:7: ( 'NN-MASS' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:37:9: 'NN-MASS'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:37:7: ( 'NN-AMOUNT' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:37:9: 'NN-AMOUNT'
             {
-            match("NN-MASS"); 
+            match("NN-AMOUNT"); 
 
 
             }
@@ -873,10 +826,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__62;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:39:7: ( 'NN-AMOUNT' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:39:9: 'NN-AMOUNT'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:39:7: ( 'NN-ATMOSPHERE' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:39:9: 'NN-ATMOSPHERE'
             {
-            match("NN-AMOUNT"); 
+            match("NN-ATMOSPHERE"); 
 
 
             }
@@ -894,10 +847,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__63;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:40:7: ( 'NN-ATMOSPHERE' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:40:9: 'NN-ATMOSPHERE'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:40:7: ( 'NN-EQ' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:40:9: 'NN-EQ'
             {
-            match("NN-ATMOSPHERE"); 
+            match("NN-EQ"); 
 
 
             }
@@ -915,10 +868,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__64;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:41:7: ( 'NN-EQ' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:41:9: 'NN-EQ'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:41:7: ( 'NN-VOL' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:41:9: 'NN-VOL'
             {
-            match("NN-EQ"); 
+            match("NN-VOL"); 
 
 
             }
@@ -936,10 +889,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__65;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:42:7: ( 'NN-VOL' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:42:9: 'NN-VOL'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:42:7: ( 'NN-CHEMENTITY' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:42:9: 'NN-CHEMENTITY'
             {
-            match("NN-VOL"); 
+            match("NN-CHEMENTITY"); 
 
 
             }
@@ -957,10 +910,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__66;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:43:7: ( 'NN-CHEMENTITY' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:43:9: 'NN-CHEMENTITY'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:43:7: ( 'NN-TEMP' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:43:9: 'NN-TEMP'
             {
-            match("NN-CHEMENTITY"); 
+            match("NN-TEMP"); 
 
 
             }
@@ -978,10 +931,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__67;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:44:7: ( 'NN-TEMP' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:44:9: 'NN-TEMP'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:44:7: ( 'NN-FLASH' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:44:9: 'NN-FLASH'
             {
-            match("NN-TEMP"); 
+            match("NN-FLASH"); 
 
 
             }
@@ -999,10 +952,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__68;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:45:7: ( 'NN-FLASH' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:45:9: 'NN-FLASH'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:45:7: ( 'NN-GENERAL' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:45:9: 'NN-GENERAL'
             {
-            match("NN-FLASH"); 
+            match("NN-GENERAL"); 
 
 
             }
@@ -1020,10 +973,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__69;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:46:7: ( 'NN-GENERAL' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:46:9: 'NN-GENERAL'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:46:7: ( 'NN-METHOD' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:46:9: 'NN-METHOD'
             {
-            match("NN-GENERAL"); 
+            match("NN-METHOD"); 
 
 
             }
@@ -1041,10 +994,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__70;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:47:7: ( 'NN-METHOD' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:47:9: 'NN-METHOD'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:47:7: ( 'NN-PRESSURE' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:47:9: 'NN-PRESSURE'
             {
-            match("NN-METHOD"); 
+            match("NN-PRESSURE"); 
 
 
             }
@@ -1062,10 +1015,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__71;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:48:7: ( 'NN-PRESSURE' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:48:9: 'NN-PRESSURE'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:48:7: ( 'NN-COLUMN' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:48:9: 'NN-COLUMN'
             {
-            match("NN-PRESSURE"); 
+            match("NN-COLUMN"); 
 
 
             }
@@ -1083,10 +1036,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__72;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:49:7: ( 'NN-COLUMN' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:49:9: 'NN-COLUMN'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:49:7: ( 'NN-CHROMATOGRAPHY' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:49:9: 'NN-CHROMATOGRAPHY'
             {
-            match("NN-COLUMN"); 
+            match("NN-CHROMATOGRAPHY"); 
 
 
             }
@@ -1104,10 +1057,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__73;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:50:7: ( 'NN-CHROMATOGRAPHY' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:50:9: 'NN-CHROMATOGRAPHY'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:50:7: ( 'NN-VACUUM' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:50:9: 'NN-VACUUM'
             {
-            match("NN-CHROMATOGRAPHY"); 
+            match("NN-VACUUM"); 
 
 
             }
@@ -1125,10 +1078,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__74;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:51:7: ( 'NN-VACUUM' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:51:9: 'NN-VACUUM'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:51:7: ( 'NN-CYCLE' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:51:9: 'NN-CYCLE'
             {
-            match("NN-VACUUM"); 
+            match("NN-CYCLE"); 
 
 
             }
@@ -1146,10 +1099,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__75;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:52:7: ( 'NN-CYCLE' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:52:9: 'NN-CYCLE'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:52:7: ( 'NN-TIMES' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:52:9: 'NN-TIMES'
             {
-            match("NN-CYCLE"); 
+            match("NN-TIMES"); 
 
 
             }
@@ -1167,10 +1120,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__76;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:53:7: ( 'NN-TIMES' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:53:9: 'NN-TIMES'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:53:7: ( 'NN-EXAMPLE' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:53:9: 'NN-EXAMPLE'
             {
-            match("NN-TIMES"); 
+            match("NN-EXAMPLE"); 
 
 
             }
@@ -2175,10 +2128,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__124;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:101:8: ( 'COLON' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:101:10: 'COLON'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:101:8: ( 'RB-CONJ' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:101:10: 'RB-CONJ'
             {
-            match("COLON"); 
+            match("RB-CONJ"); 
 
 
             }
@@ -2196,10 +2149,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__125;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:102:8: ( 'COMMA' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:102:10: 'COMMA'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:102:8: ( 'COLON' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:102:10: 'COLON'
             {
-            match("COMMA"); 
+            match("COLON"); 
 
 
             }
@@ -2217,10 +2170,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__126;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:103:8: ( 'APOST' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:103:10: 'APOST'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:103:8: ( 'COMMA' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:103:10: 'COMMA'
             {
-            match("APOST"); 
+            match("COMMA"); 
 
 
             }
@@ -2238,10 +2191,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__127;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:104:8: ( 'NEG' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:104:10: 'NEG'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:104:8: ( 'APOST' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:104:10: 'APOST'
             {
-            match("NEG"); 
+            match("APOST"); 
 
 
             }
@@ -2259,10 +2212,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__128;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:105:8: ( 'DASH' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:105:10: 'DASH'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:105:8: ( 'NEG' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:105:10: 'NEG'
             {
-            match("DASH"); 
+            match("NEG"); 
 
 
             }
@@ -2280,10 +2233,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__129;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:106:8: ( 'STOP' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:106:10: 'STOP'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:106:8: ( 'DASH' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:106:10: 'DASH'
             {
-            match("STOP"); 
+            match("DASH"); 
 
 
             }
@@ -2301,10 +2254,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__130;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:107:8: ( 'NN-PERCENT' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:107:10: 'NN-PERCENT'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:107:8: ( 'STOP' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:107:10: 'STOP'
             {
-            match("NN-PERCENT"); 
+            match("STOP"); 
 
 
             }
@@ -2322,10 +2275,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__131;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:108:8: ( 'LSQB' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:108:10: 'LSQB'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:108:8: ( 'NN-PERCENT' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:108:10: 'NN-PERCENT'
             {
-            match("LSQB"); 
+            match("NN-PERCENT"); 
 
 
             }
@@ -2343,10 +2296,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__132;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:109:8: ( 'RSQB' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:109:10: 'RSQB'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:109:8: ( 'LSQB' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:109:10: 'LSQB'
             {
-            match("RSQB"); 
+            match("LSQB"); 
 
 
             }
@@ -2364,10 +2317,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__133;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:110:8: ( '-LRB-' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:110:10: '-LRB-'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:110:8: ( 'RSQB' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:110:10: 'RSQB'
             {
-            match("-LRB-"); 
+            match("RSQB"); 
 
 
             }
@@ -2385,10 +2338,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__134;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:111:8: ( '-RRB-' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:111:10: '-RRB-'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:111:8: ( 'DT-THE' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:111:10: 'DT-THE'
             {
-            match("-RRB-"); 
+            match("DT-THE"); 
 
 
             }
@@ -2406,10 +2359,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__135;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:112:8: ( 'ABL' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:112:10: 'ABL'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:112:8: ( '-LRB-' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:112:10: '-LRB-'
             {
-            match("ABL"); 
+            match("-LRB-"); 
 
 
             }
@@ -2427,10 +2380,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__136;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:113:8: ( 'ABN' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:113:10: 'ABN'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:113:8: ( '-RRB-' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:113:10: '-RRB-'
             {
-            match("ABN"); 
+            match("-RRB-"); 
 
 
             }
@@ -2448,10 +2401,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__137;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:114:8: ( 'ABX' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:114:10: 'ABX'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:114:8: ( 'CC' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:114:10: 'CC'
             {
-            match("ABX"); 
+            match("CC"); 
 
 
             }
@@ -2469,10 +2422,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__138;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:115:8: ( 'AP' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:115:10: 'AP'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:115:8: ( 'CD' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:115:10: 'CD'
             {
-            match("AP"); 
+            match("CD"); 
 
 
             }
@@ -2490,10 +2443,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__139;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:116:8: ( 'AT' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:116:10: 'AT'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:116:8: ( 'DT' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:116:10: 'DT'
             {
-            match("AT"); 
+            match("DT"); 
 
 
             }
@@ -2511,10 +2464,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__140;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:117:8: ( 'BE' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:117:10: 'BE'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:117:8: ( 'EX' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:117:10: 'EX'
             {
-            match("BE"); 
+            match("EX"); 
 
 
             }
@@ -2532,10 +2485,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__141;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:118:8: ( 'BED' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:118:10: 'BED'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:118:8: ( 'FW' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:118:10: 'FW'
             {
-            match("BED"); 
+            match("FW"); 
 
 
             }
@@ -2553,10 +2506,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__142;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:119:8: ( 'BEDZ' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:119:10: 'BEDZ'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:119:8: ( 'IN' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:119:10: 'IN'
             {
-            match("BEDZ"); 
+            match("IN"); 
 
 
             }
@@ -2574,10 +2527,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__143;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:120:8: ( 'BEG' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:120:10: 'BEG'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:120:8: ( 'JJ' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:120:10: 'JJ'
             {
-            match("BEG"); 
+            match("JJ"); 
 
 
             }
@@ -2595,10 +2548,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__144;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:121:8: ( 'BEM' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:121:10: 'BEM'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:121:8: ( 'JJR' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:121:10: 'JJR'
             {
-            match("BEM"); 
+            match("JJR"); 
 
 
             }
@@ -2616,10 +2569,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__145;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:122:8: ( 'BEN' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:122:10: 'BEN'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:122:8: ( 'JJS' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:122:10: 'JJS'
             {
-            match("BEN"); 
+            match("JJS"); 
 
 
             }
@@ -2637,10 +2590,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__146;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:123:8: ( 'BER' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:123:10: 'BER'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:123:8: ( 'LS' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:123:10: 'LS'
             {
-            match("BER"); 
+            match("LS"); 
 
 
             }
@@ -2658,10 +2611,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__147;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:124:8: ( 'BEZ' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:124:10: 'BEZ'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:124:8: ( 'MD' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:124:10: 'MD'
             {
-            match("BEZ"); 
+            match("MD"); 
 
 
             }
@@ -2679,10 +2632,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__148;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:125:8: ( 'CC' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:125:10: 'CC'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:125:8: ( 'NN' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:125:10: 'NN'
             {
-            match("CC"); 
+            match("NN"); 
 
 
             }
@@ -2700,10 +2653,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__149;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:126:8: ( 'CD' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:126:10: 'CD'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:126:8: ( 'NNS' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:126:10: 'NNS'
             {
-            match("CD"); 
+            match("NNS"); 
 
 
             }
@@ -2721,10 +2674,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__150;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:127:8: ( 'CS' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:127:10: 'CS'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:127:8: ( 'NNP' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:127:10: 'NNP'
             {
-            match("CS"); 
+            match("NNP"); 
 
 
             }
@@ -2742,10 +2695,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__151;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:128:8: ( 'DO' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:128:10: 'DO'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:128:8: ( 'NNPS' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:128:10: 'NNPS'
             {
-            match("DO"); 
+            match("NNPS"); 
 
 
             }
@@ -2763,10 +2716,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__152;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:129:8: ( 'DOD' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:129:10: 'DOD'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:129:8: ( 'PDT' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:129:10: 'PDT'
             {
-            match("DOD"); 
+            match("PDT"); 
 
 
             }
@@ -2784,10 +2737,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__153;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:130:8: ( 'DOZ' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:130:10: 'DOZ'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:130:8: ( 'POS' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:130:10: 'POS'
             {
-            match("DOZ"); 
+            match("POS"); 
 
 
             }
@@ -2805,10 +2758,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__154;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:131:8: ( 'DT' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:131:10: 'DT'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:131:8: ( 'PRP' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:131:10: 'PRP'
             {
-            match("DT"); 
+            match("PRP"); 
 
 
             }
@@ -2826,10 +2779,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__155;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:132:8: ( 'DT-THE' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:132:10: 'DT-THE'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:132:8: ( 'PRP$' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:132:10: 'PRP$'
             {
-            match("DT-THE"); 
+            match("PRP$"); 
 
 
             }
@@ -2847,10 +2800,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__156;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:133:8: ( 'DTI' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:133:10: 'DTI'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:133:8: ( 'RB' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:133:10: 'RB'
             {
-            match("DTI"); 
+            match("RB"); 
 
 
             }
@@ -2868,10 +2821,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__157;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:134:8: ( 'DTS' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:134:10: 'DTS'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:134:8: ( 'RBR' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:134:10: 'RBR'
             {
-            match("DTS"); 
+            match("RBR"); 
 
 
             }
@@ -2889,10 +2842,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__158;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:135:8: ( 'DTX' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:135:10: 'DTX'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:135:8: ( 'RBS' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:135:10: 'RBS'
             {
-            match("DTX"); 
+            match("RBS"); 
 
 
             }
@@ -2910,10 +2863,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__159;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:136:8: ( 'EX' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:136:10: 'EX'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:136:8: ( 'RP' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:136:10: 'RP'
             {
-            match("EX"); 
+            match("RP"); 
 
 
             }
@@ -2931,10 +2884,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__160;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:137:8: ( 'FW' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:137:10: 'FW'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:137:8: ( 'SYM' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:137:10: 'SYM'
             {
-            match("FW"); 
+            match("SYM"); 
 
 
             }
@@ -2952,10 +2905,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__161;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:138:8: ( 'FW-IN' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:138:10: 'FW-IN'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:138:8: ( 'TO' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:138:10: 'TO'
             {
-            match("FW-IN"); 
+            match("TO"); 
 
 
             }
@@ -2973,10 +2926,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__162;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:139:8: ( 'HV' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:139:10: 'HV'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:139:8: ( 'UH' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:139:10: 'UH'
             {
-            match("HV"); 
+            match("UH"); 
 
 
             }
@@ -2994,10 +2947,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__163;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:140:8: ( 'HVD' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:140:10: 'HVD'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:140:8: ( 'VB' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:140:10: 'VB'
             {
-            match("HVD"); 
+            match("VB"); 
 
 
             }
@@ -3015,10 +2968,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__164;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:141:8: ( 'HVG' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:141:10: 'HVG'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:141:8: ( 'VBD' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:141:10: 'VBD'
             {
-            match("HVG"); 
+            match("VBD"); 
 
 
             }
@@ -3036,10 +2989,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__165;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:142:8: ( 'HVN' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:142:10: 'HVN'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:142:8: ( 'VBG' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:142:10: 'VBG'
             {
-            match("HVN"); 
+            match("VBG"); 
 
 
             }
@@ -3057,10 +3010,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__166;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:143:8: ( 'IN' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:143:10: 'IN'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:143:8: ( 'VBN' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:143:10: 'VBN'
             {
-            match("IN"); 
+            match("VBN"); 
 
 
             }
@@ -3078,10 +3031,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__167;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:144:8: ( 'JJ' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:144:10: 'JJ'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:144:8: ( 'VBP' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:144:10: 'VBP'
             {
-            match("JJ"); 
+            match("VBP"); 
 
 
             }
@@ -3099,10 +3052,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__168;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:145:8: ( 'JJR' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:145:10: 'JJR'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:145:8: ( 'VBZ' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:145:10: 'VBZ'
             {
-            match("JJR"); 
+            match("VBZ"); 
 
 
             }
@@ -3120,10 +3073,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__169;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:146:8: ( 'JJS' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:146:10: 'JJS'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:146:8: ( 'WDT' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:146:10: 'WDT'
             {
-            match("JJS"); 
+            match("WDT"); 
 
 
             }
@@ -3141,10 +3094,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__170;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:147:8: ( 'JJT' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:147:10: 'JJT'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:147:8: ( 'WP' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:147:10: 'WP'
             {
-            match("JJT"); 
+            match("WP"); 
 
 
             }
@@ -3162,10 +3115,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__171;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:148:8: ( 'MD' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:148:10: 'MD'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:148:8: ( 'WP$' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:148:10: 'WP$'
             {
-            match("MD"); 
+            match("WP$"); 
 
 
             }
@@ -3183,974 +3136,8 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = T__172;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:149:8: ( 'NC' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:149:10: 'NC'
-            {
-            match("NC"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__172"
-
-    // $ANTLR start "T__173"
-    public final void mT__173() throws RecognitionException {
-        try {
-            int _type = T__173;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:150:8: ( 'NN' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:150:10: 'NN'
-            {
-            match("NN"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__173"
-
-    // $ANTLR start "T__174"
-    public final void mT__174() throws RecognitionException {
-        try {
-            int _type = T__174;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:151:8: ( 'NN$' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:151:10: 'NN$'
-            {
-            match("NN$"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__174"
-
-    // $ANTLR start "T__175"
-    public final void mT__175() throws RecognitionException {
-        try {
-            int _type = T__175;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:152:8: ( 'NNS' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:152:10: 'NNS'
-            {
-            match("NNS"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__175"
-
-    // $ANTLR start "T__176"
-    public final void mT__176() throws RecognitionException {
-        try {
-            int _type = T__176;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:153:8: ( 'NNS$' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:153:10: 'NNS$'
-            {
-            match("NNS$"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__176"
-
-    // $ANTLR start "T__177"
-    public final void mT__177() throws RecognitionException {
-        try {
-            int _type = T__177;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:154:8: ( 'NP' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:154:10: 'NP'
-            {
-            match("NP"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__177"
-
-    // $ANTLR start "T__178"
-    public final void mT__178() throws RecognitionException {
-        try {
-            int _type = T__178;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:155:8: ( 'NNP' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:155:10: 'NNP'
-            {
-            match("NNP"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__178"
-
-    // $ANTLR start "T__179"
-    public final void mT__179() throws RecognitionException {
-        try {
-            int _type = T__179;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:156:8: ( 'NP$' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:156:10: 'NP$'
-            {
-            match("NP$"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__179"
-
-    // $ANTLR start "T__180"
-    public final void mT__180() throws RecognitionException {
-        try {
-            int _type = T__180;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:157:8: ( 'NPS' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:157:10: 'NPS'
-            {
-            match("NPS"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__180"
-
-    // $ANTLR start "T__181"
-    public final void mT__181() throws RecognitionException {
-        try {
-            int _type = T__181;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:158:8: ( 'NPS$' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:158:10: 'NPS$'
-            {
-            match("NPS$"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__181"
-
-    // $ANTLR start "T__182"
-    public final void mT__182() throws RecognitionException {
-        try {
-            int _type = T__182;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:159:8: ( 'NR' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:159:10: 'NR'
-            {
-            match("NR"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__182"
-
-    // $ANTLR start "T__183"
-    public final void mT__183() throws RecognitionException {
-        try {
-            int _type = T__183;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:160:8: ( 'OD' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:160:10: 'OD'
-            {
-            match("OD"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__183"
-
-    // $ANTLR start "T__184"
-    public final void mT__184() throws RecognitionException {
-        try {
-            int _type = T__184;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:161:8: ( 'PN' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:161:10: 'PN'
-            {
-            match("PN"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__184"
-
-    // $ANTLR start "T__185"
-    public final void mT__185() throws RecognitionException {
-        try {
-            int _type = T__185;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:162:8: ( 'PN$' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:162:10: 'PN$'
-            {
-            match("PN$"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__185"
-
-    // $ANTLR start "T__186"
-    public final void mT__186() throws RecognitionException {
-        try {
-            int _type = T__186;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:163:8: ( 'PP$' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:163:10: 'PP$'
-            {
-            match("PP$"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__186"
-
-    // $ANTLR start "T__187"
-    public final void mT__187() throws RecognitionException {
-        try {
-            int _type = T__187;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:164:8: ( 'PP$$' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:164:10: 'PP$$'
-            {
-            match("PP$$"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__187"
-
-    // $ANTLR start "T__188"
-    public final void mT__188() throws RecognitionException {
-        try {
-            int _type = T__188;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:165:8: ( 'PPL' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:165:10: 'PPL'
-            {
-            match("PPL"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__188"
-
-    // $ANTLR start "T__189"
-    public final void mT__189() throws RecognitionException {
-        try {
-            int _type = T__189;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:166:8: ( 'PPLS' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:166:10: 'PPLS'
-            {
-            match("PPLS"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__189"
-
-    // $ANTLR start "T__190"
-    public final void mT__190() throws RecognitionException {
-        try {
-            int _type = T__190;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:167:8: ( 'PRP' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:167:10: 'PRP'
-            {
-            match("PRP"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__190"
-
-    // $ANTLR start "T__191"
-    public final void mT__191() throws RecognitionException {
-        try {
-            int _type = T__191;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:168:8: ( 'PRP$' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:168:10: 'PRP$'
-            {
-            match("PRP$"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__191"
-
-    // $ANTLR start "T__192"
-    public final void mT__192() throws RecognitionException {
-        try {
-            int _type = T__192;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:169:8: ( 'PPO' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:169:10: 'PPO'
-            {
-            match("PPO"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__192"
-
-    // $ANTLR start "T__193"
-    public final void mT__193() throws RecognitionException {
-        try {
-            int _type = T__193;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:170:8: ( 'PPS' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:170:10: 'PPS'
-            {
-            match("PPS"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__193"
-
-    // $ANTLR start "T__194"
-    public final void mT__194() throws RecognitionException {
-        try {
-            int _type = T__194;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:171:8: ( 'PPSS' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:171:10: 'PPSS'
-            {
-            match("PPSS"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__194"
-
-    // $ANTLR start "T__195"
-    public final void mT__195() throws RecognitionException {
-        try {
-            int _type = T__195;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:172:8: ( 'QL' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:172:10: 'QL'
-            {
-            match("QL"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__195"
-
-    // $ANTLR start "T__196"
-    public final void mT__196() throws RecognitionException {
-        try {
-            int _type = T__196;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:173:8: ( 'QLP' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:173:10: 'QLP'
-            {
-            match("QLP"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__196"
-
-    // $ANTLR start "T__197"
-    public final void mT__197() throws RecognitionException {
-        try {
-            int _type = T__197;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:174:8: ( 'RB' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:174:10: 'RB'
-            {
-            match("RB"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__197"
-
-    // $ANTLR start "T__198"
-    public final void mT__198() throws RecognitionException {
-        try {
-            int _type = T__198;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:175:8: ( 'RBR' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:175:10: 'RBR'
-            {
-            match("RBR"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__198"
-
-    // $ANTLR start "T__199"
-    public final void mT__199() throws RecognitionException {
-        try {
-            int _type = T__199;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:176:8: ( 'RB-CONJ' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:176:10: 'RB-CONJ'
-            {
-            match("RB-CONJ"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__199"
-
-    // $ANTLR start "T__200"
-    public final void mT__200() throws RecognitionException {
-        try {
-            int _type = T__200;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:177:8: ( 'RBT' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:177:10: 'RBT'
-            {
-            match("RBT"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__200"
-
-    // $ANTLR start "T__201"
-    public final void mT__201() throws RecognitionException {
-        try {
-            int _type = T__201;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:178:8: ( 'RBS' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:178:10: 'RBS'
-            {
-            match("RBS"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__201"
-
-    // $ANTLR start "T__202"
-    public final void mT__202() throws RecognitionException {
-        try {
-            int _type = T__202;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:179:8: ( 'RN' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:179:10: 'RN'
-            {
-            match("RN"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__202"
-
-    // $ANTLR start "T__203"
-    public final void mT__203() throws RecognitionException {
-        try {
-            int _type = T__203;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:180:8: ( 'RP' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:180:10: 'RP'
-            {
-            match("RP"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__203"
-
-    // $ANTLR start "T__204"
-    public final void mT__204() throws RecognitionException {
-        try {
-            int _type = T__204;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:181:8: ( 'SYM' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:181:10: 'SYM'
-            {
-            match("SYM"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__204"
-
-    // $ANTLR start "T__205"
-    public final void mT__205() throws RecognitionException {
-        try {
-            int _type = T__205;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:182:8: ( 'TO' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:182:10: 'TO'
-            {
-            match("TO"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__205"
-
-    // $ANTLR start "T__206"
-    public final void mT__206() throws RecognitionException {
-        try {
-            int _type = T__206;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:183:8: ( 'UH' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:183:10: 'UH'
-            {
-            match("UH"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__206"
-
-    // $ANTLR start "T__207"
-    public final void mT__207() throws RecognitionException {
-        try {
-            int _type = T__207;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:184:8: ( 'VB' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:184:10: 'VB'
-            {
-            match("VB"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__207"
-
-    // $ANTLR start "T__208"
-    public final void mT__208() throws RecognitionException {
-        try {
-            int _type = T__208;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:185:8: ( 'VBP' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:185:10: 'VBP'
-            {
-            match("VBP"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__208"
-
-    // $ANTLR start "T__209"
-    public final void mT__209() throws RecognitionException {
-        try {
-            int _type = T__209;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:186:8: ( 'VBD' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:186:10: 'VBD'
-            {
-            match("VBD"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__209"
-
-    // $ANTLR start "T__210"
-    public final void mT__210() throws RecognitionException {
-        try {
-            int _type = T__210;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:187:8: ( 'VBG' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:187:10: 'VBG'
-            {
-            match("VBG"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__210"
-
-    // $ANTLR start "T__211"
-    public final void mT__211() throws RecognitionException {
-        try {
-            int _type = T__211;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:188:8: ( 'VBN' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:188:10: 'VBN'
-            {
-            match("VBN"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__211"
-
-    // $ANTLR start "T__212"
-    public final void mT__212() throws RecognitionException {
-        try {
-            int _type = T__212;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:189:8: ( 'VBZ' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:189:10: 'VBZ'
-            {
-            match("VBZ"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__212"
-
-    // $ANTLR start "T__213"
-    public final void mT__213() throws RecognitionException {
-        try {
-            int _type = T__213;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:190:8: ( 'WDT' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:190:10: 'WDT'
-            {
-            match("WDT"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__213"
-
-    // $ANTLR start "T__214"
-    public final void mT__214() throws RecognitionException {
-        try {
-            int _type = T__214;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:191:8: ( 'WP$' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:191:10: 'WP$'
-            {
-            match("WP$"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__214"
-
-    // $ANTLR start "T__215"
-    public final void mT__215() throws RecognitionException {
-        try {
-            int _type = T__215;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:192:8: ( 'WPO' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:192:10: 'WPO'
-            {
-            match("WPO"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__215"
-
-    // $ANTLR start "T__216"
-    public final void mT__216() throws RecognitionException {
-        try {
-            int _type = T__216;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:193:8: ( 'WPS' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:193:10: 'WPS'
-            {
-            match("WPS"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__216"
-
-    // $ANTLR start "T__217"
-    public final void mT__217() throws RecognitionException {
-        try {
-            int _type = T__217;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:194:8: ( 'WQL' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:194:10: 'WQL'
-            {
-            match("WQL"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__217"
-
-    // $ANTLR start "T__218"
-    public final void mT__218() throws RecognitionException {
-        try {
-            int _type = T__218;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:195:8: ( 'WRB' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:195:10: 'WRB'
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:149:8: ( 'WRB' )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:149:10: 'WRB'
             {
             match("WRB"); 
 
@@ -4163,28 +3150,7 @@ public class ChemicalChunkerLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__218"
-
-    // $ANTLR start "T__219"
-    public final void mT__219() throws RecognitionException {
-        try {
-            int _type = T__219;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:196:8: ( 'PDT' )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:196:10: 'PDT'
-            {
-            match("PDT"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__219"
+    // $ANTLR end "T__172"
 
     // $ANTLR start "WS"
     public final void mWS() throws RecognitionException {
@@ -4296,8 +3262,8 @@ public class ChemicalChunkerLexer extends Lexer {
     // $ANTLR end "TOKEN"
 
     public void mTokens() throws RecognitionException {
-        // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:8: ( T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | T__112 | T__113 | T__114 | T__115 | T__116 | T__117 | T__118 | T__119 | T__120 | T__121 | T__122 | T__123 | T__124 | T__125 | T__126 | T__127 | T__128 | T__129 | T__130 | T__131 | T__132 | T__133 | T__134 | T__135 | T__136 | T__137 | T__138 | T__139 | T__140 | T__141 | T__142 | T__143 | T__144 | T__145 | T__146 | T__147 | T__148 | T__149 | T__150 | T__151 | T__152 | T__153 | T__154 | T__155 | T__156 | T__157 | T__158 | T__159 | T__160 | T__161 | T__162 | T__163 | T__164 | T__165 | T__166 | T__167 | T__168 | T__169 | T__170 | T__171 | T__172 | T__173 | T__174 | T__175 | T__176 | T__177 | T__178 | T__179 | T__180 | T__181 | T__182 | T__183 | T__184 | T__185 | T__186 | T__187 | T__188 | T__189 | T__190 | T__191 | T__192 | T__193 | T__194 | T__195 | T__196 | T__197 | T__198 | T__199 | T__200 | T__201 | T__202 | T__203 | T__204 | T__205 | T__206 | T__207 | T__208 | T__209 | T__210 | T__211 | T__212 | T__213 | T__214 | T__215 | T__216 | T__217 | T__218 | T__219 | WS | TOKEN )
-        int alt3=190;
+        // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:8: ( T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | T__112 | T__113 | T__114 | T__115 | T__116 | T__117 | T__118 | T__119 | T__120 | T__121 | T__122 | T__123 | T__124 | T__125 | T__126 | T__127 | T__128 | T__129 | T__130 | T__131 | T__132 | T__133 | T__134 | T__135 | T__136 | T__137 | T__138 | T__139 | T__140 | T__141 | T__142 | T__143 | T__144 | T__145 | T__146 | T__147 | T__148 | T__149 | T__150 | T__151 | T__152 | T__153 | T__154 | T__155 | T__156 | T__157 | T__158 | T__159 | T__160 | T__161 | T__162 | T__163 | T__164 | T__165 | T__166 | T__167 | T__168 | T__169 | T__170 | T__171 | T__172 | WS | TOKEN )
+        int alt3=143;
         alt3 = dfa3.predict(input);
         switch (alt3) {
             case 1 :
@@ -5288,343 +4254,14 @@ public class ChemicalChunkerLexer extends Lexer {
                 }
                 break;
             case 142 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:929: T__173
-                {
-                mT__173(); 
-
-                }
-                break;
-            case 143 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:936: T__174
-                {
-                mT__174(); 
-
-                }
-                break;
-            case 144 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:943: T__175
-                {
-                mT__175(); 
-
-                }
-                break;
-            case 145 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:950: T__176
-                {
-                mT__176(); 
-
-                }
-                break;
-            case 146 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:957: T__177
-                {
-                mT__177(); 
-
-                }
-                break;
-            case 147 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:964: T__178
-                {
-                mT__178(); 
-
-                }
-                break;
-            case 148 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:971: T__179
-                {
-                mT__179(); 
-
-                }
-                break;
-            case 149 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:978: T__180
-                {
-                mT__180(); 
-
-                }
-                break;
-            case 150 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:985: T__181
-                {
-                mT__181(); 
-
-                }
-                break;
-            case 151 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:992: T__182
-                {
-                mT__182(); 
-
-                }
-                break;
-            case 152 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:999: T__183
-                {
-                mT__183(); 
-
-                }
-                break;
-            case 153 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:1006: T__184
-                {
-                mT__184(); 
-
-                }
-                break;
-            case 154 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:1013: T__185
-                {
-                mT__185(); 
-
-                }
-                break;
-            case 155 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:1020: T__186
-                {
-                mT__186(); 
-
-                }
-                break;
-            case 156 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:1027: T__187
-                {
-                mT__187(); 
-
-                }
-                break;
-            case 157 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:1034: T__188
-                {
-                mT__188(); 
-
-                }
-                break;
-            case 158 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:1041: T__189
-                {
-                mT__189(); 
-
-                }
-                break;
-            case 159 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:1048: T__190
-                {
-                mT__190(); 
-
-                }
-                break;
-            case 160 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:1055: T__191
-                {
-                mT__191(); 
-
-                }
-                break;
-            case 161 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:1062: T__192
-                {
-                mT__192(); 
-
-                }
-                break;
-            case 162 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:1069: T__193
-                {
-                mT__193(); 
-
-                }
-                break;
-            case 163 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:1076: T__194
-                {
-                mT__194(); 
-
-                }
-                break;
-            case 164 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:1083: T__195
-                {
-                mT__195(); 
-
-                }
-                break;
-            case 165 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:1090: T__196
-                {
-                mT__196(); 
-
-                }
-                break;
-            case 166 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:1097: T__197
-                {
-                mT__197(); 
-
-                }
-                break;
-            case 167 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:1104: T__198
-                {
-                mT__198(); 
-
-                }
-                break;
-            case 168 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:1111: T__199
-                {
-                mT__199(); 
-
-                }
-                break;
-            case 169 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:1118: T__200
-                {
-                mT__200(); 
-
-                }
-                break;
-            case 170 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:1125: T__201
-                {
-                mT__201(); 
-
-                }
-                break;
-            case 171 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:1132: T__202
-                {
-                mT__202(); 
-
-                }
-                break;
-            case 172 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:1139: T__203
-                {
-                mT__203(); 
-
-                }
-                break;
-            case 173 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:1146: T__204
-                {
-                mT__204(); 
-
-                }
-                break;
-            case 174 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:1153: T__205
-                {
-                mT__205(); 
-
-                }
-                break;
-            case 175 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:1160: T__206
-                {
-                mT__206(); 
-
-                }
-                break;
-            case 176 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:1167: T__207
-                {
-                mT__207(); 
-
-                }
-                break;
-            case 177 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:1174: T__208
-                {
-                mT__208(); 
-
-                }
-                break;
-            case 178 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:1181: T__209
-                {
-                mT__209(); 
-
-                }
-                break;
-            case 179 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:1188: T__210
-                {
-                mT__210(); 
-
-                }
-                break;
-            case 180 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:1195: T__211
-                {
-                mT__211(); 
-
-                }
-                break;
-            case 181 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:1202: T__212
-                {
-                mT__212(); 
-
-                }
-                break;
-            case 182 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:1209: T__213
-                {
-                mT__213(); 
-
-                }
-                break;
-            case 183 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:1216: T__214
-                {
-                mT__214(); 
-
-                }
-                break;
-            case 184 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:1223: T__215
-                {
-                mT__215(); 
-
-                }
-                break;
-            case 185 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:1230: T__216
-                {
-                mT__216(); 
-
-                }
-                break;
-            case 186 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:1237: T__217
-                {
-                mT__217(); 
-
-                }
-                break;
-            case 187 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:1244: T__218
-                {
-                mT__218(); 
-
-                }
-                break;
-            case 188 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:1251: T__219
-                {
-                mT__219(); 
-
-                }
-                break;
-            case 189 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:1258: WS
+                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:929: WS
                 {
                 mWS(); 
 
                 }
                 break;
-            case 190 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:1261: TOKEN
+            case 143 :
+                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:1:932: TOKEN
                 {
                 mTOKEN(); 
 
@@ -5639,658 +4276,623 @@ public class ChemicalChunkerLexer extends Lexer {
     protected DFA3 dfa3 = new DFA3(this);
     static class DFA3_static {
     static final String DFA3_eotS =
-        "\1\uffff\26\30\2\uffff\1\110\1\30\1\113\1\114\1\30\1\116\1\30\1"+
-        "\120\1\125\1\127\1\134\1\30\1\136\1\141\1\142\1\151\1\153\1\30\1"+
-        "\157\1\30\1\163\1\170\4\30\1\u0081\1\u0082\1\u0083\2\30\1\u008c"+
-        "\1\u008d\1\u008f\1\u0093\1\u0094\1\u0096\3\30\1\u009e\1\u009f\5"+
-        "\30\1\uffff\2\30\2\uffff\1\30\1\uffff\1\30\1\uffff\1\30\1\u00ad"+
-        "\1\u00ae\1\u00af\1\uffff\1\30\1\uffff\1\30\1\u00c5\1\u00c7\1\u00c8"+
-        "\1\uffff\1\u00c9\1\uffff\1\u00ca\1\u00cc\2\uffff\1\30\1\u00dc\1"+
-        "\u00dd\1\u00de\1\u00df\1\u00e0\1\uffff\1\30\1\uffff\1\u00e2\1\u00e3"+
-        "\1\u00e4\1\uffff\1\30\1\u00e6\1\u00e7\1\uffff\1\30\1\u00e9\1\u00ea"+
-        "\1\u00eb\1\uffff\1\30\1\u00ed\2\30\1\u00f0\1\30\1\u00f2\1\u00f3"+
-        "\3\uffff\2\30\1\u00f7\1\u00f8\1\u00f9\1\u00fa\1\u00fb\1\u00fc\2"+
-        "\uffff\1\30\1\uffff\1\u00fe\1\u00ff\1\u0100\2\uffff\1\u0101\1\uffff"+
-        "\1\u0103\1\u0105\1\u0106\1\u0108\1\u010a\1\u010b\1\u010c\2\uffff"+
-        "\1\u010d\1\u010e\1\u010f\1\u0110\1\u0111\1\u0112\7\30\3\uffff\25"+
-        "\30\1\uffff\1\u0144\4\uffff\1\u0145\1\uffff\17\30\5\uffff\1\30\3"+
-        "\uffff\1\u015f\2\uffff\1\30\3\uffff\1\u0161\1\uffff\1\u0162\1\u0163"+
-        "\1\uffff\1\30\2\uffff\2\30\1\u0167\6\uffff\1\30\4\uffff\1\u0169"+
-        "\1\uffff\1\u016a\2\uffff\1\u016b\1\uffff\1\u016c\11\uffff\2\30\1"+
-        "\u016f\1\u0170\4\30\1\u0175\2\30\1\u0178\1\u017a\2\30\1\u017e\1"+
-        "\u017f\5\30\1\u0186\32\30\2\uffff\30\30\1\u01c1\1\uffff\1\30\3\uffff"+
-        "\1\30\1\u01c4\1\u01c5\1\uffff\1\u01c6\4\uffff\2\30\2\uffff\4\30"+
-        "\1\uffff\2\30\1\uffff\1\30\1\uffff\1\30\1\u01d3\1\u01d4\2\uffff"+
-        "\1\30\1\u01d6\4\30\1\uffff\12\30\1\u01e5\1\30\1\u01e7\14\30\1\u01f5"+
-        "\2\30\1\u01f8\12\30\1\u0206\1\30\1\u0208\20\30\1\uffff\1\u021a\1"+
-        "\30\3\uffff\6\30\1\u0224\3\30\1\u0228\1\u022a\2\uffff\1\u022b\1"+
-        "\uffff\1\u022c\5\30\1\u0233\1\u0234\1\u0235\5\30\1\uffff\1\30\1"+
-        "\uffff\15\30\1\uffff\2\30\1\uffff\4\30\1\u024f\3\30\1\u0253\3\30"+
-        "\1\u0257\1\uffff\1\30\1\uffff\1\30\1\u025a\3\30\1\u025e\10\30\1"+
-        "\u0267\1\u0268\1\30\1\uffff\1\u026a\2\30\1\u026d\1\30\1\u026f\1"+
-        "\u0270\2\30\1\uffff\1\30\1\u0274\1\30\1\uffff\1\30\3\uffff\1\u0277"+
-        "\2\30\1\u027a\1\30\1\u027c\3\uffff\1\u027d\12\30\1\u0288\1\u0289"+
-        "\7\30\1\u0291\4\30\1\uffff\3\30\1\uffff\3\30\1\uffff\2\30\1\uffff"+
-        "\1\30\1\u029f\1\30\1\uffff\10\30\2\uffff\1\u02a9\1\uffff\2\30\1"+
-        "\uffff\1\u02ac\2\uffff\1\u02ad\2\30\1\uffff\1\u02b0\1\30\1\uffff"+
-        "\2\30\1\uffff\1\30\2\uffff\1\u02b5\1\30\1\u02b7\2\30\1\u02ba\2\30"+
-        "\1\u02bd\1\30\2\uffff\1\u02bf\3\30\1\u02c3\1\30\1\u02c5\1\uffff"+
-        "\1\u02c6\1\u02c7\6\30\1\u02ce\1\30\1\u02d0\1\30\1\u02d2\1\uffff"+
-        "\5\30\1\u02d8\1\u02d9\1\30\1\u02db\1\uffff\1\30\1\u02dd\2\uffff"+
-        "\1\u02de\1\30\1\uffff\1\u02e0\1\u02e1\1\u02e2\1\30\1\uffff\1\u02e4"+
-        "\1\uffff\2\30\1\uffff\2\30\1\uffff\1\30\1\uffff\1\u02ea\2\30\1\uffff"+
-        "\1\u02ed\3\uffff\1\u02ee\2\30\1\u02f1\1\u02f2\1\30\1\uffff\1\30"+
-        "\1\uffff\1\30\1\uffff\1\u02f6\1\30\1\u02f8\2\30\2\uffff\1\u02fb"+
-        "\1\uffff\1\u02fc\2\uffff\1\u02fd\3\uffff\1\30\1\uffff\5\30\1\uffff"+
-        "\1\u0304\1\30\2\uffff\1\30\1\u0307\2\uffff\1\30\1\u0309\1\30\1\uffff"+
-        "\1\u030b\1\uffff\2\30\3\uffff\2\30\1\u0310\3\30\1\uffff\2\30\1\uffff"+
-        "\1\30\1\uffff\1\u0317\1\uffff\1\u0318\1\30\1\u031a\1\u031b\1\uffff"+
-        "\1\u031c\4\30\1\u0321\2\uffff\1\30\3\uffff\1\30\1\u0324\1\u0325"+
-        "\1\u0326\1\uffff\1\u0327\1\30\4\uffff\1\30\1\u032a\1\uffff";
+        "\1\uffff\23\25\2\uffff\1\67\1\25\1\72\2\25\1\75\1\101\1\103\1\107"+
+        "\1\25\1\117\1\123\1\25\1\125\2\25\1\131\2\25\1\135\2\25\1\140\1"+
+        "\141\1\142\3\25\1\146\1\25\1\151\2\25\1\uffff\2\25\1\uffff\2\25"+
+        "\1\uffff\1\25\1\162\1\163\1\uffff\1\25\1\uffff\1\25\1\u0089\1\u008b"+
+        "\1\uffff\1\u008c\1\25\1\u009c\1\u009d\1\u009e\1\u009f\1\u00a0\1"+
+        "\uffff\1\25\1\u00a2\1\u00a3\1\uffff\1\25\1\uffff\3\25\1\uffff\1"+
+        "\25\1\u00a9\1\25\1\uffff\2\25\3\uffff\1\u00ad\1\u00ae\1\u00b0\1"+
+        "\uffff\1\u00b1\1\u00b2\1\uffff\1\u00b3\7\25\2\uffff\25\25\1\uffff"+
+        "\1\u00e5\2\uffff\17\25\5\uffff\1\25\2\uffff\1\u00ff\1\25\1\u0101"+
+        "\1\25\1\u0103\1\uffff\1\u0104\2\25\2\uffff\1\u0107\4\uffff\2\25"+
+        "\1\u010a\1\u010b\4\25\1\u0110\2\25\1\u0113\1\u0115\2\25\1\u0119"+
+        "\1\u011a\20\25\1\u012b\17\25\1\uffff\31\25\1\uffff\1\u015d\1\uffff"+
+        "\1\25\2\uffff\1\u015f\1\u0160\1\uffff\2\25\2\uffff\4\25\1\uffff"+
+        "\2\25\1\uffff\1\25\1\uffff\1\25\1\u016d\1\u016e\2\uffff\1\25\1\u0170"+
+        "\14\25\1\u017d\1\25\1\uffff\2\25\1\u0181\14\25\1\u018f\2\25\1\u0192"+
+        "\12\25\1\u01a0\1\25\1\u01a2\21\25\1\uffff\1\u01b5\2\uffff\6\25\1"+
+        "\u01be\3\25\1\u01c2\1\u01c4\2\uffff\1\u01c5\1\uffff\1\u01c6\3\25"+
+        "\1\u01cb\1\u01cc\1\u01cd\5\25\1\uffff\3\25\1\uffff\15\25\1\uffff"+
+        "\2\25\1\uffff\4\25\1\u01e9\3\25\1\u01ed\3\25\1\u01f1\1\uffff\1\25"+
+        "\1\uffff\1\25\1\u01f4\3\25\1\u01f8\10\25\1\u0201\1\u0202\1\25\1"+
+        "\u0204\1\uffff\2\25\1\u0207\1\25\1\u0209\1\u020a\2\25\1\uffff\1"+
+        "\25\1\u020e\1\25\1\uffff\1\25\3\uffff\1\u0211\1\u0212\1\25\1\u0214"+
+        "\3\uffff\1\u0215\14\25\1\u0222\1\u0223\7\25\1\u022b\4\25\1\uffff"+
+        "\3\25\1\uffff\3\25\1\uffff\2\25\1\uffff\1\25\1\u0239\1\25\1\uffff"+
+        "\10\25\2\uffff\1\u0243\1\uffff\2\25\1\uffff\1\u0246\2\uffff\1\u0247"+
+        "\2\25\1\uffff\1\u024a\1\25\2\uffff\1\25\2\uffff\1\u024d\1\25\1\u024f"+
+        "\4\25\1\u0254\2\25\1\u0257\1\25\2\uffff\1\u0259\3\25\1\u025d\1\25"+
+        "\1\u025f\1\uffff\1\u0260\1\u0261\6\25\1\u0268\1\25\1\u026a\1\25"+
+        "\1\u026c\1\uffff\5\25\1\u0272\1\u0273\1\25\1\u0275\1\uffff\1\25"+
+        "\1\u0277\2\uffff\1\u0278\1\25\1\uffff\1\u027a\1\25\1\uffff\1\u027c"+
+        "\1\uffff\2\25\1\u027f\1\u0280\1\uffff\2\25\1\uffff\1\25\1\uffff"+
+        "\1\u0284\2\25\1\uffff\1\u0287\3\uffff\1\u0288\2\25\1\u028b\1\u028c"+
+        "\1\25\1\uffff\1\25\1\uffff\1\25\1\uffff\1\u0290\1\25\1\u0292\2\25"+
+        "\2\uffff\1\u0295\1\uffff\1\u0296\2\uffff\1\u0297\1\uffff\1\25\1"+
+        "\uffff\2\25\2\uffff\3\25\1\uffff\1\u029e\1\25\2\uffff\1\25\1\u02a1"+
+        "\2\uffff\1\25\1\u02a3\1\25\1\uffff\1\u02a5\1\uffff\2\25\3\uffff"+
+        "\2\25\1\u02aa\3\25\1\uffff\2\25\1\uffff\1\25\1\uffff\1\u02b1\1\uffff"+
+        "\1\u02b2\1\25\1\u02b4\1\u02b5\1\uffff\1\u02b6\4\25\1\u02bb\2\uffff"+
+        "\1\25\3\uffff\1\25\1\u02be\1\u02bf\1\u02c0\1\uffff\1\u02c1\1\25"+
+        "\4\uffff\1\25\1\u02c4\1\uffff";
     static final String DFA3_eofS =
-        "\u032b\uffff";
+        "\u02c5\uffff";
     static final String DFA3_minS =
-        "\1\0\1\103\1\104\1\115\1\112\1\116\1\103\2\102\1\101\1\124\1\123"+
-        "\1\102\1\114\1\105\1\130\1\127\1\126\2\104\1\114\1\110\1\104\2\uffff"+
-        "\1\0\1\114\2\0\1\103\1\0\1\55\4\0\1\107\5\0\1\114\1\0\1\123\2\0"+
-        "\1\117\1\115\2\121\3\0\2\122\6\0\1\44\1\120\1\124\2\0\1\124\1\44"+
-        "\1\114\1\102\1\101\1\uffff\1\117\1\115\2\uffff\1\101\1\uffff\1\125"+
-        "\1\uffff\1\103\3\0\1\uffff\1\101\1\uffff\1\101\3\0\1\uffff\1\0\1"+
-        "\uffff\2\0\2\uffff\1\101\5\0\1\uffff\1\123\1\uffff\3\0\1\uffff\1"+
-        "\110\2\0\1\uffff\1\124\3\0\1\uffff\1\120\1\0\2\102\1\0\1\103\2\0"+
-        "\3\uffff\2\102\6\0\2\uffff\1\111\1\uffff\3\0\2\uffff\1\0\1\uffff"+
-        "\7\0\2\uffff\6\0\1\114\2\116\1\101\1\122\1\116\1\110\3\uffff\1\106"+
-        "\1\105\1\116\2\111\1\106\1\117\1\116\1\121\1\124\1\105\1\101\1\104"+
-        "\1\101\1\110\1\111\2\105\1\122\1\105\1\111\1\uffff\1\0\4\uffff\1"+
-        "\0\1\uffff\1\123\1\110\1\124\1\105\1\104\1\111\1\122\1\130\1\105"+
-        "\1\115\1\101\1\125\1\105\1\101\1\111\5\uffff\1\124\3\uffff\1\0\2"+
-        "\uffff\1\110\3\uffff\1\0\1\uffff\2\0\1\uffff\1\117\2\uffff\2\55"+
-        "\1\0\6\uffff\1\116\4\uffff\1\0\1\uffff\1\0\2\uffff\1\0\1\uffff\1"+
-        "\0\11\uffff\1\120\1\111\2\0\1\55\1\111\1\105\1\115\1\0\1\124\1\106"+
-        "\2\0\1\124\1\101\2\0\1\105\1\122\1\117\1\104\1\101\1\0\1\101\1\116"+
-        "\2\115\1\123\1\114\1\124\1\130\1\117\1\115\1\104\1\120\1\114\1\103"+
+        "\1\0\1\103\1\123\1\115\1\112\1\116\1\105\2\102\1\120\1\101\1\124"+
+        "\1\123\1\114\1\130\1\127\2\104\1\110\1\104\2\uffff\1\0\1\114\1\0"+
+        "\1\103\1\55\4\0\1\107\2\0\1\121\1\0\1\117\1\123\1\0\1\117\1\115"+
+        "\1\0\2\122\3\0\1\124\1\123\1\120\1\0\1\124\1\0\1\102\1\101\1\uffff"+
+        "\1\117\1\115\1\uffff\1\101\1\125\1\uffff\1\103\2\0\1\uffff\1\101"+
+        "\1\uffff\1\101\2\0\1\uffff\1\0\1\101\5\0\1\uffff\1\103\2\0\1\uffff"+
+        "\1\102\1\uffff\1\123\1\110\1\124\1\uffff\1\120\1\0\1\102\1\uffff"+
+        "\2\102\3\uffff\3\0\1\uffff\2\0\1\uffff\1\0\1\114\2\116\1\101\1\122"+
+        "\1\116\1\110\2\uffff\1\106\1\105\1\116\2\111\1\106\1\117\1\116\1"+
+        "\124\1\105\1\101\1\104\1\121\1\101\1\110\1\111\2\105\1\122\1\105"+
+        "\1\111\1\uffff\1\0\2\uffff\1\123\1\110\1\124\1\105\1\104\1\111\1"+
+        "\122\1\130\1\105\1\115\1\101\1\125\1\105\1\101\1\111\5\uffff\1\117"+
+        "\2\uffff\1\0\1\124\1\0\1\110\1\0\1\uffff\1\0\2\55\2\uffff\1\0\4"+
+        "\uffff\1\120\1\111\2\0\1\55\1\111\1\105\1\115\1\0\1\124\1\106\2"+
+        "\0\1\124\1\101\2\0\1\105\1\122\1\117\1\104\1\101\1\116\2\115\1\123"+
+        "\1\114\1\124\1\130\1\117\1\115\1\104\1\120\1\0\1\101\1\114\1\103"+
         "\1\105\1\114\1\103\1\101\1\114\1\116\1\105\2\122\1\131\1\115\1\105"+
-        "\2\uffff\1\105\1\101\1\116\1\102\1\111\1\116\1\114\1\117\1\107\1"+
+        "\1\uffff\1\105\1\101\1\116\1\102\1\111\1\116\1\114\1\117\1\107\1"+
         "\104\1\120\1\114\1\105\1\124\1\101\1\103\1\115\1\122\1\105\1\122"+
-        "\1\105\1\103\1\111\1\105\1\0\1\uffff\1\105\3\uffff\1\116\2\0\1\uffff"+
-        "\1\0\4\uffff\1\110\1\103\2\uffff\2\103\1\115\1\120\1\uffff\1\105"+
+        "\1\105\1\103\1\111\1\105\1\116\1\uffff\1\0\1\uffff\1\105\2\uffff"+
+        "\2\0\1\uffff\1\110\1\103\2\uffff\2\103\1\115\1\120\1\uffff\1\105"+
         "\1\117\1\uffff\1\117\1\uffff\1\110\2\0\2\uffff\1\122\1\0\1\115\1"+
-        "\105\1\115\1\122\1\uffff\2\124\1\105\1\120\1\123\1\101\1\110\1\124"+
-        "\1\125\1\117\1\0\1\101\1\0\1\125\1\115\1\117\1\125\1\103\1\114\1"+
-        "\123\1\124\1\105\1\103\1\111\1\103\1\0\1\117\1\114\1\0\1\116\1\103"+
-        "\1\114\1\112\1\120\1\122\1\124\1\125\1\123\1\120\1\0\1\101\1\0\1"+
-        "\101\1\114\1\101\1\122\1\124\1\122\1\105\1\124\1\103\1\111\1\116"+
-        "\2\117\1\124\1\110\1\114\1\uffff\1\0\1\112\3\uffff\1\101\1\117\1"+
-        "\112\2\116\1\117\1\0\1\117\2\122\2\0\2\uffff\1\0\1\uffff\1\0\1\122"+
-        "\1\120\1\101\1\105\1\110\3\0\1\122\1\117\1\125\1\116\1\123\1\uffff"+
-        "\1\122\1\uffff\1\125\1\105\2\115\2\105\1\110\1\105\1\122\1\123\1"+
-        "\111\1\106\1\105\1\uffff\1\126\1\104\1\uffff\2\107\1\101\1\105\1"+
-        "\0\3\105\1\0\1\110\1\124\1\117\1\0\1\uffff\1\123\1\uffff\1\122\1"+
-        "\0\1\105\1\124\1\101\1\0\1\105\1\122\2\111\1\106\1\103\2\126\2\0"+
-        "\1\104\1\uffff\1\0\1\116\1\104\1\0\1\122\2\0\1\124\1\104\1\uffff"+
-        "\1\125\1\0\1\105\1\uffff\1\125\3\uffff\1\0\1\114\1\103\1\0\1\105"+
-        "\1\0\3\uffff\1\0\1\104\1\122\1\124\1\120\1\101\1\115\1\116\1\101"+
-        "\2\116\2\0\1\122\1\101\1\125\1\120\1\131\1\116\1\105\1\0\2\105\1"+
-        "\111\1\116\1\uffff\1\122\1\103\1\116\1\uffff\2\105\1\114\1\uffff"+
-        "\1\123\1\101\1\uffff\1\122\1\0\1\103\1\uffff\1\101\1\123\1\124\1"+
-        "\120\1\131\1\110\2\105\2\uffff\1\0\1\uffff\1\125\1\105\1\uffff\1"+
-        "\0\2\uffff\1\0\1\105\1\116\1\uffff\1\0\1\124\1\uffff\1\105\1\124"+
-        "\1\uffff\1\123\2\uffff\1\0\1\105\1\0\1\110\1\124\1\0\2\124\1\0\1"+
-        "\124\2\uffff\1\0\1\114\1\122\1\111\1\0\1\124\1\0\1\uffff\2\0\1\116"+
-        "\1\124\1\107\1\124\1\104\1\123\1\0\1\126\1\0\1\124\1\0\1\uffff\1"+
-        "\124\1\123\1\105\2\111\2\0\1\122\1\0\1\uffff\1\115\1\0\2\uffff\1"+
-        "\0\1\104\1\uffff\3\0\1\111\1\uffff\1\0\1\uffff\1\105\1\125\1\uffff"+
-        "\1\111\1\117\1\uffff\1\122\1\uffff\1\0\1\105\1\124\1\uffff\1\0\3"+
-        "\uffff\1\0\1\122\1\105\2\0\1\111\1\uffff\1\105\1\uffff\1\125\1\uffff"+
-        "\1\0\1\105\1\0\1\117\1\124\2\uffff\1\0\1\uffff\1\0\2\uffff\1\0\3"+
-        "\uffff\1\132\1\uffff\1\122\1\123\1\124\1\107\1\101\1\uffff\1\0\1"+
-        "\101\2\uffff\1\101\1\0\2\uffff\1\132\1\0\1\123\1\uffff\1\0\1\uffff"+
-        "\1\116\1\101\3\uffff\2\105\1\0\1\131\1\122\1\124\1\uffff\2\124\1"+
-        "\uffff\1\105\1\uffff\1\0\1\uffff\1\0\1\124\2\0\1\uffff\1\0\1\101"+
-        "\3\105\1\0\2\uffff\1\105\3\uffff\1\120\3\0\1\uffff\1\0\1\110\4\uffff"+
-        "\1\131\1\0\1\uffff";
+        "\105\2\124\1\105\1\120\1\123\1\101\1\110\1\124\1\125\1\117\1\0\1"+
+        "\101\1\uffff\1\115\1\122\1\0\1\125\1\115\1\117\1\125\1\103\1\114"+
+        "\1\123\1\124\1\105\1\103\1\111\1\103\1\0\1\117\1\114\1\0\1\116\1"+
+        "\103\1\114\1\112\1\120\1\122\1\124\1\125\1\123\1\120\1\0\1\101\1"+
+        "\0\1\101\1\114\1\101\1\122\1\124\1\122\1\105\1\124\1\103\1\111\1"+
+        "\116\2\117\1\124\1\110\1\114\1\112\1\uffff\1\0\2\uffff\1\101\1\117"+
+        "\1\112\2\116\1\117\1\0\1\117\2\122\2\0\2\uffff\1\0\1\uffff\1\0\1"+
+        "\122\1\105\1\110\3\0\1\122\1\117\1\125\1\116\1\123\1\uffff\1\122"+
+        "\1\120\1\101\1\uffff\1\125\1\105\2\115\2\105\1\110\1\105\1\122\1"+
+        "\123\1\111\1\106\1\105\1\uffff\1\126\1\104\1\uffff\2\107\1\101\1"+
+        "\105\1\0\3\105\1\0\1\110\1\124\1\117\1\0\1\uffff\1\123\1\uffff\1"+
+        "\122\1\0\1\105\1\124\1\101\1\0\1\105\1\122\2\111\1\106\1\103\2\126"+
+        "\2\0\1\104\1\0\1\uffff\1\116\1\104\1\0\1\122\2\0\1\124\1\104\1\uffff"+
+        "\1\125\1\0\1\105\1\uffff\1\125\3\uffff\2\0\1\105\1\0\3\uffff\1\0"+
+        "\1\104\1\122\1\124\1\120\1\101\1\114\1\103\1\115\1\116\1\101\2\116"+
+        "\2\0\1\122\1\101\1\125\1\120\1\131\1\116\1\105\1\0\2\105\1\111\1"+
+        "\116\1\uffff\1\122\1\103\1\116\1\uffff\2\105\1\114\1\uffff\1\123"+
+        "\1\101\1\uffff\1\122\1\0\1\103\1\uffff\1\101\1\123\1\124\1\120\1"+
+        "\131\1\110\2\105\2\uffff\1\0\1\uffff\1\125\1\105\1\uffff\1\0\2\uffff"+
+        "\1\0\1\105\1\116\1\uffff\1\0\1\124\2\uffff\1\123\2\uffff\1\0\1\105"+
+        "\1\0\1\110\1\124\1\105\1\124\1\0\2\124\1\0\1\124\2\uffff\1\0\1\114"+
+        "\1\122\1\111\1\0\1\124\1\0\1\uffff\2\0\1\116\1\124\1\107\1\124\1"+
+        "\104\1\123\1\0\1\126\1\0\1\124\1\0\1\uffff\1\124\1\123\1\105\2\111"+
+        "\2\0\1\122\1\0\1\uffff\1\115\1\0\2\uffff\1\0\1\104\1\uffff\1\0\1"+
+        "\111\1\uffff\1\0\1\uffff\1\105\1\125\2\0\1\uffff\1\111\1\117\1\uffff"+
+        "\1\122\1\uffff\1\0\1\105\1\124\1\uffff\1\0\3\uffff\1\0\1\122\1\105"+
+        "\2\0\1\111\1\uffff\1\105\1\uffff\1\125\1\uffff\1\0\1\105\1\0\1\117"+
+        "\1\124\2\uffff\1\0\1\uffff\1\0\2\uffff\1\0\1\uffff\1\132\1\uffff"+
+        "\1\122\1\123\2\uffff\1\124\1\107\1\101\1\uffff\1\0\1\101\2\uffff"+
+        "\1\101\1\0\2\uffff\1\132\1\0\1\123\1\uffff\1\0\1\uffff\1\116\1\101"+
+        "\3\uffff\2\105\1\0\1\131\1\122\1\124\1\uffff\2\124\1\uffff\1\105"+
+        "\1\uffff\1\0\1\uffff\1\0\1\124\2\0\1\uffff\1\0\1\101\3\105\1\0\2"+
+        "\uffff\1\105\3\uffff\1\120\3\0\1\uffff\1\0\1\110\4\uffff\1\131\1"+
+        "\0\1\uffff";
     static final String DFA3_maxS =
-        "\1\uffff\2\123\1\117\1\112\1\116\1\122\1\102\2\124\1\131\2\123"+
-        "\1\122\1\105\1\130\1\127\1\126\1\104\1\122\1\114\1\110\1\122\2\uffff"+
-        "\1\uffff\1\115\2\uffff\1\103\1\uffff\1\55\4\uffff\1\107\5\uffff"+
-        "\1\130\1\uffff\1\123\2\uffff\1\117\1\115\2\121\3\uffff\2\122\6\uffff"+
-        "\1\123\1\120\1\124\2\uffff\1\124\1\123\1\114\1\102\1\125\1\uffff"+
-        "\1\117\1\115\2\uffff\1\101\1\uffff\1\125\1\uffff\1\103\3\uffff\1"+
-        "\uffff\1\127\1\uffff\1\131\3\uffff\1\uffff\1\uffff\1\uffff\2\uffff"+
-        "\2\uffff\1\131\5\uffff\1\uffff\1\123\1\uffff\3\uffff\1\uffff\1\110"+
-        "\2\uffff\1\uffff\1\124\3\uffff\1\uffff\1\120\1\uffff\2\102\1\uffff"+
-        "\1\103\2\uffff\3\uffff\2\102\6\uffff\2\uffff\1\111\1\uffff\3\uffff"+
-        "\2\uffff\1\uffff\1\uffff\7\uffff\2\uffff\6\uffff\1\114\2\116\1\101"+
-        "\1\122\1\116\1\117\3\uffff\1\123\1\131\1\116\2\111\1\126\1\122\1"+
-        "\116\1\130\1\131\1\111\1\117\1\124\1\117\1\131\1\114\1\105\1\125"+
-        "\1\122\1\105\1\111\1\uffff\1\uffff\4\uffff\1\uffff\1\uffff\1\123"+
-        "\1\117\1\131\1\122\1\120\1\111\1\122\1\130\1\105\1\116\2\125\1\105"+
-        "\1\101\1\111\5\uffff\1\124\3\uffff\1\uffff\2\uffff\1\110\3\uffff"+
-        "\1\uffff\1\uffff\2\uffff\1\uffff\1\117\2\uffff\2\55\1\uffff\6\uffff"+
-        "\1\116\4\uffff\1\uffff\1\uffff\1\uffff\2\uffff\1\uffff\1\uffff\1"+
-        "\uffff\11\uffff\1\120\1\111\2\uffff\1\55\1\111\1\105\1\115\1\uffff"+
-        "\1\124\1\106\2\uffff\1\124\1\101\2\uffff\1\105\1\122\1\117\1\104"+
-        "\1\124\1\uffff\1\101\1\116\2\115\1\123\1\114\1\124\1\130\1\117\1"+
-        "\115\1\104\1\120\1\114\1\103\1\122\1\116\1\103\1\101\1\114\1\116"+
-        "\1\105\2\122\1\131\1\115\1\105\2\uffff\1\105\1\101\1\117\1\123\1"+
-        "\111\1\116\1\123\1\131\1\107\1\104\1\120\1\114\1\105\1\124\1\101"+
-        "\1\103\1\115\1\122\1\105\1\122\1\105\1\115\1\123\1\105\1\uffff\1"+
-        "\uffff\1\105\3\uffff\1\116\2\uffff\1\uffff\1\uffff\4\uffff\1\110"+
-        "\1\103\2\uffff\1\122\1\103\1\115\1\120\1\uffff\1\105\1\117\1\uffff"+
-        "\1\117\1\uffff\1\110\2\uffff\2\uffff\1\122\1\uffff\1\115\1\105\1"+
-        "\115\1\122\1\uffff\2\124\1\105\1\120\1\123\1\101\1\110\1\124\1\125"+
-        "\1\117\1\uffff\1\101\1\uffff\1\125\1\115\1\117\1\125\1\103\1\114"+
-        "\1\123\1\124\1\105\1\123\1\111\1\103\1\uffff\1\117\1\114\1\uffff"+
-        "\1\122\1\124\1\114\1\115\1\120\1\122\1\124\1\125\1\123\1\120\1\uffff"+
-        "\1\101\1\uffff\1\101\1\124\1\101\1\122\1\124\1\122\1\105\1\124\1"+
-        "\103\1\111\1\116\2\117\1\124\1\110\1\114\1\uffff\1\uffff\1\112\3"+
-        "\uffff\1\101\1\117\1\120\2\116\1\117\1\uffff\1\117\2\122\2\uffff"+
-        "\2\uffff\1\uffff\1\uffff\1\uffff\1\122\1\120\1\101\1\105\1\110\3"+
-        "\uffff\1\122\1\117\1\125\1\116\1\123\1\uffff\1\122\1\uffff\1\125"+
-        "\1\105\2\115\2\105\1\110\1\105\1\122\1\123\1\111\1\106\1\105\1\uffff"+
-        "\1\126\1\104\1\uffff\2\107\1\101\1\105\1\uffff\3\105\1\uffff\1\110"+
-        "\1\124\1\117\1\uffff\1\uffff\1\123\1\uffff\1\122\1\uffff\1\105\1"+
-        "\124\1\101\1\uffff\1\105\1\122\2\111\1\106\1\103\2\126\2\uffff\1"+
-        "\104\1\uffff\1\uffff\1\116\1\104\1\uffff\1\122\2\uffff\1\124\1\104"+
-        "\1\uffff\1\125\1\uffff\1\105\1\uffff\1\125\3\uffff\1\uffff\1\114"+
-        "\1\103\1\uffff\1\105\1\uffff\3\uffff\1\uffff\1\104\1\122\1\124\1"+
-        "\120\1\101\1\115\1\116\1\101\2\116\2\uffff\1\122\1\101\1\125\1\120"+
-        "\1\131\1\116\1\105\1\uffff\2\105\1\111\1\116\1\uffff\1\122\1\103"+
-        "\1\116\1\uffff\2\105\1\114\1\uffff\1\123\1\101\1\uffff\1\122\1\uffff"+
+        "\1\uffff\1\117\1\123\1\117\1\112\2\116\1\102\1\123\1\120\1\124"+
+        "\1\131\1\123\1\122\1\130\1\127\1\104\1\122\1\110\1\122\2\uffff\1"+
+        "\uffff\1\115\1\uffff\1\103\1\55\4\uffff\1\107\2\uffff\1\121\1\uffff"+
+        "\1\117\1\123\1\uffff\1\117\1\115\1\uffff\2\122\3\uffff\1\124\1\123"+
+        "\1\120\1\uffff\1\124\1\uffff\1\102\1\125\1\uffff\1\117\1\115\1\uffff"+
+        "\1\101\1\125\1\uffff\1\103\2\uffff\1\uffff\1\127\1\uffff\1\131\2"+
+        "\uffff\1\uffff\1\uffff\1\131\5\uffff\1\uffff\1\103\2\uffff\1\uffff"+
+        "\1\102\1\uffff\1\123\1\110\1\124\1\uffff\1\120\1\uffff\1\102\1\uffff"+
+        "\2\102\3\uffff\3\uffff\1\uffff\2\uffff\1\uffff\1\uffff\1\114\2\116"+
+        "\1\101\1\122\1\116\1\117\2\uffff\1\123\1\131\1\116\2\111\1\126\1"+
+        "\122\1\116\1\131\1\111\1\117\1\124\1\130\1\117\1\131\1\114\1\105"+
+        "\1\125\1\122\1\105\1\111\1\uffff\1\uffff\2\uffff\1\123\1\117\1\131"+
+        "\1\122\1\120\1\111\1\122\1\130\1\105\1\116\2\125\1\105\1\101\1\111"+
+        "\5\uffff\1\117\2\uffff\1\uffff\1\124\1\uffff\1\110\1\uffff\1\uffff"+
+        "\1\uffff\2\55\2\uffff\1\uffff\4\uffff\1\120\1\111\2\uffff\1\55\1"+
+        "\111\1\105\1\115\1\uffff\1\124\1\106\2\uffff\1\124\1\101\2\uffff"+
+        "\1\105\1\122\1\117\1\104\1\101\1\116\2\115\1\123\1\114\1\124\1\130"+
+        "\1\117\1\115\1\104\1\120\1\uffff\1\124\1\114\1\103\1\122\1\116\1"+
+        "\103\1\101\1\114\1\116\1\105\2\122\1\131\1\115\1\105\1\uffff\1\105"+
+        "\1\101\1\117\1\123\1\111\1\116\1\123\1\131\1\107\1\104\1\120\1\114"+
+        "\1\105\1\124\1\101\1\103\1\115\1\122\1\105\1\122\1\105\1\115\1\123"+
+        "\1\105\1\116\1\uffff\1\uffff\1\uffff\1\105\2\uffff\2\uffff\1\uffff"+
+        "\1\110\1\103\2\uffff\1\122\1\103\1\115\1\120\1\uffff\1\105\1\117"+
+        "\1\uffff\1\117\1\uffff\1\110\2\uffff\2\uffff\1\122\1\uffff\1\115"+
+        "\1\105\2\124\1\105\1\120\1\123\1\101\1\110\1\124\1\125\1\117\1\uffff"+
+        "\1\101\1\uffff\1\115\1\122\1\uffff\1\125\1\115\1\117\1\125\1\103"+
+        "\1\114\1\123\1\124\1\105\1\123\1\111\1\103\1\uffff\1\117\1\114\1"+
+        "\uffff\1\122\1\124\1\114\1\115\1\120\1\122\1\124\1\125\1\123\1\120"+
+        "\1\uffff\1\101\1\uffff\1\101\1\124\1\101\1\122\1\124\1\122\1\105"+
+        "\1\124\1\103\1\111\1\116\2\117\1\124\1\110\1\114\1\112\1\uffff\1"+
+        "\uffff\2\uffff\1\101\1\117\1\120\2\116\1\117\1\uffff\1\117\2\122"+
+        "\2\uffff\2\uffff\1\uffff\1\uffff\1\uffff\1\122\1\105\1\110\3\uffff"+
+        "\1\122\1\117\1\125\1\116\1\123\1\uffff\1\122\1\120\1\101\1\uffff"+
+        "\1\125\1\105\2\115\2\105\1\110\1\105\1\122\1\123\1\111\1\106\1\105"+
+        "\1\uffff\1\126\1\104\1\uffff\2\107\1\101\1\105\1\uffff\3\105\1\uffff"+
+        "\1\110\1\124\1\117\1\uffff\1\uffff\1\123\1\uffff\1\122\1\uffff\1"+
+        "\105\1\124\1\101\1\uffff\1\105\1\122\2\111\1\106\1\103\2\126\2\uffff"+
+        "\1\104\1\uffff\1\uffff\1\116\1\104\1\uffff\1\122\2\uffff\1\124\1"+
+        "\104\1\uffff\1\125\1\uffff\1\105\1\uffff\1\125\3\uffff\2\uffff\1"+
+        "\105\1\uffff\3\uffff\1\uffff\1\104\1\122\1\124\1\120\1\101\1\114"+
+        "\1\103\1\115\1\116\1\101\2\116\2\uffff\1\122\1\101\1\125\1\120\1"+
+        "\131\1\116\1\105\1\uffff\2\105\1\111\1\116\1\uffff\1\122\1\103\1"+
+        "\116\1\uffff\2\105\1\114\1\uffff\1\123\1\101\1\uffff\1\122\1\uffff"+
         "\1\103\1\uffff\1\101\1\123\1\124\1\120\1\131\1\110\2\105\2\uffff"+
         "\1\uffff\1\uffff\1\125\1\105\1\uffff\1\uffff\2\uffff\1\uffff\1\105"+
-        "\1\116\1\uffff\1\uffff\1\124\1\uffff\1\105\1\124\1\uffff\1\123\2"+
-        "\uffff\1\uffff\1\105\1\uffff\1\110\1\124\1\uffff\2\124\1\uffff\1"+
-        "\124\2\uffff\1\uffff\1\114\1\122\1\111\1\uffff\1\124\1\uffff\1\uffff"+
-        "\2\uffff\1\116\1\124\1\107\1\124\1\104\1\123\1\uffff\1\126\1\uffff"+
-        "\1\124\1\uffff\1\uffff\1\124\1\123\1\105\2\111\2\uffff\1\122\1\uffff"+
-        "\1\uffff\1\115\1\uffff\2\uffff\1\uffff\1\104\1\uffff\3\uffff\1\111"+
-        "\1\uffff\1\uffff\1\uffff\1\105\1\125\1\uffff\1\111\1\117\1\uffff"+
-        "\1\122\1\uffff\1\uffff\1\105\1\124\1\uffff\1\uffff\3\uffff\1\uffff"+
-        "\1\122\1\105\2\uffff\1\111\1\uffff\1\105\1\uffff\1\125\1\uffff\1"+
-        "\uffff\1\105\1\uffff\1\117\1\124\2\uffff\1\uffff\1\uffff\1\uffff"+
-        "\2\uffff\1\uffff\3\uffff\1\132\1\uffff\1\122\1\123\1\124\1\107\1"+
-        "\101\1\uffff\1\uffff\1\101\2\uffff\1\101\1\uffff\2\uffff\1\132\1"+
-        "\uffff\1\123\1\uffff\1\uffff\1\uffff\1\116\1\101\3\uffff\2\105\1"+
-        "\uffff\1\131\1\122\1\124\1\uffff\2\124\1\uffff\1\105\1\uffff\1\uffff"+
-        "\1\uffff\1\uffff\1\124\2\uffff\1\uffff\1\uffff\1\101\3\105\1\uffff"+
-        "\2\uffff\1\105\3\uffff\1\120\3\uffff\1\uffff\1\uffff\1\110\4\uffff"+
-        "\1\131\1\uffff\1\uffff";
+        "\1\116\1\uffff\1\uffff\1\124\2\uffff\1\123\2\uffff\1\uffff\1\105"+
+        "\1\uffff\1\110\1\124\1\105\1\124\1\uffff\2\124\1\uffff\1\124\2\uffff"+
+        "\1\uffff\1\114\1\122\1\111\1\uffff\1\124\1\uffff\1\uffff\2\uffff"+
+        "\1\116\1\124\1\107\1\124\1\104\1\123\1\uffff\1\126\1\uffff\1\124"+
+        "\1\uffff\1\uffff\1\124\1\123\1\105\2\111\2\uffff\1\122\1\uffff\1"+
+        "\uffff\1\115\1\uffff\2\uffff\1\uffff\1\104\1\uffff\1\uffff\1\111"+
+        "\1\uffff\1\uffff\1\uffff\1\105\1\125\2\uffff\1\uffff\1\111\1\117"+
+        "\1\uffff\1\122\1\uffff\1\uffff\1\105\1\124\1\uffff\1\uffff\3\uffff"+
+        "\1\uffff\1\122\1\105\2\uffff\1\111\1\uffff\1\105\1\uffff\1\125\1"+
+        "\uffff\1\uffff\1\105\1\uffff\1\117\1\124\2\uffff\1\uffff\1\uffff"+
+        "\1\uffff\2\uffff\1\uffff\1\uffff\1\132\1\uffff\1\122\1\123\2\uffff"+
+        "\1\124\1\107\1\101\1\uffff\1\uffff\1\101\2\uffff\1\101\1\uffff\2"+
+        "\uffff\1\132\1\uffff\1\123\1\uffff\1\uffff\1\uffff\1\116\1\101\3"+
+        "\uffff\2\105\1\uffff\1\131\1\122\1\124\1\uffff\2\124\1\uffff\1\105"+
+        "\1\uffff\1\uffff\1\uffff\1\uffff\1\124\2\uffff\1\uffff\1\uffff\1"+
+        "\101\3\105\1\uffff\2\uffff\1\105\3\uffff\1\120\3\uffff\1\uffff\1"+
+        "\uffff\1\110\4\uffff\1\131\1\uffff\1\uffff";
     static final String DFA3_acceptS =
-        "\27\uffff\1\u00bd\1\u00be\57\uffff\1\166\2\uffff\1\165\1\167\1"+
-        "\uffff\1\u0098\1\uffff\1\u00ae\4\uffff\1\u0088\1\uffff\1\u0087\4"+
-        "\uffff\1\u008e\1\uffff\1\u008d\2\uffff\1\u0092\1\u0097\6\uffff\1"+
-        "\u00b0\1\uffff\1\153\3\uffff\1\154\3\uffff\1\170\4\uffff\1\173\10"+
-        "\uffff\1\u00a6\1\u00ab\1\u00ac\10\uffff\1\155\1\u0080\1\uffff\1"+
-        "\u0081\3\uffff\1\u0083\1\u008c\1\uffff\1\u0099\7\uffff\1\u00a4\1"+
-        "\u00af\15\uffff\1\u0089\1\u008a\1\u008b\25\uffff\1\u008f\1\uffff"+
-        "\1\u0090\1\u0093\1\140\1\u0094\1\uffff\1\u0095\17\uffff\1\u00b1"+
-        "\1\u00b2\1\u00b3\1\u00b4\1\u00b5\1\uffff\1\150\1\151\1\152\1\uffff"+
-        "\1\171\1\172\1\uffff\1\175\1\176\1\177\1\uffff\1\u00ad\2\uffff\1"+
-        "\u00a7\1\uffff\1\u00a9\1\u00aa\3\uffff\1\156\1\160\1\161\1\162\1"+
-        "\163\1\164\1\uffff\1\u0084\1\u0085\1\u0086\1\u009a\1\uffff\1\u009b"+
-        "\1\uffff\1\u009d\1\u00a1\1\uffff\1\u00a2\1\uffff\1\u009f\1\u00bc"+
-        "\1\u00a5\1\u00b6\1\u00b7\1\u00b8\1\u00b9\1\u00ba\1\u00bb\61\uffff"+
-        "\1\u0091\1\u0096\31\uffff\1\141\1\uffff\1\142\1\144\1\145\3\uffff"+
-        "\1\157\1\uffff\1\u009c\1\u009e\1\u00a3\1\u00a0\2\uffff\1\135\1\136"+
-        "\4\uffff\1\12\2\uffff\1\21\1\uffff\1\15\3\uffff\1\23\1\24\6\uffff"+
-        "\1\41\72\uffff\1\137\2\uffff\1\146\1\147\1\u0082\14\uffff\1\22\1"+
-        "\31\1\uffff\1\25\16\uffff\1\63\1\uffff\1\42\15\uffff\1\105\2\uffff"+
-        "\1\57\15\uffff\1\104\1\uffff\1\66\21\uffff\1\174\11\uffff\1\10\3"+
-        "\uffff\1\16\1\uffff\1\17\1\30\1\26\6\uffff\1\34\1\44\1\35\31\uffff"+
-        "\1\101\3\uffff\1\126\3\uffff\1\71\2\uffff\1\72\3\uffff\1\112\10"+
-        "\uffff\1\131\1\132\1\uffff\1\u00a8\2\uffff\1\2\1\uffff\1\56\1\3"+
-        "\3\uffff\1\14\2\uffff\1\27\2\uffff\1\33\1\uffff\1\55\1\36\12\uffff"+
-        "\1\54\1\45\7\uffff\1\134\15\uffff\1\74\11\uffff\1\133\2\uffff\1"+
-        "\4\1\5\2\uffff\1\13\4\uffff\1\47\1\uffff\1\37\2\uffff\1\53\2\uffff"+
-        "\1\51\1\uffff\1\111\3\uffff\1\121\1\uffff\1\125\1\60\1\67\6\uffff"+
+        "\24\uffff\1\u008e\1\u008f\41\uffff\1\153\2\uffff\1\152\2\uffff"+
+        "\1\u0082\3\uffff\1\160\1\uffff\1\157\3\uffff\1\165\7\uffff\1\u0084"+
+        "\3\uffff\1\175\1\uffff\1\u0080\3\uffff\1\154\3\uffff\1\163\2\uffff"+
+        "\1\155\1\156\1\164\3\uffff\1\u0083\2\uffff\1\u008b\10\uffff\1\161"+
+        "\1\162\25\uffff\1\166\1\uffff\1\167\1\141\17\uffff\1\u0085\1\u0086"+
+        "\1\u0087\1\u0088\1\u0089\1\uffff\1\176\1\177\5\uffff\1\u0081\3\uffff"+
+        "\1\171\1\172\1\uffff\1\173\1\u008a\1\u008c\1\u008d\61\uffff\1\170"+
+        "\31\uffff\1\146\1\uffff\1\142\1\uffff\1\143\1\145\2\uffff\1\174"+
+        "\2\uffff\1\136\1\137\4\uffff\1\12\2\uffff\1\21\1\uffff\1\15\3\uffff"+
+        "\1\23\1\24\20\uffff\1\40\61\uffff\1\140\1\uffff\1\150\1\151\14\uffff"+
+        "\1\22\1\31\1\uffff\1\25\14\uffff\1\63\3\uffff\1\41\15\uffff\1\105"+
+        "\2\uffff\1\57\15\uffff\1\104\1\uffff\1\66\22\uffff\1\147\10\uffff"+
+        "\1\10\3\uffff\1\16\1\uffff\1\17\1\30\1\26\4\uffff\1\33\1\43\1\34"+
+        "\33\uffff\1\101\3\uffff\1\126\3\uffff\1\71\2\uffff\1\72\3\uffff"+
+        "\1\112\10\uffff\1\131\1\132\1\uffff\1\135\2\uffff\1\2\1\uffff\1"+
+        "\56\1\3\3\uffff\1\14\2\uffff\1\27\1\32\1\uffff\1\54\1\36\14\uffff"+
+        "\1\53\1\44\7\uffff\1\134\15\uffff\1\74\11\uffff\1\133\2\uffff\1"+
+        "\4\1\5\2\uffff\1\13\2\uffff\1\46\1\uffff\1\35\4\uffff\1\52\2\uffff"+
+        "\1\50\1\uffff\1\111\3\uffff\1\121\1\uffff\1\125\1\60\1\67\6\uffff"+
         "\1\65\1\uffff\1\102\1\uffff\1\110\5\uffff\1\120\1\122\1\uffff\1"+
-        "\124\1\uffff\1\7\1\6\1\uffff\1\20\1\32\1\107\1\uffff\1\64\5\uffff"+
-        "\1\46\2\uffff\1\143\1\70\2\uffff\1\62\1\73\3\uffff\1\106\1\uffff"+
-        "\1\114\2\uffff\1\123\1\1\1\11\6\uffff\1\50\2\uffff\1\61\1\uffff"+
-        "\1\103\1\uffff\1\113\4\uffff\1\76\6\uffff\1\75\1\115\1\uffff\1\130"+
-        "\1\40\1\43\4\uffff\1\127\2\uffff\1\100\1\117\1\77\1\116\2\uffff"+
-        "\1\52";
+        "\124\1\uffff\1\7\1\6\1\uffff\1\20\1\uffff\1\64\2\uffff\1\55\1\107"+
+        "\3\uffff\1\45\2\uffff\1\144\1\70\2\uffff\1\62\1\73\3\uffff\1\106"+
+        "\1\uffff\1\114\2\uffff\1\123\1\1\1\11\6\uffff\1\47\2\uffff\1\61"+
+        "\1\uffff\1\103\1\uffff\1\113\4\uffff\1\76\6\uffff\1\75\1\115\1\uffff"+
+        "\1\130\1\37\1\42\4\uffff\1\127\2\uffff\1\100\1\117\1\77\1\116\2"+
+        "\uffff\1\51";
     static final String DFA3_specialS =
-        "\1\u00ac\30\uffff\1\135\1\uffff\1\u0093\1\u0092\1\uffff\1\11\1"+
-        "\uffff\1\144\1\117\1\u00aa\1\166\1\uffff\1\35\1\u0080\1\16\1\126"+
-        "\1\u008c\1\uffff\1\u0098\1\uffff\1\u0095\1\13\4\uffff\1\132\1\140"+
-        "\1\142\2\uffff\1\7\1\64\1\u00ba\1\u009c\1\44\1\60\3\uffff\1\25\1"+
-        "\124\17\uffff\1\46\1\40\1\42\4\uffff\1\32\1\50\1\23\1\uffff\1\u00b8"+
-        "\1\uffff\1\22\1\34\3\uffff\1\130\1\131\1\134\1\115\1\114\3\uffff"+
-        "\1\u00a7\1\u00ab\1\u0097\2\uffff\1\u0094\1\u0096\2\uffff\1\71\1"+
-        "\67\1\62\2\uffff\1\143\2\uffff\1\147\1\uffff\1\152\1\136\5\uffff"+
-        "\1\170\1\u0099\1\u009d\1\u009b\1\u0091\1\u0090\4\uffff\1\55\1\54"+
-        "\1\51\2\uffff\1\10\1\uffff\1\52\1\12\1\154\1\30\1\4\1\111\1\160"+
-        "\2\uffff\1\123\1\121\1\107\1\105\1\102\1\112\40\uffff\1\27\4\uffff"+
-        "\1\17\31\uffff\1\u00bb\6\uffff\1\u009e\1\uffff\1\u00a2\1\u00a4\6"+
-        "\uffff\1\u009a\13\uffff\1\6\1\uffff\1\3\2\uffff\1\157\1\uffff\1"+
-        "\0\13\uffff\1\u00b3\1\u00b6\4\uffff\1\u00bc\2\uffff\1\1\1\77\2\uffff"+
-        "\1\104\1\26\5\uffff\1\43\64\uffff\1\u00b7\6\uffff\1\u00a6\1\u00a9"+
-        "\1\uffff\1\61\23\uffff\1\5\1\21\3\uffff\1\24\17\uffff\1\106\1\uffff"+
-        "\1\63\14\uffff\1\u008f\2\uffff\1\120\12\uffff\1\u008e\1\uffff\1"+
-        "\137\21\uffff\1\66\12\uffff\1\u00ae\3\uffff\1\14\1\74\2\uffff\1"+
-        "\15\1\uffff\1\33\5\uffff\1\u0083\1\70\1\47\35\uffff\1\u0089\3\uffff"+
-        "\1\162\3\uffff\1\133\4\uffff\1\125\3\uffff\1\u0082\10\uffff\1\165"+
-        "\1\u00ad\2\uffff\1\151\2\uffff\1\u00a0\1\uffff\1\122\1\u00a8\4\uffff"+
-        "\1\u00b5\6\uffff\1\31\2\uffff\1\45\1\uffff\1\72\3\uffff\1\36\12"+
-        "\uffff\1\73\1\53\7\uffff\1\u00b1\21\uffff\1\161\14\uffff\1\u00af"+
-        "\4\uffff\1\u00a3\2\uffff\1\u00a5\3\uffff\1\u00b4\10\uffff\1\57\1"+
-        "\uffff\1\37\2\uffff\1\75\2\uffff\1\100\3\uffff\1\u0081\3\uffff\1"+
-        "\176\1\uffff\1\163\1\uffff\1\116\1\141\6\uffff\1\145\1\uffff\1\u008a"+
-        "\1\uffff\1\u0084\6\uffff\1\177\1\175\1\uffff\1\164\2\uffff\1\u00b2"+
-        "\2\uffff\1\u00b0\2\uffff\1\2\1\20\1\u008d\2\uffff\1\103\11\uffff"+
-        "\1\56\3\uffff\1\u00a1\3\uffff\1\127\2\uffff\1\110\1\156\6\uffff"+
-        "\1\u008b\1\uffff\1\u0085\4\uffff\1\174\1\uffff\1\u009f\2\uffff\1"+
-        "\u00b9\13\uffff\1\101\4\uffff\1\113\3\uffff\1\u0088\2\uffff\1\u0087"+
-        "\10\uffff\1\150\11\uffff\1\155\1\uffff\1\u0086\1\uffff\1\167\1\41"+
-        "\1\uffff\1\65\4\uffff\1\171\7\uffff\1\146\1\172\1\153\1\uffff\1"+
-        "\173\6\uffff\1\76\1\uffff}>";
+        "\1\40\25\uffff\1\u0086\1\uffff\1\6\2\uffff\1\164\1\117\1\20\1\24"+
+        "\1\uffff\1\127\1\125\1\uffff\1\170\2\uffff\1\151\2\uffff\1\162\2"+
+        "\uffff\1\115\1\114\1\110\3\uffff\1\167\1\uffff\1\73\12\uffff\1\120"+
+        "\1\102\4\uffff\1\104\1\u0087\1\uffff\1\31\1\uffff\1\154\1\160\1"+
+        "\147\1\152\1\142\2\uffff\1\64\1\61\10\uffff\1\174\7\uffff\1\77\1"+
+        "\72\1\u008b\1\uffff\1\144\1\136\1\uffff\1\140\37\uffff\1\67\31\uffff"+
+        "\1\23\1\uffff\1\33\1\uffff\1\35\1\uffff\1\16\4\uffff\1\55\6\uffff"+
+        "\1\51\1\54\4\uffff\1\124\2\uffff\1\107\1\4\2\uffff\1\50\1\113\20"+
+        "\uffff\1\41\52\uffff\1\32\4\uffff\1\0\1\3\20\uffff\1\106\1\63\3"+
+        "\uffff\1\123\14\uffff\1\11\4\uffff\1\43\14\uffff\1\145\2\uffff\1"+
+        "\47\12\uffff\1\156\1\uffff\1\22\22\uffff\1\26\10\uffff\1\165\3\uffff"+
+        "\1\134\1\15\2\uffff\1\56\1\uffff\1\116\3\uffff\1\65\1\53\1\76\37"+
+        "\uffff\1\66\3\uffff\1\177\3\uffff\1\111\4\uffff\1\105\3\uffff\1"+
+        "\131\10\uffff\1\u0084\1\u0083\1\uffff\1\46\3\uffff\1\155\1\uffff"+
+        "\1\44\1\157\4\uffff\1\143\6\uffff\1\60\1\70\1\uffff\1\37\3\uffff"+
+        "\1\27\14\uffff\1\34\1\2\7\uffff\1\u0081\21\uffff\1\122\14\uffff"+
+        "\1\u0082\4\uffff\1\146\2\uffff\1\172\3\uffff\1\126\6\uffff\1\7\1"+
+        "\uffff\1\74\4\uffff\1\30\2\uffff\1\21\3\uffff\1\166\3\uffff\1\u0088"+
+        "\1\uffff\1\u008a\1\uffff\1\52\1\103\6\uffff\1\17\1\uffff\1\75\1"+
+        "\uffff\1\163\6\uffff\1\u0089\1\u0085\1\uffff\1\u008c\2\uffff\1\161"+
+        "\2\uffff\1\173\2\uffff\1\100\2\uffff\1\13\3\uffff\1\42\1\171\6\uffff"+
+        "\1\5\3\uffff\1\14\3\uffff\1\101\2\uffff\1\10\1\112\6\uffff\1\150"+
+        "\1\uffff\1\130\4\uffff\1\u008d\1\uffff\1\u0080\2\uffff\1\133\13"+
+        "\uffff\1\12\4\uffff\1\1\3\uffff\1\153\2\uffff\1\132\10\uffff\1\57"+
+        "\11\uffff\1\121\1\uffff\1\141\1\uffff\1\175\1\36\1\uffff\1\45\4"+
+        "\uffff\1\176\7\uffff\1\71\1\137\1\62\1\uffff\1\135\6\uffff\1\25"+
+        "\1\uffff}>";
     static final String[] DFA3_transitionS = {
-            "\40\30\1\27\14\30\1\15\23\30\1\10\1\16\1\1\1\11\1\17\1\20\1"+
-            "\30\1\21\1\5\1\4\1\30\1\13\1\22\1\6\1\2\1\23\1\24\1\14\1\12"+
-            "\1\3\1\25\1\7\1\26\uffa8\30",
-            "\1\33\1\31\12\uffff\1\32\3\uffff\1\34",
-            "\1\36\16\uffff\1\35",
-            "\1\37\1\uffff\1\40",
-            "\1\41",
-            "\1\42",
-            "\1\45\1\uffff\1\44\10\uffff\1\43\1\uffff\1\46\1\uffff\1\47",
-            "\1\50",
-            "\1\52\15\uffff\1\51\3\uffff\1\53",
-            "\1\54\15\uffff\1\55\4\uffff\1\56",
-            "\1\57\4\uffff\1\60",
-            "\1\61",
-            "\1\63\13\uffff\1\64\1\uffff\1\65\2\uffff\1\62",
-            "\1\66\5\uffff\1\67",
-            "\1\70",
-            "\1\71",
-            "\1\72",
+            "\40\25\1\24\14\25\1\15\23\25\1\11\1\25\1\1\1\12\1\16\1\17\2"+
+            "\25\1\5\1\4\1\25\1\14\1\20\1\6\1\2\1\21\1\25\1\10\1\13\1\3\1"+
+            "\22\1\7\1\23\uffa8\25",
+            "\1\30\1\26\12\uffff\1\27",
+            "\1\31",
+            "\1\32\1\uffff\1\33",
+            "\1\34",
+            "\1\35",
+            "\1\37\10\uffff\1\36",
+            "\1\40",
+            "\1\41\15\uffff\1\43\2\uffff\1\42",
+            "\1\44",
+            "\1\45\22\uffff\1\46",
+            "\1\47\4\uffff\1\50",
+            "\1\51",
+            "\1\52\5\uffff\1\53",
+            "\1\54",
+            "\1\55",
+            "\1\56",
+            "\1\57\12\uffff\1\60\2\uffff\1\61",
+            "\1\62",
+            "\1\63\13\uffff\1\64\1\uffff\1\65",
+            "",
+            "",
+            "\40\25\1\uffff\14\25\1\66\uffd2\25",
+            "\1\70\1\71",
+            "\40\25\1\uffff\uffdf\25",
             "\1\73",
             "\1\74",
-            "\1\100\11\uffff\1\75\1\uffff\1\76\1\uffff\1\77",
-            "\1\101",
-            "\1\102",
-            "\1\103\13\uffff\1\104\1\105\1\106",
+            "\40\25\1\uffff\uffdf\25",
+            "\40\25\1\uffff\14\25\1\76\44\25\1\77\1\100\uffac\25",
+            "\40\25\1\uffff\14\25\1\102\uffd2\25",
+            "\40\25\1\uffff\14\25\1\104\42\25\1\106\2\25\1\105\uffac\25",
+            "\1\110",
+            "\40\25\1\uffff\14\25\1\111\26\25\1\112\2\25\1\113\6\25\1\114"+
+            "\1\25\1\115\11\25\1\116\uffa5\25",
+            "\40\25\1\uffff\14\25\1\120\44\25\1\121\1\122\uffac\25",
+            "\1\124",
+            "\40\25\1\uffff\uffdf\25",
+            "\1\126",
+            "\1\127",
+            "\40\25\1\uffff\14\25\1\130\uffd2\25",
+            "\1\132",
+            "\1\133",
+            "\40\25\1\uffff\60\25\1\134\uffae\25",
+            "\1\136",
+            "\1\137",
+            "\40\25\1\uffff\uffdf\25",
+            "\40\25\1\uffff\uffdf\25",
+            "\40\25\1\uffff\uffdf\25",
+            "\1\143",
+            "\1\144",
+            "\1\145",
+            "\40\25\1\uffff\uffdf\25",
+            "\1\147",
+            "\40\25\1\uffff\3\25\1\150\uffdb\25",
+            "\1\152",
+            "\1\153\23\uffff\1\154",
             "",
+            "\1\155",
+            "\1\156",
             "",
-            "\40\30\1\uffff\14\30\1\107\uffd2\30",
-            "\1\111\1\112",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\uffdf\30",
-            "\1\115",
-            "\40\30\1\uffff\uffdf\30",
-            "\1\117",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\14\30\1\121\44\30\1\122\1\123\1\124\uffab\30",
-            "\40\30\1\uffff\14\30\1\126\uffd2\30",
-            "\40\30\1\uffff\3\30\1\131\10\30\1\130\42\30\1\133\2\30\1\132"+
-            "\uffac\30",
-            "\1\135",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\3\30\1\137\56\30\1\140\uffac\30",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\14\30\1\143\26\30\1\145\2\30\1\146\6\30\1\147"+
-            "\1\30\1\144\11\30\1\150\uffa5\30",
-            "\40\30\1\uffff\56\30\1\152\uffb0\30",
-            "\1\154\1\uffff\1\155\11\uffff\1\156",
-            "\40\30\1\uffff\uffdf\30",
+            "\1\157",
             "\1\160",
-            "\40\30\1\uffff\43\30\1\161\25\30\1\162\uffa5\30",
-            "\40\30\1\uffff\14\30\1\164\33\30\1\165\11\30\1\166\4\30\1"+
-            "\167\uffa7\30",
-            "\1\171",
-            "\1\172",
-            "\1\173",
-            "\1\174",
-            "\40\30\1\uffff\14\30\1\176\44\30\1\175\1\u0080\1\177\uffab"+
-            "\30",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\uffdf\30",
-            "\1\u0084",
-            "\1\u0085",
-            "\40\30\1\uffff\43\30\1\u0086\2\30\1\u0087\5\30\1\u0088\1\u0089"+
-            "\3\30\1\u008a\7\30\1\u008b\uffa5\30",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\14\30\1\u008e\uffd2\30",
-            "\40\30\1\uffff\43\30\1\u0090\2\30\1\u0091\6\30\1\u0092\uffb1"+
-            "\30",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\3\30\1\u0095\uffdb\30",
-            "\1\u0097\47\uffff\1\u0098\2\uffff\1\u0099\3\uffff\1\u009a",
-            "\1\u009b",
-            "\1\u009c",
-            "\40\30\1\uffff\57\30\1\u009d\uffaf\30",
-            "\40\30\1\uffff\uffdf\30",
-            "\1\u00a0",
-            "\1\u00a1\52\uffff\1\u00a2\3\uffff\1\u00a3",
+            "",
+            "\1\161",
+            "\40\25\1\uffff\uffdf\25",
+            "\40\25\1\uffff\uffdf\25",
+            "",
+            "\1\164\1\165\3\uffff\1\172\2\uffff\1\166\5\uffff\1\171\5\uffff"+
+            "\1\173\1\170\1\167",
+            "",
+            "\1\177\1\uffff\1\u0082\1\u0086\1\u0080\1\u0083\1\u0084\5\uffff"+
+            "\1\176\2\uffff\1\u0085\1\uffff\1\u0087\1\174\1\175\1\uffff\1"+
+            "\u0081\2\uffff\1\u0088",
+            "\40\25\1\uffff\uffdf\25",
+            "\40\25\1\uffff\62\25\1\u008a\uffac\25",
+            "",
+            "\40\25\1\uffff\uffdf\25",
+            "\1\u0091\1\uffff\1\u008e\1\u0090\1\u0094\1\u0092\1\uffff\1"+
+            "\u0095\1\u0096\6\uffff\1\u0097\1\u0098\1\u0099\1\u008f\1\u0093"+
+            "\1\u008d\1\uffff\1\u009a\1\uffff\1\u009b",
+            "\40\25\1\uffff\uffdf\25",
+            "\40\25\1\uffff\uffdf\25",
+            "\40\25\1\uffff\uffdf\25",
+            "\40\25\1\uffff\uffdf\25",
+            "\40\25\1\uffff\uffdf\25",
+            "",
+            "\1\u00a1",
+            "\40\25\1\uffff\uffdf\25",
+            "\40\25\1\uffff\uffdf\25",
+            "",
             "\1\u00a4",
+            "",
             "\1\u00a5",
-            "\1\u00a6\23\uffff\1\u00a7",
+            "\1\u00a6",
+            "\1\u00a7",
             "",
             "\1\u00a8",
-            "\1\u00a9",
-            "",
-            "",
+            "\40\25\1\uffff\uffdf\25",
             "\1\u00aa",
             "",
             "\1\u00ab",
-            "",
             "\1\u00ac",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\uffdf\30",
-            "",
-            "\1\u00b0\1\u00b1\3\uffff\1\u00b6\2\uffff\1\u00b2\5\uffff\1"+
-            "\u00b5\5\uffff\1\u00b7\1\u00b4\1\u00b3",
-            "",
-            "\1\u00bc\1\uffff\1\u00be\1\u00c2\1\u00b8\1\u00bf\1\u00c0\5"+
-            "\uffff\1\u00bb\2\uffff\1\u00c1\1\uffff\1\u00c3\1\u00b9\1\u00ba"+
-            "\1\uffff\1\u00bd\2\uffff\1\u00c4",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\3\30\1\u00c6\uffdb\30",
-            "\40\30\1\uffff\uffdf\30",
-            "",
-            "\40\30\1\uffff\uffdf\30",
-            "",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\3\30\1\u00cb\uffdb\30",
             "",
             "",
-            "\1\u00d1\1\uffff\1\u00ce\1\u00d0\1\u00d4\1\u00d2\1\uffff\1"+
-            "\u00d5\1\u00d6\6\uffff\1\u00d7\1\u00d8\1\u00d9\1\u00cf\1\u00d3"+
-            "\1\u00cd\1\uffff\1\u00da\1\uffff\1\u00db",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\uffdf\30",
             "",
-            "\1\u00e1",
+            "\40\25\1\uffff\uffdf\25",
+            "\40\25\1\uffff\uffdf\25",
+            "\40\25\1\uffff\3\25\1\u00af\uffdb\25",
             "",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\uffdf\30",
+            "\40\25\1\uffff\uffdf\25",
+            "\40\25\1\uffff\uffdf\25",
             "",
-            "\1\u00e5",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\uffdf\30",
+            "\40\25\1\uffff\uffdf\25",
+            "\1\u00b4",
+            "\1\u00b5",
+            "\1\u00b6",
+            "\1\u00b7",
+            "\1\u00b8",
+            "\1\u00b9",
+            "\1\u00ba\6\uffff\1\u00bb",
             "",
-            "\1\u00e8",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\uffdf\30",
             "",
-            "\1\u00ec",
-            "\40\30\1\uffff\uffdf\30",
-            "\1\u00ee",
-            "\1\u00ef",
-            "\40\30\1\uffff\uffdf\30",
+            "\1\u00bd\14\uffff\1\u00bc",
+            "\1\u00be\23\uffff\1\u00bf",
+            "\1\u00c0",
+            "\1\u00c1",
+            "\1\u00c2",
+            "\1\u00c3\7\uffff\1\u00c4\7\uffff\1\u00c5",
+            "\1\u00c6\2\uffff\1\u00c7",
+            "\1\u00c8",
+            "\1\u00c9\4\uffff\1\u00ca",
+            "\1\u00cc\3\uffff\1\u00cb",
+            "\1\u00cd\3\uffff\1\u00cf\3\uffff\1\u00d0\5\uffff\1\u00ce",
+            "\1\u00d3\10\uffff\1\u00d1\2\uffff\1\u00d4\3\uffff\1\u00d2",
+            "\1\u00d5\6\uffff\1\u00d6",
+            "\1\u00d8\15\uffff\1\u00d7",
+            "\1\u00d9\6\uffff\1\u00da\11\uffff\1\u00db",
+            "\1\u00dd\2\uffff\1\u00dc",
+            "\1\u00de",
+            "\1\u00e1\14\uffff\1\u00df\2\uffff\1\u00e0",
+            "\1\u00e2",
+            "\1\u00e3",
+            "\1\u00e4",
+            "",
+            "\40\25\1\uffff\uffdf\25",
+            "",
+            "",
+            "\1\u00e6",
+            "\1\u00e7\6\uffff\1\u00e8",
+            "\1\u00ea\1\u00e9\3\uffff\1\u00eb",
+            "\1\u00ee\3\uffff\1\u00ec\10\uffff\1\u00ed",
+            "\1\u00ef\13\uffff\1\u00f0",
             "\1\u00f1",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\uffdf\30",
-            "",
-            "",
-            "",
+            "\1\u00f2",
+            "\1\u00f3",
             "\1\u00f4",
-            "\1\u00f5",
-            "\40\30\1\uffff\71\30\1\u00f6\uffa5\30",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\uffdf\30",
-            "",
-            "",
+            "\1\u00f6\1\u00f5",
+            "\1\u00f7\20\uffff\1\u00f8\2\uffff\1\u00f9",
+            "\1\u00fa",
+            "\1\u00fb",
+            "\1\u00fc",
             "\1\u00fd",
             "",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\uffdf\30",
             "",
             "",
-            "\40\30\1\uffff\uffdf\30",
-            "",
-            "\40\30\1\uffff\3\30\1\u0102\uffdb\30",
-            "\40\30\1\uffff\62\30\1\u0104\uffac\30",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\62\30\1\u0107\uffac\30",
-            "\40\30\1\uffff\3\30\1\u0109\uffdb\30",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\uffdf\30",
             "",
             "",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\uffdf\30",
-            "\1\u0113",
-            "\1\u0114",
-            "\1\u0115",
+            "\1\u00fe",
+            "",
+            "",
+            "\40\25\1\uffff\uffdf\25",
+            "\1\u0100",
+            "\40\25\1\uffff\uffdf\25",
+            "\1\u0102",
+            "\40\25\1\uffff\uffdf\25",
+            "",
+            "\40\25\1\uffff\uffdf\25",
+            "\1\u0105",
+            "\1\u0106",
+            "",
+            "",
+            "\40\25\1\uffff\uffdf\25",
+            "",
+            "",
+            "",
+            "",
+            "\1\u0108",
+            "\1\u0109",
+            "\40\25\1\uffff\uffdf\25",
+            "\40\25\1\uffff\uffdf\25",
+            "\1\u010c",
+            "\1\u010d",
+            "\1\u010e",
+            "\1\u010f",
+            "\40\25\1\uffff\uffdf\25",
+            "\1\u0111",
+            "\1\u0112",
+            "\40\25\1\uffff\uffdf\25",
+            "\40\25\1\uffff\63\25\1\u0114\uffab\25",
             "\1\u0116",
             "\1\u0117",
-            "\1\u0118",
-            "\1\u0119\6\uffff\1\u011a",
-            "",
-            "",
-            "",
-            "\1\u011c\14\uffff\1\u011b",
-            "\1\u011d\23\uffff\1\u011e",
+            "\40\25\1\uffff\45\25\1\u0118\uffb9\25",
+            "\40\25\1\uffff\uffdf\25",
+            "\1\u011b",
+            "\1\u011c",
+            "\1\u011d",
+            "\1\u011e",
             "\1\u011f",
             "\1\u0120",
             "\1\u0121",
-            "\1\u0122\7\uffff\1\u0123\7\uffff\1\u0124",
-            "\1\u0125\2\uffff\1\u0126",
+            "\1\u0122",
+            "\1\u0123",
+            "\1\u0124",
+            "\1\u0125",
+            "\1\u0126",
             "\1\u0127",
-            "\1\u0129\6\uffff\1\u0128",
-            "\1\u012a\4\uffff\1\u012b",
-            "\1\u012d\3\uffff\1\u012c",
-            "\1\u012e\3\uffff\1\u0130\3\uffff\1\u0131\5\uffff\1\u012f",
-            "\1\u0134\10\uffff\1\u0132\2\uffff\1\u0135\3\uffff\1\u0133",
-            "\1\u0137\15\uffff\1\u0136",
-            "\1\u0138\6\uffff\1\u0139\11\uffff\1\u013a",
-            "\1\u013c\2\uffff\1\u013b",
+            "\1\u0128",
+            "\1\u0129",
+            "\1\u012a",
+            "\40\25\1\uffff\uffdf\25",
+            "\1\u012c\22\uffff\1\u012d",
+            "\1\u012e",
+            "\1\u012f",
+            "\1\u0130\14\uffff\1\u0131",
+            "\1\u0132\1\uffff\1\u0133",
+            "\1\u0134",
+            "\1\u0135",
+            "\1\u0136",
+            "\1\u0137",
+            "\1\u0138",
+            "\1\u0139",
+            "\1\u013a",
+            "\1\u013b",
+            "\1\u013c",
             "\1\u013d",
-            "\1\u0140\14\uffff\1\u013e\2\uffff\1\u013f",
-            "\1\u0141",
-            "\1\u0142",
-            "\1\u0143",
             "",
-            "\40\30\1\uffff\uffdf\30",
-            "",
-            "",
-            "",
-            "",
-            "\40\30\1\uffff\uffdf\30",
-            "",
-            "\1\u0146",
-            "\1\u0147\6\uffff\1\u0148",
-            "\1\u014a\1\u0149\3\uffff\1\u014b",
-            "\1\u014e\3\uffff\1\u014c\10\uffff\1\u014d",
-            "\1\u014f\13\uffff\1\u0150",
+            "\1\u013e",
+            "\1\u013f",
+            "\1\u0140\1\u0141",
+            "\1\u0142\20\uffff\1\u0143",
+            "\1\u0144",
+            "\1\u0145",
+            "\1\u0146\6\uffff\1\u0147",
+            "\1\u0148\11\uffff\1\u0149",
+            "\1\u014a",
+            "\1\u014b",
+            "\1\u014c",
+            "\1\u014d",
+            "\1\u014e",
+            "\1\u014f",
+            "\1\u0150",
             "\1\u0151",
             "\1\u0152",
             "\1\u0153",
             "\1\u0154",
-            "\1\u0156\1\u0155",
-            "\1\u0157\20\uffff\1\u0158\2\uffff\1\u0159",
-            "\1\u015a",
+            "\1\u0155",
+            "\1\u0156",
+            "\1\u0157\11\uffff\1\u0158",
+            "\1\u0159\11\uffff\1\u015a",
             "\1\u015b",
             "\1\u015c",
-            "\1\u015d",
             "",
-            "",
-            "",
-            "",
+            "\40\25\1\uffff\uffdf\25",
             "",
             "\1\u015e",
             "",
             "",
+            "\40\25\1\uffff\uffdf\25",
+            "\40\25\1\uffff\uffdf\25",
             "",
-            "\40\30\1\uffff\uffdf\30",
-            "",
-            "",
-            "\1\u0160",
-            "",
-            "",
-            "",
-            "\40\30\1\uffff\uffdf\30",
-            "",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\uffdf\30",
-            "",
-            "\1\u0164",
+            "\1\u0161",
+            "\1\u0162",
             "",
             "",
-            "\1\u0165",
+            "\1\u0163\13\uffff\1\u0165\2\uffff\1\u0164",
             "\1\u0166",
-            "\40\30\1\uffff\uffdf\30",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
+            "\1\u0167",
             "\1\u0168",
             "",
+            "\1\u0169",
+            "\1\u016a",
+            "",
+            "\1\u016b",
+            "",
+            "\1\u016c",
+            "\40\25\1\uffff\uffdf\25",
+            "\40\25\1\uffff\uffdf\25",
             "",
             "",
-            "",
-            "\40\30\1\uffff\uffdf\30",
-            "",
-            "\40\30\1\uffff\uffdf\30",
-            "",
-            "",
-            "\40\30\1\uffff\uffdf\30",
-            "",
-            "\40\30\1\uffff\uffdf\30",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\u016d",
-            "\1\u016e",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\uffdf\30",
+            "\1\u016f",
+            "\40\25\1\uffff\uffdf\25",
             "\1\u0171",
             "\1\u0172",
             "\1\u0173",
             "\1\u0174",
-            "\40\30\1\uffff\uffdf\30",
+            "\1\u0175",
             "\1\u0176",
             "\1\u0177",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\63\30\1\u0179\uffab\30",
+            "\1\u0178",
+            "\1\u0179",
+            "\1\u017a",
             "\1\u017b",
             "\1\u017c",
-            "\40\30\1\uffff\45\30\1\u017d\uffb9\30",
-            "\40\30\1\uffff\uffdf\30",
+            "\40\25\1\uffff\uffdf\25",
+            "\1\u017e",
+            "",
+            "\1\u017f",
             "\1\u0180",
-            "\1\u0181",
+            "\40\25\1\uffff\uffdf\25",
             "\1\u0182",
             "\1\u0183",
-            "\1\u0184\22\uffff\1\u0185",
-            "\40\30\1\uffff\uffdf\30",
+            "\1\u0184",
+            "\1\u0185",
+            "\1\u0186",
             "\1\u0187",
             "\1\u0188",
             "\1\u0189",
             "\1\u018a",
-            "\1\u018b",
-            "\1\u018c",
+            "\1\u018c\17\uffff\1\u018b",
             "\1\u018d",
             "\1\u018e",
-            "\1\u018f",
+            "\40\25\1\uffff\uffdf\25",
             "\1\u0190",
             "\1\u0191",
-            "\1\u0192",
-            "\1\u0193",
-            "\1\u0194",
-            "\1\u0195\14\uffff\1\u0196",
-            "\1\u0197\1\uffff\1\u0198",
-            "\1\u0199",
+            "\40\25\1\uffff\uffdf\25",
+            "\1\u0193\3\uffff\1\u0194",
+            "\1\u0196\20\uffff\1\u0195",
+            "\1\u0197",
+            "\1\u0199\2\uffff\1\u0198",
             "\1\u019a",
             "\1\u019b",
             "\1\u019c",
             "\1\u019d",
             "\1\u019e",
             "\1\u019f",
-            "\1\u01a0",
+            "\40\25\1\uffff\uffdf\25",
             "\1\u01a1",
-            "\1\u01a2",
-            "",
-            "",
+            "\40\25\1\uffff\uffdf\25",
             "\1\u01a3",
-            "\1\u01a4",
-            "\1\u01a5\1\u01a6",
-            "\1\u01a7\20\uffff\1\u01a8",
+            "\1\u01a4\7\uffff\1\u01a5",
+            "\1\u01a6",
+            "\1\u01a7",
+            "\1\u01a8",
             "\1\u01a9",
             "\1\u01aa",
-            "\1\u01ab\6\uffff\1\u01ac",
-            "\1\u01ad\11\uffff\1\u01ae",
+            "\1\u01ab",
+            "\1\u01ac",
+            "\1\u01ad",
+            "\1\u01ae",
             "\1\u01af",
             "\1\u01b0",
             "\1\u01b1",
             "\1\u01b2",
             "\1\u01b3",
             "\1\u01b4",
-            "\1\u01b5",
+            "",
+            "\40\25\1\uffff\uffdf\25",
+            "",
+            "",
             "\1\u01b6",
             "\1\u01b7",
-            "\1\u01b8",
-            "\1\u01b9",
-            "\1\u01ba",
+            "\1\u01b8\2\uffff\1\u01ba\2\uffff\1\u01b9",
             "\1\u01bb",
-            "\1\u01bc\11\uffff\1\u01bd",
-            "\1\u01be\11\uffff\1\u01bf",
+            "\1\u01bc",
+            "\1\u01bd",
+            "\40\25\1\uffff\uffdf\25",
+            "\1\u01bf",
             "\1\u01c0",
-            "\40\30\1\uffff\uffdf\30",
-            "",
-            "\1\u01c2",
-            "",
-            "",
-            "",
-            "\1\u01c3",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\uffdf\30",
-            "",
-            "\40\30\1\uffff\uffdf\30",
+            "\1\u01c1",
+            "\40\25\1\uffff\uffdf\25",
+            "\40\25\1\uffff\56\25\1\u01c3\uffb0\25",
             "",
             "",
+            "\40\25\1\uffff\uffdf\25",
             "",
-            "",
+            "\40\25\1\uffff\uffdf\25",
             "\1\u01c7",
             "\1\u01c8",
-            "",
-            "",
-            "\1\u01c9\13\uffff\1\u01cb\2\uffff\1\u01ca",
-            "\1\u01cc",
-            "\1\u01cd",
+            "\1\u01c9",
+            "\40\25\1\uffff\62\25\1\u01ca\uffac\25",
+            "\40\25\1\uffff\uffdf\25",
+            "\40\25\1\uffff\uffdf\25",
             "\1\u01ce",
-            "",
             "\1\u01cf",
             "\1\u01d0",
-            "",
             "\1\u01d1",
-            "",
             "\1\u01d2",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\uffdf\30",
             "",
-            "",
+            "\1\u01d3",
+            "\1\u01d4",
             "\1\u01d5",
-            "\40\30\1\uffff\uffdf\30",
+            "",
+            "\1\u01d6",
             "\1\u01d7",
             "\1\u01d8",
             "\1\u01d9",
             "\1\u01da",
-            "",
             "\1\u01db",
             "\1\u01dc",
             "\1\u01dd",
@@ -6299,95 +4901,113 @@ public class ChemicalChunkerLexer extends Lexer {
             "\1\u01e0",
             "\1\u01e1",
             "\1\u01e2",
+            "",
             "\1\u01e3",
             "\1\u01e4",
-            "\40\30\1\uffff\uffdf\30",
+            "",
+            "\1\u01e5",
             "\1\u01e6",
-            "\40\30\1\uffff\uffdf\30",
+            "\1\u01e7",
             "\1\u01e8",
-            "\1\u01e9",
+            "\40\25\1\uffff\uffdf\25",
             "\1\u01ea",
             "\1\u01eb",
             "\1\u01ec",
-            "\1\u01ed",
+            "\40\25\1\uffff\uffdf\25",
             "\1\u01ee",
             "\1\u01ef",
             "\1\u01f0",
-            "\1\u01f2\17\uffff\1\u01f1",
+            "\40\25\1\uffff\uffdf\25",
+            "",
+            "\1\u01f2",
+            "",
             "\1\u01f3",
-            "\1\u01f4",
-            "\40\30\1\uffff\uffdf\30",
+            "\40\25\1\uffff\uffdf\25",
+            "\1\u01f5",
             "\1\u01f6",
             "\1\u01f7",
-            "\40\30\1\uffff\uffdf\30",
-            "\1\u01f9\3\uffff\1\u01fa",
-            "\1\u01fc\20\uffff\1\u01fb",
+            "\40\25\1\uffff\uffdf\25",
+            "\1\u01f9",
+            "\1\u01fa",
+            "\1\u01fb",
+            "\1\u01fc",
             "\1\u01fd",
-            "\1\u01ff\2\uffff\1\u01fe",
+            "\1\u01fe",
+            "\1\u01ff",
             "\1\u0200",
-            "\1\u0201",
-            "\1\u0202",
+            "\40\25\1\uffff\uffdf\25",
+            "\40\25\1\uffff\uffdf\25",
             "\1\u0203",
-            "\1\u0204",
+            "\40\25\1\uffff\uffdf\25",
+            "",
             "\1\u0205",
-            "\40\30\1\uffff\uffdf\30",
-            "\1\u0207",
-            "\40\30\1\uffff\uffdf\30",
-            "\1\u0209",
-            "\1\u020a\7\uffff\1\u020b",
+            "\1\u0206",
+            "\40\25\1\uffff\uffdf\25",
+            "\1\u0208",
+            "\40\25\1\uffff\uffdf\25",
+            "\40\25\1\uffff\uffdf\25",
+            "\1\u020b",
             "\1\u020c",
+            "",
             "\1\u020d",
-            "\1\u020e",
+            "\40\25\1\uffff\uffdf\25",
             "\1\u020f",
+            "",
             "\1\u0210",
-            "\1\u0211",
-            "\1\u0212",
+            "",
+            "",
+            "",
+            "\40\25\1\uffff\uffdf\25",
+            "\40\25\1\uffff\uffdf\25",
             "\1\u0213",
-            "\1\u0214",
-            "\1\u0215",
+            "\40\25\1\uffff\uffdf\25",
+            "",
+            "",
+            "",
+            "\40\25\1\uffff\uffdf\25",
             "\1\u0216",
             "\1\u0217",
             "\1\u0218",
             "\1\u0219",
-            "",
-            "\40\30\1\uffff\uffdf\30",
+            "\1\u021a",
             "\1\u021b",
-            "",
-            "",
-            "",
             "\1\u021c",
             "\1\u021d",
-            "\1\u021e\2\uffff\1\u0220\2\uffff\1\u021f",
+            "\1\u021e",
+            "\1\u021f",
+            "\1\u0220",
             "\1\u0221",
-            "\1\u0222",
-            "\1\u0223",
-            "\40\30\1\uffff\uffdf\30",
+            "\40\25\1\uffff\uffdf\25",
+            "\40\25\1\uffff\uffdf\25",
+            "\1\u0224",
             "\1\u0225",
             "\1\u0226",
             "\1\u0227",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\56\30\1\u0229\uffb0\30",
-            "",
-            "",
-            "\40\30\1\uffff\uffdf\30",
-            "",
-            "\40\30\1\uffff\uffdf\30",
+            "\1\u0228",
+            "\1\u0229",
+            "\1\u022a",
+            "\40\25\1\uffff\uffdf\25",
+            "\1\u022c",
             "\1\u022d",
             "\1\u022e",
             "\1\u022f",
+            "",
             "\1\u0230",
             "\1\u0231",
-            "\40\30\1\uffff\62\30\1\u0232\uffac\30",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\uffdf\30",
+            "\1\u0232",
+            "",
+            "\1\u0233",
+            "\1\u0234",
+            "\1\u0235",
+            "",
             "\1\u0236",
             "\1\u0237",
+            "",
             "\1\u0238",
-            "\1\u0239",
+            "\40\25\1\uffff\uffdf\25",
             "\1\u023a",
             "",
             "\1\u023b",
-            "",
             "\1\u023c",
             "\1\u023d",
             "\1\u023e",
@@ -6395,321 +5015,201 @@ public class ChemicalChunkerLexer extends Lexer {
             "\1\u0240",
             "\1\u0241",
             "\1\u0242",
-            "\1\u0243",
+            "",
+            "",
+            "\40\25\1\uffff\uffdf\25",
+            "",
             "\1\u0244",
             "\1\u0245",
-            "\1\u0246",
-            "\1\u0247",
+            "",
+            "\40\25\1\uffff\uffdf\25",
+            "",
+            "",
+            "\40\25\1\uffff\uffdf\25",
             "\1\u0248",
-            "",
             "\1\u0249",
-            "\1\u024a",
             "",
+            "\40\25\1\uffff\uffdf\25",
             "\1\u024b",
+            "",
+            "",
             "\1\u024c",
-            "\1\u024d",
+            "",
+            "",
+            "\40\25\1\uffff\uffdf\25",
             "\1\u024e",
-            "\40\30\1\uffff\uffdf\30",
+            "\40\25\1\uffff\uffdf\25",
             "\1\u0250",
             "\1\u0251",
             "\1\u0252",
-            "\40\30\1\uffff\uffdf\30",
-            "\1\u0254",
+            "\1\u0253",
+            "\40\25\1\uffff\uffdf\25",
             "\1\u0255",
             "\1\u0256",
-            "\40\30\1\uffff\uffdf\30",
-            "",
+            "\40\25\1\uffff\uffdf\25",
             "\1\u0258",
             "",
-            "\1\u0259",
-            "\40\30\1\uffff\uffdf\30",
+            "",
+            "\40\25\1\uffff\uffdf\25",
+            "\1\u025a",
             "\1\u025b",
             "\1\u025c",
-            "\1\u025d",
-            "\40\30\1\uffff\uffdf\30",
-            "\1\u025f",
-            "\1\u0260",
-            "\1\u0261",
+            "\40\25\1\uffff\uffdf\25",
+            "\1\u025e",
+            "\40\25\1\uffff\uffdf\25",
+            "",
+            "\40\25\1\uffff\uffdf\25",
+            "\40\25\1\uffff\uffdf\25",
             "\1\u0262",
             "\1\u0263",
             "\1\u0264",
             "\1\u0265",
             "\1\u0266",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\uffdf\30",
+            "\1\u0267",
+            "\40\25\1\uffff\uffdf\25",
             "\1\u0269",
-            "",
-            "\40\30\1\uffff\uffdf\30",
+            "\40\25\1\uffff\uffdf\25",
             "\1\u026b",
-            "\1\u026c",
-            "\40\30\1\uffff\uffdf\30",
-            "\1\u026e",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\uffdf\30",
-            "\1\u0271",
-            "\1\u0272",
+            "\40\25\1\uffff\uffdf\25",
             "",
-            "\1\u0273",
-            "\40\30\1\uffff\uffdf\30",
-            "\1\u0275",
+            "\1\u026d",
+            "\1\u026e",
+            "\1\u026f",
+            "\1\u0270",
+            "\1\u0271",
+            "\40\25\1\uffff\uffdf\25",
+            "\40\25\1\uffff\uffdf\25",
+            "\1\u0274",
+            "\40\25\1\uffff\uffdf\25",
             "",
             "\1\u0276",
+            "\40\25\1\uffff\uffdf\25",
             "",
             "",
-            "",
-            "\40\30\1\uffff\uffdf\30",
-            "\1\u0278",
+            "\40\25\1\uffff\uffdf\25",
             "\1\u0279",
-            "\40\30\1\uffff\uffdf\30",
+            "",
+            "\40\25\1\uffff\uffdf\25",
             "\1\u027b",
-            "\40\30\1\uffff\uffdf\30",
             "",
+            "\40\25\1\uffff\uffdf\25",
             "",
-            "",
-            "\40\30\1\uffff\uffdf\30",
+            "\1\u027d",
             "\1\u027e",
-            "\1\u027f",
-            "\1\u0280",
+            "\40\25\1\uffff\uffdf\25",
+            "\40\25\1\uffff\uffdf\25",
+            "",
             "\1\u0281",
             "\1\u0282",
+            "",
             "\1\u0283",
-            "\1\u0284",
+            "",
+            "\40\25\1\uffff\uffdf\25",
             "\1\u0285",
             "\1\u0286",
-            "\1\u0287",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\uffdf\30",
+            "",
+            "\40\25\1\uffff\uffdf\25",
+            "",
+            "",
+            "",
+            "\40\25\1\uffff\uffdf\25",
+            "\1\u0289",
             "\1\u028a",
-            "\1\u028b",
-            "\1\u028c",
+            "\40\25\1\uffff\uffdf\25",
+            "\40\25\1\uffff\uffdf\25",
             "\1\u028d",
+            "",
             "\1\u028e",
+            "",
             "\1\u028f",
-            "\1\u0290",
-            "\40\30\1\uffff\uffdf\30",
-            "\1\u0292",
+            "",
+            "\40\25\1\uffff\uffdf\25",
+            "\1\u0291",
+            "\40\25\1\uffff\uffdf\25",
             "\1\u0293",
             "\1\u0294",
-            "\1\u0295",
             "",
-            "\1\u0296",
-            "\1\u0297",
+            "",
+            "\40\25\1\uffff\uffdf\25",
+            "",
+            "\40\25\1\uffff\uffdf\25",
+            "",
+            "",
+            "\40\25\1\uffff\uffdf\25",
+            "",
             "\1\u0298",
             "",
             "\1\u0299",
             "\1\u029a",
-            "\1\u029b",
             "",
+            "",
+            "\1\u029b",
             "\1\u029c",
             "\1\u029d",
             "",
-            "\1\u029e",
-            "\40\30\1\uffff\uffdf\30",
-            "\1\u02a0",
+            "\40\25\1\uffff\uffdf\25",
+            "\1\u029f",
             "",
-            "\1\u02a1",
+            "",
+            "\1\u02a0",
+            "\40\25\1\uffff\uffdf\25",
+            "",
+            "",
             "\1\u02a2",
-            "\1\u02a3",
+            "\40\25\1\uffff\uffdf\25",
             "\1\u02a4",
-            "\1\u02a5",
+            "",
+            "\40\25\1\uffff\uffdf\25",
+            "",
             "\1\u02a6",
             "\1\u02a7",
+            "",
+            "",
+            "",
             "\1\u02a8",
-            "",
-            "",
-            "\40\30\1\uffff\uffdf\30",
-            "",
-            "\1\u02aa",
+            "\1\u02a9",
+            "\40\25\1\uffff\uffdf\25",
             "\1\u02ab",
+            "\1\u02ac",
+            "\1\u02ad",
             "",
-            "\40\30\1\uffff\uffdf\30",
-            "",
-            "",
-            "\40\30\1\uffff\uffdf\30",
             "\1\u02ae",
             "\1\u02af",
             "",
-            "\40\30\1\uffff\uffdf\30",
-            "\1\u02b1",
+            "\1\u02b0",
             "",
-            "\1\u02b2",
+            "\40\25\1\uffff\uffdf\25",
+            "",
+            "\40\25\1\uffff\uffdf\25",
             "\1\u02b3",
+            "\40\25\1\uffff\uffdf\25",
+            "\40\25\1\uffff\uffdf\25",
             "",
-            "\1\u02b4",
-            "",
-            "",
-            "\40\30\1\uffff\uffdf\30",
-            "\1\u02b6",
-            "\40\30\1\uffff\uffdf\30",
+            "\40\25\1\uffff\uffdf\25",
+            "\1\u02b7",
             "\1\u02b8",
             "\1\u02b9",
-            "\40\30\1\uffff\uffdf\30",
-            "\1\u02bb",
+            "\1\u02ba",
+            "\40\25\1\uffff\uffdf\25",
+            "",
+            "",
             "\1\u02bc",
-            "\40\30\1\uffff\uffdf\30",
-            "\1\u02be",
             "",
             "",
-            "\40\30\1\uffff\uffdf\30",
-            "\1\u02c0",
-            "\1\u02c1",
+            "",
+            "\1\u02bd",
+            "\40\25\1\uffff\uffdf\25",
+            "\40\25\1\uffff\uffdf\25",
+            "\40\25\1\uffff\uffdf\25",
+            "",
+            "\40\25\1\uffff\uffdf\25",
             "\1\u02c2",
-            "\40\30\1\uffff\uffdf\30",
-            "\1\u02c4",
-            "\40\30\1\uffff\uffdf\30",
-            "",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\uffdf\30",
-            "\1\u02c8",
-            "\1\u02c9",
-            "\1\u02ca",
-            "\1\u02cb",
-            "\1\u02cc",
-            "\1\u02cd",
-            "\40\30\1\uffff\uffdf\30",
-            "\1\u02cf",
-            "\40\30\1\uffff\uffdf\30",
-            "\1\u02d1",
-            "\40\30\1\uffff\uffdf\30",
-            "",
-            "\1\u02d3",
-            "\1\u02d4",
-            "\1\u02d5",
-            "\1\u02d6",
-            "\1\u02d7",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\uffdf\30",
-            "\1\u02da",
-            "\40\30\1\uffff\uffdf\30",
-            "",
-            "\1\u02dc",
-            "\40\30\1\uffff\uffdf\30",
-            "",
-            "",
-            "\40\30\1\uffff\uffdf\30",
-            "\1\u02df",
-            "",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\uffdf\30",
-            "\1\u02e3",
-            "",
-            "\40\30\1\uffff\uffdf\30",
-            "",
-            "\1\u02e5",
-            "\1\u02e6",
-            "",
-            "\1\u02e7",
-            "\1\u02e8",
-            "",
-            "\1\u02e9",
-            "",
-            "\40\30\1\uffff\uffdf\30",
-            "\1\u02eb",
-            "\1\u02ec",
-            "",
-            "\40\30\1\uffff\uffdf\30",
-            "",
-            "",
-            "",
-            "\40\30\1\uffff\uffdf\30",
-            "\1\u02ef",
-            "\1\u02f0",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\uffdf\30",
-            "\1\u02f3",
-            "",
-            "\1\u02f4",
-            "",
-            "\1\u02f5",
-            "",
-            "\40\30\1\uffff\uffdf\30",
-            "\1\u02f7",
-            "\40\30\1\uffff\uffdf\30",
-            "\1\u02f9",
-            "\1\u02fa",
-            "",
-            "",
-            "\40\30\1\uffff\uffdf\30",
-            "",
-            "\40\30\1\uffff\uffdf\30",
-            "",
-            "",
-            "\40\30\1\uffff\uffdf\30",
-            "",
-            "",
-            "",
-            "\1\u02fe",
-            "",
-            "\1\u02ff",
-            "\1\u0300",
-            "\1\u0301",
-            "\1\u0302",
-            "\1\u0303",
-            "",
-            "\40\30\1\uffff\uffdf\30",
-            "\1\u0305",
-            "",
-            "",
-            "\1\u0306",
-            "\40\30\1\uffff\uffdf\30",
-            "",
-            "",
-            "\1\u0308",
-            "\40\30\1\uffff\uffdf\30",
-            "\1\u030a",
-            "",
-            "\40\30\1\uffff\uffdf\30",
-            "",
-            "\1\u030c",
-            "\1\u030d",
-            "",
-            "",
-            "",
-            "\1\u030e",
-            "\1\u030f",
-            "\40\30\1\uffff\uffdf\30",
-            "\1\u0311",
-            "\1\u0312",
-            "\1\u0313",
-            "",
-            "\1\u0314",
-            "\1\u0315",
-            "",
-            "\1\u0316",
-            "",
-            "\40\30\1\uffff\uffdf\30",
-            "",
-            "\40\30\1\uffff\uffdf\30",
-            "\1\u0319",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\uffdf\30",
-            "",
-            "\40\30\1\uffff\uffdf\30",
-            "\1\u031d",
-            "\1\u031e",
-            "\1\u031f",
-            "\1\u0320",
-            "\40\30\1\uffff\uffdf\30",
-            "",
-            "",
-            "\1\u0322",
-            "",
-            "",
-            "",
-            "\1\u0323",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\uffdf\30",
-            "\40\30\1\uffff\uffdf\30",
-            "",
-            "\40\30\1\uffff\uffdf\30",
-            "\1\u0328",
             "",
             "",
             "",
             "",
-            "\1\u0329",
-            "\40\30\1\uffff\uffdf\30",
+            "\1\u02c3",
+            "\40\25\1\uffff\uffdf\25",
             ""
     };
     }
@@ -6744,7 +5244,7 @@ public class ChemicalChunkerLexer extends Lexer {
             this.transition = DFA3_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | T__112 | T__113 | T__114 | T__115 | T__116 | T__117 | T__118 | T__119 | T__120 | T__121 | T__122 | T__123 | T__124 | T__125 | T__126 | T__127 | T__128 | T__129 | T__130 | T__131 | T__132 | T__133 | T__134 | T__135 | T__136 | T__137 | T__138 | T__139 | T__140 | T__141 | T__142 | T__143 | T__144 | T__145 | T__146 | T__147 | T__148 | T__149 | T__150 | T__151 | T__152 | T__153 | T__154 | T__155 | T__156 | T__157 | T__158 | T__159 | T__160 | T__161 | T__162 | T__163 | T__164 | T__165 | T__166 | T__167 | T__168 | T__169 | T__170 | T__171 | T__172 | T__173 | T__174 | T__175 | T__176 | T__177 | T__178 | T__179 | T__180 | T__181 | T__182 | T__183 | T__184 | T__185 | T__186 | T__187 | T__188 | T__189 | T__190 | T__191 | T__192 | T__193 | T__194 | T__195 | T__196 | T__197 | T__198 | T__199 | T__200 | T__201 | T__202 | T__203 | T__204 | T__205 | T__206 | T__207 | T__208 | T__209 | T__210 | T__211 | T__212 | T__213 | T__214 | T__215 | T__216 | T__217 | T__218 | T__219 | WS | TOKEN );";
+            return "1:1: Tokens : ( T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | T__112 | T__113 | T__114 | T__115 | T__116 | T__117 | T__118 | T__119 | T__120 | T__121 | T__122 | T__123 | T__124 | T__125 | T__126 | T__127 | T__128 | T__129 | T__130 | T__131 | T__132 | T__133 | T__134 | T__135 | T__136 | T__137 | T__138 | T__139 | T__140 | T__141 | T__142 | T__143 | T__144 | T__145 | T__146 | T__147 | T__148 | T__149 | T__150 | T__151 | T__152 | T__153 | T__154 | T__155 | T__156 | T__157 | T__158 | T__159 | T__160 | T__161 | T__162 | T__163 | T__164 | T__165 | T__166 | T__167 | T__168 | T__169 | T__170 | T__171 | T__172 | WS | TOKEN );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
@@ -6752,2000 +5252,370 @@ public class ChemicalChunkerLexer extends Lexer {
             switch ( s ) {
 
                     case 0 : 
-                        int LA3_265 = input.LA(1);
+                        int LA3_261 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA3_265>='\u0000' && LA3_265<='\u001F')||(LA3_265>='!' && LA3_265<='\uFFFF')) ) {s = 24;}
+                        if ( ((LA3_261>='\u0000' && LA3_261<='\u001F')||(LA3_261>='!' && LA3_261<='\uFFFF')) ) {s = 21;}
 
-                        else s = 364;
+                        else s = 351;
 
                         if ( s>=0 ) return s;
                         break;
 
                     case 1 : 
-                        int LA3_286 = input.LA(1);
+                        int LA3_650 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA3_286>='\u0000' && LA3_286<='\u001F')||(LA3_286>='!' && LA3_286<='\uFFFF')) ) {s = 24;}
+                        if ( ((LA3_650>='\u0000' && LA3_650<='\u001F')||(LA3_650>='!' && LA3_650<='\uFFFF')) ) {s = 21;}
 
-                        else s = 376;
+                        else s = 673;
 
                         if ( s>=0 ) return s;
                         break;
 
                     case 2 : 
-                        int LA3_689 = input.LA(1);
+                        int LA3_476 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA3_689>='\u0000' && LA3_689<='\u001F')||(LA3_689>='!' && LA3_689<='\uFFFF')) ) {s = 24;}
+                        if ( ((LA3_476>='\u0000' && LA3_476<='\u001F')||(LA3_476>='!' && LA3_476<='\uFFFF')) ) {s = 21;}
 
-                        else s = 736;
+                        else s = 547;
 
                         if ( s>=0 ) return s;
                         break;
 
                     case 3 : 
-                        int LA3_260 = input.LA(1);
+                        int LA3_262 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA3_260>='\u0000' && LA3_260<='\u001F')||(LA3_260>='!' && LA3_260<='\uFFFF')) ) {s = 24;}
+                        if ( ((LA3_262>='\u0000' && LA3_262<='\u001F')||(LA3_262>='!' && LA3_262<='\uFFFF')) ) {s = 21;}
 
-                        else s = 362;
+                        else s = 352;
 
                         if ( s>=0 ) return s;
                         break;
 
                     case 4 : 
-                        int LA3_155 = input.LA(1);
+                        int LA3_192 = input.LA(1);
 
                         s = -1;
-                        if ( (LA3_155=='$') ) {s = 265;}
+                        if ( (LA3_192=='T') ) {s = 276;}
 
-                        else if ( ((LA3_155>='\u0000' && LA3_155<='\u001F')||(LA3_155>='!' && LA3_155<='#')||(LA3_155>='%' && LA3_155<='\uFFFF')) ) {s = 24;}
+                        else if ( ((LA3_192>='\u0000' && LA3_192<='\u001F')||(LA3_192>='!' && LA3_192<='S')||(LA3_192>='U' && LA3_192<='\uFFFF')) ) {s = 21;}
 
-                        else s = 266;
+                        else s = 277;
 
                         if ( s>=0 ) return s;
                         break;
 
                     case 5 : 
-                        int LA3_380 = input.LA(1);
+                        int LA3_602 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA3_380>='\u0000' && LA3_380<='\u001F')||(LA3_380>='!' && LA3_380<='\uFFFF')) ) {s = 24;}
+                        if ( ((LA3_602>='\u0000' && LA3_602<='\u001F')||(LA3_602>='!' && LA3_602<='\uFFFF')) ) {s = 21;}
 
-                        else s = 467;
+                        else s = 644;
 
                         if ( s>=0 ) return s;
                         break;
 
                     case 6 : 
-                        int LA3_258 = input.LA(1);
+                        int LA3_24 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA3_258>='\u0000' && LA3_258<='\u001F')||(LA3_258>='!' && LA3_258<='\uFFFF')) ) {s = 24;}
+                        if ( ((LA3_24>='\u0000' && LA3_24<='\u001F')||(LA3_24>='!' && LA3_24<='\uFFFF')) ) {s = 21;}
 
-                        else s = 361;
+                        else s = 58;
 
                         if ( s>=0 ) return s;
                         break;
 
                     case 7 : 
-                        int LA3_56 = input.LA(1);
+                        int LA3_534 = input.LA(1);
 
                         s = -1;
-                        if ( (LA3_56=='D') ) {s = 134;}
+                        if ( ((LA3_534>='\u0000' && LA3_534<='\u001F')||(LA3_534>='!' && LA3_534<='\uFFFF')) ) {s = 21;}
 
-                        else if ( (LA3_56=='G') ) {s = 135;}
-
-                        else if ( (LA3_56=='M') ) {s = 136;}
-
-                        else if ( (LA3_56=='N') ) {s = 137;}
-
-                        else if ( (LA3_56=='R') ) {s = 138;}
-
-                        else if ( (LA3_56=='Z') ) {s = 139;}
-
-                        else if ( ((LA3_56>='\u0000' && LA3_56<='\u001F')||(LA3_56>='!' && LA3_56<='C')||(LA3_56>='E' && LA3_56<='F')||(LA3_56>='H' && LA3_56<='L')||(LA3_56>='O' && LA3_56<='Q')||(LA3_56>='S' && LA3_56<='Y')||(LA3_56>='[' && LA3_56<='\uFFFF')) ) {s = 24;}
-
-                        else s = 140;
+                        else s = 589;
 
                         if ( s>=0 ) return s;
                         break;
 
                     case 8 : 
-                        int LA3_149 = input.LA(1);
+                        int LA3_613 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA3_149>='\u0000' && LA3_149<='\u001F')||(LA3_149>='!' && LA3_149<='\uFFFF')) ) {s = 24;}
+                        if ( ((LA3_613>='\u0000' && LA3_613<='\u001F')||(LA3_613>='!' && LA3_613<='\uFFFF')) ) {s = 21;}
 
-                        else s = 257;
+                        else s = 651;
 
                         if ( s>=0 ) return s;
                         break;
 
                     case 9 : 
-                        int LA3_30 = input.LA(1);
+                        int LA3_297 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA3_30>='\u0000' && LA3_30<='\u001F')||(LA3_30>='!' && LA3_30<='\uFFFF')) ) {s = 24;}
+                        if ( ((LA3_297>='\u0000' && LA3_297<='\u001F')||(LA3_297>='!' && LA3_297<='\uFFFF')) ) {s = 21;}
 
-                        else s = 78;
+                        else s = 381;
 
                         if ( s>=0 ) return s;
                         break;
 
                     case 10 : 
-                        int LA3_152 = input.LA(1);
+                        int LA3_645 = input.LA(1);
 
                         s = -1;
-                        if ( (LA3_152=='S') ) {s = 260;}
+                        if ( ((LA3_645>='\u0000' && LA3_645<='\u001F')||(LA3_645>='!' && LA3_645<='\uFFFF')) ) {s = 21;}
 
-                        else if ( ((LA3_152>='\u0000' && LA3_152<='\u001F')||(LA3_152>='!' && LA3_152<='R')||(LA3_152>='T' && LA3_152<='\uFFFF')) ) {s = 24;}
-
-                        else s = 261;
+                        else s = 670;
 
                         if ( s>=0 ) return s;
                         break;
 
                     case 11 : 
-                        int LA3_46 = input.LA(1);
+                        int LA3_590 = input.LA(1);
 
                         s = -1;
-                        if ( (LA3_46=='-') ) {s = 116;}
-
-                        else if ( (LA3_46=='I') ) {s = 117;}
-
-                        else if ( (LA3_46=='S') ) {s = 118;}
-
-                        else if ( (LA3_46=='X') ) {s = 119;}
-
-                        else if ( ((LA3_46>='\u0000' && LA3_46<='\u001F')||(LA3_46>='!' && LA3_46<=',')||(LA3_46>='.' && LA3_46<='H')||(LA3_46>='J' && LA3_46<='R')||(LA3_46>='T' && LA3_46<='W')||(LA3_46>='Y' && LA3_46<='\uFFFF')) ) {s = 24;}
-
-                        else s = 120;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 12 : 
-                        int LA3_465 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_465>='\u0000' && LA3_465<='\u001F')||(LA3_465>='!' && LA3_465<='\uFFFF')) ) {s = 24;}
-
-                        else s = 552;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 13 : 
-                        int LA3_469 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_469>='\u0000' && LA3_469<='\u001F')||(LA3_469>='!' && LA3_469<='\uFFFF')) ) {s = 24;}
-
-                        else s = 555;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 14 : 
-                        int LA3_39 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_39>='\u0000' && LA3_39<='\u001F')||(LA3_39>='!' && LA3_39<='\uFFFF')) ) {s = 24;}
-
-                        else s = 98;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 15 : 
-                        int LA3_203 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_203>='\u0000' && LA3_203<='\u001F')||(LA3_203>='!' && LA3_203<='\uFFFF')) ) {s = 24;}
-
-                        else s = 325;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 16 : 
-                        int LA3_690 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_690>='\u0000' && LA3_690<='\u001F')||(LA3_690>='!' && LA3_690<='\uFFFF')) ) {s = 24;}
-
-                        else s = 737;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 17 : 
-                        int LA3_381 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_381>='\u0000' && LA3_381<='\u001F')||(LA3_381>='!' && LA3_381<='\uFFFF')) ) {s = 24;}
-
-                        else s = 468;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 18 : 
-                        int LA3_95 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_95>='\u0000' && LA3_95<='\u001F')||(LA3_95>='!' && LA3_95<='\uFFFF')) ) {s = 24;}
-
-                        else s = 202;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 19 : 
-                        int LA3_91 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_91>='\u0000' && LA3_91<='\u001F')||(LA3_91>='!' && LA3_91<='\uFFFF')) ) {s = 24;}
-
-                        else s = 200;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 20 : 
-                        int LA3_385 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_385>='\u0000' && LA3_385<='\u001F')||(LA3_385>='!' && LA3_385<='\uFFFF')) ) {s = 24;}
-
-                        else s = 470;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 21 : 
-                        int LA3_65 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA3_65=='P') ) {s = 157;}
-
-                        else if ( ((LA3_65>='\u0000' && LA3_65<='\u001F')||(LA3_65>='!' && LA3_65<='O')||(LA3_65>='Q' && LA3_65<='\uFFFF')) ) {s = 24;}
-
-                        else s = 158;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 22 : 
-                        int LA3_291 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_291>='\u0000' && LA3_291<='\u001F')||(LA3_291>='!' && LA3_291<='\uFFFF')) ) {s = 24;}
-
-                        else s = 383;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 23 : 
-                        int LA3_198 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_198>='\u0000' && LA3_198<='\u001F')||(LA3_198>='!' && LA3_198<='\uFFFF')) ) {s = 24;}
-
-                        else s = 324;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 24 : 
-                        int LA3_154 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA3_154=='S') ) {s = 263;}
-
-                        else if ( ((LA3_154>='\u0000' && LA3_154<='\u001F')||(LA3_154>='!' && LA3_154<='R')||(LA3_154>='T' && LA3_154<='\uFFFF')) ) {s = 24;}
-
-                        else s = 264;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 25 : 
-                        int LA3_557 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_557>='\u0000' && LA3_557<='\u001F')||(LA3_557>='!' && LA3_557<='\uFFFF')) ) {s = 24;}
-
-                        else s = 631;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 26 : 
-                        int LA3_89 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_89>='\u0000' && LA3_89<='\u001F')||(LA3_89>='!' && LA3_89<='\uFFFF')) ) {s = 24;}
-
-                        else s = 197;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 27 : 
-                        int LA3_471 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_471>='\u0000' && LA3_471<='\u001F')||(LA3_471>='!' && LA3_471<='\uFFFF')) ) {s = 24;}
-
-                        else s = 556;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 28 : 
-                        int LA3_96 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA3_96=='$') ) {s = 203;}
-
-                        else if ( ((LA3_96>='\u0000' && LA3_96<='\u001F')||(LA3_96>='!' && LA3_96<='#')||(LA3_96>='%' && LA3_96<='\uFFFF')) ) {s = 24;}
-
-                        else s = 204;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 29 : 
-                        int LA3_37 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_37>='\u0000' && LA3_37<='\u001F')||(LA3_37>='!' && LA3_37<='\uFFFF')) ) {s = 24;}
-
-                        else s = 94;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 30 : 
-                        int LA3_566 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_566>='\u0000' && LA3_566<='\u001F')||(LA3_566>='!' && LA3_566<='\uFFFF')) ) {s = 24;}
-
-                        else s = 637;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 31 : 
-                        int LA3_640 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_640>='\u0000' && LA3_640<='\u001F')||(LA3_640>='!' && LA3_640<='\uFFFF')) ) {s = 24;}
-
-                        else s = 695;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 32 : 
-                        int LA3_83 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_83>='\u0000' && LA3_83<='\u001F')||(LA3_83>='!' && LA3_83<='\uFFFF')) ) {s = 24;}
-
-                        else s = 174;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 33 : 
-                        int LA3_783 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_783>='\u0000' && LA3_783<='\u001F')||(LA3_783>='!' && LA3_783<='\uFFFF')) ) {s = 24;}
-
-                        else s = 795;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 34 : 
-                        int LA3_84 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_84>='\u0000' && LA3_84<='\u001F')||(LA3_84>='!' && LA3_84<='\uFFFF')) ) {s = 24;}
-
-                        else s = 175;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 35 : 
-                        int LA3_297 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_297>='\u0000' && LA3_297<='\u001F')||(LA3_297>='!' && LA3_297<='\uFFFF')) ) {s = 24;}
-
-                        else s = 390;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 36 : 
-                        int LA3_60 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_60>='\u0000' && LA3_60<='\u001F')||(LA3_60>='!' && LA3_60<='\uFFFF')) ) {s = 24;}
-
-                        else s = 148;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 37 : 
-                        int LA3_560 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_560>='\u0000' && LA3_560<='\u001F')||(LA3_560>='!' && LA3_560<='\uFFFF')) ) {s = 24;}
-
-                        else s = 634;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 38 : 
-                        int LA3_82 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_82>='\u0000' && LA3_82<='\u001F')||(LA3_82>='!' && LA3_82<='\uFFFF')) ) {s = 24;}
-
-                        else s = 173;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 39 : 
-                        int LA3_479 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_479>='\u0000' && LA3_479<='\u001F')||(LA3_479>='!' && LA3_479<='\uFFFF')) ) {s = 24;}
-
-                        else s = 565;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 40 : 
-                        int LA3_90 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA3_90=='$') ) {s = 198;}
-
-                        else if ( ((LA3_90>='\u0000' && LA3_90<='\u001F')||(LA3_90>='!' && LA3_90<='#')||(LA3_90>='%' && LA3_90<='\uFFFF')) ) {s = 24;}
-
-                        else s = 199;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 41 : 
-                        int LA3_146 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_146>='\u0000' && LA3_146<='\u001F')||(LA3_146>='!' && LA3_146<='\uFFFF')) ) {s = 24;}
-
-                        else s = 256;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 42 : 
-                        int LA3_151 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA3_151=='$') ) {s = 258;}
-
-                        else if ( ((LA3_151>='\u0000' && LA3_151<='\u001F')||(LA3_151>='!' && LA3_151<='#')||(LA3_151>='%' && LA3_151<='\uFFFF')) ) {s = 24;}
-
-                        else s = 259;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 43 : 
-                        int LA3_578 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_578>='\u0000' && LA3_578<='\u001F')||(LA3_578>='!' && LA3_578<='\uFFFF')) ) {s = 24;}
-
-                        else s = 649;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 44 : 
-                        int LA3_145 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_145>='\u0000' && LA3_145<='\u001F')||(LA3_145>='!' && LA3_145<='\uFFFF')) ) {s = 24;}
-
-                        else s = 255;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 45 : 
-                        int LA3_144 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_144>='\u0000' && LA3_144<='\u001F')||(LA3_144>='!' && LA3_144<='\uFFFF')) ) {s = 24;}
-
-                        else s = 254;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 46 : 
-                        int LA3_704 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_704>='\u0000' && LA3_704<='\u001F')||(LA3_704>='!' && LA3_704<='\uFFFF')) ) {s = 24;}
-
-                        else s = 746;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 47 : 
-                        int LA3_638 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_638>='\u0000' && LA3_638<='\u001F')||(LA3_638>='!' && LA3_638<='\uFFFF')) ) {s = 24;}
-
-                        else s = 693;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 48 : 
-                        int LA3_61 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA3_61=='$') ) {s = 149;}
-
-                        else if ( ((LA3_61>='\u0000' && LA3_61<='\u001F')||(LA3_61>='!' && LA3_61<='#')||(LA3_61>='%' && LA3_61<='\uFFFF')) ) {s = 24;}
-
-                        else s = 150;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 49 : 
-                        int LA3_360 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_360>='\u0000' && LA3_360<='\u001F')||(LA3_360>='!' && LA3_360<='\uFFFF')) ) {s = 24;}
-
-                        else s = 454;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 50 : 
-                        int LA3_119 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_119>='\u0000' && LA3_119<='\u001F')||(LA3_119>='!' && LA3_119<='\uFFFF')) ) {s = 24;}
-
-                        else s = 235;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 51 : 
-                        int LA3_403 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_403>='\u0000' && LA3_403<='\u001F')||(LA3_403>='!' && LA3_403<='\uFFFF')) ) {s = 24;}
-
-                        else s = 487;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 52 : 
-                        int LA3_57 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_57>='\u0000' && LA3_57<='\u001F')||(LA3_57>='!' && LA3_57<='\uFFFF')) ) {s = 24;}
-
-                        else s = 141;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 53 : 
-                        int LA3_785 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_785>='\u0000' && LA3_785<='\u001F')||(LA3_785>='!' && LA3_785<='\uFFFF')) ) {s = 24;}
-
-                        else s = 796;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 54 : 
-                        int LA3_450 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_450>='\u0000' && LA3_450<='\u001F')||(LA3_450>='!' && LA3_450<='\uFFFF')) ) {s = 24;}
-
-                        else s = 538;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 55 : 
-                        int LA3_118 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_118>='\u0000' && LA3_118<='\u001F')||(LA3_118>='!' && LA3_118<='\uFFFF')) ) {s = 24;}
-
-                        else s = 234;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 56 : 
-                        int LA3_478 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_478>='\u0000' && LA3_478<='\u001F')||(LA3_478>='!' && LA3_478<='\uFFFF')) ) {s = 24;}
-
-                        else s = 564;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 57 : 
-                        int LA3_117 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_117>='\u0000' && LA3_117<='\u001F')||(LA3_117>='!' && LA3_117<='\uFFFF')) ) {s = 24;}
-
-                        else s = 233;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 58 : 
-                        int LA3_562 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_562>='\u0000' && LA3_562<='\u001F')||(LA3_562>='!' && LA3_562<='\uFFFF')) ) {s = 24;}
+                        if ( ((LA3_590>='\u0000' && LA3_590<='\u001F')||(LA3_590>='!' && LA3_590<='\uFFFF')) ) {s = 21;}
 
                         else s = 636;
 
                         if ( s>=0 ) return s;
                         break;
 
-                    case 59 : 
-                        int LA3_577 = input.LA(1);
+                    case 12 : 
+                        int LA3_606 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA3_577>='\u0000' && LA3_577<='\u001F')||(LA3_577>='!' && LA3_577<='\uFFFF')) ) {s = 24;}
+                        if ( ((LA3_606>='\u0000' && LA3_606<='\u001F')||(LA3_606>='!' && LA3_606<='\uFFFF')) ) {s = 21;}
 
-                        else s = 648;
+                        else s = 647;
 
                         if ( s>=0 ) return s;
                         break;
 
-                    case 60 : 
-                        int LA3_466 = input.LA(1);
+                    case 13 : 
+                        int LA3_364 = input.LA(1);
 
                         s = -1;
-                        if ( (LA3_466=='O') ) {s = 553;}
+                        if ( (LA3_364=='O') ) {s = 451;}
 
-                        else if ( ((LA3_466>='\u0000' && LA3_466<='\u001F')||(LA3_466>='!' && LA3_466<='N')||(LA3_466>='P' && LA3_466<='\uFFFF')) ) {s = 24;}
-
-                        else s = 554;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 61 : 
-                        int LA3_643 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_643>='\u0000' && LA3_643<='\u001F')||(LA3_643>='!' && LA3_643<='\uFFFF')) ) {s = 24;}
-
-                        else s = 698;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 62 : 
-                        int LA3_809 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_809>='\u0000' && LA3_809<='\u001F')||(LA3_809>='!' && LA3_809<='\uFFFF')) ) {s = 24;}
-
-                        else s = 810;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 63 : 
-                        int LA3_287 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA3_287=='T') ) {s = 377;}
-
-                        else if ( ((LA3_287>='\u0000' && LA3_287<='\u001F')||(LA3_287>='!' && LA3_287<='S')||(LA3_287>='U' && LA3_287<='\uFFFF')) ) {s = 24;}
-
-                        else s = 378;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 64 : 
-                        int LA3_646 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_646>='\u0000' && LA3_646<='\u001F')||(LA3_646>='!' && LA3_646<='\uFFFF')) ) {s = 24;}
-
-                        else s = 701;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 65 : 
-                        int LA3_747 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_747>='\u0000' && LA3_747<='\u001F')||(LA3_747>='!' && LA3_747<='\uFFFF')) ) {s = 24;}
-
-                        else s = 772;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 66 : 
-                        int LA3_164 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_164>='\u0000' && LA3_164<='\u001F')||(LA3_164>='!' && LA3_164<='\uFFFF')) ) {s = 24;}
-
-                        else s = 273;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 67 : 
-                        int LA3_694 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_694>='\u0000' && LA3_694<='\u001F')||(LA3_694>='!' && LA3_694<='\uFFFF')) ) {s = 24;}
-
-                        else s = 740;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 68 : 
-                        int LA3_290 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA3_290=='F') ) {s = 381;}
-
-                        else if ( ((LA3_290>='\u0000' && LA3_290<='\u001F')||(LA3_290>='!' && LA3_290<='E')||(LA3_290>='G' && LA3_290<='\uFFFF')) ) {s = 24;}
-
-                        else s = 382;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 69 : 
-                        int LA3_163 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_163>='\u0000' && LA3_163<='\u001F')||(LA3_163>='!' && LA3_163<='\uFFFF')) ) {s = 24;}
-
-                        else s = 272;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 70 : 
-                        int LA3_401 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_401>='\u0000' && LA3_401<='\u001F')||(LA3_401>='!' && LA3_401<='\uFFFF')) ) {s = 24;}
-
-                        else s = 485;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 71 : 
-                        int LA3_162 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_162>='\u0000' && LA3_162<='\u001F')||(LA3_162>='!' && LA3_162<='\uFFFF')) ) {s = 24;}
-
-                        else s = 271;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 72 : 
-                        int LA3_715 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_715>='\u0000' && LA3_715<='\u001F')||(LA3_715>='!' && LA3_715<='\uFFFF')) ) {s = 24;}
-
-                        else s = 753;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 73 : 
-                        int LA3_156 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_156>='\u0000' && LA3_156<='\u001F')||(LA3_156>='!' && LA3_156<='\uFFFF')) ) {s = 24;}
-
-                        else s = 267;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 74 : 
-                        int LA3_165 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_165>='\u0000' && LA3_165<='\u001F')||(LA3_165>='!' && LA3_165<='\uFFFF')) ) {s = 24;}
-
-                        else s = 274;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 75 : 
-                        int LA3_752 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_752>='\u0000' && LA3_752<='\u001F')||(LA3_752>='!' && LA3_752<='\uFFFF')) ) {s = 24;}
-
-                        else s = 775;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 76 : 
-                        int LA3_104 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_104>='\u0000' && LA3_104<='\u001F')||(LA3_104>='!' && LA3_104<='\uFFFF')) ) {s = 24;}
-
-                        else s = 224;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 77 : 
-                        int LA3_103 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_103>='\u0000' && LA3_103<='\u001F')||(LA3_103>='!' && LA3_103<='\uFFFF')) ) {s = 24;}
-
-                        else s = 223;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 78 : 
-                        int LA3_658 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_658>='\u0000' && LA3_658<='\u001F')||(LA3_658>='!' && LA3_658<='\uFFFF')) ) {s = 24;}
-
-                        else s = 710;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 79 : 
-                        int LA3_33 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA3_33=='-') ) {s = 81;}
-
-                        else if ( (LA3_33=='R') ) {s = 82;}
-
-                        else if ( (LA3_33=='S') ) {s = 83;}
-
-                        else if ( (LA3_33=='T') ) {s = 84;}
-
-                        else if ( ((LA3_33>='\u0000' && LA3_33<='\u001F')||(LA3_33>='!' && LA3_33<=',')||(LA3_33>='.' && LA3_33<='Q')||(LA3_33>='U' && LA3_33<='\uFFFF')) ) {s = 24;}
-
-                        else s = 85;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 80 : 
-                        int LA3_419 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_419>='\u0000' && LA3_419<='\u001F')||(LA3_419>='!' && LA3_419<='\uFFFF')) ) {s = 24;}
-
-                        else s = 504;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 81 : 
-                        int LA3_161 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_161>='\u0000' && LA3_161<='\u001F')||(LA3_161>='!' && LA3_161<='\uFFFF')) ) {s = 24;}
-
-                        else s = 270;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 82 : 
-                        int LA3_544 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_544>='\u0000' && LA3_544<='\u001F')||(LA3_544>='!' && LA3_544<='\uFFFF')) ) {s = 24;}
-
-                        else s = 623;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 83 : 
-                        int LA3_160 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_160>='\u0000' && LA3_160<='\u001F')||(LA3_160>='!' && LA3_160<='\uFFFF')) ) {s = 24;}
-
-                        else s = 269;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 84 : 
-                        int LA3_66 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_66>='\u0000' && LA3_66<='\u001F')||(LA3_66>='!' && LA3_66<='\uFFFF')) ) {s = 24;}
-
-                        else s = 159;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 85 : 
-                        int LA3_522 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_522>='\u0000' && LA3_522<='\u001F')||(LA3_522>='!' && LA3_522<='\uFFFF')) ) {s = 24;}
-
-                        else s = 602;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 86 : 
-                        int LA3_40 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA3_40=='-') ) {s = 99;}
-
-                        else if ( (LA3_40=='P') ) {s = 100;}
-
-                        else if ( (LA3_40=='D') ) {s = 101;}
-
-                        else if ( (LA3_40=='G') ) {s = 102;}
-
-                        else if ( (LA3_40=='N') ) {s = 103;}
-
-                        else if ( (LA3_40=='Z') ) {s = 104;}
-
-                        else if ( ((LA3_40>='\u0000' && LA3_40<='\u001F')||(LA3_40>='!' && LA3_40<=',')||(LA3_40>='.' && LA3_40<='C')||(LA3_40>='E' && LA3_40<='F')||(LA3_40>='H' && LA3_40<='M')||LA3_40=='O'||(LA3_40>='Q' && LA3_40<='Y')||(LA3_40>='[' && LA3_40<='\uFFFF')) ) {s = 24;}
-
-                        else s = 105;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 87 : 
-                        int LA3_712 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_712>='\u0000' && LA3_712<='\u001F')||(LA3_712>='!' && LA3_712<='\uFFFF')) ) {s = 24;}
-
-                        else s = 750;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 88 : 
-                        int LA3_100 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_100>='\u0000' && LA3_100<='\u001F')||(LA3_100>='!' && LA3_100<='\uFFFF')) ) {s = 24;}
-
-                        else s = 220;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 89 : 
-                        int LA3_101 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_101>='\u0000' && LA3_101<='\u001F')||(LA3_101>='!' && LA3_101<='\uFFFF')) ) {s = 24;}
-
-                        else s = 221;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 90 : 
-                        int LA3_51 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA3_51=='R') ) {s = 125;}
-
-                        else if ( (LA3_51=='-') ) {s = 126;}
-
-                        else if ( (LA3_51=='T') ) {s = 127;}
-
-                        else if ( (LA3_51=='S') ) {s = 128;}
-
-                        else if ( ((LA3_51>='\u0000' && LA3_51<='\u001F')||(LA3_51>='!' && LA3_51<=',')||(LA3_51>='.' && LA3_51<='Q')||(LA3_51>='U' && LA3_51<='\uFFFF')) ) {s = 24;}
-
-                        else s = 129;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 91 : 
-                        int LA3_517 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_517>='\u0000' && LA3_517<='\u001F')||(LA3_517>='!' && LA3_517<='\uFFFF')) ) {s = 24;}
-
-                        else s = 599;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 92 : 
-                        int LA3_102 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_102>='\u0000' && LA3_102<='\u001F')||(LA3_102>='!' && LA3_102<='\uFFFF')) ) {s = 24;}
-
-                        else s = 222;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 93 : 
-                        int LA3_25 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA3_25=='-') ) {s = 71;}
-
-                        else if ( ((LA3_25>='\u0000' && LA3_25<='\u001F')||(LA3_25>='!' && LA3_25<=',')||(LA3_25>='.' && LA3_25<='\uFFFF')) ) {s = 24;}
-
-                        else s = 72;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 94 : 
-                        int LA3_128 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_128>='\u0000' && LA3_128<='\u001F')||(LA3_128>='!' && LA3_128<='\uFFFF')) ) {s = 24;}
-
-                        else s = 243;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 95 : 
-                        int LA3_432 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_432>='\u0000' && LA3_432<='\u001F')||(LA3_432>='!' && LA3_432<='\uFFFF')) ) {s = 24;}
-
-                        else s = 520;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 96 : 
-                        int LA3_52 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_52>='\u0000' && LA3_52<='\u001F')||(LA3_52>='!' && LA3_52<='\uFFFF')) ) {s = 24;}
-
-                        else s = 130;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 97 : 
-                        int LA3_659 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_659>='\u0000' && LA3_659<='\u001F')||(LA3_659>='!' && LA3_659<='\uFFFF')) ) {s = 24;}
-
-                        else s = 711;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 98 : 
-                        int LA3_53 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_53>='\u0000' && LA3_53<='\u001F')||(LA3_53>='!' && LA3_53<='\uFFFF')) ) {s = 24;}
-
-                        else s = 131;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 99 : 
-                        int LA3_122 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_122>='\u0000' && LA3_122<='\u001F')||(LA3_122>='!' && LA3_122<='\uFFFF')) ) {s = 24;}
-
-                        else s = 237;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 100 : 
-                        int LA3_32 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_32>='\u0000' && LA3_32<='\u001F')||(LA3_32>='!' && LA3_32<='\uFFFF')) ) {s = 24;}
-
-                        else s = 80;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 101 : 
-                        int LA3_666 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_666>='\u0000' && LA3_666<='\u001F')||(LA3_666>='!' && LA3_666<='\uFFFF')) ) {s = 24;}
-
-                        else s = 718;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 102 : 
-                        int LA3_798 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_798>='\u0000' && LA3_798<='\u001F')||(LA3_798>='!' && LA3_798<='\uFFFF')) ) {s = 24;}
-
-                        else s = 804;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 103 : 
-                        int LA3_125 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_125>='\u0000' && LA3_125<='\u001F')||(LA3_125>='!' && LA3_125<='\uFFFF')) ) {s = 24;}
-
-                        else s = 240;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 104 : 
-                        int LA3_768 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_768>='\u0000' && LA3_768<='\u001F')||(LA3_768>='!' && LA3_768<='\uFFFF')) ) {s = 24;}
-
-                        else s = 784;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 105 : 
-                        int LA3_539 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_539>='\u0000' && LA3_539<='\u001F')||(LA3_539>='!' && LA3_539<='\uFFFF')) ) {s = 24;}
-
-                        else s = 618;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 106 : 
-                        int LA3_127 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_127>='\u0000' && LA3_127<='\u001F')||(LA3_127>='!' && LA3_127<='\uFFFF')) ) {s = 24;}
-
-                        else s = 242;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 107 : 
-                        int LA3_800 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_800>='\u0000' && LA3_800<='\u001F')||(LA3_800>='!' && LA3_800<='\uFFFF')) ) {s = 24;}
-
-                        else s = 806;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 108 : 
-                        int LA3_153 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_153>='\u0000' && LA3_153<='\u001F')||(LA3_153>='!' && LA3_153<='\uFFFF')) ) {s = 24;}
-
-                        else s = 262;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 109 : 
-                        int LA3_778 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_778>='\u0000' && LA3_778<='\u001F')||(LA3_778>='!' && LA3_778<='\uFFFF')) ) {s = 24;}
-
-                        else s = 791;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 110 : 
-                        int LA3_716 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_716>='\u0000' && LA3_716<='\u001F')||(LA3_716>='!' && LA3_716<='\uFFFF')) ) {s = 24;}
-
-                        else s = 754;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 111 : 
-                        int LA3_263 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_263>='\u0000' && LA3_263<='\u001F')||(LA3_263>='!' && LA3_263<='\uFFFF')) ) {s = 24;}
-
-                        else s = 363;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 112 : 
-                        int LA3_157 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_157>='\u0000' && LA3_157<='\u001F')||(LA3_157>='!' && LA3_157<='\uFFFF')) ) {s = 24;}
-
-                        else s = 268;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 113 : 
-                        int LA3_604 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_604>='\u0000' && LA3_604<='\u001F')||(LA3_604>='!' && LA3_604<='\uFFFF')) ) {s = 24;}
-
-                        else s = 671;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 114 : 
-                        int LA3_513 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_513>='\u0000' && LA3_513<='\u001F')||(LA3_513>='!' && LA3_513<='\uFFFF')) ) {s = 24;}
-
-                        else s = 595;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 115 : 
-                        int LA3_656 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_656>='\u0000' && LA3_656<='\u001F')||(LA3_656>='!' && LA3_656<='\uFFFF')) ) {s = 24;}
-
-                        else s = 709;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 116 : 
-                        int LA3_680 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_680>='\u0000' && LA3_680<='\u001F')||(LA3_680>='!' && LA3_680<='\uFFFF')) ) {s = 24;}
-
-                        else s = 731;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 117 : 
-                        int LA3_535 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_535>='\u0000' && LA3_535<='\u001F')||(LA3_535>='!' && LA3_535<='\uFFFF')) ) {s = 24;}
-
-                        else s = 615;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 118 : 
-                        int LA3_35 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA3_35=='-') ) {s = 88;}
-
-                        else if ( (LA3_35=='$') ) {s = 89;}
-
-                        else if ( (LA3_35=='S') ) {s = 90;}
-
-                        else if ( (LA3_35=='P') ) {s = 91;}
-
-                        else if ( ((LA3_35>='\u0000' && LA3_35<='\u001F')||(LA3_35>='!' && LA3_35<='#')||(LA3_35>='%' && LA3_35<=',')||(LA3_35>='.' && LA3_35<='O')||(LA3_35>='Q' && LA3_35<='R')||(LA3_35>='T' && LA3_35<='\uFFFF')) ) {s = 24;}
-
-                        else s = 92;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 119 : 
-                        int LA3_782 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_782>='\u0000' && LA3_782<='\u001F')||(LA3_782>='!' && LA3_782<='\uFFFF')) ) {s = 24;}
-
-                        else s = 794;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 120 : 
-                        int LA3_134 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA3_134=='Z') ) {s = 246;}
-
-                        else if ( ((LA3_134>='\u0000' && LA3_134<='\u001F')||(LA3_134>='!' && LA3_134<='Y')||(LA3_134>='[' && LA3_134<='\uFFFF')) ) {s = 24;}
-
-                        else s = 247;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 121 : 
-                        int LA3_790 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_790>='\u0000' && LA3_790<='\u001F')||(LA3_790>='!' && LA3_790<='\uFFFF')) ) {s = 24;}
-
-                        else s = 801;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 122 : 
-                        int LA3_799 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_799>='\u0000' && LA3_799<='\u001F')||(LA3_799>='!' && LA3_799<='\uFFFF')) ) {s = 24;}
-
-                        else s = 805;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 123 : 
-                        int LA3_802 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_802>='\u0000' && LA3_802<='\u001F')||(LA3_802>='!' && LA3_802<='\uFFFF')) ) {s = 24;}
-
-                        else s = 807;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 124 : 
-                        int LA3_730 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_730>='\u0000' && LA3_730<='\u001F')||(LA3_730>='!' && LA3_730<='\uFFFF')) ) {s = 24;}
-
-                        else s = 763;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 125 : 
-                        int LA3_678 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_678>='\u0000' && LA3_678<='\u001F')||(LA3_678>='!' && LA3_678<='\uFFFF')) ) {s = 24;}
-
-                        else s = 729;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 126 : 
-                        int LA3_654 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_654>='\u0000' && LA3_654<='\u001F')||(LA3_654>='!' && LA3_654<='\uFFFF')) ) {s = 24;}
-
-                        else s = 707;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 127 : 
-                        int LA3_677 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_677>='\u0000' && LA3_677<='\u001F')||(LA3_677>='!' && LA3_677<='\uFFFF')) ) {s = 24;}
-
-                        else s = 728;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 128 : 
-                        int LA3_38 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA3_38=='$') ) {s = 95;}
-
-                        else if ( (LA3_38=='S') ) {s = 96;}
-
-                        else if ( ((LA3_38>='\u0000' && LA3_38<='\u001F')||(LA3_38>='!' && LA3_38<='#')||(LA3_38>='%' && LA3_38<='R')||(LA3_38>='T' && LA3_38<='\uFFFF')) ) {s = 24;}
-
-                        else s = 97;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 129 : 
-                        int LA3_650 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_650>='\u0000' && LA3_650<='\u001F')||(LA3_650>='!' && LA3_650<='\uFFFF')) ) {s = 24;}
-
-                        else s = 703;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 130 : 
-                        int LA3_526 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_526>='\u0000' && LA3_526<='\u001F')||(LA3_526>='!' && LA3_526<='\uFFFF')) ) {s = 24;}
-
-                        else s = 606;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 131 : 
-                        int LA3_477 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA3_477=='S') ) {s = 562;}
-
-                        else if ( ((LA3_477>='\u0000' && LA3_477<='\u001F')||(LA3_477>='!' && LA3_477<='R')||(LA3_477>='T' && LA3_477<='\uFFFF')) ) {s = 24;}
-
-                        else s = 563;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 132 : 
-                        int LA3_670 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_670>='\u0000' && LA3_670<='\u001F')||(LA3_670>='!' && LA3_670<='\uFFFF')) ) {s = 24;}
-
-                        else s = 722;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 133 : 
-                        int LA3_725 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_725>='\u0000' && LA3_725<='\u001F')||(LA3_725>='!' && LA3_725<='\uFFFF')) ) {s = 24;}
-
-                        else s = 760;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 134 : 
-                        int LA3_780 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_780>='\u0000' && LA3_780<='\u001F')||(LA3_780>='!' && LA3_780<='\uFFFF')) ) {s = 24;}
-
-                        else s = 792;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 135 : 
-                        int LA3_759 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_759>='\u0000' && LA3_759<='\u001F')||(LA3_759>='!' && LA3_759<='\uFFFF')) ) {s = 24;}
-
-                        else s = 779;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 136 : 
-                        int LA3_756 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_756>='\u0000' && LA3_756<='\u001F')||(LA3_756>='!' && LA3_756<='\uFFFF')) ) {s = 24;}
-
-                        else s = 777;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 137 : 
-                        int LA3_509 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_509>='\u0000' && LA3_509<='\u001F')||(LA3_509>='!' && LA3_509<='\uFFFF')) ) {s = 24;}
-
-                        else s = 591;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 138 : 
-                        int LA3_668 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_668>='\u0000' && LA3_668<='\u001F')||(LA3_668>='!' && LA3_668<='\uFFFF')) ) {s = 24;}
-
-                        else s = 720;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 139 : 
-                        int LA3_723 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_723>='\u0000' && LA3_723<='\u001F')||(LA3_723>='!' && LA3_723<='\uFFFF')) ) {s = 24;}
-
-                        else s = 758;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 140 : 
-                        int LA3_41 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA3_41=='O') ) {s = 106;}
-
-                        else if ( ((LA3_41>='\u0000' && LA3_41<='\u001F')||(LA3_41>='!' && LA3_41<='N')||(LA3_41>='P' && LA3_41<='\uFFFF')) ) {s = 24;}
-
-                        else s = 107;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 141 : 
-                        int LA3_691 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_691>='\u0000' && LA3_691<='\u001F')||(LA3_691>='!' && LA3_691<='\uFFFF')) ) {s = 24;}
-
-                        else s = 738;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 142 : 
-                        int LA3_430 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_430>='\u0000' && LA3_430<='\u001F')||(LA3_430>='!' && LA3_430<='\uFFFF')) ) {s = 24;}
-
-                        else s = 518;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 143 : 
-                        int LA3_416 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_416>='\u0000' && LA3_416<='\u001F')||(LA3_416>='!' && LA3_416<='\uFFFF')) ) {s = 24;}
-
-                        else s = 501;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 144 : 
-                        int LA3_139 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_139>='\u0000' && LA3_139<='\u001F')||(LA3_139>='!' && LA3_139<='\uFFFF')) ) {s = 24;}
-
-                        else s = 252;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 145 : 
-                        int LA3_138 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_138>='\u0000' && LA3_138<='\u001F')||(LA3_138>='!' && LA3_138<='\uFFFF')) ) {s = 24;}
-
-                        else s = 251;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 146 : 
-                        int LA3_28 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_28>='\u0000' && LA3_28<='\u001F')||(LA3_28>='!' && LA3_28<='\uFFFF')) ) {s = 24;}
-
-                        else s = 76;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 147 : 
-                        int LA3_27 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_27>='\u0000' && LA3_27<='\u001F')||(LA3_27>='!' && LA3_27<='\uFFFF')) ) {s = 24;}
-
-                        else s = 75;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 148 : 
-                        int LA3_113 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_113>='\u0000' && LA3_113<='\u001F')||(LA3_113>='!' && LA3_113<='\uFFFF')) ) {s = 24;}
-
-                        else s = 230;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 149 : 
-                        int LA3_45 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA3_45=='D') ) {s = 113;}
-
-                        else if ( (LA3_45=='Z') ) {s = 114;}
-
-                        else if ( ((LA3_45>='\u0000' && LA3_45<='\u001F')||(LA3_45>='!' && LA3_45<='C')||(LA3_45>='E' && LA3_45<='Y')||(LA3_45>='[' && LA3_45<='\uFFFF')) ) {s = 24;}
-
-                        else s = 115;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 150 : 
-                        int LA3_114 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_114>='\u0000' && LA3_114<='\u001F')||(LA3_114>='!' && LA3_114<='\uFFFF')) ) {s = 24;}
-
-                        else s = 231;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 151 : 
-                        int LA3_110 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_110>='\u0000' && LA3_110<='\u001F')||(LA3_110>='!' && LA3_110<='\uFFFF')) ) {s = 24;}
-
-                        else s = 228;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 152 : 
-                        int LA3_43 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_43>='\u0000' && LA3_43<='\u001F')||(LA3_43>='!' && LA3_43<='\uFFFF')) ) {s = 24;}
-
-                        else s = 111;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 153 : 
-                        int LA3_135 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_135>='\u0000' && LA3_135<='\u001F')||(LA3_135>='!' && LA3_135<='\uFFFF')) ) {s = 24;}
-
-                        else s = 248;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 154 : 
-                        int LA3_246 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_246>='\u0000' && LA3_246<='\u001F')||(LA3_246>='!' && LA3_246<='\uFFFF')) ) {s = 24;}
-
-                        else s = 359;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 155 : 
-                        int LA3_137 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_137>='\u0000' && LA3_137<='\u001F')||(LA3_137>='!' && LA3_137<='\uFFFF')) ) {s = 24;}
-
-                        else s = 250;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 156 : 
-                        int LA3_59 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA3_59=='D') ) {s = 144;}
-
-                        else if ( (LA3_59=='G') ) {s = 145;}
-
-                        else if ( (LA3_59=='N') ) {s = 146;}
-
-                        else if ( ((LA3_59>='\u0000' && LA3_59<='\u001F')||(LA3_59>='!' && LA3_59<='C')||(LA3_59>='E' && LA3_59<='F')||(LA3_59>='H' && LA3_59<='M')||(LA3_59>='O' && LA3_59<='\uFFFF')) ) {s = 24;}
-
-                        else s = 147;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 157 : 
-                        int LA3_136 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_136>='\u0000' && LA3_136<='\u001F')||(LA3_136>='!' && LA3_136<='\uFFFF')) ) {s = 24;}
-
-                        else s = 249;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 158 : 
-                        int LA3_236 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_236>='\u0000' && LA3_236<='\u001F')||(LA3_236>='!' && LA3_236<='\uFFFF')) ) {s = 24;}
-
-                        else s = 353;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 159 : 
-                        int LA3_732 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_732>='\u0000' && LA3_732<='\u001F')||(LA3_732>='!' && LA3_732<='\uFFFF')) ) {s = 24;}
-
-                        else s = 764;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 160 : 
-                        int LA3_542 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_542>='\u0000' && LA3_542<='\u001F')||(LA3_542>='!' && LA3_542<='\uFFFF')) ) {s = 24;}
-
-                        else s = 621;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 161 : 
-                        int LA3_708 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_708>='\u0000' && LA3_708<='\u001F')||(LA3_708>='!' && LA3_708<='\uFFFF')) ) {s = 24;}
-
-                        else s = 749;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 162 : 
-                        int LA3_238 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_238>='\u0000' && LA3_238<='\u001F')||(LA3_238>='!' && LA3_238<='\uFFFF')) ) {s = 24;}
-
-                        else s = 354;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 163 : 
-                        int LA3_622 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_622>='\u0000' && LA3_622<='\u001F')||(LA3_622>='!' && LA3_622<='\uFFFF')) ) {s = 24;}
-
-                        else s = 684;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 164 : 
-                        int LA3_239 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_239>='\u0000' && LA3_239<='\u001F')||(LA3_239>='!' && LA3_239<='\uFFFF')) ) {s = 24;}
-
-                        else s = 355;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 165 : 
-                        int LA3_625 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_625>='\u0000' && LA3_625<='\u001F')||(LA3_625>='!' && LA3_625<='\uFFFF')) ) {s = 24;}
-
-                        else s = 685;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 166 : 
-                        int LA3_357 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_357>='\u0000' && LA3_357<='\u001F')||(LA3_357>='!' && LA3_357<='\uFFFF')) ) {s = 24;}
+                        else if ( ((LA3_364>='\u0000' && LA3_364<='\u001F')||(LA3_364>='!' && LA3_364<='N')||(LA3_364>='P' && LA3_364<='\uFFFF')) ) {s = 21;}
 
                         else s = 452;
 
                         if ( s>=0 ) return s;
                         break;
 
-                    case 167 : 
-                        int LA3_108 = input.LA(1);
+                    case 14 : 
+                        int LA3_170 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA3_108>='\u0000' && LA3_108<='\u001F')||(LA3_108>='!' && LA3_108<='\uFFFF')) ) {s = 24;}
+                        if ( ((LA3_170>='\u0000' && LA3_170<='\u001F')||(LA3_170>='!' && LA3_170<='\uFFFF')) ) {s = 21;}
 
-                        else s = 226;
+                        else s = 260;
 
                         if ( s>=0 ) return s;
                         break;
 
-                    case 168 : 
-                        int LA3_545 = input.LA(1);
+                    case 15 : 
+                        int LA3_564 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA3_545>='\u0000' && LA3_545<='\u001F')||(LA3_545>='!' && LA3_545<='\uFFFF')) ) {s = 24;}
+                        if ( ((LA3_564>='\u0000' && LA3_564<='\u001F')||(LA3_564>='!' && LA3_564<='\uFFFF')) ) {s = 21;}
 
-                        else s = 624;
+                        else s = 616;
 
                         if ( s>=0 ) return s;
                         break;
 
-                    case 169 : 
-                        int LA3_358 = input.LA(1);
+                    case 16 : 
+                        int LA3_29 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA3_358>='\u0000' && LA3_358<='\u001F')||(LA3_358>='!' && LA3_358<='\uFFFF')) ) {s = 24;}
+                        if ( (LA3_29=='-') ) {s = 66;}
 
-                        else s = 453;
+                        else if ( ((LA3_29>='\u0000' && LA3_29<='\u001F')||(LA3_29>='!' && LA3_29<=',')||(LA3_29>='.' && LA3_29<='\uFFFF')) ) {s = 21;}
+
+                        else s = 67;
 
                         if ( s>=0 ) return s;
                         break;
 
-                    case 170 : 
-                        int LA3_34 = input.LA(1);
+                    case 17 : 
+                        int LA3_544 = input.LA(1);
 
                         s = -1;
-                        if ( (LA3_34=='-') ) {s = 86;}
+                        if ( ((LA3_544>='\u0000' && LA3_544<='\u001F')||(LA3_544>='!' && LA3_544<='\uFFFF')) ) {s = 21;}
 
-                        else if ( ((LA3_34>='\u0000' && LA3_34<='\u001F')||(LA3_34>='!' && LA3_34<=',')||(LA3_34>='.' && LA3_34<='\uFFFF')) ) {s = 24;}
-
-                        else s = 87;
+                        else s = 599;
 
                         if ( s>=0 ) return s;
                         break;
 
-                    case 171 : 
-                        int LA3_109 = input.LA(1);
+                    case 18 : 
+                        int LA3_331 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA3_109>='\u0000' && LA3_109<='\u001F')||(LA3_109>='!' && LA3_109<='\uFFFF')) ) {s = 24;}
+                        if ( ((LA3_331>='\u0000' && LA3_331<='\u001F')||(LA3_331>='!' && LA3_331<='\uFFFF')) ) {s = 21;}
 
-                        else s = 227;
+                        else s = 418;
 
                         if ( s>=0 ) return s;
                         break;
 
-                    case 172 : 
+                    case 19 : 
+                        int LA3_164 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_164>='\u0000' && LA3_164<='\u001F')||(LA3_164>='!' && LA3_164<='\uFFFF')) ) {s = 21;}
+
+                        else s = 255;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 20 : 
+                        int LA3_30 = input.LA(1);
+
+                        s = -1;
+                        if ( (LA3_30=='-') ) {s = 68;}
+
+                        else if ( (LA3_30=='S') ) {s = 69;}
+
+                        else if ( (LA3_30=='P') ) {s = 70;}
+
+                        else if ( ((LA3_30>='\u0000' && LA3_30<='\u001F')||(LA3_30>='!' && LA3_30<=',')||(LA3_30>='.' && LA3_30<='O')||(LA3_30>='Q' && LA3_30<='R')||(LA3_30>='T' && LA3_30<='\uFFFF')) ) {s = 21;}
+
+                        else s = 71;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 21 : 
+                        int LA3_707 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_707>='\u0000' && LA3_707<='\u001F')||(LA3_707>='!' && LA3_707<='\uFFFF')) ) {s = 21;}
+
+                        else s = 708;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 22 : 
+                        int LA3_350 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_350>='\u0000' && LA3_350<='\u001F')||(LA3_350>='!' && LA3_350<='\uFFFF')) ) {s = 21;}
+
+                        else s = 437;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 23 : 
+                        int LA3_462 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_462>='\u0000' && LA3_462<='\u001F')||(LA3_462>='!' && LA3_462<='\uFFFF')) ) {s = 21;}
+
+                        else s = 533;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 24 : 
+                        int LA3_541 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_541>='\u0000' && LA3_541<='\u001F')||(LA3_541>='!' && LA3_541<='\uFFFF')) ) {s = 21;}
+
+                        else s = 596;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 25 : 
+                        int LA3_72 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_72>='\u0000' && LA3_72<='\u001F')||(LA3_72>='!' && LA3_72<='\uFFFF')) ) {s = 21;}
+
+                        else s = 140;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 26 : 
+                        int LA3_256 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_256>='\u0000' && LA3_256<='\u001F')||(LA3_256>='!' && LA3_256<='\uFFFF')) ) {s = 21;}
+
+                        else s = 349;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 27 : 
+                        int LA3_166 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_166>='\u0000' && LA3_166<='\u001F')||(LA3_166>='!' && LA3_166<='\uFFFF')) ) {s = 21;}
+
+                        else s = 257;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 28 : 
+                        int LA3_475 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_475>='\u0000' && LA3_475<='\u001F')||(LA3_475>='!' && LA3_475<='\uFFFF')) ) {s = 21;}
+
+                        else s = 546;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 29 : 
+                        int LA3_168 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_168>='\u0000' && LA3_168<='\u001F')||(LA3_168>='!' && LA3_168<='\uFFFF')) ) {s = 21;}
+
+                        else s = 259;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 30 : 
+                        int LA3_681 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_681>='\u0000' && LA3_681<='\u001F')||(LA3_681>='!' && LA3_681<='\uFFFF')) ) {s = 21;}
+
+                        else s = 693;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 31 : 
+                        int LA3_458 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_458>='\u0000' && LA3_458<='\u001F')||(LA3_458>='!' && LA3_458<='\uFFFF')) ) {s = 21;}
+
+                        else s = 532;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 32 : 
                         int LA3_0 = input.LA(1);
 
                         s = -1;
@@ -8763,217 +5633,1272 @@ public class ChemicalChunkerLexer extends Lexer {
 
                         else if ( (LA3_0=='V') ) {s = 7;}
 
-                        else if ( (LA3_0=='A') ) {s = 8;}
+                        else if ( (LA3_0=='R') ) {s = 8;}
 
-                        else if ( (LA3_0=='D') ) {s = 9;}
+                        else if ( (LA3_0=='A') ) {s = 9;}
 
-                        else if ( (LA3_0=='S') ) {s = 10;}
+                        else if ( (LA3_0=='D') ) {s = 10;}
 
-                        else if ( (LA3_0=='L') ) {s = 11;}
+                        else if ( (LA3_0=='S') ) {s = 11;}
 
-                        else if ( (LA3_0=='R') ) {s = 12;}
+                        else if ( (LA3_0=='L') ) {s = 12;}
 
                         else if ( (LA3_0=='-') ) {s = 13;}
 
-                        else if ( (LA3_0=='B') ) {s = 14;}
+                        else if ( (LA3_0=='E') ) {s = 14;}
 
-                        else if ( (LA3_0=='E') ) {s = 15;}
+                        else if ( (LA3_0=='F') ) {s = 15;}
 
-                        else if ( (LA3_0=='F') ) {s = 16;}
+                        else if ( (LA3_0=='M') ) {s = 16;}
 
-                        else if ( (LA3_0=='H') ) {s = 17;}
+                        else if ( (LA3_0=='P') ) {s = 17;}
 
-                        else if ( (LA3_0=='M') ) {s = 18;}
+                        else if ( (LA3_0=='U') ) {s = 18;}
 
-                        else if ( (LA3_0=='P') ) {s = 19;}
+                        else if ( (LA3_0=='W') ) {s = 19;}
 
-                        else if ( (LA3_0=='Q') ) {s = 20;}
+                        else if ( (LA3_0==' ') ) {s = 20;}
 
-                        else if ( (LA3_0=='U') ) {s = 21;}
-
-                        else if ( (LA3_0=='W') ) {s = 22;}
-
-                        else if ( (LA3_0==' ') ) {s = 23;}
-
-                        else if ( ((LA3_0>='\u0000' && LA3_0<='\u001F')||(LA3_0>='!' && LA3_0<=',')||(LA3_0>='.' && LA3_0<='@')||LA3_0=='G'||LA3_0=='K'||(LA3_0>='X' && LA3_0<='\uFFFF')) ) {s = 24;}
+                        else if ( ((LA3_0>='\u0000' && LA3_0<='\u001F')||(LA3_0>='!' && LA3_0<=',')||(LA3_0>='.' && LA3_0<='@')||LA3_0=='B'||(LA3_0>='G' && LA3_0<='H')||LA3_0=='K'||LA3_0=='Q'||(LA3_0>='X' && LA3_0<='\uFFFF')) ) {s = 21;}
 
                         if ( s>=0 ) return s;
                         break;
 
-                    case 173 : 
-                        int LA3_536 = input.LA(1);
+                    case 33 : 
+                        int LA3_213 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA3_536>='\u0000' && LA3_536<='\u001F')||(LA3_536>='!' && LA3_536<='\uFFFF')) ) {s = 24;}
+                        if ( ((LA3_213>='\u0000' && LA3_213<='\u001F')||(LA3_213>='!' && LA3_213<='\uFFFF')) ) {s = 21;}
 
-                        else s = 616;
+                        else s = 299;
 
                         if ( s>=0 ) return s;
                         break;
 
-                    case 174 : 
-                        int LA3_461 = input.LA(1);
+                    case 34 : 
+                        int LA3_594 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA3_461>='\u0000' && LA3_461<='\u001F')||(LA3_461>='!' && LA3_461<='\uFFFF')) ) {s = 24;}
+                        if ( ((LA3_594>='\u0000' && LA3_594<='\u001F')||(LA3_594>='!' && LA3_594<='\uFFFF')) ) {s = 21;}
 
-                        else s = 548;
+                        else s = 639;
 
                         if ( s>=0 ) return s;
                         break;
 
-                    case 175 : 
-                        int LA3_617 = input.LA(1);
+                    case 35 : 
+                        int LA3_302 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA3_617>='\u0000' && LA3_617<='\u001F')||(LA3_617>='!' && LA3_617<='\uFFFF')) ) {s = 24;}
+                        if ( ((LA3_302>='\u0000' && LA3_302<='\u001F')||(LA3_302>='!' && LA3_302<='\uFFFF')) ) {s = 21;}
 
-                        else s = 681;
+                        else s = 385;
 
                         if ( s>=0 ) return s;
                         break;
 
-                    case 176 : 
-                        int LA3_686 = input.LA(1);
+                    case 36 : 
+                        int LA3_442 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA3_686>='\u0000' && LA3_686<='\u001F')||(LA3_686>='!' && LA3_686<='\uFFFF')) ) {s = 24;}
+                        if ( ((LA3_442>='\u0000' && LA3_442<='\u001F')||(LA3_442>='!' && LA3_442<='\uFFFF')) ) {s = 21;}
 
-                        else s = 734;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 177 : 
-                        int LA3_586 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_586>='\u0000' && LA3_586<='\u001F')||(LA3_586>='!' && LA3_586<='\uFFFF')) ) {s = 24;}
-
-                        else s = 657;
+                        else s = 521;
 
                         if ( s>=0 ) return s;
                         break;
 
-                    case 178 : 
+                    case 37 : 
                         int LA3_683 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA3_683>='\u0000' && LA3_683<='\u001F')||(LA3_683>='!' && LA3_683<='\uFFFF')) ) {s = 24;}
+                        if ( ((LA3_683>='\u0000' && LA3_683<='\u001F')||(LA3_683>='!' && LA3_683<='\uFFFF')) ) {s = 21;}
 
-                        else s = 733;
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 179 : 
-                        int LA3_277 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA3_277>='\u0000' && LA3_277<='\u001F')||(LA3_277>='!' && LA3_277<='\uFFFF')) ) {s = 24;}
-
-                        else s = 367;
+                        else s = 694;
 
                         if ( s>=0 ) return s;
                         break;
 
-                    case 180 : 
-                        int LA3_629 = input.LA(1);
+                    case 38 : 
+                        int LA3_436 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA3_629>='\u0000' && LA3_629<='\u001F')||(LA3_629>='!' && LA3_629<='\uFFFF')) ) {s = 24;}
+                        if ( ((LA3_436>='\u0000' && LA3_436<='\u001F')||(LA3_436>='!' && LA3_436<='\uFFFF')) ) {s = 21;}
 
-                        else s = 688;
+                        else s = 516;
 
                         if ( s>=0 ) return s;
                         break;
 
-                    case 181 : 
-                        int LA3_550 = input.LA(1);
+                    case 39 : 
+                        int LA3_318 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA3_550>='\u0000' && LA3_550<='\u001F')||(LA3_550>='!' && LA3_550<='\uFFFF')) ) {s = 24;}
+                        if ( ((LA3_318>='\u0000' && LA3_318<='\u001F')||(LA3_318>='!' && LA3_318<='\uFFFF')) ) {s = 21;}
 
-                        else s = 628;
+                        else s = 402;
 
                         if ( s>=0 ) return s;
                         break;
 
-                    case 182 : 
-                        int LA3_278 = input.LA(1);
+                    case 40 : 
+                        int LA3_195 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA3_278>='\u0000' && LA3_278<='\u001F')||(LA3_278>='!' && LA3_278<='\uFFFF')) ) {s = 24;}
+                        if ( (LA3_195=='F') ) {s = 280;}
+
+                        else if ( ((LA3_195>='\u0000' && LA3_195<='\u001F')||(LA3_195>='!' && LA3_195<='E')||(LA3_195>='G' && LA3_195<='\uFFFF')) ) {s = 21;}
+
+                        else s = 281;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 41 : 
+                        int LA3_182 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_182>='\u0000' && LA3_182<='\u001F')||(LA3_182>='!' && LA3_182<='\uFFFF')) ) {s = 21;}
+
+                        else s = 266;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 42 : 
+                        int LA3_556 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_556>='\u0000' && LA3_556<='\u001F')||(LA3_556>='!' && LA3_556<='\uFFFF')) ) {s = 21;}
+
+                        else s = 608;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 43 : 
+                        int LA3_374 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_374>='\u0000' && LA3_374<='\u001F')||(LA3_374>='!' && LA3_374<='\uFFFF')) ) {s = 21;}
+
+                        else s = 460;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 44 : 
+                        int LA3_183 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_183>='\u0000' && LA3_183<='\u001F')||(LA3_183>='!' && LA3_183<='\uFFFF')) ) {s = 21;}
+
+                        else s = 267;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 45 : 
+                        int LA3_175 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_175>='\u0000' && LA3_175<='\u001F')||(LA3_175>='!' && LA3_175<='\uFFFF')) ) {s = 21;}
+
+                        else s = 263;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 46 : 
+                        int LA3_367 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_367>='\u0000' && LA3_367<='\u001F')||(LA3_367>='!' && LA3_367<='\uFFFF')) ) {s = 21;}
+
+                        else s = 453;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 47 : 
+                        int LA3_666 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_666>='\u0000' && LA3_666<='\u001F')||(LA3_666>='!' && LA3_666<='\uFFFF')) ) {s = 21;}
+
+                        else s = 682;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 48 : 
+                        int LA3_455 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_455>='\u0000' && LA3_455<='\u001F')||(LA3_455>='!' && LA3_455<='\uFFFF')) ) {s = 21;}
+
+                        else s = 529;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 49 : 
+                        int LA3_82 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_82>='\u0000' && LA3_82<='\u001F')||(LA3_82>='!' && LA3_82<='\uFFFF')) ) {s = 21;}
+
+                        else s = 163;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 50 : 
+                        int LA3_698 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_698>='\u0000' && LA3_698<='\u001F')||(LA3_698>='!' && LA3_698<='\uFFFF')) ) {s = 21;}
+
+                        else s = 704;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 51 : 
+                        int LA3_280 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_280>='\u0000' && LA3_280<='\u001F')||(LA3_280>='!' && LA3_280<='\uFFFF')) ) {s = 21;}
+
+                        else s = 366;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 52 : 
+                        int LA3_81 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_81>='\u0000' && LA3_81<='\u001F')||(LA3_81>='!' && LA3_81<='\uFFFF')) ) {s = 21;}
+
+                        else s = 162;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 53 : 
+                        int LA3_373 = input.LA(1);
+
+                        s = -1;
+                        if ( (LA3_373=='S') ) {s = 458;}
+
+                        else if ( ((LA3_373>='\u0000' && LA3_373<='\u001F')||(LA3_373>='!' && LA3_373<='R')||(LA3_373>='T' && LA3_373<='\uFFFF')) ) {s = 21;}
+
+                        else s = 459;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 54 : 
+                        int LA3_407 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_407>='\u0000' && LA3_407<='\u001F')||(LA3_407>='!' && LA3_407<='\uFFFF')) ) {s = 21;}
+
+                        else s = 489;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 55 : 
+                        int LA3_138 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_138>='\u0000' && LA3_138<='\u001F')||(LA3_138>='!' && LA3_138<='\uFFFF')) ) {s = 21;}
+
+                        else s = 229;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 56 : 
+                        int LA3_456 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_456>='\u0000' && LA3_456<='\u001F')||(LA3_456>='!' && LA3_456<='\uFFFF')) ) {s = 21;}
+
+                        else s = 530;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 57 : 
+                        int LA3_696 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_696>='\u0000' && LA3_696<='\u001F')||(LA3_696>='!' && LA3_696<='\uFFFF')) ) {s = 21;}
+
+                        else s = 702;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 58 : 
+                        int LA3_100 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_100>='\u0000' && LA3_100<='\u001F')||(LA3_100>='!' && LA3_100<='\uFFFF')) ) {s = 21;}
+
+                        else s = 174;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 59 : 
+                        int LA3_52 = input.LA(1);
+
+                        s = -1;
+                        if ( (LA3_52=='$') ) {s = 104;}
+
+                        else if ( ((LA3_52>='\u0000' && LA3_52<='\u001F')||(LA3_52>='!' && LA3_52<='#')||(LA3_52>='%' && LA3_52<='\uFFFF')) ) {s = 21;}
+
+                        else s = 105;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 60 : 
+                        int LA3_536 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_536>='\u0000' && LA3_536<='\u001F')||(LA3_536>='!' && LA3_536<='\uFFFF')) ) {s = 21;}
+
+                        else s = 591;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 61 : 
+                        int LA3_566 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_566>='\u0000' && LA3_566<='\u001F')||(LA3_566>='!' && LA3_566<='\uFFFF')) ) {s = 21;}
+
+                        else s = 618;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 62 : 
+                        int LA3_375 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_375>='\u0000' && LA3_375<='\u001F')||(LA3_375>='!' && LA3_375<='\uFFFF')) ) {s = 21;}
+
+                        else s = 461;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 63 : 
+                        int LA3_99 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_99>='\u0000' && LA3_99<='\u001F')||(LA3_99>='!' && LA3_99<='\uFFFF')) ) {s = 21;}
+
+                        else s = 173;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 64 : 
+                        int LA3_587 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_587>='\u0000' && LA3_587<='\u001F')||(LA3_587>='!' && LA3_587<='\uFFFF')) ) {s = 21;}
+
+                        else s = 634;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 65 : 
+                        int LA3_610 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_610>='\u0000' && LA3_610<='\u001F')||(LA3_610>='!' && LA3_610<='\uFFFF')) ) {s = 21;}
+
+                        else s = 648;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 66 : 
+                        int LA3_64 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_64>='\u0000' && LA3_64<='\u001F')||(LA3_64>='!' && LA3_64<='\uFFFF')) ) {s = 21;}
+
+                        else s = 115;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 67 : 
+                        int LA3_557 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_557>='\u0000' && LA3_557<='\u001F')||(LA3_557>='!' && LA3_557<='\uFFFF')) ) {s = 21;}
+
+                        else s = 609;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 68 : 
+                        int LA3_69 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_69>='\u0000' && LA3_69<='\u001F')||(LA3_69>='!' && LA3_69<='\uFFFF')) ) {s = 21;}
+
+                        else s = 137;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 69 : 
+                        int LA3_420 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_420>='\u0000' && LA3_420<='\u001F')||(LA3_420>='!' && LA3_420<='\uFFFF')) ) {s = 21;}
+
+                        else s = 500;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 70 : 
+                        int LA3_279 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_279>='\u0000' && LA3_279<='\u001F')||(LA3_279>='!' && LA3_279<='\uFFFF')) ) {s = 21;}
+
+                        else s = 365;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 71 : 
+                        int LA3_191 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_191>='\u0000' && LA3_191<='\u001F')||(LA3_191>='!' && LA3_191<='\uFFFF')) ) {s = 21;}
+
+                        else s = 275;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 72 : 
+                        int LA3_46 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_46>='\u0000' && LA3_46<='\u001F')||(LA3_46>='!' && LA3_46<='\uFFFF')) ) {s = 21;}
+
+                        else s = 98;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 73 : 
+                        int LA3_415 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_415>='\u0000' && LA3_415<='\u001F')||(LA3_415>='!' && LA3_415<='\uFFFF')) ) {s = 21;}
+
+                        else s = 497;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 74 : 
+                        int LA3_614 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_614>='\u0000' && LA3_614<='\u001F')||(LA3_614>='!' && LA3_614<='\uFFFF')) ) {s = 21;}
+
+                        else s = 652;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 75 : 
+                        int LA3_196 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_196>='\u0000' && LA3_196<='\u001F')||(LA3_196>='!' && LA3_196<='\uFFFF')) ) {s = 21;}
+
+                        else s = 282;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 76 : 
+                        int LA3_45 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_45>='\u0000' && LA3_45<='\u001F')||(LA3_45>='!' && LA3_45<='\uFFFF')) ) {s = 21;}
+
+                        else s = 97;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 77 : 
+                        int LA3_44 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_44>='\u0000' && LA3_44<='\u001F')||(LA3_44>='!' && LA3_44<='\uFFFF')) ) {s = 21;}
+
+                        else s = 96;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 78 : 
+                        int LA3_369 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_369>='\u0000' && LA3_369<='\u001F')||(LA3_369>='!' && LA3_369<='\uFFFF')) ) {s = 21;}
+
+                        else s = 454;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 79 : 
+                        int LA3_28 = input.LA(1);
+
+                        s = -1;
+                        if ( (LA3_28=='-') ) {s = 62;}
+
+                        else if ( (LA3_28=='R') ) {s = 63;}
+
+                        else if ( (LA3_28=='S') ) {s = 64;}
+
+                        else if ( ((LA3_28>='\u0000' && LA3_28<='\u001F')||(LA3_28>='!' && LA3_28<=',')||(LA3_28>='.' && LA3_28<='Q')||(LA3_28>='T' && LA3_28<='\uFFFF')) ) {s = 21;}
+
+                        else s = 65;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 80 : 
+                        int LA3_63 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_63>='\u0000' && LA3_63<='\u001F')||(LA3_63>='!' && LA3_63<='\uFFFF')) ) {s = 21;}
+
+                        else s = 114;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 81 : 
+                        int LA3_676 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_676>='\u0000' && LA3_676<='\u001F')||(LA3_676>='!' && LA3_676<='\uFFFF')) ) {s = 21;}
+
+                        else s = 689;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 82 : 
+                        int LA3_502 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_502>='\u0000' && LA3_502<='\u001F')||(LA3_502>='!' && LA3_502<='\uFFFF')) ) {s = 21;}
+
+                        else s = 569;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 83 : 
+                        int LA3_284 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_284>='\u0000' && LA3_284<='\u001F')||(LA3_284>='!' && LA3_284<='\uFFFF')) ) {s = 21;}
 
                         else s = 368;
 
                         if ( s>=0 ) return s;
                         break;
 
-                    case 183 : 
-                        int LA3_350 = input.LA(1);
+                    case 84 : 
+                        int LA3_188 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA3_350>='\u0000' && LA3_350<='\u001F')||(LA3_350>='!' && LA3_350<='\uFFFF')) ) {s = 24;}
+                        if ( ((LA3_188>='\u0000' && LA3_188<='\u001F')||(LA3_188>='!' && LA3_188<='\uFFFF')) ) {s = 21;}
 
-                        else s = 449;
+                        else s = 272;
 
                         if ( s>=0 ) return s;
                         break;
 
-                    case 184 : 
-                        int LA3_93 = input.LA(1);
+                    case 85 : 
+                        int LA3_33 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA3_93>='\u0000' && LA3_93<='\u001F')||(LA3_93>='!' && LA3_93<='\uFFFF')) ) {s = 24;}
+                        if ( (LA3_33=='-') ) {s = 80;}
 
-                        else s = 201;
+                        else if ( (LA3_33=='R') ) {s = 81;}
+
+                        else if ( (LA3_33=='S') ) {s = 82;}
+
+                        else if ( ((LA3_33>='\u0000' && LA3_33<='\u001F')||(LA3_33>='!' && LA3_33<=',')||(LA3_33>='.' && LA3_33<='Q')||(LA3_33>='T' && LA3_33<='\uFFFF')) ) {s = 21;}
+
+                        else s = 83;
 
                         if ( s>=0 ) return s;
                         break;
 
-                    case 185 : 
-                        int LA3_735 = input.LA(1);
+                    case 86 : 
+                        int LA3_527 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA3_735>='\u0000' && LA3_735<='\u001F')||(LA3_735>='!' && LA3_735<='\uFFFF')) ) {s = 24;}
+                        if ( ((LA3_527>='\u0000' && LA3_527<='\u001F')||(LA3_527>='!' && LA3_527<='\uFFFF')) ) {s = 21;}
 
-                        else s = 765;
+                        else s = 586;
 
                         if ( s>=0 ) return s;
                         break;
 
-                    case 186 : 
-                        int LA3_58 = input.LA(1);
+                    case 87 : 
+                        int LA3_32 = input.LA(1);
 
                         s = -1;
-                        if ( (LA3_58=='-') ) {s = 142;}
+                        if ( (LA3_32=='-') ) {s = 73;}
 
-                        else if ( ((LA3_58>='\u0000' && LA3_58<='\u001F')||(LA3_58>='!' && LA3_58<=',')||(LA3_58>='.' && LA3_58<='\uFFFF')) ) {s = 24;}
+                        else if ( (LA3_32=='D') ) {s = 74;}
 
-                        else s = 143;
+                        else if ( (LA3_32=='G') ) {s = 75;}
+
+                        else if ( (LA3_32=='N') ) {s = 76;}
+
+                        else if ( (LA3_32=='P') ) {s = 77;}
+
+                        else if ( (LA3_32=='Z') ) {s = 78;}
+
+                        else if ( ((LA3_32>='\u0000' && LA3_32<='\u001F')||(LA3_32>='!' && LA3_32<=',')||(LA3_32>='.' && LA3_32<='C')||(LA3_32>='E' && LA3_32<='F')||(LA3_32>='H' && LA3_32<='M')||LA3_32=='O'||(LA3_32>='Q' && LA3_32<='Y')||(LA3_32>='[' && LA3_32<='\uFFFF')) ) {s = 21;}
+
+                        else s = 79;
 
                         if ( s>=0 ) return s;
                         break;
 
-                    case 187 : 
-                        int LA3_229 = input.LA(1);
+                    case 88 : 
+                        int LA3_623 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA3_229>='\u0000' && LA3_229<='\u001F')||(LA3_229>='!' && LA3_229<='\uFFFF')) ) {s = 24;}
+                        if ( ((LA3_623>='\u0000' && LA3_623<='\u001F')||(LA3_623>='!' && LA3_623<='\uFFFF')) ) {s = 21;}
 
-                        else s = 351;
+                        else s = 658;
 
                         if ( s>=0 ) return s;
                         break;
 
-                    case 188 : 
-                        int LA3_283 = input.LA(1);
+                    case 89 : 
+                        int LA3_424 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA3_283>='\u0000' && LA3_283<='\u001F')||(LA3_283>='!' && LA3_283<='\uFFFF')) ) {s = 24;}
+                        if ( ((LA3_424>='\u0000' && LA3_424<='\u001F')||(LA3_424>='!' && LA3_424<='\uFFFF')) ) {s = 21;}
 
-                        else s = 373;
+                        else s = 504;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 90 : 
+                        int LA3_657 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_657>='\u0000' && LA3_657<='\u001F')||(LA3_657>='!' && LA3_657<='\uFFFF')) ) {s = 21;}
+
+                        else s = 677;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 91 : 
+                        int LA3_633 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_633>='\u0000' && LA3_633<='\u001F')||(LA3_633>='!' && LA3_633<='\uFFFF')) ) {s = 21;}
+
+                        else s = 663;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 92 : 
+                        int LA3_363 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_363>='\u0000' && LA3_363<='\u001F')||(LA3_363>='!' && LA3_363<='\uFFFF')) ) {s = 21;}
+
+                        else s = 450;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 93 : 
+                        int LA3_700 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_700>='\u0000' && LA3_700<='\u001F')||(LA3_700>='!' && LA3_700<='\uFFFF')) ) {s = 21;}
+
+                        else s = 705;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 94 : 
+                        int LA3_104 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_104>='\u0000' && LA3_104<='\u001F')||(LA3_104>='!' && LA3_104<='\uFFFF')) ) {s = 21;}
+
+                        else s = 178;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 95 : 
+                        int LA3_697 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_697>='\u0000' && LA3_697<='\u001F')||(LA3_697>='!' && LA3_697<='\uFFFF')) ) {s = 21;}
+
+                        else s = 703;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 96 : 
+                        int LA3_106 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_106>='\u0000' && LA3_106<='\u001F')||(LA3_106>='!' && LA3_106<='\uFFFF')) ) {s = 21;}
+
+                        else s = 179;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 97 : 
+                        int LA3_678 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_678>='\u0000' && LA3_678<='\u001F')||(LA3_678>='!' && LA3_678<='\uFFFF')) ) {s = 21;}
+
+                        else s = 690;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 98 : 
+                        int LA3_78 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_78>='\u0000' && LA3_78<='\u001F')||(LA3_78>='!' && LA3_78<='\uFFFF')) ) {s = 21;}
+
+                        else s = 160;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 99 : 
+                        int LA3_448 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_448>='\u0000' && LA3_448<='\u001F')||(LA3_448>='!' && LA3_448<='\uFFFF')) ) {s = 21;}
+
+                        else s = 526;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 100 : 
+                        int LA3_103 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_103>='\u0000' && LA3_103<='\u001F')||(LA3_103>='!' && LA3_103<='\uFFFF')) ) {s = 21;}
+
+                        else s = 177;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 101 : 
+                        int LA3_315 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_315>='\u0000' && LA3_315<='\u001F')||(LA3_315>='!' && LA3_315<='\uFFFF')) ) {s = 21;}
+
+                        else s = 399;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 102 : 
+                        int LA3_520 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_520>='\u0000' && LA3_520<='\u001F')||(LA3_520>='!' && LA3_520<='\uFFFF')) ) {s = 21;}
+
+                        else s = 582;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 103 : 
+                        int LA3_76 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_76>='\u0000' && LA3_76<='\u001F')||(LA3_76>='!' && LA3_76<='\uFFFF')) ) {s = 21;}
+
+                        else s = 158;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 104 : 
+                        int LA3_621 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_621>='\u0000' && LA3_621<='\u001F')||(LA3_621>='!' && LA3_621<='\uFFFF')) ) {s = 21;}
+
+                        else s = 656;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 105 : 
+                        int LA3_38 = input.LA(1);
+
+                        s = -1;
+                        if ( (LA3_38=='-') ) {s = 88;}
+
+                        else if ( ((LA3_38>='\u0000' && LA3_38<='\u001F')||(LA3_38>='!' && LA3_38<=',')||(LA3_38>='.' && LA3_38<='\uFFFF')) ) {s = 21;}
+
+                        else s = 89;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 106 : 
+                        int LA3_77 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_77>='\u0000' && LA3_77<='\u001F')||(LA3_77>='!' && LA3_77<='\uFFFF')) ) {s = 21;}
+
+                        else s = 159;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 107 : 
+                        int LA3_654 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_654>='\u0000' && LA3_654<='\u001F')||(LA3_654>='!' && LA3_654<='\uFFFF')) ) {s = 21;}
+
+                        else s = 675;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 108 : 
+                        int LA3_74 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_74>='\u0000' && LA3_74<='\u001F')||(LA3_74>='!' && LA3_74<='\uFFFF')) ) {s = 21;}
+
+                        else s = 156;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 109 : 
+                        int LA3_440 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_440>='\u0000' && LA3_440<='\u001F')||(LA3_440>='!' && LA3_440<='\uFFFF')) ) {s = 21;}
+
+                        else s = 519;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 110 : 
+                        int LA3_329 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_329>='\u0000' && LA3_329<='\u001F')||(LA3_329>='!' && LA3_329<='\uFFFF')) ) {s = 21;}
+
+                        else s = 416;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 111 : 
+                        int LA3_443 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_443>='\u0000' && LA3_443<='\u001F')||(LA3_443>='!' && LA3_443<='\uFFFF')) ) {s = 21;}
+
+                        else s = 522;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 112 : 
+                        int LA3_75 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_75>='\u0000' && LA3_75<='\u001F')||(LA3_75>='!' && LA3_75<='\uFFFF')) ) {s = 21;}
+
+                        else s = 157;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 113 : 
+                        int LA3_581 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_581>='\u0000' && LA3_581<='\u001F')||(LA3_581>='!' && LA3_581<='\uFFFF')) ) {s = 21;}
+
+                        else s = 631;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 114 : 
+                        int LA3_41 = input.LA(1);
+
+                        s = -1;
+                        if ( (LA3_41=='Q') ) {s = 92;}
+
+                        else if ( ((LA3_41>='\u0000' && LA3_41<='\u001F')||(LA3_41>='!' && LA3_41<='P')||(LA3_41>='R' && LA3_41<='\uFFFF')) ) {s = 21;}
+
+                        else s = 93;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 115 : 
+                        int LA3_568 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_568>='\u0000' && LA3_568<='\u001F')||(LA3_568>='!' && LA3_568<='\uFFFF')) ) {s = 21;}
+
+                        else s = 620;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 116 : 
+                        int LA3_27 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_27>='\u0000' && LA3_27<='\u001F')||(LA3_27>='!' && LA3_27<='\uFFFF')) ) {s = 21;}
+
+                        else s = 61;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 117 : 
+                        int LA3_359 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_359>='\u0000' && LA3_359<='\u001F')||(LA3_359>='!' && LA3_359<='\uFFFF')) ) {s = 21;}
+
+                        else s = 446;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 118 : 
+                        int LA3_548 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_548>='\u0000' && LA3_548<='\u001F')||(LA3_548>='!' && LA3_548<='\uFFFF')) ) {s = 21;}
+
+                        else s = 601;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 119 : 
+                        int LA3_50 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_50>='\u0000' && LA3_50<='\u001F')||(LA3_50>='!' && LA3_50<='\uFFFF')) ) {s = 21;}
+
+                        else s = 102;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 120 : 
+                        int LA3_35 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_35>='\u0000' && LA3_35<='\u001F')||(LA3_35>='!' && LA3_35<='\uFFFF')) ) {s = 21;}
+
+                        else s = 85;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 121 : 
+                        int LA3_595 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_595>='\u0000' && LA3_595<='\u001F')||(LA3_595>='!' && LA3_595<='\uFFFF')) ) {s = 21;}
+
+                        else s = 640;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 122 : 
+                        int LA3_523 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_523>='\u0000' && LA3_523<='\u001F')||(LA3_523>='!' && LA3_523<='\uFFFF')) ) {s = 21;}
+
+                        else s = 583;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 123 : 
+                        int LA3_584 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_584>='\u0000' && LA3_584<='\u001F')||(LA3_584>='!' && LA3_584<='\uFFFF')) ) {s = 21;}
+
+                        else s = 632;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 124 : 
+                        int LA3_91 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_91>='\u0000' && LA3_91<='\u001F')||(LA3_91>='!' && LA3_91<='\uFFFF')) ) {s = 21;}
+
+                        else s = 169;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 125 : 
+                        int LA3_680 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_680>='\u0000' && LA3_680<='\u001F')||(LA3_680>='!' && LA3_680<='\uFFFF')) ) {s = 21;}
+
+                        else s = 692;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 126 : 
+                        int LA3_688 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_688>='\u0000' && LA3_688<='\u001F')||(LA3_688>='!' && LA3_688<='\uFFFF')) ) {s = 21;}
+
+                        else s = 699;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 127 : 
+                        int LA3_411 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_411>='\u0000' && LA3_411<='\u001F')||(LA3_411>='!' && LA3_411<='\uFFFF')) ) {s = 21;}
+
+                        else s = 493;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 128 : 
+                        int LA3_630 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_630>='\u0000' && LA3_630<='\u001F')||(LA3_630>='!' && LA3_630<='\uFFFF')) ) {s = 21;}
+
+                        else s = 662;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 129 : 
+                        int LA3_484 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_484>='\u0000' && LA3_484<='\u001F')||(LA3_484>='!' && LA3_484<='\uFFFF')) ) {s = 21;}
+
+                        else s = 555;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 130 : 
+                        int LA3_515 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_515>='\u0000' && LA3_515<='\u001F')||(LA3_515>='!' && LA3_515<='\uFFFF')) ) {s = 21;}
+
+                        else s = 579;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 131 : 
+                        int LA3_434 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_434>='\u0000' && LA3_434<='\u001F')||(LA3_434>='!' && LA3_434<='\uFFFF')) ) {s = 21;}
+
+                        else s = 514;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 132 : 
+                        int LA3_433 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_433>='\u0000' && LA3_433<='\u001F')||(LA3_433>='!' && LA3_433<='\uFFFF')) ) {s = 21;}
+
+                        else s = 513;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 133 : 
+                        int LA3_576 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_576>='\u0000' && LA3_576<='\u001F')||(LA3_576>='!' && LA3_576<='\uFFFF')) ) {s = 21;}
+
+                        else s = 627;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 134 : 
+                        int LA3_22 = input.LA(1);
+
+                        s = -1;
+                        if ( (LA3_22=='-') ) {s = 54;}
+
+                        else if ( ((LA3_22>='\u0000' && LA3_22<='\u001F')||(LA3_22>='!' && LA3_22<=',')||(LA3_22>='.' && LA3_22<='\uFFFF')) ) {s = 21;}
+
+                        else s = 55;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 135 : 
+                        int LA3_70 = input.LA(1);
+
+                        s = -1;
+                        if ( (LA3_70=='S') ) {s = 138;}
+
+                        else if ( ((LA3_70>='\u0000' && LA3_70<='\u001F')||(LA3_70>='!' && LA3_70<='R')||(LA3_70>='T' && LA3_70<='\uFFFF')) ) {s = 21;}
+
+                        else s = 139;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 136 : 
+                        int LA3_552 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_552>='\u0000' && LA3_552<='\u001F')||(LA3_552>='!' && LA3_552<='\uFFFF')) ) {s = 21;}
+
+                        else s = 605;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 137 : 
+                        int LA3_575 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_575>='\u0000' && LA3_575<='\u001F')||(LA3_575>='!' && LA3_575<='\uFFFF')) ) {s = 21;}
+
+                        else s = 626;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 138 : 
+                        int LA3_554 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_554>='\u0000' && LA3_554<='\u001F')||(LA3_554>='!' && LA3_554<='\uFFFF')) ) {s = 21;}
+
+                        else s = 607;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 139 : 
+                        int LA3_101 = input.LA(1);
+
+                        s = -1;
+                        if ( (LA3_101=='$') ) {s = 175;}
+
+                        else if ( ((LA3_101>='\u0000' && LA3_101<='\u001F')||(LA3_101>='!' && LA3_101<='#')||(LA3_101>='%' && LA3_101<='\uFFFF')) ) {s = 21;}
+
+                        else s = 176;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 140 : 
+                        int LA3_578 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_578>='\u0000' && LA3_578<='\u001F')||(LA3_578>='!' && LA3_578<='\uFFFF')) ) {s = 21;}
+
+                        else s = 629;
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 141 : 
+                        int LA3_628 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA3_628>='\u0000' && LA3_628<='\u001F')||(LA3_628>='!' && LA3_628<='\uFFFF')) ) {s = 21;}
+
+                        else s = 661;
 
                         if ( s>=0 ) return s;
                         break;
