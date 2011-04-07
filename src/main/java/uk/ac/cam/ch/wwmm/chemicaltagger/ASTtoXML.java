@@ -49,7 +49,7 @@ public class ASTtoXML {
 	 *******************************************/
 	public Document convert(Tree astTree, boolean annotateActionPhrases) {
 		Element root = new Element("Document");
-		Document doc = null;
+		Document doc;
 		
 		if (astTree.getChildCount() > 0) {
 			if (StringUtils.isNotEmpty(astTree.getText())) {
@@ -60,6 +60,9 @@ public class ASTtoXML {
 			} else {
 				doc = new Document(getNodes(astTree, root));
 			}
+		}
+		else{
+			doc = new Document(root);
 		}
 		if (annotateActionPhrases) {
 			PostProcessTrees procTree = new PostProcessTrees();
