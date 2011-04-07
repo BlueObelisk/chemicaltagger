@@ -5,7 +5,6 @@ options {
     output = AST;
    backtrack= true;
    memoize = true;
-
 }
 tokens{
 Sentence;
@@ -42,18 +41,8 @@ QUANTITY;
  }
 @lexer::header {package uk.ac.cam.ch.wwmm.pregenerated;}
 
-WS	:	 (' '|'\t')+ {skip();};
-NEWLINE	:	'\r'? '\n';
-
-fragment ACHAR	:	('A'..'Z') | ('a'..'z');
-
-// fragment ACHAR : ~('\\'|'"') ; 
-
-fragment DIGIT	: ('0'..'9');
-fragment UNICODE	:  '\u00A0'..'\ufffe';
-
-//TOKEN	:	(ACHAR|DIGIT|UNICODE)+;
-TOKEN : (ACHAR|'?'|'&'|';'| '_'|',' |'.'|')'|'('|'/'|'-'|'='|':'|'%'|'\''|'{'|'}'|'['|']'|'>'|'<'|'@'|'+'|'|'|DIGIT|UNICODE)+;
+WS :  (' ')+ {skip();};
+TOKEN : (~' ')+;
 
 
 
