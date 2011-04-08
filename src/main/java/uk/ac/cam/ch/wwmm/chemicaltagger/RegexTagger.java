@@ -21,9 +21,7 @@ import org.apache.log4j.Logger;
 public class RegexTagger {
 
 	private List<Rule> rules;
-
-
-	private String tagFilePath = "/uk/ac/cam/ch/wwmm/chemicaltagger/regexTagger/regexTags.txt";
+    private String tagFilePath = "/uk/ac/cam/ch/wwmm/chemicaltagger/regexTagger/regexTags.txt";
 	private static Logger LOG = Logger.getLogger(RegexTagger.class);
 
 	/****************************
@@ -49,6 +47,16 @@ public class RegexTagger {
 	public List<Rule> getRules() {
 		return rules;
 	}
+
+	/**************************************
+	 * Setter method for rules.
+	 * @param rules (List<Rule>)
+	 ***************************************/
+	public void setRules(List<Rule> rules) {
+		this.rules = rules;
+	}
+
+	
 	/**************************************************************
 	 * Initialises the rules for the regular expression tagger.
 	 ***************************************************************/
@@ -97,7 +105,6 @@ public class RegexTagger {
 
 				String tag = "nil";
 				for (Rule r : rules) {
-		
 					if (m.usePattern(r.getPattern()).lookingAt()) {
 						tag = r.getName();
 						break;
