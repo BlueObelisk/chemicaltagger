@@ -73,22 +73,13 @@ nounphraseStructure1
 nounphraseStructure2 
 	:	dtTHE? dt? advAdj*  (dissolvePhrase|noun|number|ratio)+    (conjunction* advAdj* (dissolvePhrase|noun|number|ratio) )*   ((prepphraseOf| prepphraseIN) dissolvePhrase?)*  ;
 dissolvePhrase 
-	:	(dissolveStructure1|dissolveStructure2|dissolveStructure3) ->  ^(DissolvePhrase dissolveStructure1? dissolveStructure2? dissolveStructure3?);
+	:	(dissolveStructure|lrb dissolveStructure rrb) ->  ^(DissolvePhrase lrb? dissolveStructure rrb?);
 
-dissolveStructure1
-	:	lrb adj? nnp? (molecule|unnamedmolecule) (inin dtTHE? adj? nnp? (molecule|unnamedmolecule) (conjunction molecule)*)+ rrb ;
-dissolveStructure2
-	:	adj? nnp? (molecule|unnamedmolecule) (inin dtTHE? adj? nnp? (molecule|unnamedmolecule) (conjunction molecule)*)+ ;
-
-dissolveStructure3
-	:	adj? nnp (molecule|unnamedmolecule|nnchementity) (inin dtTHE? adj? nnp? (molecule|unnamedmolecule) (conjunction molecule)*)+ ;
-
+dissolveStructure
+	:	adj? (nnp (molecule|unnamedmolecule|nnchementity) | (molecule|unnamedmolecule)) (inin dtTHE? adj? nnp? (molecule|unnamedmolecule) (conjunction molecule)*)+ ;
 
 conjunction 
 	:	 cc|comma;
-
-
-
 
 verbphrase
 	:	verbphraseStructure ->  ^(VerbPhrase  verbphraseStructure);
