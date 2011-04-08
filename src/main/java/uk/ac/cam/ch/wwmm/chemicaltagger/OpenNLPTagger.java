@@ -105,10 +105,7 @@ public class OpenNLPTagger {
 	 *****************************************************/
 	public POSContainer runTagger(POSContainer posContainer) {
 		List<String> tokenList = posContainer.getWordTokenList();
-		String[] tokens = new String[tokenList.size()];
-		for (int i = 0; i < tokenList.size(); i++) {
-			tokens[i] = tokenList.get(i);
-		}
+		String[] tokens = tokenList.toArray(new String[tokenList.size()]);
 		String[] tags = posTagger.tag(tokens);
 		posContainer.createPosTagListFromStringArray(tags);
 		return posContainer;
