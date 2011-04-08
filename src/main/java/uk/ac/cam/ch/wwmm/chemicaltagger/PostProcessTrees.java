@@ -46,7 +46,7 @@ public class PostProcessTrees {
 
 	/********************************
 	 * Getter method for actionMap.
-	 * "param actionMap (HashMap)
+	 * @param actionMap (HashMap)
 	 ********************************/
 	public void setActionMap(HashMap<String, String> actionMap) {
 		this.actionMap = actionMap;
