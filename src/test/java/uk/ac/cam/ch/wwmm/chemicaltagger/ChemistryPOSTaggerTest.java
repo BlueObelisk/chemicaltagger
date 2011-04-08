@@ -118,7 +118,7 @@ public class ChemistryPOSTaggerTest {
 		Assert.assertEquals(posContainer.getOscarTagList().size(),
 				posContainer.getRegexTagList().size());
 		Assert.assertEquals(posContainer.getRegexTagList().size(),
-				posContainer.getBrownTagList().size());
+				posContainer.getPosTagList().size());
 	}
 
 }
