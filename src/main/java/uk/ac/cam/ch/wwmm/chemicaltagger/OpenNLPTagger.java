@@ -98,7 +98,7 @@ public class OpenNLPTagger {
 	}
 
 	/*****************************************************
-	 * Runs the OpenNLP brown tagger against the text and stores the tags in
+	 * Runs the OpenNLP POS tagger against the text and stores the tags in
 	 * POSContainer.
 	 * @param posContainer (POSContainer)
 	 * @return posContainer (POSContainer) 
@@ -110,7 +110,7 @@ public class OpenNLPTagger {
 			tokens[i] = tokenList.get(i);
 		}
 		String[] tags = posTagger.tag(tokens);
-		posContainer.createBrownTagListFromStringArray(tags);
+		posContainer.createPosTagListFromStringArray(tags);
 		return posContainer;
 	}
 

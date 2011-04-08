@@ -25,7 +25,7 @@ public class POSContainer {
 	private List<String> wordTokenList = new ArrayList<String>();
 	private List<String> oscarTagList = new ArrayList<String>();
 	private List<String> regexTagList = new ArrayList<String>();
-	private List<String> brownTagList = new ArrayList<String>();
+	private List<String> posTagList = new ArrayList<String>();
 	private List<String> combinedTagsList = new ArrayList<String>();
 	private Element spectrumElementList;
 	private List<TokenSequence> tokenSequenceList;
@@ -136,19 +136,19 @@ public class POSContainer {
 
 
 	/**************************************
-	 * Setter method for BrownTagList.
-	 * @param brownTagList (List<String>)
+	 * Setter method for posTagList.
+	 * @param posTagList (List<String>)
 	 ***************************************/
-	public void setBrownTagList(List<String> brownTagList) {
-		this.brownTagList = brownTagList;
+	public void setPosTagList(List<String> posTagList) {
+		this.posTagList = posTagList;
 	}
 
 	/**************************************
-	 * Getter method for BrownTagList.
-	 * @return brownTagList (List<String>)
+	 * Getter method for posTagList.
+	 * @return posTagList (List<String>)
 	 ***************************************/
-	public List<String> getBrownTagList() {
-		return brownTagList;
+	public List<String> getPosTagList() {
+		return posTagList;
 	}
 
 	/**************************************
@@ -224,15 +224,15 @@ public class POSContainer {
 	}
 
 	/**************************************
-	 * Creates the brownTagList from the openNLP string Array format.
-	 * @param brownTags (String[])
+	 * Creates the posTagList from the openNLP string Array format.
+	 * @param posTags (String[])
 	 ***************************************/
-	public void createBrownTagListFromStringArray(String[] brownTags) {
-		for (String string : brownTags) {
+	public void createPosTagListFromStringArray(String[] posTags) {
+		for (String string : posTags) {
 			if (StringUtils.isEmpty(string)) {
-				getBrownTagList().add("NN");
+				getPosTagList().add("NN");
 			} else {
-				getBrownTagList().add(string);
+				getPosTagList().add(string);
 			}
 		}
 	}
@@ -250,7 +250,7 @@ public class POSContainer {
 			tagOrder.add(getRegexTagList());
 			tagOrder.add(getOscarTagList());
 		}
-		tagOrder.add(getBrownTagList());
+		tagOrder.add(getPosTagList());
 
 		List<String> firstTagger = tagOrder.get(0);
 		for (int i = 0; i < firstTagger.size(); i++) {
