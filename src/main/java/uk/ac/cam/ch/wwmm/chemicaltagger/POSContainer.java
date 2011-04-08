@@ -192,7 +192,7 @@ public class POSContainer {
 	 * @param token (String)
 	 ***************************************/
 	public void addToTokenList(String token) {
-		getWordTokenList().add(token);
+		wordTokenList.add(token);
 	}
 
 	/**************************************
@@ -201,7 +201,7 @@ public class POSContainer {
 	 ***************************************/
 	public void createWordTokenListFromSentence(String sentence) {
 		for (String token : sentence.split(" ")) {
-			getWordTokenList().add(token);
+			wordTokenList.add(token);
 		}
 	}
 
@@ -210,7 +210,7 @@ public class POSContainer {
 	 * @param oscarTag (String)
 	 ***************************************/
 	public void addToOSCARList(String oscarTag) {
-		getOscarTagList().add("OSCAR-" + oscarTag);
+		oscarTagList.add("OSCAR-" + oscarTag);
 	}
 
 
@@ -219,7 +219,7 @@ public class POSContainer {
 	 * @param regexTag (String)
 	 ***************************************/
 	public void addToRegexTagList(String regexTag) {
-		getRegexTagList().add(regexTag);
+		regexTagList.add(regexTag);
 
 	}
 
@@ -230,9 +230,9 @@ public class POSContainer {
 	public void createPosTagListFromStringArray(String[] posTags) {
 		for (String string : posTags) {
 			if (StringUtils.isEmpty(string)) {
-				getPosTagList().add("NN");
+				posTagList.add("NN");
 			} else {
-				getPosTagList().add(string);
+				posTagList.add(string);
 			}
 		}
 	}
@@ -244,13 +244,13 @@ public class POSContainer {
 	public void combineTaggers() {
 		List<List<String>> tagOrder = new ArrayList<List<String>>();
 		if (prioritiseOscar) {
-			tagOrder.add(getOscarTagList());
-			tagOrder.add(getRegexTagList());
+			tagOrder.add(oscarTagList);
+			tagOrder.add(regexTagList);
 		} else {
-			tagOrder.add(getRegexTagList());
-			tagOrder.add(getOscarTagList());
+			tagOrder.add(regexTagList);
+			tagOrder.add(oscarTagList);
 		}
-		tagOrder.add(getPosTagList());
+		tagOrder.add(posTagList);
 
 		List<String> firstTagger = tagOrder.get(0);
 		for (int i = 0; i < firstTagger.size(); i++) {
@@ -278,12 +278,12 @@ public class POSContainer {
 	public String getTokenTagTupleAsString() {
 		StringBuilder tokenTagTupleString = new StringBuilder();
 
-		for (int i = 0; i < getWordTokenList().size(); i++) {
+		for (int i = 0; i < wordTokenList.size(); i++) {
 			if (StringUtils.isNotEmpty(combinedTagsList.get(i))
-					&& StringUtils.isNotEmpty(getWordTokenList().get(i))) {
+					&& StringUtils.isNotEmpty(wordTokenList.get(i))) {
 				tokenTagTupleString.append(combinedTagsList.get(i));
 				tokenTagTupleString.append(SPACE);
-				tokenTagTupleString.append(getWordTokenList().get(i));
+				tokenTagTupleString.append(wordTokenList.get(i));
 				tokenTagTupleString.append(SPACE);
 			}
 		}
