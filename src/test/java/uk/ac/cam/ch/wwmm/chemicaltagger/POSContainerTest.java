@@ -18,18 +18,19 @@ public class POSContainerTest {
 	@Test
 	public void testCreatePosTagListFromStringArray() {
 		POSContainer posContainer = new POSContainer();
-		String[] posTags = new String[]{"NNP",":", "PRP$",",", "VBD", "", "VBG", "."};
+		String[] posTags = new String[]{"#","NNP",":", "PRP$",",", "VBD", "", "VBG", "."};
 		posContainer.createPosTagListFromStringArray(posTags);
 		List<String> posTagList =posContainer.getPosTagList();
-		assertEquals(8, posTagList.size());
-		assertEquals("NNP", posTagList.get(0));
-		assertEquals("COLON", posTagList.get(1));
-		assertEquals("PRP$", posTagList.get(2));
-		assertEquals("COMMA", posTagList.get(3));
-		assertEquals("VBD", posTagList.get(4));
-		assertEquals("NN", posTagList.get(5));
-		assertEquals("VBG", posTagList.get(6));
-		assertEquals("STOP", posTagList.get(7));
+		assertEquals(9, posTagList.size());
+		assertEquals("NN", posTagList.get(0));
+		assertEquals("NNP", posTagList.get(1));
+		assertEquals("COLON", posTagList.get(2));
+		assertEquals("PRP$", posTagList.get(3));
+		assertEquals("COMMA", posTagList.get(4));
+		assertEquals("VBD", posTagList.get(5));
+		assertEquals("NN", posTagList.get(6));
+		assertEquals("VBG", posTagList.get(7));
+		assertEquals("STOP", posTagList.get(8));
 	}
 	
 	@Test

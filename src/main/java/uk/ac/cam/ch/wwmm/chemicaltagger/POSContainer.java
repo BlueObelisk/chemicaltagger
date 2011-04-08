@@ -241,6 +241,9 @@ public class POSContainer {
 			else if (posTag.equals(":")){
 				posTagList.add("COLON");
 			}
+			else if (posTag.equals("#")){
+				posTagList.add("NN");
+			}
 			else{
 				posTagList.add(posTag);
 			}
