@@ -228,11 +228,21 @@ public class POSContainer {
 	 * @param posTags (String[])
 	 ***************************************/
 	public void createPosTagListFromStringArray(String[] posTags) {
-		for (String string : posTags) {
-			if (StringUtils.isEmpty(string)) {
+		for (String posTag : posTags) {
+			if (StringUtils.isEmpty(posTag)) {
 				posTagList.add("NN");
-			} else {
-				posTagList.add(string);
+			} 
+			else if (posTag.equals(".")){
+				posTagList.add("STOP");
+			}
+			else if (posTag.equals(",")){
+				posTagList.add("COMMA");
+			}
+			else if (posTag.equals(":")){
+				posTagList.add("COLON");
+			}
+			else{
+				posTagList.add(posTag);
 			}
 		}
 	}
