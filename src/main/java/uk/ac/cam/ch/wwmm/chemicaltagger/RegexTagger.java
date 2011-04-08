@@ -20,23 +20,37 @@ import org.apache.log4j.Logger;
  *****************************************************/
 public class RegexTagger {
 
-	protected List<Rule> rules;
-	public String tagFilePath = "/uk/ac/cam/ch/wwmm/chemicaltagger/regexTagger/regexTags.txt";
+	private List<Rule> rules;
+
+
+	private String tagFilePath = "/uk/ac/cam/ch/wwmm/chemicaltagger/regexTagger/regexTags.txt";
 	private static Logger LOG = Logger.getLogger(RegexTagger.class);
 
 	/****************************
-	 * Public Constructor
+	 * Public Constructor.
 	 ***************************/
 	public RegexTagger() {
 		initializeRules();
 	}
 
+	/**********************
+	 * Public Constructor.
+	 * Sets a tagFile.
+	 * @param tagFile (String)
+	 */
 	public RegexTagger(String tagFile) {
 		this.tagFilePath = tagFile;
 	}
 
+	/**************************************
+	 * Getter method for rules.
+	 * @return rules (List<Rule>)
+	 ***************************************/
+	public List<Rule> getRules() {
+		return rules;
+	}
 	/**************************************************************
-	 * Initialises the rules for the regular expression tagger
+	 * Initialises the rules for the regular expression tagger.
 	 ***************************************************************/
 	protected void initializeRules() {
 		rules = new ArrayList<Rule>();
@@ -97,41 +111,6 @@ public class RegexTagger {
 			}
 		}
 		return posContainer;
-	}
-
-	/**************************************************************
-	 * The Rule class . Compiles regex rules. Used later for the regex tagger.
-	 ***************************************************************/
-	protected static class Rule {
-
-		private String name;
-		private Pattern pattern;
-
-		public String getName() {
-			return name;
-		}
-
-		public Pattern getPattern() {
-			return pattern;
-		}
-
-		public Rule(String name, String regex) {
-			setRule(name, regex, true);
-		}
-
-		public Rule(String name, String regex, boolean caseInsensitive) {
-//			System.out.println(name+" "+regex);
-			setRule(name, regex, caseInsensitive);
-		}
-
-		private void setRule(String name, String regex, boolean caseInsensitive) {
-			this.name = name;
-
-			if (caseInsensitive)
-				pattern = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
-			else
-				pattern = Pattern.compile(regex);
-		}
 	}
 
 }

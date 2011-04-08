@@ -11,8 +11,12 @@ import uk.ac.cam.ch.wwmm.oscar.document.TokenSequence;
 
 public class OscarTokeniser implements ChemicalTaggerTokeniser {
 
-	Oscar oscar;
+	private Oscar oscar;
 
+	/*********************
+	 * Public Constructor method.
+	 * @param oscar (Oscar)
+	 */
 	public OscarTokeniser(Oscar oscar) {
 		this.oscar = oscar;
 	}
@@ -21,8 +25,7 @@ public class OscarTokeniser implements ChemicalTaggerTokeniser {
 	 * Tokenises an inputText using OSCAR tokeniser. 
 	 * Sets the tokens to POSContainer's wordTokenList and
 	 * tokenSequenceList.
-	 * @param posContainer
-	 *            (POSContainer)
+	 * @param posContainer (POSContainer)
 	 * @return posContainer (POSContainer)
 	 *****************************************************/
 	public POSContainer tokenise(POSContainer posContainer) {
@@ -36,8 +39,9 @@ public class OscarTokeniser implements ChemicalTaggerTokeniser {
 			for (Token token : tokenSequence.getTokens()) {
 
 				for (String subWord : token.getSurface().trim().split(" ")) {
-					if (StringUtils.isNotEmpty(subWord))
+					if (StringUtils.isNotEmpty(subWord)){
 						wordTokenList.add(subWord);
+					}
 				}
 
 			}

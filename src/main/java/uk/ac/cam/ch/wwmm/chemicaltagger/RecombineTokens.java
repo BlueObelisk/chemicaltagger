@@ -12,9 +12,9 @@ import java.util.List;
 public class RecombineTokens {
 	
 	/****************************
-	 * Default Constructor Method
+	 * Hides Utility Class Constructor.
 	 ***************************/
-	public RecombineTokens(){
+	private RecombineTokens(){
 		
 	}
 	/*********************************************
@@ -31,8 +31,9 @@ public class RecombineTokens {
 		List<Integer> indexList = new ArrayList<Integer>();
 		LinkedHashMap<Integer, List<Integer>> indexMap = new LinkedHashMap<Integer, List<Integer>>();
 		for (int currentIndex = 0; currentIndex < posContainer.getWordTokenList().size(); currentIndex++) {
-			if (indexList.size() > 0)
+			if (indexList.size() > 0){
 				totalIndexList.addAll(indexList);
+			}	
 			indexList = new ArrayList<Integer>();
 
 			if (posContainer.getCombinedTagsList().get(currentIndex).toLowerCase()
@@ -63,8 +64,9 @@ public class RecombineTokens {
 							indexList = indexMap
 									.get(keySet.get(keySet.size() - 1));
 							indexList.add(currentIndex);
-							if (currentIndex + 1 < posContainer.getWordTokenList().size())
+							if (currentIndex + 1 < posContainer.getWordTokenList().size()){
 								indexList.add(currentIndex + 1);
+							}	
 							indexMap.put(indexList.get(0), indexList);
 
 						} else if (nonHyphenTags.contains(previousTag
@@ -102,6 +104,7 @@ public class RecombineTokens {
 	 * Combines the tokens based on the indices in indexMap.
 	 * @param posContainer (POSContainer)
 	 * @param indexMap (LinkedHashMap)
+	 * @return posContainer (POSContainer)
 	*****************************************/
 	private static POSContainer combineTokens(POSContainer posContainer, LinkedHashMap<Integer, List<Integer>> indexMap) {
 		if (indexMap.size() > 0) {
@@ -140,22 +143,22 @@ public class RecombineTokens {
 	 * adjective or verb in the past tense.
 	 * @param posContainer (POSContainer)
 	 * @param indexList (List<Integer>)
+	 * @return tagName (String)
 	*****************************************/
 	private static String getTagName(POSContainer posContainer,List<Integer> indexList) {
 		String tagName = "";
-
 		List<String> jjChemList = Arrays.asList(new String[] { "jj", "vbn","jj-chem" });
-
 		for (Integer integer : indexList) {
 			String tag = posContainer.getCombinedTagsList().get(integer);
-			if (!tagName.toLowerCase().startsWith("oscar") & tag.contains("-"))
+			if (!tagName.toLowerCase().startsWith("oscar") & tag.contains("-")){
 				tagName = tag;
-
-			if (tagName.equals("") & !tag.toLowerCase().equals("dash"))
+			}
+			if (tagName.equals("") & !tag.toLowerCase().equals("dash")){
 				tagName = tag;
-			if (jjChemList.contains(tag.toLowerCase()))
+			}
+			if (jjChemList.contains(tag.toLowerCase())){
 				tagName = "JJ-CHEM";
-
+			}
 		}
 		return tagName;
 	}

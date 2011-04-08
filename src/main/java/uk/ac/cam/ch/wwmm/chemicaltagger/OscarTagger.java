@@ -19,6 +19,7 @@ public class OscarTagger {
 
 	/*****************************
 	 * Default constructor method.
+	 * @param oscar (Oscar)
 	 ***************************/
 	public OscarTagger(Oscar oscar) {
 		this.oscar = oscar;
