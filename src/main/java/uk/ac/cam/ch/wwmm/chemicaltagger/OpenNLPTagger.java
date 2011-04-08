@@ -91,10 +91,8 @@ public class OpenNLPTagger {
 	 * ***************************************/
 	private void setUpPosTagger() throws IOException {
 		InputStreamReader tagDictReader = null;
-		new Utils();
 		InputStream in = Utils.getInputStream(getClass(),"/uk/ac/cam/ch/wwmm/chemicaltagger/openNLPTagger/tagdict");
 		tagDictReader = new InputStreamReader(in);
-		
 		POSDictionary tagDict = new POSDictionary(new BufferedReader(tagDictReader), true);
 		posTagger = new PosTagger(tempFile.getCanonicalPath(), tagDict);
 	}

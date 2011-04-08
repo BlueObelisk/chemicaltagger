@@ -18,7 +18,12 @@ import uk.ac.cam.ch.wwmm.oscartokeniser.Tokeniser;
  *****************************************************/
 public class SpectraTagger {
 
-	
+	/**************************
+	 * Hides Utility Class Constructor.
+	 */
+	private SpectraTagger(){
+		
+	}
 	/*******************************************************
 	 * Tags the NMR Spectra in a chemistry text.
 	 * @param  posContainer (POSContainer)

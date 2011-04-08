@@ -28,8 +28,14 @@ public class Utils {
 	
 	private static Pattern exponentXMLPattern = Pattern.compile("(-?\\d+)<sup>(-?\\d+)</sup>");
 
+	/**************************
+	 * Hides Utility Class Constructor.
+	 */
+	private Utils(){
+		
+	}
 	/******************************************
-	 * Replaces all non-XML characters with _
+	 * Replaces all non-XML characters with _ .
 	 * 
 	 * @param text (String)
 	 * @return ncName (String)
@@ -53,10 +59,8 @@ public class Utils {
 
 	/******************************************
 	 * Writes out an XML document to a file.
-	 * 
-	 * @param doc
-	 *            (Document)
-	 * @return xmlFilename (String)
+	 * @param doc (Document)
+	 * @param xmlFilename (String)
 	 *******************************************/
 	public static void writeXMLToFile(Document doc, String xmlFilename) {
 
@@ -72,8 +76,8 @@ public class Utils {
 
 	/******************************************
 	 * Cleans up text from html characters.
-	 * 
 	 * @param paragraph (String)
+	 * @return cleanedParagraph (String)
 	 *******************************************/
 	public static String cleanHTMLText(String paragraph) {
 
@@ -87,8 +91,8 @@ public class Utils {
 	/**********************************
 	 * Converts exponents in the format of 10<sup>16</sup> to 10 exp=16.
 	 * This is mainly to avoid loss when cleaning xml tags.
-	 * @param xmlExponential
-	 * @return cleanedParagraph (String).
+	 * @param xmlExponential (String)
+	 * @return nonXMLExponential (String).
 	 */
 	private static String convertExponentials(String xmlExponential) {
 		String nonXMLExponential = xmlExponential;
@@ -104,8 +108,7 @@ public class Utils {
 	 * Loads a "sentence" file consisting of a single line of text. Has to be
 	 * qualified file name e.g. uk/ac/cam/ch/wwmm/foo.txt.
 	 * 
-	 * @param resourceName
-	 *            (String)
+	 * @param resourceName (String)
 	 * @return sentence (String)
 	 **************************************************************/
 	public static String readSentence(String resourceName) {
@@ -125,8 +128,7 @@ public class Utils {
 	/**************************************************************
 	 * Returns the content of the resource as an inputstream.
 	 * 
-	 * @param pathName
-	 *            (String)
+	 * @param pathName (String)
 	 * @return sentence (String)
 	 * @throws IOException
 	 **************************************************************/
@@ -152,8 +154,8 @@ public class Utils {
 	/**************************************************************
 	 * Returns the content of the resource as an inputstream.
 	 * 
-	 * @param pathName
-	 *            (String)
+	 * @param context (Class)
+	 * @param pathName (String)
 	 * @return sentence (String)
 	 * @throws IOException
 	 **************************************************************/
@@ -172,8 +174,7 @@ public class Utils {
 	/***********************************
 	 * Checks if a string contains a number.
 	 * 
-	 * @param currentString
-	 *            (String)
+	 * @param currentString (String)
 	 * @return boolean
 	 ***********************************/
 	public static boolean containsNumber(String currentString) {

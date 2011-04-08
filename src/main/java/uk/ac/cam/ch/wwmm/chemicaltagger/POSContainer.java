@@ -292,10 +292,4 @@ public class POSContainer {
 
 	}
 
-	
-
-	
-
-
-
 }

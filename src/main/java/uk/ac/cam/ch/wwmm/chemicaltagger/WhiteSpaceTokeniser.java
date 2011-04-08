@@ -27,11 +27,10 @@ public class WhiteSpaceTokeniser implements ChemicalTaggerTokeniser {
 	
 	/********************************************
 	 * Converts a string into a list of tokens.
-	 * @param inputText
-	 * @return ArrayList
+	 * @param inputText (String)
+	 * @return List<String>
 	 *****************************************/
 	private List<String> tokenise(String inputText){
-		
 		return Arrays.asList(inputText.split("\\s+"));
 	}
 	
@@ -52,7 +51,9 @@ public class WhiteSpaceTokeniser implements ChemicalTaggerTokeniser {
 
 	/*********************************************
 	 * Converts a list of words into a list of Oscar TokenSequences.
-	 * @param wordTokenList
+	 * @param wordTokenList (List<String>)
+	 * @param inputText (String)
+	 * @return tokenSequenceList (List<TokenSequence>)
 	 ********************************************/
 	private  List<TokenSequence> convertToOscarTokenSequences(List<String> wordTokenList, String inputText) {
 		List<Token> oscarTokens = convertWordlistToOscarTokens(wordTokenList);
@@ -64,7 +65,7 @@ public class WhiteSpaceTokeniser implements ChemicalTaggerTokeniser {
 	/*************************************************
 	 * Converts a list of words into a list of Oscar Tokens.
 	 * @param wordTokenList (List<String>)
-	 * @return oscarTokens (List<IToken>)
+	 * @return oscarTokens (List<Token>)
 	 ***********************************************/
 	private List<Token> convertWordlistToOscarTokens(List<String> wordTokenList) {
 

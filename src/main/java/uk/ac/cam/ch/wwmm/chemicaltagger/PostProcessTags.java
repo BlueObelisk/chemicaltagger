@@ -14,7 +14,7 @@ import org.apache.commons.lang.StringUtils;
 public class PostProcessTags {
 
 	/***********************************************
-	 * Corrects the combinedtagsList
+	 * Corrects the combinedtagsList.
 	 * 
 	 * @param posContainer
 	 *            (POSContainer)
@@ -248,7 +248,6 @@ public class PostProcessTags {
 	/*************************************
 	 * Corrects the mistagged verbs.
 	 * 
-	 * @param tokenList  (List<String>)
 	 * @param combinedTags  (List <String>)
 	 * @param i (Integer)
 	 * @param currentTag (String)
@@ -307,7 +306,6 @@ public class PostProcessTags {
 	/*************************************
 	 * Corrects the mistagged verbs.
 	 * 
-	 * @param tokenList  (List<String>)
 	 * @param combinedTags  (List <String>)
 	 * @param i (Integer)
 	 * @param currentTag (String)
@@ -326,31 +324,32 @@ public class PostProcessTags {
 			List<String> beforeList = Arrays.asList("stop");
 			if (currentToken.endsWith("s")
 					&& Character.isUpperCase(currentToken.charAt(0))) {
-				if (!stringBefore(beforeList, i, combinedTags))
+				if (!stringBefore(beforeList, i, combinedTags)){
 					newTag = "NNPS";
+				}
 			}
 		}
 
-		if (StringUtils.equalsIgnoreCase(currentTag, "rb")
-				&& currentToken.length() < 2) {
+		if (StringUtils.equalsIgnoreCase(currentTag, "rb")	&& currentToken.length() < 2) {
 
-			if (Character.isUpperCase(currentToken.charAt(0)))
+			if (Character.isUpperCase(currentToken.charAt(0))){
 				newTag = "NNP";
-			else
+			}
+			else {
 				newTag = "NN";
+			}
 
 		}
 		if (i != 0 && StringUtils.equalsIgnoreCase(currentTag, "nn")) {
 
 			List<String> beforeList = Arrays.asList("stop");
-			if (Character.isUpperCase(currentToken.charAt(0))
-					&& !stringBefore(beforeList, i, combinedTags))
+			if (Character.isUpperCase(currentToken.charAt(0)) && !stringBefore(beforeList, i, combinedTags)){
 				newTag = "NNP";
+			}
 
 		}
 
-		if (i != 0
-				&& (currentTag.toLowerCase().startsWith("vb") || currentTag
+		if (i != 0	&& (currentTag.toLowerCase().startsWith("vb") || currentTag
 						.toLowerCase().startsWith("nn-"))) {
 
 			List<String> beforeList = Arrays
@@ -359,8 +358,9 @@ public class PostProcessTags {
 					.split(" "));
 			if (Character.isUpperCase(currentToken.charAt(0))
 					&& !stringBefore(beforeList, i, combinedTags)
-					&& stringAfter(afterList, i, combinedTags))
+					&& stringAfter(afterList, i, combinedTags)){
 				newTag = "JJ-CHEM";
+			}
 
 		}
 		if (currentToken.equals("M")) {
@@ -406,9 +406,9 @@ public class PostProcessTags {
 		if (i != 0 && currentTag.toLowerCase().startsWith("nn-add")) {
 			List<String> beforeList = Arrays.asList("stop comma colon"
 					.split(" "));
-			if (!stringBefore(beforeList, i, combinedTags)
-					&& Character.isUpperCase(currentToken.charAt(0)))
+			if (!stringBefore(beforeList, i, combinedTags)&& Character.isUpperCase(currentToken.charAt(0))) {
 				newTag = "NNP";
+			}
 
 		}
 
@@ -417,9 +417,9 @@ public class PostProcessTags {
 			List<String> afterList = Arrays.asList("nn-campaign");
 			if ((stringAfter(afterList, i, combinedTags) || string2after(
 					afterList, i, combinedTags))
-					&& Character.isUpperCase(currentToken.charAt(0)))
+					&& Character.isUpperCase(currentToken.charAt(0))) {
 				newTag = "NNP";
-
+			}
 		}
 		if (currentToken.toLowerCase().equals("addition")) {
 			List<String> beforeList = Arrays.asList("in-in");
@@ -462,26 +462,24 @@ public class PostProcessTags {
 			}
 
 		}
-
 		return newTag;
 
 	}
 
 	/***********************************
-	 * A boolean function that checks for the tokens before the current token
+	 * A boolean function that checks for the tokens before the current token.
 	 * 
-	 * @param beforeList
-	 * @param index
-	 * @param combinedTags
-	 * @return before(boolean)
+	 * @param beforeList (List<String>)
+	 * @param index (Integer)
+	 * @param combinedTags (List<String>)
+	 * @return boolean
 	 ***********************************/
 	private boolean stringBefore(List<String> beforeList, int index,
 			List<String> combinedTags) {
 		
 		if (index != 0) {
 			int beforeIndex = index - 1;
-			if (beforeList
-					.contains(combinedTags.get(beforeIndex).toLowerCase())) {
+			if (beforeList.contains(combinedTags.get(beforeIndex).toLowerCase())) {
 				return true;
 			}
 		}
@@ -489,12 +487,12 @@ public class PostProcessTags {
 	}
 
 	/**********************************
-	 * A boolean function that checks for the tokens after the current token
+	 * A boolean function that checks for the tokens after the current token.
 	 * 
-	 * @param afterList
-	 * @param index
-	 * @param combinedTags
-	 * @return
+	 * @param afterList (List<String>)
+	 * @param index (Integer)
+	 * @param combinedTags (List<String>)
+	 * @return boolean
 	 **********************************/
 	private boolean stringAfter(List<String> afterList, int index,
 			List<String> combinedTags) {
@@ -512,10 +510,10 @@ public class PostProcessTags {
 	 * A boolean function that checks for what the tokens after the current
 	 * token starts with.
 	 * 
-	 * @param afterList
-	 * @param index
-	 * @param combinedTags
-	 * @return
+	 * @param afterList (List<String>)
+	 * @param index (Integer)
+	 * @param combinedTags (List<String>)
+	 * @return boolean
 	 **********************************/
 	private boolean stringAfterStartsWith(List<String> afterList, int index,
 			List<String> combinedTags) {
@@ -532,11 +530,11 @@ public class PostProcessTags {
 	}
 
 	/**********************************
-	 * A boolean function that checks for the tokens after the current token
+	 * A boolean function that checks for the tokens after the current token.
 	 * 
-	 * @param afterList
-	 * @param index
-	 * @param combinedTags
+	 * @param afterList (List<String>)
+	 * @param index (Integer)
+	 * @param combinedTags (List<String>)
 	 * @return boolean
 	 **********************************/
 	private boolean string2after(List<String> afterList, int index,
