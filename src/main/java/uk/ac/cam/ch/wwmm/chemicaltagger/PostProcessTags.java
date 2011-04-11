@@ -14,8 +14,7 @@ import org.apache.commons.lang.StringUtils;
  **************************************************/
 public class PostProcessTags {
 
-	private static HashSet<String> tagSet = new HashSet<String>();
-//	private static HashSet<String> tagSet = Utils.loadsTagsFromFile(PostProcessTags.class);
+	private static HashSet<String> tagSet = Utils.loadsTagsFromFile(PostProcessTags.class);
 	/***********************************************
 	 * Corrects the combinedtagsList.
 	 * 

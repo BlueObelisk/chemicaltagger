@@ -72,6 +72,12 @@
 				<directory>src/main/resources</directory>
 				<filtering>false</filtering>
 			</resource>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>ChemicalChunker.tokens</include>
+                </includes>
+            </resource>
 		</resources>
 	</build>
 	<dependencies>
