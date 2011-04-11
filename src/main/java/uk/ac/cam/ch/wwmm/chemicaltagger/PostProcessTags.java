@@ -2,6 +2,7 @@ package uk.ac.cam.ch.wwmm.chemicaltagger;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 
 import org.apache.commons.lang.StringUtils;
@@ -13,6 +14,8 @@ import org.apache.commons.lang.StringUtils;
  **************************************************/
 public class PostProcessTags {
 
+	private static HashSet<String> tagSet = new HashSet<String>();
+//	private static HashSet<String> tagSet = Utils.loadsTagsFromFile(PostProcessTags.class);
 	/***********************************************
 	 * Corrects the combinedtagsList.
 	 * 
@@ -20,6 +23,7 @@ public class PostProcessTags {
 	 *            (POSContainer)
 	 * @return posContainer (POSContainer)
 	 **********************************************/
+	
 	public POSContainer correctCombinedTagsList(POSContainer posContainer) {
 
 		List<String> tokenList = posContainer.getWordTokenList();
@@ -37,10 +41,16 @@ public class PostProcessTags {
 			newTag = correctMisTaggedDigits(combinedTags, i, currentTag,
 					currentToken, newTag);
 
+			if (tagSet.contains(currentToken)) {
+				currentToken = currentToken.toLowerCase();
+			}
+			
 			newCombinedTagsList.add(newTag);
 			newTokenList.add(currentToken);
 		}
+		
 		posContainer.setWordTokenList(newTokenList);
+		
 		posContainer.setCombinedTagsList(newCombinedTagsList);
 		return posContainer;
 	}

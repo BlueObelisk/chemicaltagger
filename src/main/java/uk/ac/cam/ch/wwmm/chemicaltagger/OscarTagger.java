@@ -35,7 +35,7 @@ public class OscarTagger {
 	public POSContainer runTagger(POSContainer posContainer) {
 
 		List<NamedEntity> neList = oscar.recogniseNamedEntities(posContainer.getTokenSequenceList());
-        List<String> ignoreOscarList = Arrays.asList(new String[]{"cpr", "ont"});
+        List<String> ignoreOscarList = Arrays.asList(new String[]{"cpr"});
 		List<String> tokenList = posContainer.getWordTokenList();
 		List<String> oscarList = new ArrayList<String>();
 		String tag = "nil";

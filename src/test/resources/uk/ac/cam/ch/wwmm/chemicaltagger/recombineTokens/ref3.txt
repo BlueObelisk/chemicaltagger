@@ -1,1 +1,1 @@
-TO to VB-YIELD give DT a JJ white NN-CHEMENTITY precipitate IN-OF of JJ-CHEM diblock NN-CHEMENTITY copolymer OSCAR-CM PNBE--PSt
+TO to VB-YIELD give DT a JJ white NN-CHEMENTITY precipitate IN-OF of OSCAR-ONT diblock OSCAR-ONT copolymer OSCAR-CM PNBE--PSt
