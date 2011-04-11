@@ -247,7 +247,7 @@
 				</configuration>
 			</plugin>
 
-			<plugin>
+			<!-- <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-checkstyle-plugin
                 </artifactId>
@@ -255,7 +255,7 @@
 					<configLocation>src/test/resources/checkstyle.xml</configLocation>
 					<excludes>**/pregenerated/**</excludes>
 				</configuration>
-			</plugin>
+			</plugin> -->
 		</plugins>
 	</reporting>
 </project>
