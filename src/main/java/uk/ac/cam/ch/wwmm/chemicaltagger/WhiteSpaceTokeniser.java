@@ -26,7 +26,7 @@ public class WhiteSpaceTokeniser implements ChemicalTaggerTokeniser {
 	}
 	
 	/********************************************
-	 * Converts a string into a list of tokens.
+	 * Converts a string into a list of tokens. 
 	 * @param inputText (String)
 	 * @return List<String>
 	 *****************************************/
