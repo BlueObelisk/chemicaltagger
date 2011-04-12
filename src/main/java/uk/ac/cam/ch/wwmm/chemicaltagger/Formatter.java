@@ -41,7 +41,7 @@ public class Formatter {
 		StringBuilder newSentence = new StringBuilder();
 		sentence = sentence.replace("%", " %").replace(";", " ;").replace(":", " : ");
 
-		sentence = sentence.replace("–", "-");
+		sentence = sentence.replace("\u2012", "-").replace("\u2013", "-").replace("\u2014", "-");
 		String[] words = WHITESPACE_PATTERN.split(sentence);
 
 		int index = 0;
