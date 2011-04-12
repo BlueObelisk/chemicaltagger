@@ -19,8 +19,8 @@ public class Formatter {
 	private static List<String> HTML_LIST = Arrays.asList("gt; lt;".split(" "));
 	private static List<String> NEXTTOKEN_LIST = Arrays.asList("gram vol %".split(" "));
 	private static Pattern WHITESPACE_PATTERN = Pattern.compile("\\s+");
-	private static Pattern ABBREVIATION_PATTERN = Pattern.compile("−?[A-Z]+[a-z]*\\.");
-	private static Pattern CONCAT_AMOUNT_PATTERN = Pattern.compile("(\\d\\d+(m|k|µ)?(l|L|g|gram|mol|cm3)(s)?$)|(\\d(L|ml|mL|gram|mol|cm3)(s)?$)");
+	private static Pattern ABBREVIATION_PATTERN = Pattern.compile("(\u2012|\u2013|\u2014|-)?[A-Z]+[a-z]*\\.");
+	private static Pattern CONCAT_AMOUNT_PATTERN = Pattern.compile("(\\d\\d+(m|k|\u00b5)?(l|L|g|gram|mol|cm3)(s)?$)|(\\d(L|ml|mL|gram|mol|cm3)(s)?$)");
 	private static Pattern CONCAT_TEMP_PATTERN = Pattern.compile("\\d+(o|\u00b0|\u00ba)(C|c)");
 	private static Pattern CONCAT_HYPHENED_DIRECTION_PATTERN = Pattern.compile("^[A-Z]\\-\\d+");
 	private static Pattern CONCAT_SLASH_DIRECTION_PATTERN = Pattern.compile("^[A-Z]\\/\\d*$");
