@@ -3,6 +3,7 @@ package uk.ac.cam.ch.wwmm.chemicaltagger;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
 import uk.ac.cam.ch.wwmm.oscar.Oscar;
 import uk.ac.cam.ch.wwmm.oscar.document.NamedEntity;
 import uk.ac.cam.ch.wwmm.oscar.document.Token;
