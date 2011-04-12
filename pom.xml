@@ -6,20 +6,20 @@
 	<groupId>chemicalTagger</groupId>
 	<artifactId>chemicalTagger</artifactId>
 	<name>chemicalTagger</name>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0</version>
 	<developers>
-                <developer>
-                        <id>lh359</id>
-                        <name>Lezan Hawizy</name>
-                </developer>
-                <developer>
-                        <id>dmj30</id>
-                        <name>David Jessop</name>
-                </developer>
-                <developer>
-                        <id>dl387</id>
-                        <name>Daniel Lowe</name>
-                </developer>
+		<developer>
+			<id>lh359</id>
+			<name>Lezan Hawizy</name>
+		</developer>
+		<developer>
+			<id>dmj30</id>
+			<name>David Jessop</name>
+		</developer>
+		<developer>
+			<id>dl387</id>
+			<name>Daniel Lowe</name>
+		</developer>
 	</developers>
 	<repositories>
 		<repository>
@@ -72,12 +72,12 @@
 				<directory>src/main/resources</directory>
 				<filtering>false</filtering>
 			</resource>
-            <resource>
-                <directory>src/main/java</directory>
-                <includes>
-                    <include>ChemicalChunker.tokens</include>
-                </includes>
-            </resource>
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>ChemicalChunker.tokens</include>
+				</includes>
+			</resource>
 		</resources>
 	</build>
 	<dependencies>
@@ -107,7 +107,7 @@
 		<dependency>
 			<groupId>uk.ac.cam.ch.wwmm.oscar</groupId>
 			<artifactId>oscar4-data</artifactId>
-			<version>4.0-SNAPSHOT</version>
+			<version>4.0.1</version>
 		</dependency>
 
 		<dependency>
@@ -156,7 +156,7 @@
 		<dependency>
 			<groupId>uk.ac.cam.ch.wwmm.oscar</groupId>
 			<artifactId>oscar4-api</artifactId>
-			<version>4.0-SNAPSHOT</version>
+			<version>4.0.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jsoup</groupId>
@@ -239,10 +239,13 @@
 
 				</configuration>
 			</plugin>
+			<!-- 
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>apt-maven-plugin</artifactId>
 			</plugin>
+
+
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>cobertura-maven-plugin</artifactId>
@@ -252,8 +255,7 @@
 					</excludes>
 				</configuration>
 			</plugin>
-
-			<!-- <plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-checkstyle-plugin
                 </artifactId>
@@ -261,7 +263,8 @@
 					<configLocation>src/test/resources/checkstyle.xml</configLocation>
 					<excludes>**/pregenerated/**</excludes>
 				</configuration>
-			</plugin> -->
+			</plugin>
+			 -->
 		</plugins>
 	</reporting>
 </project>
