@@ -27,8 +27,8 @@ public class WhiteSpaceTokeniserTest {
 	
 	@Test
 	public void testWhiteSpaceTokenisation() {
-		String sentence = "It was at Mt. xyz station (44°11' N-10°42' E) .";
-		String expected = "PRP It VBD was IN at NNP Mt. NN xyz NN station -LRB- ( NN 44°11' JJ-CHEM N-10°42' NNP E -RRB- ) STOP .";
+		String sentence = "It was at Mt. xyz station (44\u00b011' N-10\u00b042' E) .";
+		String expected = "PRP It VBD was IN at NNP Mt. NN xyz NN station -LRB- ( NN 44\u00b011' JJ-CHEM N-10\u00b042' NNP E -RRB- ) STOP .";
 		POSContainer posContainer = posTagger.runTaggers(sentence, DEFAULT_PRIORITISE_OSCAR,DEFAULT_USE_SPECTRA_TAGGER);
         Assert.assertEquals("WhiteSpace Tokenisation result",expected, posContainer.getTokenTagTupleAsString());
 	}
