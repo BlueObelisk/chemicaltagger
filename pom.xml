@@ -3,7 +3,14 @@
 	<!-- NOTE: the antlr3 build is best done on the COMMANDLINE and requires 
 		set MAVEN_OPTS=-Xmx1024m -->
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>chemicalTagger</groupId>
+	
+	<parent>
+        <groupId>uk.ac.cam.ch.wwmm</groupId>
+        <artifactId>wwmm-parent</artifactId>
+        <version>3</version>
+    </parent>
+	
+	<groupId>uk.ac.cam.ch</groupId>
 	<artifactId>chemicalTagger</artifactId>
 	<name>chemicalTagger</name>
 	<version>1.1-SNAPSHOT</version>
@@ -16,12 +23,12 @@
 		</license>
 	</licenses>
 	<scm>
-		<url>http://bitbucket.org/lh359/opsin/</url>
+		<url>http://bitbucket.org/lh359/chemicaltagger/</url>
 		<connection>
-      scm:hg:https://lh359@bitbucket.org/lh359/chemicaltagger/
+      scm:hg:https://bitbucket.org/lh359/chemicaltagger/
     </connection>
 		<developerConnection>
-      scm:hg:https://lh359@bitbucket.org/lh359/chemicaltagger/
+      scm:hg:https://bitbucket.org/lh359/chemicaltagger/
     </developerConnection>
 	</scm>
 	<developers>
@@ -37,7 +44,6 @@
 		</developer>
 		<developer>
 			<name>David Jessop</name>
-			<email>dmj30@cam.ac.uk</email>
 			<url>http://bitbucket.org/dmj30</url>
 			<organization>University of Cambridge</organization>
 			<organizationUrl>http://www.cam.ac.uk</organizationUrl>
@@ -75,9 +81,6 @@
 			<url>https://maven.ch.cam.ac.uk/m2repo</url>
 		</pluginRepository>
 	</pluginRepositories>
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
 	<build>
 		<plugins>
 			<plugin>
@@ -143,13 +146,11 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-
 		<dependency>
 			<groupId>uk.ac.cam.ch.wwmm.oscar</groupId>
 			<artifactId>oscar4-data</artifactId>
 			<version>4.0.1</version>
 		</dependency>
-
 		<dependency>
 			<groupId>taglibs</groupId>
 			<artifactId>regexp</artifactId>
