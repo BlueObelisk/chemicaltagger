@@ -124,6 +124,30 @@
 		</resources>
 	</build>
 	<dependencies>
+		<!-- UCC projects -->
+		<dependency>
+			<groupId>uk.ac.cam.ch.wwmm.oscar</groupId>
+			<artifactId>oscar4-api</artifactId>
+			<version>4.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>uk.ac.cam.ch.wwmm.oscar</groupId>
+			<artifactId>oscar4-data</artifactId>
+			<version>4.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>cml</groupId>
+			<artifactId>cmlxom</artifactId>
+			<version>2.5.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>cml</groupId>
+			<artifactId>jumbo-testutil</artifactId>
+			<version>1.0-SNAPSHOT</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<!-- non-UCC projects -->
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>apache-log4j-extras</artifactId>
@@ -133,7 +157,6 @@
 			<groupId>org.antlr</groupId>
 			<artifactId>antlr-runtime</artifactId>
 			<version>3.2</version>
-			<type>jar</type>
 		</dependency>
 		<dependency>
 			<groupId>commons-configuration</groupId>
@@ -145,11 +168,6 @@
 					<groupId>xerces</groupId>
 				</exclusion>
 			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>uk.ac.cam.ch.wwmm.oscar</groupId>
-			<artifactId>oscar4-data</artifactId>
-			<version>4.0.1</version>
 		</dependency>
 		<dependency>
 			<groupId>taglibs</groupId>
@@ -177,27 +195,10 @@
 			<version>1.1</version>
 		</dependency>
 		<dependency>
-			<groupId>cml</groupId>
-			<artifactId>cmlxom</artifactId>
-			<version>2.5.1-SNAPSHOT</version>
-			<type>jar</type>
-		</dependency>
-		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.0</version>
 			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>cml</groupId>
-			<artifactId>jumbo-testutil</artifactId>
-			<version>1.0-SNAPSHOT</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>uk.ac.cam.ch.wwmm.oscar</groupId>
-			<artifactId>oscar4-api</artifactId>
-			<version>4.0.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jsoup</groupId>
