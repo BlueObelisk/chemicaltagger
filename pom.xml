@@ -250,10 +250,10 @@
 							<report>index</report>
 							<report>summary</report>
 							<report>dependencies</report>
-							<report>project-team</report>
+							<!--  <report>project-team</report>
 							<report>license</report>
 							<report>cim</report>
-							<report>scm</report>
+							<report>scm</report>-->
 						</reports>
 					</reportSet>
 				</reportSets>
