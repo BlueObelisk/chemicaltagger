@@ -32,7 +32,7 @@
     </developerConnection>
 	</scm>
 	<developers>
-		<developer>
+ 		<developer>
 			<id>lh359</id>
 			<name>Lezan Hawizy</name>
 			<url>http://bitbucket.org/lh359</url>
@@ -254,10 +254,10 @@
 							<report>index</report>
 							<report>summary</report>
 							<report>dependencies</report>
-							<!--  <report>project-team</report>
+							<report>project-team</report>
 							<report>license</report>
 							<report>cim</report>
-							<report>scm</report>-->
+							<report>scm</report>
 						</reports>
 					</reportSet>
 				</reportSets>
@@ -286,6 +286,7 @@
 					</excludes>
 
 				</configuration>
+				
 			</plugin>
 			<!-- <plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>apt-maven-plugin</artifactId> 
 				</plugin> <plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>cobertura-maven-plugin</artifactId> 
