@@ -1,12 +1,10 @@
 ChemicalTagger:
 
-  ChemicalTagger is a phrase-based semantic NLP tool for parsing the language of chemical experiments. Tagging is based on a modular architecture and uses a combination of OSCAR, domain-specific regex and English taggers to identify parts-of-speech. ANTLR grammar is used to structure this into tree-based phrases. It takes a string as input and produces an XML document as output. A demo of ChemicalTagger can be found <a href="http://chemicaltagger.ch.cam.ac.uk/">here</a>
-
-
-  You can grab the latest released version of ChemicalTagger in jar form from {{{http://bitbucket.org/dan2097/opsin/downloads}bitbucket}}.
-  OPSIN is open source under the {{{http://www.opensource.org/licenses/artistic-license-2.0.php}artistic license 2.0}}. To see or contribute to the codebase please go to {{{http://bitbucket.org/dan2097/opsin/}bitbucket}}.
+  ChemicalTagger is a phrase-based semantic NLP tool for parsing the language of chemical experiments. Tagging is based on a modular architecture and uses a combination of OSCAR, domain-specific regex and English taggers to identify parts-of-speech. ANTLR grammar is used to structure this into tree-based phrases. It takes a string as input and produces an XML document as output.
+  ChemicalTagger is open source under the {{{http://www.opensource.org/licenses/artistic-license-2.0.php}artistic license 2.0}}. To see or contribute to the codebase please go to {{{http://bitbucket.org/lh359/chemicaltagger/}bitbucket}}.
   
   ChemicalTagger uses MAVEN for dependency management, hence the easiest way to depend on ChemicalTagger is by adding ChemicalTagger to your pom.xml. See the {{{http://chemicaltagger.ch.cam.ac.uk/instructions.html} instructions page}} for more information.
+  
   Released versions of ChemicalTagger are available from {{{https://maven.ch.cam.ac.uk/content/repositories/releases/chemicalTagger/} here}}.
   SNAPSHOT versions are available from {{{https://maven.ch.cam.ac.uk/content/repositories/snapshots/uk/ac/cam/ch/chemicaltagger} here}}.
   
