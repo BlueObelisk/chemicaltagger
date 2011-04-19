@@ -209,9 +209,10 @@ public class Utils {
 	public static Document runChemicalTagger(String text,
 			boolean runSpectraTagger) {
 		ChemistryPOSTagger chemPos = ChemistryPOSTagger.getDefaultInstance();
-
+        //ChemistryPOSTagger chemPos = new ChemistryPOSTagger(ctTokeniser, oscarTagger, regexTagger, openNLPTagger)
 		POSContainer posContainer = chemPos.runTaggers(text);
-
+		
+		//POSContainer posContainer = chemPos.runTaggers(inputSentence, prioritiseOscar, useSpectraTagger)
 		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
 				posContainer);
 

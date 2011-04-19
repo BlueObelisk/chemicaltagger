@@ -5,7 +5,7 @@ ChemicalTagger:
   
   ChemicalTagger uses MAVEN for dependency management, hence the easiest way to depend on ChemicalTagger is by adding ChemicalTagger to your pom.xml. See the {{{http://chemicaltagger.ch.cam.ac.uk/instructions.html} instructions page}} for more information.
   
-  Released versions of ChemicalTagger are available from {{{https://maven.ch.cam.ac.uk/content/repositories/releases/chemicalTagger/} here}}.
+  Released versions of ChemicalTagger are available from the {{{https://bitbucket.org/lh359/chemicaltagger/downloads}  download page }} on bitbucket.
   SNAPSHOT versions are available from {{{https://maven.ch.cam.ac.uk/content/repositories/snapshots/uk/ac/cam/ch/chemicaltagger} here}}.
   
   ChemicalTagger is available as a web service for demonstration purposes  {{{http://chemicaltagger.ch.cam.ac.uk/} here}}.
