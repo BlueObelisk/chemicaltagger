@@ -27,6 +27,7 @@ MASS;
 PERCENT;
 VOLUME;
 MOLAR;
+YIELD;
 APPARATUS;
 MULTIPLE;
 OSCARCM;
@@ -174,6 +175,7 @@ mass	: cd+ nnmass-> ^(MASS   cd+ nnmass );
 percent	: number nn? nnpercent -> ^(PERCENT   number nn? nnpercent );
 volume	: cd+ nnvol -> ^(VOLUME   cd+ nnvol );
 molar	: cd* nnmolar -> ^(MOLAR   cd* nnmolar );
+yield: percent nnyield -> ^(YIELD percent nnyield );
 
 preparationphrase
 	: vbsynthesize inas (nnexample cd| prepphrase)	;
@@ -191,7 +193,7 @@ measurements
 	:(cd nn)? (multiple|measurementtypes)    dt?;
 multiple	: cd cdunicode measurementtypes? -> ^(MULTIPLE   cd cdunicode measurementtypes? );		
 measurementtypes
-	: molar|amount|mass|percent|volume ;	
+	: molar|amount|mass|volume|yield|percent;
 
 // The RRB at the end is for leftover brackets from chemicals that didn't parse properly
 oscaronts 
