@@ -214,7 +214,7 @@ oscarCompound2Structure
 //moleculeamount1
 //	:measurements (quantity|mixture)? inof oscarCompound;	
 moleculeamount1
-	:(quantity|mixture)+ inof oscarCompound mixture?;	
+	:(quantity|mixture)+ inof quantity? oscarCompound mixture?;	
 
 moleculeamount2
 	:(quantity|mixture)* oscarCompound+  (citation|quantity|mixture)* ;	
