@@ -1,4 +1,4 @@
-None: tetraol 
+None: tetraol 113 ( 74 mg , 0.30 mmol ) 
 None: dry DMF ( 2 mL ) 
 None: Imidazole ( 40 mg , 0.60 mmol ) 
 None: TIPSCl ( 0.08 mL , 0.36 mmol ) 
@@ -11,7 +11,7 @@ None: brine ( 5 mL )
 None: ( MgSO4 ) 
 None: CH2Cl2 / MeOH ( 98 : 2 ) 
 None: 2-((2R,3R,4R,5R,6R)-3,4-Bis(4-methoxybenzyloxy)-6-((R)-1-(4-methoxy 
-None: triol 
+None: triol 114 ( 60 mg , 0.17 mmol ) 
 None: DMF ( 2 mL ) 
 None: PMBBr ( 0.15 mL , 1.0 mmol ) 
 None: TBAI 
