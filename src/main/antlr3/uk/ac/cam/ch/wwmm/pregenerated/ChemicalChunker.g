@@ -168,7 +168,7 @@ moleculeamount1
 	:(quantity|mixture)+ inof quantity? oscarCompound mixture?;
 
 moleculeamount2
-	:(quantity|mixture)* oscarCompound+  (citation|quantity|mixture)* ;
+	:(quantity|mixture)* oscarCompound+  ((cdAlphanumType|number)quantity+)?(citation|quantity|mixture)* ;
 
 unnamedmolecule
 	: unnamedmoleculeamount -> ^(UNNAMEDMOLECULE unnamedmoleculeamount);
