@@ -210,9 +210,7 @@ oscarCompound3Structure
 	:  oscarcm (dash|apost)+;	 
 oscarCompound2Structure 
 	:  oscarcm (dash oscarcm)+  dash?;	 
-//oscarCompound1 :	oscarcm oscarcm -> ^(OSCARCM  oscarcm oscarcm);
-//moleculeamount1
-//	:measurements (quantity|mixture)? inof oscarCompound;	
+
 moleculeamount1
 	:(quantity|mixture)+ inof quantity? oscarCompound mixture?;	
 
@@ -226,18 +224,12 @@ moleculeamount : moleculeamount3|moleculeamount1 | moleculeamount2 ;
 molecule          
 	:  moleculeamount-> ^(MOLECULE  moleculeamount );	
 
-//unnamedmoleculeamount1
-//	:measurements quantity? inof (cdAlphanum|cd);	
-
 cdAlphanumType	:  lrb (cdAlphanum|cd) rrb;	
 unnamedmoleculeamount1
 	: quantity inof (cdAlphanum|cd);
 unnamedmoleculeamount2
 	:(cdAlphanum|cdAlphanumType) (citation|quantity|mixture)*;	
 		
-//unnamedmoleculeamount3
-//	:measurements quantity? inof (jj? noun)+;	
-
 unnamedmoleculeamount3
 	:quantity inof (jj? noun)+;	
 
