@@ -3,10 +3,15 @@
 	<!-- NOTE: the antlr3 build is best done on the COMMANDLINE and requires 
 		set MAVEN_OPTS=-Xmx1024m -->
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>chemicalTagger</groupId>
+	<parent>
+		<groupId>uk.ac.cam.ch.wwmm</groupId>
+		<artifactId>wwmm-parent</artifactId>
+		<version>3</version>
+	</parent>
+	<groupId>uk.ac.cam.ch</groupId>
 	<artifactId>chemicalTagger</artifactId>
 	<name>chemicalTagger</name>
-	<version>1.0</version>
+	<version>1.0.1</version>
 	<developers>
 		<developer>
 			<id>lh359</id>
@@ -138,7 +143,7 @@
 		<dependency>
 			<groupId>cml</groupId>
 			<artifactId>cmlxom</artifactId>
-			<version>2.5.1-SNAPSHOT</version>
+			<version>3.0.0</version>
 			<type>jar</type>
 		</dependency>
 		<dependency>
@@ -150,7 +155,7 @@
 		<dependency>
 			<groupId>cml</groupId>
 			<artifactId>jumbo-testutil</artifactId>
-			<version>1.0-SNAPSHOT</version>
+			<version>1.0</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
