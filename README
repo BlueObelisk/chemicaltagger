@@ -37,11 +37,7 @@ public void parseChemicalSentence(){
         
         ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
 				posContainer)
-        //String tagged = posContainer.getTokenTagTupleAsString();
-        //InputStream in = new ByteArrayInputStream(tagged.getBytes("UTF-8"));
-		//ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(
-				posContainer);
-				
+
 
 	    // Create a ParseTree of the tagged input
 		chemistrySentenceParser.parseTags();
