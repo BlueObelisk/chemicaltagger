@@ -27,7 +27,6 @@ public class PostProcessTreesTest {
 		InputStream xmlStream = Utils.getInputStream(getClass(),"/uk/ac/cam/ch/wwmm/chemicaltagger/postProcessTrees/ACTA-f-00fc0883.xml");
 		Document doc = new Builder().build(xmlStream);
 		Document newDoc = postProcess.process(doc);
-		
         Assert.assertEquals(doc.getValue(), newDoc.getValue());
 		
 	}
@@ -129,4 +128,12 @@ public class PostProcessTreesTest {
 		Assert.assertEquals(1,doc.query(".//ActionPhrase[@type='ApparatusAction']").size());
 	}
 
+	@Test
+	public void testProductReactantRole1(){
+		String sentence = "13.15 g (58 mmol) of 3-(4-chloropyrid-2-yl)-3-oxopropionic acid ethyl ester are dissolved in 400 ml of ethanol, and 9.10 g (58 mmol) of 2-amidinopyridine hydrochloride are added. After the addition of 14.44 ml of 4N sodium hydroxide solution, refluxing is carried out for 7 hours. The mixture is cooled and concentrated to a fifth of its original volume. The crude product is filtered off and recrystallised from methanol, yielding 6-(4-chloropyrid-2-yl)-2-pyrid-2-yl-pyrimidin-4-ol in the form of beige needles. ";
+		Document doc = Utils.runChemicalTagger(sentence);
+		Assert.assertEquals(1,doc.query(".//MOLECULE[@role='Reactant']").size());
+		Assert.assertEquals(1,doc.query(".//MOLECULE[@role='Product']").size());
+	}
+	
 }
