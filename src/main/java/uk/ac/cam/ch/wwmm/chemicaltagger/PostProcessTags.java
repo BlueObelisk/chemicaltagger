@@ -204,6 +204,17 @@ public class PostProcessTags {
 			}
 
 		}
+		
+		if (currentTag.toLowerCase().startsWith("vb-dilute")) {//correct cases where dilute and the like are actually adjectives e.g. dilute sulfuric acid
+
+			List<String> afterList = Arrays.asList("oscar-cm");
+
+			if (stringAfter(afterList, i, combinedTags)) {
+				newTag = "JJ-CHEM";
+			}
+
+		}
+
 		/********
 		 * Gerunds
 		 */
