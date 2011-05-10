@@ -6,7 +6,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 
 /******************************************
- * Combines non-chemical hyphened tokens that have been split by OSCAR.
+ * Combines tokens that have been erroneously split by OSCAR.
  * @author lh359
  *******************************************/
 public class RecombineTokens {
@@ -22,9 +22,7 @@ public class RecombineTokens {
 	 * @param posContainer (POSContainer) .
 	 * @return posContainer (POSContainer) .
 	 *********************************************/
-	public static POSContainer recombineHyphenedTokens(POSContainer posContainer) {
-		String previousTag = "";
-		String nextTag = "";
+	public static POSContainer recombineTokens(POSContainer posContainer) {
 		List<Integer> totalIndexList = new ArrayList<Integer>();
 		List<String> nonHyphenTags = Arrays.asList(new String[] { "dash",
 				"comma", "cc", "stop" });
@@ -36,8 +34,8 @@ public class RecombineTokens {
 			}	
 			indexList = new ArrayList<Integer>();
 
-			if (posContainer.getCombinedTagsList().get(currentIndex).toLowerCase()
-					.equals("dash")) {
+			String currentTagLc = posContainer.getCombinedTagsList().get(currentIndex).toLowerCase();
+			if (currentTagLc.equals("dash")) {
 				if (currentIndex == 0
 						&& currentIndex + 1 < posContainer.getWordTokenList().size()) {
 					indexList.add(currentIndex);
@@ -49,9 +47,8 @@ public class RecombineTokens {
 					indexMap.put(indexList.get(0), indexList);
 				} else {
 
-					previousTag = posContainer.getCombinedTagsList().get(currentIndex - 1)
-							;
-					nextTag = posContainer.getCombinedTagsList().get(currentIndex + 1);
+					String previousTag = posContainer.getCombinedTagsList().get(currentIndex - 1);
+					String nextTag = posContainer.getCombinedTagsList().get(currentIndex + 1);
 
 					if (!(previousTag.startsWith("OSCAR-CM")
 							& nextTag.startsWith("OSCAR-CM") & !posContainer.getWordTokenList()
@@ -91,9 +88,24 @@ public class RecombineTokens {
 						}
 					}
 				}
-
 			}
-
+			else if (currentTagLc.equals("nn-temp")) {//Identifies cases such as "50C . was" and corrects them to "50C. was"
+				if (posContainer.getWordTokenList().get(currentIndex).toLowerCase().endsWith("c") && currentIndex >0 && currentIndex + 2 < posContainer.getWordTokenList().size()){
+					String nextTag = posContainer.getCombinedTagsList().get(currentIndex + 1);
+					if (nextTag.toLowerCase().equals("stop")){
+						String previousWord = posContainer.getWordTokenList().get(currentIndex - 1);
+						if (Character.isDigit(previousWord.charAt(previousWord.length()-1))){
+							String wordAfterStop = posContainer.getWordTokenList().get(currentIndex + 2);
+							if (Character.isLowerCase(wordAfterStop.charAt(0))){
+								indexList = new ArrayList<Integer>();
+								indexList.add(currentIndex);
+								indexList.add(currentIndex + 1);
+								indexMap.put(indexList.get(0), indexList);
+							}
+						}
+					}
+				}
+			}
 		}
 
 		return combineTokens(posContainer, indexMap);
