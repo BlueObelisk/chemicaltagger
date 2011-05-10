@@ -155,7 +155,7 @@ public class RecombineTokensTest {
 		int beforeRecombined = posContainer.getCombinedTagsList().size();
 		posContainer = RecombineTokens.recombineTokens(posContainer);
 		int afterRecombined = posContainer.getCombinedTagsList().size();
-		//Assert.assertNotSame(beforeRecombined, afterRecombined);
+		Assert.assertNotSame(beforeRecombined, afterRecombined);
 		posContainer =  new PostProcessTags().correctCombinedTagsList(posContainer);
 		Assert.assertEquals("Combined all the hyphenated words",expectedOutput, posContainer.getTokenTagTupleAsString());
 	}
