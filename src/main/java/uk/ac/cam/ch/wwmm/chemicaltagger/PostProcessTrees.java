@@ -11,17 +11,18 @@ import nu.xom.Element;
 import nu.xom.Elements;
 import nu.xom.Node;
 import nu.xom.Nodes;
+
 /***********************************************
- * Passes tagged sentences to the ANTLR grammar. 
- * And converts the output to an XML document.
+ * Passes tagged sentences to the ANTLR grammar. And converts the output to an
+ * XML document.
  * 
  * @author lh359, dl387
  *****************************************/
 public class PostProcessTrees {
 	private HashMap<String, String> actionMap = new HashMap<String, String>();
 	private static List<String> splitList = new ArrayList<String>();
-    private boolean includeWaitPhrase = true;     
-	static{
+	private boolean includeWaitPhrase = true;
+	static {
 		splitList.add("comma");
 		splitList.add("cc");
 		splitList.add("stop");
@@ -35,9 +36,10 @@ public class PostProcessTrees {
 	public PostProcessTrees() {
 		actionMap = new HashMap<String, String>();
 	}
-	
+
 	/********************************
 	 * Getter method for actionMap.
+	 * 
 	 * @return actionMap (HashMap)
 	 ********************************/
 	public HashMap<String, String> getActionMap() {
@@ -46,17 +48,19 @@ public class PostProcessTrees {
 
 	/********************************
 	 * Getter method for actionMap.
-	 * @param actionMap (HashMap)
+	 * 
+	 * @param actionMap
+	 *            (HashMap)
 	 ********************************/
 	public void setActionMap(HashMap<String, String> actionMap) {
 		this.actionMap = actionMap;
 		includeWaitPhrase = false;
 	}
-	
+
 	/********************************
 	 * Loads default ActionMap for ChemicalTagger.
 	 ********************************/
-	public void loadDefaultActionMap(){
+	public void loadDefaultActionMap() {
 		// Add Tokens
 		actionMap.put("VB-ADD", "Add");
 		actionMap.put("NN-ADD", "Add");
@@ -99,7 +103,7 @@ public class PostProcessTrees {
 		// Precipitate Tokens
 		actionMap.put("VB-PRECIPITATE", "Precipitate");
 		actionMap.put("NN-PRECIPITATE", "Precipitate");
-		
+
 		// Purify Tokens
 		actionMap.put("VB-PURIFY", "Purify");
 		actionMap.put("NN-PURIFY", "Purify");
@@ -127,10 +131,12 @@ public class PostProcessTrees {
 		// Yield Tokens
 		actionMap.put("VB-YIELD", "Yield");
 	}
-	
+
 	/**********************************************
 	 * Adds action phrases and roles to documents.
-	 * @param  doc (Document)
+	 * 
+	 * @param doc
+	 *            (Document)
 	 * @return processedDoc (Document)
 	 ********************************************/
 	public Document process(Document doc) {
@@ -142,18 +148,24 @@ public class PostProcessTrees {
 		for (int i = 0; i < nodes.size(); i++) {
 			Element sentenceNode = (Element) nodes.get(i);
 			Element newSentenceNode = processActionPhrases(sentenceNode);
+
 			root.appendChild(newSentenceNode);
 		}
 
 		processDissolve(root);
+		processReactantProduct(root);
+
 		Document processedDoc = new Document(root);
 		return processedDoc;
 
 	}
+
 	/******************************************
 	 * Converts DissolvePhrases (as they are recognised by the ANTLR grammar),
 	 * and converts them into "ActionPhrase type='Dissolve'".
-	 * @param  dissolveElement (Element)
+	 * 
+	 * @param dissolveElement
+	 *            (Element)
 	 * @return dissolveElement (Element)
 	 ********************************/
 	private Element processDissolve(Element dissolveElement) {
@@ -165,29 +177,37 @@ public class PostProcessTrees {
 
 			newDissolveElement.addAttribute(attribute);
 			processSolvent(newDissolveElement);
+
 		}
 		return dissolveElement;
 	}
 
 	/******************************************
 	 * Adds action phrases to the documents.
-	 * @param  sentenceNode (Element)
+	 * 
+	 * @param sentenceNode
+	 *            (Element)
 	 * @return newSentence (Element)
 	 ********************************/
 	private Element processActionPhrases(Element sentenceNode) {
 		Element newSentence = new Element("Sentence");
 		List<Element> elementList = new ArrayList<Element>();
 
-		boolean seenVerbOrAtionNoun = false;//a verb or a noun like purification
+		boolean seenVerbOrAtionNoun = false;// a verb or a noun like
+											// purification
 		Element actionPhrase = null;
 		for (int i = 0; i < sentenceNode.getChildCount(); i++) {
 
 			Element phraseElement = (Element) sentenceNode.getChild(i);
 
 			String actionElementName = findFirstActionElementName(phraseElement);
-			if (actionElementName != null || phraseElement.getLocalName().equals("VerbPhrase")) {
+			if (actionElementName != null
+					|| phraseElement.getLocalName().equals("VerbPhrase")) {
 				if (seenVerbOrAtionNoun) {
-					if (actionPhrase != null) {//This the start of a new phrase, so add all seen elements into the previous actionPhrase
+					if (actionPhrase != null) {// This the start of a new
+												// phrase, so add all seen
+												// elements into the previous
+												// actionPhrase
 						addListToParentNode(actionPhrase, elementList);
 						appendActionPhrase(newSentence, actionPhrase);
 						actionPhrase = null;
@@ -199,59 +219,71 @@ public class PostProcessTrees {
 				seenVerbOrAtionNoun = true;
 
 				elementList.add(phraseElement);
-                List<String> elementNames = elementListToSelfAndDescendentElementNames(elementList);
-                if (!elementNames.contains("NN-EXAMPLE")){//prevents "example of synthesis" like phrases being misidentified as action phrases
-					if (actionElementName !=null) {
+				List<String> elementNames = elementListToSelfAndDescendentElementNames(elementList);
+				if (!elementNames.contains("NN-EXAMPLE")) {// prevents
+															// "example of synthesis"
+															// like phrases
+															// being
+															// misidentified as
+															// action phrases
+					if (actionElementName != null) {
 						actionPhrase = new Element("ActionPhrase");
-						Attribute attribute = new Attribute("type", actionMap.get(actionElementName));
-						// System.out.println("* I contain keyword:: " + actionName);
+						Attribute attribute = new Attribute("type",
+								actionMap.get(actionElementName));
+						// System.out.println("* I contain keyword:: " +
+						// actionName);
 						actionPhrase.addAttribute(attribute);
-					}
-					else if (elementNames.contains("TimePhrase") && includeWaitPhrase) {
-                        Attribute attribute = new Attribute("type", "Wait");
-                        actionPhrase = createActionPhrase(elementList, attribute);
-                        appendActionPhrase(newSentence, actionPhrase);
-                        actionPhrase = null;
+					} else if (elementNames.contains("TimePhrase")
+							&& includeWaitPhrase) {
+						Attribute attribute = new Attribute("type", "Wait");
+						actionPhrase = createActionPhrase(elementList,
+								attribute);
+						appendActionPhrase(newSentence, actionPhrase);
+						actionPhrase = null;
 
-                        elementList = new ArrayList<Element>();
-                        seenVerbOrAtionNoun = false;
-	                }
-	                else if (elementNames.contains("MultipleApparatus")) {
-                        Attribute attribute = new Attribute("type", "ApparatusAction");
-                        actionPhrase = createActionPhrase(elementList, attribute);
-                        appendActionPhrase(newSentence, actionPhrase);
-                        actionPhrase = null;
-                        elementList = new ArrayList<Element>();
-                        seenVerbOrAtionNoun = false;
-	                }
-                }
-			} else if (splitList.contains(phraseElement.getLocalName().toLowerCase())) {
+						elementList = new ArrayList<Element>();
+						seenVerbOrAtionNoun = false;
+					} else if (elementNames.contains("MultipleApparatus")) {
+						Attribute attribute = new Attribute("type",
+								"ApparatusAction");
+						actionPhrase = createActionPhrase(elementList,
+								attribute);
+						appendActionPhrase(newSentence, actionPhrase);
+						actionPhrase = null;
+						elementList = new ArrayList<Element>();
+						seenVerbOrAtionNoun = false;
+					}
+				}
+			} else if (splitList.contains(phraseElement.getLocalName()
+					.toLowerCase())) {
 				if (actionPhrase != null) {
 					addListToParentNode(actionPhrase, elementList);
 					appendActionPhrase(newSentence, actionPhrase);
 					elementList = new ArrayList<Element>();
 					actionPhrase = null;
 				} else {
-					//add nodes to sentence if a verbOrAtionNoun has been seen, otherwise keep waiting for an action term
-					if (seenVerbOrAtionNoun){
+					// add nodes to sentence if a verbOrAtionNoun has been seen,
+					// otherwise keep waiting for an action term
+					if (seenVerbOrAtionNoun) {
 						addListToParentNode(newSentence, elementList);
 						elementList = new ArrayList<Element>();
-					}
-					else{
-	                   List<String> elementNames = elementListToSelfAndDescendentElementNames(elementList);
-	                   if (elementNames.contains("TimePhrase") && includeWaitPhrase) {
-	                	   Attribute attribute = new Attribute("type", "Wait");
-	                	   actionPhrase = createActionPhrase(elementList, attribute);
-	                       appendActionPhrase(newSentence, actionPhrase);
-	                       actionPhrase = null;
-	                       elementList = new ArrayList<Element>();
-	                   }
+					} else {
+						List<String> elementNames = elementListToSelfAndDescendentElementNames(elementList);
+						if (elementNames.contains("TimePhrase")
+								&& includeWaitPhrase) {
+							Attribute attribute = new Attribute("type", "Wait");
+							actionPhrase = createActionPhrase(elementList,
+									attribute);
+							appendActionPhrase(newSentence, actionPhrase);
+							actionPhrase = null;
+							elementList = new ArrayList<Element>();
+						}
 					}
 				}
-				if (elementList.isEmpty()){//append the punctuation directly if they are not within a phrase
-				    newSentence.appendChild(new Element(phraseElement));
-				}
-				else{
+				if (elementList.isEmpty()) {// append the punctuation directly
+											// if they are not within a phrase
+					newSentence.appendChild(new Element(phraseElement));
+				} else {
 					elementList.add(phraseElement);
 				}
 				seenVerbOrAtionNoun = false;
@@ -264,14 +296,16 @@ public class PostProcessTrees {
 			addListToParentNode(newSentence, elementList);
 		}
 		newSentence = checkForRolePrepPhrase(newSentence);
+
 		return newSentence;
 	}
 
 	/****************************************
-	 * Adds solvent roles for nodes within the
-	 * ActionPhrases.
-	 * Checks within dissolve,wash and extract phrases. 
-	 * @param actionElement (Element)
+	 * Adds solvent roles for nodes within the ActionPhrases. Checks within
+	 * dissolve,wash and extract phrases.
+	 * 
+	 * @param actionElement
+	 *            (Element)
 	 * @return actionElement (Element)
 	 ****************************************/
 	private Element processSolvent(Element actionElement) {
@@ -279,10 +313,9 @@ public class PostProcessTrees {
 		if (!actionElement.getLocalName().toLowerCase()
 				.contains("actionphrase")) {
 			Nodes actionNodes = actionElement.query(".//ActionPhrase");
-			if (actionNodes.size() == 0){
+			if (actionNodes.size() == 0) {
 				actionElement = null;
-			}	
-			else {
+			} else {
 				actionElement = (Element) actionNodes.get(0);
 			}
 		}
@@ -318,9 +351,58 @@ public class PostProcessTrees {
 	}
 
 	/****************************************
+	 * Adds product and reactants roles for molecules within the ActionPhrases.
+	 * Checks within dissolve,wash and extract phrases.
+	 * 
+	 * @param processedDoc
+	 *            (Element)
+	 * @return actionElement (Element)
+	 ****************************************/
+	private void processReactantProduct(Element processedDoc) {
+		List<Element> reactantList = new ArrayList<Element>();
+		List<Element> productList = new ArrayList<Element>();
+
+		Nodes reactantUnNamedMoleculeNodes = processedDoc
+				.query(".//ActionPhrase[@type='Add' or @type='Dissolve']//UNNAMEDMOLECULE");
+		Nodes productUnNamedMoleculeNodes = processedDoc
+				.query(".//ActionPhrase[@type='Yield']//UNNAMEDMOLECULE");
+		for (int i = 0; i < reactantUnNamedMoleculeNodes.size(); i++) {
+			reactantList.add((Element) reactantUnNamedMoleculeNodes.get(i));
+		}
+		for (int i = 0; i < productUnNamedMoleculeNodes.size(); i++) {
+			productList.add((Element) productUnNamedMoleculeNodes.get(i));
+		}
+
+		Nodes productMoleculeNodes = processedDoc
+				.query(".//ActionPhrase[@type='Yield']//MOLECULE");
+		Nodes reactantMoleculeNodes = processedDoc
+				.query(".//ActionPhrase[@type='Add' or @type='Dissolve']//MOLECULE");
+		
+		if (reactantList.size() == 0 && reactantMoleculeNodes.size() > 0) {
+			reactantList.add((Element) reactantMoleculeNodes.get(0));
+		}
+		
+		for (int i = 0; i < productMoleculeNodes.size(); i++) {
+			productList.add((Element) productMoleculeNodes.get(i));
+		}
+		
+		for (Element reactantMolecule : reactantList) {
+			reactantMolecule.addAttribute(new Attribute("role","Reactant"));
+		}
+		
+		for (Element productMolecule : productList) {
+			productMolecule.addAttribute(new Attribute("role","Product"));
+		}
+
+	}
+
+	/****************************************
 	 * Adds ActionPhrase tags to the document.
-	 * @param newSentence (Element)
-	 * @param actionElement (Element)
+	 * 
+	 * @param newSentence
+	 *            (Element)
+	 * @param actionElement
+	 *            (Element)
 	 **********************************/
 	private void appendActionPhrase(Element newSentence, Element actionElement) {
 
@@ -329,33 +411,35 @@ public class PostProcessTrees {
 
 	}
 
-
 	/********************************************************************************
-	 * Checks for role in preparation phrases that have the format 'Using hexane as an eluent/solvent'.
-	 * @param newSentence (Element)
+	 * Checks for role in preparation phrases that have the format 'Using hexane
+	 * as an eluent/solvent'.
+	 * 
+	 * @param newSentence
+	 *            (Element)
 	 * @return newSentence (Element)
 	 **************************************************************************/
 	private Element checkForRolePrepPhrase(Element newSentence) {
 		Nodes nodes = newSentence.query(".//RolePrepPhrase");
-		if (nodes.size() == 0){
+		if (nodes.size() == 0) {
 			return newSentence;
-		}
-		else {
+		} else {
 			for (int i = 0; i < nodes.size(); i++) {
 				Node roleNode = nodes.get(i);
-				
+
 				Element rolePhrase = (Element) roleNode;
-				Element parentPhrase = (Element)rolePhrase.getParent();
-				
+				Element parentPhrase = (Element) rolePhrase.getParent();
+
 				int roleIndex = parentPhrase.indexOf(roleNode);
-				
+
 				String role = getRole(rolePhrase);
-				if (roleIndex > 0 && role!=null) {
+				if (roleIndex > 0 && role != null) {
 					Element previousElement = (Element) parentPhrase
 							.getChild(roleIndex - 1);
 					if (previousElement.getLocalName().toLowerCase()
-							.equals("nounphrase") || previousElement.getLocalName().toLowerCase()
-							.equals("prepphrase")) {
+							.equals("nounphrase")
+							|| previousElement.getLocalName().toLowerCase()
+									.equals("prepphrase")) {
 						setRole(previousElement, role);
 					}
 				}
@@ -366,8 +450,11 @@ public class PostProcessTrees {
 
 	/*****************************************
 	 * Adds a role attribute to Molecule Nodes.
-	 * @param previousElement (Element)
-	 * @param role (String)
+	 * 
+	 * @param previousElement
+	 *            (Element)
+	 * @param role
+	 *            (String)
 	 ******************************************/
 
 	private void setRole(Element previousElement, String role) {
@@ -377,19 +464,21 @@ public class PostProcessTrees {
 			moleculeElement.addAttribute(new Attribute("role", role));
 		}
 	}
+
 	/*******************************************************************
-	 * This gets the role from preposition phrases that start with 'As'.
-	 * E.g: As a solvent/ as an eluent .
-	 * @param rolePhrase (Element)
-	 * @return role (String)
-	 /*****************************************************************/
+	 * This gets the role from preposition phrases that start with 'As'. E.g: As
+	 * a solvent/ as an eluent .
+	 * 
+	 * @param rolePhrase
+	 *            (Element)
+	 * @return role (String) /
+	 *****************************************************************/
 	private String getRole(Element rolePhrase) {
 		String role = null;
 		Nodes roleNameNodes = rolePhrase.query(".//NN-CHEMENTITY");
 		if (roleNameNodes.size() != 1) {
 			return null;
-		}
-		else {
+		} else {
 			Node roleNameNode = roleNameNodes.get(0);
 			role = roleNameNode.getValue();
 		}
@@ -402,37 +491,44 @@ public class PostProcessTrees {
 
 	/*************************************************************************
 	 * Takes a list of elements and returns a list of their localnames.
-	 * @param elementList (List<Element>)
+	 * 
+	 * @param elementList
+	 *            (List<Element>)
 	 * @return elementNames (List<String>)
 	 **************************************************************************/
-	private List<String> elementListToSelfAndDescendentElementNames(List<Element> elementList) {
+	private List<String> elementListToSelfAndDescendentElementNames(
+			List<Element> elementList) {
 		List<String> elementNames = new ArrayList<String>();
 		for (Element element : elementList) {
-			elementNames.addAll(getElementAndDescendantElementNameList(element));
+			elementNames
+					.addAll(getElementAndDescendantElementNameList(element));
 		}
 		return elementNames;
 	}
-	
+
 	/*************************************************************************
-	 * Given an element returns in document order the element's descendants localnames.
-	 * The startingElement's localname will be the first in the list
-	 * @param startingElement (Element)
+	 * Given an element returns in document order the element's descendants
+	 * localnames. The startingElement's localname will be the first in the list
+	 * 
+	 * @param startingElement
+	 *            (Element)
 	 * @return elementNames (List<String>)
 	 ************************************************************************/
-	private List<String> getElementAndDescendantElementNameList(Element startingElement) {
+	private List<String> getElementAndDescendantElementNameList(
+			Element startingElement) {
 		List<String> elementNames = new ArrayList<String>();
 		elementNames.add(startingElement.getLocalName());
 		LinkedList<Element> stack = new LinkedList<Element>();
-		Elements children =startingElement.getChildElements();
-		for (int i = children.size() -1; i >= 0; i--) {
+		Elements children = startingElement.getChildElements();
+		for (int i = children.size() - 1; i >= 0; i--) {
 			stack.add(children.get(i));
 		}
-		while (stack.size()>0){
-			Element currentElement =stack.removeLast();
+		while (stack.size() > 0) {
+			Element currentElement = stack.removeLast();
 			elementNames.add(currentElement.getLocalName());
-			children =currentElement.getChildElements();
-			for (int i = children.size() -1; i >= 0; i--) {
-				Element child =children.get(i);
+			children = currentElement.getChildElements();
+			for (int i = children.size() - 1; i >= 0; i--) {
+				Element child = children.get(i);
 				stack.add(child);
 			}
 		}
@@ -441,10 +537,14 @@ public class PostProcessTrees {
 
 	/****************************************************
 	 * Adds a list of Elements to a parent node.
-	 * @param parentNode (Element)
-	 * @param elementList (List<Element>)
+	 * 
+	 * @param parentNode
+	 *            (Element)
+	 * @param elementList
+	 *            (List<Element>)
 	 ****************************************************/
-	private void addListToParentNode(Element parentNode, List<Element> elementList) {
+	private void addListToParentNode(Element parentNode,
+			List<Element> elementList) {
 		for (Element element : elementList) {
 			Element newElement = (Element) element.copy();
 
@@ -452,24 +552,30 @@ public class PostProcessTrees {
 		}
 
 	}
-	
+
 	/*******************************************************************************
 	 * Creates an actionPhrase element with the given children and attribute.
-	 * @param children (List<Element>)
-	 * @param attribute (Attribute)
+	 * 
+	 * @param children
+	 *            (List<Element>)
+	 * @param attribute
+	 *            (Attribute)
 	 * @return actionPhrase (Element)
 	 ********************************************************************************/
-    private Element createActionPhrase(List<Element> children, Attribute attribute) {
-	    Element actionPhrase = new Element("ActionPhrase");
-	    actionPhrase.addAttribute(attribute);
-	    addListToParentNode(actionPhrase, children);
-	    return actionPhrase;
+	private Element createActionPhrase(List<Element> children,
+			Attribute attribute) {
+		Element actionPhrase = new Element("ActionPhrase");
+		actionPhrase.addAttribute(attribute);
+		addListToParentNode(actionPhrase, children);
+		return actionPhrase;
 	}
 
-   /**********************************************
-    * Searches for solvents in mixture phrases.
-    * @param actionElement (Element)
-    **********************************************/
+	/**********************************************
+	 * Searches for solvents in mixture phrases.
+	 * 
+	 * @param actionElement
+	 *            (Element)
+	 **********************************************/
 	private void findMixtureSolvents(Element actionElement) {
 		Element mixtureElement = (Element) actionElement.query(".//MIXTURE")
 				.get(0);
@@ -484,57 +590,64 @@ public class PostProcessTrees {
 			moleculeElement.addAttribute(new Attribute("role", "Solvent"));
 		}
 	}
-    /***********************************************************************
-     * Adds solvent roles to molecule nodes.
-     * Searches for molecule nodes that are after prepositions and adds a 
-     * role="Solvent" attribute.
-     * @param solventElement (Element)
-     * @param preposition (String)
-     * @param seenPreposition (boolean)
-     ***********************************************************************/
+
+	/***********************************************************************
+	 * Adds solvent roles to molecule nodes. Searches for molecule nodes that
+	 * are after prepositions and adds a role="Solvent" attribute.
+	 * 
+	 * @param solventElement
+	 *            (Element)
+	 * @param preposition
+	 *            (String)
+	 * @param seenPreposition
+	 *            (boolean)
+	 ***********************************************************************/
 	private void addSolventRole(Element solventElement, String preposition,
 			boolean seenPreposition) {
 
 		for (int i = 0; i < solventElement.getChildCount(); i++) {
-			if (!solventElement.getLocalName().contains("Unmatched")){
-			Element child = (Element) solventElement.getChild(i);
-			if (child.getLocalName().toLowerCase().contains("phrase")) {
-				addSolventRole(child, preposition, seenPreposition);
+			if (!solventElement.getLocalName().contains("Unmatched")) {
+				Element child = (Element) solventElement.getChild(i);
+				if (child.getLocalName().toLowerCase().contains("phrase")) {
+					addSolventRole(child, preposition, seenPreposition);
+				}
+				if (child.getLocalName().toLowerCase().contains("molecule")
+						&& seenPreposition) {
+					Attribute attribute = new Attribute("role", "Solvent");
+					child.addAttribute(attribute);
+				}
+				if (child.getLocalName().equals(preposition)) {
+					seenPreposition = true;
+				}
 			}
-			if (child.getLocalName().toLowerCase().contains("molecule")
-					&& seenPreposition) {
-				Attribute attribute = new Attribute("role", "Solvent");
-				child.addAttribute(attribute);
-			}
-			if (child.getLocalName().equals(preposition)) {
-				seenPreposition = true;
-			}
-		   }
 		}
 	}
 
 	/**********************************************************************
-	 * Given an element searches through its descendants in document order and returns the first
-	 * element with a localname corresponding to an entry in the actionMap
-	 * or null if none of their names are present in the actionMap.
-	 * @param startingElement (Element)
+	 * Given an element searches through its descendants in document order and
+	 * returns the first element with a localname corresponding to an entry in
+	 * the actionMap or null if none of their names are present in the
+	 * actionMap.
+	 * 
+	 * @param startingElement
+	 *            (Element)
 	 * @return elementName (String)
 	 **********************************************************************/
 	private String findFirstActionElementName(Element startingElement) {
 		LinkedList<Element> stack = new LinkedList<Element>();
-		Elements children =startingElement.getChildElements();
-		for (int i = children.size() -1; i >= 0; i--) {
+		Elements children = startingElement.getChildElements();
+		for (int i = children.size() - 1; i >= 0; i--) {
 			stack.add(children.get(i));
 		}
-		while (stack.size()>0){
-			Element currentElement =stack.removeLast();
+		while (stack.size() > 0) {
+			Element currentElement = stack.removeLast();
 			String elementName = currentElement.getLocalName();
-			if (actionMap.containsKey(elementName)){
+			if (actionMap.containsKey(elementName)) {
 				return elementName;
 			}
-			children =currentElement.getChildElements();
-			for (int i = children.size() -1; i >= 0; i--) {
-				Element child =children.get(i);
+			children = currentElement.getChildElements();
+			for (int i = children.size() - 1; i >= 0; i--) {
+				Element child = children.get(i);
 				stack.add(child);
 			}
 		}
