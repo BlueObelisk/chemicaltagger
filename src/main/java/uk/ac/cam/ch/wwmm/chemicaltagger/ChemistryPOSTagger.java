@@ -141,7 +141,7 @@ public class ChemistryPOSTagger {
 		posContainer = openNLPTagger.runTagger(posContainer);
 		posContainer.setPrioritiseOscar(prioritiseOscar);
 		posContainer.combineTaggers();	
-		posContainer = RecombineTokens.recombineHyphenedTokens(posContainer);
+		posContainer = RecombineTokens.recombineTokens(posContainer);
 		posContainer =  new PostProcessTags().correctCombinedTagsList(posContainer);
 		return posContainer;
 	}

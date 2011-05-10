@@ -48,7 +48,7 @@ public class RecombineTokensTest {
 		posContainer = openNLPTagger.runTagger(posContainer);
 		posContainer.combineTaggers();
 		int beforeRecombined = posContainer.getCombinedTagsList().size();
-		posContainer = RecombineTokens.recombineHyphenedTokens(posContainer);
+		posContainer = RecombineTokens.recombineTokens(posContainer);
 		int afterRecombined = posContainer.getCombinedTagsList().size();
 		Assert.assertNotSame("Different Size of combined List",
 				beforeRecombined, afterRecombined);
@@ -69,7 +69,7 @@ public class RecombineTokensTest {
 		posContainer = openNLPTagger.runTagger(posContainer);
 		posContainer.combineTaggers();
 		int beforeRecombined = posContainer.getCombinedTagsList().size();
-		posContainer = RecombineTokens.recombineHyphenedTokens(posContainer);
+		posContainer = RecombineTokens.recombineTokens(posContainer);
 		int afterRecombined = posContainer.getCombinedTagsList().size();
 		Assert.assertNotSame(beforeRecombined, afterRecombined);
 		posContainer =  new PostProcessTags().correctCombinedTagsList(posContainer);
@@ -89,7 +89,7 @@ public class RecombineTokensTest {
 		posContainer = openNLPTagger.runTagger(posContainer);
 		posContainer.combineTaggers();
 		int beforeRecombined = posContainer.getCombinedTagsList().size();
-		posContainer = RecombineTokens.recombineHyphenedTokens(posContainer);
+		posContainer = RecombineTokens.recombineTokens(posContainer);
 		int afterRecombined = posContainer.getCombinedTagsList().size();
 		Assert.assertNotSame(beforeRecombined, afterRecombined);
 		posContainer =  new PostProcessTags().correctCombinedTagsList(posContainer);
@@ -111,7 +111,7 @@ public class RecombineTokensTest {
 		posContainer = openNLPTagger.runTagger(posContainer);
 		posContainer.combineTaggers();
 		int beforeRecombined = posContainer.getCombinedTagsList().size();
-		posContainer = RecombineTokens.recombineHyphenedTokens(posContainer);
+		posContainer = RecombineTokens.recombineTokens(posContainer);
 		int afterRecombined = posContainer.getCombinedTagsList().size();
 		Assert.assertNotSame(beforeRecombined, afterRecombined);
 		posContainer =  new PostProcessTags().correctCombinedTagsList(posContainer);
@@ -131,13 +131,34 @@ public class RecombineTokensTest {
 		posContainer = openNLPTagger.runTagger(posContainer);
 		posContainer.combineTaggers();
 		int beforeRecombined = posContainer.getCombinedTagsList().size();
-		posContainer = RecombineTokens.recombineHyphenedTokens(posContainer);
+		posContainer = RecombineTokens.recombineTokens(posContainer);
 		int afterRecombined = posContainer.getCombinedTagsList().size();
 		Assert.assertNotSame(beforeRecombined, afterRecombined);
 		posContainer =  new PostProcessTags().correctCombinedTagsList(posContainer);
 		Assert.assertEquals("Combined all the hyphenated words",expectedOutput, posContainer.getTokenTagTupleAsString());
 	}
 	
+	
+	
+	@Test
+	public void testCelciusDotRecombination() {//recombine 50C . to 50C.
+		POSContainer posContainer = new POSContainer();
+		String inputSentence = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/recombineTokens/celciusDot.txt");
+		String expectedOutput = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/recombineTokens/celciusDotRef.txt");
+		inputSentence = Formatter.normaliseText(inputSentence);
+        posContainer.setInputText(inputSentence);
+		posContainer = oscarTokeniser.tokenise(posContainer);
+		posContainer = oscarTagger.runTagger(posContainer);
+		posContainer = regexTagger.runTagger(posContainer);
+		posContainer = openNLPTagger.runTagger(posContainer);
+		posContainer.combineTaggers();
+		int beforeRecombined = posContainer.getCombinedTagsList().size();
+		posContainer = RecombineTokens.recombineTokens(posContainer);
+		int afterRecombined = posContainer.getCombinedTagsList().size();
+		//Assert.assertNotSame(beforeRecombined, afterRecombined);
+		posContainer =  new PostProcessTags().correctCombinedTagsList(posContainer);
+		Assert.assertEquals("Combined all the hyphenated words",expectedOutput, posContainer.getTokenTagTupleAsString());
+	}
 	
 	
 	@Test
@@ -170,7 +191,7 @@ public class RecombineTokensTest {
 		posContainer = openNLPTagger.runTagger(posContainer);
 		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""),StringUtils.join(posContainer.getWordTokenList().listIterator(),"").toLowerCase());
 		posContainer.combineTaggers();
-		posContainer = RecombineTokens.recombineHyphenedTokens(posContainer);
+		posContainer = RecombineTokens.recombineTokens(posContainer);
 		posContainer =  new PostProcessTags().correctCombinedTagsList(posContainer);
 		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""),StringUtils.join(posContainer.getWordTokenList().listIterator(),"").toLowerCase());
 	
@@ -190,7 +211,7 @@ public class RecombineTokensTest {
 		posContainer = openNLPTagger.runTagger(posContainer);
 		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""),StringUtils.join(posContainer.getWordTokenList().listIterator(),"").toLowerCase());
 		posContainer.combineTaggers();
-		posContainer = RecombineTokens.recombineHyphenedTokens(posContainer);
+		posContainer = RecombineTokens.recombineTokens(posContainer);
 		posContainer =  new PostProcessTags().correctCombinedTagsList(posContainer);
 		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""),StringUtils.join(posContainer.getWordTokenList().listIterator(),"").toLowerCase());
 	}
