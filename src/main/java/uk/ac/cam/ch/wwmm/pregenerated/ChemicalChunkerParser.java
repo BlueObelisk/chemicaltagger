@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 14:05:07 uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g 2011-05-11 16:04:01
+// $ANTLR 3.2 Sep 23, 2009 14:05:07 uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g 2011-05-11 20:04:48
 
     package uk.ac.cam.ch.wwmm.pregenerated;
  
@@ -2579,7 +2579,7 @@ public class ChemicalChunkerParser extends Parser {
     };
 
     // $ANTLR start "nounphraseStructure2"
-    // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:73:1: nounphraseStructure2 : ( dtTHE )? ( dt )? ( advAdj )* ( dissolvePhrase | noun | number | ratio )+ ( ( conjunction )* ( advAdj )* ( dissolvePhrase | noun | number | ratio ) )* ( ( prepphraseOf | prepphraseIN ) ( dissolvePhrase )? )* ;
+    // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:73:1: nounphraseStructure2 : ( dtTHE )? ( dt )? ( advAdj )* ( dissolvePhrase | ratio | noun | number )+ ( ( conjunction )* ( advAdj )* ( dissolvePhrase | ratio | noun | number ) )* ( ( prepphraseOf | prepphraseIN ) ( dissolvePhrase )? )* ;
     public final ChemicalChunkerParser.nounphraseStructure2_return nounphraseStructure2() throws RecognitionException {
         ChemicalChunkerParser.nounphraseStructure2_return retval = new ChemicalChunkerParser.nounphraseStructure2_return();
         retval.start = input.LT(1);
@@ -2594,11 +2594,11 @@ public class ChemicalChunkerParser extends Parser {
 
         ChemicalChunkerParser.dissolvePhrase_return dissolvePhrase91 = null;
 
-        ChemicalChunkerParser.noun_return noun92 = null;
+        ChemicalChunkerParser.ratio_return ratio92 = null;
 
-        ChemicalChunkerParser.number_return number93 = null;
+        ChemicalChunkerParser.noun_return noun93 = null;
 
-        ChemicalChunkerParser.ratio_return ratio94 = null;
+        ChemicalChunkerParser.number_return number94 = null;
 
         ChemicalChunkerParser.conjunction_return conjunction95 = null;
 
@@ -2606,11 +2606,11 @@ public class ChemicalChunkerParser extends Parser {
 
         ChemicalChunkerParser.dissolvePhrase_return dissolvePhrase97 = null;
 
-        ChemicalChunkerParser.noun_return noun98 = null;
+        ChemicalChunkerParser.ratio_return ratio98 = null;
 
-        ChemicalChunkerParser.number_return number99 = null;
+        ChemicalChunkerParser.noun_return noun99 = null;
 
-        ChemicalChunkerParser.ratio_return ratio100 = null;
+        ChemicalChunkerParser.number_return number100 = null;
 
         ChemicalChunkerParser.prepphraseOf_return prepphraseOf101 = null;
 
@@ -2622,8 +2622,8 @@ public class ChemicalChunkerParser extends Parser {
 
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 9) ) { return retval; }
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:2: ( ( dtTHE )? ( dt )? ( advAdj )* ( dissolvePhrase | noun | number | ratio )+ ( ( conjunction )* ( advAdj )* ( dissolvePhrase | noun | number | ratio ) )* ( ( prepphraseOf | prepphraseIN ) ( dissolvePhrase )? )* )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:4: ( dtTHE )? ( dt )? ( advAdj )* ( dissolvePhrase | noun | number | ratio )+ ( ( conjunction )* ( advAdj )* ( dissolvePhrase | noun | number | ratio ) )* ( ( prepphraseOf | prepphraseIN ) ( dissolvePhrase )? )*
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:2: ( ( dtTHE )? ( dt )? ( advAdj )* ( dissolvePhrase | ratio | noun | number )+ ( ( conjunction )* ( advAdj )* ( dissolvePhrase | ratio | noun | number ) )* ( ( prepphraseOf | prepphraseIN ) ( dissolvePhrase )? )* )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:4: ( dtTHE )? ( dt )? ( advAdj )* ( dissolvePhrase | ratio | noun | number )+ ( ( conjunction )* ( advAdj )* ( dissolvePhrase | ratio | noun | number ) )* ( ( prepphraseOf | prepphraseIN ) ( dissolvePhrase )? )*
             {
             root_0 = (Object)adaptor.nil();
 
@@ -2714,7 +2714,7 @@ public class ChemicalChunkerParser extends Parser {
                 }
             } while (true);
 
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:24: ( dissolvePhrase | noun | number | ratio )+
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:24: ( dissolvePhrase | ratio | noun | number )+
             int cnt12=0;
             loop12:
             do {
@@ -2734,38 +2734,38 @@ public class ChemicalChunkerParser extends Parser {
             	    }
             	    break;
             	case 2 :
-            	    // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:40: noun
+            	    // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:40: ratio
             	    {
-            	    pushFollow(FOLLOW_noun_in_nounphraseStructure2485_static.FOLLOW_noun_in_nounphraseStructure2485);
-            	    noun92=noun();
+            	    pushFollow(FOLLOW_ratio_in_nounphraseStructure2485_static.FOLLOW_ratio_in_nounphraseStructure2485);
+            	    ratio92=ratio();
 
             	    state._fsp--;
             	    if (state.failed) return retval;
-            	    if ( state.backtracking==0 ) adaptor.addChild(root_0, noun92.getTree());
+            	    if ( state.backtracking==0 ) adaptor.addChild(root_0, ratio92.getTree());
 
             	    }
             	    break;
             	case 3 :
-            	    // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:45: number
+            	    // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:46: noun
             	    {
-            	    pushFollow(FOLLOW_number_in_nounphraseStructure2487_static.FOLLOW_number_in_nounphraseStructure2487);
-            	    number93=number();
+            	    pushFollow(FOLLOW_noun_in_nounphraseStructure2487_static.FOLLOW_noun_in_nounphraseStructure2487);
+            	    noun93=noun();
 
             	    state._fsp--;
             	    if (state.failed) return retval;
-            	    if ( state.backtracking==0 ) adaptor.addChild(root_0, number93.getTree());
+            	    if ( state.backtracking==0 ) adaptor.addChild(root_0, noun93.getTree());
 
             	    }
             	    break;
             	case 4 :
-            	    // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:52: ratio
+            	    // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:51: number
             	    {
-            	    pushFollow(FOLLOW_ratio_in_nounphraseStructure2489_static.FOLLOW_ratio_in_nounphraseStructure2489);
-            	    ratio94=ratio();
+            	    pushFollow(FOLLOW_number_in_nounphraseStructure2489_static.FOLLOW_number_in_nounphraseStructure2489);
+            	    number94=number();
 
             	    state._fsp--;
             	    if (state.failed) return retval;
-            	    if ( state.backtracking==0 ) adaptor.addChild(root_0, ratio94.getTree());
+            	    if ( state.backtracking==0 ) adaptor.addChild(root_0, number94.getTree());
 
             	    }
             	    break;
@@ -2780,14 +2780,14 @@ public class ChemicalChunkerParser extends Parser {
                 cnt12++;
             } while (true);
 
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:63: ( ( conjunction )* ( advAdj )* ( dissolvePhrase | noun | number | ratio ) )*
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:63: ( ( conjunction )* ( advAdj )* ( dissolvePhrase | ratio | noun | number ) )*
             loop16:
             do {
                 int alt16=2;
                 alt16 = dfa16.predict(input);
                 switch (alt16) {
             	case 1 :
-            	    // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:64: ( conjunction )* ( advAdj )* ( dissolvePhrase | noun | number | ratio )
+            	    // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:64: ( conjunction )* ( advAdj )* ( dissolvePhrase | ratio | noun | number )
             	    {
             	    // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:64: ( conjunction )*
             	    loop13:
@@ -2837,7 +2837,7 @@ public class ChemicalChunkerParser extends Parser {
             	        }
             	    } while (true);
 
-            	    // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:85: ( dissolvePhrase | noun | number | ratio )
+            	    // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:85: ( dissolvePhrase | ratio | noun | number )
             	    int alt15=4;
             	    alt15 = dfa15.predict(input);
             	    switch (alt15) {
@@ -2854,38 +2854,38 @@ public class ChemicalChunkerParser extends Parser {
             	            }
             	            break;
             	        case 2 :
-            	            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:101: noun
+            	            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:101: ratio
             	            {
-            	            pushFollow(FOLLOW_noun_in_nounphraseStructure2506_static.FOLLOW_noun_in_nounphraseStructure2506);
-            	            noun98=noun();
+            	            pushFollow(FOLLOW_ratio_in_nounphraseStructure2506_static.FOLLOW_ratio_in_nounphraseStructure2506);
+            	            ratio98=ratio();
 
             	            state._fsp--;
             	            if (state.failed) return retval;
-            	            if ( state.backtracking==0 ) adaptor.addChild(root_0, noun98.getTree());
+            	            if ( state.backtracking==0 ) adaptor.addChild(root_0, ratio98.getTree());
 
             	            }
             	            break;
             	        case 3 :
-            	            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:106: number
+            	            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:107: noun
             	            {
-            	            pushFollow(FOLLOW_number_in_nounphraseStructure2508_static.FOLLOW_number_in_nounphraseStructure2508);
-            	            number99=number();
+            	            pushFollow(FOLLOW_noun_in_nounphraseStructure2508_static.FOLLOW_noun_in_nounphraseStructure2508);
+            	            noun99=noun();
 
             	            state._fsp--;
             	            if (state.failed) return retval;
-            	            if ( state.backtracking==0 ) adaptor.addChild(root_0, number99.getTree());
+            	            if ( state.backtracking==0 ) adaptor.addChild(root_0, noun99.getTree());
 
             	            }
             	            break;
             	        case 4 :
-            	            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:113: ratio
+            	            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:112: number
             	            {
-            	            pushFollow(FOLLOW_ratio_in_nounphraseStructure2510_static.FOLLOW_ratio_in_nounphraseStructure2510);
-            	            ratio100=ratio();
+            	            pushFollow(FOLLOW_number_in_nounphraseStructure2510_static.FOLLOW_number_in_nounphraseStructure2510);
+            	            number100=number();
 
             	            state._fsp--;
             	            if (state.failed) return retval;
-            	            if ( state.backtracking==0 ) adaptor.addChild(root_0, ratio100.getTree());
+            	            if ( state.backtracking==0 ) adaptor.addChild(root_0, number100.getTree());
 
             	            }
             	            break;
@@ -3112,7 +3112,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: dissolveStructure, rrb, lrb
+            // elements: lrb, dissolveStructure, rrb
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -7263,7 +7263,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: inin, molecule
+            // elements: molecule, inin
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -7382,7 +7382,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: dt, nnchementity, inas
+            // elements: inas, nnchementity, dt
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -7570,7 +7570,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: advAdj, nounphrase, inMost
+            // elements: nounphrase, inMost, advAdj
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -7801,7 +7801,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: inafter, advAdj, nounphrase
+            // elements: advAdj, inafter, nounphrase
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -8267,7 +8267,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: nnApp, preapparatus, dt
+            // elements: preapparatus, nnApp, dt
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -9099,7 +9099,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: rrb, lrb, oscarcm
+            // elements: rrb, oscarcm, lrb
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -11908,7 +11908,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: quantity2, quantity1
+            // elements: quantity1, quantity2
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -12836,7 +12836,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: cd, nnmolar
+            // elements: nnmolar, cd
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -13092,7 +13092,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: nnmass, cd
+            // elements: cd, nnmass
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -13221,7 +13221,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: cd, nnvol
+            // elements: nnvol, cd
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -13437,7 +13437,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: number, nn, nnpercent
+            // elements: nnpercent, number, nn
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -13927,7 +13927,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: mixtureRatio, mixtureStructure1, mixtureStructure3, mixtureStructure2
+            // elements: mixtureRatio, mixtureStructure3, mixtureStructure2, mixtureStructure1
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -15062,7 +15062,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: mixtureStructure2, mixtureStructure1
+            // elements: mixtureStructure1, mixtureStructure2
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -19554,7 +19554,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 36, TOKEN
+            // elements: TOKEN, 36
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -19806,7 +19806,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 39
+            // elements: 39, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -19890,7 +19890,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 40, TOKEN
+            // elements: TOKEN, 40
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -20058,7 +20058,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 42
+            // elements: 42, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -20562,7 +20562,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 48
+            // elements: 48, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -20814,7 +20814,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 51
+            // elements: 51, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -21066,7 +21066,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 54, TOKEN
+            // elements: TOKEN, 54
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -21150,7 +21150,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 55, TOKEN
+            // elements: TOKEN, 55
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -21402,7 +21402,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 58
+            // elements: 58, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -21486,7 +21486,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 59
+            // elements: 59, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -21990,7 +21990,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 65
+            // elements: 65, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -22074,7 +22074,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 66, TOKEN
+            // elements: TOKEN, 66
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -22158,7 +22158,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 67
+            // elements: 67, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -22242,7 +22242,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 68
+            // elements: 68, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -22326,7 +22326,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 69
+            // elements: 69, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -22410,7 +22410,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 70
+            // elements: 70, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -22494,7 +22494,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 71, TOKEN
+            // elements: TOKEN, 71
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -22662,7 +22662,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 73
+            // elements: 73, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -22830,7 +22830,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 75
+            // elements: 75, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -23502,7 +23502,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 83, TOKEN
+            // elements: TOKEN, 83
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -23838,7 +23838,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 87
+            // elements: 87, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -24426,7 +24426,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 94
+            // elements: 94, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -24762,7 +24762,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 98
+            // elements: 98, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -25014,7 +25014,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 101
+            // elements: 101, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -25182,7 +25182,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 103
+            // elements: 103, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -25350,7 +25350,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 105
+            // elements: 105, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -25602,7 +25602,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 108
+            // elements: 108, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -25686,7 +25686,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 109
+            // elements: 109, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -25854,7 +25854,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 111, TOKEN
+            // elements: TOKEN, 111
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -25938,7 +25938,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 112
+            // elements: 112, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -26022,7 +26022,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 113
+            // elements: 113, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -26190,7 +26190,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 115, TOKEN
+            // elements: TOKEN, 115
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -26526,7 +26526,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 119, TOKEN
+            // elements: TOKEN, 119
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -26862,7 +26862,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 123, TOKEN
+            // elements: TOKEN, 123
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -26946,7 +26946,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 124
+            // elements: 124, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -27114,7 +27114,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 126, TOKEN
+            // elements: TOKEN, 126
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -27450,7 +27450,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 130
+            // elements: 130, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -27870,7 +27870,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 135
+            // elements: 135, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -28122,7 +28122,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 138
+            // elements: 138, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -28374,7 +28374,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 141
+            // elements: 141, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -28458,7 +28458,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 142, TOKEN
+            // elements: TOKEN, 142
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -28878,7 +28878,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 147, TOKEN
+            // elements: TOKEN, 147
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -28962,7 +28962,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 148, TOKEN
+            // elements: TOKEN, 148
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -29130,7 +29130,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 150
+            // elements: 150, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -29214,7 +29214,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 151
+            // elements: 151, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -29550,7 +29550,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 155
+            // elements: 155, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -29634,7 +29634,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 156, TOKEN
+            // elements: TOKEN, 156
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -29718,7 +29718,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 157
+            // elements: 157, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -29970,7 +29970,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 160
+            // elements: 160, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -30138,7 +30138,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 162, TOKEN
+            // elements: TOKEN, 162
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -30306,7 +30306,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 164
+            // elements: 164, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -30390,7 +30390,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 165, TOKEN
+            // elements: TOKEN, 165
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -30474,7 +30474,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 166
+            // elements: 166, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -30642,7 +30642,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 168
+            // elements: 168, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -30810,7 +30810,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 170
+            // elements: 170, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -30894,7 +30894,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 171, TOKEN
+            // elements: TOKEN, 171
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -30978,7 +30978,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 172, TOKEN
+            // elements: TOKEN, 172
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -31062,7 +31062,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 173, TOKEN
+            // elements: TOKEN, 173
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -31422,11 +31422,11 @@ public class ChemicalChunkerParser extends Parser {
 
     // $ANTLR start synpred87_ChemicalChunker
     public final void synpred87_ChemicalChunker_fragment() throws RecognitionException {   
-        // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:40: ( noun )
-        // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:40: noun
+        // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:40: ( ratio )
+        // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:40: ratio
         {
-        pushFollow(FOLLOW_noun_in_synpred87_ChemicalChunker485_static.FOLLOW_noun_in_synpred87_ChemicalChunker485);
-        noun();
+        pushFollow(FOLLOW_ratio_in_synpred87_ChemicalChunker485_static.FOLLOW_ratio_in_synpred87_ChemicalChunker485);
+        ratio();
 
         state._fsp--;
         if (state.failed) return ;
@@ -31437,11 +31437,11 @@ public class ChemicalChunkerParser extends Parser {
 
     // $ANTLR start synpred88_ChemicalChunker
     public final void synpred88_ChemicalChunker_fragment() throws RecognitionException {   
-        // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:45: ( number )
-        // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:45: number
+        // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:46: ( noun )
+        // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:46: noun
         {
-        pushFollow(FOLLOW_number_in_synpred88_ChemicalChunker487_static.FOLLOW_number_in_synpred88_ChemicalChunker487);
-        number();
+        pushFollow(FOLLOW_noun_in_synpred88_ChemicalChunker487_static.FOLLOW_noun_in_synpred88_ChemicalChunker487);
+        noun();
 
         state._fsp--;
         if (state.failed) return ;
@@ -31452,11 +31452,11 @@ public class ChemicalChunkerParser extends Parser {
 
     // $ANTLR start synpred89_ChemicalChunker
     public final void synpred89_ChemicalChunker_fragment() throws RecognitionException {   
-        // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:52: ( ratio )
-        // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:52: ratio
+        // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:51: ( number )
+        // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:51: number
         {
-        pushFollow(FOLLOW_ratio_in_synpred89_ChemicalChunker489_static.FOLLOW_ratio_in_synpred89_ChemicalChunker489);
-        ratio();
+        pushFollow(FOLLOW_number_in_synpred89_ChemicalChunker489_static.FOLLOW_number_in_synpred89_ChemicalChunker489);
+        number();
 
         state._fsp--;
         if (state.failed) return ;
@@ -31512,11 +31512,11 @@ public class ChemicalChunkerParser extends Parser {
 
     // $ANTLR start synpred93_ChemicalChunker
     public final void synpred93_ChemicalChunker_fragment() throws RecognitionException {   
-        // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:101: ( noun )
-        // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:101: noun
+        // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:101: ( ratio )
+        // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:101: ratio
         {
-        pushFollow(FOLLOW_noun_in_synpred93_ChemicalChunker506_static.FOLLOW_noun_in_synpred93_ChemicalChunker506);
-        noun();
+        pushFollow(FOLLOW_ratio_in_synpred93_ChemicalChunker506_static.FOLLOW_ratio_in_synpred93_ChemicalChunker506);
+        ratio();
 
         state._fsp--;
         if (state.failed) return ;
@@ -31527,11 +31527,11 @@ public class ChemicalChunkerParser extends Parser {
 
     // $ANTLR start synpred94_ChemicalChunker
     public final void synpred94_ChemicalChunker_fragment() throws RecognitionException {   
-        // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:106: ( number )
-        // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:106: number
+        // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:107: ( noun )
+        // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:107: noun
         {
-        pushFollow(FOLLOW_number_in_synpred94_ChemicalChunker508_static.FOLLOW_number_in_synpred94_ChemicalChunker508);
-        number();
+        pushFollow(FOLLOW_noun_in_synpred94_ChemicalChunker508_static.FOLLOW_noun_in_synpred94_ChemicalChunker508);
+        noun();
 
         state._fsp--;
         if (state.failed) return ;
@@ -31542,8 +31542,8 @@ public class ChemicalChunkerParser extends Parser {
 
     // $ANTLR start synpred95_ChemicalChunker
     public final void synpred95_ChemicalChunker_fragment() throws RecognitionException {   
-        // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:64: ( ( conjunction )* ( advAdj )* ( dissolvePhrase | noun | number | ratio ) )
-        // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:64: ( conjunction )* ( advAdj )* ( dissolvePhrase | noun | number | ratio )
+        // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:64: ( ( conjunction )* ( advAdj )* ( dissolvePhrase | ratio | noun | number ) )
+        // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:64: ( conjunction )* ( advAdj )* ( dissolvePhrase | ratio | noun | number )
         {
         // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:64: ( conjunction )*
         loop158:
@@ -31591,7 +31591,7 @@ public class ChemicalChunkerParser extends Parser {
             }
         } while (true);
 
-        // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:85: ( dissolvePhrase | noun | number | ratio )
+        // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:85: ( dissolvePhrase | ratio | noun | number )
         int alt160=4;
         alt160 = dfa160.predict(input);
         switch (alt160) {
@@ -31607,10 +31607,10 @@ public class ChemicalChunkerParser extends Parser {
                 }
                 break;
             case 2 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:101: noun
+                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:101: ratio
                 {
-                pushFollow(FOLLOW_noun_in_synpred95_ChemicalChunker506_static.FOLLOW_noun_in_synpred95_ChemicalChunker506);
-                noun();
+                pushFollow(FOLLOW_ratio_in_synpred95_ChemicalChunker506_static.FOLLOW_ratio_in_synpred95_ChemicalChunker506);
+                ratio();
 
                 state._fsp--;
                 if (state.failed) return ;
@@ -31618,10 +31618,10 @@ public class ChemicalChunkerParser extends Parser {
                 }
                 break;
             case 3 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:106: number
+                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:107: noun
                 {
-                pushFollow(FOLLOW_number_in_synpred95_ChemicalChunker508_static.FOLLOW_number_in_synpred95_ChemicalChunker508);
-                number();
+                pushFollow(FOLLOW_noun_in_synpred95_ChemicalChunker508_static.FOLLOW_noun_in_synpred95_ChemicalChunker508);
+                noun();
 
                 state._fsp--;
                 if (state.failed) return ;
@@ -31629,10 +31629,10 @@ public class ChemicalChunkerParser extends Parser {
                 }
                 break;
             case 4 :
-                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:113: ratio
+                // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:74:112: number
                 {
-                pushFollow(FOLLOW_ratio_in_synpred95_ChemicalChunker510_static.FOLLOW_ratio_in_synpred95_ChemicalChunker510);
-                ratio();
+                pushFollow(FOLLOW_number_in_synpred95_ChemicalChunker510_static.FOLLOW_number_in_synpred95_ChemicalChunker510);
+                number();
 
                 state._fsp--;
                 if (state.failed) return ;
@@ -42823,7 +42823,7 @@ public class ChemicalChunkerParser extends Parser {
     static final String DFA5_acceptS =
         "\1\uffff\1\3\26\uffff\1\1\1\2";
     static final String DFA5_specialS =
-        "\15\uffff\1\1\1\6\1\7\1\3\1\4\1\10\1\2\1\12\1\5\1\11\1\0\2\uffff}>";
+        "\15\uffff\1\2\1\11\1\10\1\4\1\5\1\7\1\3\1\0\1\6\1\12\1\1\2\uffff}>";
     static final String[] DFA5_transitionS = {
             "\1\1\1\5\1\7\4\1\1\6\125\1\1\14\21\1\1\2\1\3\1\4\12\1\1\10"+
             "\1\11\1\13\1\12\15\1",
@@ -42893,6 +42893,22 @@ public class ChemicalChunkerParser extends Parser {
             switch ( s ) {
 
                     case 0 : 
+                        int LA5_20 = input.LA(1);
+
+                         
+                        int index5_20 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred9_ChemicalChunker()) ) {s = 24;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index5_20);
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 1 : 
                         int LA5_23 = input.LA(1);
 
                          
@@ -42908,7 +42924,7 @@ public class ChemicalChunkerParser extends Parser {
                         if ( s>=0 ) return s;
                         break;
 
-                    case 1 : 
+                    case 2 : 
                         int LA5_13 = input.LA(1);
 
                          
@@ -42924,7 +42940,7 @@ public class ChemicalChunkerParser extends Parser {
                         if ( s>=0 ) return s;
                         break;
 
-                    case 2 : 
+                    case 3 : 
                         int LA5_19 = input.LA(1);
 
                          
@@ -42940,7 +42956,7 @@ public class ChemicalChunkerParser extends Parser {
                         if ( s>=0 ) return s;
                         break;
 
-                    case 3 : 
+                    case 4 : 
                         int LA5_16 = input.LA(1);
 
                          
@@ -42956,7 +42972,7 @@ public class ChemicalChunkerParser extends Parser {
                         if ( s>=0 ) return s;
                         break;
 
-                    case 4 : 
+                    case 5 : 
                         int LA5_17 = input.LA(1);
 
                          
@@ -42972,7 +42988,7 @@ public class ChemicalChunkerParser extends Parser {
                         if ( s>=0 ) return s;
                         break;
 
-                    case 5 : 
+                    case 6 : 
                         int LA5_21 = input.LA(1);
 
                          
@@ -42988,39 +43004,7 @@ public class ChemicalChunkerParser extends Parser {
                         if ( s>=0 ) return s;
                         break;
 
-                    case 6 : 
-                        int LA5_14 = input.LA(1);
-
-                         
-                        int index5_14 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred9_ChemicalChunker()) ) {s = 24;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index5_14);
-                        if ( s>=0 ) return s;
-                        break;
-
                     case 7 : 
-                        int LA5_15 = input.LA(1);
-
-                         
-                        int index5_15 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred9_ChemicalChunker()) ) {s = 24;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index5_15);
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 8 : 
                         int LA5_18 = input.LA(1);
 
                          
@@ -43036,7 +43020,39 @@ public class ChemicalChunkerParser extends Parser {
                         if ( s>=0 ) return s;
                         break;
 
+                    case 8 : 
+                        int LA5_15 = input.LA(1);
+
+                         
+                        int index5_15 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred9_ChemicalChunker()) ) {s = 24;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index5_15);
+                        if ( s>=0 ) return s;
+                        break;
+
                     case 9 : 
+                        int LA5_14 = input.LA(1);
+
+                         
+                        int index5_14 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred9_ChemicalChunker()) ) {s = 24;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index5_14);
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 10 : 
                         int LA5_22 = input.LA(1);
 
                          
@@ -43049,22 +43065,6 @@ public class ChemicalChunkerParser extends Parser {
 
                          
                         input.seek(index5_22);
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 10 : 
-                        int LA5_20 = input.LA(1);
-
-                         
-                        int index5_20 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred9_ChemicalChunker()) ) {s = 24;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index5_20);
                         if ( s>=0 ) return s;
                         break;
             }
@@ -43653,7 +43653,7 @@ public class ChemicalChunkerParser extends Parser {
     static final String DFA11_acceptS =
         "\7\uffff\1\2\1\1\6\uffff";
     static final String DFA11_specialS =
-        "\11\uffff\1\0\1\3\1\5\1\4\1\2\1\1}>";
+        "\11\uffff\1\0\1\5\1\1\1\3\1\4\1\2}>";
     static final String[] DFA11_transitionS = {
             "\1\7\1\4\1\6\3\7\1\uffff\1\5\1\7\20\uffff\2\7\1\uffff\22\7"+
             "\4\uffff\2\7\11\uffff\1\7\1\uffff\1\7\4\uffff\1\7\1\uffff\1"+
@@ -43732,6 +43732,22 @@ public class ChemicalChunkerParser extends Parser {
                         break;
 
                     case 1 : 
+                        int LA11_11 = input.LA(1);
+
+                         
+                        int index11_11 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred85_ChemicalChunker()) ) {s = 8;}
+
+                        else if ( (true) ) {s = 7;}
+
+                         
+                        input.seek(index11_11);
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 2 : 
                         int LA11_14 = input.LA(1);
 
                          
@@ -43747,39 +43763,7 @@ public class ChemicalChunkerParser extends Parser {
                         if ( s>=0 ) return s;
                         break;
 
-                    case 2 : 
-                        int LA11_13 = input.LA(1);
-
-                         
-                        int index11_13 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred85_ChemicalChunker()) ) {s = 8;}
-
-                        else if ( (true) ) {s = 7;}
-
-                         
-                        input.seek(index11_13);
-                        if ( s>=0 ) return s;
-                        break;
-
                     case 3 : 
-                        int LA11_10 = input.LA(1);
-
-                         
-                        int index11_10 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred85_ChemicalChunker()) ) {s = 8;}
-
-                        else if ( (true) ) {s = 7;}
-
-                         
-                        input.seek(index11_10);
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 4 : 
                         int LA11_12 = input.LA(1);
 
                          
@@ -43795,11 +43779,11 @@ public class ChemicalChunkerParser extends Parser {
                         if ( s>=0 ) return s;
                         break;
 
-                    case 5 : 
-                        int LA11_11 = input.LA(1);
+                    case 4 : 
+                        int LA11_13 = input.LA(1);
 
                          
-                        int index11_11 = input.index();
+                        int index11_13 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred85_ChemicalChunker()) ) {s = 8;}
@@ -43807,7 +43791,23 @@ public class ChemicalChunkerParser extends Parser {
                         else if ( (true) ) {s = 7;}
 
                          
-                        input.seek(index11_11);
+                        input.seek(index11_13);
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 5 : 
+                        int LA11_10 = input.LA(1);
+
+                         
+                        int index11_10 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred85_ChemicalChunker()) ) {s = 8;}
+
+                        else if ( (true) ) {s = 7;}
+
+                         
+                        input.seek(index11_10);
                         if ( s>=0 ) return s;
                         break;
             }
@@ -43828,14 +43828,14 @@ public class ChemicalChunkerParser extends Parser {
     static final String DFA12_maxS =
         "\1\u00ae\1\uffff\101\0\4\uffff";
     static final String DFA12_acceptS =
-        "\1\uffff\1\5\101\uffff\1\1\1\2\1\4\1\3";
+        "\1\uffff\1\5\101\uffff\1\1\1\2\1\3\1\4";
     static final String DFA12_specialS =
-        "\2\uffff\1\6\1\1\1\15\1\53\1\57\1\30\1\62\1\22\1\40\1\21\1\100"+
-        "\1\0\1\26\1\33\1\17\1\75\1\20\1\42\1\14\1\23\1\5\1\63\1\55\1\10"+
-        "\1\61\1\74\1\27\1\65\1\41\1\25\1\2\1\67\1\3\1\31\1\77\1\46\1\76"+
-        "\1\72\1\44\1\35\1\64\1\54\1\16\1\13\1\43\1\24\1\52\1\32\1\12\1\71"+
-        "\1\60\1\34\1\11\1\73\1\51\1\56\1\66\1\50\1\36\1\70\1\7\1\47\1\4"+
-        "\1\37\1\45\4\uffff}>";
+        "\2\uffff\1\1\1\20\1\14\1\46\1\23\1\37\1\63\1\16\1\41\1\74\1\70"+
+        "\1\24\1\27\1\31\1\22\1\76\1\17\1\42\1\6\1\0\1\2\1\62\1\54\1\7\1"+
+        "\60\1\77\1\25\1\61\1\35\1\56\1\3\1\71\1\12\1\26\1\100\1\47\1\75"+
+        "\1\72\1\44\1\34\1\65\1\53\1\15\1\13\1\40\1\21\1\52\1\32\1\11\1\64"+
+        "\1\55\1\30\1\10\1\73\1\45\1\57\1\66\1\50\1\33\1\67\1\5\1\51\1\4"+
+        "\1\36\1\43\4\uffff}>";
     static final String[] DFA12_transitionS = {
             "\1\15\1\6\1\10\1\102\1\35\1\40\1\1\1\7\1\17\20\1\1\26\1\36"+
             "\1\1\1\46\1\14\1\37\1\41\1\55\1\25\1\42\1\43\1\44\1\45\1\23"+
@@ -43947,7 +43947,7 @@ public class ChemicalChunkerParser extends Parser {
             this.transition = DFA12_transition;
         }
         public String getDescription() {
-            return "()+ loopback of 74:24: ( dissolvePhrase | noun | number | ratio )+";
+            return "()+ loopback of 74:24: ( dissolvePhrase | ratio | noun | number )+";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -43955,48 +43955,62 @@ public class ChemicalChunkerParser extends Parser {
             switch ( s ) {
 
                     case 0 : 
-                        int LA12_13 = input.LA(1);
+                        int LA12_21 = input.LA(1);
 
                          
-                        int index12_13 = input.index();
+                        int index12_21 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred86_ChemicalChunker()) ) {s = 67;}
+                        if ( (synpred87_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (synpred87_ChemicalChunker()) ) {s = 68;}
-
-                        else if ( (synpred88_ChemicalChunker()) ) {s = 70;}
-
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
                          
-                        input.seek(index12_13);
+                        input.seek(index12_21);
                         if ( s>=0 ) return s;
                         break;
 
                     case 1 : 
-                        int LA12_3 = input.LA(1);
+                        int LA12_2 = input.LA(1);
 
                          
-                        int index12_3 = input.index();
+                        int index12_2 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred86_ChemicalChunker()) ) {s = 67;}
 
                         else if ( (synpred87_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
                          
-                        input.seek(index12_3);
+                        input.seek(index12_2);
                         if ( s>=0 ) return s;
                         break;
 
                     case 2 : 
+                        int LA12_22 = input.LA(1);
+
+                         
+                        int index12_22 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred87_ChemicalChunker()) ) {s = 68;}
+
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index12_22);
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 3 : 
                         int LA12_32 = input.LA(1);
 
                          
@@ -44005,30 +44019,12 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred87_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
                          
                         input.seek(index12_32);
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 3 : 
-                        int LA12_34 = input.LA(1);
-
-                         
-                        int index12_34 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred87_ChemicalChunker()) ) {s = 68;}
-
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index12_34);
                         if ( s>=0 ) return s;
                         break;
 
@@ -44041,7 +44037,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred87_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -44051,44 +44047,6 @@ public class ChemicalChunkerParser extends Parser {
                         break;
 
                     case 5 : 
-                        int LA12_22 = input.LA(1);
-
-                         
-                        int index12_22 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred87_ChemicalChunker()) ) {s = 68;}
-
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index12_22);
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 6 : 
-                        int LA12_2 = input.LA(1);
-
-                         
-                        int index12_2 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred86_ChemicalChunker()) ) {s = 67;}
-
-                        else if ( (synpred87_ChemicalChunker()) ) {s = 68;}
-
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index12_2);
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 7 : 
                         int LA12_62 = input.LA(1);
 
                          
@@ -44097,7 +44055,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred87_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -44106,7 +44064,25 @@ public class ChemicalChunkerParser extends Parser {
                         if ( s>=0 ) return s;
                         break;
 
-                    case 8 : 
+                    case 6 : 
+                        int LA12_20 = input.LA(1);
+
+                         
+                        int index12_20 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred87_ChemicalChunker()) ) {s = 68;}
+
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index12_20);
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 7 : 
                         int LA12_25 = input.LA(1);
 
                          
@@ -44115,7 +44091,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred87_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -44124,7 +44100,7 @@ public class ChemicalChunkerParser extends Parser {
                         if ( s>=0 ) return s;
                         break;
 
-                    case 9 : 
+                    case 8 : 
                         int LA12_54 = input.LA(1);
 
                          
@@ -44133,7 +44109,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred87_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -44142,7 +44118,7 @@ public class ChemicalChunkerParser extends Parser {
                         if ( s>=0 ) return s;
                         break;
 
-                    case 10 : 
+                    case 9 : 
                         int LA12_50 = input.LA(1);
 
                          
@@ -44151,12 +44127,30 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred87_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
                          
                         input.seek(index12_50);
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 10 : 
+                        int LA12_34 = input.LA(1);
+
+                         
+                        int index12_34 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred87_ChemicalChunker()) ) {s = 68;}
+
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index12_34);
                         if ( s>=0 ) return s;
                         break;
 
@@ -44169,7 +44163,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred87_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -44179,24 +44173,6 @@ public class ChemicalChunkerParser extends Parser {
                         break;
 
                     case 12 : 
-                        int LA12_20 = input.LA(1);
-
-                         
-                        int index12_20 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred87_ChemicalChunker()) ) {s = 68;}
-
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index12_20);
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 13 : 
                         int LA12_4 = input.LA(1);
 
                          
@@ -44207,7 +44183,7 @@ public class ChemicalChunkerParser extends Parser {
 
                         else if ( (synpred87_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -44216,7 +44192,7 @@ public class ChemicalChunkerParser extends Parser {
                         if ( s>=0 ) return s;
                         break;
 
-                    case 14 : 
+                    case 13 : 
                         int LA12_44 = input.LA(1);
 
                          
@@ -44225,7 +44201,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred87_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -44234,65 +44210,7 @@ public class ChemicalChunkerParser extends Parser {
                         if ( s>=0 ) return s;
                         break;
 
-                    case 15 : 
-                        int LA12_16 = input.LA(1);
-
-                         
-                        int index12_16 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred87_ChemicalChunker()) ) {s = 68;}
-
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index12_16);
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 16 : 
-                        int LA12_18 = input.LA(1);
-
-                         
-                        int index12_18 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred87_ChemicalChunker()) ) {s = 68;}
-
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index12_18);
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 17 : 
-                        int LA12_11 = input.LA(1);
-
-                         
-                        int index12_11 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred86_ChemicalChunker()) ) {s = 67;}
-
-                        else if ( (synpred87_ChemicalChunker()) ) {s = 68;}
-
-                        else if ( (synpred88_ChemicalChunker()) ) {s = 70;}
-
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index12_11);
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 18 : 
+                    case 14 : 
                         int LA12_9 = input.LA(1);
 
                          
@@ -44303,7 +44221,7 @@ public class ChemicalChunkerParser extends Parser {
 
                         else if ( (synpred87_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -44312,25 +44230,45 @@ public class ChemicalChunkerParser extends Parser {
                         if ( s>=0 ) return s;
                         break;
 
-                    case 19 : 
-                        int LA12_21 = input.LA(1);
+                    case 15 : 
+                        int LA12_18 = input.LA(1);
 
                          
-                        int index12_21 = input.index();
+                        int index12_18 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred87_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
                          
-                        input.seek(index12_21);
+                        input.seek(index12_18);
                         if ( s>=0 ) return s;
                         break;
 
-                    case 20 : 
+                    case 16 : 
+                        int LA12_3 = input.LA(1);
+
+                         
+                        int index12_3 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred86_ChemicalChunker()) ) {s = 67;}
+
+                        else if ( (synpred87_ChemicalChunker()) ) {s = 68;}
+
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index12_3);
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 17 : 
                         int LA12_47 = input.LA(1);
 
                          
@@ -44339,7 +44277,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred87_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -44348,25 +44286,103 @@ public class ChemicalChunkerParser extends Parser {
                         if ( s>=0 ) return s;
                         break;
 
-                    case 21 : 
-                        int LA12_31 = input.LA(1);
+                    case 18 : 
+                        int LA12_16 = input.LA(1);
 
                          
-                        int index12_31 = input.index();
+                        int index12_16 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred87_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
                          
-                        input.seek(index12_31);
+                        input.seek(index12_16);
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 19 : 
+                        int LA12_6 = input.LA(1);
+
+                         
+                        int index12_6 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred86_ChemicalChunker()) ) {s = 67;}
+
+                        else if ( (synpred87_ChemicalChunker()) ) {s = 68;}
+
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index12_6);
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 20 : 
+                        int LA12_13 = input.LA(1);
+
+                         
+                        int index12_13 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred86_ChemicalChunker()) ) {s = 67;}
+
+                        else if ( (synpred87_ChemicalChunker()) ) {s = 68;}
+
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
+
+                        else if ( (synpred89_ChemicalChunker()) ) {s = 70;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index12_13);
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 21 : 
+                        int LA12_28 = input.LA(1);
+
+                         
+                        int index12_28 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred87_ChemicalChunker()) ) {s = 68;}
+
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index12_28);
                         if ( s>=0 ) return s;
                         break;
 
                     case 22 : 
+                        int LA12_35 = input.LA(1);
+
+                         
+                        int index12_35 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred87_ChemicalChunker()) ) {s = 68;}
+
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index12_35);
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 23 : 
                         int LA12_14 = input.LA(1);
 
                          
@@ -44377,7 +44393,7 @@ public class ChemicalChunkerParser extends Parser {
 
                         else if ( (synpred87_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -44386,59 +44402,41 @@ public class ChemicalChunkerParser extends Parser {
                         if ( s>=0 ) return s;
                         break;
 
-                    case 23 : 
-                        int LA12_28 = input.LA(1);
+                    case 24 : 
+                        int LA12_53 = input.LA(1);
 
                          
-                        int index12_28 = input.index();
+                        int index12_53 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred87_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
                          
-                        input.seek(index12_28);
+                        input.seek(index12_53);
                         if ( s>=0 ) return s;
                         break;
 
-                    case 24 : 
-                        int LA12_7 = input.LA(1);
+                    case 25 : 
+                        int LA12_15 = input.LA(1);
 
                          
-                        int index12_7 = input.index();
+                        int index12_15 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred86_ChemicalChunker()) ) {s = 67;}
 
                         else if ( (synpred87_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
                          
-                        input.seek(index12_7);
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 25 : 
-                        int LA12_35 = input.LA(1);
-
-                         
-                        int index12_35 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred87_ChemicalChunker()) ) {s = 68;}
-
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index12_35);
+                        input.seek(index12_15);
                         if ( s>=0 ) return s;
                         break;
 
@@ -44451,7 +44449,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred87_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -44461,62 +44459,6 @@ public class ChemicalChunkerParser extends Parser {
                         break;
 
                     case 27 : 
-                        int LA12_15 = input.LA(1);
-
-                         
-                        int index12_15 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred86_ChemicalChunker()) ) {s = 67;}
-
-                        else if ( (synpred87_ChemicalChunker()) ) {s = 68;}
-
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index12_15);
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 28 : 
-                        int LA12_53 = input.LA(1);
-
-                         
-                        int index12_53 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred87_ChemicalChunker()) ) {s = 68;}
-
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index12_53);
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 29 : 
-                        int LA12_41 = input.LA(1);
-
-                         
-                        int index12_41 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred87_ChemicalChunker()) ) {s = 68;}
-
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index12_41);
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 30 : 
                         int LA12_60 = input.LA(1);
 
                          
@@ -44525,7 +44467,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred87_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -44534,7 +44476,43 @@ public class ChemicalChunkerParser extends Parser {
                         if ( s>=0 ) return s;
                         break;
 
-                    case 31 : 
+                    case 28 : 
+                        int LA12_41 = input.LA(1);
+
+                         
+                        int index12_41 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred87_ChemicalChunker()) ) {s = 68;}
+
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index12_41);
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 29 : 
+                        int LA12_30 = input.LA(1);
+
+                         
+                        int index12_30 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred87_ChemicalChunker()) ) {s = 68;}
+
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index12_30);
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 30 : 
                         int LA12_65 = input.LA(1);
 
                          
@@ -44543,7 +44521,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred87_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -44552,7 +44530,45 @@ public class ChemicalChunkerParser extends Parser {
                         if ( s>=0 ) return s;
                         break;
 
+                    case 31 : 
+                        int LA12_7 = input.LA(1);
+
+                         
+                        int index12_7 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred86_ChemicalChunker()) ) {s = 67;}
+
+                        else if ( (synpred87_ChemicalChunker()) ) {s = 68;}
+
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index12_7);
+                        if ( s>=0 ) return s;
+                        break;
+
                     case 32 : 
+                        int LA12_46 = input.LA(1);
+
+                         
+                        int index12_46 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred87_ChemicalChunker()) ) {s = 68;}
+
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index12_46);
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 33 : 
                         int LA12_10 = input.LA(1);
 
                          
@@ -44563,30 +44579,12 @@ public class ChemicalChunkerParser extends Parser {
 
                         else if ( (synpred87_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
                          
                         input.seek(index12_10);
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 33 : 
-                        int LA12_30 = input.LA(1);
-
-                         
-                        int index12_30 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred87_ChemicalChunker()) ) {s = 68;}
-
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index12_30);
                         if ( s>=0 ) return s;
                         break;
 
@@ -44599,7 +44597,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred87_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -44609,20 +44607,20 @@ public class ChemicalChunkerParser extends Parser {
                         break;
 
                     case 35 : 
-                        int LA12_46 = input.LA(1);
+                        int LA12_66 = input.LA(1);
 
                          
-                        int index12_46 = input.index();
+                        int index12_66 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred87_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
                          
-                        input.seek(index12_46);
+                        input.seek(index12_66);
                         if ( s>=0 ) return s;
                         break;
 
@@ -44635,7 +44633,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred87_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -44645,24 +44643,44 @@ public class ChemicalChunkerParser extends Parser {
                         break;
 
                     case 37 : 
-                        int LA12_66 = input.LA(1);
+                        int LA12_56 = input.LA(1);
 
                          
-                        int index12_66 = input.index();
+                        int index12_56 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred87_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
                          
-                        input.seek(index12_66);
+                        input.seek(index12_56);
                         if ( s>=0 ) return s;
                         break;
 
                     case 38 : 
+                        int LA12_5 = input.LA(1);
+
+                         
+                        int index12_5 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred86_ChemicalChunker()) ) {s = 67;}
+
+                        else if ( (synpred87_ChemicalChunker()) ) {s = 68;}
+
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index12_5);
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 39 : 
                         int LA12_37 = input.LA(1);
 
                          
@@ -44671,30 +44689,12 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred87_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
                          
                         input.seek(index12_37);
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 39 : 
-                        int LA12_63 = input.LA(1);
-
-                         
-                        int index12_63 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred87_ChemicalChunker()) ) {s = 68;}
-
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index12_63);
                         if ( s>=0 ) return s;
                         break;
 
@@ -44707,7 +44707,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred87_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -44717,20 +44717,20 @@ public class ChemicalChunkerParser extends Parser {
                         break;
 
                     case 41 : 
-                        int LA12_56 = input.LA(1);
+                        int LA12_63 = input.LA(1);
 
                          
-                        int index12_56 = input.index();
+                        int index12_63 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred87_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
                          
-                        input.seek(index12_56);
+                        input.seek(index12_63);
                         if ( s>=0 ) return s;
                         break;
 
@@ -44743,7 +44743,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred87_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -44753,26 +44753,6 @@ public class ChemicalChunkerParser extends Parser {
                         break;
 
                     case 43 : 
-                        int LA12_5 = input.LA(1);
-
-                         
-                        int index12_5 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred86_ChemicalChunker()) ) {s = 67;}
-
-                        else if ( (synpred87_ChemicalChunker()) ) {s = 68;}
-
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index12_5);
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 44 : 
                         int LA12_43 = input.LA(1);
 
                          
@@ -44781,7 +44761,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred87_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -44790,7 +44770,7 @@ public class ChemicalChunkerParser extends Parser {
                         if ( s>=0 ) return s;
                         break;
 
-                    case 45 : 
+                    case 44 : 
                         int LA12_24 = input.LA(1);
 
                          
@@ -44799,7 +44779,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred87_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -44808,45 +44788,7 @@ public class ChemicalChunkerParser extends Parser {
                         if ( s>=0 ) return s;
                         break;
 
-                    case 46 : 
-                        int LA12_57 = input.LA(1);
-
-                         
-                        int index12_57 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred87_ChemicalChunker()) ) {s = 68;}
-
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index12_57);
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 47 : 
-                        int LA12_6 = input.LA(1);
-
-                         
-                        int index12_6 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred86_ChemicalChunker()) ) {s = 67;}
-
-                        else if ( (synpred87_ChemicalChunker()) ) {s = 68;}
-
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index12_6);
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 48 : 
+                    case 45 : 
                         int LA12_52 = input.LA(1);
 
                          
@@ -44855,7 +44797,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred87_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -44864,7 +44806,43 @@ public class ChemicalChunkerParser extends Parser {
                         if ( s>=0 ) return s;
                         break;
 
-                    case 49 : 
+                    case 46 : 
+                        int LA12_31 = input.LA(1);
+
+                         
+                        int index12_31 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred87_ChemicalChunker()) ) {s = 68;}
+
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index12_31);
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 47 : 
+                        int LA12_57 = input.LA(1);
+
+                         
+                        int index12_57 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred87_ChemicalChunker()) ) {s = 68;}
+
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index12_57);
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 48 : 
                         int LA12_26 = input.LA(1);
 
                          
@@ -44873,7 +44851,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred87_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -44882,7 +44860,43 @@ public class ChemicalChunkerParser extends Parser {
                         if ( s>=0 ) return s;
                         break;
 
+                    case 49 : 
+                        int LA12_29 = input.LA(1);
+
+                         
+                        int index12_29 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred87_ChemicalChunker()) ) {s = 68;}
+
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index12_29);
+                        if ( s>=0 ) return s;
+                        break;
+
                     case 50 : 
+                        int LA12_23 = input.LA(1);
+
+                         
+                        int index12_23 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred87_ChemicalChunker()) ) {s = 68;}
+
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index12_23);
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 51 : 
                         int LA12_8 = input.LA(1);
 
                          
@@ -44893,7 +44907,7 @@ public class ChemicalChunkerParser extends Parser {
 
                         else if ( (synpred87_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -44902,25 +44916,25 @@ public class ChemicalChunkerParser extends Parser {
                         if ( s>=0 ) return s;
                         break;
 
-                    case 51 : 
-                        int LA12_23 = input.LA(1);
+                    case 52 : 
+                        int LA12_51 = input.LA(1);
 
                          
-                        int index12_23 = input.index();
+                        int index12_51 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred87_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
                          
-                        input.seek(index12_23);
+                        input.seek(index12_51);
                         if ( s>=0 ) return s;
                         break;
 
-                    case 52 : 
+                    case 53 : 
                         int LA12_42 = input.LA(1);
 
                          
@@ -44929,30 +44943,12 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred87_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
                          
                         input.seek(index12_42);
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 53 : 
-                        int LA12_29 = input.LA(1);
-
-                         
-                        int index12_29 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred87_ChemicalChunker()) ) {s = 68;}
-
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index12_29);
                         if ( s>=0 ) return s;
                         break;
 
@@ -44965,7 +44961,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred87_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -44975,24 +44971,6 @@ public class ChemicalChunkerParser extends Parser {
                         break;
 
                     case 55 : 
-                        int LA12_33 = input.LA(1);
-
-                         
-                        int index12_33 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred87_ChemicalChunker()) ) {s = 68;}
-
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index12_33);
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 56 : 
                         int LA12_61 = input.LA(1);
 
                          
@@ -45001,7 +44979,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred87_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -45010,21 +44988,41 @@ public class ChemicalChunkerParser extends Parser {
                         if ( s>=0 ) return s;
                         break;
 
-                    case 57 : 
-                        int LA12_51 = input.LA(1);
+                    case 56 : 
+                        int LA12_12 = input.LA(1);
 
                          
-                        int index12_51 = input.index();
+                        int index12_12 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred87_ChemicalChunker()) ) {s = 68;}
+                        if ( (synpred86_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred87_ChemicalChunker()) ) {s = 68;}
+
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
                          
-                        input.seek(index12_51);
+                        input.seek(index12_12);
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 57 : 
+                        int LA12_33 = input.LA(1);
+
+                         
+                        int index12_33 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred87_ChemicalChunker()) ) {s = 68;}
+
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index12_33);
                         if ( s>=0 ) return s;
                         break;
 
@@ -45037,7 +45035,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred87_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -45055,7 +45053,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred87_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -45065,42 +45063,28 @@ public class ChemicalChunkerParser extends Parser {
                         break;
 
                     case 60 : 
-                        int LA12_27 = input.LA(1);
+                        int LA12_11 = input.LA(1);
 
                          
-                        int index12_27 = input.index();
+                        int index12_11 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred87_ChemicalChunker()) ) {s = 68;}
+                        if ( (synpred86_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred87_ChemicalChunker()) ) {s = 68;}
+
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
+
+                        else if ( (synpred89_ChemicalChunker()) ) {s = 70;}
 
                         else if ( (true) ) {s = 1;}
 
                          
-                        input.seek(index12_27);
+                        input.seek(index12_11);
                         if ( s>=0 ) return s;
                         break;
 
                     case 61 : 
-                        int LA12_17 = input.LA(1);
-
-                         
-                        int index12_17 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred87_ChemicalChunker()) ) {s = 68;}
-
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index12_17);
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 62 : 
                         int LA12_38 = input.LA(1);
 
                          
@@ -45109,7 +45093,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred87_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -45118,7 +45102,43 @@ public class ChemicalChunkerParser extends Parser {
                         if ( s>=0 ) return s;
                         break;
 
+                    case 62 : 
+                        int LA12_17 = input.LA(1);
+
+                         
+                        int index12_17 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred87_ChemicalChunker()) ) {s = 68;}
+
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index12_17);
+                        if ( s>=0 ) return s;
+                        break;
+
                     case 63 : 
+                        int LA12_27 = input.LA(1);
+
+                         
+                        int index12_27 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred87_ChemicalChunker()) ) {s = 68;}
+
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index12_27);
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 64 : 
                         int LA12_36 = input.LA(1);
 
                          
@@ -45127,32 +45147,12 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred87_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred88_ChemicalChunker()) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
                          
                         input.seek(index12_36);
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 64 : 
-                        int LA12_12 = input.LA(1);
-
-                         
-                        int index12_12 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred86_ChemicalChunker()) ) {s = 67;}
-
-                        else if ( (synpred87_ChemicalChunker()) ) {s = 68;}
-
-                        else if ( (synpred89_ChemicalChunker()) ) {s = 69;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index12_12);
                         if ( s>=0 ) return s;
                         break;
             }
@@ -45295,7 +45295,7 @@ public class ChemicalChunkerParser extends Parser {
             this.transition = DFA16_transition;
         }
         public String getDescription() {
-            return "()* loopback of 74:63: ( ( conjunction )* ( advAdj )* ( dissolvePhrase | noun | number | ratio ) )*";
+            return "()* loopback of 74:63: ( ( conjunction )* ( advAdj )* ( dissolvePhrase | ratio | noun | number ) )*";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -46768,7 +46768,7 @@ public class ChemicalChunkerParser extends Parser {
     static final String DFA15_maxS =
         "\1\u00ae\101\0\4\uffff";
     static final String DFA15_acceptS =
-        "\102\uffff\1\1\1\2\1\4\1\3";
+        "\102\uffff\1\1\1\2\1\3\1\4";
     static final String DFA15_specialS =
         "\1\uffff\1\0\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1"+
         "\14\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1\26\1\27\1\30"+
@@ -46888,7 +46888,7 @@ public class ChemicalChunkerParser extends Parser {
             this.transition = DFA15_transition;
         }
         public String getDescription() {
-            return "74:85: ( dissolvePhrase | noun | number | ratio )";
+            return "74:85: ( dissolvePhrase | ratio | noun | number )";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -46906,7 +46906,7 @@ public class ChemicalChunkerParser extends Parser {
 
                         else if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_1);
@@ -46924,7 +46924,7 @@ public class ChemicalChunkerParser extends Parser {
 
                         else if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_2);
@@ -46942,7 +46942,7 @@ public class ChemicalChunkerParser extends Parser {
 
                         else if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_3);
@@ -46960,7 +46960,7 @@ public class ChemicalChunkerParser extends Parser {
 
                         else if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_4);
@@ -46978,7 +46978,7 @@ public class ChemicalChunkerParser extends Parser {
 
                         else if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_5);
@@ -46996,7 +46996,7 @@ public class ChemicalChunkerParser extends Parser {
 
                         else if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_6);
@@ -47014,7 +47014,7 @@ public class ChemicalChunkerParser extends Parser {
 
                         else if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_7);
@@ -47032,7 +47032,7 @@ public class ChemicalChunkerParser extends Parser {
 
                         else if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_8);
@@ -47050,9 +47050,9 @@ public class ChemicalChunkerParser extends Parser {
 
                         else if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (synpred94_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (true) ) {s = 69;}
 
                          
                         input.seek(index15_9);
@@ -47070,7 +47070,7 @@ public class ChemicalChunkerParser extends Parser {
 
                         else if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_10);
@@ -47088,9 +47088,9 @@ public class ChemicalChunkerParser extends Parser {
 
                         else if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (synpred94_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (true) ) {s = 69;}
 
                          
                         input.seek(index15_11);
@@ -47108,7 +47108,7 @@ public class ChemicalChunkerParser extends Parser {
 
                         else if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_12);
@@ -47126,7 +47126,7 @@ public class ChemicalChunkerParser extends Parser {
 
                         else if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_13);
@@ -47144,7 +47144,7 @@ public class ChemicalChunkerParser extends Parser {
 
                         else if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_14);
@@ -47160,7 +47160,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_15);
@@ -47176,7 +47176,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_16);
@@ -47192,7 +47192,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_17);
@@ -47208,7 +47208,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_18);
@@ -47224,7 +47224,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_19);
@@ -47240,7 +47240,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_20);
@@ -47256,7 +47256,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_21);
@@ -47272,7 +47272,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_22);
@@ -47288,7 +47288,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_23);
@@ -47304,7 +47304,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_24);
@@ -47320,7 +47320,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_25);
@@ -47336,7 +47336,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_26);
@@ -47352,7 +47352,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_27);
@@ -47368,7 +47368,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_28);
@@ -47384,7 +47384,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_29);
@@ -47400,7 +47400,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_30);
@@ -47416,7 +47416,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_31);
@@ -47432,7 +47432,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_32);
@@ -47448,7 +47448,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_33);
@@ -47464,7 +47464,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_34);
@@ -47480,7 +47480,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_35);
@@ -47496,7 +47496,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_36);
@@ -47512,7 +47512,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_37);
@@ -47528,7 +47528,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_38);
@@ -47544,7 +47544,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_39);
@@ -47560,7 +47560,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_40);
@@ -47576,7 +47576,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_41);
@@ -47592,7 +47592,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_42);
@@ -47608,7 +47608,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_43);
@@ -47624,7 +47624,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_44);
@@ -47640,7 +47640,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_45);
@@ -47656,7 +47656,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_46);
@@ -47672,7 +47672,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_47);
@@ -47688,7 +47688,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_48);
@@ -47704,7 +47704,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_49);
@@ -47720,7 +47720,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_50);
@@ -47736,7 +47736,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_51);
@@ -47752,7 +47752,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_52);
@@ -47768,7 +47768,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_53);
@@ -47784,7 +47784,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_54);
@@ -47800,7 +47800,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_55);
@@ -47816,7 +47816,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_56);
@@ -47832,7 +47832,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_57);
@@ -47848,7 +47848,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_58);
@@ -47864,7 +47864,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_59);
@@ -47880,7 +47880,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_60);
@@ -47896,7 +47896,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_61);
@@ -47912,7 +47912,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_62);
@@ -47928,7 +47928,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_63);
@@ -47944,7 +47944,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_64);
@@ -47960,7 +47960,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index15_65);
@@ -50909,7 +50909,7 @@ public class ChemicalChunkerParser extends Parser {
     static final String DFA41_acceptS =
         "\1\uffff\1\2\10\uffff\1\1";
     static final String DFA41_specialS =
-        "\6\uffff\1\0\1\1\1\2\1\3\1\uffff}>";
+        "\6\uffff\1\3\1\1\1\0\1\2\1\uffff}>";
     static final String[] DFA41_transitionS = {
             "\174\1\1\2\1\3\1\5\1\4\15\1",
             "",
@@ -50963,10 +50963,10 @@ public class ChemicalChunkerParser extends Parser {
             switch ( s ) {
 
                     case 0 : 
-                        int LA41_6 = input.LA(1);
+                        int LA41_8 = input.LA(1);
 
                          
-                        int index41_6 = input.index();
+                        int index41_8 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred121_ChemicalChunker()) ) {s = 10;}
@@ -50974,7 +50974,7 @@ public class ChemicalChunkerParser extends Parser {
                         else if ( (true) ) {s = 1;}
 
                          
-                        input.seek(index41_6);
+                        input.seek(index41_8);
                         if ( s>=0 ) return s;
                         break;
 
@@ -50995,22 +50995,6 @@ public class ChemicalChunkerParser extends Parser {
                         break;
 
                     case 2 : 
-                        int LA41_8 = input.LA(1);
-
-                         
-                        int index41_8 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred121_ChemicalChunker()) ) {s = 10;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index41_8);
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 3 : 
                         int LA41_9 = input.LA(1);
 
                          
@@ -51023,6 +51007,22 @@ public class ChemicalChunkerParser extends Parser {
 
                          
                         input.seek(index41_9);
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 3 : 
+                        int LA41_6 = input.LA(1);
+
+                         
+                        int index41_6 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred121_ChemicalChunker()) ) {s = 10;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index41_6);
                         if ( s>=0 ) return s;
                         break;
             }
@@ -51045,7 +51045,7 @@ public class ChemicalChunkerParser extends Parser {
     static final String DFA42_acceptS =
         "\7\uffff\1\2\6\uffff\1\1";
     static final String DFA42_specialS =
-        "\10\uffff\1\2\1\5\1\1\1\3\1\4\1\0\1\uffff}>";
+        "\10\uffff\1\1\1\5\1\0\1\3\1\4\1\2\1\uffff}>";
     static final String[] DFA42_transitionS = {
             "\1\7\1\4\1\6\4\7\1\5\147\7\1\1\1\2\1\3\33\7",
             "\1\10",
@@ -51103,22 +51103,6 @@ public class ChemicalChunkerParser extends Parser {
             switch ( s ) {
 
                     case 0 : 
-                        int LA42_13 = input.LA(1);
-
-                         
-                        int index42_13 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred122_ChemicalChunker()) ) {s = 14;}
-
-                        else if ( (true) ) {s = 7;}
-
-                         
-                        input.seek(index42_13);
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 1 : 
                         int LA42_10 = input.LA(1);
 
                          
@@ -51134,7 +51118,7 @@ public class ChemicalChunkerParser extends Parser {
                         if ( s>=0 ) return s;
                         break;
 
-                    case 2 : 
+                    case 1 : 
                         int LA42_8 = input.LA(1);
 
                          
@@ -51147,6 +51131,22 @@ public class ChemicalChunkerParser extends Parser {
 
                          
                         input.seek(index42_8);
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 2 : 
+                        int LA42_13 = input.LA(1);
+
+                         
+                        int index42_13 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred122_ChemicalChunker()) ) {s = 14;}
+
+                        else if ( (true) ) {s = 7;}
+
+                         
+                        input.seek(index42_13);
                         if ( s>=0 ) return s;
                         break;
 
@@ -54934,7 +54934,7 @@ public class ChemicalChunkerParser extends Parser {
     static final String DFA84_acceptS =
         "\2\uffff\1\4\4\uffff\1\5\3\uffff\1\2\1\3\1\1";
     static final String DFA84_specialS =
-        "\10\uffff\1\1\1\0\1\2\3\uffff}>";
+        "\10\uffff\1\2\1\0\1\1\3\uffff}>";
     static final String[] DFA84_transitionS = {
             "\1\1\71\uffff\1\2",
             "\1\3",
@@ -55007,6 +55007,22 @@ public class ChemicalChunkerParser extends Parser {
                         break;
 
                     case 1 : 
+                        int LA84_10 = input.LA(1);
+
+                         
+                        int index84_10 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred269_ChemicalChunker()) ) {s = 13;}
+
+                        else if ( (true) ) {s = 7;}
+
+                         
+                        input.seek(index84_10);
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 2 : 
                         int LA84_8 = input.LA(1);
 
                          
@@ -55021,22 +55037,6 @@ public class ChemicalChunkerParser extends Parser {
 
                          
                         input.seek(index84_8);
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 2 : 
-                        int LA84_10 = input.LA(1);
-
-                         
-                        int index84_10 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred269_ChemicalChunker()) ) {s = 13;}
-
-                        else if ( (true) ) {s = 7;}
-
-                         
-                        input.seek(index84_10);
                         if ( s>=0 ) return s;
                         break;
             }
@@ -55059,7 +55059,7 @@ public class ChemicalChunkerParser extends Parser {
     static final String DFA85_acceptS =
         "\7\uffff\1\2\6\uffff\1\1";
     static final String DFA85_specialS =
-        "\10\uffff\1\1\1\0\1\3\1\4\1\2\1\5\1\uffff}>";
+        "\10\uffff\1\5\1\2\1\3\1\4\1\0\1\1\1\uffff}>";
     static final String[] DFA85_transitionS = {
             "\1\7\1\4\1\6\4\7\1\5\147\7\1\1\1\2\1\3\33\7",
             "\1\10",
@@ -55117,38 +55117,6 @@ public class ChemicalChunkerParser extends Parser {
             switch ( s ) {
 
                     case 0 : 
-                        int LA85_9 = input.LA(1);
-
-                         
-                        int index85_9 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred273_ChemicalChunker()) ) {s = 14;}
-
-                        else if ( (true) ) {s = 7;}
-
-                         
-                        input.seek(index85_9);
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 1 : 
-                        int LA85_8 = input.LA(1);
-
-                         
-                        int index85_8 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred273_ChemicalChunker()) ) {s = 14;}
-
-                        else if ( (true) ) {s = 7;}
-
-                         
-                        input.seek(index85_8);
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 2 : 
                         int LA85_12 = input.LA(1);
 
                          
@@ -55161,6 +55129,38 @@ public class ChemicalChunkerParser extends Parser {
 
                          
                         input.seek(index85_12);
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 1 : 
+                        int LA85_13 = input.LA(1);
+
+                         
+                        int index85_13 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred273_ChemicalChunker()) ) {s = 14;}
+
+                        else if ( (true) ) {s = 7;}
+
+                         
+                        input.seek(index85_13);
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 2 : 
+                        int LA85_9 = input.LA(1);
+
+                         
+                        int index85_9 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred273_ChemicalChunker()) ) {s = 14;}
+
+                        else if ( (true) ) {s = 7;}
+
+                         
+                        input.seek(index85_9);
                         if ( s>=0 ) return s;
                         break;
 
@@ -55197,10 +55197,10 @@ public class ChemicalChunkerParser extends Parser {
                         break;
 
                     case 5 : 
-                        int LA85_13 = input.LA(1);
+                        int LA85_8 = input.LA(1);
 
                          
-                        int index85_13 = input.index();
+                        int index85_8 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred273_ChemicalChunker()) ) {s = 14;}
@@ -55208,7 +55208,7 @@ public class ChemicalChunkerParser extends Parser {
                         else if ( (true) ) {s = 7;}
 
                          
-                        input.seek(index85_13);
+                        input.seek(index85_8);
                         if ( s>=0 ) return s;
                         break;
             }
@@ -61475,7 +61475,7 @@ public class ChemicalChunkerParser extends Parser {
     static final String DFA145_acceptS =
         "\2\uffff\1\2\5\uffff\1\1\2\uffff";
     static final String DFA145_specialS =
-        "\6\uffff\1\0\3\uffff\1\1}>";
+        "\6\uffff\1\1\3\uffff\1\0}>";
     static final String[] DFA145_transitionS = {
             "\6\2\1\uffff\2\2\20\uffff\2\2\1\uffff\22\2\4\uffff\2\2\11\uffff"+
             "\1\2\1\uffff\1\2\4\uffff\1\2\1\uffff\1\2\1\uffff\1\2\5\uffff"+
@@ -61539,22 +61539,6 @@ public class ChemicalChunkerParser extends Parser {
             switch ( s ) {
 
                     case 0 : 
-                        int LA145_6 = input.LA(1);
-
-                         
-                        int index145_6 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred432_ChemicalChunker()) ) {s = 8;}
-
-                        else if ( (true) ) {s = 2;}
-
-                         
-                        input.seek(index145_6);
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 1 : 
                         int LA145_10 = input.LA(1);
 
                          
@@ -61567,6 +61551,22 @@ public class ChemicalChunkerParser extends Parser {
 
                          
                         input.seek(index145_10);
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 1 : 
+                        int LA145_6 = input.LA(1);
+
+                         
+                        int index145_6 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred432_ChemicalChunker()) ) {s = 8;}
+
+                        else if ( (true) ) {s = 2;}
+
+                         
+                        input.seek(index145_6);
                         if ( s>=0 ) return s;
                         break;
             }
@@ -62019,7 +62019,7 @@ public class ChemicalChunkerParser extends Parser {
     static final String DFA160_maxS =
         "\1\u00ae\101\0\4\uffff";
     static final String DFA160_acceptS =
-        "\102\uffff\1\1\1\2\1\4\1\3";
+        "\102\uffff\1\1\1\2\1\3\1\4";
     static final String DFA160_specialS =
         "\1\uffff\1\0\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1"+
         "\14\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1\26\1\27\1\30"+
@@ -62139,7 +62139,7 @@ public class ChemicalChunkerParser extends Parser {
             this.transition = DFA160_transition;
         }
         public String getDescription() {
-            return "74:85: ( dissolvePhrase | noun | number | ratio )";
+            return "74:85: ( dissolvePhrase | ratio | noun | number )";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -62157,7 +62157,7 @@ public class ChemicalChunkerParser extends Parser {
 
                         else if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_1);
@@ -62175,7 +62175,7 @@ public class ChemicalChunkerParser extends Parser {
 
                         else if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_2);
@@ -62193,7 +62193,7 @@ public class ChemicalChunkerParser extends Parser {
 
                         else if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_3);
@@ -62211,7 +62211,7 @@ public class ChemicalChunkerParser extends Parser {
 
                         else if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_4);
@@ -62229,7 +62229,7 @@ public class ChemicalChunkerParser extends Parser {
 
                         else if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_5);
@@ -62247,7 +62247,7 @@ public class ChemicalChunkerParser extends Parser {
 
                         else if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_6);
@@ -62265,7 +62265,7 @@ public class ChemicalChunkerParser extends Parser {
 
                         else if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_7);
@@ -62283,7 +62283,7 @@ public class ChemicalChunkerParser extends Parser {
 
                         else if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_8);
@@ -62301,9 +62301,9 @@ public class ChemicalChunkerParser extends Parser {
 
                         else if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (synpred94_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (true) ) {s = 69;}
 
                          
                         input.seek(index160_9);
@@ -62321,7 +62321,7 @@ public class ChemicalChunkerParser extends Parser {
 
                         else if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_10);
@@ -62339,9 +62339,9 @@ public class ChemicalChunkerParser extends Parser {
 
                         else if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (synpred94_ChemicalChunker()) ) {s = 69;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (true) ) {s = 69;}
 
                          
                         input.seek(index160_11);
@@ -62359,7 +62359,7 @@ public class ChemicalChunkerParser extends Parser {
 
                         else if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_12);
@@ -62377,7 +62377,7 @@ public class ChemicalChunkerParser extends Parser {
 
                         else if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_13);
@@ -62395,7 +62395,7 @@ public class ChemicalChunkerParser extends Parser {
 
                         else if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_14);
@@ -62411,7 +62411,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_15);
@@ -62427,7 +62427,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_16);
@@ -62443,7 +62443,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_17);
@@ -62459,7 +62459,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_18);
@@ -62475,7 +62475,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_19);
@@ -62491,7 +62491,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_20);
@@ -62507,7 +62507,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_21);
@@ -62523,7 +62523,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_22);
@@ -62539,7 +62539,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_23);
@@ -62555,7 +62555,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_24);
@@ -62571,7 +62571,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_25);
@@ -62587,7 +62587,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_26);
@@ -62603,7 +62603,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_27);
@@ -62619,7 +62619,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_28);
@@ -62635,7 +62635,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_29);
@@ -62651,7 +62651,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_30);
@@ -62667,7 +62667,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_31);
@@ -62683,7 +62683,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_32);
@@ -62699,7 +62699,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_33);
@@ -62715,7 +62715,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_34);
@@ -62731,7 +62731,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_35);
@@ -62747,7 +62747,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_36);
@@ -62763,7 +62763,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_37);
@@ -62779,7 +62779,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_38);
@@ -62795,7 +62795,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_39);
@@ -62811,7 +62811,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_40);
@@ -62827,7 +62827,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_41);
@@ -62843,7 +62843,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_42);
@@ -62859,7 +62859,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_43);
@@ -62875,7 +62875,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_44);
@@ -62891,7 +62891,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_45);
@@ -62907,7 +62907,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_46);
@@ -62923,7 +62923,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_47);
@@ -62939,7 +62939,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_48);
@@ -62955,7 +62955,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_49);
@@ -62971,7 +62971,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_50);
@@ -62987,7 +62987,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_51);
@@ -63003,7 +63003,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_52);
@@ -63019,7 +63019,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_53);
@@ -63035,7 +63035,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_54);
@@ -63051,7 +63051,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_55);
@@ -63067,7 +63067,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_56);
@@ -63083,7 +63083,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_57);
@@ -63099,7 +63099,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_58);
@@ -63115,7 +63115,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_59);
@@ -63131,7 +63131,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_60);
@@ -63147,7 +63147,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_61);
@@ -63163,7 +63163,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_62);
@@ -63179,7 +63179,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_63);
@@ -63195,7 +63195,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_64);
@@ -63211,7 +63211,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred93_ChemicalChunker()) ) {s = 67;}
 
-                        else if ( (true) ) {s = 68;}
+                        else if ( (synpred94_ChemicalChunker()) ) {s = 68;}
 
                          
                         input.seek(index160_65);
@@ -63919,43 +63919,43 @@ public class ChemicalChunkerParser extends Parser {
     public static final BitSet FOLLOW_multiApparatus_in_nounphraseStructure1455 = new BitSet(new long[]{0x0000000000000002L});
 
     }static class FOLLOW_dtTHE_in_nounphraseStructure2472_static {
-    public static final BitSet FOLLOW_dtTHE_in_nounphraseStructure2472 = new BitSet(new long[]{0xD80006FC00000000L,0x234505428030FFFFL,0x00007807FFDEF341L});
+    public static final BitSet FOLLOW_dtTHE_in_nounphraseStructure2472 = new BitSet(new long[]{0xD80006FC00000000L,0x234505428030FFFFL,0x00007807FFDEF241L});
 
     }static class FOLLOW_dt_in_nounphraseStructure2475_static {
-    public static final BitSet FOLLOW_dt_in_nounphraseStructure2475 = new BitSet(new long[]{0xD80006FC00000000L,0x234505428030FFFFL,0x00007807FFDEF341L});
+    public static final BitSet FOLLOW_dt_in_nounphraseStructure2475 = new BitSet(new long[]{0xD80006FC00000000L,0x234505428030FFFFL,0x00007807FFDEF241L});
 
     }static class FOLLOW_advAdj_in_nounphraseStructure2478_static {
-    public static final BitSet FOLLOW_advAdj_in_nounphraseStructure2478 = new BitSet(new long[]{0xD80006FC00000000L,0x234505428030FFFFL,0x00007807FFDEF341L});
+    public static final BitSet FOLLOW_advAdj_in_nounphraseStructure2478 = new BitSet(new long[]{0xD80006FC00000000L,0x234505428030FFFFL,0x00007807FFDEF241L});
 
     }static class FOLLOW_dissolvePhrase_in_nounphraseStructure2483_static {
-    public static final BitSet FOLLOW_dissolvePhrase_in_nounphraseStructure2483 = new BitSet(new long[]{0xD81046FC00000002L,0x234505428030FFFFL,0x00007807FFDEFB41L});
+    public static final BitSet FOLLOW_dissolvePhrase_in_nounphraseStructure2483 = new BitSet(new long[]{0xD81046FC00000002L,0x234505428030FFFFL,0x00007807FFDEFA41L});
 
-    }static class FOLLOW_noun_in_nounphraseStructure2485_static {
-    public static final BitSet FOLLOW_noun_in_nounphraseStructure2485 = new BitSet(new long[]{0xD81046FC00000002L,0x234505428030FFFFL,0x00007807FFDEFB41L});
+    }static class FOLLOW_ratio_in_nounphraseStructure2485_static {
+    public static final BitSet FOLLOW_ratio_in_nounphraseStructure2485 = new BitSet(new long[]{0xD81046FC00000002L,0x234505428030FFFFL,0x00007807FFDEFA41L});
 
-    }static class FOLLOW_number_in_nounphraseStructure2487_static {
-    public static final BitSet FOLLOW_number_in_nounphraseStructure2487 = new BitSet(new long[]{0xD81046FC00000002L,0x234505428030FFFFL,0x00007807FFDEFB41L});
+    }static class FOLLOW_noun_in_nounphraseStructure2487_static {
+    public static final BitSet FOLLOW_noun_in_nounphraseStructure2487 = new BitSet(new long[]{0xD81046FC00000002L,0x234505428030FFFFL,0x00007807FFDEFA41L});
 
-    }static class FOLLOW_ratio_in_nounphraseStructure2489_static {
-    public static final BitSet FOLLOW_ratio_in_nounphraseStructure2489 = new BitSet(new long[]{0xD81046FC00000002L,0x234505428030FFFFL,0x00007807FFDEFB41L});
+    }static class FOLLOW_number_in_nounphraseStructure2489_static {
+    public static final BitSet FOLLOW_number_in_nounphraseStructure2489 = new BitSet(new long[]{0xD81046FC00000002L,0x234505428030FFFFL,0x00007807FFDEFA41L});
 
     }static class FOLLOW_conjunction_in_nounphraseStructure2497_static {
-    public static final BitSet FOLLOW_conjunction_in_nounphraseStructure2497 = new BitSet(new long[]{0xD80006FC00000000L,0x234505428030FFFFL,0x00007807FFDEFB41L});
+    public static final BitSet FOLLOW_conjunction_in_nounphraseStructure2497 = new BitSet(new long[]{0xD80006FC00000000L,0x234505428030FFFFL,0x00007807FFDEFA41L});
 
     }static class FOLLOW_advAdj_in_nounphraseStructure2500_static {
-    public static final BitSet FOLLOW_advAdj_in_nounphraseStructure2500 = new BitSet(new long[]{0xD80006FC00000000L,0x234505428030FFFFL,0x00007807FFDEF341L});
+    public static final BitSet FOLLOW_advAdj_in_nounphraseStructure2500 = new BitSet(new long[]{0xD80006FC00000000L,0x234505428030FFFFL,0x00007807FFDEF241L});
 
     }static class FOLLOW_dissolvePhrase_in_nounphraseStructure2504_static {
-    public static final BitSet FOLLOW_dissolvePhrase_in_nounphraseStructure2504 = new BitSet(new long[]{0xD81046FC00000002L,0x234505428030FFFFL,0x00007807FFDEFB41L});
+    public static final BitSet FOLLOW_dissolvePhrase_in_nounphraseStructure2504 = new BitSet(new long[]{0xD81046FC00000002L,0x234505428030FFFFL,0x00007807FFDEFA41L});
 
-    }static class FOLLOW_noun_in_nounphraseStructure2506_static {
-    public static final BitSet FOLLOW_noun_in_nounphraseStructure2506 = new BitSet(new long[]{0xD81046FC00000002L,0x234505428030FFFFL,0x00007807FFDEFB41L});
+    }static class FOLLOW_ratio_in_nounphraseStructure2506_static {
+    public static final BitSet FOLLOW_ratio_in_nounphraseStructure2506 = new BitSet(new long[]{0xD81046FC00000002L,0x234505428030FFFFL,0x00007807FFDEFA41L});
 
-    }static class FOLLOW_number_in_nounphraseStructure2508_static {
-    public static final BitSet FOLLOW_number_in_nounphraseStructure2508 = new BitSet(new long[]{0xD81046FC00000002L,0x234505428030FFFFL,0x00007807FFDEFB41L});
+    }static class FOLLOW_noun_in_nounphraseStructure2508_static {
+    public static final BitSet FOLLOW_noun_in_nounphraseStructure2508 = new BitSet(new long[]{0xD81046FC00000002L,0x234505428030FFFFL,0x00007807FFDEFA41L});
 
-    }static class FOLLOW_ratio_in_nounphraseStructure2510_static {
-    public static final BitSet FOLLOW_ratio_in_nounphraseStructure2510 = new BitSet(new long[]{0xD81046FC00000002L,0x234505428030FFFFL,0x00007807FFDEFB41L});
+    }static class FOLLOW_number_in_nounphraseStructure2510_static {
+    public static final BitSet FOLLOW_number_in_nounphraseStructure2510 = new BitSet(new long[]{0xD81046FC00000002L,0x234505428030FFFFL,0x00007807FFDEFA41L});
 
     }static class FOLLOW_prepphraseOf_in_nounphraseStructure2520_static {
     public static final BitSet FOLLOW_prepphraseOf_in_nounphraseStructure2520 = new BitSet(new long[]{0x8010461C00000002L,0x0000000000008000L,0x00000000010E1201L});
@@ -66489,14 +66489,14 @@ public class ChemicalChunkerParser extends Parser {
     }static class FOLLOW_dissolvePhrase_in_synpred86_ChemicalChunker483_static {
     public static final BitSet FOLLOW_dissolvePhrase_in_synpred86_ChemicalChunker483 = new BitSet(new long[]{0x0000000000000002L});
 
-    }static class FOLLOW_noun_in_synpred87_ChemicalChunker485_static {
-    public static final BitSet FOLLOW_noun_in_synpred87_ChemicalChunker485 = new BitSet(new long[]{0x0000000000000002L});
+    }static class FOLLOW_ratio_in_synpred87_ChemicalChunker485_static {
+    public static final BitSet FOLLOW_ratio_in_synpred87_ChemicalChunker485 = new BitSet(new long[]{0x0000000000000002L});
 
-    }static class FOLLOW_number_in_synpred88_ChemicalChunker487_static {
-    public static final BitSet FOLLOW_number_in_synpred88_ChemicalChunker487 = new BitSet(new long[]{0x0000000000000002L});
+    }static class FOLLOW_noun_in_synpred88_ChemicalChunker487_static {
+    public static final BitSet FOLLOW_noun_in_synpred88_ChemicalChunker487 = new BitSet(new long[]{0x0000000000000002L});
 
-    }static class FOLLOW_ratio_in_synpred89_ChemicalChunker489_static {
-    public static final BitSet FOLLOW_ratio_in_synpred89_ChemicalChunker489 = new BitSet(new long[]{0x0000000000000002L});
+    }static class FOLLOW_number_in_synpred89_ChemicalChunker489_static {
+    public static final BitSet FOLLOW_number_in_synpred89_ChemicalChunker489 = new BitSet(new long[]{0x0000000000000002L});
 
     }static class FOLLOW_conjunction_in_synpred90_ChemicalChunker497_static {
     public static final BitSet FOLLOW_conjunction_in_synpred90_ChemicalChunker497 = new BitSet(new long[]{0x0000000000000002L});
@@ -66507,29 +66507,29 @@ public class ChemicalChunkerParser extends Parser {
     }static class FOLLOW_dissolvePhrase_in_synpred92_ChemicalChunker504_static {
     public static final BitSet FOLLOW_dissolvePhrase_in_synpred92_ChemicalChunker504 = new BitSet(new long[]{0x0000000000000002L});
 
-    }static class FOLLOW_noun_in_synpred93_ChemicalChunker506_static {
-    public static final BitSet FOLLOW_noun_in_synpred93_ChemicalChunker506 = new BitSet(new long[]{0x0000000000000002L});
+    }static class FOLLOW_ratio_in_synpred93_ChemicalChunker506_static {
+    public static final BitSet FOLLOW_ratio_in_synpred93_ChemicalChunker506 = new BitSet(new long[]{0x0000000000000002L});
 
-    }static class FOLLOW_number_in_synpred94_ChemicalChunker508_static {
-    public static final BitSet FOLLOW_number_in_synpred94_ChemicalChunker508 = new BitSet(new long[]{0x0000000000000002L});
+    }static class FOLLOW_noun_in_synpred94_ChemicalChunker508_static {
+    public static final BitSet FOLLOW_noun_in_synpred94_ChemicalChunker508 = new BitSet(new long[]{0x0000000000000002L});
 
     }static class FOLLOW_conjunction_in_synpred95_ChemicalChunker497_static {
-    public static final BitSet FOLLOW_conjunction_in_synpred95_ChemicalChunker497 = new BitSet(new long[]{0xD80006FC00000000L,0x234505428030FFFFL,0x00007807FFDEFB41L});
+    public static final BitSet FOLLOW_conjunction_in_synpred95_ChemicalChunker497 = new BitSet(new long[]{0xD80006FC00000000L,0x234505428030FFFFL,0x00007807FFDEFA41L});
 
     }static class FOLLOW_advAdj_in_synpred95_ChemicalChunker500_static {
-    public static final BitSet FOLLOW_advAdj_in_synpred95_ChemicalChunker500 = new BitSet(new long[]{0xD80006FC00000000L,0x234505428030FFFFL,0x00007807FFDEF341L});
+    public static final BitSet FOLLOW_advAdj_in_synpred95_ChemicalChunker500 = new BitSet(new long[]{0xD80006FC00000000L,0x234505428030FFFFL,0x00007807FFDEF241L});
 
     }static class FOLLOW_dissolvePhrase_in_synpred95_ChemicalChunker504_static {
     public static final BitSet FOLLOW_dissolvePhrase_in_synpred95_ChemicalChunker504 = new BitSet(new long[]{0x0000000000000002L});
 
-    }static class FOLLOW_noun_in_synpred95_ChemicalChunker506_static {
-    public static final BitSet FOLLOW_noun_in_synpred95_ChemicalChunker506 = new BitSet(new long[]{0x0000000000000002L});
+    }static class FOLLOW_ratio_in_synpred95_ChemicalChunker506_static {
+    public static final BitSet FOLLOW_ratio_in_synpred95_ChemicalChunker506 = new BitSet(new long[]{0x0000000000000002L});
 
-    }static class FOLLOW_number_in_synpred95_ChemicalChunker508_static {
-    public static final BitSet FOLLOW_number_in_synpred95_ChemicalChunker508 = new BitSet(new long[]{0x0000000000000002L});
+    }static class FOLLOW_noun_in_synpred95_ChemicalChunker508_static {
+    public static final BitSet FOLLOW_noun_in_synpred95_ChemicalChunker508 = new BitSet(new long[]{0x0000000000000002L});
 
-    }static class FOLLOW_ratio_in_synpred95_ChemicalChunker510_static {
-    public static final BitSet FOLLOW_ratio_in_synpred95_ChemicalChunker510 = new BitSet(new long[]{0x0000000000000002L});
+    }static class FOLLOW_number_in_synpred95_ChemicalChunker510_static {
+    public static final BitSet FOLLOW_number_in_synpred95_ChemicalChunker510 = new BitSet(new long[]{0x0000000000000002L});
 
     }static class FOLLOW_dissolvePhrase_in_synpred97_ChemicalChunker526_static {
     public static final BitSet FOLLOW_dissolvePhrase_in_synpred97_ChemicalChunker526 = new BitSet(new long[]{0x0000000000000002L});
