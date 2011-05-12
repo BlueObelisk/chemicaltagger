@@ -89,7 +89,7 @@ degassMultiVerb
 
 noun 	:	nounStructure (dash nounStructure)*;
 
-nounStructure :  prp|prp_poss|citation|cycles|molecule|apparatus|mixture|unnamedmolecule|nnyield|nnstate|nn|nns|nnp|nnadd|preparationphrase|nnexample|range|amount|oscaronts|nntime|nnatmosphere|tmunicode|nneq|quantity|nnchementity|measurements|nntemp|nnflash|nngeneral|nnmethod|nnamount|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|nnvol|nnpurify|nnsynthesize|nnmixture|reference|nndry|number|oscarCompound|nnextract|nnfilter|nnprecipitate|nnremove|fw|sym|clause|ls|nnps|pos|oscarase;
+nounStructure :  prp|prp_poss|citation|cycles|molecule|apparatus|mixture|unnamedmolecule|nnyield|nnstate|nn|nns|nnp|nnadd|preparationphrase|nnexample|range|oscaronts|nntime|nnatmosphere|tmunicode|nneq|quantity|nnchementity|nntemp|nnflash|nngeneral|nnmethod|nnamount|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|nnvol|nnpurify|nnsynthesize|nnmixture|reference|nndry|number|oscarCompound|nnextract|nnfilter|nnprecipitate|nnremove|fw|sym|clause|ls|nnps|pos|oscarase;
 
 // Different PrepPhrases
 
@@ -191,10 +191,14 @@ unnamedmoleculeamount3
 unnamedmoleculeamount4
 	:(quantity|mixture) nnchementity;
 
-quantity 	:  (quantity1|quantity2) ->   ^(QUANTITY  quantity1? quantity2?);
+quantity 	:  (quantity1Node|quantity2Node);
+
+quantity1Node : quantity1 ->   ^(QUANTITY  quantity1);
 
 quantity1
 	: lrb measurements (comma  measurements)* (comma preparationphrase)* (stop preparationphrase)*  rrb;
+
+quantity2Node : quantity2 ->   ^(QUANTITY  quantity2);
 
 quantity2
 	:  measurements (comma  measurements)*  ;
@@ -220,13 +224,13 @@ mixtureStructure3
 
 mixtureRatio
 	:	cd colon (cd|cdAlphanum);
-mixtureContent:   (fw|verb|nn|measurements|md|nnpercent|stop|oscarCompound|molecule|unnamedmolecule|dash|sym|cd|noun|inAll|cd|comma|adj|colon|stop) (minimixture|fw|verb|measurements|nnyield|md|nnpercent|stop|oscarCompound|molecule|unnamedmolecule|dash|sym|cd|noun|inAll|cd|comma|adj|colon|stop)+ ;
+mixtureContent:   (fw|verb|nn|quantity2Node|md|nnpercent|stop|oscarCompound|molecule|unnamedmolecule|dash|sym|cd|noun|inAll|cd|comma|adj|colon|stop) (minimixture|fw|verb|quantity2Node|nnyield|md|nnpercent|stop|oscarCompound|molecule|unnamedmolecule|dash|sym|cd|noun|inAll|cd|comma|adj|colon|stop)+ ;
 
 minimixture: (mixtureStructure2|mixtureStructure1) -> ^(MIXTURE  mixtureStructure2? mixtureStructure1?);
 //TODO the next 5 rules appear to be orphans
 minimixtureStructure2: comma lrb mixtureContent rrb comma;
 minimixtureStructure1:  lrb mixtureContent rrb;
-minimixtureContent:   (fw|nn|verb|measurements|nnpercent|md|stop|oscarCompound|molecule|unnamedmolecule|dash|sym|cd|noun|inAll|cd|comma|adj|colon|stop) (fw|verb|measurements|nnyield|nnpercent|md|stop|oscarCompound|molecule|unnamedmolecule|dash|sym|cd|noun|inAll|cd|comma|adj|colon|stop)+ ;
+minimixtureContent:   (fw|nn|verb|quantity2Node|nnpercent|md|stop|oscarCompound|molecule|unnamedmolecule|dash|sym|cd|noun|inAll|cd|comma|adj|colon|stop) (fw|verb|quantity2Node|nnyield|nnpercent|md|stop|oscarCompound|molecule|unnamedmolecule|dash|sym|cd|noun|inAll|cd|comma|adj|colon|stop)+ ;
 
 method:
     (nngeneral|nn)? nnmethod (cdAlphanum|cd)?  ;
