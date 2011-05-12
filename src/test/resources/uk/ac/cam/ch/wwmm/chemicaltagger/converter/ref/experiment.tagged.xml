@@ -90,15 +90,19 @@
 				<OSCAR-CM>2-hydroxy-1-naphthaldehyde</OSCAR-CM>
 				<MIXTURE>
 					<_-LRB->(</_-LRB->
-					<AMOUNT>
-						<CD>1.00</CD>
-						<NN-AMOUNT>mmol</NN-AMOUNT>
-					</AMOUNT>
+					<QUANTITY>
+						<AMOUNT>
+							<CD>1.00</CD>
+							<NN-AMOUNT>mmol</NN-AMOUNT>
+						</AMOUNT>
+					</QUANTITY>
 					<IN-IN>in</IN-IN>
-					<VOLUME>
-						<CD>10</CD>
-						<NN-VOL>ml</NN-VOL>
-					</VOLUME>
+					<QUANTITY>
+						<VOLUME>
+							<CD>10</CD>
+							<NN-VOL>ml</NN-VOL>
+						</VOLUME>
+					</QUANTITY>
 					<IN-OF>of</IN-OF>
 					<OSCAR-CM>methanol</OSCAR-CM>
 					<_-RRB->)</_-RRB->
@@ -185,10 +189,12 @@
 					<NN-CHEMENTITY>solution</NN-CHEMENTITY>
 					<MIXTURE>
 						<_-LRB->(</_-LRB->
-						<VOLUME>
-							<CD>20</CD>
-							<NN-VOL>ml</NN-VOL>
-						</VOLUME>
+						<QUANTITY>
+							<VOLUME>
+								<CD>20</CD>
+								<NN-VOL>ml</NN-VOL>
+							</VOLUME>
+						</QUANTITY>
 						<COMMA>,</COMMA>
 						<CD>1</CD>
 						<COLON>:</COLON>
