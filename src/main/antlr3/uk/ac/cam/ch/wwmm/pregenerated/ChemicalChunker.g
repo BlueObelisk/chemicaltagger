@@ -209,7 +209,7 @@ multiple	: cd cdunicode measurementtypes? -> ^(MULTIPLE   cd cdunicode measureme
 measurementtypes
 	: molar|amount|mass|volume|yield|percent;
 
-molar	: cd* nnmolar -> ^(MOLAR   cd* nnmolar );
+molar	: cd+ nnmolar -> ^(MOLAR   cd+ nnmolar );
 amount	: cd+ nnamount -> ^(AMOUNT   cd+ nnamount );
 mass	: cd+ nnmass-> ^(MASS   cd+ nnmass );
 volume	: cd+ nnvol -> ^(VOLUME   cd+ nnvol );

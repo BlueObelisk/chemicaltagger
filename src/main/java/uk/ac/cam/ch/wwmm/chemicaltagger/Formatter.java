@@ -20,8 +20,9 @@ public class Formatter {
 	private static List<String> NEXTTOKEN_LIST = Arrays.asList("gram vol %".split(" "));
 	private static Pattern WHITESPACE_PATTERN = Pattern.compile("\\s+");
 	private static Pattern ABBREVIATION_PATTERN = Pattern.compile("(\u2012|\u2013|\u2014|-)?[A-Z]+[a-z]*\\.");
-	private static Pattern CONCAT_AMOUNT_PATTERN = Pattern.compile("(\\d\\d+(m|k|\u00b5)?(l|L|g|gram|mol|cm3)(s)?$)|(\\d(L|ml|mL|gram|mol|cm3)(s)?$)");
-	private static Pattern CONCAT_TEMP_PATTERN = Pattern.compile("\\d+(o|\u00b0|\u00ba)(C|c)");
+	//Note \d[gl] are intentionally excluded to avoid ambiguity with compound references
+	private static Pattern CONCAT_AMOUNT_PATTERN = Pattern.compile("(\\d(\\d+|\\.\\d+|\\d*[mk\u00b5])[gl][s]?|(\\d+[mk\u00b5]?([LMN]|[eE][qQ][\\.]?|[cCdD][mM]3|[gG][rR][aA][mM][mM]?[eE]?|[mM][oO][lL][eE]?)[sS]?))$");
+	private static Pattern CONCAT_TEMP_PATTERN = Pattern.compile("\\d+(o|\u00b0|\u00ba)[cC][\\.]?");
 	private static Pattern CONCAT_HYPHENED_DIRECTION_PATTERN = Pattern.compile("^[A-Z]\\-\\d+");
 	private static Pattern CONCAT_SLASH_DIRECTION_PATTERN = Pattern.compile("^[A-Z]\\/\\d*$");
 	
@@ -141,20 +142,14 @@ public class Formatter {
 	 * @return newAmountString (String)
 	 *************************************/
 	private static String splitAmounts(String amountString) {
-		String newAmountString = amountString;
-		String numbers = "";
-		String letters = "";
-
-		for (char ch : amountString.toCharArray()) {
-			if (Character.isLetter(ch)) {
-				letters = letters + ch;
-			}
-			else {
-				numbers = numbers + ch;
+		int splitIndex = amountString.length();
+		for (int i = 0; i < amountString.length(); i++) {
+			if (Character.isLetter(amountString.charAt(i))) {
+				splitIndex = i;
+				break;
 			}
 		}
-		newAmountString = numbers + " " + letters;
-		return newAmountString;
+		return amountString.substring(0, splitIndex) + " " + amountString.substring(splitIndex);
 	}
 
 	/**********************************************

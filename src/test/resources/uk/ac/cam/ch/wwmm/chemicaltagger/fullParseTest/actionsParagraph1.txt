@@ -2,7 +2,7 @@ Add: A solution of 124C ( 7.0 g , 32.4 mmol ) in concentrate H2SO4 ( 9.5 mL ) wa
 Dissolve: 124C ( 7.0 g , 32.4 mmol ) in concentrate H2SO4 ( 9.5 mL ) 
 Heat: the mixture was heated at 60 °C for 30 min 
 Cool: After cooling to room temperature 
-Add: the reaction mixture was added to iced 6M solution of NaOH ( 150 mL ) 
+Add: the reaction mixture was added to iced 6 M solution of NaOH ( 150 mL ) 
 Extract: The reaction mixture was extracted with dichloromethane ( 4x100 mL ) 
 Dry: The combined organic phases were dried over Na2SO4 
 Filter: filtered 
