@@ -30,16 +30,15 @@ FW---^et(.)?$|^al(.)?$|^et(.)?al(.)?$
 NN---^wt.$---Weight
 NN-STATE---powder|glass|liquid|oil|solid|gas|syrup|crystal|gum|needle|prisms---Physical States
 NN-TIME---^period(s)?$|^min(utes|.)?$|^hour(s)?|^month(s)?|^week(s|end)?$|^seconds$|^d$|^h$|^days$|.*night|hr(s)?|^(t|T)ime$---Time Token
-NN-MASS---(\d\d+)?(m|k|\xce\xbc|μ)?(g|gram)(s)?$---Grams
-NN-AMOUNT---(\d\d+)?(m|k|\xce\xbc|μ)?mol(s)?$---Mols
-NN-MOLAR---^\d*(M|N)$---Molar
+#In cases where the number directly precedes the quantity the Formatter will insert a space
+NN-MASS---^([mkμ]?(g|gram[m]?[e]?)|(pico|nano|micro|milli|centi|deci|kilo|mega)gram[m]?[e]?)[s]?$---Grams
+NN-AMOUNT---^[mkμ]?mol[e]?[s]?$---Mols (hopefully animal moles will not occur in chemistry)
+NN-MOLAR---^([mnμ]?M|N|(pico|nano|micro|milli)?molar)$---Molar
 NN-ATMOSPHERE---(a|A)tmosphere(s)?$---Atmosphere
-NN-EQ---^eq\.$---Equivalence
-NN-VOL---(\d\d+)?(m|k|\xce\xbc|µ)?(l|L)$|cm3---Volume
-#this is for non-spaced volumes like 3ml
-NN-VOL---d+(m|k|\xce\xbc|µ)(l|L|cm3)$---Volume
+NN-EQ---^([m]?eq[\.]?|(pico|nano|micro|milli|centi|deci|kilo|mega)?equivalent[s]?)$---Equivalence
+NN-VOL---^([mkµ]?l|[cd]m3|(µ|pico|nano|micro|milli|centi|deci|kilo|mega)?litre[s]?)$---Volume
 NN-CHEMENTITY---^ph$|^resin$|^phase(s)?$|^salt$|^material$|^retrievals$|^product$|^oligomers$|^macroinitiator(s)?$|^nanotubes$|^septum$|^initiator$|monomer$|^ice$|^petroleum|metal|^eluent$|(co)?polymer(s)?$|generation|solution|solvent|complex|layer|residue|gel|plug|catalyst|compound(s)?|.+®|^Å$---Chemical entities not marked up by OSCAR
-NN-TEMP---\d*(\xb0|&#0176|\xc3\x97|o|°|º)(C|c)\.?$|room$|temperature$|rt$|RT$|^deg$|^degrees$---Temperature Token
+NN-TEMP---(o|°|º)[Cc]\.?$|room$|temperature$|^rt$|^RT$|^deg$|^degrees$---Temperature Token
 NN-TEMP---^K$---Temperature Token
 NN-FLASH---^flash$---Flash
 NN-GENERAL---^(G|g)eneral$---General term
