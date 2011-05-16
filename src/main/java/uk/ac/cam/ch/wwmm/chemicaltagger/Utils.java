@@ -16,7 +16,6 @@ import nu.xom.Document;
 import nu.xom.Serializer;
 
 import org.apache.commons.io.IOUtils;
-import org.apache.commons.lang.StringEscapeUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.safety.Whitelist;
 import org.xmlcml.cml.base.CMLConstants;
@@ -82,8 +81,7 @@ public class Utils {
 	 * @return cleanedParagraph (String)
 	 *******************************************/
 	public static String cleanHTMLText(String paragraph) {
-
-		String cleanedParagraph = StringEscapeUtils.unescapeHtml(paragraph);
+		String cleanedParagraph = paragraph;	
 		cleanedParagraph = convertExponentials(cleanedParagraph);
 		cleanedParagraph = Jsoup.clean(cleanedParagraph,new Whitelist());
 		cleanedParagraph =Jsoup.parse(cleanedParagraph).text();
