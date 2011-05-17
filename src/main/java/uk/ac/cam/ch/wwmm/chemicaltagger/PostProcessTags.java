@@ -98,7 +98,7 @@ public class PostProcessTags {
 
 				else if (stringBefore(beforeList, i, combinedTags)
 						&& (stringAfter(afterListJJ, i, combinedTags) && !currentTag
-								.toLowerCase().startsWith("nn-chementity"))) {
+								.toLowerCase().startsWith("nn-chementity")) && adjObjectExists(combinedTags,i)) {
 					newTag = "JJ-CHEM";
 				}
 			}
@@ -263,6 +263,27 @@ public class PostProcessTags {
 		}
 
 		return newTag;
+	}
+
+	/******************************************
+	 * Checks for if the adjective is describing an object.
+	 * Checks if a noun tag exists before a preposition. If not then the current word is a noun and not an adjective
+	 * @param combinedTags
+	 * @param index
+	 * @return boolean
+	 */
+	private boolean adjObjectExists(List<String> combinedTags, int index) {
+
+		for (int i = index+1; i < combinedTags.size(); i++) {
+			if (combinedTags.get(i).toLowerCase().startsWith("to") || combinedTags.get(i).toLowerCase().startsWith("in")){
+				return false;
+			}
+			else if (combinedTags.get(i).toLowerCase().startsWith("nn")){
+				return true;
+			}
+		}
+		
+		return false;
 	}
 
 	/*************************************

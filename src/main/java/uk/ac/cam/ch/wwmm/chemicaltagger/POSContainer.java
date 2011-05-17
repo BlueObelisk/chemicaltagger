@@ -10,15 +10,14 @@ import org.apache.commons.lang.StringUtils;
 import uk.ac.cam.ch.wwmm.oscar.document.TokenSequence;
 
 /********************************************
- * A container class that stores the 
- * grammatical structure of the text .
+ * A container class that stores the grammatical structure of the text .
  * 
  * @author lh359
  ********************************************/
 public class POSContainer {
 
 	private static String SPACE = " ";
-	
+
 	private String inputText;
 	private boolean prioritiseOscar = true;
 
@@ -35,11 +34,12 @@ public class POSContainer {
 	 ******************************/
 	public POSContainer() {
 	}
-	
-	
+
 	/**************************************
 	 * Setter method for InputText.
-	 * @param inputText (String)
+	 * 
+	 * @param inputText
+	 *            (String)
 	 ***************************************/
 	public void setInputText(String inputText) {
 
@@ -48,6 +48,7 @@ public class POSContainer {
 
 	/**************************************
 	 * Getter method for InputText.
+	 * 
 	 * @return inputText (String)
 	 **************************************/
 	public String getInputText() {
@@ -56,7 +57,9 @@ public class POSContainer {
 
 	/**************************************
 	 * Setter method for prioritiseOscar.
-	 * @param prioritiseOscar (boolean)
+	 * 
+	 * @param prioritiseOscar
+	 *            (boolean)
 	 ***************************************/
 	public void setPrioritiseOscar(boolean prioritiseOscar) {
 		this.prioritiseOscar = prioritiseOscar;
@@ -64,54 +67,65 @@ public class POSContainer {
 
 	/**************************************
 	 * Getter method for prioritiseOscar.
+	 * 
 	 * @return prioritiseOscart (boolean)
 	 ***************************************/
 	public boolean getPrioritiseOscar() {
 		return prioritiseOscar;
 	}
-	
+
 	/**************************************
 	 * Setter method for WordTokenList.
-	 * @param wordTokenList (List<String>)
-	 ***************************************/	
+	 * 
+	 * @param wordTokenList
+	 *            (List<String>)
+	 ***************************************/
 	public void setWordTokenList(List<String> wordTokenList) {
 		this.wordTokenList = wordTokenList;
 	}
-	
+
 	/**************************************
 	 * Getter method for WordTokenList.
+	 * 
 	 * @return wordTokenList (List<String>)
 	 ***************************************/
 	public List<String> getWordTokenList() {
-		return wordTokenList;	
+		return wordTokenList;
 	}
-	
+
 	/**************************************
 	 * Setter method for TokenSequenceList.
-	 * @param tokenSequenceList (List<TokenSequence>)
-	 ***************************************/	
+	 * 
+	 * @param tokenSequenceList
+	 *            (List<TokenSequence>)
+	 ***************************************/
 	public void setTokenSequenceList(List<TokenSequence> tokenSequenceList) {
 		this.tokenSequenceList = tokenSequenceList;
-		
+
 	}
 
 	/**************************************
 	 * Getter method for TokenSequenceList.
+	 * 
 	 * @return tokenSequenceList (List<TokenSequence>)
 	 ***************************************/
 	public List<TokenSequence> getTokenSequenceList() {
 		return tokenSequenceList;
 	}
+
 	/**************************************
 	 * Setter method for OscarTagList.
-	 * @param oscarTagList (List<String>)
+	 * 
+	 * @param oscarTagList
+	 *            (List<String>)
 	 ***************************************/
 	public void setOscarTagList(List<String> oscarTagList) {
 		this.oscarTagList = oscarTagList;
 	}
-	
+
 	/**************************************
 	 * Getter method for OscarTagList.
+	 * 
 	 * @return oscarTagList (List<String>)
 	 ***************************************/
 	public List<String> getOscarTagList() {
@@ -120,7 +134,9 @@ public class POSContainer {
 
 	/**************************************
 	 * Setter method for RegexTagList.
-	 * @param regexTagList (List<String>)
+	 * 
+	 * @param regexTagList
+	 *            (List<String>)
 	 ***************************************/
 	public void setRegexTagList(List<String> regexTagList) {
 		this.regexTagList = regexTagList;
@@ -128,16 +144,18 @@ public class POSContainer {
 
 	/**************************************
 	 * Getter method for RegexTagList.
+	 * 
 	 * @return regexTagList (List<String>)
 	 ***************************************/
 	public List<String> getRegexTagList() {
 		return regexTagList;
 	}
 
-
 	/**************************************
 	 * Setter method for posTagList.
-	 * @param posTagList (List<String>)
+	 * 
+	 * @param posTagList
+	 *            (List<String>)
 	 ***************************************/
 	public void setPosTagList(List<String> posTagList) {
 		this.posTagList = posTagList;
@@ -145,6 +163,7 @@ public class POSContainer {
 
 	/**************************************
 	 * Getter method for posTagList.
+	 * 
 	 * @return posTagList (List<String>)
 	 ***************************************/
 	public List<String> getPosTagList() {
@@ -153,7 +172,9 @@ public class POSContainer {
 
 	/**************************************
 	 * Setter method for SpectrumList.
-	 * @param spectrumList (List<Element>)
+	 * 
+	 * @param spectrumList
+	 *            (List<Element>)
 	 ***************************************/
 	public void setSpectrumList(List<Element> spectrumList) {
 
@@ -165,15 +186,18 @@ public class POSContainer {
 
 	/**************************************
 	 * Getter method for SpectrumList.
+	 * 
 	 * @return spectrumList (List<Element>)
 	 ***************************************/
 	public Element getSpectrumElementList() {
 		return spectrumElementList;
 	}
-	
+
 	/**************************************
 	 * Setter method for CombinedTagsList.
-	 * @param combinedTagsList (List<String>)
+	 * 
+	 * @param combinedTagsList
+	 *            (List<String>)
 	 ***************************************/
 	public void setCombinedTagsList(List<String> combinedTagsList) {
 		this.combinedTagsList = combinedTagsList;
@@ -181,6 +205,7 @@ public class POSContainer {
 
 	/**************************************
 	 * Getter method for CombinedTagsList.
+	 * 
 	 * @return combinedTagsList (List<String>)
 	 ***************************************/
 	public List<String> getCombinedTagsList() {
@@ -189,7 +214,9 @@ public class POSContainer {
 
 	/**************************************
 	 * Adds token to wordTokenList.
-	 * @param token (String)
+	 * 
+	 * @param token
+	 *            (String)
 	 ***************************************/
 	public void addToTokenList(String token) {
 		wordTokenList.add(token);
@@ -197,7 +224,9 @@ public class POSContainer {
 
 	/**************************************
 	 * Creates a wordTokenList from a sentence string.
-	 * @param sentence (String)
+	 * 
+	 * @param sentence
+	 *            (String)
 	 ***************************************/
 	public void createWordTokenListFromSentence(String sentence) {
 		for (String token : sentence.split(" ")) {
@@ -207,16 +236,19 @@ public class POSContainer {
 
 	/**************************************
 	 * Adds tags to oscarTagList.
-	 * @param oscarTag (String)
+	 * 
+	 * @param oscarTag
+	 *            (String)
 	 ***************************************/
 	public void addToOSCARList(String oscarTag) {
 		oscarTagList.add("OSCAR-" + oscarTag);
 	}
 
-
 	/**************************************
 	 * Adds tags to regexTagList.
-	 * @param regexTag (String)
+	 * 
+	 * @param regexTag
+	 *            (String)
 	 ***************************************/
 	public void addToRegexTagList(String regexTag) {
 		regexTagList.add(regexTag);
@@ -225,31 +257,27 @@ public class POSContainer {
 
 	/**************************************
 	 * Creates the posTagList from the openNLP string Array format.
-	 * @param posTags (String[])
+	 * 
+	 * @param posTags
+	 *            (String[])
 	 ***************************************/
 	public void createPosTagListFromStringArray(String[] posTags) {
 		for (String posTag : posTags) {
 			if (StringUtils.isEmpty(posTag)) {
 				posTagList.add("NN");
-			} 
-			else if (posTag.equals(".")){
+			} else if (posTag.equals(".")) {
 				posTagList.add("STOP");
-			}
-			else if (posTag.equals(",")){
+			} else if (posTag.equals(",")) {
 				posTagList.add("COMMA");
-			}
-			else if (posTag.equals(":")){
+			} else if (posTag.equals(":")) {
 				posTagList.add("COLON");
-			}
-			else if (posTag.equals("#")){
+			} else if (posTag.equals("#")) {
 				posTagList.add("NN");
-			}
-			else{
+			} else {
 				posTagList.add(posTag);
 			}
 		}
 	}
-
 
 	/***************************************
 	 * Combines the output of all 3 taggers.
@@ -268,13 +296,22 @@ public class POSContainer {
 		List<String> firstTagger = tagOrder.get(0);
 		for (int i = 0; i < firstTagger.size(); i++) {
 			if (!firstTagger.get(i).toLowerCase().equals("nil")) {
+
 				combinedTagsList.add(firstTagger.get(i));
+
 			} else {
 				for (int taggedIndex = 1; taggedIndex < tagOrder.size(); taggedIndex++) {
 					List<String> backOffTagger = tagOrder.get(taggedIndex);
 					if (!backOffTagger.get(i).equals("nil")) {
-						combinedTagsList.add(backOffTagger.get(i));
-						taggedIndex = tagOrder.size();
+						
+						if (backOffTagger.get(i).toLowerCase().equals("oscar-ont") && posTagList.get(i).startsWith("VB")) {
+							combinedTagsList.add(posTagList.get(i));
+						}
+						else {
+							combinedTagsList.add(backOffTagger.get(i));
+						}
+							taggedIndex = tagOrder.size();
+						
 					}
 				}
 			}
