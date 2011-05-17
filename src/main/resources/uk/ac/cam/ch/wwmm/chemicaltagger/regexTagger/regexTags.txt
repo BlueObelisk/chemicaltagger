@@ -35,7 +35,7 @@ NN-MASS---^([mkμ]?(g|gram[m]?[e]?)|(pico|nano|micro|milli|centi|deci|kilo|mega)
 NN-AMOUNT---^([mnμ]|pico|nano|micro|milli)?mol[e]?[s]?$---Mols (hopefully animal moles will not occur in chemistry)
 NN-MOLAR---^([mnμ]?M|N|(pico|nano|micro|milli)?molar)$---Molar
 NN-ATMOSPHERE---(a|A)tmosphere(s)?$---Atmosphere
-NN-EQ---^([m]?eq[\.]?|(pico|nano|micro|milli|centi|deci|kilo|mega)?equivalent[s]?)$---Equivalence
+NN-EQ---^([m]?eq[\.]?|(pico|nano|micro|milli|centi|deci|kilo|mega)?equiv(alent[s]?|\.)?)$---Equivalence
 NN-VOL---^([mkµ]?l|[cd]m3|(µ|pico|nano|micro|milli|centi|deci|kilo|mega)?litre[s]?)$---Volume
 NN-VOL---^cm(-)?3$---Volume
 NN-CHEMENTITY---^ph$|^resin$|^phase(s)?$|^salt$|^material$|^retrievals$|^product$|^oligomers$|^macroinitiator(s)?$|^nanotubes$|^septum$|^initiator$|monomer$|^ice$|^petroleum|metal|^eluent$|(co)?polymer(s)?$|generation|solution|solvent|complex|layer|residue|gel|plug|catalyst|compound(s)?|.+®|^Å$---Chemical entities not marked up by OSCAR

@@ -222,14 +222,13 @@ public class PostProcessTags {
 				&& (currentToken.toLowerCase().endsWith("ing") || currentToken
 						.toLowerCase().endsWith("ed"))) {
 
-			List<String> afterList = Arrays.asList("nn oscar-cm nns nn-chementity oscar-cj jj-chem jj nnp nn-state nn-apparatus".split(" "));
-			List<String> beforeList = Arrays.asList("dt dt-the cd oscar-cm".split(" "));
+			List<String> afterList = Arrays.asList("nn", "oscar-cm", "nns", "nn-chementity", "oscar-cj", "jj-chem", "jj", "nnp", "nn-state", "nn-apparatus");
+			List<String> beforeList = Arrays.asList("dt", "dt-the", "cd", "oscar-cm");
 
 			List<String> notList = Arrays.asList("in-of");
-			if (stringAfter(afterList, i, combinedTags) 	&& stringBefore(beforeList, i, combinedTags)) {
+			if (stringAfter(afterList, i, combinedTags) && stringBefore(beforeList, i, combinedTags)) {
 				newTag = "JJ";
 			}
-
 			else if (currentToken.toLowerCase().endsWith("ing") && stringBefore(beforeList, i, combinedTags) && !stringAfter(notList, i, combinedTags)) {
 				newTag = "JJ-CHEM";
 			}
