@@ -1,6 +1,7 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -20,15 +21,8 @@ import nu.xom.Nodes;
  *****************************************/
 public class PostProcessTrees {
 	private HashMap<String, String> actionMap = new HashMap<String, String>();
-	private static List<String> splitList = new ArrayList<String>();
+	private static List<String> splitList = Arrays.asList("comma", "cc", "stop", "colon", "rb-conj");
 	private boolean includeWaitPhrase = true;
-	static {
-		splitList.add("comma");
-		splitList.add("cc");
-		splitList.add("stop");
-		splitList.add("colon");
-		splitList.add("rb-conj");
-	}
 
 	/********************************
 	 * Default Constructor method.

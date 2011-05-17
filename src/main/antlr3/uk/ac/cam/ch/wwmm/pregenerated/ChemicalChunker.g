@@ -168,7 +168,7 @@ moleculeamount1
 	:(quantity|mixture)+ inof quantity? inof? oscarCompound mixture?;
 
 moleculeamount2
-	:(quantity|mixture)* oscarCompound+  ((cdAlphanumType|number)quantity+)?(citation|quantity|mixture)* ;
+	:(quantity|mixture)* oscarCompound+  ((cdAlphanumType|number)quantity+)?(citation|quantity|comma (quantity1Node|citationStructure)|mixture)* ;
 
 unnamedmolecule
 	: unnamedmoleculeamount -> ^(UNNAMEDMOLECULE unnamedmoleculeamount);
@@ -253,11 +253,10 @@ nounratio
 
 reference
 	:	lsqb cd rsqb;
-citation: (citationStructure1|citationStructure2) -> ^(CITATION  citationStructure1? citationStructure2?);
+citation:  citationStructure|comma citationContent comma;
 
-citationStructure1:  lrb citationContent rrb;
-citationStructure2: comma lrb citationContent rrb comma;
-citationContent:   (nnp|fw|cd|conjunction) (nnp|fw|cd|conjunction)+ ;
+citationStructure:  citationContent -> ^(CITATION citationContent);
+citationContent:   lrb (nnp|fw|cd|conjunction) (nnp|fw|cd|conjunction)+ rrb ;
 
 adj	:	jj|jjr|jjs|oscarcj|jjchem|oscarrn;
 adv	:	rb|rbr|rp|rbs;
