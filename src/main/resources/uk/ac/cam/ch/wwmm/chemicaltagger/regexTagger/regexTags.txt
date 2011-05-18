@@ -42,15 +42,15 @@ NN-CHEMENTITY---^ph$|^resin$|^phase(s)?$|^salt$|^material$|^retrievals$|^product
 NN-TEMP---(o|°|º)[Cc]\.?$|room$|temperature$|^rt$|^RT$|^deg$|^degrees$---Temperature Token
 NN-TEMP---^K$---Temperature Token
 NN-FLASH---^flash$---Flash
-NN-GENERAL---^(G|g)eneral$---General term
-NN-METHOD---^(P|p)rocedure(s)?$|(t|T)echnique(s)?$|(m|M)ethod(s)?$---Method token       
+NN-GENERAL---^general$---General term
+NN-METHOD---^(procedure|technique|method|scheme|step)[s]?$---Method token       
 NN-PRESSURE---^pressure$---Pressure Token
 NN-COLUMN---^(c|C)?olumn$---Column Token 
 NN-CHROMATOGRAPHY---^(c|C)?hromatography$---Chromatography Token 
 NN-VACUUM---^(v|V)?acuum$|^(v|V)?acuo$---Vacuum Token                   
 NN-CYCLE---^(c|C)?ycle(s)?$---Column Token                    
 NN-TIMES---^(t|T)imes$---Times Token
-NN-EXAMPLE---^(e|E)xample(s)?$---Example Token
+NN-EXAMPLE---^example[s]?$---Example Token
 
 
 #Not really chementities or Oscar-cm.. but need to be fixed
