@@ -25,7 +25,7 @@ public class Formatter {
 	private static Pattern CONCAT_TEMP_PATTERN = Pattern.compile("\\d+(o|\u00b0|\u00ba)[cC][\\.]?");
 	private static Pattern CONCAT_HYPHENED_DIRECTION_PATTERN = Pattern.compile("^[A-Z]\\-\\d+");
 	private static Pattern CONCAT_SLASH_DIRECTION_PATTERN = Pattern.compile("^[A-Z]\\/\\d*$");
-	private static Pattern CONCAT_TIME_COLON = Pattern.compile("^\\d+:\\d\\d$");
+	private static Pattern CONCAT_TIME_COLON = Pattern.compile("^\\d+:\\d\\d");
 	/**************************
 	 * Hides Utility Class Constructor.
 	 */
