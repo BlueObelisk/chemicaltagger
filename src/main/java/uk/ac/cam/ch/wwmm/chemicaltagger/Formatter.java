@@ -22,6 +22,7 @@ public class Formatter {
 	private static Pattern ABBREVIATION_PATTERN = Pattern.compile("(\u2012|\u2013|\u2014|-)?[A-Z]+[a-z]*\\.");
 	//Note \d[gl] are intentionally excluded to avoid ambiguity with compound references
 	private static Pattern CONCAT_AMOUNT_PATTERN = Pattern.compile("(\\d(\\d+|\\.\\d+|\\d*[mk\u00b5])[gl][s]?|(\\d+[mnk\u00b5]?([LMN]|[eE][qQ][\\.]?|[cCdD][mM]3|[gG][rR][aA][mM][mM]?[eE]?|[mM][oO][lL][eE]?)[sS]?))$");
+	private static Pattern CONCAT_PH_PATTERN = Pattern.compile("^pH-?\\d+");
 	private static Pattern CONCAT_TEMP_PATTERN = Pattern.compile("\\d+(o|\u00b0|\u00ba)[cC][\\.]?");
 	private static Pattern CONCAT_HYPHENED_DIRECTION_PATTERN = Pattern.compile("^[A-Z]\\-\\d+");
 	private static Pattern CONCAT_SLASH_DIRECTION_PATTERN = Pattern.compile("^[A-Z]\\/\\d*$");
@@ -106,6 +107,12 @@ public class Formatter {
 			if (concatAmountMatcher.find()) {
 				string = splitAmounts(string);
 			}
+			
+			Matcher concatPhMatcher = CONCAT_PH_PATTERN.matcher(string);
+			if (concatPhMatcher.find()) {
+				string = string.substring(0, 2) + " " + string.substring(2) ;
+			}
+
 
 			Matcher concatTempMatcher = CONCAT_TEMP_PATTERN.matcher(string);
 			if (concatTempMatcher.find()) {
