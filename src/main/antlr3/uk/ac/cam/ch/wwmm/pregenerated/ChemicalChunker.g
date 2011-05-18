@@ -27,6 +27,7 @@ MASS;
 PERCENT;
 VOLUME;
 MOLAR;
+EQUIVALENT;
 YIELD;
 APPARATUS;
 MULTIPLE;
@@ -90,7 +91,7 @@ degassMultiVerb
 
 noun 	:	nounStructure (dash nounStructure)*;
 
-nounStructure :  prp|prp_poss|citation|cycles|molecule|apparatus|mixture|unnamedmolecule|nnyield|nnstate|procedureNode|nn|nns|nnp|nnadd|preparationphrase|nnexample|range|oscaronts|nntime|nnatmosphere|tmunicode|nneq|quantity|nnchementity|nntemp|nnflash|nngeneral|nnamount|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|nnvol|nnpurify|nnsynthesize|nnmixture|reference|nndry|number|oscarCompound|nnextract|nnfilter|nnprecipitate|nnremove|fw|sym|clause|ls|nnps|pos|oscarase;
+nounStructure :  prp|prp_poss|citation|cycles|molecule|apparatus|mixture|unnamedmolecule|nnyield|nnstate|procedureNode|nn|nns|nnp|nnadd|preparationphrase|nnexample|range|oscaronts|nntime|nnatmosphere|tmunicode|quantity|nnchementity|nntemp|nnflash|nngeneral|nnamount|nneq|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|nnvol|nnpurify|nnsynthesize|nnmixture|reference|nndry|number|oscarCompound|nnextract|nnfilter|nnprecipitate|nnremove|fw|sym|clause|ls|nnps|pos|oscarase;
 
 // Different PrepPhrases
 
@@ -208,12 +209,13 @@ measurements
 	:(cd nn)? (multiple|measurementtypes)    dt?;
 multiple	: cd cdunicode measurementtypes? -> ^(MULTIPLE   cd cdunicode measurementtypes? );
 measurementtypes
-	: molar|amount|mass|volume|yield|percent;
+	: molar|amount|mass|volume|equivalent|yield|percent;
 
 molar	: cd+ nnmolar -> ^(MOLAR   cd+ nnmolar );
 amount	: cd+ nnamount -> ^(AMOUNT   cd+ nnamount );
 mass	: cd+ nnmass-> ^(MASS   cd+ nnmass );
 volume	: cd+ nnvol -> ^(VOLUME   cd+ nnvol );
+equivalent: cd+ nneq -> ^(EQUIVALENT cd+ nneq );
 yield: percent nnyield -> ^(YIELD percent nnyield );
 percent	: number nn? nnpercent -> ^(PERCENT   number nn? nnpercent );
 

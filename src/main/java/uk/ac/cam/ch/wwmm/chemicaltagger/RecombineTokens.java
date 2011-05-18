@@ -27,31 +27,33 @@ public class RecombineTokens {
 		List<String> nonHyphenTags = Arrays.asList(new String[] { "dash",
 				"comma", "cc", "stop" });
 		List<Integer> indexList = new ArrayList<Integer>();
+		List<String> wordTokenList = posContainer.getWordTokenList();
+		List<String> combinedTagList = posContainer.getCombinedTagsList();
 		LinkedHashMap<Integer, List<Integer>> indexMap = new LinkedHashMap<Integer, List<Integer>>();
-		for (int currentIndex = 0; currentIndex < posContainer.getWordTokenList().size(); currentIndex++) {
+		for (int currentIndex = 0; currentIndex < wordTokenList.size(); currentIndex++) {
 			if (indexList.size() > 0){
 				totalIndexList.addAll(indexList);
 			}	
 			indexList = new ArrayList<Integer>();
 
-			String currentTagLc = posContainer.getCombinedTagsList().get(currentIndex).toLowerCase();
+			String currentTagLc = combinedTagList.get(currentIndex).toLowerCase();
 			if (currentTagLc.equals("dash")) {
 				if (currentIndex == 0
-						&& currentIndex + 1 < posContainer.getWordTokenList().size()) {
+						&& currentIndex + 1 < wordTokenList.size()) {
 					indexList.add(currentIndex);
 					indexList.add(currentIndex + 1);
 					indexMap.put(indexList.get(0), indexList);
-				} else if (currentIndex + 1 == posContainer.getWordTokenList().size()) {
+				} else if (currentIndex + 1 == wordTokenList.size()) {
 					indexList.add(currentIndex - 1);
 					indexList.add(currentIndex);
 					indexMap.put(indexList.get(0), indexList);
 				} else {
 
-					String previousTag = posContainer.getCombinedTagsList().get(currentIndex - 1);
-					String nextTag = posContainer.getCombinedTagsList().get(currentIndex + 1);
+					String previousTag = combinedTagList.get(currentIndex - 1);
+					String nextTag = combinedTagList.get(currentIndex + 1);
 
 					if (!(previousTag.startsWith("OSCAR-CM")
-							& nextTag.startsWith("OSCAR-CM") & !posContainer.getWordTokenList()
+							& nextTag.startsWith("OSCAR-CM") & !wordTokenList
 							.get(currentIndex + 1).startsWith("-")) && !(nextTag.startsWith("CD") && previousTag.startsWith("NN"))) {
 						if (totalIndexList.contains(currentIndex - 1)) {
 
@@ -61,7 +63,7 @@ public class RecombineTokens {
 							indexList = indexMap
 									.get(keySet.get(keySet.size() - 1));
 							indexList.add(currentIndex);
-							if (currentIndex + 1 < posContainer.getWordTokenList().size()){
+							if (currentIndex + 1 < wordTokenList.size()){
 								indexList.add(currentIndex + 1);
 							}	
 							indexMap.put(indexList.get(0), indexList);
@@ -90,12 +92,12 @@ public class RecombineTokens {
 				}
 			}
 			else if (currentTagLc.equals("nn-temp")) {//Identifies cases such as "50C . was" and corrects them to "50C. was"
-				if (posContainer.getWordTokenList().get(currentIndex).toLowerCase().endsWith("c") && currentIndex >0 && currentIndex + 2 < posContainer.getWordTokenList().size()){
-					String nextTag = posContainer.getCombinedTagsList().get(currentIndex + 1);
-					if (nextTag.toLowerCase().equals("stop")){
-						String previousWord = posContainer.getWordTokenList().get(currentIndex - 1);
+				if (wordTokenList.get(currentIndex).toLowerCase().endsWith("c") && currentIndex >0 && currentIndex + 2 < wordTokenList.size()){
+					String nextTag = combinedTagList.get(currentIndex + 1);
+					if (nextTag.equalsIgnoreCase("stop")){
+						String previousWord = wordTokenList.get(currentIndex - 1);
 						if (Character.isDigit(previousWord.charAt(previousWord.length()-1))){
-							String wordAfterStop = posContainer.getWordTokenList().get(currentIndex + 2);
+							String wordAfterStop = wordTokenList.get(currentIndex + 2);
 							if (Character.isLowerCase(wordAfterStop.charAt(0))){
 								indexList = new ArrayList<Integer>();
 								indexList.add(currentIndex);
@@ -103,6 +105,18 @@ public class RecombineTokens {
 								indexMap.put(indexList.get(0), indexList);
 							}
 						}
+					}
+				}
+			}
+			else if (currentTagLc.equals("nn-eq")) {//Identifies cases such as "3 eq . was" and corrects them to "3 eq. was"
+				String currentWord = wordTokenList.get(currentIndex);
+				if ((currentWord.equalsIgnoreCase("eq") || currentWord.equalsIgnoreCase("equiv")) && currentIndex + 2 < wordTokenList.size()){
+					String nextTag = combinedTagList.get(currentIndex + 1);
+					if (nextTag.equalsIgnoreCase("stop")){
+						indexList = new ArrayList<Integer>();
+						indexList.add(currentIndex);
+						indexList.add(currentIndex + 1);
+						indexMap.put(indexList.get(0), indexList);
 					}
 				}
 			}
