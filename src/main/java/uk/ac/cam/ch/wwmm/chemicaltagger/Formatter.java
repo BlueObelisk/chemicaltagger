@@ -25,7 +25,7 @@ public class Formatter {
 	private static Pattern CONCAT_TEMP_PATTERN = Pattern.compile("\\d+(o|\u00b0|\u00ba)[cC][\\.]?");
 	private static Pattern CONCAT_HYPHENED_DIRECTION_PATTERN = Pattern.compile("^[A-Z]\\-\\d+");
 	private static Pattern CONCAT_SLASH_DIRECTION_PATTERN = Pattern.compile("^[A-Z]\\/\\d*$");
-	
+	private static Pattern CONCAT_TIME_COLON = Pattern.compile("^\\d+:\\d\\d$");
 	/**************************
 	 * Hides Utility Class Constructor.
 	 */
@@ -40,7 +40,7 @@ public class Formatter {
 	 *************************************/
 	public static String normaliseText(String sentence){
 		StringBuilder newSentence = new StringBuilder();
-		sentence = sentence.replace("%", " %").replace(";", " ;").replace(":", " : ");
+		sentence = sentence.replace("%", " %").replace(";", " ;");
 
 		sentence = sentence.replace("\u2012", "-").replace("\u2013", "-").replace("\u2014", "-");
 		String[] words = WHITESPACE_PATTERN.split(sentence);
@@ -115,6 +115,11 @@ public class Formatter {
 			if (concatHyphenDirectionMatcher.find()) {
 				string = string.replace("-"," - ");
 			}
+
+			Matcher concatTimeColonMatcher = CONCAT_TIME_COLON.matcher(string);
+			if (!concatTimeColonMatcher.find()) {
+				string = string.replace(":"," : ");
+			}
 			Matcher concatSlashDirectionMatcher = CONCAT_SLASH_DIRECTION_PATTERN.matcher(string);
 			if (concatSlashDirectionMatcher.find()) {
 				string = string.replace("/"," / ");
@@ -131,7 +136,7 @@ public class Formatter {
 			newSentence.append(prefix + string + suffix);
 		}
 
-		return newSentence.toString().replace("  ", " ").trim();
+		return newSentence.toString().replaceAll("[ ]+", " ").trim();
 	}
 
 
