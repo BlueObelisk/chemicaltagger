@@ -38,9 +38,10 @@ NN-ATMOSPHERE---(a|A)tmosphere(s)?$---Atmosphere
 NN-EQ---^([m]?eq[\.]?|(pico|nano|micro|milli|centi|deci|kilo|mega)?equiv(alent[s]?|\.)?)$---Equivalence
 NN-VOL---^([mkµ]?l|[cd]m3|(µ|pico|nano|micro|milli|centi|deci|kilo|mega)?litre[s]?)$---Volume
 NN-VOL---^cm(-)?3$---Volume
-NN-CHEMENTITY---^ph$|^resin$|^phase(s)?$|^salt$|^material$|^retrievals$|^product$|^oligomers$|^macroinitiator(s)?$|^nanotubes$|^septum$|^initiator$|monomer$|^ice$|^petroleum|metal|^eluent$|(co)?polymer(s)?$|generation|solution|solvent|complex|layer|residue|gel|plug|catalyst|compound(s)?|.+®|^Å$---Chemical entities not marked up by OSCAR
+NN-CHEMENTITY---^resin$|^phase(s)?$|^salt$|^material$|^retrievals$|^product$|^oligomers$|^macroinitiator(s)?$|^nanotubes$|^septum$|^initiator$|monomer$|^ice$|^petroleum|metal|^eluent$|(co)?polymer(s)?$|generation|solution|solvent|complex|layer|residue|gel|plug|catalyst|compound(s)?|.+®|^Å$---Chemical entities not marked up by OSCAR
 NN-TEMP---(o|°|º)[Cc]\.?$|room$|temperature$|^rt$|^RT$|^deg$|^degrees$---Temperature Token
 NN-TEMP---^K$---Temperature Token
+NN-PH---^ph$---pH Token
 NN-FLASH---^flash$---Flash
 NN-GENERAL---^general$---General term
 NN-METHOD---^(procedure|technique|method|scheme|step)[s]?$---Method token       

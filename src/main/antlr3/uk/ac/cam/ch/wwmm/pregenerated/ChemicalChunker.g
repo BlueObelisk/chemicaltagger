@@ -27,6 +27,7 @@ MASS;
 PERCENT;
 VOLUME;
 MOLAR;
+PH;
 EQUIVALENT;
 YIELD;
 APPARATUS;
@@ -61,7 +62,7 @@ unmatchedPhrase
 
 unmatchedToken //all base tokens other than comma and stop
 	:	(number|advAdj|tmunicode|cdunicode|jjcomp|inAll|
-	nnexample|nnstate|nntime|nnmass|nnmolar|nnamount|nnatmosphere|nneq|nnvol|nnchementity|nntemp|nnflash|nngeneral|nnmethod|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|
+	nnexample|nnstate|nntime|nnmass|nnmolar|nnamount|nnatmosphere|nneq|nnvol|nnchementity|nntemp|nnph|nnflash|nngeneral|nnmethod|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|
 	oscarcm|oscaronts|oscarase|verb|nnadd|nnmixture|nnapparatus|nnconcentrate|nndry|nnextract|nnfilter|nnprecipitate|nnpurify|nnremove|nnsynthesize|nnyield|colon|apost|neg|dash|nnpercent|lsqb|rsqb|lrb|rrb|
 	cc|dt|dtTHE|fw|md|nn|nns|nnp|prp|prp_poss|rbconj|sym|uh|clause|comma|ls|nnps|pos);
 
@@ -91,7 +92,7 @@ degassMultiVerb
 
 noun 	:	nounStructure (dash nounStructure)*;
 
-nounStructure :  prp|prp_poss|citation|cycles|molecule|apparatus|mixture|unnamedmolecule|nnyield|nnstate|procedureNode|nn|nns|nnp|nnadd|preparationphrase|nnexample|range|oscaronts|nntime|nnatmosphere|tmunicode|quantity|nnchementity|nntemp|nnflash|nngeneral|nnamount|nneq|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|nnvol|nnpurify|nnsynthesize|nnmixture|reference|nndry|number|oscarCompound|nnextract|nnfilter|nnprecipitate|nnremove|fw|sym|clause|ls|nnps|pos|oscarase;
+nounStructure :  prp|prp_poss|citation|cycles|molecule|apparatus|mixture|unnamedmolecule|nnyield|nnstate|procedureNode|nn|nns|nnp|nnadd|preparationphrase|nnexample|range|oscaronts|nntime|nnatmosphere|tmunicode|quantity|nnchementity|nntemp|nnph|nnflash|nngeneral|nnamount|nneq|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|nnvol|nnpurify|nnsynthesize|nnmixture|reference|nndry|number|oscarCompound|nnextract|nnfilter|nnprecipitate|nnremove|fw|sym|clause|ls|nnps|pos|oscarase;
 
 // Different PrepPhrases
 
@@ -209,12 +210,13 @@ measurements
 	:(cd nn)? (multiple|measurementtypes)    dt?;
 multiple	: cd cdunicode measurementtypes? -> ^(MULTIPLE   cd cdunicode measurementtypes? );
 measurementtypes
-	: molar|amount|mass|volume|equivalent|yield|percent;
+	: molar|amount|mass|volume|logHydrogenActivity|equivalent|yield|percent;
 
 molar	: cd+ nnmolar -> ^(MOLAR   cd+ nnmolar );
 amount	: cd+ nnamount -> ^(AMOUNT   cd+ nnamount );
 mass	: cd+ nnmass-> ^(MASS   cd+ nnmass );
 volume	: cd+ nnvol -> ^(VOLUME   cd+ nnvol );
+logHydrogenActivity	: nnph cd -> ^(PH   nnph cd );
 equivalent: cd+ nneq -> ^(EQUIVALENT cd+ nneq );
 yield: percent nnyield -> ^(YIELD percent nnyield );
 percent	: number nn? nnpercent -> ^(PERCENT   number nn? nnpercent );
@@ -305,6 +307,7 @@ nneq:'NN-EQ' TOKEN -> ^('NN-EQ' TOKEN);
 nnvol:'NN-VOL' TOKEN -> ^('NN-VOL' TOKEN);
 nnchementity:'NN-CHEMENTITY' TOKEN -> ^('NN-CHEMENTITY' TOKEN);
 nntemp:'NN-TEMP' TOKEN -> ^('NN-TEMP' TOKEN);
+nnph:'NN-PH' TOKEN -> ^('NN-PH' TOKEN);
 nnflash:'NN-FLASH' TOKEN -> ^('NN-FLASH' TOKEN);
 nngeneral:'NN-GENERAL' TOKEN -> ^('NN-GENERAL' TOKEN);
 nnmethod:'NN-METHOD' TOKEN -> ^('NN-METHOD' TOKEN);
