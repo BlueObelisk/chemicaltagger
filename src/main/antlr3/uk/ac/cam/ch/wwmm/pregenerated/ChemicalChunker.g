@@ -35,6 +35,7 @@ MOLECULE;
 UNNAMEDMOLECULE;
 QUANTITY;
 OSCARONT;
+PROCEDURE;
 }
 
 
@@ -89,7 +90,7 @@ degassMultiVerb
 
 noun 	:	nounStructure (dash nounStructure)*;
 
-nounStructure :  prp|prp_poss|citation|cycles|molecule|apparatus|mixture|unnamedmolecule|nnyield|nnstate|nn|nns|nnp|nnadd|preparationphrase|nnexample|range|oscaronts|nntime|nnatmosphere|tmunicode|nneq|quantity|nnchementity|nntemp|nnflash|nngeneral|nnmethod|nnamount|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|nnvol|nnpurify|nnsynthesize|nnmixture|reference|nndry|number|oscarCompound|nnextract|nnfilter|nnprecipitate|nnremove|fw|sym|clause|ls|nnps|pos|oscarase;
+nounStructure :  prp|prp_poss|citation|cycles|molecule|apparatus|mixture|unnamedmolecule|nnyield|nnstate|procedureNode|nn|nns|nnp|nnadd|preparationphrase|nnexample|range|oscaronts|nntime|nnatmosphere|tmunicode|nneq|quantity|nnchementity|nntemp|nnflash|nngeneral|nnamount|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|nnvol|nnpurify|nnsynthesize|nnmixture|reference|nndry|number|oscarCompound|nnextract|nnfilter|nnprecipitate|nnremove|fw|sym|clause|ls|nnps|pos|oscarase;
 
 // Different PrepPhrases
 
@@ -180,7 +181,7 @@ unnamedmoleculeamount5	:
           jjcomp nnchementity cdAlphanum? (quantity|mixture)* ;
 
 unnamedmoleculeamount1
-	: quantity inof (cdAlphanum|cd);
+	: quantity inof number;
 
 unnamedmoleculeamount2
 	:(cdAlphanum|cdAlphanumType) (citation|quantity|mixture)*;
@@ -223,21 +224,17 @@ mixtureStructure3
 	:	lrb  nnpercent rrb;
 
 mixtureRatio
-	:	cd colon (cd|cdAlphanum);
+	:	cd colon number;
 mixtureContent:   (fw|verb|nn|quantity2Node|md|nnpercent|stop|oscarCompound|molecule|unnamedmolecule|dash|sym|cd|noun|inAll|cd|comma|adj|colon|stop) (minimixture|fw|verb|quantity2Node|nnyield|md|nnpercent|stop|oscarCompound|molecule|unnamedmolecule|dash|sym|cd|noun|inAll|cd|comma|adj|colon|stop)+ ;
 
 minimixture: (mixtureStructure2|mixtureStructure1) -> ^(MIXTURE  mixtureStructure2? mixtureStructure1?);
-//TODO the next 5 rules appear to be orphans
-minimixtureStructure2: comma lrb mixtureContent rrb comma;
-minimixtureStructure1:  lrb mixtureContent rrb;
-minimixtureContent:   (fw|nn|verb|quantity2Node|nnpercent|md|stop|oscarCompound|molecule|unnamedmolecule|dash|sym|cd|noun|inAll|cd|comma|adj|colon|stop) (fw|verb|quantity2Node|nnyield|nnpercent|md|stop|oscarCompound|molecule|unnamedmolecule|dash|sym|cd|noun|inAll|cd|comma|adj|colon|stop)+ ;
+
+procedureNode: method -> ^(PROCEDURE method);
 
 method:
-    (nngeneral|nn)? nnmethod (cdAlphanum|cd)?  ;
-brackets:
-	(lrb|rrb|lsqb|rsqb)+;
+    (nngeneral|nn)? nnmethod number? | nnexample number ;
 
-cdAlphanumType	:  lrb (cdAlphanum|cd) rrb;
+cdAlphanumType	:  lrb number rrb;
 
 advAdj
 	:adv|adj;
