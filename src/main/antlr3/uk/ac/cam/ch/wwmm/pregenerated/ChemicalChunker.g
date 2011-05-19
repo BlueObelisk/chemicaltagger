@@ -165,10 +165,10 @@ molecule
 moleculeamount : moleculeamount3|moleculeamount1 | moleculeamount2 ;
 
 moleculeamount3
-	:(quantity|mixture) inof mixtureRatio mixture? oscarCompound ;
+	:(quantity|mixture) inof (dtTHE | dt)? mixtureRatio mixture? oscarCompound ;
 
 moleculeamount1
-	:(quantity|mixture)+ inof quantity? inof? oscarCompound mixture?;
+	:(quantity|mixture)+ inof quantity? inof? (dtTHE | dt)? oscarCompound mixture?;
 
 moleculeamount2
 	:(quantity|mixture)* oscarCompound+  ((cdAlphanumType|number)quantity+)?(citation|quantity|comma (quantity1Node|citationStructure)|mixture)* ;
