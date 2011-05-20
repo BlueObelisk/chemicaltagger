@@ -173,7 +173,7 @@ moleculeamount1
 moleculeamount2
 	:(quantity|mixture)* oscarCompound+ afterCompoundCitationOrQuantity;
 
-afterCompoundCitationOrQuantity: ((cdAlphanumType|number)quantity+)?(citation|quantity|comma (quantity1Node|citationStructure)|mixture)*;
+afterCompoundCitationOrQuantity: ((cdAlphanumType|number|nnchementity)quantity+)?(citation|quantity|comma (quantity1Node|citationStructure)|mixture)*;
 
 unnamedmolecule
 	: unnamedmoleculeamount -> ^(UNNAMEDMOLECULE unnamedmoleculeamount);
