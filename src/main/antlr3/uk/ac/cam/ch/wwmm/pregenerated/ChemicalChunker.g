@@ -61,7 +61,7 @@ unmatchedPhrase
 	:	 unmatchedToken -> ^(Unmatched unmatchedToken);
 
 unmatchedToken //all base tokens other than comma and stop
-	:	(number|advAdj|tmunicode|cdunicode|jjcomp|inAll|
+	:	(numeric|advAdj|tmunicode|cdunicode|jjcomp|inAll|
 	nnexample|nnstate|nntime|nnmass|nnmolar|nnamount|nnatmosphere|nneq|nnvol|nnchementity|nntemp|nnph|nnflash|nngeneral|nnmethod|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|
 	oscarcm|oscaronts|oscarase|verb|nnadd|nnmixture|nnapparatus|nnconcentrate|nndry|nnextract|nnfilter|nnprecipitate|nnpurify|nnremove|nnsynthesize|nnyield|colon|apost|neg|dash|nnpercent|lsqb|rsqb|lrb|rrb|
 	cc|dt|dtTHE|fw|md|nn|nns|nnp|prp|prp_poss|rbconj|sym|uh|clause|comma|ls|nnps|pos);
@@ -74,7 +74,7 @@ nounphraseStructure
 nounphraseStructure1
 	:	 multiApparatus ->  ^(MultipleApparatus multiApparatus);
 nounphraseStructure2
-	:	dtTHE? dt? advAdj*  (dissolvePhrase|ratio|noun|number)+    (conjunction* advAdj* (dissolvePhrase|ratio|noun|number) )*   ((prepphraseOf| prepphraseIN) dissolvePhrase?)*  ;
+	:	dtTHE? dt? advAdj*  (dissolvePhrase|ratio|noun|numeric)+    (conjunction* advAdj* (dissolvePhrase|ratio|noun|numeric) )*   ((prepphraseOf| prepphraseIN) dissolvePhrase?)*  ;
 dissolvePhrase
 	:	(dissolveStructure|lrb dissolveStructure rrb) ->  ^(DissolvePhrase lrb? dissolveStructure rrb?);
 
@@ -92,7 +92,7 @@ degassMultiVerb
 
 noun 	:	nounStructure (dash nounStructure)*;
 
-nounStructure :  prp|prp_poss|citation|cycles|molecule|apparatus|mixture|unnamedmolecule|nnyield|nnstate|procedureNode|nn|nns|nnp|nnadd|preparationphrase|nnexample|range|oscaronts|nntime|nnatmosphere|tmunicode|quantity|nnchementity|nntemp|nnph|nnflash|nngeneral|nnamount|nneq|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|nnvol|nnpurify|nnsynthesize|nnmixture|reference|nndry|number|oscarCompound|nnextract|nnfilter|nnprecipitate|nnremove|fw|sym|clause|ls|nnps|pos|oscarase;
+nounStructure :  prp|prp_poss|citation|cycles|molecule|apparatus|mixture|unnamedmolecule|nnyield|nnstate|procedureNode|nn|nns|nnp|nnadd|preparationphrase|nnexample|range|oscaronts|nntime|nnatmosphere|tmunicode|quantity|nnchementity|nntemp|nnph|nnflash|nngeneral|nnamount|nneq|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|nnvol|nnpurify|nnsynthesize|nnmixture|reference|nndry|numeric|oscarCompound|nnextract|nnfilter|nnprecipitate|nnremove|fw|sym|clause|ls|nnps|pos|oscarase;
 
 // Different PrepPhrases
 
@@ -173,10 +173,10 @@ moleculeamount1
 moleculeamount2
 	:(quantity|mixture)* oscarCompound+ afterCompoundCitationOrQuantity;
 
-afterCompoundCitationOrQuantity: ((cdAlphanumType|number|nnchementity)quantity+)?(citation|quantity|comma (quantity1Node|citationStructure)|mixture)*;
+afterCompoundCitationOrQuantity: ((bracketedNumeric|numeric|nnchementity)quantity+)?(citation|quantity|comma (quantity1Node|citationStructure)|mixture)*;
 
 unnamedmolecule
-	: unnamedmoleculeamount -> ^(UNNAMEDMOLECULE unnamedmoleculeamount);
+	: (unnamedmoleculeamount|referenceToCompound) -> ^(UNNAMEDMOLECULE unnamedmoleculeamount? referenceToCompound?);
 
 unnamedmoleculeamount
 	:(unnamedmoleculeamount5|unnamedmoleculeamount1 | unnamedmoleculeamount2 | unnamedmoleculeamount3|unnamedmoleculeamount4) ;
@@ -185,16 +185,19 @@ unnamedmoleculeamount5	:
           jjcomp nnchementity cdAlphanum? (quantity|mixture)* ;
 
 unnamedmoleculeamount1
-	: quantity inof number;
+	: quantity inof numeric;
 
 unnamedmoleculeamount2
-	:(cdAlphanum|cdAlphanumType) (citation|quantity|mixture)*;
+	:(cdAlphanum|bracketedNumeric) (citation|quantity|mixture)*;
 
 unnamedmoleculeamount3
 	:quantity inof (jj? noun)+;
 
 unnamedmoleculeamount4
 	:(quantity|mixture) nnchementity;
+
+referenceToCompound
+	: nnchementity (numeric|bracketedNumeric);
 
 quantity 	:  (quantity1Node|quantity2Node);
 
@@ -221,7 +224,7 @@ volume	: cd+ nnvol -> ^(VOLUME   cd+ nnvol );
 logHydrogenActivity	: nnph cd -> ^(PH   nnph cd );
 equivalent: cd+ nneq -> ^(EQUIVALENT cd+ nneq );
 yield: percent nnyield -> ^(YIELD percent nnyield );
-percent	: number nn? nnpercent -> ^(PERCENT   number nn? nnpercent );
+percent	: numeric nn? nnpercent -> ^(PERCENT   numeric nn? nnpercent );
 
 mixture: mixtureRatio?  (mixtureStructure3|mixtureStructure2|mixtureStructure1) -> ^(MIXTURE   mixtureRatio? mixtureStructure3? mixtureStructure2? mixtureStructure1?);
 mixtureStructure2: comma lrb mixtureContent rrb comma;
@@ -230,7 +233,7 @@ mixtureStructure3
 	:	lrb  nnpercent rrb;
 
 mixtureRatio
-	:	cd colon number;
+	:	cd colon numeric;
 mixtureContent:   (fw|verb|nn|quantity2Node|md|nnpercent|stop|oscarCompound|molecule|unnamedmolecule|dash|sym|cd|noun|inAll|cd|comma|adj|colon|stop) (minimixture|fw|verb|quantity2Node|nnyield|md|nnpercent|stop|oscarCompound|molecule|unnamedmolecule|dash|sym|cd|noun|inAll|cd|comma|adj|colon|stop)+ ;
 
 minimixture: (mixtureStructure2|mixtureStructure1) -> ^(MIXTURE  mixtureStructure2? mixtureStructure1?);
@@ -238,19 +241,19 @@ minimixture: (mixtureStructure2|mixtureStructure1) -> ^(MIXTURE  mixtureStructur
 procedureNode: method -> ^(PROCEDURE method);
 
 method:
-    (nngeneral|nn)? nnmethod number? | nnexample number ;
+    (nngeneral|nn)? nnmethod numeric? | nnexample numeric ;
 
-cdAlphanumType	:  lrb number rrb;
+bracketedNumeric	:  lrb numeric rrb;
 
 advAdj
 	:adv|adj;
 
-range: number dash number;
+range: numeric dash numeric;
 cycles	:	cycleStructure -> ^(CYCLES cycleStructure)  ;
 cycleStructure	:	cd dashNN? nncycle;
 dashNN	:	(adj|nn|cd) (dash (adj|nn|cd))*;
-ratio : (numberratio|nounratio) -> ^(RATIO numberratio? nounratio?)  ;
-numberratio	:	 cd (colon cdAlphanum|cd)+ ;
+ratio : (numericratio|nounratio) -> ^(RATIO numericratio? nounratio?)  ;
+numericratio	:	 cd (colon numeric)+ ;
 nounratio
 	:	 noun  (colon noun)+  ;
 
@@ -267,7 +270,7 @@ clause	:	wdt|wp_poss|wrb|ex|pdt|wp;
 conjunction :	cc|comma;
 inAll	: in|inafter|inas|inbefore|inby|infor|infrom|inin|ininto|inof|inoff|inon|inover|inunder|invia|inwith|inwithout|to;
 inMost	: in|inas|inbefore|inby|infor|infrom|inin|ininto|inof|inoff|inon|inover|inunder|invia|inwith|inwithout|to;
-number : cd|cdAlphanum;
+numeric : cd|cdAlphanum;
 
 
 //Tags---Pattern---Description
