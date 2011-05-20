@@ -54,8 +54,6 @@ NN-TIMES---^(t|T)imes$---Times Token
 NN-EXAMPLE---^example[s]?$---Example Token
 
 
-#Not really chementities or Oscar-cm.. but need to be fixed
-NN-CHEMENTITY---^b$|^m$---will be removed
 
 
 #Oscar related Tags                          
