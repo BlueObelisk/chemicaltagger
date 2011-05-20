@@ -98,6 +98,15 @@ public class ChemistryPOSTaggerTest {
 
 	}
 	
+	@Test
+	public void testMistaggedYield() {
+		String sentence = "gave compound 1";
+		posContainer = ChemistryPOSTagger.getDefaultInstance().runTaggers(sentence);
+		String ref = "VB-YIELD gave NN-CHEMENTITY compound CD 1";
+		Assert.assertEquals(ref, posContainer.getTokenTagTupleAsString());
+		checkLengthofTags();
+
+	}
 	
 
 	@Test

@@ -160,14 +160,15 @@ public class PostProcessTags {
 
 		}
 
-		if (currentTag.toLowerCase().startsWith("vb-yield")) {
+		if (currentTag.toLowerCase().startsWith("vb-yield") ) {
 
 			List<String> beforeList = Arrays.asList("nn-percent");
 			if (stringBefore(beforeList, i, combinedTags)) {
 				newTag = "NN-YIELD";
 			}
 			List<String> afterList = Arrays.asList("nn-chementity");
-			if (stringAfter(afterList, i, combinedTags)){
+			beforeList = Arrays.asList("dt","dt-the");
+			if (stringAfter(afterList, i, combinedTags) && stringBefore(beforeList, i, combinedTags)){
 				newTag = "JJ-COMPOUND";
 			}
 		}
