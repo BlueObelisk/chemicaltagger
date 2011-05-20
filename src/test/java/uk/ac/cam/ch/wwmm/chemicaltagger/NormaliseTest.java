@@ -43,4 +43,10 @@ public class NormaliseTest {
 		assertEquals("pHenyl", Formatter.normaliseText("pHenyl"));
 	}
 	
+	@Test	
+	public void testCelciusJoining() {
+		String normalisedText = Formatter.normaliseText("100\u00b0 C");
+		assertEquals("100 \u00b0C", normalisedText);
+	}
+	
 }
