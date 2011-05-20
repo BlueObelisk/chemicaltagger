@@ -15,18 +15,19 @@ import org.xmlcml.euclid.Util;
  */
 public class Formatter {
 	
-	private static List<String> ABV_LIST = Arrays.asList("et. al. etc. e.g. i.e. vol. ca. wt. aq. mt. e.g.:".split(" "));
-	private static List<String> HTML_LIST = Arrays.asList("gt; lt;".split(" "));
-	private static List<String> NEXTTOKEN_LIST = Arrays.asList("gram vol %".split(" "));
+	private static List<String> ABV_LIST = Arrays.asList("et.", "al.", "etc.", "e.g.", "i.e.", "vol.", "ca.", "wt.", "aq.", "mt.", "e.g.:");
+	private static List<String> HTML_LIST = Arrays.asList("gt;", "lt;");
+	private static List<String> NEXTTOKEN_LIST = Arrays.asList("gram", "vol", "%");
 	private static Pattern WHITESPACE_PATTERN = Pattern.compile("\\s+");
 	private static Pattern ABBREVIATION_PATTERN = Pattern.compile("(\u2012|\u2013|\u2014|-)?[A-Z]+[a-z]*\\.");
 	//Note \d[gl] are intentionally excluded to avoid ambiguity with compound references
 	private static Pattern CONCAT_AMOUNT_PATTERN = Pattern.compile("(\\d(\\d+|\\.\\d+|\\d*[mk\u00b5])[gl][s]?|(\\d+[mnk\u00b5]?([LMN]|[eE][qQ][\\.]?|[cCdD][mM]3|[gG][rR][aA][mM][mM]?[eE]?|[mM][oO][lL][eE]?)[sS]?))$");
 	private static Pattern CONCAT_PH_PATTERN = Pattern.compile("^pH-?\\d+");
-	private static Pattern CONCAT_TEMP_PATTERN = Pattern.compile("\\d+(o|\u00b0|\u00ba)[cC][\\.]?");
+	private static Pattern CONCAT_TEMP_PATTERN = Pattern.compile("\\d+(o|\u00b0|\u00ba)[cCfF][\\.]?");
 	private static Pattern CONCAT_HYPHENED_DIRECTION_PATTERN = Pattern.compile("^[A-Z]\\-\\d+");
 	private static Pattern CONCAT_SLASH_DIRECTION_PATTERN = Pattern.compile("^[A-Z]\\/\\d*$");
 	private static Pattern CONCAT_TIME_COLON = Pattern.compile("^\\d+:\\d\\d");
+	private static Pattern TEMPERATURE_UNITS = Pattern.compile("[cCfF][\\.]?");
 	/**************************
 	 * Hides Utility Class Constructor.
 	 */
@@ -50,6 +51,14 @@ public class Formatter {
 		for (String string : words) {
 			String prefix = " ";
 			String suffix = " ";
+			
+			if (string.endsWith("\u00b0") || string.endsWith("\u00ba)")){//ends with degrees symbol
+				if (index+1 < words.length && TEMPERATURE_UNITS.matcher(words[index+1]).matches()){//next word is something like "C"
+					char lastChar = string.charAt(string.length()-1);
+					string = string.substring(0, string.length()-1);
+					words[index+1] = lastChar + words[index+1];
+				}
+			}
 			
 			Matcher abbreviationMatcher = ABBREVIATION_PATTERN.matcher(string);
 			if ((string.endsWith(".")) && (!abbreviationMatcher.find())
@@ -137,13 +146,12 @@ public class Formatter {
 				}
 			}
 			
-			
 			index++;
 
 			newSentence.append(prefix + string + suffix);
 		}
-
-		return newSentence.toString().replaceAll("[ ]+", " ").trim();
+		
+		return WHITESPACE_PATTERN.matcher(newSentence.toString()).replaceAll(" ").trim();
 	}
 
 
