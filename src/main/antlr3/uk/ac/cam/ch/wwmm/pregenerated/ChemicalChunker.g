@@ -173,7 +173,7 @@ moleculeamount1
 moleculeamount2
 	:(quantity|mixture)* oscarCompound+ afterCompoundCitationOrQuantity;
 
-afterCompoundCitationOrQuantity: ((bracketedNumeric|numeric|nnchementity)quantity+)?(citation|quantity|comma (quantity1Node|citationStructure)|mixture)*;
+afterCompoundCitationOrQuantity: ((numericOrBracketedNumeric|nnchementity)quantity+)?(citation|quantity|comma (quantity1Node|citationStructure)|mixture)*;
 
 unnamedmolecule
 	: (unnamedmoleculeamount|referenceToCompound) -> ^(UNNAMEDMOLECULE unnamedmoleculeamount? referenceToCompound?);
@@ -182,10 +182,10 @@ unnamedmoleculeamount
 	:(unnamedmoleculeamount5|unnamedmoleculeamount1 | unnamedmoleculeamount2 | unnamedmoleculeamount3|unnamedmoleculeamount4) ;
 
 unnamedmoleculeamount5	:
-          jjcomp nnchementity cdAlphanum? (quantity|mixture)* ;
+          jjcomp nnchementity numericOrBracketedNumeric? (quantity|mixture)* ;
 
 unnamedmoleculeamount1
-	: quantity inof numeric;
+	: quantity inof nnchementity? numericOrBracketedNumeric;
 
 unnamedmoleculeamount2
 	:(cdAlphanum|bracketedNumeric) (citation|quantity|mixture)*;
@@ -197,7 +197,7 @@ unnamedmoleculeamount4
 	:(quantity|mixture) nnchementity;
 
 referenceToCompound
-	: nnchementity (numeric|bracketedNumeric);
+	: nnchementity numericOrBracketedNumeric;
 
 quantity 	:  (quantity1Node|quantity2Node);
 
@@ -243,8 +243,6 @@ procedureNode: method -> ^(PROCEDURE method);
 method:
     (nngeneral|nn)? nnmethod numeric? | nnexample numeric ;
 
-bracketedNumeric	:  lrb numeric rrb;
-
 advAdj
 	:adv|adj;
 
@@ -263,6 +261,9 @@ citation:  citationStructure|comma citationContent comma;
 
 citationStructure:  citationContent -> ^(CITATION citationContent);
 citationContent:   lrb (nnp|fw|cd|conjunction) (nnp|fw|cd|conjunction)+ rrb ;
+
+numericOrBracketedNumeric	:  numeric | bracketedNumeric;
+bracketedNumeric	:  lrb numeric rrb;
 
 adj	:	jj|jjr|jjs|oscarcj|jjchem|oscarrn;
 adv	:	rb|rbr|rp|rbs;
