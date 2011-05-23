@@ -19,14 +19,14 @@ public class Formatter {
 	private static List<String> HTML_LIST = Arrays.asList("gt;", "lt;");
 	private static List<String> NEXTTOKEN_LIST = Arrays.asList("gram", "vol", "%");
 	private static Pattern WHITESPACE_PATTERN = Pattern.compile("\\s+");
-	private static Pattern ABBREVIATION_PATTERN = Pattern.compile("(\u2012|\u2013|\u2014|-)?[A-Z]+[a-z]*\\.");
+	private static Pattern ABBREVIATION_PATTERN = Pattern.compile("-?[A-Z]+[a-z]*\\.");
 	//Note \d[gl] are intentionally excluded to avoid ambiguity with compound references
 	private static Pattern CONCAT_AMOUNT_PATTERN = Pattern.compile("(\\d(\\d+|\\.\\d+|\\d*[mk\u00b5])[gl][s]?|(\\d+[mnk\u00b5]?([LMN]|[eE][qQ][\\.]?|[cCdD][mM]3|[gG][rR][aA][mM][mM]?[eE]?|[mM][oO][lL][eE]?)[sS]?))$");
 	private static Pattern CONCAT_PH_PATTERN = Pattern.compile("^pH-?\\d+");
 	private static Pattern CONCAT_TEMP_PATTERN = Pattern.compile("\\d+(o|\u00b0|\u00ba)[cCfF][\\.]?");
 	private static Pattern CONCAT_HYPHENED_DIRECTION_PATTERN = Pattern.compile("^[A-Z]\\-\\d+");
 	private static Pattern CONCAT_SLASH_DIRECTION_PATTERN = Pattern.compile("^[A-Z]\\/\\d*$");
-	private static Pattern CONCAT_TIME_COLON = Pattern.compile("^\\d+:\\d\\d");
+	private static Pattern TIME_EXPRESSION = Pattern.compile("^([01]?[1-9]|2[123]):[0-5]\\d([ap]m)?$", Pattern.CASE_INSENSITIVE);
 	private static Pattern TEMPERATURE_UNITS = Pattern.compile("[cCfF][\\.]?");
 	/**************************
 	 * Hides Utility Class Constructor.
@@ -43,15 +43,15 @@ public class Formatter {
 	public static String normaliseText(String sentence){
 		StringBuilder newSentence = new StringBuilder();
 		sentence = sentence.replace("%", " %").replace(";", " ;");
-
-		sentence = sentence.replace("\u2012", "-").replace("\u2013", "-").replace("\u2014", "-");
+//TODO should minus and hyphens be distinguished? If not this expressions needs generalising
+		sentence = sentence.replace("\u2012", "-").replace("\u2013", "-").replace("\u2014", "-");//normalise hyphens
 		String[] words = WHITESPACE_PATTERN.split(sentence);
 
 		int index = 0;
 		for (String string : words) {
 			String prefix = " ";
 			String suffix = " ";
-			
+	
 			if (string.endsWith("\u00b0") || string.endsWith("\u00ba)")){//ends with degrees symbol
 				if (index+1 < words.length && TEMPERATURE_UNITS.matcher(words[index+1]).matches()){//next word is something like "C"
 					char lastChar = string.charAt(string.length()-1);
@@ -61,39 +61,42 @@ public class Formatter {
 			}
 			
 			Matcher abbreviationMatcher = ABBREVIATION_PATTERN.matcher(string);
-			if ((string.endsWith(".")) && (!abbreviationMatcher.find())
-					&& (!ABV_LIST.contains(string.toLowerCase()))) {
-				if (!stopWordAfter(words, index, NEXTTOKEN_LIST)) {
+			if ((string.endsWith(".")) && !abbreviationMatcher.find()
+					&& !ABV_LIST.contains(string.toLowerCase())) {
+				if (!stopWordAfter(words, index, NEXTTOKEN_LIST)) {//TODO what cases does this clause resolve?
 					string = string.substring(0, string.length() - 1);
 					suffix = " ." + suffix;
 				}
 			}
+			
+			if (string.endsWith(".") && (string.contains("\u00b0") || string.contains("\u00ba"))) {//splits period after degrees e.g. 50oC. This period may be reattached in RecombineTokens
+				string = string.substring(0, string.length() - 1);
+				suffix = " ." + suffix;
+			}
+			if (string.equals("K.") && index > 0) {///splits period after temperature in Kelvin 
+				if (StringUtils.isNumeric(words[index - 1])) {//TODO is that actually what this method does? If so it doesn't work c.f. 273.15 K.
+					string = "K .";
+				}
+			}
 
-			if ((string.endsWith(";") && !HTML_LIST.contains(string
-					.toLowerCase()))) {
+			if ((string.endsWith(";") && !HTML_LIST.contains(string//TODO html should not be in the input!!!?? If it is should it be normalised from the html to unicode representation?
+					.toLowerCase()))) {//splits semicolons off
 				string = string.substring(0, string.length() - 1);
 				suffix = " ;" + suffix;
 			}
 
-			if (string.endsWith(".") && (string.contains("\u00b0") || string.contains("\u00ba"))) {
-				string = string.substring(0, string.length() - 1);
-				suffix = " ." + suffix;
-			}
-
-			if (string.endsWith(",")) {
+			if (string.endsWith(",")) {//splits commas off
 				string = string.substring(0, string.length() - 1);
 				suffix = " ," + suffix;
 			}
 
-			if (string.startsWith("(")) {
-				String subString = string.substring(1, string.length());
+			if (string.startsWith("(")) {//split bracket off word with unbalanced starting or terminal bracket
 				int i = Util.indexOfBalancedBracket('(', string);
 
 				if (i < 0) {
-					string = subString;
+					string = string.substring(1, string.length());
 					prefix = prefix + "( ";
 				}
-
 			} else if (string.trim().endsWith(")")) {
 				String subString = string.substring(0, string.length()-1);
 
@@ -101,10 +104,9 @@ public class Formatter {
 					string = subString;
 					suffix = " )" + suffix;
 				}
-
 			}
 
-			if (string.startsWith("(") && string.endsWith(")")) {
+			if (string.startsWith("(") && string.endsWith(")")) {// splits brackets off a word enclosed by brackets
 				String subString = string.substring(1, string.length() - 1);
 
 				string = subString;
@@ -112,40 +114,34 @@ public class Formatter {
 				suffix = " )" + suffix;
 			}
 
-			Matcher concatAmountMatcher = CONCAT_AMOUNT_PATTERN.matcher(string);
+			Matcher concatAmountMatcher = CONCAT_AMOUNT_PATTERN.matcher(string);//split values from units e.g. 4.5g --> 4.5 g
 			if (concatAmountMatcher.find()) {
 				string = splitAmounts(string);
 			}
 			
-			Matcher concatPhMatcher = CONCAT_PH_PATTERN.matcher(string);
+			Matcher concatPhMatcher = CONCAT_PH_PATTERN.matcher(string);//e.g. pH7 --> pH 7
 			if (concatPhMatcher.find()) {
 				string = string.substring(0, 2) + " " + string.substring(2) ;
 			}
 
-
-			Matcher concatTempMatcher = CONCAT_TEMP_PATTERN.matcher(string);
+			Matcher concatTempMatcher = CONCAT_TEMP_PATTERN.matcher(string);//e.g. 50oC --> 50 oC
 			if (concatTempMatcher.find()) {
 				string = splitTemperature(string);
 			}
-			Matcher concatHyphenDirectionMatcher = CONCAT_HYPHENED_DIRECTION_PATTERN.matcher(string);
+			Matcher concatHyphenDirectionMatcher = CONCAT_HYPHENED_DIRECTION_PATTERN.matcher(string);//TODO what does this do?
 			if (concatHyphenDirectionMatcher.find()) {
 				string = string.replace("-"," - ");
 			}
 
-			Matcher concatTimeColonMatcher = CONCAT_TIME_COLON.matcher(string);
+			Matcher concatTimeColonMatcher = TIME_EXPRESSION.matcher(string);//split on colons except in times
 			if (!concatTimeColonMatcher.find()) {
 				string = string.replace(":"," : ");
 			}
-			Matcher concatSlashDirectionMatcher = CONCAT_SLASH_DIRECTION_PATTERN.matcher(string);
+			Matcher concatSlashDirectionMatcher = CONCAT_SLASH_DIRECTION_PATTERN.matcher(string);//TODO what does this do?
 			if (concatSlashDirectionMatcher.find()) {
 				string = string.replace("/"," / ");
 			}
-			if (string.equals("K.") && index > 0) {
-				if (StringUtils.isNumeric(words[index - 1])) {
-					string = "K .";
-				}
-			}
-			
+
 			index++;
 
 			newSentence.append(prefix + string + suffix);

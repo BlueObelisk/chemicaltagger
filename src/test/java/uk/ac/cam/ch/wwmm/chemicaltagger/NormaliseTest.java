@@ -3,6 +3,8 @@ package uk.ac.cam.ch.wwmm.chemicaltagger;
 import static uk.ac.cam.ch.wwmm.chemicaltagger.Utils.readSentence;
 
 import static org.junit.Assert.*;
+
+import org.junit.Ignore;
 import org.junit.Test;
 
 /***********************************************
@@ -21,7 +23,57 @@ public class NormaliseTest {
 		assertEquals(ref,cleanSentence);
 	}
 	
+	@Test	
+	public void testHyphenNormalisation() {
+		assertEquals("----", Formatter.normaliseText("\u2012\u2013\u2014-"));
+	}
+
+	@Test	
+	public void testWhiteSpaceRemoval() {
+		assertEquals("foo bar baz foo bar", Formatter.normaliseText("foo\rbar\nbaz\tfoo  \n bar"));
+	}
 	
+	@Test	
+	public void testCelciusJoining() {
+		String normalisedText = Formatter.normaliseText("100 \u00b0 C");
+		assertEquals("100 \u00b0C", normalisedText);
+	}
+	
+	
+	@Test	
+	public void testSplitFullStop() {
+		assertEquals("reaction .", Formatter.normaliseText("reaction."));
+	}
+	
+	@Test	
+	public void testDontSplitAbbreviations() {
+		assertEquals("e.g.", Formatter.normaliseText("e.g."));
+		assertEquals("A.M.", Formatter.normaliseText("A.M."));
+	}
+	
+	@Test	
+	public void testSplitPeriodAfterDegrees() {
+		assertEquals("After heating to 50 \u00b0C . the mixture was stired .", Formatter.normaliseText("After heating to 50 \u00b0C. the mixture was stired."));
+	}
+	
+	@Test
+	@Ignore
+	public void testSplitKelvin() {
+		assertEquals("273.15 K ", Formatter.normaliseText("273.15 K."));
+	}
+	
+	@Test	
+	public void testSplitBracketsOff() {
+		assertEquals("( compound 5 )", Formatter.normaliseText("(compound 5)"));
+		assertEquals("( solid )", Formatter.normaliseText("(solid)"));
+	}
+	
+	
+	@Test	
+	public void testDontSplitBracketsOffInChemicalNames() {
+		assertEquals("(ethyl)benzene", Formatter.normaliseText("(ethyl)benzene"));
+	}
+
 	@Test	
 	public void testAmountSplitting() {
 		assertEquals("5 gram", Formatter.normaliseText("5gram"));
@@ -44,9 +96,15 @@ public class NormaliseTest {
 	}
 	
 	@Test	
-	public void testCelciusJoining() {
-		String normalisedText = Formatter.normaliseText("100\u00b0 C");
-		assertEquals("100 \u00b0C", normalisedText);
+	public void testTemperatureSplitting() {
+		assertEquals("50 \u00b0C", Formatter.normaliseText("50\u00b0C"));
 	}
 	
+	@Test	
+	public void testColonSplittingExceptinTimes() {
+		assertEquals("Example 1 :", Formatter.normaliseText("Example 1:"));
+		assertEquals("octanol : water", Formatter.normaliseText("octanol:water"));
+		assertEquals("14:00", Formatter.normaliseText("14:00"));
+		assertEquals("6:00pm", Formatter.normaliseText("6:00pm"));
+	}
 }
