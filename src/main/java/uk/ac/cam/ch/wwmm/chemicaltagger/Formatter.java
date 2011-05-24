@@ -28,6 +28,8 @@ public class Formatter {
 	private static Pattern CONCAT_SLASH_DIRECTION_PATTERN = Pattern.compile("^[A-Z]\\/\\d*$");
 	private static Pattern TIME_EXPRESSION = Pattern.compile("^([01]?[1-9]|2[123]):[0-5]\\d([ap]m)?$", Pattern.CASE_INSENSITIVE);
 	private static Pattern TEMPERATURE_UNITS = Pattern.compile("[cCfF][\\.]?");
+	private static Pattern MATCH_SULPH = Pattern.compile("sulph", Pattern.CASE_INSENSITIVE);
+
 	/**************************
 	 * Hides Utility Class Constructor.
 	 */
@@ -141,7 +143,7 @@ public class Formatter {
 			if (concatSlashDirectionMatcher.find()) {
 				string = string.replace("/"," / ");
 			}
-
+			string = MATCH_SULPH.matcher(string).replaceAll("sulf");//correct British spelling to the IUPAC spelling to assist OSCAR
 			index++;
 
 			newSentence.append(prefix + string + suffix);
