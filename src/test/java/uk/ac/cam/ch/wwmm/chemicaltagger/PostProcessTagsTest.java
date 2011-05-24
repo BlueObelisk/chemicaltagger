@@ -1,7 +1,11 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
+import java.util.Arrays;
+import java.util.List;
+
 import junit.framework.Assert;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 /************************************
@@ -26,6 +30,18 @@ public class PostProcessTagsTest {
   		  String expected = "DT-THE The OSCAR-CM benzene JJ worked NN form VBD was VB-FILL filled";
           POSContainer posContainer = ChemistryPOSTagger.getDefaultInstance().runTaggers(sentence);
           Assert.assertEquals(expected,posContainer.getTokenTagTupleAsString());
+ 	}
+
+	@Test
+	@Ignore
+	public void testMistaggedVbprecipitate() {
+          POSContainer posContainer = new POSContainer();
+          List<String> tags = Arrays.asList("DT-THE", "VB-PRECIPITATE");
+          List<String> tokens = Arrays.asList("the", "precipitate");
+          posContainer.setCombinedTagsList(tags);
+          posContainer.setWordTokenList(tokens);
+          new PostProcessTags().correctCombinedTagsList(posContainer);
+          Assert.assertEquals("DT-THE the NN-CHEMENTITY precipitate", posContainer.getTokenTagTupleAsString());
  	}
 
 	
