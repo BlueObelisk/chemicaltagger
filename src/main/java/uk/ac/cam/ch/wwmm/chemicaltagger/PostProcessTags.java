@@ -68,17 +68,18 @@ public class PostProcessTags {
 	private String correctMisTaggedVerbs(List<String> tokenList,
 			List<String> combinedTags, int i, String currentTag,
 			String currentToken, String newTag) {
-		if (currentTag.toLowerCase().startsWith("vb-")
-				|| currentTag.toLowerCase().startsWith("nn")) {
-			if (!currentTag.toLowerCase().startsWith("nn-state")
-					&& !currentTag.toLowerCase().startsWith("nn-apparatus")
-					&& !currentTag.toLowerCase().startsWith("nn-cycle")
-					&& !currentTag.toLowerCase().startsWith("nn-temp")
-					&& !currentTag.toLowerCase().startsWith("nn-pressure")
-					&& !currentTag.toLowerCase().startsWith("nn-time")
-					&& !currentTag.toLowerCase().startsWith("nn-molar")
-					&& !currentTag.toLowerCase().startsWith("nn-vacuum")
-				    && !currentTag.toLowerCase().startsWith("nnp"))  {
+		String currentTagLC = currentTag.toLowerCase();
+		if (currentTagLC.startsWith("vb-")
+				|| currentTagLC.startsWith("nn")) {
+			if (!currentTagLC.startsWith("nn-state")
+					&& !currentTagLC.startsWith("nn-apparatus")
+					&& !currentTagLC.startsWith("nn-cycle")
+					&& !currentTagLC.startsWith("nn-temp")
+					&& !currentTagLC.startsWith("nn-pressure")
+					&& !currentTagLC.startsWith("nn-time")
+					&& !currentTagLC.startsWith("nn-molar")
+					&& !currentTagLC.startsWith("nn-vacuum")
+				    && !currentTagLC.startsWith("nnp"))  {
 				List<String> beforeList = Arrays.asList("dt", "jj", "jj-chem", "dt-the");
 				List<String> afterListJJ = Arrays.asList("jj", "nn-chementity", "nn-mixture", "nn-apparatus", "nn", "jj-chem");
 
@@ -87,20 +88,20 @@ public class PostProcessTags {
 				if (stringBefore(beforeList, i, combinedTags)
 						&& (i == combinedTags.size() || stringAfter(
 								afterListNN, i, combinedTags))
-						&& !currentTag.toLowerCase().startsWith("nn-")) {
+						&& !currentTagLC.startsWith("nn-")) {
 					newTag = "NN";
 				}
 					
 
 				else if (stringBefore(beforeList, i, combinedTags)
-						&& (stringAfter(afterListJJ, i, combinedTags) && !currentTag
-								.toLowerCase().startsWith("nn-chementity")) && adjObjectExists(combinedTags,i)) {
+						&& (stringAfter(afterListJJ, i, combinedTags) && 
+								!currentTagLC.startsWith("nn-chementity")) && adjObjectExists(combinedTags,i)) {
 					newTag = "JJ-CHEM";
 				}
 			}
 		}
 
-		if (currentTag.toLowerCase().startsWith("vb-precipitate")) {
+		if (currentTagLC.startsWith("vb-precipitate")) {
 			List<String> beforeList = Arrays.asList("jj", "oscar-cj", "jj-chem");
 			List<String> afterList = Arrays.asList("in-of");
 			List<String> notafterList = Arrays.asList("nn-time");
@@ -121,8 +122,8 @@ public class PostProcessTags {
 			}
 		}
 
-		if (currentTag.toLowerCase().startsWith("vb-")
-				|| currentTag.toLowerCase().startsWith("nn-synthesize")) {
+		if (currentTagLC.startsWith("vb-")
+				|| currentTagLC.startsWith("nn-synthesize")) {
 			List<String> beforeList = Arrays.asList("dt-the", "dt");
 			List<String> afterList = Arrays.asList("vb");
 
@@ -132,14 +133,14 @@ public class PostProcessTags {
 			}
 		}
 
-		if (currentTag.toLowerCase().startsWith("vb")
+		if (currentTagLC.startsWith("vb")
 				&& Utils.containsNumber(currentToken)) {
 			newTag = "NN";
 		}
 
-		if (currentTag.toLowerCase().startsWith("vbn")
-				|| currentTag.toLowerCase().startsWith("vbg")
-				|| currentTag.toLowerCase().startsWith("vb-")
+		if (currentTagLC.startsWith("vbn")
+				|| currentTagLC.startsWith("vbg")
+				|| currentTagLC.startsWith("vb-")
 				|| currentToken.endsWith("ed")) {
 
 			List<String> afterList = Arrays.asList("oscar-cm", "nns", "nn-chementity", "oscar-cj", "jj-chem", "nnp");
@@ -151,7 +152,7 @@ public class PostProcessTags {
 
 		}
 
-		if (currentTag.toLowerCase().startsWith("vb-yield") ) {
+		if (currentTagLC.startsWith("vb-yield") ) {
 
 			List<String> beforeList = Arrays.asList("nn-percent");
 			if (stringBefore(beforeList, i, combinedTags)) {
@@ -164,7 +165,7 @@ public class PostProcessTags {
 			}
 		}
 
-		if (currentTag.toLowerCase().startsWith("vb-filter")) {
+		if (currentTagLC.startsWith("vb-filter")) {
 
 			List<String> beforeList = Arrays.asList("oscar-cj", "jj-chem");
 			if (stringBefore(beforeList, i, combinedTags)) {
@@ -173,7 +174,7 @@ public class PostProcessTags {
 
 		}
 
-		if (currentTag.toLowerCase().startsWith("vb")) {
+		if (currentTagLC.startsWith("vb")) {
 
 			List<String> beforeList = Arrays.asList("to");
 			List<String> beforebeforeList = Arrays.asList("vb-heat");
@@ -186,7 +187,7 @@ public class PostProcessTags {
 
 		}
 
-		if (currentTag.toLowerCase().startsWith("nn-mixture")) {
+		if (currentTagLC.startsWith("nn-mixture")) {
 
 			List<String> afterList = Arrays.asList("in-of");
 
@@ -196,7 +197,7 @@ public class PostProcessTags {
 
 		}
 		
-		if (currentTag.toLowerCase().startsWith("vb-dilute")) {//correct cases where dilute and the like are actually adjectives e.g. dilute sulfuric acid
+		if (currentTagLC.startsWith("vb-dilute")) {//correct cases where dilute and the like are actually adjectives e.g. dilute sulfuric acid
 
 			List<String> afterList = Arrays.asList("oscar-cm");
 
@@ -209,7 +210,7 @@ public class PostProcessTags {
 		/********
 		 * Gerunds
 		 */
-		if (currentTag.toLowerCase().startsWith("vb")
+		if (currentTagLC.startsWith("vb")
 				&& (currentToken.toLowerCase().endsWith("ing") || currentToken
 						.toLowerCase().endsWith("ed"))) {
 
@@ -226,7 +227,7 @@ public class PostProcessTags {
 
 		}
 
-		if (currentTag.toLowerCase().startsWith("vb") && !currentToken.toLowerCase().endsWith("ing")) {
+		if (currentTagLC.startsWith("vb") && !currentToken.toLowerCase().endsWith("ing")) {
 
 			List<String> beforeList = Arrays.asList("dt", "dt-the", "in-in", "in-of", "rb");
 			List<String> afterList = Arrays.asList("nn", "oscar-cm", "nns", "nn-chementity", "oscar-cj", "jj-chem", "jj", "nnp", "nn-state", "nn-apparatus");
@@ -288,8 +289,9 @@ public class PostProcessTags {
 	 *************************************/
 	private String correctMisTaggedDigits(List<String> combinedTags, int i,
 			String currentTag, String currentToken, String newTag) {
-		if (StringUtils.equalsIgnoreCase(currentTag, "cd")
-				|| (currentTag.toLowerCase().startsWith("nn-") && Utils
+		String currentTagLC = currentTag.toLowerCase();
+		if (currentTagLC.equals("cd")
+				|| (currentTagLC.startsWith("nn-") && Utils
 						.containsNumber(currentToken))) {
 			List<String> beforeList = Arrays.asList("in-of", "jj", "nn-chementity", "comma");
 			List<String> afterList = Arrays.asList("-lrb-", "stop", "comma");
@@ -300,7 +302,7 @@ public class PostProcessTags {
 			}
 		}
 
-		if (StringUtils.equalsIgnoreCase(currentTag, "prp")
+		if (currentTagLC.equals("prp")
 				|| currentToken.toLowerCase().startsWith("ii")) {
 			List<String> beforeList = Arrays.asList("-lrb-");
 			List<String> afterList = Arrays.asList("-rrb-");
@@ -309,7 +311,7 @@ public class PostProcessTags {
 				newTag = "CD-ALPHANUM";
 			}
 		}
-		if (currentTag.toLowerCase().equals("cd")) {
+		if (currentTagLC.equals("cd")) {
 
 			List<String> afterList = Arrays.asList("stop", "comma", "-lrb-");
 
@@ -319,7 +321,7 @@ public class PostProcessTags {
 			}
 		}
 
-		if (currentTag.toLowerCase().equals("cd-alphanum")) {
+		if (currentTagLC.equals("cd-alphanum")) {
 
 			List<String> afterList = Arrays.asList("nn-vol", "nn-mass");
 
@@ -343,11 +345,12 @@ public class PostProcessTags {
 	 *************************************/
 	private String correctMisTaggedMisc(List<String> combinedTags, int i,
 			String currentTag, String currentToken, String newTag) {
-		if (StringUtils.equalsIgnoreCase(currentTag, "nnp")
+		String currentTagLC = currentTag.toLowerCase();
+		if (currentTagLC.equals("nnp")
 				&& StringUtils.equalsIgnoreCase(currentToken, "M")) {
 			newTag = "NN-MOLAR";
 		}
-		if (i != 0 && StringUtils.equalsIgnoreCase(currentTag, "nns")) {
+		if (i != 0 && currentTagLC.equals("nns")) {
 
 			List<String> beforeList = Arrays.asList("stop");
 			if (currentToken.endsWith("s")
@@ -358,7 +361,7 @@ public class PostProcessTags {
 			}
 		}
 
-		if (StringUtils.equalsIgnoreCase(currentTag, "rb")	&& currentToken.length() < 2) {
+		if (currentTagLC.equals("rb")	&& currentToken.length() < 2) {
 
 			if (Character.isUpperCase(currentToken.charAt(0))){
 				newTag = "NNP";
@@ -368,7 +371,7 @@ public class PostProcessTags {
 			}
 
 		}
-		if (i != 0 && StringUtils.equalsIgnoreCase(currentTag, "nn")) {
+		if (i != 0 && currentTagLC.equals("nn")) {
 
 			List<String> beforeList = Arrays.asList("stop");
 			if (Character.isUpperCase(currentToken.charAt(0)) && !stringBefore(beforeList, i, combinedTags)){
@@ -377,8 +380,7 @@ public class PostProcessTags {
 
 		}
 
-		if (i != 0	&& (currentTag.toLowerCase().startsWith("vb") || currentTag
-						.toLowerCase().startsWith("nn-"))) {
+		if (i != 0	&& (currentTagLC.startsWith("vb") || currentTagLC.startsWith("nn-"))) {
 
 			List<String> beforeList = Arrays.asList("stop", "rrb", "comma");
 			List<String> afterList = Arrays.asList("nnp", "nns", "nn", "nnp-acronym");
@@ -406,10 +408,10 @@ public class PostProcessTags {
 				newTag = "NN-TEMP";
 			}
 		}
-		if (StringUtils.equalsIgnoreCase(currentTag, "''")) {
+		if (currentTagLC.equals("''")) {
 			newTag = "FW";
 		}
-		if (currentTag.toLowerCase().equals("nn-mixture")) {
+		if (currentTagLC.equals("nn-mixture")) {
 
 			List<String> afterList = Arrays.asList("vbd");
 
@@ -418,7 +420,7 @@ public class PostProcessTags {
 			}
 		}
 
-		if (currentTag.toLowerCase().startsWith("nn-concentrate")) {
+		if (currentTagLC.startsWith("nn-concentrate")) {
 			List<String> beforeList = Arrays.asList("jj", "oscar-cj", "jj-chem");
 			List<String> afterList = Arrays.asList("in-of");
 
@@ -428,7 +430,7 @@ public class PostProcessTags {
 			}
 		}
 
-		if (i != 0 && currentTag.toLowerCase().startsWith("nn-add")) {
+		if (i != 0 && currentTagLC.startsWith("nn-add")) {
 			List<String> beforeList = Arrays.asList("stop", "comma", "colon");
 			if (!stringBefore(beforeList, i, combinedTags)&& Character.isUpperCase(currentToken.charAt(0))) {
 				newTag = "NNP";
@@ -436,8 +438,8 @@ public class PostProcessTags {
 
 		}
 
-		if (currentTag.toLowerCase().startsWith("jj")
-				|| currentTag.toLowerCase().startsWith("nnp")) {
+		if (currentTagLC.startsWith("jj")
+				|| currentTagLC.startsWith("nnp")) {
 			List<String> afterList = Arrays.asList("nn-campaign");
 			if ((stringAfter(afterList, i, combinedTags) || string2after(
 					afterList, i, combinedTags))
@@ -465,7 +467,7 @@ public class PostProcessTags {
 				newTag = "VB";
 			}
 		}
-		if (currentTag.toLowerCase().startsWith("nn-synthesize")) {
+		if (currentTagLC.startsWith("nn-synthesize")) {
 
 			List<String> afterList = Arrays.asList("nn-apparatus");
 			List<String> beforeList = Arrays.asList("dt", "nn-apparatus", "rb-conj", "dt-the");
@@ -477,7 +479,7 @@ public class PostProcessTags {
 		}
 
 		if (currentToken.equals("D")
-				&& currentTag.toLowerCase().equals("nn-time")) {
+				&& currentTagLC.equals("nn-time")) {
 
 			List<String> beforeList = Arrays.asList("in-in");
 			if (stringBefore(beforeList, i, combinedTags)) {
