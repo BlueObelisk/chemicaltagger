@@ -69,7 +69,7 @@ public class PostProcessTags {
 			List<String> combinedTags, int i, String currentTag,
 			String currentToken, String newTag) {
 		String currentTagLC = currentTag.toLowerCase();
-		if (currentTagLC.startsWith("vb-") || 
+		if (currentTagLC.startsWith("vb-") || //TODO what does this actually do other than correcting reaction mixture?
 				(currentTagLC.startsWith("nn") && !currentTagLC.startsWith("nn-state")
 					&& !currentTagLC.startsWith("nn-apparatus")
 					&& !currentTagLC.startsWith("nn-cycle")
@@ -98,11 +98,11 @@ public class PostProcessTags {
 		}
 
 		if (currentTagLC.startsWith("vb-precipitate")) {
-			newTag = disambiguityBetweenVerbAndNounPrecipitate(tokenList, combinedTags, i, currentTag);
+			newTag = correctTaggingOfVbPrecipitate(tokenList, combinedTags, i, newTag);
 		}
 
-		if (currentTagLC.startsWith("vb-")
-				|| currentTagLC.startsWith("nn-synthesize")) {
+		if (currentTagLC.startsWith("vb-")//TODO this corrects precipitates but what else would it correct???
+				|| currentTagLC.startsWith("nn-synthesize")) {//FIXME why does this function accept NN-SYNTHESIZE? Reclassification to NN-CHEMENTITY is incorrect!
 			List<String> beforeList = Arrays.asList("dt-the", "dt");
 			List<String> afterList = Arrays.asList("vb");
 
@@ -113,14 +113,14 @@ public class PostProcessTags {
 		}
 
 		if (currentTagLC.startsWith("vb")
-				&& Utils.containsNumber(currentToken)) {
+				&& Utils.containsNumber(currentToken)) {//verbs are highly unlikely to contain numbers!
 			newTag = "NN";
 		}
 
 		if (currentTagLC.startsWith("vbn")
 				|| currentTagLC.startsWith("vbg")
 				|| currentTagLC.startsWith("vb-")
-				|| currentToken.endsWith("ed")) {
+				|| currentToken.endsWith("ed")) {//TODO when exactly does this apply?
 
 			List<String> afterList = Arrays.asList("oscar-cm", "nns", "nn-chementity", "oscar-cj", "jj-chem", "nnp");
 			List<String> beforeList = Arrays.asList("dt", "rb", "rb-conj", "dt-the", "stop", "in-with", "in-of", "in-under");
@@ -128,20 +128,10 @@ public class PostProcessTags {
 					&& stringBefore(beforeList, i, combinedTags)) {
 				newTag = "JJ-CHEM";
 			}
-
 		}
 
 		if (currentTagLC.startsWith("vb-yield") ) {
-
-			List<String> beforeList = Arrays.asList("nn-percent");
-			if (stringBefore(beforeList, i, combinedTags)) {
-				newTag = "NN-YIELD";
-			}
-			List<String> afterList = Arrays.asList("nn-chementity");
-			beforeList = Arrays.asList("dt", "dt-the");
-			if (stringAfter(afterList, i, combinedTags) && stringBefore(beforeList, i, combinedTags)){
-				newTag = "JJ-COMPOUND";
-			}
+			newTag = correctTaggingOfVbYield(combinedTags, i, newTag);
 		}
 
 		if (currentTagLC.startsWith("vb-filter")) {
@@ -235,8 +225,16 @@ public class PostProcessTags {
 		return newTag;
 	}
 
-	private String disambiguityBetweenVerbAndNounPrecipitate(List<String> tokenList, List<String> combinedTags, int i, String currentTag) {
-		//TODO why not just classify "precipitate" as NN-CHEMENTITY and eliminate this method???? precipitate as a very is very uncommon and all other VB-PRECIPITATE are never NN-CHEMENTITY!
+	/**
+	 * Disambiguates between precipate as a verb and as a noun chementity
+	 * @param tokenList
+	 * @param combinedTags
+	 * @param i
+	 * @param currentTag
+	 * @return
+	 */
+	private String correctTaggingOfVbPrecipitate(List<String> tokenList, List<String> combinedTags, int i, String currentTag) {
+		//TODO why not just classify "precipitate" as NN-CHEMENTITY and eliminate this method???? precipitate as a verb is very uncommon and all other VB-PRECIPITATE are never NN-CHEMENTITY! ("precipitates" could be disambiguated by the presence of a determiner)
 		List<String> beforeList = Arrays.asList("jj", "oscar-cj", "jj-chem");
 		List<String> afterList = Arrays.asList("in-of");
 		List<String> notAfterList = Arrays.asList("nn-time");
@@ -252,6 +250,26 @@ public class PostProcessTags {
 			if (tokenList.get(beforeIndex).endsWith("ing")) {
 				return "NN-CHEMENTITY";
 			}
+		}
+		return currentTag;
+	}
+
+	/**
+	 * Disambiguates between yield as a verb and the yield of a product compound
+	 * @param combinedTags
+	 * @param i
+	 * @param currentTag
+	 * @return
+	 */
+	private String correctTaggingOfVbYield(List<String> combinedTags, int i, String currentTag) {
+		List<String> beforeList = Arrays.asList("nn-percent");
+		if (stringBefore(beforeList, i, combinedTags)) {//TODO does it matter that many VB-yields make absolutely no sense as nouns?
+			return  "NN-YIELD";
+		}
+		List<String> afterList = Arrays.asList("nn-chementity");
+		beforeList = Arrays.asList("dt", "dt-the");
+		if (stringAfter(afterList, i, combinedTags) && stringBefore(beforeList, i, combinedTags)){
+			return "JJ-COMPOUND";
 		}
 		return currentTag;
 	}

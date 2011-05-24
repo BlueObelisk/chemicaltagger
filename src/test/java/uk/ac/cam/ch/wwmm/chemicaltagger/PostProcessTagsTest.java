@@ -43,7 +43,26 @@ public class PostProcessTagsTest {
           new PostProcessTags().correctCombinedTagsList(posContainer);
           Assert.assertEquals("DT-THE the NN-CHEMENTITY precipitate", posContainer.getTokenTagTupleAsString());
  	}
-
+	
+	public void testVerbWithDigits() {
+        POSContainer posContainer = new POSContainer();
+        List<String> tags = Arrays.asList("VB");
+        List<String> tokens = Arrays.asList("44\u00B011'");
+        posContainer.setCombinedTagsList(tags);
+        posContainer.setWordTokenList(tokens);
+        new PostProcessTags().correctCombinedTagsList(posContainer);
+        Assert.assertEquals("NN 44\u00B011'", posContainer.getTokenTagTupleAsString());
+	}
+	
+	public void testYieldAsAnAdjective() {
+        POSContainer posContainer = new POSContainer();
+        List<String> tags = Arrays.asList("DT-THE", "VB-YIELD", "NN-CHEMENTITY");
+        List<String> tokens = Arrays.asList("The yielded product");
+        posContainer.setCombinedTagsList(tags);
+        posContainer.setWordTokenList(tokens);
+        new PostProcessTags().correctCombinedTagsList(posContainer);
+        Assert.assertEquals("DT-THE The JJ-CHEM yielded NN-CHEMENTITY product", posContainer.getTokenTagTupleAsString());
+	}
 	
 	
 }
