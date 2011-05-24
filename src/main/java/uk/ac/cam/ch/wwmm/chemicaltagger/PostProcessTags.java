@@ -90,8 +90,6 @@ public class PostProcessTags {
 					&& !currentTagLC.startsWith("nn-")) {
 				newTag = "NN";
 			}
-				
-
 			else if (stringBefore(beforeList, i, combinedTags)
 					&& (stringAfter(afterListJJ, i, combinedTags) && 
 							!currentTagLC.startsWith("nn-chementity")) && adjObjectExists(combinedTags,i)) {
@@ -100,24 +98,7 @@ public class PostProcessTags {
 		}
 
 		if (currentTagLC.startsWith("vb-precipitate")) {
-			List<String> beforeList = Arrays.asList("jj", "oscar-cj", "jj-chem");
-			List<String> afterList = Arrays.asList("in-of");
-			List<String> notafterList = Arrays.asList("nn-time");
-
-			if (stringBefore(beforeList, i, combinedTags)
-					&& (stringAfter(afterList, i, combinedTags) || i == combinedTags
-							.size())) {
-				if (!stringAfter(notafterList, i, combinedTags)){
-					newTag = "NN-CHEMENTITY";
-				}	
-			}
-			if (i != 0) {
-				int beforeIndex = i - 1;
-				if (tokenList.get(beforeIndex).endsWith("ing")) {
-					newTag = "NN-CHEMENTITY";
-				}
-
-			}
+			newTag = disambiguityBetweenVerbAndNounPrecipitate(tokenList, combinedTags, i, currentTag);
 		}
 
 		if (currentTagLC.startsWith("vb-")
@@ -242,7 +223,7 @@ public class PostProcessTags {
 							&& stringAfter(afterList, i, combinedTags)) {
 						newTag = "JJ";
 					} else if (stringBefore(beforeList, i, combinedTags)
-							&& combinedTags.get(i + 1).toLowerCase()
+							&& (i +1) < combinedTags.size() && combinedTags.get(i + 1).toLowerCase()
 									.startsWith("nn")) {
 						newTag = "JJ";
 					}
@@ -252,6 +233,27 @@ public class PostProcessTags {
 		}
 
 		return newTag;
+	}
+
+	private String disambiguityBetweenVerbAndNounPrecipitate(List<String> tokenList, List<String> combinedTags, int i, String currentTag) {
+		//TODO why not just classify "precipitate" as NN-CHEMENTITY and eliminate this method???? precipitate as a very is very uncommon and all other VB-PRECIPITATE are never NN-CHEMENTITY!
+		List<String> beforeList = Arrays.asList("jj", "oscar-cj", "jj-chem");
+		List<String> afterList = Arrays.asList("in-of");
+		List<String> notAfterList = Arrays.asList("nn-time");
+
+		if (stringBefore(beforeList, i, combinedTags)
+				&& (stringAfter(afterList, i, combinedTags) || i == combinedTags.size())) {
+			if (!stringAfter(notAfterList, i, combinedTags)){
+				return "NN-CHEMENTITY";
+			}	
+		}
+		if (i != 0) {
+			int beforeIndex = i - 1;
+			if (tokenList.get(beforeIndex).endsWith("ing")) {
+				return "NN-CHEMENTITY";
+			}
+		}
+		return currentTag;
 	}
 
 	/******************************************
