@@ -107,4 +107,9 @@ public class NormaliseTest {
 		assertEquals("14:00", Formatter.normaliseText("14:00"));
 		assertEquals("6:00pm", Formatter.normaliseText("6:00pm"));
 	}
+	
+	@Test	
+	public void testSulphCorrection() {
+		assertEquals("sulfide", Formatter.normaliseText("sulphide"));
+	}
 }
