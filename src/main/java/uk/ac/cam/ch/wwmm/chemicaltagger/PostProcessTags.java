@@ -69,9 +69,8 @@ public class PostProcessTags {
 			List<String> combinedTags, int i, String currentTag,
 			String currentToken, String newTag) {
 		String currentTagLC = currentTag.toLowerCase();
-		if (currentTagLC.startsWith("vb-")
-				|| currentTagLC.startsWith("nn")) {
-			if (!currentTagLC.startsWith("nn-state")
+		if (currentTagLC.startsWith("vb-") || 
+				(currentTagLC.startsWith("nn") && !currentTagLC.startsWith("nn-state")
 					&& !currentTagLC.startsWith("nn-apparatus")
 					&& !currentTagLC.startsWith("nn-cycle")
 					&& !currentTagLC.startsWith("nn-temp")
@@ -79,25 +78,24 @@ public class PostProcessTags {
 					&& !currentTagLC.startsWith("nn-time")
 					&& !currentTagLC.startsWith("nn-molar")
 					&& !currentTagLC.startsWith("nn-vacuum")
-				    && !currentTagLC.startsWith("nnp"))  {
-				List<String> beforeList = Arrays.asList("dt", "jj", "jj-chem", "dt-the");
-				List<String> afterListJJ = Arrays.asList("jj", "nn-chementity", "nn-mixture", "nn-apparatus", "nn", "jj-chem");
+				    && !currentTagLC.startsWith("nnp")))  {
+			List<String> beforeList = Arrays.asList("dt", "jj", "jj-chem", "dt-the");
+			List<String> afterListJJ = Arrays.asList("jj", "nn-chementity", "nn-mixture", "nn-apparatus", "nn", "jj-chem");
 
-				List<String> afterListNN = Arrays.asList("stop", "comma");
+			List<String> afterListNN = Arrays.asList("stop", "comma");
 
-				if (stringBefore(beforeList, i, combinedTags)
-						&& (i == combinedTags.size() || stringAfter(
-								afterListNN, i, combinedTags))
-						&& !currentTagLC.startsWith("nn-")) {
-					newTag = "NN";
-				}
-					
+			if (stringBefore(beforeList, i, combinedTags)
+					&& (i == combinedTags.size() || stringAfter(
+							afterListNN, i, combinedTags))
+					&& !currentTagLC.startsWith("nn-")) {
+				newTag = "NN";
+			}
+				
 
-				else if (stringBefore(beforeList, i, combinedTags)
-						&& (stringAfter(afterListJJ, i, combinedTags) && 
-								!currentTagLC.startsWith("nn-chementity")) && adjObjectExists(combinedTags,i)) {
-					newTag = "JJ-CHEM";
-				}
+			else if (stringBefore(beforeList, i, combinedTags)
+					&& (stringAfter(afterListJJ, i, combinedTags) && 
+							!currentTagLC.startsWith("nn-chementity")) && adjObjectExists(combinedTags,i)) {
+				newTag = "JJ-CHEM";
 			}
 		}
 
