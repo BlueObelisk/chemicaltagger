@@ -112,4 +112,10 @@ public class NormaliseTest {
 	public void testSulphCorrection() {
 		assertEquals("sulfide", Formatter.normaliseText("sulphide"));
 	}
+	
+	@Test	
+	public void testCelciusJoining2() {
+		String normalisedText = Formatter.normaliseText("100 \u00b0 C.,");
+		assertEquals("100 \u00b0C. ,", normalisedText);
+	}
 }
