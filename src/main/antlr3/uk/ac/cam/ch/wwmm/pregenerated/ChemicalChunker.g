@@ -38,6 +38,7 @@ UNNAMEDMOLECULE;
 QUANTITY;
 OSCARONT;
 PROCEDURE;
+REFERENCETOCOMPOUND;
 }
 
 
@@ -92,7 +93,7 @@ degassMultiVerb
 
 noun 	:	nounStructure (dash nounStructure)*;
 
-nounStructure :  prp|prp_poss|citation|cycles|molecule|apparatus|mixture|unnamedmolecule|nnyield|nnstate|procedureNode|nn|nns|nnp|nnadd|preparationphrase|nnexample|range|oscaronts|nntime|nnatmosphere|tmunicode|quantity|nnchementity|nntemp|nnph|nnflash|nngeneral|nnamount|nneq|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|nnvol|nnpurify|nnsynthesize|nnmixture|reference|nndry|numeric|oscarCompound|nnextract|nnfilter|nnprecipitate|nnremove|fw|sym|clause|ls|nnps|pos|oscarase;
+nounStructure :  prp|prp_poss|citation|cycles|molecule|apparatus|mixture|unnamedmolecule|nnyield|nnstate|procedureNode|nn|nns|nnp|nnadd|preparationphrase|nnexample|range|oscaronts|nntime|nnatmosphere|tmunicode|quantity|nnchementity|nntemp|nnph|nnflash|nngeneral|nnamount|nneq|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|nnvol|nnpurify|nnsynthesize|nnmixture|squareBracketedReference|nndry|numeric|oscarCompound|nnextract|nnfilter|nnprecipitate|nnremove|fw|sym|clause|ls|nnps|pos|oscarase;
 
 // Different PrepPhrases
 
@@ -147,7 +148,7 @@ preapparatus
 // The RRB at the end is for leftover brackets from chemicals that didn't parse properly
 oscaronts
 	: oscaront+ -> ^(OSCARONT   oscaront+);
-oscarCompound :  adj* (oscarCompound1|oscarCompound2|oscarCompound3|oscarCompound4|oscarcm) adj? reference?;
+oscarCompound :  adj* (oscarCompound1|oscarCompound2|oscarCompound3|oscarCompound4|oscarcm) adj? alphanumericOrBrackettedCompoundReference?;
 
 oscarCompound4 :	lrb  oscarcm rrb -> ^(OSCARCM  lrb  oscarcm  rrb );
 oscarCompound3 :	oscarCompound3Structure -> ^(OSCARCM   oscarCompound3Structure );
@@ -173,7 +174,7 @@ moleculeamount1
 moleculeamount2
 	:(quantity|mixture)* oscarCompound+ afterCompoundCitationOrQuantity;
 
-afterCompoundCitationOrQuantity: ((numericOrBracketedNumeric|nnchementity)quantity+)?(citation|quantity|comma (quantity1Node|citationStructure)|mixture)*;
+afterCompoundCitationOrQuantity: ((numericCompoundReference|nnchementity)quantity+)?(citation|quantity|comma (quantity1Node|citationStructure)|mixture)*;
 
 unnamedmolecule
 	: (unnamedmoleculeamount|referenceToCompound) -> ^(UNNAMEDMOLECULE unnamedmoleculeamount? referenceToCompound?);
@@ -182,13 +183,16 @@ unnamedmoleculeamount
 	:(unnamedmoleculeamount5|unnamedmoleculeamount1 | unnamedmoleculeamount2 | unnamedmoleculeamount3|unnamedmoleculeamount4) ;
 
 unnamedmoleculeamount5	:
-          jjcomp nnchementity numericOrBracketedNumeric? (quantity|mixture)* ;
+          jjcomp nnchementity numericCompoundReference? (quantity|mixture)* ;
 
 unnamedmoleculeamount1
-	: quantity inof nnchementity? numericOrBracketedNumeric;
+	: quantity inof nnchementity? numericCompoundReference;
 
 unnamedmoleculeamount2
-	:(cdAlphanum|bracketedNumeric) (citation|quantity|mixture)*;
+	: alphanumericOrBrackettedCompoundReference (citation|quantity|mixture)*;
+
+alphanumericOrBrackettedCompoundReference
+  : (cdAlphanum|bracketedNumeric|squareBracketedReference) -> ^(REFERENCETOCOMPOUND cdAlphanum? bracketedNumeric? squareBracketedReference?);
 
 unnamedmoleculeamount3
 	:quantity inof (jj? noun)+;
@@ -197,7 +201,13 @@ unnamedmoleculeamount4
 	:(quantity|mixture) nnchementity;
 
 referenceToCompound
-	: nnchementity numericOrBracketedNumeric;
+	: nnchementity numericCompoundReference;
+
+numericCompoundReference
+  : (numericOrBracketedNumeric |squareBracketedReference) -> ^(REFERENCETOCOMPOUND numericOrBracketedNumeric? squareBracketedReference?);
+
+squareBracketedReference
+	:	lsqb numeric rsqb;
 
 quantity 	:  (quantity1Node|quantity2Node);
 
@@ -255,8 +265,6 @@ numericratio	:	 cd (colon numeric)+ ;
 nounratio
 	:	 noun  (colon noun)+  ;
 
-reference
-	:	lsqb cd rsqb;
 citation:  citationStructure|comma citationContent comma;
 
 citationStructure:  citationContent -> ^(CITATION citationContent);
