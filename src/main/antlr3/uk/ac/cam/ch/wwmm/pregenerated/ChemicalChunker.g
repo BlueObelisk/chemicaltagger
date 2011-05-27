@@ -80,7 +80,7 @@ dissolvePhrase
 	:	(dissolveStructure|lrb dissolveStructure rrb) ->  ^(DissolvePhrase lrb? dissolveStructure rrb?);
 
 dissolveStructure
-	:	adj? (nnp (molecule|unnamedmolecule|nnchementity) | (molecule|unnamedmolecule)) (inin dtTHE? adj? nnp? (molecule|unnamedmolecule) (conjunction molecule)*)+ ;
+	:	adj? (nnp nnchementity |nnp?(molecule|unnamedmolecule)) (inin dtTHE? adj? nnp? (molecule|unnamedmolecule) (conjunction molecule)*)+ ;
 
 
 verbphrase
