@@ -59,7 +59,7 @@ public class PostProcessTagsTest {
 	public void testYieldAsAnAdjective() {
         POSContainer posContainer = new POSContainer();
         List<String> tags = Arrays.asList("DT-THE", "VB-YIELD", "NN-CHEMENTITY");
-        List<String> tokens = Arrays.asList("The yielded product");
+        List<String> tokens = Arrays.asList("The", "yielded", "product");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
         new PostProcessTags().correctCombinedTagsList(posContainer);
