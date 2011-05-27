@@ -133,6 +133,10 @@ public class PostProcessTags {
 		if (currentTagLC.startsWith("vb-yield") ) {
 			newTag = correctTaggingOfVbYield(combinedTags, i, newTag);
 		}
+		
+		if (currentTagLC.startsWith("vb") && currentToken.equalsIgnoreCase("form")) {//"form" is only a VB-YIELD if it is a verb
+			newTag = "VB-YIELD";
+		}
 
 		if (currentTagLC.startsWith("vb-filter")) {
 

@@ -44,6 +44,7 @@ public class PostProcessTagsTest {
           Assert.assertEquals("DT-THE the NN-CHEMENTITY precipitate", posContainer.getTokenTagTupleAsString());
  	}
 	
+	@Test
 	public void testVerbWithDigits() {
         POSContainer posContainer = new POSContainer();
         List<String> tags = Arrays.asList("VB");
@@ -54,6 +55,7 @@ public class PostProcessTagsTest {
         Assert.assertEquals("NN 44\u00B011'", posContainer.getTokenTagTupleAsString());
 	}
 	
+	@Test
 	public void testYieldAsAnAdjective() {
         POSContainer posContainer = new POSContainer();
         List<String> tags = Arrays.asList("DT-THE", "VB-YIELD", "NN-CHEMENTITY");
@@ -62,6 +64,17 @@ public class PostProcessTagsTest {
         posContainer.setWordTokenList(tokens);
         new PostProcessTags().correctCombinedTagsList(posContainer);
         Assert.assertEquals("DT-THE The JJ-CHEM yielded NN-CHEMENTITY product", posContainer.getTokenTagTupleAsString());
+	}
+	
+	@Test
+	public void testFormAsAVerb() {
+        POSContainer posContainer = new POSContainer();
+        List<String> tags = Arrays.asList("VB");
+        List<String> tokens = Arrays.asList("form");
+        posContainer.setCombinedTagsList(tags);
+        posContainer.setWordTokenList(tokens);
+        new PostProcessTags().correctCombinedTagsList(posContainer);
+        Assert.assertEquals("VB-YIELD form", posContainer.getTokenTagTupleAsString());
 	}
 	
 	
