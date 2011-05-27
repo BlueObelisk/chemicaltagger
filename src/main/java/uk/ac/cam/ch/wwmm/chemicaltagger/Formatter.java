@@ -27,7 +27,7 @@ public class Formatter {
 	private static Pattern CONCAT_HYPHENED_DIRECTION_PATTERN = Pattern.compile("^[A-Z]\\-\\d+");
 	private static Pattern CONCAT_SLASH_DIRECTION_PATTERN = Pattern.compile("^[A-Z]\\/\\d*$");
 	private static Pattern TIME_EXPRESSION = Pattern.compile("^([01]?[1-9]|2[123]):[0-5]\\d([ap]m)?$", Pattern.CASE_INSENSITIVE);
-	private static Pattern TEMPERATURE_UNITS = Pattern.compile("[cCfF][\\.]?");
+	private static Pattern TEMPERATURE_UNITS = Pattern.compile("[cCfF][\\.]?[,;:]?");
 	private static Pattern MATCH_SULPH = Pattern.compile("sulph", Pattern.CASE_INSENSITIVE);
 
 	/**************************
