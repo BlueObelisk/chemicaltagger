@@ -145,20 +145,14 @@ nnApp
 preapparatus
 	:    (quantity|adj|nnpressure|nnadd|molecule|nnchementity|nnstate|nn)+ ;
 
-// The RRB at the end is for leftover brackets from chemicals that didn't parse properly
 oscaronts
 	: oscaront+ -> ^(OSCARONT   oscaront+);
-oscarCompound :  adj* (oscarCompound1|oscarCompound2|oscarCompound3|oscarCompound4|oscarcm) adj? alphanumericOrBrackettedCompoundReference?;
+oscarCompound :  adj* oscarCompoundStructure adj? alphanumericOrBrackettedCompoundReference?;
 
-oscarCompound4 :	lrb  oscarcm rrb -> ^(OSCARCM  lrb  oscarcm  rrb );
-oscarCompound3 :	oscarCompound3Structure -> ^(OSCARCM   oscarCompound3Structure );
-oscarCompound2 :	oscarCompound2Structure -> ^(OSCARCM   oscarCompound2Structure );
-oscarCompound1 :	oscarcm oscarcm+ -> ^(OSCARCM  oscarcm oscarcm+);
-
-oscarCompound3Structure
-	:  oscarcm (dash|apost)+;
-oscarCompound2Structure
-	:  oscarcm (dash oscarcm)+  dash?;
+oscarCompoundStructure: nestedOscarCM|oscarcm;
+nestedOscarCM: (oscarcm afterOscarCompoundStructure | bracketedOscarCompoundStructure) -> ^(OSCARCM oscarcm? afterOscarCompoundStructure? bracketedOscarCompoundStructure?);
+afterOscarCompoundStructure: oscarcm+|(dash oscarcm)+ dash?|(dash|apost)+;
+bracketedOscarCompoundStructure :	lrb  oscarcm rrb;
 
 molecule
 	:  moleculeamount-> ^(MOLECULE  moleculeamount );
