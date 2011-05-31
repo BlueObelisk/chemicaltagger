@@ -142,7 +142,7 @@ public class ChemistryPOSTagger {
 		posContainer.setPrioritiseOscar(prioritiseOscar);
 		posContainer.combineTaggers();	
 		posContainer = RecombineTokens.recombineTokens(posContainer);
-		posContainer =  new PostProcessTags().correctCombinedTagsList(posContainer);
+		posContainer =  new PostProcessTags().correctCombinedTagsList(posContainer,regexTagger.getIgnoredTags());
 		return posContainer;
 	}
 	

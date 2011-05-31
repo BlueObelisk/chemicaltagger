@@ -23,12 +23,15 @@ public class RegexTagger {
 	private List<Rule> rules;
     private String tagFilePath = "/uk/ac/cam/ch/wwmm/chemicaltagger/regexTagger/regexTags.txt";
 	private static Logger LOG = Logger.getLogger(RegexTagger.class);
-
+    private List<String> ignoredTags;
 	/****************************
 	 * Public Constructor.
 	 ***************************/
 	public RegexTagger() {
+		ignoredTags = new ArrayList<String>();
 		initializeRules();
+		
+		
 	}
 
 	/**********************
@@ -76,7 +79,7 @@ public class RegexTagger {
 			while ((line = in.readLine()) != null) {
 				if (!line.startsWith("#") && !StringUtils.isEmpty(line)) {
 					String[] lineTokens = line.split("---");
-					if (lineTokens.length > 1) {
+					if (lineTokens.length > 1 ) {
 						rules.add(new Rule(lineTokens[0], lineTokens[1]));
 					}
 
@@ -105,7 +108,7 @@ public class RegexTagger {
 
 				String tag = "nil";
 				for (Rule r : rules) {
-					if (m.usePattern(r.getPattern()).lookingAt()) {
+					if (m.usePattern(r.getPattern()).lookingAt()&& ! (ignoredTags.contains(r.getName()))) {
 						tag = r.getName();
 						break;
 					}
@@ -118,6 +121,15 @@ public class RegexTagger {
 			}
 		}
 		return posContainer;
+	}
+
+	public List<String> getIgnoredTags() {
+        return ignoredTags;      
+ 		
+	}
+	public void setIgnoredTags(List<String> ignoredTags) {
+        this.ignoredTags = ignoredTags;      
+ 		
 	}
 
 }
