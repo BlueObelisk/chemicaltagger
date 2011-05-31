@@ -15,15 +15,28 @@ import org.apache.commons.lang.StringUtils;
 public class PostProcessTags {
 
 	private static HashSet<String> tagSet = Utils.loadsTagsFromFile(PostProcessTags.class);
+	
+	/********************************************
+	 * Overloading Method that corrects tags in combinedTagsList
+	 * @param posContainer (POSContainer)
+	 *            
+	 * @return posContainer (POSContainer)
+	 *******************************************/
+	
+    public POSContainer correctCombinedTagsList(POSContainer posContainer ) {
+    	return  correctCombinedTagsList(posContainer, new ArrayList<String>());
+    }
+    
 	/***********************************************
 	 * Corrects known tagging problems in the tags in combinedtagsList.
-	 * 
+	 * And ignores the tags in the ignoredTags list when called from other applications.
 	 * @param posContainer
 	 *            (POSContainer)
+	 * @param ignoredTags (List)            
 	 * @return posContainer (POSContainer)
 	 **********************************************/
 	
-	public POSContainer correctCombinedTagsList(POSContainer posContainer) {
+	public POSContainer correctCombinedTagsList(POSContainer posContainer, List<String> ignoredTags) {
 
 		List<String> tokenList = posContainer.getWordTokenList();
 		List<String> combinedTags = posContainer.getCombinedTagsList();
@@ -44,7 +57,14 @@ public class PostProcessTags {
 				currentToken = currentToken.toLowerCase();
 			}
 			
-			newCombinedTagsList.add(newTag);
+			if (!ignoredTags.contains(newTag)) {
+				newCombinedTagsList.add(newTag);
+			}
+			else {
+				System.out.println(newTag + " -- "+currentTag);
+
+				newCombinedTagsList.add(currentTag);
+			}
 			newTokenList.add(currentToken);
 		}
 		
