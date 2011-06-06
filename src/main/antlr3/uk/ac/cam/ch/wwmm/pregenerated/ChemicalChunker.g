@@ -151,8 +151,8 @@ oscarCompound :  adj* oscarCompoundStructure adj? alphanumericOrBrackettedCompou
 
 oscarCompoundStructure: nestedOscarCM|oscarcm;
 nestedOscarCM: (oscarcm afterOscarCompoundStructure | bracketedOscarCompoundStructure) -> ^(OSCARCM oscarcm? afterOscarCompoundStructure? bracketedOscarCompoundStructure?);
-afterOscarCompoundStructure: oscarcm+|(dash oscarcm)+ dash?|(dash|apost)+;
-bracketedOscarCompoundStructure :	lrb  oscarcm rrb;
+afterOscarCompoundStructure: oscarcm+|(dash oscarcm+)+ dash?|(dash|apost)+;
+bracketedOscarCompoundStructure :	lrb  oscarcm+ rrb;
 
 molecule
 	:  moleculeamount-> ^(MOLECULE  moleculeamount );
