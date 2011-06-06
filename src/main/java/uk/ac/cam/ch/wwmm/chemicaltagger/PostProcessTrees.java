@@ -287,7 +287,13 @@ public class PostProcessTrees {
 		}
 
 		if (elementList.size() > 0) {
-			addListToParentNode(newSentence, elementList);
+			if (actionPhrase != null) {
+				addListToParentNode(actionPhrase, elementList);
+				appendActionPhrase(newSentence, actionPhrase);
+			}
+			else{
+				addListToParentNode(newSentence, elementList);
+			}
 		}
 		newSentence = checkForRolePrepPhrase(newSentence);
 
