@@ -38,7 +38,7 @@ NN-ATMOSPHERE---(a|A)tmosphere(s)?$---Atmosphere
 NN-EQ---^([m]?eq[\.]?|(pico|nano|micro|milli|centi|deci|kilo|mega)?equiv(alent[s]?|\.)?)$---Equivalence
 NN-VOL---^([mkµ]?l|[cd]m3|(µ|pico|nano|micro|milli|centi|deci|kilo|mega)?lit(re|er)[s]?)$---Volume
 NN-VOL---^cm(-)?3$---Volume
-NN-CHEMENTITY---^resin$|^phase(s)?$|^salt$|^material$|^retrievals$|^product$|^oligomers$|^macroinitiator(s)?$|^nanotubes$|^septum$|^initiator$|monomer$|^ice$|^petroleum|metal|^eluent$|(co)?polymer(s)?$|generation|solution|solvent|complex|layer|residue|gel|plug|catalyst|compound(s)?|.+®|^Å$---Chemical entities not marked up by OSCAR
+NN-CHEMENTITY---^precipitate$|^resin$|^phase(s)?$|^salt$|^material$|^retrievals$|^product$|^oligomers$|^macroinitiator(s)?$|^nanotubes$|^septum$|^initiator$|monomer$|^ice$|^petroleum|metal|^eluent$|(co)?polymer(s)?$|generation|solution|solvent|complex|layer|residue|gel|plug|catalyst|compound(s)?|.+®|^Å$---Chemical entities not marked up by OSCAR
 NN-TEMP---(o|°|º)[cCfF]\.?$|room$|temperature$|^rt$|^RT$|^deg$|^degrees$---Temperature Token
 NN-TEMP---^K$---Temperature Token
 NN-PH---^ph$---pH Token
@@ -119,7 +119,7 @@ VB-IMMERSE---^immersed$---Submerges verb
 VB-PARTITION---(partition|separat|split)(e|ed|ing|ting)?---Partition Verb
 
 #Precipitate Tokens
-VB-PRECIPITATE---(re)?(precipitat|crystall?i[zs])(e|ed|ing)?(s)?$---Precipitate Verb
+VB-PRECIPITATE---(re)?(precipitat(ed|ing|es)|crystall?i[zs](e|ed|ing)?(s)?)$---Precipitate Verb
 NN-PRECIPITATE---(re)?(precipitat|crystall?i[zs])(ation|ion)?(s)?$---Precipitate Noun
 
 #Purify Tokens
