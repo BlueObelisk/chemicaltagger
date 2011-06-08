@@ -3,7 +3,6 @@ package uk.ac.cam.ch.wwmm.chemicaltagger;
 import static org.junit.Assert.assertEquals;
 import static uk.ac.cam.ch.wwmm.chemicaltagger.Utils.readSentence;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 /***********************************************
@@ -56,9 +55,8 @@ public class NormaliseTest {
 	}
 	
 	@Test
-	@Ignore
 	public void testSplitKelvin() {
-		assertEquals("273.15 K ", Formatter.normaliseText("273.15 K."));
+		assertEquals("273.15 K .", Formatter.normaliseText("273.15 K."));
 	}
 	
 	@Test	
