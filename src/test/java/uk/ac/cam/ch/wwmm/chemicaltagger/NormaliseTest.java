@@ -1,8 +1,7 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
+import static org.junit.Assert.assertEquals;
 import static uk.ac.cam.ch.wwmm.chemicaltagger.Utils.readSentence;
-
-import static org.junit.Assert.*;
 
 import org.junit.Ignore;
 import org.junit.Test;

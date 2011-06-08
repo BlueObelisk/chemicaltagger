@@ -16,8 +16,6 @@ import org.xmlcml.euclid.Util;
 public class Formatter {
 	
 	private static List<String> ABV_LIST = Arrays.asList("et.", "al.", "etc.", "e.g.", "i.e.", "vol.", "ca.", "wt.", "aq.", "mt.", "e.g.:");
-	private static List<String> HTML_LIST = Arrays.asList("gt;", "lt;");
-	private static List<String> NEXTTOKEN_LIST = Arrays.asList("gram", "vol", "%");
 	private static Pattern WHITESPACE_PATTERN = Pattern.compile("\\s+");
 	private static Pattern ABBREVIATION_PATTERN = Pattern.compile("-?[A-Z]+[a-z]*\\.");
 	//Note \d[gl] are intentionally excluded to avoid ambiguity with compound references
@@ -45,8 +43,7 @@ public class Formatter {
 	public static String normaliseText(String sentence){
 		StringBuilder newSentence = new StringBuilder();
 		sentence = sentence.replace("%", " %").replace(";", " ;");
-//TODO should minus and hyphens be distinguished? If not this expressions needs generalising
-		sentence = sentence.replace("\u2012", "-").replace("\u2013", "-").replace("\u2014", "-");//normalise hyphens
+  	    sentence = sentence.replace("\u2010", "-").replace("\u2011", "-").replace("\u2012", "-").replace("\u2013", "-").replace("\u2014", "-").replace("\u2015", "-");//normalise hyphens
 		String[] words = WHITESPACE_PATTERN.split(sentence);
 
 		int index = 0;
@@ -65,10 +62,9 @@ public class Formatter {
 			Matcher abbreviationMatcher = ABBREVIATION_PATTERN.matcher(string);
 			if ((string.endsWith(".")) && !abbreviationMatcher.find()
 					&& !ABV_LIST.contains(string.toLowerCase())) {
-				if (!stopWordAfter(words, index, NEXTTOKEN_LIST)) {//TODO what cases does this clause resolve?
 					string = string.substring(0, string.length() - 1);
 					suffix = " ." + suffix;
-				}
+
 			}
 			
 			if (string.endsWith(".") && (string.contains("\u00b0") || string.contains("\u00ba"))) {//splits period after degrees e.g. 50oC. This period may be reattached in RecombineTokens
@@ -76,16 +72,12 @@ public class Formatter {
 				suffix = " ." + suffix;
 			}
 			if (string.equals("K.") && index > 0) {///splits period after temperature in Kelvin 
-				if (StringUtils.isNumeric(words[index - 1])) {//TODO is that actually what this method does? If so it doesn't work c.f. 273.15 K.
+				if (StringUtils.isNumeric(words[index - 1].replace(".", ""))) {
 					string = "K .";
 				}
 			}
 
-			if ((string.endsWith(";") && !HTML_LIST.contains(string//TODO html should not be in the input!!!?? If it is should it be normalised from the html to unicode representation?
-					.toLowerCase()))) {//splits semicolons off
-				string = string.substring(0, string.length() - 1);
-				suffix = " ;" + suffix;
-			}
+
 
 			if (string.endsWith(",")) {//splits commas off
 				string = string.substring(0, string.length() - 1);
@@ -130,7 +122,7 @@ public class Formatter {
 			if (concatTempMatcher.find()) {
 				string = splitTemperature(string);
 			}
-			Matcher concatHyphenDirectionMatcher = CONCAT_HYPHENED_DIRECTION_PATTERN.matcher(string);//TODO what does this do?
+			Matcher concatHyphenDirectionMatcher = CONCAT_HYPHENED_DIRECTION_PATTERN.matcher(string);//splits mistokenised direction coordinates  like  60° N- 60°
 			if (concatHyphenDirectionMatcher.find()) {
 				string = string.replace("-"," - ");
 			}
@@ -139,7 +131,7 @@ public class Formatter {
 			if (!concatTimeColonMatcher.find()) {
 				string = string.replace(":"," : ");
 			}
-			Matcher concatSlashDirectionMatcher = CONCAT_SLASH_DIRECTION_PATTERN.matcher(string);//TODO what does this do?
+			Matcher concatSlashDirectionMatcher = CONCAT_SLASH_DIRECTION_PATTERN.matcher(string);//splits mistokenised direction ranges like 78°55'19" N/  11°56'33" E
 			if (concatSlashDirectionMatcher.find()) {
 				string = string.replace("/"," / ");
 			}
@@ -192,23 +184,6 @@ public class Formatter {
 	
 
 
-	/**********************************************
-	 * Checks if it is followed by a stopword.
-	 * @param words (String[])
-	 * @param index (int)
-	 * @param nextTokenList (List<String>)
-	 * @return isStopWordAfter (boolean)
-	 **********************************************/
-	private static boolean stopWordAfter(String[] words, int index,
-			List<String> nextTokenList) {
-		boolean isStopWordAfter = false;
-		if (index + 1 < words.length) {
-			if (nextTokenList.contains(words[index + 1])) {
-				isStopWordAfter = true;
-			}
-		}
-		return isStopWordAfter;
-	}
 	
 
 }
