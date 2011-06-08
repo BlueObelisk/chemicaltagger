@@ -117,12 +117,9 @@ public class PostProcessTags {
 			}
 		}
 
-		if (currentTagLC.startsWith("vb-precipitate")) {
-			newTag = correctTaggingOfVbPrecipitate(tokenList, combinedTags, i, newTag);
-		}
 
-		if (currentTagLC.startsWith("vb-")//TODO this corrects precipitates but what else would it correct???
-				|| currentTagLC.startsWith("nn-synthesize")) {//FIXME why does this function accept NN-SYNTHESIZE? Reclassification to NN-CHEMENTITY is incorrect!
+		if (currentTagLC.startsWith("vb-")
+				|| currentTagLC.startsWith("nn-synthesize")) {
 			List<String> beforeList = Arrays.asList("dt-the", "dt");
 			List<String> afterList = Arrays.asList("vb");
 
@@ -133,14 +130,13 @@ public class PostProcessTags {
 		}
 
 		if (currentTagLC.startsWith("vb")
-				&& Utils.containsNumber(currentToken)) {//verbs are highly unlikely to contain numbers!
+				&& Utils.containsNumber(currentToken)) {//verbs are highly unlikely to contain numbers
 			newTag = "NN";
 		}
 
 		if (currentTagLC.startsWith("vbn")
 				|| currentTagLC.startsWith("vbg")
-				|| currentTagLC.startsWith("vb-")
-				|| currentToken.endsWith("ed")) {//TODO when exactly does this apply?
+				|| currentTagLC.startsWith("vb-")){
 
 			List<String> afterList = Arrays.asList("oscar-cm", "nns", "nn-chementity", "oscar-cj", "jj-chem", "nnp");
 			List<String> beforeList = Arrays.asList("dt", "rb", "rb-conj", "dt-the", "stop", "in-with", "in-of", "in-under");
@@ -150,7 +146,7 @@ public class PostProcessTags {
 			}
 		}
 
-		if (currentTagLC.startsWith("vb-yield") ) {
+		if (currentToken.equalsIgnoreCase("yield") ) {
 			newTag = correctTaggingOfVbYield(combinedTags, i, newTag);
 		}
 		
@@ -249,34 +245,6 @@ public class PostProcessTags {
 		return newTag;
 	}
 
-	/**
-	 * Disambiguates between precipate as a verb and as a noun chementity
-	 * @param tokenList
-	 * @param combinedTags
-	 * @param i
-	 * @param currentTag
-	 * @return
-	 */
-	private String correctTaggingOfVbPrecipitate(List<String> tokenList, List<String> combinedTags, int i, String currentTag) {
-		//TODO why not just classify "precipitate" as NN-CHEMENTITY and eliminate this method???? precipitate as a verb is very uncommon and all other VB-PRECIPITATE are never NN-CHEMENTITY! ("precipitates" could be disambiguated by the presence of a determiner)
-		List<String> beforeList = Arrays.asList("jj", "oscar-cj", "jj-chem");
-		List<String> afterList = Arrays.asList("in-of");
-		List<String> notAfterList = Arrays.asList("nn-time");
-
-		if (stringBefore(beforeList, i, combinedTags)
-				&& (stringAfter(afterList, i, combinedTags) || i == combinedTags.size())) {
-			if (!stringAfter(notAfterList, i, combinedTags)){
-				return "NN-CHEMENTITY";
-			}	
-		}
-		if (i != 0) {
-			int beforeIndex = i - 1;
-			if (tokenList.get(beforeIndex).endsWith("ing")) {
-				return "NN-CHEMENTITY";
-			}
-		}
-		return currentTag;
-	}
 
 	/**
 	 * Disambiguates between yield as a verb and the yield of a product compound
@@ -287,7 +255,7 @@ public class PostProcessTags {
 	 */
 	private String correctTaggingOfVbYield(List<String> combinedTags, int i, String currentTag) {
 		List<String> beforeList = Arrays.asList("nn-percent");
-		if (stringBefore(beforeList, i, combinedTags)) {//TODO does it matter that many VB-yields make absolutely no sense as nouns?
+		if (stringBefore(beforeList, i, combinedTags)) {
 			return  "NN-YIELD";
 		}
 		List<String> afterList = Arrays.asList("nn-chementity");
