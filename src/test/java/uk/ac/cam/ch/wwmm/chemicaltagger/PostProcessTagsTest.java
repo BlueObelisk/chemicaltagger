@@ -32,17 +32,6 @@ public class PostProcessTagsTest {
           Assert.assertEquals(expected,posContainer.getTokenTagTupleAsString());
  	}
 
-	@Test
-	@Ignore
-	public void testMistaggedVbprecipitate() {
-          POSContainer posContainer = new POSContainer();
-          List<String> tags = Arrays.asList("DT-THE", "VB-PRECIPITATE");
-          List<String> tokens = Arrays.asList("the", "precipitate");
-          posContainer.setCombinedTagsList(tags);
-          posContainer.setWordTokenList(tokens);
-          new PostProcessTags().correctCombinedTagsList(posContainer);
-          Assert.assertEquals("DT-THE the NN-CHEMENTITY precipitate", posContainer.getTokenTagTupleAsString());
- 	}
 	
 	@Test
 	public void testVerbWithDigits() {
