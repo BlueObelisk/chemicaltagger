@@ -13,6 +13,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import nu.xom.Document;
+import nu.xom.Element;
+import nu.xom.Elements;
+import nu.xom.Node;
+import nu.xom.ParentNode;
 import nu.xom.Serializer;
 
 import org.apache.commons.io.IOUtils;
@@ -244,4 +248,59 @@ public class Utils {
 		IOUtils.closeQuietly(inStream);
 		return tagSet;
 	}
+	
+	/**
+	 * Gets the next element. This element need not be a sibling
+	 * @param startingEl
+	 * @return
+	 */
+	public static Element getNextElement(Element startingEl) {
+		ParentNode parent = startingEl.getParent();
+		if (parent == null || !(parent instanceof Element)){
+			return null;
+		}
+		int index = parent.indexOf(startingEl);
+		if (index +1 >=parent.getChildCount()){
+			return getNextElement((Element) parent);//reached end of element
+		}
+		Node nextNode = parent.getChild(index+1);
+		if (!(nextNode instanceof Element)){
+			return null;
+		}
+		Element next =(Element) nextNode;
+		Elements children =next.getChildElements();
+		while (children.size()!=0){
+			next =children.get(0);
+			children =next.getChildElements();
+		}
+		return next;
+	}
+
+	/**
+	 * Gets the previous element. This element need not be a sibling
+	 * @param startingEl
+	 * @return
+	 */
+	public static Element getPreviousElement(Element startingEl) {
+		ParentNode parent = startingEl.getParent();
+		if (parent == null || !(parent instanceof Element)){
+			return null;
+		}
+		int index = parent.indexOf(startingEl);
+		if (index ==0) {
+			return getPreviousElement((Element) parent);//reached beginning of element
+		}
+		Node previousNode = parent.getChild(index-1);
+		if (!(previousNode instanceof Element)){
+			return null;
+		}
+		Element previous =(Element) previousNode;
+		Elements children =previous.getChildElements();
+		while (children.size()!=0){
+			previous =children.get(children.size()-1);
+			children =previous.getChildElements();
+		}
+		return previous;
+	}
+	
 }

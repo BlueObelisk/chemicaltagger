@@ -57,6 +57,21 @@ public class PostProcessTreesTest {
 		Assert.assertEquals(1,roles.size());
 	}
 	
+	@Test
+	public void solventIdentifiedViaInTest(){
+		String sentence = "The compound was dissolved in ethanol.";
+		Document doc = Utils.runChemicalTagger(sentence);
+		Nodes roles = doc.query(".//MOLECULE[@role='Solvent']");
+		Assert.assertEquals(1,roles.size());
+	}
+
+	@Test
+	public void solventIdentifiedViaSolventHeadWordTest(){
+		String sentence = "The ethanol solvent was removed.";
+		Document doc = Utils.runChemicalTagger(sentence);
+		Nodes roles = doc.query(".//MOLECULE[@role='Solvent']");
+		Assert.assertEquals(1,roles.size());
+	}
 	
 	@Test
 	public void testActionPhraseWithNoVerbPhrase(){

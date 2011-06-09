@@ -147,6 +147,7 @@ public class PostProcessTrees {
 		}
 
 		processDissolve(root);
+		detectSolventsByFollowingWord(root);
 
 		Document processedDoc = new Document(root);
 		return processedDoc;
@@ -173,6 +174,29 @@ public class PostProcessTrees {
 
 		}
 		return dissolveElement;
+	}
+	
+
+	/**
+	 * Looks for the pattern OSCAR-CM followed by NN-CHEMENTITY
+	 * to assign things like "ethanol solvent" as solvents
+	 * @param root
+	 */
+	private void detectSolventsByFollowingWord(Element root) {
+		Nodes oscarcms = root.query("//OSCAR-CM");
+		for (int i = 0; i < oscarcms.size(); i++) {
+			Element oscarcm = (Element) oscarcms.get(i);
+			Element nextEl = Utils.getNextElement(oscarcm);
+			if (nextEl!=null && nextEl.getLocalName().equals("NN-CHEMENTITY") && nextEl.getValue().equalsIgnoreCase("solvent")){
+				Element solventMol = (Element) oscarcm.getParent();
+				if (!solventMol.getLocalName().equals("MOLECULE")){
+					solventMol = (Element) solventMol.getParent();
+				}
+				if (solventMol !=null && solventMol.getLocalName().equals("MOLECULE")){
+					solventMol.addAttribute(new Attribute("role", "Solvent"));
+				}
+			}
+		}
 	}
 
 	/******************************************
