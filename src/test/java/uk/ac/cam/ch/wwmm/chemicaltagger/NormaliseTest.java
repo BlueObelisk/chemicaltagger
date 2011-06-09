@@ -115,4 +115,10 @@ public class NormaliseTest {
 		String normalisedText = Formatter.normaliseText("100 \u00b0 C.,");
 		assertEquals("100 \u00b0C. ,", normalisedText);
 	}
+	
+	@Test	
+	public void testCelciusJoining3() {
+		String normalisedText = Formatter.normaliseText("235-238\u00b0 C.)");
+		assertEquals("235-238 \u00b0C. )", normalisedText);
+	}
 }
