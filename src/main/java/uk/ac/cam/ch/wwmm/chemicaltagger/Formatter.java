@@ -25,7 +25,7 @@ public class Formatter {
 	private static Pattern CONCAT_HYPHENED_DIRECTION_PATTERN = Pattern.compile("^[A-Z]\\-\\d+");
 	private static Pattern CONCAT_SLASH_DIRECTION_PATTERN = Pattern.compile("^[A-Z]\\/\\d*$");
 	private static Pattern TIME_EXPRESSION = Pattern.compile("^([01]?[1-9]|2[123]):[0-5]\\d([ap]m)?$", Pattern.CASE_INSENSITIVE);
-	private static Pattern TEMPERATURE_UNITS = Pattern.compile("[cCfF][\\.]?[,;:]?");
+	private static Pattern TEMPERATURE_UNITS = Pattern.compile("[cCfF]([.,;:()\\[\\]{}]|$)");
 	private static Pattern MATCH_SULPH = Pattern.compile("sulph", Pattern.CASE_INSENSITIVE);
 
 	/**************************
@@ -52,7 +52,7 @@ public class Formatter {
 			String suffix = " ";
 	
 			if (string.endsWith("\u00b0") || string.endsWith("\u00ba)")){//ends with degrees symbol
-				if (index+1 < words.length && TEMPERATURE_UNITS.matcher(words[index+1]).matches()){//next word is something like "C"
+				if (index+1 < words.length && TEMPERATURE_UNITS.matcher(words[index+1]).lookingAt()){//next word is something like "C"
 					char lastChar = string.charAt(string.length()-1);
 					string = string.substring(0, string.length()-1);
 					words[index+1] = lastChar + words[index+1];
