@@ -147,7 +147,6 @@ public class PostProcessTrees {
 		}
 
 		processDissolve(root);
-		processReactantProduct(root);
 
 		Document processedDoc = new Document(root);
 		return processedDoc;
@@ -350,51 +349,7 @@ public class PostProcessTrees {
 		return actionElement;
 	}
 
-	/****************************************
-	 * Adds product and reactants roles for molecules within the ActionPhrases.
-	 * Checks within dissolve,wash and extract phrases.
-	 * 
-	 * @param processedDoc
-	 *            (Element)
-	 * @return actionElement (Element)
-	 ****************************************/
-	private void processReactantProduct(Element processedDoc) {
-		List<Element> reactantList = new ArrayList<Element>();
-		List<Element> productList = new ArrayList<Element>();
-
-		Nodes reactantUnNamedMoleculeNodes = processedDoc
-				.query(".//ActionPhrase[@type='Add' or @type='Dissolve']//UNNAMEDMOLECULE");
-		Nodes productUnNamedMoleculeNodes = processedDoc
-				.query(".//ActionPhrase[@type='Yield']//UNNAMEDMOLECULE");
-		for (int i = 0; i < reactantUnNamedMoleculeNodes.size(); i++) {
-			reactantList.add((Element) reactantUnNamedMoleculeNodes.get(i));
-		}
-		for (int i = 0; i < productUnNamedMoleculeNodes.size(); i++) {
-			productList.add((Element) productUnNamedMoleculeNodes.get(i));
-		}
-
-		Nodes productMoleculeNodes = processedDoc
-				.query(".//ActionPhrase[@type='Yield']//MOLECULE");
-		Nodes reactantMoleculeNodes = processedDoc
-				.query(".//ActionPhrase[@type='Add' or @type='Dissolve']//MOLECULE");
-		
-		if (reactantList.size() == 0 && reactantMoleculeNodes.size() > 0) {
-			reactantList.add((Element) reactantMoleculeNodes.get(0));
-		}
-		
-		for (int i = 0; i < productMoleculeNodes.size(); i++) {
-			productList.add((Element) productMoleculeNodes.get(i));
-		}
-		
-		for (Element reactantMolecule : reactantList) {
-			reactantMolecule.addAttribute(new Attribute("role","Reactant"));
-		}
-		
-		for (Element productMolecule : productList) {
-			productMolecule.addAttribute(new Attribute("role","Product"));
-		}
-
-	}
+	
 
 	/****************************************
 	 * Adds ActionPhrase tags to the document.
