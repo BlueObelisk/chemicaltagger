@@ -151,7 +151,7 @@ VB-WAIT---(wait|left)(ing)?---Wait Verb
 VB-WASH---^(wash|elut|rins)(ed|e|ing)?---Wait Verb
 
 #Yield Tokens
-VB-YIELD---^(yield|afford|result|provid|obtain|gave|isolat|form(ed|ing)|leav|giv)(es|ed|e|ing)?---Yield Verb
+VB-YIELD---^(yield|afford|result|provid|obtain|gave|produc|isolat|form(ed|ing)|leav|giv)(es|ed|e|ing)?---Yield Verb
 
 #Misc Tokens mainly to replace characters that are not markup friendly
 RB---.*wise$|.*ly$---Adverbs like dropwise
