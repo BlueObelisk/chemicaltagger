@@ -12,6 +12,7 @@ glob:cInChI-1
 glob:__Test__*
 glob:patent*
 glob:*~
+glob:eclipse.log
 glob:log
 glob:todo
 glob:taggedPatents*
