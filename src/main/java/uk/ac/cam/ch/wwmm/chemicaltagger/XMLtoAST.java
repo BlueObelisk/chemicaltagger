@@ -68,6 +68,10 @@ public class XMLtoAST {
 		
 	}
 	
-	
+	public static void main (String[] args) {
+		
+		
+		
+	}
 
 }
