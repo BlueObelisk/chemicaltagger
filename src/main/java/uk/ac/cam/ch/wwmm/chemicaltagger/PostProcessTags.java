@@ -300,8 +300,7 @@ public class PostProcessTags {
 	private String correctMisTaggedDigits(List<String> combinedTags, int i,
 			String currentTag, String currentToken, String newTag) {
 		String currentTagLC = currentTag.toLowerCase();
-		if (currentTagLC.equals("cd")
-				|| (currentTagLC.startsWith("nn-") && Utils
+		if ((currentTagLC.startsWith("nn-") && Utils
 						.containsNumber(currentToken))) {
 			List<String> beforeList = Arrays.asList("in-of", "jj", "nn-chementity", "comma");
 			List<String> afterList = Arrays.asList("-lrb-", "stop", "comma");
@@ -321,15 +320,7 @@ public class PostProcessTags {
 				newTag = "CD-ALPHANUM";
 			}
 		}
-		if (currentTagLC.equals("cd")) {
-
-			List<String> afterList = Arrays.asList("stop", "comma", "-lrb-");
-
-			if (stringAfter(afterList, i, combinedTags)
-					&& !currentToken.contains(".") && currentToken.length() < 4) {
-				newTag = "CD-ALPHANUM";
-			}
-		}
+	
 
 		if (currentTagLC.equals("cd-alphanum")) {
 

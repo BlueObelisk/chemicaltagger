@@ -5,6 +5,7 @@ import java.util.List;
 
 import junit.framework.Assert;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 /************************************
@@ -14,6 +15,7 @@ import org.junit.Test;
 public class PostProcessTagsTest {
 	
 	@Test
+	@Ignore
 	public void testMistaggedChemistry() {
 		
           String sentence = "ROMP of 1. ATRP was performed on 3 ml of a benzene compound under 25\u00B0c";
