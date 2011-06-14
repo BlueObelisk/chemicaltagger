@@ -3,6 +3,8 @@ package uk.ac.cam.ch.wwmm.chemicaltagger;
 import java.io.IOException;
 import java.io.InputStream;
 
+import junit.framework.Assert;
+
 import nu.xom.Builder;
 import nu.xom.Document;
 import nu.xom.ParsingException;
@@ -20,5 +22,6 @@ public class XMLtoASTTest {
 	    InputStream in = Utils.getInputStream(this.getClass(),pathName);	
 	    Document doc = new Builder().build(in);
 	    xmlAst.convert(doc);
+	    Assert.assertEquals("SentenceList size", 4, xmlAst.getSentenceList().size());
 	}
 }
