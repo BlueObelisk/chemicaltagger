@@ -189,7 +189,7 @@ alphanumericOrBrackettedCompoundReference
   : (cdAlphanum|bracketedNumeric|squareBracketedReference) -> ^(REFERENCETOCOMPOUND cdAlphanum? bracketedNumeric? squareBracketedReference?);
 
 unnamedmoleculeamount4
-	: numberCompoundReference (citation|quantity|mixture)* quantity (citation|quantity|mixture)*;
+	: numberCompoundReference citation? quantity (citation|quantity|mixture)*;
 
 numberCompoundReference
   : cd -> ^(REFERENCETOCOMPOUND cd);
