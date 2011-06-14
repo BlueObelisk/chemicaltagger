@@ -251,7 +251,7 @@ minimixture: (mixtureStructure2|mixtureStructure1) -> ^(MIXTURE  mixtureStructur
 procedureNode: method -> ^(PROCEDURE method);
 
 method:
-    (nngeneral|nn)? nnmethod numeric? | nnexample numeric ;
+    (nngeneral|nn)? nnmethod (numeric|singlecapitalletter)? | nnexample (numeric|singlecapitalletter) ;
 
 advAdj
 	:adv|adj;
@@ -442,6 +442,8 @@ stop:'STOP' TOKEN -> ^('STOP' TOKEN);
 nnpercent:'NN-PERCENT' TOKEN -> ^('NN-PERCENT' TOKEN);
 lsqb:'LSQB' TOKEN -> ^('LSQB' TOKEN);
 rsqb:'RSQB' TOKEN -> ^('RSQB' TOKEN);
+
+singlecapitalletter:'SINGLECAPITALLETTER' TOKEN -> ^('SINGLECAPITALLETTER' TOKEN);
 
 //The determiner 'the';
 dtTHE:'DT-THE' TOKEN -> ^('DT-THE' TOKEN);
