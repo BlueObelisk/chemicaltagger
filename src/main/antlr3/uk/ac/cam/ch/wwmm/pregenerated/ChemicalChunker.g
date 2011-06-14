@@ -174,28 +174,34 @@ unnamedmolecule
 	: (unnamedmoleculeamount|referenceToCompound) -> ^(UNNAMEDMOLECULE unnamedmoleculeamount? referenceToCompound?);
 
 unnamedmoleculeamount
-	:(unnamedmoleculeamount5|unnamedmoleculeamount1 | unnamedmoleculeamount2 | unnamedmoleculeamount3|unnamedmoleculeamount4) ;
+	:(unnamedmoleculeamount1|unnamedmoleculeamount2|unnamedmoleculeamount3|unnamedmoleculeamount4|unnamedmoleculeamount5|unnamedmoleculeamount6) ;
 
-unnamedmoleculeamount5	:
+unnamedmoleculeamount1	:
           jjcomp nnchementity numericCompoundReference? (quantity|mixture)* ;
 
-unnamedmoleculeamount1
+unnamedmoleculeamount2
 	: quantity inof nnchementity? numericCompoundReference;
 
-unnamedmoleculeamount2
+unnamedmoleculeamount3
 	: alphanumericOrBrackettedCompoundReference (citation|quantity|mixture)*;
 
 alphanumericOrBrackettedCompoundReference
   : (cdAlphanum|bracketedNumeric|squareBracketedReference) -> ^(REFERENCETOCOMPOUND cdAlphanum? bracketedNumeric? squareBracketedReference?);
 
-unnamedmoleculeamount3
+unnamedmoleculeamount4
+	: numberCompoundReference (citation|quantity|mixture)* quantity (citation|quantity|mixture)*;
+
+numberCompoundReference
+  : cd -> ^(REFERENCETOCOMPOUND cd);
+
+unnamedmoleculeamount5
 	:quantity inof (jj? noun)+;
 
-unnamedmoleculeamount4
+unnamedmoleculeamount6
 	:(quantity|mixture) nnchementity;
 
 referenceToCompound
-	: nnchementity numericCompoundReference;
+	: (nnchementity | {"IN-OF".equals(input.LT(-2).getText())}?) numericCompoundReference;
 
 numericCompoundReference
   : (numericOrBracketedNumeric |squareBracketedReference) -> ^(REFERENCETOCOMPOUND numericOrBracketedNumeric? squareBracketedReference?);

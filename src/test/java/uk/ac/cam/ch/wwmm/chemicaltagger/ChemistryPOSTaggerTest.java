@@ -3,7 +3,6 @@ package uk.ac.cam.ch.wwmm.chemicaltagger;
 import static uk.ac.cam.ch.wwmm.chemicaltagger.Utils.readSentence;
 
 import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 
 /*****************************
@@ -20,11 +19,8 @@ public class ChemistryPOSTaggerTest {
 
 	private POSContainer posContainer;
 
-
-
 	@Test
 	public void sentence1() {
-
 		String sentence = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/tagTest/test1.txt");
 		posContainer = ChemistryPOSTagger.getDefaultInstance().runTaggers(sentence);
 		String ref = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/tagTest/ref1.txt");
@@ -60,7 +56,6 @@ public class ChemistryPOSTaggerTest {
 		checkLengthofTags();
 	}
 
-	@Ignore
 	@Test
 	public void sentence5() {
 		String sentence = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/tagTest/test5.txt");
@@ -68,7 +63,6 @@ public class ChemistryPOSTaggerTest {
 		String ref = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/tagTest/ref5.txt");
 		Assert.assertEquals(ref, posContainer.getTokenTagTupleAsString());
 		checkLengthofTags();
-
 	}
 	
 	@Test
@@ -78,8 +72,8 @@ public class ChemistryPOSTaggerTest {
 		String ref = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/tagTest/ref6.txt");
 		Assert.assertEquals(ref, posContainer.getTokenTagTupleAsString());
 		checkLengthofTags();
-
 	}
+
 	@Test
 	public void sentence7() {
 		String sentence = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/tagTest/test7.txt");
@@ -87,7 +81,6 @@ public class ChemistryPOSTaggerTest {
 		String ref = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/tagTest/ref7.txt");
 		Assert.assertEquals(ref, posContainer.getTokenTagTupleAsString());
 		checkLengthofTags();
-
 	}
 
 	@Test
@@ -97,7 +90,6 @@ public class ChemistryPOSTaggerTest {
 		String ref = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/tagTest/ref8.txt");
 		Assert.assertEquals(ref, posContainer.getTokenTagTupleAsString());
 		checkLengthofTags();
-
 	}
 	
 	@Test
@@ -107,7 +99,6 @@ public class ChemistryPOSTaggerTest {
 		String ref = "VB-YIELD gave NN-CHEMENTITY compound CD 1";
 		Assert.assertEquals(ref, posContainer.getTokenTagTupleAsString());
 		checkLengthofTags();
-
 	}
 	
 
@@ -119,9 +110,6 @@ public class ChemistryPOSTaggerTest {
 		Assert.assertEquals(0, posContainer.getWordTokenList().size());
 		Assert.assertEquals("", posContainer.getTokenTagTupleAsString());
 	}
-    
-
-
 
 	private void checkLengthofTags() {
 		Assert.assertEquals(posContainer.getRegexTagList().size(),
