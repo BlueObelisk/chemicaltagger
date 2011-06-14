@@ -69,9 +69,9 @@ public class ChemistryPOSTagger {
 	 */
 	private ChemistryPOSTagger() {
 		Oscar oscar = new Oscar();
-//		MEMMRecogniser memmrecogniser = new MEMMRecogniser();
-//		memmrecogniser.setDeprioritiseOnts(true);
-//		oscar.setRecogniser(memmrecogniser);
+		MEMMRecogniser memmrecogniser = new MEMMRecogniser();
+		memmrecogniser.setDeprioritiseOnts(true);
+		oscar.setRecogniser(memmrecogniser);
 		ctTokeniser = new OscarTokeniser(oscar);
 		oscarTagger = new OscarTagger(oscar);
 		regexTagger = new RegexTagger();
