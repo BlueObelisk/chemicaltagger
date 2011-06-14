@@ -7,6 +7,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.util.HashSet;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -301,6 +302,17 @@ public class Utils {
 			children =previous.getChildElements();
 		}
 		return previous;
+	}
+	/********************************************
+	 * Writes items of a list to a file.
+	 * @param sentenceList
+	 * @param filename
+	 * @throws IOException 
+	 ********************************************/
+	public static void writeListToFile(List<String> sentenceList, String filename) throws IOException {
+		OutputStream os = new FileOutputStream(new File(filename));
+		IOUtils.writeLines(sentenceList, null, os, "UTF-8");
+		IOUtils.closeQuietly(os);
 	}
 	
 }

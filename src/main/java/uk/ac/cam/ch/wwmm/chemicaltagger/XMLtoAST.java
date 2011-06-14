@@ -1,5 +1,8 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import nu.xom.Document;
 import nu.xom.Element;
 import nu.xom.Text;
@@ -15,9 +18,12 @@ import org.antlr.runtime.tree.ParseTree;
 
 public class XMLtoAST {
 
+    private List<String> SentenceList;
+    private ParseTree parseTree;
 
-
-
+    public XMLtoAST(){
+    	SentenceList = new ArrayList<String>();
+    }
 	/********************************************
 	 * Converts AST Trees to XML Document.
 	 * 
@@ -26,15 +32,22 @@ public class XMLtoAST {
 	 * @return doc (Document)
 	 *******************************************/
 	public Document convert(Document doc) {
-		ParseTree tree =  new ParseTree("Document");
-		getNodes(doc.getRootElement(),tree);
-	    System.out.println(tree.toStringTree());
+		parseTree =  new ParseTree("Document");
+    	SentenceList = new ArrayList<String>();
+		getNodes(doc.getRootElement(),parseTree);
 	
 	
 		return doc;
 	}
 
 	
+    public String getStringTree() {
+		return parseTree.toStringTree();
+	}
+
+    public List<String> getSentenceList() {
+		return SentenceList;
+	}
 
 
 	/**********************************************
@@ -57,21 +70,25 @@ public class XMLtoAST {
 			else {
 				Element docChild = (Element) docElement.getChild(i) ;
                 String name = docChild.getLocalName();
+                
                 if (docChild.getAttribute("type") != null) {
                 	name = docChild.getLocalName()+"_"+docChild.getAttributeValue("type");
                 }
 				ParseTree subTree = new ParseTree(name);
 				treeNode.addChild(subTree);
+                
 				getNodes(docChild,subTree);
+				if (name.startsWith("Sentence")) {
+                    SentenceList.add(subTree.toStringTree());	
+                }
 			}
 		}
 		
 	}
 	
-	public static void main (String[] args) {
+
+
 		
-		
-		
-	}
+	
 
 }
