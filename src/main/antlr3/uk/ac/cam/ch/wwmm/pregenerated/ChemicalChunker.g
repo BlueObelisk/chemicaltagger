@@ -47,6 +47,20 @@ REFERENCETOCOMPOUND;
  }
 @lexer::header {package uk.ac.cam.ch.wwmm.pregenerated;}
 
+
+@members {
+public boolean numberLooksLikeAReferenceToACompound(TokenStream stream){
+	Token previousTokenType = stream.LT(-2);
+	if (previousTokenType !=null && previousTokenType.getText().equals("IN-OF")){
+		String nextTokenText= stream.LT(3).getText();
+		if ("-LRB-".equals(nextTokenText) || "STOP".equals(nextTokenText) || "COMMA".equals(nextTokenText)){
+			return true;
+		}
+	}
+	return false;
+}
+}
+
 WS :  (' ')+ {skip();};
 TOKEN : (~' ')+;
 
@@ -65,7 +79,7 @@ unmatchedToken //all base tokens other than comma and stop
 	:	(numeric|advAdj|tmunicode|cdunicode|jjcomp|inAll|
 	nnexample|nnstate|nntime|nnmass|nnmolar|nnamount|nnatmosphere|nneq|nnvol|nnchementity|nntemp|nnph|nnflash|nngeneral|nnmethod|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|
 	oscarcm|oscaronts|oscarase|verb|nnadd|nnmixture|nnapparatus|nnconcentrate|nndry|nnextract|nnfilter|nnprecipitate|nnpurify|nnremove|nnsynthesize|nnyield|colon|apost|neg|dash|nnpercent|lsqb|rsqb|lrb|rrb|
-	cc|dt|dtTHE|fw|md|nn|nns|nnp|prp|prp_poss|rbconj|sym|uh|clause|comma|ls|nnps|pos);
+	cc|dt|dtTHE|fw|md|nn|nns|nnp|prp|prp_poss|rbconj|sym|uh|clause|comma|ls|nnps|pos|singlecapitalletter);
 
 nounphrase
 	:	nounphraseStructure ->  ^(NounPhrase  nounphraseStructure);
@@ -201,7 +215,7 @@ unnamedmoleculeamount6
 	:(quantity|mixture) nnchementity;
 
 referenceToCompound
-	: (nnchementity | {"IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)}?) numericCompoundReference;
+	: (nnchementity | {numberLooksLikeAReferenceToACompound(input)}?) numericCompoundReference;
 
 numericCompoundReference
   : (numericOrBracketedNumeric |squareBracketedReference) -> ^(REFERENCETOCOMPOUND numericOrBracketedNumeric? squareBracketedReference?);
