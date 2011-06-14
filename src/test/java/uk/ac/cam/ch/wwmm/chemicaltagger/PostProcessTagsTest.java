@@ -64,5 +64,47 @@ public class PostProcessTagsTest {
         Assert.assertEquals("VB-YIELD form", posContainer.getTokenTagTupleAsString());
 	}
 	
+	@Test
+	public void testLetterLabelledExample() {
+        POSContainer posContainer = new POSContainer();
+        List<String> tags = Arrays.asList("NN-EXAMPLE", "NNP");
+        List<String> tokens = Arrays.asList("example", "A");
+        posContainer.setCombinedTagsList(tags);
+        posContainer.setWordTokenList(tokens);
+        new PostProcessTags().correctCombinedTagsList(posContainer);
+        Assert.assertEquals("NN-EXAMPLE example SINGLECAPITALLETTER A", posContainer.getTokenTagTupleAsString());
+	}
 	
+	@Test
+	public void testNotALetterLabelledExample() {
+        POSContainer posContainer = new POSContainer();
+        List<String> tags = Arrays.asList("IN-IN", "DT", "NN-EXAMPLE", "DT", "NN-APPARATUS");
+        List<String> tokens = Arrays.asList("In", "this", "example", "a", "flask");
+        posContainer.setCombinedTagsList(tags);
+        posContainer.setWordTokenList(tokens);
+        new PostProcessTags().correctCombinedTagsList(posContainer);
+        Assert.assertEquals("IN-IN In DT this NN-EXAMPLE example DT a NN-APPARATUS flask", posContainer.getTokenTagTupleAsString());
+	}
+	
+	@Test
+	public void testLetterLabelledProcedure() {
+        POSContainer posContainer = new POSContainer();
+        List<String> tags = Arrays.asList("NN-METHOD", "OSCAR-CM");
+        List<String> tokens = Arrays.asList("step", "B");
+        posContainer.setCombinedTagsList(tags);
+        posContainer.setWordTokenList(tokens);
+        new PostProcessTags().correctCombinedTagsList(posContainer);
+        Assert.assertEquals("NN-METHOD step SINGLECAPITALLETTER B", posContainer.getTokenTagTupleAsString());
+    }
+	
+	@Test
+	public void testLetterLabelledProcedure2() {
+        POSContainer posContainer = new POSContainer();
+        List<String> tags = Arrays.asList("NN-METHOD", "NNP");
+        List<String> tokens = Arrays.asList("procedure", "E");
+        posContainer.setCombinedTagsList(tags);
+        posContainer.setWordTokenList(tokens);
+        new PostProcessTags().correctCombinedTagsList(posContainer);
+        Assert.assertEquals("NN-METHOD procedure SINGLECAPITALLETTER E", posContainer.getTokenTagTupleAsString());
+    }
 }
