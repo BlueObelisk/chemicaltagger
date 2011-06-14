@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 14:05:07 uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g 2011-06-14 14:38:02
+// $ANTLR 3.2 Sep 23, 2009 14:05:07 uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g 2011-06-14 15:17:38
 
     package uk.ac.cam.ch.wwmm.pregenerated;
  
@@ -3137,7 +3137,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: dissolveStructure, lrb, rrb
+            // elements: lrb, rrb, dissolveStructure
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -7339,7 +7339,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: molecule, inin
+            // elements: inin, molecule
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -7458,7 +7458,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: inas, dt, nnchementity
+            // elements: inas, nnchementity, dt
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -7646,7 +7646,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: advAdj, inMost, nounphrase
+            // elements: nounphrase, advAdj, inMost
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -7877,7 +7877,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: inafter, advAdj, nounphrase
+            // elements: inafter, nounphrase, advAdj
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -8343,7 +8343,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: preapparatus, dt, nnApp
+            // elements: dt, nnApp, preapparatus
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -9173,7 +9173,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: afterOscarCompoundStructure, bracketedOscarCompoundStructure, oscarcm
+            // elements: bracketedOscarCompoundStructure, afterOscarCompoundStructure, oscarcm
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -11056,7 +11056,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: unnamedmoleculeamount, referenceToCompound
+            // elements: referenceToCompound, unnamedmoleculeamount
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -11679,7 +11679,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: bracketedNumeric, cdAlphanum, squareBracketedReference
+            // elements: squareBracketedReference, cdAlphanum, bracketedNumeric
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -12340,9 +12340,9 @@ public class ChemicalChunkerParser extends Parser {
                 case 2 :
                     // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:204:20: {...}?
                     {
-                    if ( !(("IN-OF".equals(input.LT(-2).getText()))) ) {
+                    if ( !(("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null))) ) {
                         if (state.backtracking>0) {state.failed=true; return retval;}
-                        throw new FailedPredicateException(input, "referenceToCompound", "\"IN-OF\".equals(input.LT(-2).getText())");
+                        throw new FailedPredicateException(input, "referenceToCompound", "\"IN-OF\".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)");
                     }
 
                     }
@@ -13457,7 +13457,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: measurementtypes, cdunicode, cd
+            // elements: cd, cdunicode, measurementtypes
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -13757,7 +13757,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: nnmolar, cd
+            // elements: cd, nnmolar
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -13886,7 +13886,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: cd, nnamount
+            // elements: nnamount, cd
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -14144,7 +14144,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: cd, nnvol
+            // elements: nnvol, cd
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -14241,7 +14241,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: nnph, cd
+            // elements: cd, nnph
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -14579,7 +14579,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: nnpercent, numeric, nn
+            // elements: nnpercent, nn, numeric
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -15069,7 +15069,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: mixtureStructure3, mixtureStructure1, mixtureRatio, mixtureStructure2
+            // elements: mixtureStructure3, mixtureRatio, mixtureStructure2, mixtureStructure1
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -16159,7 +16159,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: mixtureStructure1, mixtureStructure2
+            // elements: mixtureStructure2, mixtureStructure1
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -17147,7 +17147,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: nounratio, numericratio
+            // elements: numericratio, nounratio
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -19795,7 +19795,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 40, TOKEN
+            // elements: TOKEN, 40
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -19879,7 +19879,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 41
+            // elements: 41, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -20047,7 +20047,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 43, TOKEN
+            // elements: TOKEN, 43
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -20131,7 +20131,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 44, TOKEN
+            // elements: TOKEN, 44
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -20215,7 +20215,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 45, TOKEN
+            // elements: TOKEN, 45
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -20299,7 +20299,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 46, TOKEN
+            // elements: TOKEN, 46
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -20383,7 +20383,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 47, TOKEN
+            // elements: TOKEN, 47
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -20635,7 +20635,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 50
+            // elements: 50, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -20719,7 +20719,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 51, TOKEN
+            // elements: TOKEN, 51
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -20971,7 +20971,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 54, TOKEN
+            // elements: TOKEN, 54
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -21475,7 +21475,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 60, TOKEN
+            // elements: TOKEN, 60
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -21643,7 +21643,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 62, TOKEN
+            // elements: TOKEN, 62
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -21979,7 +21979,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 66, TOKEN
+            // elements: TOKEN, 66
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -22147,7 +22147,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 68, TOKEN
+            // elements: TOKEN, 68
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -22231,7 +22231,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 69, TOKEN
+            // elements: TOKEN, 69
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -22315,7 +22315,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 70, TOKEN
+            // elements: TOKEN, 70
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -22399,7 +22399,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 71
+            // elements: 71, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -22567,7 +22567,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 73
+            // elements: 73, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -22903,7 +22903,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 77
+            // elements: 77, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -22987,7 +22987,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 78
+            // elements: 78, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -23239,7 +23239,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 81, TOKEN
+            // elements: TOKEN, 81
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -23323,7 +23323,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 82, TOKEN
+            // elements: TOKEN, 82
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -23659,7 +23659,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 86
+            // elements: 86, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -23743,7 +23743,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 87
+            // elements: 87, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -23827,7 +23827,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 88, TOKEN
+            // elements: TOKEN, 88
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -24163,7 +24163,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 92
+            // elements: 92, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -24247,7 +24247,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 93
+            // elements: 93, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -24415,7 +24415,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 95
+            // elements: 95, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -24583,7 +24583,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 97
+            // elements: 97, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -24667,7 +24667,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 98, TOKEN
+            // elements: TOKEN, 98
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -24751,7 +24751,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 99
+            // elements: 99, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -24919,7 +24919,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 101, TOKEN
+            // elements: TOKEN, 101
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -25087,7 +25087,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 103
+            // elements: 103, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -25255,7 +25255,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 105, TOKEN
+            // elements: TOKEN, 105
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -25507,7 +25507,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 108
+            // elements: 108, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -25591,7 +25591,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 109
+            // elements: 109, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -25759,7 +25759,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 111, TOKEN
+            // elements: TOKEN, 111
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -25843,7 +25843,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 112
+            // elements: 112, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -26011,7 +26011,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 114
+            // elements: 114, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -26095,7 +26095,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 115
+            // elements: 115, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -26179,7 +26179,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 116
+            // elements: 116, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -26263,7 +26263,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 117, TOKEN
+            // elements: TOKEN, 117
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -26515,7 +26515,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 120
+            // elements: 120, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -26599,7 +26599,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 121
+            // elements: 121, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -26683,7 +26683,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 122
+            // elements: 122, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -26851,7 +26851,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 124
+            // elements: 124, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -27271,7 +27271,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 129
+            // elements: 129, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -27355,7 +27355,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 130, TOKEN
+            // elements: TOKEN, 130
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -27523,7 +27523,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 132, TOKEN
+            // elements: TOKEN, 132
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -27607,7 +27607,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 133, TOKEN
+            // elements: TOKEN, 133
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -28363,7 +28363,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 142
+            // elements: 142, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -28615,7 +28615,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 145
+            // elements: 145, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -29203,7 +29203,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 152, TOKEN
+            // elements: TOKEN, 152
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -29287,7 +29287,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 153, TOKEN
+            // elements: TOKEN, 153
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -29371,7 +29371,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 154, TOKEN
+            // elements: TOKEN, 154
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -29539,7 +29539,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 156, TOKEN
+            // elements: TOKEN, 156
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -29707,7 +29707,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 158, TOKEN
+            // elements: TOKEN, 158
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -29959,7 +29959,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 161, TOKEN
+            // elements: TOKEN, 161
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -30043,7 +30043,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 162, TOKEN
+            // elements: TOKEN, 162
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -30211,7 +30211,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 164, TOKEN
+            // elements: TOKEN, 164
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -30295,7 +30295,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 165
+            // elements: 165, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -30463,7 +30463,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 167, TOKEN
+            // elements: TOKEN, 167
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -31051,7 +31051,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TOKEN, 174
+            // elements: 174, TOKEN
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -31135,7 +31135,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 175, TOKEN
+            // elements: TOKEN, 175
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -31303,7 +31303,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 177, TOKEN
+            // elements: TOKEN, 177
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -31471,7 +31471,7 @@ public class ChemicalChunkerParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 179, TOKEN
+            // elements: TOKEN, 179
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -38529,7 +38529,7 @@ public class ChemicalChunkerParser extends Parser {
                         int index2_3 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (((synpred2_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||(synpred2_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||(synpred2_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred2_ChemicalChunker())) ) {s = 143;}
+                        if ( (((synpred2_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||(synpred2_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||(synpred2_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||synpred2_ChemicalChunker())) ) {s = 143;}
 
                         else if ( (synpred3_ChemicalChunker()) ) {s = 144;}
 
@@ -39047,7 +39047,7 @@ public class ChemicalChunkerParser extends Parser {
                         int index2_4 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (((synpred2_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||(synpred2_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||(synpred2_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred2_ChemicalChunker())) ) {s = 143;}
+                        if ( (((synpred2_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||(synpred2_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||(synpred2_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||synpred2_ChemicalChunker())) ) {s = 143;}
 
                         else if ( (synpred3_ChemicalChunker()) ) {s = 144;}
 
@@ -39083,7 +39083,7 @@ public class ChemicalChunkerParser extends Parser {
                         int index2_28 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (((synpred2_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||(synpred2_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||(synpred2_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred2_ChemicalChunker())) ) {s = 143;}
+                        if ( (((synpred2_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||(synpred2_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||(synpred2_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||synpred2_ChemicalChunker())) ) {s = 143;}
 
                         else if ( (synpred3_ChemicalChunker()) ) {s = 144;}
 
@@ -40345,7 +40345,7 @@ public class ChemicalChunkerParser extends Parser {
                         int index2_6 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (((synpred2_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||(synpred2_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||(synpred2_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred2_ChemicalChunker())) ) {s = 143;}
+                        if ( (((synpred2_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||(synpred2_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||(synpred2_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||synpred2_ChemicalChunker())) ) {s = 143;}
 
                         else if ( (synpred3_ChemicalChunker()) ) {s = 144;}
 
@@ -41815,7 +41815,7 @@ public class ChemicalChunkerParser extends Parser {
                         int index4_15 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (((synpred5_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||(synpred5_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||(synpred5_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred5_ChemicalChunker())) ) {s = 132;}
+                        if ( (((synpred5_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||(synpred5_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||(synpred5_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||synpred5_ChemicalChunker())) ) {s = 132;}
 
                         else if ( (true) ) {s = 11;}
 
@@ -42541,7 +42541,7 @@ public class ChemicalChunkerParser extends Parser {
                         int index4_16 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (((synpred5_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||(synpred5_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||(synpred5_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred5_ChemicalChunker())) ) {s = 132;}
+                        if ( (((synpred5_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||(synpred5_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||(synpred5_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||synpred5_ChemicalChunker())) ) {s = 132;}
 
                         else if ( (synpred7_ChemicalChunker()) ) {s = 134;}
 
@@ -42607,7 +42607,7 @@ public class ChemicalChunkerParser extends Parser {
                         int index4_18 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (((synpred5_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||(synpred5_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||(synpred5_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred5_ChemicalChunker())) ) {s = 132;}
+                        if ( (((synpred5_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||(synpred5_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||(synpred5_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||synpred5_ChemicalChunker())) ) {s = 132;}
 
                         else if ( (true) ) {s = 11;}
 
@@ -42707,7 +42707,7 @@ public class ChemicalChunkerParser extends Parser {
                         int index4_29 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (((synpred5_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||(synpred5_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||(synpred5_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred5_ChemicalChunker())) ) {s = 132;}
+                        if ( (((synpred5_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||(synpred5_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||(synpred5_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||synpred5_ChemicalChunker())) ) {s = 132;}
 
                         else if ( (true) ) {s = 11;}
 
@@ -44071,11 +44071,11 @@ public class ChemicalChunkerParser extends Parser {
                         int index12_11 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (((synpred87_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred87_ChemicalChunker())) ) {s = 67;}
+                        if ( (((synpred87_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||synpred87_ChemicalChunker())) ) {s = 67;}
 
-                        else if ( (((synpred88_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred88_ChemicalChunker())) ) {s = 68;}
+                        else if ( (((synpred88_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||synpred88_ChemicalChunker())) ) {s = 68;}
 
-                        else if ( ((synpred89_ChemicalChunker()||(synpred89_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText()))))) ) {s = 69;}
+                        else if ( ((synpred89_ChemicalChunker()||(synpred89_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null))))) ) {s = 69;}
 
                         else if ( (synpred90_ChemicalChunker()) ) {s = 70;}
 
@@ -44333,11 +44333,11 @@ public class ChemicalChunkerParser extends Parser {
                         int index12_16 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (((synpred87_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred87_ChemicalChunker())) ) {s = 67;}
+                        if ( (((synpred87_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||synpred87_ChemicalChunker())) ) {s = 67;}
 
-                        else if ( (((synpred88_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred88_ChemicalChunker())) ) {s = 68;}
+                        else if ( (((synpred88_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||synpred88_ChemicalChunker())) ) {s = 68;}
 
-                        else if ( ((synpred89_ChemicalChunker()||(synpred89_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText()))))) ) {s = 69;}
+                        else if ( ((synpred89_ChemicalChunker()||(synpred89_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null))))) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -44557,11 +44557,11 @@ public class ChemicalChunkerParser extends Parser {
                         int index12_10 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (((synpred87_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred87_ChemicalChunker())) ) {s = 67;}
+                        if ( (((synpred87_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||synpred87_ChemicalChunker())) ) {s = 67;}
 
-                        else if ( (((synpred88_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred88_ChemicalChunker())) ) {s = 68;}
+                        else if ( (((synpred88_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||synpred88_ChemicalChunker())) ) {s = 68;}
 
-                        else if ( ((synpred89_ChemicalChunker()||(synpred89_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText()))))) ) {s = 69;}
+                        else if ( ((synpred89_ChemicalChunker()||(synpred89_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null))))) ) {s = 69;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -45089,11 +45089,11 @@ public class ChemicalChunkerParser extends Parser {
                         int index12_13 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (((synpred87_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred87_ChemicalChunker())) ) {s = 67;}
+                        if ( (((synpred87_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||synpred87_ChemicalChunker())) ) {s = 67;}
 
-                        else if ( (((synpred88_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred88_ChemicalChunker())) ) {s = 68;}
+                        else if ( (((synpred88_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||synpred88_ChemicalChunker())) ) {s = 68;}
 
-                        else if ( ((synpred89_ChemicalChunker()||(synpred89_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText()))))) ) {s = 69;}
+                        else if ( ((synpred89_ChemicalChunker()||(synpred89_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null))))) ) {s = 69;}
 
                         else if ( (synpred90_ChemicalChunker()) ) {s = 70;}
 
@@ -45471,7 +45471,7 @@ public class ChemicalChunkerParser extends Parser {
                         int index16_18 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (((synpred96_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||(synpred96_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||(synpred96_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred96_ChemicalChunker())) ) {s = 72;}
+                        if ( (((synpred96_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||(synpred96_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||(synpred96_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||synpred96_ChemicalChunker())) ) {s = 72;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -46095,7 +46095,7 @@ public class ChemicalChunkerParser extends Parser {
                         int index16_16 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (((synpred96_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||(synpred96_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||(synpred96_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred96_ChemicalChunker())) ) {s = 72;}
+                        if ( (((synpred96_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||(synpred96_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||(synpred96_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||synpred96_ChemicalChunker())) ) {s = 72;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -46143,7 +46143,7 @@ public class ChemicalChunkerParser extends Parser {
                         int index16_28 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (((synpred96_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||(synpred96_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||(synpred96_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred96_ChemicalChunker())) ) {s = 72;}
+                        if ( (((synpred96_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||(synpred96_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||(synpred96_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||synpred96_ChemicalChunker())) ) {s = 72;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -46239,7 +46239,7 @@ public class ChemicalChunkerParser extends Parser {
                         int index16_15 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (((synpred96_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||(synpred96_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||(synpred96_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred96_ChemicalChunker())) ) {s = 72;}
+                        if ( (((synpred96_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||(synpred96_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||(synpred96_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||synpred96_ChemicalChunker())) ) {s = 72;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -47030,11 +47030,11 @@ public class ChemicalChunkerParser extends Parser {
                         int index15_8 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( ((synpred93_ChemicalChunker()||(synpred93_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText()))))) ) {s = 66;}
+                        if ( ((synpred93_ChemicalChunker()||(synpred93_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null))))) ) {s = 66;}
 
-                        else if ( (((synpred94_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred94_ChemicalChunker())) ) {s = 67;}
+                        else if ( (((synpred94_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||synpred94_ChemicalChunker())) ) {s = 67;}
 
-                        else if ( ((synpred95_ChemicalChunker()||(synpred95_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText()))))) ) {s = 68;}
+                        else if ( (((synpred95_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||synpred95_ChemicalChunker())) ) {s = 68;}
 
                          
                         input.seek(index15_8);
@@ -47048,11 +47048,11 @@ public class ChemicalChunkerParser extends Parser {
                         int index15_9 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( ((synpred93_ChemicalChunker()||(synpred93_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText()))))) ) {s = 66;}
+                        if ( ((synpred93_ChemicalChunker()||(synpred93_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null))))) ) {s = 66;}
 
-                        else if ( (((synpred94_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred94_ChemicalChunker())) ) {s = 67;}
+                        else if ( (((synpred94_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||synpred94_ChemicalChunker())) ) {s = 67;}
 
-                        else if ( ((synpred95_ChemicalChunker()||(synpred95_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText()))))) ) {s = 68;}
+                        else if ( (((synpred95_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||synpred95_ChemicalChunker())) ) {s = 68;}
 
                         else if ( (true) ) {s = 69;}
 
@@ -47086,11 +47086,11 @@ public class ChemicalChunkerParser extends Parser {
                         int index15_11 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( ((synpred93_ChemicalChunker()||(synpred93_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText()))))) ) {s = 66;}
+                        if ( ((synpred93_ChemicalChunker()||(synpred93_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null))))) ) {s = 66;}
 
-                        else if ( (((synpred94_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred94_ChemicalChunker())) ) {s = 67;}
+                        else if ( (((synpred94_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||synpred94_ChemicalChunker())) ) {s = 67;}
 
-                        else if ( ((synpred95_ChemicalChunker()||(synpred95_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText()))))) ) {s = 68;}
+                        else if ( (((synpred95_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||synpred95_ChemicalChunker())) ) {s = 68;}
 
                         else if ( (true) ) {s = 69;}
 
@@ -47160,11 +47160,11 @@ public class ChemicalChunkerParser extends Parser {
                         int index15_15 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( ((synpred93_ChemicalChunker()||(synpred93_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText()))))) ) {s = 66;}
+                        if ( ((synpred93_ChemicalChunker()||(synpred93_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null))))) ) {s = 66;}
 
-                        else if ( (((synpred94_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred94_ChemicalChunker())) ) {s = 67;}
+                        else if ( (((synpred94_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||synpred94_ChemicalChunker())) ) {s = 67;}
 
-                        else if ( ((synpred95_ChemicalChunker()||(synpred95_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText()))))) ) {s = 68;}
+                        else if ( (((synpred95_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||synpred95_ChemicalChunker())) ) {s = 68;}
 
                          
                         input.seek(index15_15);
@@ -48063,7 +48063,7 @@ public class ChemicalChunkerParser extends Parser {
                         int index18_8 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (((synpred98_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred98_ChemicalChunker())) ) {s = 18;}
+                        if ( ((synpred98_ChemicalChunker()||(synpred98_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null))))) ) {s = 18;}
 
                         else if ( (true) ) {s = 17;}
 
@@ -48095,7 +48095,7 @@ public class ChemicalChunkerParser extends Parser {
                         int index18_15 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (((synpred98_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred98_ChemicalChunker())) ) {s = 18;}
+                        if ( ((synpred98_ChemicalChunker()||(synpred98_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null))))) ) {s = 18;}
 
                         else if ( (true) ) {s = 17;}
 
@@ -48111,7 +48111,7 @@ public class ChemicalChunkerParser extends Parser {
                         int index18_11 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (((synpred98_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred98_ChemicalChunker())) ) {s = 18;}
+                        if ( ((synpred98_ChemicalChunker()||(synpred98_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null))))) ) {s = 18;}
 
                         else if ( (true) ) {s = 17;}
 
@@ -48239,7 +48239,7 @@ public class ChemicalChunkerParser extends Parser {
                         int index18_9 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (((synpred98_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred98_ChemicalChunker())) ) {s = 18;}
+                        if ( ((synpred98_ChemicalChunker()||(synpred98_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null))))) ) {s = 18;}
 
                         else if ( (true) ) {s = 17;}
 
@@ -48400,7 +48400,7 @@ public class ChemicalChunkerParser extends Parser {
                         int index20_8 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( ((synpred100_ChemicalChunker()||(synpred100_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText()))))) ) {s = 1;}
+                        if ( (((synpred100_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||synpred100_ChemicalChunker())) ) {s = 1;}
 
                         else if ( (true) ) {s = 17;}
 
@@ -52176,7 +52176,7 @@ public class ChemicalChunkerParser extends Parser {
 
                         else if ( (synpred176_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( ((synpred177_ChemicalChunker()||(synpred177_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText()))))) ) {s = 22;}
+                        else if ( ((synpred177_ChemicalChunker()||(synpred177_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null))))) ) {s = 22;}
 
                         else if ( (synpred192_ChemicalChunker()) ) {s = 69;}
 
@@ -52224,7 +52224,7 @@ public class ChemicalChunkerParser extends Parser {
 
                         else if ( (synpred176_ChemicalChunker()) ) {s = 68;}
 
-                        else if ( ((synpred177_ChemicalChunker()||(synpred177_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText()))))) ) {s = 22;}
+                        else if ( ((synpred177_ChemicalChunker()||(synpred177_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null))))) ) {s = 22;}
 
                         else if ( (synpred187_ChemicalChunker()) ) {s = 72;}
 
@@ -52270,7 +52270,7 @@ public class ChemicalChunkerParser extends Parser {
 
                         else if ( (synpred175_ChemicalChunker()) ) {s = 15;}
 
-                        else if ( ((synpred177_ChemicalChunker()||(synpred177_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText()))))) ) {s = 22;}
+                        else if ( ((synpred177_ChemicalChunker()||(synpred177_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null))))) ) {s = 22;}
 
                         else if ( (synpred187_ChemicalChunker()) ) {s = 72;}
 
@@ -52500,7 +52500,7 @@ public class ChemicalChunkerParser extends Parser {
                         int index51_23 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( ((synpred177_ChemicalChunker()||(synpred177_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText()))))) ) {s = 22;}
+                        if ( ((synpred177_ChemicalChunker()||(synpred177_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null))))) ) {s = 22;}
 
                         else if ( (synpred211_ChemicalChunker()) ) {s = 80;}
 
@@ -56992,7 +56992,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred304_ChemicalChunker()) ) {s = 1;}
 
-                        else if ( (("IN-OF".equals(input.LT(-2).getText()))) ) {s = 6;}
+                        else if ( (("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null))) ) {s = 6;}
 
                          
                         input.seek(index110_8);
@@ -57008,7 +57008,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred304_ChemicalChunker()) ) {s = 1;}
 
-                        else if ( (("IN-OF".equals(input.LT(-2).getText()))) ) {s = 6;}
+                        else if ( (("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null))) ) {s = 6;}
 
                          
                         input.seek(index110_22);
@@ -57024,7 +57024,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred304_ChemicalChunker()) ) {s = 1;}
 
-                        else if ( (("IN-OF".equals(input.LT(-2).getText()))) ) {s = 6;}
+                        else if ( (("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null))) ) {s = 6;}
 
                          
                         input.seek(index110_9);
@@ -57040,7 +57040,7 @@ public class ChemicalChunkerParser extends Parser {
                         s = -1;
                         if ( (synpred304_ChemicalChunker()) ) {s = 1;}
 
-                        else if ( (("IN-OF".equals(input.LT(-2).getText()))) ) {s = 6;}
+                        else if ( (("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null))) ) {s = 6;}
 
                          
                         input.seek(index110_21);
@@ -58879,7 +58879,7 @@ public class ChemicalChunkerParser extends Parser {
                         int index120_16 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (((synpred326_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred326_ChemicalChunker())) ) {s = 67;}
+                        if ( (((synpred326_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||synpred326_ChemicalChunker())) ) {s = 67;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -58975,7 +58975,7 @@ public class ChemicalChunkerParser extends Parser {
                         int index120_11 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (((synpred326_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred326_ChemicalChunker())) ) {s = 67;}
+                        if ( (((synpred326_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||synpred326_ChemicalChunker())) ) {s = 67;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -59151,7 +59151,7 @@ public class ChemicalChunkerParser extends Parser {
                         int index120_13 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (((synpred326_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred326_ChemicalChunker())) ) {s = 67;}
+                        if ( (((synpred326_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||synpred326_ChemicalChunker())) ) {s = 67;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -59391,7 +59391,7 @@ public class ChemicalChunkerParser extends Parser {
                         int index120_10 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (((synpred326_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred326_ChemicalChunker())) ) {s = 67;}
+                        if ( (((synpred326_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||synpred326_ChemicalChunker())) ) {s = 67;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -60539,11 +60539,11 @@ public class ChemicalChunkerParser extends Parser {
 
                         else if ( (synpred363_ChemicalChunker()) ) {s = 131;}
 
-                        else if ( ((synpred364_ChemicalChunker()||(synpred364_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText()))))) ) {s = 132;}
+                        else if ( (((synpred364_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||synpred364_ChemicalChunker())) ) {s = 132;}
 
                         else if ( (synpred367_ChemicalChunker()) ) {s = 133;}
 
-                        else if ( (((synpred368_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred368_ChemicalChunker())) ) {s = 63;}
+                        else if ( (((synpred368_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||synpred368_ChemicalChunker())) ) {s = 63;}
 
                         else if ( (synpred370_ChemicalChunker()) ) {s = 134;}
 
@@ -60583,9 +60583,9 @@ public class ChemicalChunkerParser extends Parser {
 
                         else if ( (synpred363_ChemicalChunker()) ) {s = 131;}
 
-                        else if ( ((synpred364_ChemicalChunker()||(synpred364_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText()))))) ) {s = 132;}
+                        else if ( (((synpred364_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||synpred364_ChemicalChunker())) ) {s = 132;}
 
-                        else if ( (((synpred368_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred368_ChemicalChunker())) ) {s = 63;}
+                        else if ( (((synpred368_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||synpred368_ChemicalChunker())) ) {s = 63;}
 
                          
                         input.seek(index142_45);
@@ -60757,9 +60757,9 @@ public class ChemicalChunkerParser extends Parser {
 
                         else if ( (synpred363_ChemicalChunker()) ) {s = 131;}
 
-                        else if ( ((synpred364_ChemicalChunker()||(synpred364_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText()))))) ) {s = 132;}
+                        else if ( (((synpred364_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||synpred364_ChemicalChunker())) ) {s = 132;}
 
-                        else if ( (((synpred368_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred368_ChemicalChunker())) ) {s = 63;}
+                        else if ( (((synpred368_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||synpred368_ChemicalChunker())) ) {s = 63;}
 
                          
                         input.seek(index142_56);
@@ -60809,9 +60809,9 @@ public class ChemicalChunkerParser extends Parser {
                         int index142_59 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( ((synpred364_ChemicalChunker()||(synpred364_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText()))))) ) {s = 132;}
+                        if ( (((synpred364_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||synpred364_ChemicalChunker())) ) {s = 132;}
 
-                        else if ( (((synpred368_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred368_ChemicalChunker())) ) {s = 63;}
+                        else if ( (((synpred368_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||synpred368_ChemicalChunker())) ) {s = 63;}
 
                          
                         input.seek(index142_59);
@@ -61101,9 +61101,9 @@ public class ChemicalChunkerParser extends Parser {
 
                         else if ( (synpred383_ChemicalChunker()) ) {s = 130;}
 
-                        else if ( ((synpred384_ChemicalChunker()||(synpred384_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText()))))) ) {s = 131;}
+                        else if ( (((synpred384_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||synpred384_ChemicalChunker())) ) {s = 131;}
 
-                        else if ( (((synpred388_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred388_ChemicalChunker())) ) {s = 64;}
+                        else if ( ((synpred388_ChemicalChunker()||(synpred388_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null))))) ) {s = 64;}
 
                          
                         input.seek(index143_3);
@@ -61153,11 +61153,11 @@ public class ChemicalChunkerParser extends Parser {
 
                         else if ( (synpred383_ChemicalChunker()) ) {s = 130;}
 
-                        else if ( ((synpred384_ChemicalChunker()||(synpred384_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText()))))) ) {s = 131;}
+                        else if ( (((synpred384_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||synpred384_ChemicalChunker())) ) {s = 131;}
 
                         else if ( (synpred387_ChemicalChunker()) ) {s = 136;}
 
-                        else if ( (((synpred388_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred388_ChemicalChunker())) ) {s = 64;}
+                        else if ( ((synpred388_ChemicalChunker()||(synpred388_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null))))) ) {s = 64;}
 
                         else if ( (synpred390_ChemicalChunker()) ) {s = 137;}
 
@@ -61197,9 +61197,9 @@ public class ChemicalChunkerParser extends Parser {
 
                         else if ( (synpred383_ChemicalChunker()) ) {s = 130;}
 
-                        else if ( ((synpred384_ChemicalChunker()||(synpred384_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText()))))) ) {s = 131;}
+                        else if ( (((synpred384_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||synpred384_ChemicalChunker())) ) {s = 131;}
 
-                        else if ( (((synpred388_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred388_ChemicalChunker())) ) {s = 64;}
+                        else if ( ((synpred388_ChemicalChunker()||(synpred388_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null))))) ) {s = 64;}
 
                          
                         input.seek(index143_47);
@@ -61399,9 +61399,9 @@ public class ChemicalChunkerParser extends Parser {
                         int index143_60 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( ((synpred384_ChemicalChunker()||(synpred384_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText()))))) ) {s = 131;}
+                        if ( (((synpred384_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)))||synpred384_ChemicalChunker())) ) {s = 131;}
 
-                        else if ( (((synpred388_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred388_ChemicalChunker())) ) {s = 64;}
+                        else if ( ((synpred388_ChemicalChunker()||(synpred388_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null))))) ) {s = 64;}
 
                          
                         input.seek(index143_60);
@@ -62160,11 +62160,11 @@ public class ChemicalChunkerParser extends Parser {
                         int index169_8 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( ((synpred93_ChemicalChunker()||(synpred93_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText()))))) ) {s = 66;}
+                        if ( ((synpred93_ChemicalChunker()||(synpred93_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null))))) ) {s = 66;}
 
-                        else if ( (((synpred94_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred94_ChemicalChunker())) ) {s = 67;}
+                        else if ( ((synpred94_ChemicalChunker()||(synpred94_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null))))) ) {s = 67;}
 
-                        else if ( (((synpred95_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred95_ChemicalChunker())) ) {s = 68;}
+                        else if ( ((synpred95_ChemicalChunker()||(synpred95_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null))))) ) {s = 68;}
 
                          
                         input.seek(index169_8);
@@ -62178,11 +62178,11 @@ public class ChemicalChunkerParser extends Parser {
                         int index169_9 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( ((synpred93_ChemicalChunker()||(synpred93_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText()))))) ) {s = 66;}
+                        if ( ((synpred93_ChemicalChunker()||(synpred93_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null))))) ) {s = 66;}
 
-                        else if ( (((synpred94_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred94_ChemicalChunker())) ) {s = 67;}
+                        else if ( ((synpred94_ChemicalChunker()||(synpred94_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null))))) ) {s = 67;}
 
-                        else if ( (((synpred95_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred95_ChemicalChunker())) ) {s = 68;}
+                        else if ( ((synpred95_ChemicalChunker()||(synpred95_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null))))) ) {s = 68;}
 
                         else if ( (true) ) {s = 69;}
 
@@ -62216,11 +62216,11 @@ public class ChemicalChunkerParser extends Parser {
                         int index169_11 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( ((synpred93_ChemicalChunker()||(synpred93_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText()))))) ) {s = 66;}
+                        if ( ((synpred93_ChemicalChunker()||(synpred93_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null))))) ) {s = 66;}
 
-                        else if ( (((synpred94_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred94_ChemicalChunker())) ) {s = 67;}
+                        else if ( ((synpred94_ChemicalChunker()||(synpred94_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null))))) ) {s = 67;}
 
-                        else if ( (((synpred95_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred95_ChemicalChunker())) ) {s = 68;}
+                        else if ( ((synpred95_ChemicalChunker()||(synpred95_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null))))) ) {s = 68;}
 
                         else if ( (true) ) {s = 69;}
 
@@ -62290,11 +62290,11 @@ public class ChemicalChunkerParser extends Parser {
                         int index169_15 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( ((synpred93_ChemicalChunker()||(synpred93_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText()))))) ) {s = 66;}
+                        if ( ((synpred93_ChemicalChunker()||(synpred93_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null))))) ) {s = 66;}
 
-                        else if ( (((synpred94_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred94_ChemicalChunker())) ) {s = 67;}
+                        else if ( ((synpred94_ChemicalChunker()||(synpred94_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null))))) ) {s = 67;}
 
-                        else if ( (((synpred95_ChemicalChunker()&&("IN-OF".equals(input.LT(-2).getText())))||synpred95_ChemicalChunker())) ) {s = 68;}
+                        else if ( ((synpred95_ChemicalChunker()||(synpred95_ChemicalChunker()&&("IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null))))) ) {s = 68;}
 
                          
                         input.seek(index169_15);

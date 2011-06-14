@@ -201,7 +201,7 @@ unnamedmoleculeamount6
 	:(quantity|mixture) nnchementity;
 
 referenceToCompound
-	: (nnchementity | {"IN-OF".equals(input.LT(-2).getText())}?) numericCompoundReference;
+	: (nnchementity | {"IN-OF".equals(input.LT(-2) !=null ? input.LT(-2).getText() : null)}?) numericCompoundReference;
 
 numericCompoundReference
   : (numericOrBracketedNumeric |squareBracketedReference) -> ^(REFERENCETOCOMPOUND numericOrBracketedNumeric? squareBracketedReference?);
