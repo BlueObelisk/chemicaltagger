@@ -24,7 +24,7 @@ public class Formatter {
 	private static Pattern CONCAT_TEMP_PATTERN = Pattern.compile("\\d+(o|\u00b0|\u00ba)[cCfF][\\.]?");
 	private static Pattern CONCAT_HYPHENED_DIRECTION_PATTERN = Pattern.compile("^[A-Z]\\-\\d+");
 	private static Pattern CONCAT_SLASH_DIRECTION_PATTERN = Pattern.compile("^[A-Z]\\/\\d*$");
-	private static Pattern CONCAT_EQUATION_PATTERN = Pattern.compile("[a-z]*(=|<|>|\\u00d7)\\d+");
+	private static Pattern CONCAT_EQUATION_PATTERN = Pattern.compile("([a-z]*)([=<>\\u00d7])(\\d+)");
 	private static Pattern TIME_EXPRESSION = Pattern.compile("^([01]?[1-9]|2[123]):[0-5]\\d([ap]m)?$", Pattern.CASE_INSENSITIVE);
 	private static Pattern TEMPERATURE_UNITS = Pattern.compile("[cCfF]([.,;:()\\[\\]{}]|$)");
 	private static Pattern MATCH_SULPH = Pattern.compile("sulph", Pattern.CASE_INSENSITIVE);
@@ -44,7 +44,7 @@ public class Formatter {
 	public static String normaliseText(String sentence){
 		StringBuilder newSentence = new StringBuilder();
 		sentence = sentence.replace("%", " %").replace(";", " ;");
-  	    sentence = sentence.replace("\u2010", "-").replace("\u2011", "-").replace("\u2012", "-").replace("\u2013", "-").replace("\u2014", "-").replace("\u2015", "-");//normalise hyphens
+  	    sentence = sentence.replace("\u2010", "-").replace("\u2011", "-").replace("\u2012", "-").replace("\u2013", "-").replace("\u2014", "-").replace("\u2015", "-").replace("\u002d", "-");//normalise hyphens
 		String[] words = WHITESPACE_PATTERN.split(sentence);
 
 		int index = 0;
@@ -68,8 +68,9 @@ public class Formatter {
 
 			}
 			Matcher equationMatcher = CONCAT_EQUATION_PATTERN.matcher(string);
-			if (equationMatcher.find()) {
-					string = string.replace("=", " = ").replace("<", " < ").replace(">", " > ").replace("\u00d7", " \u00d7 ");
+			while (equationMatcher.find()) {
+				string = string.replace(equationMatcher.group(2), " " + equationMatcher.group(2)+" ");
+					
 			}
 			
 			if (string.endsWith(".") && (string.contains("\u00b0") || string.contains("\u00ba"))) {//splits period after degrees e.g. 50oC. This period may be reattached in RecombineTokens
