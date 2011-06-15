@@ -24,7 +24,7 @@ public class Formatter {
 	private static Pattern CONCAT_TEMP_PATTERN = Pattern.compile("\\d+(o|\u00b0|\u00ba)[cCfF][\\.]?");
 	private static Pattern CONCAT_HYPHENED_DIRECTION_PATTERN = Pattern.compile("^[A-Z]\\-\\d+");
 	private static Pattern CONCAT_SLASH_DIRECTION_PATTERN = Pattern.compile("^[A-Z]\\/\\d*$");
-	private static Pattern CONCAT_EQUATION_PATTERN = Pattern.compile("^[a-z]*(=|<|>)\\d+");
+	private static Pattern CONCAT_EQUATION_PATTERN = Pattern.compile("[a-z]*(=|<|>|\\u00d7)\\d+");
 	private static Pattern TIME_EXPRESSION = Pattern.compile("^([01]?[1-9]|2[123]):[0-5]\\d([ap]m)?$", Pattern.CASE_INSENSITIVE);
 	private static Pattern TEMPERATURE_UNITS = Pattern.compile("[cCfF]([.,;:()\\[\\]{}]|$)");
 	private static Pattern MATCH_SULPH = Pattern.compile("sulph", Pattern.CASE_INSENSITIVE);
@@ -68,10 +68,8 @@ public class Formatter {
 
 			}
 			Matcher equationMatcher = CONCAT_EQUATION_PATTERN.matcher(string);
-			if (equationMatcher.matches()) {
-					string = string.replace("=", " = ").replace("<", " < ").replace(">", " > ");
-					
-
+			if (equationMatcher.find()) {
+					string = string.replace("=", " = ").replace("<", " < ").replace(">", " > ").replace("\u00d7", " \u00d7 ");
 			}
 			
 			if (string.endsWith(".") && (string.contains("\u00b0") || string.contains("\u00ba"))) {//splits period after degrees e.g. 50oC. This period may be reattached in RecombineTokens

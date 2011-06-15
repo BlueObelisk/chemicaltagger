@@ -1,8 +1,8 @@
 #Tags---Pattern---Description
 
 TM-UNICODE---®---Unicode Characters
-CD-UNICODE---×|&lt---Unicode Cardinal Digits
 CD---^(\d|-)?\d+\.?\d*$--- Cardinal Digits
+CD---\-?\d+(\.?\d)*x\d+(\-?\d)*---Unparsed equations that sometimes are passed off as CD (to avoid them being marked up as NN or Oscar-CM)
 DT-THE---^the$---The determiner 'THE';
 
 # Prepositions
@@ -165,4 +165,4 @@ STOP---^(\.|\?|\!|\;)$---Full stops,SemiColons, Exclamation and Question Marks
 NN-PERCENT---^\%$---Percent Sign
 LSQB---^\[$---Left Square Brackets
 RSQB---^\]$---Right Square Brackets
-SYM---^(<|>)$---Symbols
+SYM---^(<|>|\u00d7)$---Symbols
