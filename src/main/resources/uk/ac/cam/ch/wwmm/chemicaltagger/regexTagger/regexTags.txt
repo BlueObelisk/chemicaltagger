@@ -165,3 +165,4 @@ STOP---^(\.|\?|\!|\;)$---Full stops,SemiColons, Exclamation and Question Marks
 NN-PERCENT---^\%$---Percent Sign
 LSQB---^\[$---Left Square Brackets
 RSQB---^\]$---Right Square Brackets
+SYM---^(<|>)$---Symbols

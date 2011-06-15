@@ -52,7 +52,8 @@ public class PostProcessTags {
 					currentToken, newTag);
 			newTag = correctMisTaggedDigits(combinedTags, i, currentTag,
 					currentToken, newTag);
-
+			newTag = correctMisTaggedUnits(combinedTags, i, currentTag,
+					currentToken, newTag);
 			if (tagSet.contains(currentToken)) {
 				currentToken = currentToken.toLowerCase();
 			}
@@ -61,7 +62,6 @@ public class PostProcessTags {
 				newCombinedTagsList.add(newTag);
 			}
 			else {
-				System.out.println(newTag + " -- "+currentTag);
 
 				newCombinedTagsList.add(currentTag);
 			}
@@ -72,6 +72,25 @@ public class PostProcessTags {
 		
 		posContainer.setCombinedTagsList(newCombinedTagsList);
 		return posContainer;
+	}
+
+	/******************************************
+	 * Correct one character letters that have nee
+	 * @param combinedTags
+	 * @param i
+	 * @param currentTag
+	 * @param currentToken
+	 * @param newTag
+	 * @return
+	 */
+	private String correctMisTaggedUnits(List<String> combinedTags, int i,
+			String currentTag, String currentToken, String newTag) {
+		List<String> afterList = Arrays.asList("sym");
+
+		if ((currentToken.length() == 1) && Character.isLowerCase(currentToken.charAt(0)) && stringAfter(afterList, i, combinedTags)){
+			newTag = "NN";
+		}
+		return newTag;
 	}
 
 	/*************************************
