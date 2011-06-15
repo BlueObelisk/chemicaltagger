@@ -202,7 +202,6 @@ public class PostProcessTags {
 			if (!stringAfter(afterList, i, combinedTags)) {
 				newTag = "NN-CHEMENTITY";
 			}
-
 		}
 		
 		if (currentTagLC.startsWith("vb-dilute")) {//correct cases where dilute and the like are actually adjectives e.g. dilute sulfuric acid
@@ -212,8 +211,15 @@ public class PostProcessTags {
 			if (stringAfter(afterList, i, combinedTags)) {
 				newTag = "JJ-CHEM";
 			}
-
 		}
+		
+		if (currentToken.length()==1 && Character.isUpperCase(currentToken.charAt(0))){//Identifies a capital letter that is likely to be an identifier
+			List<String> beforeList = Arrays.asList("nn-example", "nn-method");
+			if (stringBefore(beforeList, i, combinedTags)){
+				newTag = "SINGLECAPITALLETTER";
+			}
+		}
+		
 
 		/********
 		 * Gerunds
