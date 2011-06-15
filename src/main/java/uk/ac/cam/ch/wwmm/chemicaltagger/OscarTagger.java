@@ -16,7 +16,7 @@ import uk.ac.cam.ch.wwmm.oscar.document.Token;
 
 public class OscarTagger {
 
-	private Oscar oscar;
+	protected Oscar oscar;
 
 	/*****************************
 	 * Default constructor method.
@@ -24,7 +24,6 @@ public class OscarTagger {
 	 ***************************/
 	public OscarTagger(Oscar oscar) {
 		this.oscar = oscar;
-
 	}
 
 	/***********************************************
@@ -36,7 +35,7 @@ public class OscarTagger {
 	public POSContainer runTagger(POSContainer posContainer) {
 
 		List<NamedEntity> neList = oscar.recogniseNamedEntities(posContainer.getTokenSequenceList());
-        List<String> ignoreOscarList = Arrays.asList(new String[]{"cpr"});
+        List<String> ignoreOscarList = Arrays.asList("cpr");
 		List<String> tokenList = posContainer.getWordTokenList();
 		List<String> oscarList = new ArrayList<String>();
 		String tag = "nil";
@@ -48,15 +47,13 @@ public class OscarTagger {
 				List<Token> tokens = ne.getTokens();
                  
 				for (Token token : tokens) {
-						if (tokenList.get(token.getIndex()).contains(token.getSurface())) {
-							oscarList.set(token.getIndex(), "OSCAR-"+ne.getType().getName());
-						}
+					if (tokenList.get(token.getIndex()).contains(token.getSurface())) {
+						oscarList.set(token.getIndex(), "OSCAR-"+ne.getType().getName());
 					}
-				
+				}
 			}
 		}
 		posContainer.setOscarTagList(oscarList);
 		return posContainer;
-
 	}
 }
