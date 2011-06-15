@@ -19,11 +19,12 @@ public class Formatter {
 	private static Pattern WHITESPACE_PATTERN = Pattern.compile("\\s+");
 	private static Pattern ABBREVIATION_PATTERN = Pattern.compile("-?[A-Z]+[a-z]*\\.");
 	//Note \d[gl] are intentionally excluded to avoid ambiguity with compound references
-	private static Pattern CONCAT_AMOUNT_PATTERN = Pattern.compile("(\\d(\\d+|\\.\\d+|\\d*[mk\u00b5])[gl][s]?|(\\d+[mnk\u00b5]?([LMN]|[eE][qQ][\\.]?|[cCdD][mM]3|[gG][rR][aA][mM][mM]?[eE]?|[mM][oO][lL][eE]?)[sS]?))$");
+	private static Pattern CONCAT_AMOUNT_PATTERN = Pattern.compile("(\\d(\\d+|\\.\\d+|\\d*[mk\u00b5])(g|l|hPa)[s]?|(\\d+[mnk\u00b5]?([LMN]|[eE][qQ][\\.]?|[cCdD][mM]3|[gG][rR][aA][mM][mM]?[eE]?|[mM][oO][lL][eE]?)[sS]?))$");
 	private static Pattern CONCAT_PH_PATTERN = Pattern.compile("^pH-?\\d+");
 	private static Pattern CONCAT_TEMP_PATTERN = Pattern.compile("\\d+(o|\u00b0|\u00ba)[cCfF][\\.]?");
 	private static Pattern CONCAT_HYPHENED_DIRECTION_PATTERN = Pattern.compile("^[A-Z]\\-\\d+");
 	private static Pattern CONCAT_SLASH_DIRECTION_PATTERN = Pattern.compile("^[A-Z]\\/\\d*$");
+	private static Pattern CONCAT_EQUATION_PATTERN = Pattern.compile("^[a-z]*(=|<|>)\\d+");
 	private static Pattern TIME_EXPRESSION = Pattern.compile("^([01]?[1-9]|2[123]):[0-5]\\d([ap]m)?$", Pattern.CASE_INSENSITIVE);
 	private static Pattern TEMPERATURE_UNITS = Pattern.compile("[cCfF]([.,;:()\\[\\]{}]|$)");
 	private static Pattern MATCH_SULPH = Pattern.compile("sulph", Pattern.CASE_INSENSITIVE);
@@ -64,6 +65,12 @@ public class Formatter {
 					&& !ABV_LIST.contains(string.toLowerCase())) {
 					string = string.substring(0, string.length() - 1);
 					suffix = " ." + suffix;
+
+			}
+			Matcher equationMatcher = CONCAT_EQUATION_PATTERN.matcher(string);
+			if (equationMatcher.matches()) {
+					string = string.replace("=", " = ").replace("<", " < ").replace(">", " > ");
+					
 
 			}
 			
@@ -112,7 +119,7 @@ public class Formatter {
 			if (concatAmountMatcher.find()) {
 				string = splitAmounts(string);
 			}
-			
+
 			Matcher concatPhMatcher = CONCAT_PH_PATTERN.matcher(string);//e.g. pH7 --> pH 7
 			if (concatPhMatcher.find()) {
 				string = string.substring(0, 2) + " " + string.substring(2) ;
