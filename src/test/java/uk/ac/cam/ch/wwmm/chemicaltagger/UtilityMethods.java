@@ -107,6 +107,8 @@ public class UtilityMethods {
 		List<String> tmpExpectedList = new ArrayList<String>(expectedList);
 		// Checks if expectedList contains all the nodes of actualList
 		expectedList.removeAll(actualList);
+
+		
 		Assert.assertTrue("ExpectedList has all nodes from the actualList", expectedList.isEmpty());
 	
     	// Checks if actualList contains all the nodes of expectedList

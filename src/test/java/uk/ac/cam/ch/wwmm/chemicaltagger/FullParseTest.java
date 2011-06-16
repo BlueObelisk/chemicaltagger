@@ -224,6 +224,7 @@ public class FullParseTest {
 		String expectedTags = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/ref9.txt");
 		ChemistryPOSTagger posTagger = ChemistryPOSTagger.getDefaultInstance();
 		POSContainer posContainer = posTagger.runTaggers(text, DEFAULT_PRIORITISE_OSCAR, true);
+		text = posContainer.getInputText();
 		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
 		Assert.assertEquals("Tagging Output",expectedTags, posContainer.getTokenTagTupleAsString());
 		ChemistrySentenceParser chemistrySentenceParser = new ChemistrySentenceParser(posContainer);
