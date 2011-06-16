@@ -79,7 +79,7 @@ unmatchedToken //all base tokens other than comma and stop
 	:	(numeric|advAdj|tmunicode|cdunicode|jjcomp|inAll|
 	nnexample|nnstate|nntime|nnmass|nnmolar|nnamount|nnatmosphere|nneq|nnvol|nnchementity|nntemp|nnph|nnflash|nngeneral|nnmethod|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|
 	oscarcm|oscaronts|oscarase|verb|nnadd|nnmixture|nnapparatus|nnconcentrate|nndry|nnextract|nnfilter|nnprecipitate|nnpurify|nnremove|nnsynthesize|nnyield|colon|apost|neg|dash|nnpercent|lsqb|rsqb|lrb|rrb|
-	cc|dt|dtTHE|fw|md|nn|nns|nnp|prp|prp_poss|rbconj|sym|uh|clause|comma|ls|nnps|pos|singlecapitalletter);
+	cc|dt|dtTHE|fw|md|nn|nns|nnp|prp|prp_poss|rbconj|sym|uh|clause|comma|ls|nnps|pos|nnidentifier);
 
 nounphrase
 	:	nounphraseStructure ->  ^(NounPhrase  nounphraseStructure);
@@ -161,7 +161,7 @@ preapparatus
 
 oscaronts
 	: oscaront+ -> ^(OSCARONT   oscaront+);
-oscarCompound :  adj* oscarCompoundStructure adj? alphanumericOrBrackettedCompoundReference?;
+oscarCompound :  adj* oscarCompoundStructure adj? alphanumericOrIdentifierCompoundReference?;
 
 oscarCompoundStructure: nestedOscarCM|oscarcm;
 nestedOscarCM: (oscarcm afterOscarCompoundStructure | bracketedOscarCompoundStructure) -> ^(OSCARCM oscarcm? afterOscarCompoundStructure? bracketedOscarCompoundStructure?);
@@ -182,7 +182,7 @@ moleculeamount1
 moleculeamount2
 	:(quantity|mixture)* oscarCompound+ afterCompoundCitationOrQuantity;
 
-afterCompoundCitationOrQuantity: ((numericCompoundReference|nnchementity)quantity+)?(citation|quantity|comma (quantity1Node|citationStructure)|mixture)*;
+afterCompoundCitationOrQuantity: ((numericOrIdentifierCompoundReference|nnchementity)quantity+)?(citation|quantity|comma (quantity1Node|citationStructure)|mixture)*;
 
 unnamedmolecule
 	: (unnamedmoleculeamount|referenceToCompound) -> ^(UNNAMEDMOLECULE unnamedmoleculeamount? referenceToCompound?);
@@ -191,16 +191,16 @@ unnamedmoleculeamount
 	:(unnamedmoleculeamount1|unnamedmoleculeamount2|unnamedmoleculeamount3|unnamedmoleculeamount4|unnamedmoleculeamount5|unnamedmoleculeamount6) ;
 
 unnamedmoleculeamount1	:
-          jjcomp nnchementity numericCompoundReference? (quantity|mixture)* ;
+          jjcomp nnchementity numericOrIdentifierCompoundReference? (quantity|mixture)* ;
 
 unnamedmoleculeamount2
-	: quantity inof nnchementity? numericCompoundReference;
+	: quantity inof nnchementity? numericOrIdentifierCompoundReference;
 
 unnamedmoleculeamount3
-	: alphanumericOrBrackettedCompoundReference (citation|quantity|mixture)*;
+	: alphanumericOrIdentifierCompoundReference (citation|quantity|mixture)*;
 
-alphanumericOrBrackettedCompoundReference
-  : (cdAlphanum|bracketedNumeric|squareBracketedReference) -> ^(REFERENCETOCOMPOUND cdAlphanum? bracketedNumeric? squareBracketedReference?);
+alphanumericOrIdentifierCompoundReference
+  : (cdAlphanum|bracketedNumeric|squareBracketedReference|identifierOrBracketedIdentifier) -> ^(REFERENCETOCOMPOUND cdAlphanum? bracketedNumeric? squareBracketedReference? identifierOrBracketedIdentifier?);
 
 unnamedmoleculeamount4
 	: numberCompoundReference citation? quantity (citation|quantity|mixture)*;
@@ -215,10 +215,10 @@ unnamedmoleculeamount6
 	:(quantity|mixture) nnchementity;
 
 referenceToCompound
-	: (nnchementity | {numberLooksLikeAReferenceToACompound(input)}?) numericCompoundReference;
+	: (nnchementity | {numberLooksLikeAReferenceToACompound(input)}?) numericOrIdentifierCompoundReference;
 
-numericCompoundReference
-  : (numericOrBracketedNumeric |squareBracketedReference) -> ^(REFERENCETOCOMPOUND numericOrBracketedNumeric? squareBracketedReference?);
+numericOrIdentifierCompoundReference
+  : (numericOrBracketedNumeric |squareBracketedReference|identifierOrBracketedIdentifier) -> ^(REFERENCETOCOMPOUND numericOrBracketedNumeric? squareBracketedReference? identifierOrBracketedIdentifier?);
 
 squareBracketedReference
 	:	lsqb numeric rsqb;
@@ -265,7 +265,7 @@ minimixture: (mixtureStructure2|mixtureStructure1) -> ^(MIXTURE  mixtureStructur
 procedureNode: method -> ^(PROCEDURE method);
 
 method:
-    (nngeneral|nn)? nnmethod (numeric|singlecapitalletter)? | nnexample (numeric|singlecapitalletter) ;
+    (nngeneral|nn)? nnmethod (numeric|identifierOrBracketedIdentifier)? | nnexample (numeric|identifierOrBracketedIdentifier) ;
 
 advAdj
 	:adv|adj;
@@ -286,6 +286,8 @@ citationContent:   lrb (nnp|fw|cd|conjunction) (nnp|fw|cd|conjunction)+ rrb ;
 
 numericOrBracketedNumeric	:  numeric | bracketedNumeric;
 bracketedNumeric	:  lrb numeric rrb;
+identifierOrBracketedIdentifier : nnidentifier | bracketedIdentifier;
+bracketedIdentifier	:  lrb nnidentifier rrb;
 
 adj	:	jj|jjr|jjs|oscarcj|jjchem|oscarrn;
 adv	:	rb|rbr|rp|rbs;
@@ -457,7 +459,7 @@ nnpercent:'NN-PERCENT' TOKEN -> ^('NN-PERCENT' TOKEN);
 lsqb:'LSQB' TOKEN -> ^('LSQB' TOKEN);
 rsqb:'RSQB' TOKEN -> ^('RSQB' TOKEN);
 
-singlecapitalletter:'SINGLECAPITALLETTER' TOKEN -> ^('SINGLECAPITALLETTER' TOKEN);
+nnidentifier:'NN-IDENTIFIER' TOKEN -> ^('NN-IDENTIFIER' TOKEN);
 
 //The determiner 'the';
 dtTHE:'DT-THE' TOKEN -> ^('DT-THE' TOKEN);

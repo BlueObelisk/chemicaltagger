@@ -213,10 +213,12 @@ public class PostProcessTags {
 			}
 		}
 		
-		if (currentToken.length()==1 && Character.isUpperCase(currentToken.charAt(0))){//Identifies a capital letter that is likely to be an identifier
+		//Identifies a capital letter or single character roman number that is likely to be an identifier
+		if (currentToken.length()==1 && 
+				(Character.isUpperCase(currentToken.charAt(0)) || isValidSingleLetterRomanNumber(currentToken.charAt(0)))){
 			List<String> beforeList = Arrays.asList("nn-example", "nn-method");
 			if (stringBefore(beforeList, i, combinedTags)){
-				newTag = "SINGLECAPITALLETTER";
+				newTag = "NN-IDENTIFIER";
 			}
 		}
 		
@@ -270,6 +272,15 @@ public class PostProcessTags {
 		return newTag;
 	}
 
+
+	/**
+	 * Is this the roman for 1, 5 or 10
+	 * @param charac
+	 * @return
+	 */
+	private boolean isValidSingleLetterRomanNumber(char charac) {
+		return (charac == 'i' || charac == 'I' || charac == 'v' || charac == 'V' || charac == 'x' || charac == 'X');
+	}
 
 	/**
 	 * Disambiguates between yield as a verb and the yield of a product compound

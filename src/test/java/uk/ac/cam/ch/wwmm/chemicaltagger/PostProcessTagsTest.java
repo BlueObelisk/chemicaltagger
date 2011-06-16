@@ -72,7 +72,7 @@ public class PostProcessTagsTest {
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
         new PostProcessTags().correctCombinedTagsList(posContainer);
-        Assert.assertEquals("NN-EXAMPLE example SINGLECAPITALLETTER A", posContainer.getTokenTagTupleAsString());
+        Assert.assertEquals("NN-EXAMPLE example NN-IDENTIFIER A", posContainer.getTokenTagTupleAsString());
 	}
 	
 	@Test
@@ -94,7 +94,7 @@ public class PostProcessTagsTest {
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
         new PostProcessTags().correctCombinedTagsList(posContainer);
-        Assert.assertEquals("NN-METHOD step SINGLECAPITALLETTER B", posContainer.getTokenTagTupleAsString());
+        Assert.assertEquals("NN-METHOD step NN-IDENTIFIER B", posContainer.getTokenTagTupleAsString());
     }
 	
 	@Test
@@ -105,6 +105,28 @@ public class PostProcessTagsTest {
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
         new PostProcessTags().correctCombinedTagsList(posContainer);
-        Assert.assertEquals("NN-METHOD procedure SINGLECAPITALLETTER E", posContainer.getTokenTagTupleAsString());
+        Assert.assertEquals("NN-METHOD procedure NN-IDENTIFIER E", posContainer.getTokenTagTupleAsString());
+    }
+	
+	@Test
+	public void testRomanNumberLabelledProcedure1() {
+        POSContainer posContainer = new POSContainer();
+        List<String> tags = Arrays.asList("NN-METHOD", "NNP");
+        List<String> tokens = Arrays.asList("procedure", "i");
+        posContainer.setCombinedTagsList(tags);
+        posContainer.setWordTokenList(tokens);
+        new PostProcessTags().correctCombinedTagsList(posContainer);
+        Assert.assertEquals("NN-METHOD procedure NN-IDENTIFIER i", posContainer.getTokenTagTupleAsString());
+    }
+	
+	@Test
+	public void testRomanNumberLabelledProcedure2() {
+        POSContainer posContainer = new POSContainer();
+        List<String> tags = Arrays.asList("NN-METHOD", "NNP");
+        List<String> tokens = Arrays.asList("procedure", "X");
+        posContainer.setCombinedTagsList(tags);
+        posContainer.setWordTokenList(tokens);
+        new PostProcessTags().correctCombinedTagsList(posContainer);
+        Assert.assertEquals("NN-METHOD procedure NN-IDENTIFIER X", posContainer.getTokenTagTupleAsString());
     }
 }
