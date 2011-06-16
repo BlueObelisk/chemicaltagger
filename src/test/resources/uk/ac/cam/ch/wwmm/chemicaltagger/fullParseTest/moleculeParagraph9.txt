@@ -1,4 +1,4 @@
-None: Isopropyl 3-(hydroxymethyl)pyridine-2-carboxylate , ( 200 g , 1.02 mol ; prepared as in −P . Ornstein et. al. J . Med . Chem . 1989 , 32 , 827 ) , 
+None: Isopropyl 3-(hydroxymethyl)pyridine-2-carboxylate , ( 200 g , 1.02 mol ; prepared as in -P . Ornstein et. al. J . Med . Chem . 1989 , 32 , 827 ) , 
 None: methyl N-[(4-methylphenyl)sulfonyl]glycinate ( 249 g , 1.02 mol ) 
 None: triphenylphosphine ( 403 g , 1.5 mol ) 
 None: dry THF ( 3000 mls ) 
