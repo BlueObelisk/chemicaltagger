@@ -24,7 +24,7 @@ public class Formatter {
 	private static Pattern CONCAT_TEMP_PATTERN = Pattern.compile("\\d+(o|\u00b0|\u00ba)[cCfF][\\.]?");
 	private static Pattern CONCAT_HYPHENED_DIRECTION_PATTERN = Pattern.compile("^[A-Z]\\-\\d+");
 	private static Pattern CONCAT_SLASH_DIRECTION_PATTERN = Pattern.compile("^[A-Z]\\/\\d*$");
-	private static Pattern CONCAT_EQUATION_PATTERN = Pattern.compile("([a-z]*)([=<>\\u00d7])(\\d+)");
+	private static Pattern CONCAT_EQUATION_PATTERN = Pattern.compile("([a-z]*)([=\\u00d7])(\\d+)");
 	private static Pattern TIME_EXPRESSION = Pattern.compile("^([01]?[1-9]|2[123]):[0-5]\\d([ap]m)?$", Pattern.CASE_INSENSITIVE);
 	private static Pattern TEMPERATURE_UNITS = Pattern.compile("[cCfF]([.,;:()\\[\\]{}]|$)");
 	private static Pattern MATCH_SULPH = Pattern.compile("sulph", Pattern.CASE_INSENSITIVE);
@@ -45,10 +45,12 @@ public class Formatter {
 		StringBuilder newSentence = new StringBuilder();
 		sentence = sentence.replace("%", " %").replace(";", " ;");
   	    sentence = sentence.replace("\u2010", "-").replace("\u2011", "-").replace("\u2012", "-").replace("\u2013", "-").replace("\u2014", "-").replace("\u2015", "-").replace("\u002d", "-").replace("\u2212", "-");//normalise hyphens
-		String[] words = WHITESPACE_PATTERN.split(sentence);
+  	    sentence = sentence.replace("<"," < ").replace(">"," > ");
+  	    String[] words = WHITESPACE_PATTERN.split(sentence);
 
 		int index = 0;
 		for (String string : words) {
+			
 			String prefix = " ";
 			String suffix = " ";
 	

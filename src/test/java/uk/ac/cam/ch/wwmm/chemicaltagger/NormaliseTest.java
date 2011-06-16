@@ -16,7 +16,8 @@ public class NormaliseTest {
 	@Test	
 	public void testNormaliseSentence() {
 		String sentence = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/formatTest/sentence1.txt");
-        String cleanSentence = Formatter.normaliseText(sentence);
+		
+        String cleanSentence = Formatter.normaliseText(Utils.cleanHTMLText(sentence));
 		String ref = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/formatTest/ref1.txt");
 		assertEquals(ref,cleanSentence);
 	}
