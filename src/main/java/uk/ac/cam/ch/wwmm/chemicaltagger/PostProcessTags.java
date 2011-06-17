@@ -46,13 +46,15 @@ public class PostProcessTags {
 			String currentTag = combinedTags.get(i);
 			String currentToken = tokenList.get(i);
 			String newTag = combinedTags.get(i);
+			newTag = correctMisTaggedNouns(tokenList, combinedTags, i,
+					currentTag, currentToken, newTag);
 			newTag = correctMisTaggedVerbs(tokenList, combinedTags, i,
 					currentTag, currentToken, newTag);
-			newTag = correctMisTaggedMisc(combinedTags, i, currentTag,
-					currentToken, newTag);
 			newTag = correctMisTaggedDigits(combinedTags, i, currentTag,
 					currentToken, newTag);
 			newTag = correctMisTaggedUnits(combinedTags, i, currentTag,
+					currentToken, newTag);
+			newTag = correctMisTaggedMisc(combinedTags, i, currentTag,
 					currentToken, newTag);
 			if (tagSet.contains(currentToken)) {
 				currentToken = currentToken.toLowerCase();
@@ -73,9 +75,9 @@ public class PostProcessTags {
 		posContainer.setCombinedTagsList(newCombinedTagsList);
 		return posContainer;
 	}
-
+	
 	/******************************************
-	 * Correct one character letters that have nee
+	 * Corrects the mistagged nouns.
 	 * @param combinedTags
 	 * @param i
 	 * @param currentTag
@@ -83,12 +85,17 @@ public class PostProcessTags {
 	 * @param newTag
 	 * @return
 	 */
-	private String correctMisTaggedUnits(List<String> combinedTags, int i,
-			String currentTag, String currentToken, String newTag) {
-		List<String> afterList = Arrays.asList("sym");
-
-		if ((currentToken.length() == 1) && Character.isLowerCase(currentToken.charAt(0)) && stringAfter(afterList, i, combinedTags)){
-			newTag = "NN";
+	private String correctMisTaggedNouns(List<String> tokenList,
+			List<String> combinedTags, int i, String currentTag,
+			String currentToken, String newTag) {
+		String currentTagLC = currentTag.toLowerCase();
+		if (currentTagLC.startsWith("nn-mixture")) {
+			
+			List<String> afterList = Arrays.asList("in-of");
+	
+			if (!stringAfter(afterList, i, combinedTags)) {
+				newTag = "NN-CHEMENTITY";
+			}
 		}
 		return newTag;
 	}
@@ -120,9 +127,9 @@ public class PostProcessTags {
 				    && !currentTagLC.startsWith("nnp")))  {
 			List<String> beforeList = Arrays.asList("dt", "jj", "jj-chem", "dt-the");
 			List<String> afterListJJ = Arrays.asList("jj", "nn-chementity", "nn-mixture", "nn-apparatus", "nn", "jj-chem");
-
+	
 			List<String> afterListNN = Arrays.asList("stop", "comma");
-
+	
 			if (stringBefore(beforeList, i, combinedTags)
 					&& (i == combinedTags.size() || stringAfter(
 							afterListNN, i, combinedTags))
@@ -135,28 +142,28 @@ public class PostProcessTags {
 				newTag = "JJ-CHEM";
 			}
 		}
-
-
+	
+	
 		if (currentTagLC.startsWith("vb-")
 				|| currentTagLC.startsWith("nn-synthesize")) {
 			List<String> beforeList = Arrays.asList("dt-the", "dt");
 			List<String> afterList = Arrays.asList("vb");
-
+	
 			if (stringBefore(beforeList, i, combinedTags)
 					&& (stringAfterStartsWith(afterList, i, combinedTags))) {
 				newTag = "NN-CHEMENTITY";
 			}
 		}
-
+	
 		if (currentTagLC.startsWith("vb")
 				&& Utils.containsNumber(currentToken)) {//verbs are highly unlikely to contain numbers
 			newTag = "NN";
 		}
-
+	
 		if (currentTagLC.startsWith("vbn")
 				|| currentTagLC.startsWith("vbg")
 				|| currentTagLC.startsWith("vb-")){
-
+	
 			List<String> afterList = Arrays.asList("oscar-cm", "nns", "nn-chementity", "oscar-cj", "jj-chem", "nnp");
 			List<String> beforeList = Arrays.asList("dt", "rb", "rb-conj", "dt-the", "stop", "in-with", "in-of", "in-under");
 			if (stringAfter(afterList, i, combinedTags)
@@ -164,7 +171,7 @@ public class PostProcessTags {
 				newTag = "JJ-CHEM";
 			}
 		}
-
+	
 		if (currentToken.equalsIgnoreCase("yield") ) {
 			newTag = correctTaggingOfVbYield(combinedTags, i, newTag);
 		}
@@ -172,18 +179,18 @@ public class PostProcessTags {
 		if (currentTagLC.startsWith("vb") && currentToken.equalsIgnoreCase("form")) {//"form" is only a VB-YIELD if it is a verb
 			newTag = "VB-YIELD";
 		}
-
+	
 		if (currentTagLC.startsWith("vb-filter")) {
-
+	
 			List<String> beforeList = Arrays.asList("oscar-cj", "jj-chem");
 			if (stringBefore(beforeList, i, combinedTags)) {
 				newTag = "NN";
 			}
-
+	
 		}
-
+	
 		if (currentTagLC.startsWith("vb")) {
-
+	
 			List<String> beforeList = Arrays.asList("to");
 			List<String> beforebeforeList = Arrays.asList("vb-heat");
 			List<String> afterList = Arrays.asList("stop");
@@ -192,47 +199,28 @@ public class PostProcessTags {
 					&& stringAfter(afterList, i, combinedTags)) {
 				newTag = "NN";
 			}
-
-		}
-
-		if (currentTagLC.startsWith("nn-mixture")) {
-
-			List<String> afterList = Arrays.asList("in-of");
-
-			if (!stringAfter(afterList, i, combinedTags)) {
-				newTag = "NN-CHEMENTITY";
-			}
+	
 		}
 		
 		if (currentTagLC.startsWith("vb-dilute")) {//correct cases where dilute and the like are actually adjectives e.g. dilute sulfuric acid
-
+	
 			List<String> afterList = Arrays.asList("oscar-cm");
-
+	
 			if (stringAfter(afterList, i, combinedTags)) {
 				newTag = "JJ-CHEM";
 			}
 		}
-		
-		//Identifies a capital letter or single character roman number that is likely to be an identifier
-		if (currentToken.length()==1 && 
-				(Character.isUpperCase(currentToken.charAt(0)) || isValidSingleLetterRomanNumber(currentToken.charAt(0)))){
-			List<String> beforeList = Arrays.asList("nn-example", "nn-method");
-			if (stringBefore(beforeList, i, combinedTags)){
-				newTag = "NN-IDENTIFIER";
-			}
-		}
-		
-
+	
 		/********
 		 * Gerunds
 		 */
 		if (currentTagLC.startsWith("vb")
 				&& (currentToken.toLowerCase().endsWith("ing") || currentToken
 						.toLowerCase().endsWith("ed"))) {
-
+	
 			List<String> afterList = Arrays.asList("nn", "oscar-cm", "nns", "nn-chementity", "oscar-cj", "jj-chem", "jj", "nnp", "nn-state", "nn-apparatus");
 			List<String> beforeList = Arrays.asList("dt", "dt-the", "cd", "oscar-cm");
-
+	
 			List<String> notList = Arrays.asList("in-of");
 			if (stringAfter(afterList, i, combinedTags) && stringBefore(beforeList, i, combinedTags)) {
 				newTag = "JJ";
@@ -240,22 +228,22 @@ public class PostProcessTags {
 			else if (currentToken.toLowerCase().endsWith("ing") && stringBefore(beforeList, i, combinedTags) && !stringAfter(notList, i, combinedTags)) {
 				newTag = "JJ-CHEM";
 			}
-
+	
 		}
-
+	
 		if (currentTagLC.startsWith("vb") && !currentToken.toLowerCase().endsWith("ing")) {
-
+	
 			List<String> beforeList = Arrays.asList("dt", "dt-the", "in-in", "in-of", "rb");
 			List<String> afterList = Arrays.asList("nn", "oscar-cm", "nns", "nn-chementity", "oscar-cj", "jj-chem", "jj", "nnp", "nn-state", "nn-apparatus");
 			List<String> chemafterList = Arrays.asList("oscar-cm", "nn-chementity", "oscar-cj", "jj-chem");
-
+	
 			if (i != 0) {
 				if (!tokenList.get(i - 1).equals("that")) {
 					if (stringAfter(chemafterList, i, combinedTags)
 							&& stringBefore(beforeList, i, combinedTags)) {
 						newTag = "JJ-CHEM";
 					}
-
+	
 					else if (stringBefore(beforeList, i, combinedTags)
 							&& stringAfter(afterList, i, combinedTags)) {
 						newTag = "JJ";
@@ -264,22 +252,12 @@ public class PostProcessTags {
 									.startsWith("nn")) {
 						newTag = "JJ";
 					}
-
+	
 				}
 			}
 		}
-
+	
 		return newTag;
-	}
-
-
-	/**
-	 * Is this the roman for 1, 5 or 10
-	 * @param charac
-	 * @return
-	 */
-	private boolean isValidSingleLetterRomanNumber(char charac) {
-		return (charac == 'i' || charac == 'I' || charac == 'v' || charac == 'V' || charac == 'x' || charac == 'X');
 	}
 
 	/**
@@ -303,28 +281,26 @@ public class PostProcessTags {
 	}
 
 	/******************************************
-	 * Checks for if the adjective is describing an object.
-	 * Checks if a noun tag exists before a preposition. If not then the current word is a noun and not an adjective
+	 * Correct one character letters that are intended to be units
 	 * @param combinedTags
-	 * @param index
-	 * @return boolean
+	 * @param i
+	 * @param currentTag
+	 * @param currentToken
+	 * @param newTag
+	 * @return
 	 */
-	private boolean adjObjectExists(List<String> combinedTags, int index) {
+	private String correctMisTaggedUnits(List<String> combinedTags, int i,
+			String currentTag, String currentToken, String newTag) {
+		List<String> afterList = Arrays.asList("sym");
 
-		for (int i = index+1; i < combinedTags.size(); i++) {
-			if (combinedTags.get(i).toLowerCase().startsWith("to") || combinedTags.get(i).toLowerCase().startsWith("in")){
-				return false;
-			}
-			else if (combinedTags.get(i).toLowerCase().startsWith("nn")){
-				return true;
-			}
+		if ((currentToken.length() == 1) && Character.isLowerCase(currentToken.charAt(0)) && stringAfter(afterList, i, combinedTags)){
+			newTag = "NN";
 		}
-		
-		return false;
+		return newTag;
 	}
 
 	/*************************************
-	 * Corrects the mistagged verbs.
+	 * Corrects tagging of words intended to be CDs or CD-ALPHANUMs
 	 * 
 	 * @param combinedTags  (List <String>)
 	 * @param i (Integer)
@@ -346,22 +322,11 @@ public class PostProcessTags {
 				newTag = "CD-ALPHANUM";
 			}
 		}
-
-		if (currentTagLC.equals("prp")
-				|| currentToken.toLowerCase().startsWith("ii")) {
-			List<String> beforeList = Arrays.asList("-lrb-");
-			List<String> afterList = Arrays.asList("-rrb-");
-			if (stringBefore(beforeList, i, combinedTags)
-					&& (stringAfter(afterList, i, combinedTags))) {
-				newTag = "CD-ALPHANUM";
-			}
-		}
 	
-
 		if (currentTagLC.equals("cd-alphanum")) {
-
+	
 			List<String> afterList = Arrays.asList("nn-vol", "nn-mass");
-
+	
 			if (stringAfter(afterList, i, combinedTags)
 					|| currentToken.contains(".") || currentToken.length() > 4) {
 				newTag = "CD";
@@ -522,10 +487,49 @@ public class PostProcessTags {
 			if (stringBefore(beforeList, i, combinedTags)) {
 				newTag = "NN";
 			}
-
+		}
+		
+		//Identifies a capital letter or single character roman number that is likely to be an identifier
+		if (currentToken.length()==1 && 
+				(Character.isUpperCase(currentToken.charAt(0)) || isValidSingleLetterRomanNumber(currentToken.charAt(0)))){
+			List<String> beforeList = Arrays.asList("nn-example", "nn-method");
+			if (stringBefore(beforeList, i, combinedTags) ||
+					(stringBefore(Arrays.asList("-lrb-"), i, combinedTags) &&  stringAfter(Arrays.asList("-rrb-"), i, combinedTags))){
+				newTag = "NN-IDENTIFIER";
+			}
 		}
 		return newTag;
 
+	}
+
+	/**
+	 * Is this the roman for 1, 5 or 10
+	 * @param charac
+	 * @return
+	 */
+	private boolean isValidSingleLetterRomanNumber(char charac) {
+		return (charac == 'i' || charac == 'I' || charac == 'v' || charac == 'V' || charac == 'x' || charac == 'X');
+	}
+
+	/******************************************
+	 * Checks for if the adjective is describing an object.
+	 * Checks if a noun tag exists before a preposition. If not then the current word is a noun and not an adjective
+	 * @param combinedTags
+	 * @param index
+	 * @return boolean
+	 */
+	private boolean adjObjectExists(List<String> combinedTags, int index) {
+	
+		for (int i = index+1; i < combinedTags.size(); i++) {
+			if (combinedTags.get(i).toLowerCase().startsWith("to") || combinedTags.get(i).toLowerCase().startsWith("in")){
+				return false;
+			}
+			else if (combinedTags.get(i).toLowerCase().startsWith("nn")){
+				return true;
+			}
+		}
+		
+		return false;
 	}
 
 	/***********************************
