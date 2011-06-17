@@ -109,9 +109,20 @@ public class PostProcessTagsTest {
     }
 	
 	@Test
+	public void testLetterLabelledProcedure3() {
+        POSContainer posContainer = new POSContainer();
+        List<String> tags = Arrays.asList("-LRB-", "DT", "-RRB-");
+        List<String> tokens = Arrays.asList("(", "A", ")");
+        posContainer.setCombinedTagsList(tags);
+        posContainer.setWordTokenList(tokens);
+        new PostProcessTags().correctCombinedTagsList(posContainer);
+        Assert.assertEquals("-LRB- ( NN-IDENTIFIER A -RRB- )", posContainer.getTokenTagTupleAsString());
+    }
+	
+	@Test
 	public void testRomanNumberLabelledProcedure1() {
         POSContainer posContainer = new POSContainer();
-        List<String> tags = Arrays.asList("NN-METHOD", "NNP");
+        List<String> tags = Arrays.asList("NN-METHOD", "PRP");
         List<String> tokens = Arrays.asList("procedure", "i");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
@@ -128,5 +139,16 @@ public class PostProcessTagsTest {
         posContainer.setWordTokenList(tokens);
         new PostProcessTags().correctCombinedTagsList(posContainer);
         Assert.assertEquals("NN-METHOD procedure NN-IDENTIFIER X", posContainer.getTokenTagTupleAsString());
+    }
+	
+	@Test
+	public void testRomanNumberLabelledProcedure3() {
+        POSContainer posContainer = new POSContainer();
+        List<String> tags = Arrays.asList("-LRB-", "PRP", "-RRB-");
+        List<String> tokens = Arrays.asList("(", "i", ")");
+        posContainer.setCombinedTagsList(tags);
+        posContainer.setWordTokenList(tokens);
+        new PostProcessTags().correctCombinedTagsList(posContainer);
+        Assert.assertEquals("-LRB- ( NN-IDENTIFIER i -RRB- )", posContainer.getTokenTagTupleAsString());
     }
 }
