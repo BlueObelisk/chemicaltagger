@@ -30,7 +30,9 @@
 			<TO>To</TO>
 			<NounPhrase>
 				<MOLECULE>
-					<OSCAR-CM>glycine</OSCAR-CM>
+					<OSCARCM>
+						<OSCAR-CM>glycine</OSCAR-CM>
+					</OSCARCM>
 					<QUANTITY>
 						<_-LRB->(</_-LRB->
 						<AMOUNT>
@@ -65,7 +67,9 @@
 							</VOLUME>
 						</QUANTITY>
 						<IN-OF>of</IN-OF>
-						<OSCAR-CM>methanol</OSCAR-CM>
+						<OSCARCM>
+							<OSCAR-CM>methanol</OSCAR-CM>
+						</OSCARCM>
 					</MOLECULE>
 					<CC>and</CC>
 					<MOLECULE>
@@ -76,7 +80,9 @@
 							</VOLUME>
 						</QUANTITY>
 						<IN-OF>of</IN-OF>
-						<OSCAR-CM>water</OSCAR-CM>
+						<OSCARCM>
+							<OSCAR-CM>water</OSCAR-CM>
+						</OSCARCM>
 					</MOLECULE>
 				</DissolvePhrase>
 			</NounPhrase>
@@ -87,7 +93,9 @@
 		</VerbPhrase>
 		<NounPhrase>
 			<MOLECULE>
-				<OSCAR-CM>2-hydroxy-1-naphthaldehyde</OSCAR-CM>
+				<OSCARCM>
+					<OSCAR-CM>2-hydroxy-1-naphthaldehyde</OSCAR-CM>
+				</OSCARCM>
 				<MIXTURE>
 					<_-LRB->(</_-LRB->
 					<QUANTITY>
@@ -104,7 +112,9 @@
 						</VOLUME>
 					</QUANTITY>
 					<IN-OF>of</IN-OF>
-					<OSCAR-CM>methanol</OSCAR-CM>
+					<OSCARCM>
+						<OSCAR-CM>methanol</OSCAR-CM>
+					</OSCARCM>
 					<_-RRB->)</_-RRB->
 				</MIXTURE>
 			</MOLECULE>
@@ -166,7 +176,9 @@
 					</MOLECULE>
 					<CC>and</CC>
 					<MOLECULE>
-						<OSCAR-CM>pyridine</OSCAR-CM>
+						<OSCARCM>
+							<OSCAR-CM>pyridine</OSCAR-CM>
+						</OSCARCM>
 						<QUANTITY>
 							<_-LRB->(</_-LRB->
 							<AMOUNT>
@@ -184,7 +196,9 @@
 					<DT>an</DT>
 					<OSCAR-CJ>aqueous</OSCAR-CJ>
 					<MOLECULE>
-						<OSCAR-CM>methanolic</OSCAR-CM>
+						<OSCARCM>
+							<OSCAR-CM>methanolic</OSCAR-CM>
+						</OSCARCM>
 					</MOLECULE>
 					<NN-CHEMENTITY>solution</NN-CHEMENTITY>
 					<MIXTURE>
@@ -267,7 +281,9 @@
 				<IN-WITH>with</IN-WITH>
 				<NounPhrase>
 					<MOLECULE>
-						<OSCAR-CM>water</OSCAR-CM>
+						<OSCARCM>
+							<OSCAR-CM>water</OSCAR-CM>
+						</OSCARCM>
 					</MOLECULE>
 				</NounPhrase>
 			</PrepPhrase>
