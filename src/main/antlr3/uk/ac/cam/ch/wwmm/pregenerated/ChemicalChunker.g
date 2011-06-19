@@ -163,8 +163,7 @@ oscaronts
 	: oscaront+ -> ^(OSCARONT   oscaront+);
 oscarCompound :  adj* oscarCompoundStructure adj? alphanumericOrIdentifierCompoundReference?;
 
-oscarCompoundStructure: nestedOscarCM|oscarcm;
-nestedOscarCM: (oscarcm afterOscarCompoundStructure | bracketedOscarCompoundStructure) -> ^(OSCARCM oscarcm? afterOscarCompoundStructure? bracketedOscarCompoundStructure?);
+oscarCompoundStructure: (oscarcm afterOscarCompoundStructure? | bracketedOscarCompoundStructure) -> ^(OSCARCM oscarcm? afterOscarCompoundStructure? bracketedOscarCompoundStructure?);
 afterOscarCompoundStructure: oscarcm+|(dash oscarcm+)+ dash?|(dash|apost)+;
 bracketedOscarCompoundStructure :	lrb  oscarcm+ rrb;
 
@@ -349,7 +348,7 @@ nncycle:'NN-CYCLE' TOKEN -> ^('NN-CYCLE' TOKEN);
 nntimes:'NN-TIMES' TOKEN -> ^('NN-TIMES' TOKEN);
 nnexample:'NN-EXAMPLE' TOKEN -> ^('NN-EXAMPLE' TOKEN);
 
-//Not really Oscar-cm.. but need to be fixed
+//A word of a chemical identified by OSCAR
 oscarcm:'OSCAR-CM' TOKEN -> ^('OSCAR-CM' TOKEN);
 
 //Verbs
