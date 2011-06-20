@@ -178,20 +178,17 @@ public class PostProcessTrees {
 	
 
 	/**
-	 * Looks for the pattern OSCAR-CM followed by NN-CHEMENTITY
+	 * Looks for the pattern OSCARCM followed by NN-CHEMENTITY
 	 * to assign things like "ethanol solvent" as solvents
 	 * @param root
 	 */
 	private void detectSolventsByFollowingWord(Element root) {
-		Nodes oscarcms = root.query("//OSCAR-CM");
+		Nodes oscarcms = root.query("//OSCARCM");
 		for (int i = 0; i < oscarcms.size(); i++) {
 			Element oscarcm = (Element) oscarcms.get(i);
 			Element nextEl = Utils.getNextElement(oscarcm);
 			if (nextEl!=null && nextEl.getLocalName().equals("NN-CHEMENTITY") && nextEl.getValue().equalsIgnoreCase("solvent")){
 				Element solventMol = (Element) oscarcm.getParent();
-				if (!solventMol.getLocalName().equals("MOLECULE")){
-					solventMol = (Element) solventMol.getParent();
-				}
 				if (solventMol !=null && solventMol.getLocalName().equals("MOLECULE")){
 					solventMol.addAttribute(new Attribute("role", "Solvent"));
 				}
@@ -558,13 +555,13 @@ public class PostProcessTrees {
 	private void findMixtureSolvents(Element actionElement) {
 		Element mixtureElement = (Element) actionElement.query(".//MIXTURE")
 				.get(0);
-		Nodes moleculeNodes = mixtureElement.query(".//OSCAR-CM");
+		Nodes moleculeNodes = mixtureElement.query(".//OSCARCM");
 		for (int i = 0; i < moleculeNodes.size(); i++) {
 
 			Element moleculeElement = (Element) moleculeNodes.get(i);
 			Element newElement = (Element) moleculeElement.copy();
 			moleculeElement.setLocalName("MOLECULE");
-			moleculeElement.removeChild(0);
+			moleculeElement.removeChildren();
 			moleculeElement.appendChild(newElement);
 			moleculeElement.addAttribute(new Attribute("role", "Solvent"));
 		}

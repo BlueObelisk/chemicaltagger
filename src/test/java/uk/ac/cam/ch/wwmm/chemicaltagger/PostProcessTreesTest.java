@@ -42,11 +42,10 @@ public class PostProcessTreesTest {
 	}
 	@Test
 	public void purifyPatternTest(){
-		
 		String sentence = "the mixture was purified by column chromatography (hexane/AcOEt, 7/3) and added to the solution.";
 		Document doc = Utils.runChemicalTagger(sentence);
 		Nodes solvents = doc.query(".//MOLECULE[@role='Solvent']");
-		Assert.assertEquals(2,solvents.size());
+		Assert.assertEquals(1,solvents.size());//hexane/AcOEt currently considered as one molecule
 	}
 	
 	@Test
