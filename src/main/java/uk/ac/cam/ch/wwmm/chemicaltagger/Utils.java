@@ -251,18 +251,18 @@ public class Utils {
 	}
 	
 	/**
-	 * Gets the next element. This element need not be a sibling
+	 * Gets the next terminal element. This element need not be a sibling
 	 * @param startingEl
 	 * @return
 	 */
-	public static Element getNextElement(Element startingEl) {
+	public static Element getNextTerminalElement(Element startingEl) {
 		ParentNode parent = startingEl.getParent();
 		if (parent == null || !(parent instanceof Element)){
 			return null;
 		}
 		int index = parent.indexOf(startingEl);
 		if (index +1 >=parent.getChildCount()){
-			return getNextElement((Element) parent);//reached end of element
+			return getNextTerminalElement((Element) parent);//reached end of element
 		}
 		Node nextNode = parent.getChild(index+1);
 		if (!(nextNode instanceof Element)){
@@ -278,18 +278,18 @@ public class Utils {
 	}
 
 	/**
-	 * Gets the previous element. This element need not be a sibling
+	 * Gets the previous terminal element. This element need not be a sibling
 	 * @param startingEl
 	 * @return
 	 */
-	public static Element getPreviousElement(Element startingEl) {
+	public static Element getPreviousTerminalElement(Element startingEl) {
 		ParentNode parent = startingEl.getParent();
 		if (parent == null || !(parent instanceof Element)){
 			return null;
 		}
 		int index = parent.indexOf(startingEl);
 		if (index ==0) {
-			return getPreviousElement((Element) parent);//reached beginning of element
+			return getPreviousTerminalElement((Element) parent);//reached beginning of element
 		}
 		Node previousNode = parent.getChild(index-1);
 		if (!(previousNode instanceof Element)){
@@ -303,6 +303,28 @@ public class Utils {
 		}
 		return previous;
 	}
+	
+	/**
+	 * Gets the previous sibling if one exists or the previous sibling of the first parent element with previous siblings
+	 * @param startingEl
+	 * @return
+	 */
+	public static Element getPreviousSiblingOrParentsSibling(Element startingEl) {
+		ParentNode parent = startingEl.getParent();
+		if (parent == null || !(parent instanceof Element)){
+			return null;
+		}
+		int index = parent.indexOf(startingEl);
+		if (index ==0) {
+			return getPreviousSiblingOrParentsSibling((Element) parent);//reached beginning of element
+		}
+		Node previousNode = parent.getChild(index-1);
+		if (!(previousNode instanceof Element)){
+			return null;
+		}
+		return (Element) previousNode;
+	}
+	
 	/********************************************
 	 * Writes items of a list to a file.
 	 * @param sentenceList

@@ -187,7 +187,7 @@ public class PostProcessTrees {
 		Nodes oscarcms = root.query("//OSCARCM");
 		for (int i = 0; i < oscarcms.size(); i++) {
 			Element oscarcm = (Element) oscarcms.get(i);
-			Element nextEl = Utils.getNextElement(oscarcm);
+			Element nextEl = Utils.getNextTerminalElement(oscarcm);
 			if (nextEl!=null && nextEl.getLocalName().equals("NN-CHEMENTITY")){
 				Element molecule = (Element) oscarcm.getParent();
 				if (molecule !=null && molecule.getLocalName().equals("MOLECULE")){
@@ -411,24 +411,30 @@ public class PostProcessTrees {
 				Node roleNode = nodes.get(i);
 
 				Element rolePhrase = (Element) roleNode;
-				Element parentPhrase = (Element) rolePhrase.getParent();
-
-				int roleIndex = parentPhrase.indexOf(roleNode);
 
 				String role = getRole(rolePhrase);
-				if (roleIndex > 0 && role != null) {
-					Element previousElement = (Element) parentPhrase
-							.getChild(roleIndex - 1);
-					if (previousElement.getLocalName().toLowerCase()
-							.equals("nounphrase")
-							|| previousElement.getLocalName().toLowerCase()
-									.equals("prepphrase")) {
+				if (role != null) {
+					System.out.println(rolePhrase.toXML());
+					Element previousElement = getPreviousElementOrElementBeforeVerbs(rolePhrase);
+					System.out.println(previousElement.toXML());
+					if (previousElement !=null && 
+							(previousElement.getLocalName().equalsIgnoreCase("nounphrase")
+							|| previousElement.getLocalName().equalsIgnoreCase("prepphrase"))) {
 						setRole(previousElement, role);
 					}
 				}
 			}
 		}
 		return newSentence;
+	}
+
+	private Element getPreviousElementOrElementBeforeVerbs(Element rolePhrase) {
+		Element previousElement = Utils.getPreviousSiblingOrParentsSibling(rolePhrase);
+		List<String> elementsToIgnore = Arrays.asList("vbd", "vbn", "vbz", "comma");
+		while (previousElement !=null && elementsToIgnore.contains(previousElement.getLocalName().toLowerCase())){
+			previousElement = Utils.getPreviousSiblingOrParentsSibling(previousElement);
+		}
+		return previousElement;
 	}
 
 	/*****************************************
