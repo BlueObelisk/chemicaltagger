@@ -11,7 +11,6 @@ import nu.xom.Nodes;
 import nu.xom.ParsingException;
 import nu.xom.ValidityException;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 
@@ -57,9 +56,7 @@ public class PostProcessTreesTest {
 		Assert.assertEquals(1,roles.size());
 	}
 	
-	
 	@Test
-	@Ignore //TODO fix PostProcessTrees
 	public void rolePrepPhraseTest2(){
 		String sentence = "in which 4-dimethylaminopyridine was used as a catalyst";
 		Document doc = Utils.runChemicalTagger(sentence);
