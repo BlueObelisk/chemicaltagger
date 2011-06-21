@@ -414,9 +414,7 @@ public class PostProcessTrees {
 
 				String role = getRole(rolePhrase);
 				if (role != null) {
-					System.out.println(rolePhrase.toXML());
 					Element previousElement = getPreviousElementOrElementBeforeVerbs(rolePhrase);
-					System.out.println(previousElement.toXML());
 					if (previousElement !=null && 
 							(previousElement.getLocalName().equalsIgnoreCase("nounphrase")
 							|| previousElement.getLocalName().equalsIgnoreCase("prepphrase"))) {
