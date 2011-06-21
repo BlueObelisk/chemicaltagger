@@ -11,6 +11,7 @@ import nu.xom.Nodes;
 import nu.xom.ParsingException;
 import nu.xom.ValidityException;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 
@@ -56,6 +57,16 @@ public class PostProcessTreesTest {
 		Assert.assertEquals(1,roles.size());
 	}
 	
+	
+	@Test
+	@Ignore //TODO fix PostProcessTrees
+	public void rolePrepPhraseTest2(){
+		String sentence = "in which 4-dimethylaminopyridine was used as a catalyst";
+		Document doc = Utils.runChemicalTagger(sentence);
+		Nodes roles = doc.query(".//MOLECULE[@role='Catalyst']");
+		Assert.assertEquals(1,roles.size());
+	}
+	
 	@Test
 	public void solventIdentifiedViaInTest(){
 		String sentence = "The compound was dissolved in ethanol.";
@@ -69,6 +80,14 @@ public class PostProcessTreesTest {
 		String sentence = "The ethanol solvent was removed.";
 		Document doc = Utils.runChemicalTagger(sentence);
 		Nodes roles = doc.query(".//MOLECULE[@role='Solvent']");
+		Assert.assertEquals(1,roles.size());
+	}
+	
+	@Test
+	public void catalystIdentifiedViaCatalystHeadWordTest(){
+		String sentence = "The palladium catalyst was recovered.";
+		Document doc = Utils.runChemicalTagger(sentence);
+		Nodes roles = doc.query(".//MOLECULE[@role='Catalyst']");
 		Assert.assertEquals(1,roles.size());
 	}
 	

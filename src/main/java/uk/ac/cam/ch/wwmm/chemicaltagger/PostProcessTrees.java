@@ -147,7 +147,7 @@ public class PostProcessTrees {
 		}
 
 		processDissolve(root);
-		detectSolventsByFollowingWord(root);
+		assignRolesByFollowingWord(root);
 
 		Document processedDoc = new Document(root);
 		return processedDoc;
@@ -180,17 +180,24 @@ public class PostProcessTrees {
 	/**
 	 * Looks for the pattern OSCARCM followed by NN-CHEMENTITY
 	 * to assign things like "ethanol solvent" as solvents
+	 * or "palladium catalyst" as catalysts
 	 * @param root
 	 */
-	private void detectSolventsByFollowingWord(Element root) {
+	private void assignRolesByFollowingWord(Element root) {
 		Nodes oscarcms = root.query("//OSCARCM");
 		for (int i = 0; i < oscarcms.size(); i++) {
 			Element oscarcm = (Element) oscarcms.get(i);
 			Element nextEl = Utils.getNextElement(oscarcm);
-			if (nextEl!=null && nextEl.getLocalName().equals("NN-CHEMENTITY") && nextEl.getValue().equalsIgnoreCase("solvent")){
-				Element solventMol = (Element) oscarcm.getParent();
-				if (solventMol !=null && solventMol.getLocalName().equals("MOLECULE")){
-					solventMol.addAttribute(new Attribute("role", "Solvent"));
+			if (nextEl!=null && nextEl.getLocalName().equals("NN-CHEMENTITY")){
+				Element molecule = (Element) oscarcm.getParent();
+				if (molecule !=null && molecule.getLocalName().equals("MOLECULE")){
+					String nnChementity = nextEl.getValue().toLowerCase();
+					if (nnChementity.contains("solvent")){
+						molecule.addAttribute(new Attribute("role", "Solvent"));
+					}
+					else if (nnChementity.contains("catalyst") || nnChementity.contains("accelerant")){
+						molecule.addAttribute(new Attribute("role", "Catalyst"));
+					}
 				}
 			}
 		}
@@ -461,6 +468,10 @@ public class PostProcessTrees {
 		if (role.toLowerCase().contains("eluent")
 				|| role.toLowerCase().contains("solvent")) {
 			role = "Solvent";
+		}
+		else if (role.toLowerCase().contains("catalyst")
+				|| role.toLowerCase().contains("accelerant")) {
+			role = "Catalyst";
 		}
 		return role;
 	}
