@@ -1,19 +1,12 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
 import java.util.List;
 
-import opennlp.tools.cmdline.postag.POSModelLoader;
 import opennlp.tools.postag.POSModel;
 import opennlp.tools.postag.POSTagger;
 import opennlp.tools.postag.POSTaggerME;
-
-import org.apache.commons.io.IOUtils;
-import org.apache.log4j.Logger;
 
 /*****************************************************
  * Runs the OpenNLP tagger .
@@ -28,7 +21,7 @@ public class OpenNLPTagger {
 		private static OpenNLPTagger myInstance = new OpenNLPTagger();
 	}
 	POSTagger posTagger;
-	private static Logger LOG = Logger.getLogger(OpenNLPTagger.class);
+//	private static Logger LOG = Logger.getLogger(OpenNLPTagger.class);
 
 	/**************************************
 	 * Private Constructor Class.
