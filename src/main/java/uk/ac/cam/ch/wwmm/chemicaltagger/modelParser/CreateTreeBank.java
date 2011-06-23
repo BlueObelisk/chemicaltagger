@@ -1,4 +1,4 @@
-package uk.ac.cam.ch.wwmm.chemicaltagger;
+package uk.ac.cam.ch.wwmm.chemicaltagger.modelParser;
 
 import java.io.File;
 import java.io.IOException;
@@ -12,6 +12,9 @@ import nu.xom.Text;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
+
+import uk.ac.cam.ch.wwmm.chemicaltagger.Utils;
+import uk.ac.cam.ch.wwmm.chemicaltagger.XMLtoAST;
 
 
 public class CreateTreeBank {
