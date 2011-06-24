@@ -148,7 +148,8 @@ VB-WAIT---(wait|left)(ing)?---Wait Verb
 VB-WASH---^(wash|elut|rins)(ed|e|ing)?---Wait Verb
 
 #Yield Tokens
-VB-YIELD---^(yield|afford|result|provid|obtain|gave|produc|isolat|form(ed|ing)|leav|giv)(es|ed|e|ing)?---Yield Verb
+VB-YIELD---^((afford|furnish|obtain|result|yield)(s|es|ed|ing)?|(isolat|leav|provid)(e|s|es|ed|ing)?|(giv|produc)(e|es|ed|ing)|form(ed|ing)|gave)$---Yield Verb
+#form/forms can be noun or verb - corrected by PostProcessTags. left is a VB-WAIT
 
 #Misc Tokens mainly to replace characters that are not markup friendly
 RB---.*wise$|.*ly$---Adverbs like dropwise
