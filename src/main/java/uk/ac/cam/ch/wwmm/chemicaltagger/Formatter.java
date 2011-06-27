@@ -45,7 +45,8 @@ public class Formatter {
 		StringBuilder newSentence = new StringBuilder();
 		sentence = sentence.replace("%", " %").replace(";", " ;");
   	    sentence = sentence.replace("\u2010", "-").replace("\u2011", "-").replace("\u2012", "-").replace("\u2013", "-").replace("\u2014", "-").replace("\u2015", "-").replace("\u002d", "-").replace("\u2212", "-");//normalise hyphens
-  	    sentence = sentence.replace("<"," < ").replace(">"," > ");
+  	    sentence = sentence.replace("<"," < ").replace(">"," > ").replace("/", " / ");
+  	    
   	    String[] words = WHITESPACE_PATTERN.split(sentence);
 
 		int index = 0;
