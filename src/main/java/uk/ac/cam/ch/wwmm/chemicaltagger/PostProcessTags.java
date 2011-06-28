@@ -365,7 +365,7 @@ public class PostProcessTags {
 
 		if (currentTagLC.equals("rb")	&& currentToken.length() < 2) {
 
-			if (Character.isUpperCase(currentToken.charAt(0))){
+			if (Character.isUpperCase(currentToken.charAt(0)) ){
 				newTag = "NNP";
 			}
 			else {
@@ -376,7 +376,7 @@ public class PostProcessTags {
 		if (i != 0 && currentTagLC.equals("nn")) {
 
 			List<String> beforeList = Arrays.asList("stop");
-			if (Character.isUpperCase(currentToken.charAt(0)) && !stringBefore(beforeList, i, combinedTags)){
+			if ((Character.isUpperCase(currentToken.charAt(0)) && !stringBefore(beforeList, i, combinedTags)) ||  (!currentToken.toLowerCase().equals(currentToken))){
 				newTag = "NNP";
 			}
 
