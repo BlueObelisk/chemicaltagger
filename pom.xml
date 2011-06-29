@@ -83,9 +83,21 @@
 			<name>UCC Repository</name>
 			<url>https://maven.ch.cam.ac.uk/m2repo</url>
 		</pluginRepository>
+		<pluginRepository>
+			<id>mc-release</id>
+			<name>Local Maven repository of releases</name>
+			<url>http://mc-repo.googlecode.com/svn/maven2/releases</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+		</pluginRepository>
 	</pluginRepositories>
 	<build>
 		<plugins>
+
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
@@ -126,6 +138,18 @@
 					</descriptorRefs>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>com.mycila.maven-license-plugin</groupId>
+				<artifactId>maven-license-plugin</artifactId>
+				<configuration>
+					<header>src/main/resources/header.txt</header>
+					<excludes>
+					<exclude>**/resources/**</exclude>
+					</excludes>
+					
+				</configuration>
+			</plugin>
+
 		</plugins>
 		<resources>
 			<resource>
@@ -146,7 +170,7 @@
 			<groupId>uk.ac.cam.ch.wwmm.oscar</groupId>
 			<artifactId>oscar4-api</artifactId>
 			<version>4.1-SNAPSHOT</version>
-			
+
 		</dependency>
 		<dependency>
 			<groupId>uk.ac.cam.ch.wwmm.oscar</groupId>
