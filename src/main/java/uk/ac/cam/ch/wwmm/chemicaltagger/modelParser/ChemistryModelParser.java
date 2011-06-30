@@ -27,6 +27,12 @@ import opennlp.tools.parser.ParserFactory;
 import opennlp.tools.parser.ParserModel;
 import uk.ac.cam.ch.wwmm.chemicaltagger.Utils;
 
+/************************************************
+ *
+ * Runs the ChemicalParser model against text.
+ * 
+ * @author lh359
+ ************************************************/
 public class ChemistryModelParser {
 
 	private Parser parser;
@@ -54,7 +60,6 @@ public class ChemistryModelParser {
 		ParseTreetoXML parseToXML = new ParseTreetoXML();
 		
 		for (Parse parse : topParses) {
-			parse.show();
 			Document doc = parseToXML.convert(parse);
 			Utils.writeXMLToFile(doc,"target/testParse.xml");
 			

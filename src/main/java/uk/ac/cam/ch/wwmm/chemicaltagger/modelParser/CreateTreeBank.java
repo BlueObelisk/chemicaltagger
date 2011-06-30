@@ -32,11 +32,18 @@ import org.apache.log4j.Logger;
 import uk.ac.cam.ch.wwmm.chemicaltagger.Utils;
 import uk.ac.cam.ch.wwmm.chemicaltagger.XMLtoAST;
 
-
+/********************************************************************
+ * Creates a Treebank from the rule-based ChemicalTagger output 
+ * @author lh359
+ ********************************************************************/
 public class CreateTreeBank {
 	private static final Logger LOG = Logger.getLogger(CreateTreeBank.class);
 	
-	
+	/************************************************
+	 * Extracts the content from the patent files.
+	 * @param sourceFile
+	 * @return
+	 */
 	public String getContent(String sourceFile) {
 		Builder builder = new Builder();
 		Document doc = null;
@@ -82,7 +89,11 @@ public class CreateTreeBank {
 		}
 		return content;
 	}
-	
+	/******************************************************
+	 * Main class.
+	 * @param args
+	 * @throws IOException
+	 ****************************************************/
 	public static void main (String[] args) throws IOException {
 		
 		String path = args[0];
