@@ -70,7 +70,8 @@ public class RecombineTokens {
 
 					if (!(previousTag.startsWith("OSCAR-CM")
 							& nextTag.startsWith("OSCAR-CM") & !wordTokenList
-							.get(currentIndex + 1).startsWith("-")) && !(nextTag.startsWith("CD") && previousTag.startsWith("NN"))) {
+							.get(currentIndex + 1).startsWith("-")) && !(nextTag.startsWith("CD") && previousTag.startsWith("NN")) &&  !isAHyphenedUnit(previousTag,nextTag)) {
+						
 						if (totalIndexList.contains(currentIndex - 1)) {
 
 							List<Integer> keySet = new ArrayList<Integer>(
@@ -142,6 +143,20 @@ public class RecombineTokens {
 
 	}
 
+	/***********************************
+	 * Checks if both tags are units separated by slashes
+	 * @param previousTag
+	 * @param nextTag
+	 * @return boolean
+	 */
+	private static boolean isAHyphenedUnit(String previousTag, String nextTag) {
+		List<String> quantityUnits = Arrays.asList("nn-vol", "nn-area", "nn-perarea", "nn-pressure","nn-parts", "nn-moles", "nn-persecond", "nn-timeunit", "nn-mass", "nn-pertimeunit","nn-vol","nn-amount","nn-units" );
+		
+		if (quantityUnits.contains(previousTag.toLowerCase()) && quantityUnits.contains(nextTag.toLowerCase()))
+			return true;
+		else
+		return false;
+	}
 	/*****************************************
 	 * Combines the tokens based on the indices in indexMap.
 	 * @param posContainer (POSContainer)
