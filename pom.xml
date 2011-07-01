@@ -170,7 +170,6 @@
 			<groupId>uk.ac.cam.ch.wwmm.oscar</groupId>
 			<artifactId>oscar4-api</artifactId>
 			<version>4.1-SNAPSHOT</version>
-
 		</dependency>
 		<dependency>
 			<groupId>uk.ac.cam.ch.wwmm.oscar</groupId>
@@ -230,11 +229,6 @@
 			<groupId>org.apache.opennlp</groupId>
 			<artifactId>opennlp-maxent</artifactId>
 			<version>3.0.1-incubating</version>
-		</dependency>
-		<dependency>
-			<groupId>wwmm-expediency</groupId>
-			<artifactId>maxent</artifactId>
-			<version>2.4.0</version>
 		</dependency>
 		<dependency>
 			<groupId>xom</groupId>
