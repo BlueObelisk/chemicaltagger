@@ -35,7 +35,7 @@ public class Formatter {
 	private static Pattern WHITESPACE_PATTERN = Pattern.compile("\\s+");
 	private static Pattern ABBREVIATION_PATTERN = Pattern.compile("-?[A-Z]+[a-z]*\\.");
 	//Note \d[gl] are intentionally excluded to avoid ambiguity with compound references
-	private static Pattern CONCAT_AMOUNT_PATTERN = Pattern.compile("(\\d(\\d+|\\.\\d+|\\d*[mk\u00b5])(g|l|hPa)[s]?|(\\d+[mnk\u00b5]?([LMN]|[eE][qQ][\\.]?|[cCdD][mM]3|[gG][rR][aA][mM][mM]?[eE]?|[mM][oO][lL][eE]?)[sS]?))$");
+	private static Pattern CONCAT_AMOUNT_PATTERN = Pattern.compile("[~]?\\d*\\.?(\\d(\\d+|\\.\\d+|\\d*[mk\u00b5])(g|l|hPa)[s]?|(\\d+[mnk\u00b5]?([LMN]|[eE][qQ][\\.]?|[cCdD][mM]3|[gG][rR][aA][mM][mM]?[eE]?|[mM][oO][lL][eE]?)[sS]?))$");
 	private static Pattern CONCAT_PH_PATTERN = Pattern.compile("^pH-?\\d+");
 	private static Pattern CONCAT_TEMP_PATTERN = Pattern.compile("\\d+(o|\u00b0|\u00ba)[cCfF][\\.]?");
 	private static Pattern CONCAT_HYPHENED_DIRECTION_PATTERN = Pattern.compile("^[A-Z]\\-\\d+");
@@ -134,7 +134,7 @@ public class Formatter {
 			}
 
 			Matcher concatAmountMatcher = CONCAT_AMOUNT_PATTERN.matcher(string);//split values from units e.g. 4.5g --> 4.5 g
-			if (concatAmountMatcher.find()) {
+			if (concatAmountMatcher.matches()) {
 				string = splitAmounts(string);
 			}
 
