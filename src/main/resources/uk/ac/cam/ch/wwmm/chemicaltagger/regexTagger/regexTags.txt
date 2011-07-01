@@ -1,8 +1,8 @@
 #Tags---Pattern---Description
 
 TM-UNICODE---®---Unicode Characters
-CD---^(\d|-)?\d+\.?\d*$--- Cardinal Digits
-CD---^(\-|\u00B1|\+)?\d+(\.?\d)*x?\d+((\-|\u00B1|\+|/|\^)*\d+(\.?\d)?)*$---Unparsed equations that sometimes are passed off as CD (to avoid them being marked up as NN or Oscar-CM)
+CD---^[\-]?\d+\.?\d*$--- Cardinal Digits
+CD---^[\-±\+]?\d+(\.?\d)*x?\d+([\-±\+/\^]*\d+(\.\d)?)*$---Unparsed equations that sometimes are passed off as CD (to avoid them being marked up as NN or Oscar-CM)
 DT-THE---^the$---The determiner 'THE';
 
 # Prepositions
