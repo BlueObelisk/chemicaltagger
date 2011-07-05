@@ -80,17 +80,13 @@ public class Formatter {
 			}
 			
 			Matcher abbreviationMatcher = ABBREVIATION_PATTERN.matcher(string);
-			if ((string.endsWith(".")) && (Utils.containsNumber(string) || !abbreviationMatcher.find()) && !ABV_LIST.contains(string.toLowerCase())) {
+			if ((string.endsWith(".")) && 
+					(Utils.containsNumber(string) || !abbreviationMatcher.find()) &&
+					!ABV_LIST.contains(string.toLowerCase())) {
 					string = string.substring(0, string.length() - 1);
 					suffix = " ." + suffix;
-
 			}
-			if ((string.endsWith(".")) && !abbreviationMatcher.find()
-					&& !ABV_LIST.contains(string.toLowerCase())) {
-					string = string.substring(0, string.length() - 1);
-					suffix = " ." + suffix;
 
-			}
 			Matcher equationMatcher = CONCAT_EQUATION_PATTERN.matcher(string);
 			while (equationMatcher.find()) {
 				string = string.replace(equationMatcher.group(2), " " + equationMatcher.group(2)+" ");
