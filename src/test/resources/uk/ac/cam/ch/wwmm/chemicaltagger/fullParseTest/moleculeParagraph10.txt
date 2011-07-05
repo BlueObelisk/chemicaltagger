@@ -10,7 +10,7 @@ None: 10 % aqueous LiCl ( 5 x 10 mL )
 None: brine ( 5 mL ) 
 None: ( MgSO4 ) 
 None: CH2Cl2 / MeOH ( 98 : 2 ) 
-None: 2-((2R,3R,4R,5R,6R)-3,4-Bis(4-methoxybenzyloxy)-6-((R)-1-(4-methoxybenzyloxy)-2-(methylallyl)-5-methyltetrahydro-2H-pyran-2-yl)ethoxy)(tert-butyl)dimethylsilane 
+None: 2-((2R,3R,4R,5R,6R)-3,4-Bis(4-methoxybenzyloxy)-6-((R)-1-(4-methoxybenzyloxy)-2-(methylallyl)-5-methyltetrahydro-2H-pyran-2-yl)ethoxy)(tert-butyl)dimethylsilane 116 
 None: triol 114 ( 60 mg , 0.17 mmol ) 
 None: DMF ( 2 mL ) 
 None: PMBBr ( 0.15 mL , 1.0 mmol ) 

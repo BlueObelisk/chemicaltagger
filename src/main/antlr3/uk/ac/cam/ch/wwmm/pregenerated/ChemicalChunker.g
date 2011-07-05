@@ -161,7 +161,7 @@ preapparatus
 
 oscaronts
 	: oscaront+ -> ^(OSCARONT   oscaront+);
-oscarCompound :  adj* oscarCompoundStructure adj? alphanumericOrIdentifierCompoundReference?;
+oscarCompound :  adj* oscarCompoundStructure adj? ({!"CD".equals(input.LT(1).getText()) || !"NN-TIMES".equals(input.LT(3).getText())}? numericOrIdentifierCompoundReference)?;
 
 oscarCompoundStructure: (oscarcm afterOscarCompoundStructure? | bracketedOscarCompoundStructure) -> ^(OSCARCM oscarcm? afterOscarCompoundStructure? bracketedOscarCompoundStructure?);
 afterOscarCompoundStructure: oscarcm+|(dash oscarcm+)+ dash?|(dash|apost)+;
