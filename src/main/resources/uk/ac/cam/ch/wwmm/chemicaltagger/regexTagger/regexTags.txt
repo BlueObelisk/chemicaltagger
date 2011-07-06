@@ -66,7 +66,7 @@ VB-SUBJECT---^subject(ed)?---Subject Verb in past form
 
 #Adjective
 JJ---^round$|^bottom|^green$|^yellow$|^brown$|^thaw$|^orange$---Adjectives
-JJ-CHEM---^Merrifield$|^crude$|^buffer$|^mono$|^fritted$|^(E|e)xcess|(A|a)mphiphilic$|(f|F)unctionalized$|(p|P)ot$|^cyclic$|(H|h)yperbranched$|^insoluble$|^(p|P)ropargyl$|Arm$|^(s|S)tar$|^anhydrous$|^aq.?$|^organic|^(s|S)at(.|urated)$|^(Di|Tri|di|tri|poly)block$---Chemical Adjectives
+JJ-CHEM---^Merrifield$|^crude$|^buffer$|^mono$|^fritted$|^glacial$|^(E|e)xcess|(A|a)mphiphilic$|(f|F)unctionalized$|(p|P)ot$|^cyclic$|(H|h)yperbranched$|^insoluble$|^(p|P)ropargyl$|Arm$|^(s|S)tar$|^anhydrous$|^aq.?$|^organic|^(s|S)at(.|urated)$|^(Di|Tri|di|tri|poly)block$---Chemical Adjectives
 JJ-COMPOUND---^(resultant|title|final|initial)$---Adjectives that define unnamed compound
 #Add Tokens
 NN-ADD---^addition$---Add Noun
