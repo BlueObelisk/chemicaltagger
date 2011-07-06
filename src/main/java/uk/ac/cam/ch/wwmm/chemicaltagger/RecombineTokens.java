@@ -125,15 +125,17 @@ public class RecombineTokens {
 					}
 				}
 			}
-			else if (currentTagLc.equals("nn-eq")) {//Identifies cases such as "3 eq . was" and corrects them to "3 eq. was"
-				String currentWord = wordTokenList.get(currentIndex);
-				if ((currentWord.equalsIgnoreCase("eq") || currentWord.equalsIgnoreCase("equiv")) && currentIndex + 2 < wordTokenList.size()){
+			else if (currentTagLc.equals("nn-time")) {//Identifies cases such as "min . and" and corrects them to "min. and"
+				if (wordTokenList.get(currentIndex).equalsIgnoreCase("min") && currentIndex >0 && currentIndex + 2 < wordTokenList.size()){
 					String nextTag = combinedTagList.get(currentIndex + 1);
 					if (nextTag.equalsIgnoreCase("stop")){
-						indexList = new ArrayList<Integer>();
-						indexList.add(currentIndex);
-						indexList.add(currentIndex + 1);
-						indexMap.put(indexList.get(0), indexList);
+						String wordAfterStop = wordTokenList.get(currentIndex + 2);
+						if (!Character.isUpperCase(wordAfterStop.charAt(0))){
+							indexList = new ArrayList<Integer>();
+							indexList.add(currentIndex);
+							indexList.add(currentIndex + 1);
+							indexMap.put(indexList.get(0), indexList);
+						}
 					}
 				}
 			}
