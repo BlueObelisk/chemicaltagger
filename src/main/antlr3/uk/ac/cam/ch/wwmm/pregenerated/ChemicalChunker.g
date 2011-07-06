@@ -59,6 +59,16 @@ public boolean numberLooksLikeAReferenceToACompound(TokenStream stream){
 	}
 	return false;
 }
+
+public boolean followedByNumberWhichIsNotAReference(TokenStream stream){
+	if ("CD".equals(input.LT(1).getText())){
+		String tokenTypeFollowingTheCD = stream.LT(3).getText();
+		if ("NN-TIMES".equals(tokenTypeFollowingTheCD) || "COLON".equals(tokenTypeFollowingTheCD)){
+			return true;
+		}
+	}
+	return false;
+}
 }
 
 WS :  (' ')+ {skip();};
@@ -107,7 +117,7 @@ degassMultiVerb
 
 noun 	:	nounStructure (dash nounStructure)*;
 
-nounStructure :  prp|prp_poss|citation|cycles|molecule|apparatus|mixture|unnamedmolecule|nnyield|nnstate|procedureNode|nn|nns|nnp|nnadd|preparationphrase|nnexample|range|oscaronts|nntime|nnatmosphere|tmunicode|quantity|nnchementity|nntemp|nnph|nnflash|nngeneral|nnamount|nneq|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|nnvol|nnpurify|nnsynthesize|nnmixture|squareBracketedReference|nndry|numeric|oscarCompound|nnextract|nnfilter|nnprecipitate|nnremove|fw|sym|clause|ls|nnps|pos|oscarase;
+nounStructure :  prp|prp_poss|citation|cycles|molecule|apparatus|mixture|unnamedmolecule|nnyield|nnstate|procedureNode|nn|nns|nnp|nnadd|preparationphrase|nnexample|range|oscaronts|nntime|nnatmosphere|tmunicode|quantity|nnchementity|nntemp|nnph|nnflash|nngeneral|nnamount|nneq|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|nnvol|nnpurify|nnsynthesize|nnmixture|squareBracketedReference|nndry|numeric|nnextract|nnfilter|nnprecipitate|nnremove|fw|sym|clause|ls|nnps|pos|oscarase;
 
 // Different PrepPhrases
 
@@ -161,7 +171,7 @@ preapparatus
 
 oscaronts
 	: oscaront+ -> ^(OSCARONT   oscaront+);
-oscarCompound :  adj* oscarCompoundStructure adj? (quantity | nnchementity | {!"CD".equals(input.LT(1).getText()) || !"NN-TIMES".equals(input.LT(3).getText())}? numericOrIdentifierCompoundReference)? quantity*;
+oscarCompound :  adj* oscarCompoundStructure adj? (quantity | nnchementity | {!followedByNumberWhichIsNotAReference(input)}? numericOrIdentifierCompoundReference)? quantity*;
 
 oscarCompoundStructure: (oscarcm afterOscarCompoundStructure? | bracketedOscarCompoundStructure) -> ^(OSCARCM oscarcm? afterOscarCompoundStructure? bracketedOscarCompoundStructure?);
 afterOscarCompoundStructure: oscarcm+|(dash oscarcm+)+ dash?|(dash|apost)+;
