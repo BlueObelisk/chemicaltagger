@@ -2,6 +2,6 @@ None: H2SO4 ( 9.5 mL )
 None: H2SO4 ( 9.5 mL ) 
 None: HNO3 ( 13 mL ) 
 None: NaOH ( 150 mL ) 
-None: 1 N NaOH 
+None: 1 N NaOH solution 
 None: dichloromethane ( 4x100 mL ) 
 None: Na2SO4 

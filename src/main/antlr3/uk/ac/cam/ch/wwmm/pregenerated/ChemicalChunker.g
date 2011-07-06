@@ -161,7 +161,7 @@ preapparatus
 
 oscaronts
 	: oscaront+ -> ^(OSCARONT   oscaront+);
-oscarCompound :  adj* oscarCompoundStructure adj? ({!"CD".equals(input.LT(1).getText()) || !"NN-TIMES".equals(input.LT(3).getText())}? numericOrIdentifierCompoundReference)?;
+oscarCompound :  adj* oscarCompoundStructure adj? (quantity | nnchementity | {!"CD".equals(input.LT(1).getText()) || !"NN-TIMES".equals(input.LT(3).getText())}? numericOrIdentifierCompoundReference)? quantity*;
 
 oscarCompoundStructure: (oscarcm afterOscarCompoundStructure? | bracketedOscarCompoundStructure) -> ^(OSCARCM oscarcm? afterOscarCompoundStructure? bracketedOscarCompoundStructure?);
 afterOscarCompoundStructure: oscarcm+|(dash oscarcm+)+ dash?|(dash|apost)+;
@@ -176,12 +176,12 @@ moleculeamount3
 	:(quantity|mixture) inof (dtTHE | dt)? mixtureRatio mixture? oscarCompound ;
 
 moleculeamount1
-	:(quantity|mixture)+ inof (quantity inof?)? (dtTHE | dt)? oscarCompound afterCompoundCitationOrQuantity;
+	:(quantity|mixture)+ inof (quantity inof?)? (dtTHE | dt)? oscarCompound+ afterCompoundCitationOrQuantity;
 
 moleculeamount2
 	:(quantity|mixture)* oscarCompound+ afterCompoundCitationOrQuantity;
 
-afterCompoundCitationOrQuantity: ((numericOrIdentifierCompoundReference|nnchementity)quantity+)?(citation|quantity|comma (quantity1Node|citationStructure)|mixture)*;
+afterCompoundCitationOrQuantity: (citation|quantity|comma (quantity1Node|citationStructure)|mixture)*;
 
 unnamedmolecule
 	: (unnamedmoleculeamount|referenceToCompound) -> ^(UNNAMEDMOLECULE unnamedmoleculeamount? referenceToCompound?);

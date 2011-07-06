@@ -2,7 +2,7 @@ None: 3,5-dichlorobenzylamine ( 153 mg , 0.87 mmol )
 None: aluminum chloride ( 27 mg , 0.20 mmol ) 
 None: toluene ( 8 mL ) 
 None: nitrogen 
-None: NaHCO3 
+None: NaHCO3 solution 
 None: ethylenediaminetetraacetic acid ( 1 g , 3.4 mmol ) 
 None: chloroform 
 None: Na2SO4 

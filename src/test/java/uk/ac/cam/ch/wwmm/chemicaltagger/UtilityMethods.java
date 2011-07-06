@@ -121,14 +121,20 @@ public class UtilityMethods {
                 actualList.add(type+": "+ExtractFromXML.getStringValue(nodeElement, " "));
 		}
 		List<String> tmpExpectedList = new ArrayList<String>(expectedList);
-		// Checks if expectedList contains all the nodes of actualList
-		expectedList.removeAll(actualList);
 
-		
-		Assert.assertTrue("ExpectedList has all nodes from the actualList", expectedList.isEmpty());
-	
-    	// Checks if actualList contains all the nodes of expectedList
+		expectedList.removeAll(actualList);
 		actualList.removeAll(tmpExpectedList);
+		for (String expectedEntry : expectedList) {
+			System.out.println(expectedEntry +" was not found");
+		}
+		for (String unexpectedEntry : actualList) {
+			System.out.println(unexpectedEntry +" was found but was not expected");
+		}
+
+		// Checks if expectedList contains all the nodes of actualList
+		Assert.assertTrue("ExpectedList has all nodes from the actualList", expectedList.isEmpty());
+		
+    	// Checks if actualList contains all the nodes of expectedList
         Assert.assertTrue("ActualList has all nodes from the expectedList", actualList.isEmpty());
 	}
 

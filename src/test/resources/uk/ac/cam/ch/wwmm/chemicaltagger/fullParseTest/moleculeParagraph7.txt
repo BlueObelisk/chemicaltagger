@@ -5,5 +5,5 @@ None: 1-(3-dimethylaminopropyl)-3-ethylcarbodiimide hydrochloride ( 0.51 g , 2.6
 None: triethylamine ( 0.62 mL , 4.47 mmol ) 
 None: DMF ( 15 mL ) 
 None: DMSO 
-None: C-18 stationary 
-None: water / acetonitrile / TFA mobile 
+None: C-18 stationary phase 
+None: water / acetonitrile / TFA mobile phase 
