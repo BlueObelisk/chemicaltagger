@@ -87,6 +87,22 @@ public class PostProcessTreesTest {
 		Nodes roles = doc.query(".//MOLECULE[@role='Solvent']");
 		Assert.assertEquals(1,roles.size());
 	}
+	
+	@Test
+	public void solventIdentifiedViaInTest2(){
+		String sentence = "A solution of pyridine in octanol and water.";
+		Document doc = Utils.runChemicalTagger(sentence);
+		Nodes roles = doc.query(".//MOLECULE[@role='Solvent']");
+		Assert.assertEquals(2, roles.size());
+	}
+	
+	@Test
+	public void solventIdentifiedViaInTest3(){
+		String sentence = "A solution of pyridine in tetrahydrofuran (3 ml), triethylamine (1ml, 0.61mmol) and di-t-butyl dicarbonate (178mg, 0.81mmol).";
+		Document doc = Utils.runChemicalTagger(sentence);
+		Nodes roles = doc.query(".//MOLECULE[@role='Solvent']");
+		Assert.assertEquals(1, roles.size());
+	}
 
 	@Test
 	public void solventIdentifiedViaSolventHeadWordTest(){

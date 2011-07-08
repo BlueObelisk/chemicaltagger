@@ -364,19 +364,19 @@ public class PostProcessTrees {
 		}
 		if (actionElement != null) {
 			if (actionElement.getAttributeValue("type").equals("Dissolve")) {
-				addSolventRole(actionElement, "IN-IN", false);
+				addSolventRole(actionElement, "IN-IN");
 			}
 			if (actionElement.getAttributeValue("type").equals("Wash")) {
-				addSolventRole(actionElement, "IN-WITH", false);
+				addSolventRole(actionElement, "IN-WITH");
 			}
 			if (actionElement.getAttributeValue("type").equals("Extract")) {
 
-				addSolventRole(actionElement, "IN-WITH", false);
+				addSolventRole(actionElement, "IN-WITH");
 			}
 
 			if (actionElement.getAttributeValue("type").equals("Add")) {
 				if (actionElement.query(".//VB-DILUTE").size() > 0) {
-					addSolventRole(actionElement, "IN-WITH", false);
+					addSolventRole(actionElement, "IN-WITH");
 				}
 			}
 
@@ -600,34 +600,54 @@ public class PostProcessTrees {
 
 	/***********************************************************************
 	 * Adds solvent roles to molecule nodes. Searches for molecule nodes that
-	 * are after prepositions and adds a role="Solvent" attribute.
+	 * are after the given preposition and adds a role="Solvent" attribute.
 	 * 
 	 * @param solventElement
 	 *            (Element)
 	 * @param preposition
 	 *            (String)
-	 * @param seenPreposition
-	 *            (boolean)
 	 ***********************************************************************/
-	private void addSolventRole(Element solventElement, String preposition,
-			boolean seenPreposition) {
-
-		for (int i = 0; i < solventElement.getChildCount(); i++) {
-			if (!solventElement.getLocalName().contains("Unmatched")) {
-				Element child = (Element) solventElement.getChild(i);
-				if (child.getLocalName().toLowerCase().contains("phrase")) {
-					addSolventRole(child, preposition, seenPreposition);
-				}
-				if (child.getLocalName().toLowerCase().contains("molecule")
-						&& seenPreposition) {
-					Attribute attribute = new Attribute("role", "Solvent");
-					child.addAttribute(attribute);
-				}
-				if (child.getLocalName().equals(preposition)) {
-					seenPreposition = true;
+	private void addSolventRole(Element solventElement, String preposition) {
+		if (solventElement.getLocalName().contains("Unmatched")) {
+			return;
+		}
+		boolean seenPreposition = false;
+		boolean foundAtleastOneSolvent = false;
+		LinkedList<Element> elementsToInvestigate = new LinkedList<Element>();
+		Elements children = solventElement.getChildElements();
+		for (int i = 0; i < children.size(); i++) {
+			elementsToInvestigate.add(children.get(i));
+		}
+		while (!elementsToInvestigate.isEmpty()) {
+			Element elementToInvestigate = elementsToInvestigate.removeFirst();
+			String localNameLC = elementToInvestigate.getLocalName().toLowerCase();
+			if (localNameLC.contains("phrase")) {//children of phrases will be recursively investigated
+				Elements elChildren = elementToInvestigate.getChildElements();
+				for (int i = elChildren.size() -1; i >=0 ; i--) {
+					elementsToInvestigate.add(0, elChildren.get(i));
 				}
 			}
+			else if (localNameLC.contains("molecule") && seenPreposition) {
+				if (foundAtleastOneSolvent && moleculeDoesNotLookLikeASolvent(elementToInvestigate)){
+					return;
+				}
+				elementToInvestigate.addAttribute(new Attribute("role", "Solvent"));
+				foundAtleastOneSolvent = true;
+			}
+			else if (elementToInvestigate.getLocalName().equals(preposition)) {
+				seenPreposition = true;
+			}
 		}
+	}
+
+	/**
+	 * Checks for the presence of a mass or an amount.
+	 * These are rarely specified for a solvent
+	 * @param elementToInvestigate
+	 * @return
+	 */
+	private boolean moleculeDoesNotLookLikeASolvent(Element molecule) {
+		return molecule.query("//MASS").size() >0 || molecule.query("//AMOUNT").size() >0;
 	}
 
 	/**********************************************************************
