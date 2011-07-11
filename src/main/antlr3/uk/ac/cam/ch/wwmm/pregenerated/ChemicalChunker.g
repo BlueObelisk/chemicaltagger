@@ -295,8 +295,8 @@ citationContent:   lrb (nnp|fw|cd|conjunction) (nnp|fw|cd|conjunction)+ rrb ;
 
 numericOrBracketedNumeric	:  numeric | bracketedNumeric;
 bracketedNumeric	:  lrb numeric rrb;
-identifierOrBracketedIdentifier : nnidentifier | bracketedIdentifier;
-bracketedIdentifier	:  lrb nnidentifier rrb;
+identifierOrBracketedIdentifier : cd? nnidentifier | bracketedIdentifier;
+bracketedIdentifier	:  lrb cd? nnidentifier rrb;
 
 adj	:	jj|jjr|jjs|oscarcj|jjchem|oscarrn;
 adv	:	rb|rbr|rp|rbs;
