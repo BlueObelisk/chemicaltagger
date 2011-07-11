@@ -209,7 +209,7 @@ unnamedmoleculeamount3
 	: alphanumericOrIdentifierCompoundReference (citation|quantity|mixture)*;
 
 alphanumericOrIdentifierCompoundReference
-  : (cdAlphanum|bracketedNumeric|squareBracketedReference|identifierOrBracketedIdentifier) -> ^(REFERENCETOCOMPOUND cdAlphanum? bracketedNumeric? squareBracketedReference? identifierOrBracketedIdentifier?);
+  : (squareBracketedReference|identifierOrBracketedIdentifier|cdAlphanum|bracketedNumeric) -> ^(REFERENCETOCOMPOUND squareBracketedReference? identifierOrBracketedIdentifier? cdAlphanum? bracketedNumeric?);
 
 unnamedmoleculeamount4
 	: numberCompoundReference citation? quantity (citation|quantity|mixture)*;
@@ -227,7 +227,7 @@ referenceToCompound
 	: (nnchementity | {numberLooksLikeAReferenceToACompound(input)}?) numericOrIdentifierCompoundReference;
 
 numericOrIdentifierCompoundReference
-  : (numericOrBracketedNumeric |squareBracketedReference|identifierOrBracketedIdentifier) -> ^(REFERENCETOCOMPOUND numericOrBracketedNumeric? squareBracketedReference? identifierOrBracketedIdentifier?);
+  : (squareBracketedReference|identifierOrBracketedIdentifier|numericOrBracketedNumeric) -> ^(REFERENCETOCOMPOUND squareBracketedReference? identifierOrBracketedIdentifier? numericOrBracketedNumeric? );
 
 squareBracketedReference
 	:	lsqb numeric rsqb;
@@ -274,7 +274,7 @@ minimixture: (mixtureStructure2|mixtureStructure1) -> ^(MIXTURE  mixtureStructur
 procedureNode: method -> ^(PROCEDURE method);
 
 method:
-    (nngeneral|nn)? nnmethod (numeric|identifierOrBracketedIdentifier)? | nnexample (numeric|identifierOrBracketedIdentifier) ;
+    (nngeneral|nn)? nnmethod (identifierOrBracketedIdentifier|numeric)? | nnexample (identifierOrBracketedIdentifier|numeric) ;
 
 advAdj
 	:adv|adj;
