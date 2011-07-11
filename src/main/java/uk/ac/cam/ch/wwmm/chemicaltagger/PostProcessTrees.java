@@ -621,7 +621,7 @@ public class PostProcessTrees {
 		while (!elementsToInvestigate.isEmpty()) {
 			Element elementToInvestigate = elementsToInvestigate.removeFirst();
 			String localNameLC = elementToInvestigate.getLocalName().toLowerCase();
-			if (localNameLC.contains("phrase")) {//children of phrases will be recursively investigated
+			if (localNameLC.contains("phrase") || localNameLC.contains("ratio")) {//children of phrases will be recursively investigated
 				Elements elChildren = elementToInvestigate.getChildElements();
 				for (int i = elChildren.size() -1; i >=0 ; i--) {
 					elementsToInvestigate.add(0, elChildren.get(i));
