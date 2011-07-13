@@ -647,7 +647,7 @@ public class PostProcessTrees {
 	 * @return
 	 */
 	private boolean moleculeDoesNotLookLikeASolvent(Element molecule) {
-		return molecule.query("//MASS").size() >0 || molecule.query("//AMOUNT").size() >0;
+		return molecule.query(".//MASS").size() >0 || molecule.query(".//AMOUNT").size() >0;
 	}
 
 	/**********************************************************************
