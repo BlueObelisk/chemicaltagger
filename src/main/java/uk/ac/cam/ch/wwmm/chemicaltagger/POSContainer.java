@@ -36,12 +36,13 @@ public class POSContainer {
 
 	private String inputText;
 	private boolean prioritiseOscar = true;
-
 	private List<String> wordTokenList = new ArrayList<String>();
-	private List<String> oscarTagList = new ArrayList<String>();
-	private List<String> regexTagList = new ArrayList<String>();
-	private List<String> posTagList = new ArrayList<String>();
 	private List<String> combinedTagsList = new ArrayList<String>();
+	private List<List<String>> tagListContainer = new ArrayList<List<String>>();
+	public List<List<String>> getTagListContainer() {
+		return tagListContainer;
+	}
+
 	private Element spectrumElementList;
 	private List<TokenSequence> tokenSequenceList;
 
@@ -54,8 +55,7 @@ public class POSContainer {
 	/**************************************
 	 * Setter method for InputText.
 	 * 
-	 * @param inputText
-	 *            (String)
+	 * @param inputText (String)
 	 ***************************************/
 	public void setInputText(String inputText) {
 
@@ -74,8 +74,7 @@ public class POSContainer {
 	/**************************************
 	 * Setter method for prioritiseOscar.
 	 * 
-	 * @param prioritiseOscar
-	 *            (boolean)
+	 * @param prioritiseOscar (boolean)
 	 ***************************************/
 	public void setPrioritiseOscar(boolean prioritiseOscar) {
 		this.prioritiseOscar = prioritiseOscar;
@@ -93,8 +92,7 @@ public class POSContainer {
 	/**************************************
 	 * Setter method for WordTokenList.
 	 * 
-	 * @param wordTokenList
-	 *            (List<String>)
+	 * @param wordTokenList (List<String>)
 	 ***************************************/
 	public void setWordTokenList(List<String> wordTokenList) {
 		this.wordTokenList = wordTokenList;
@@ -112,8 +110,7 @@ public class POSContainer {
 	/**************************************
 	 * Setter method for TokenSequenceList.
 	 * 
-	 * @param tokenSequenceList
-	 *            (List<TokenSequence>)
+	 * @param tokenSequenceList (List<TokenSequence>)
 	 ***************************************/
 	public void setTokenSequenceList(List<TokenSequence> tokenSequenceList) {
 		this.tokenSequenceList = tokenSequenceList;
@@ -129,68 +126,12 @@ public class POSContainer {
 		return tokenSequenceList;
 	}
 
-	/**************************************
-	 * Setter method for OscarTagList.
-	 * 
-	 * @param oscarTagList
-	 *            (List<String>)
-	 ***************************************/
-	public void setOscarTagList(List<String> oscarTagList) {
-		this.oscarTagList = oscarTagList;
-	}
-
-	/**************************************
-	 * Getter method for OscarTagList.
-	 * 
-	 * @return oscarTagList (List<String>)
-	 ***************************************/
-	public List<String> getOscarTagList() {
-		return oscarTagList;
-	}
-
-	/**************************************
-	 * Setter method for RegexTagList.
-	 * 
-	 * @param regexTagList
-	 *            (List<String>)
-	 ***************************************/
-	public void setRegexTagList(List<String> regexTagList) {
-		this.regexTagList = regexTagList;
-	}
-
-	/**************************************
-	 * Getter method for RegexTagList.
-	 * 
-	 * @return regexTagList (List<String>)
-	 ***************************************/
-	public List<String> getRegexTagList() {
-		return regexTagList;
-	}
-
-	/**************************************
-	 * Setter method for posTagList.
-	 * 
-	 * @param posTagList
-	 *            (List<String>)
-	 ***************************************/
-	public void setPosTagList(List<String> posTagList) {
-		this.posTagList = posTagList;
-	}
-
-	/**************************************
-	 * Getter method for posTagList.
-	 * 
-	 * @return posTagList (List<String>)
-	 ***************************************/
-	public List<String> getPosTagList() {
-		return posTagList;
-	}
+	
 
 	/**************************************
 	 * Setter method for SpectrumList.
 	 * 
-	 * @param spectrumList
-	 *            (List<Element>)
+	 * @param spectrumList (List<Element>)
 	 ***************************************/
 	public void setSpectrumList(List<Element> spectrumList) {
 
@@ -212,8 +153,7 @@ public class POSContainer {
 	/**************************************
 	 * Setter method for CombinedTagsList.
 	 * 
-	 * @param combinedTagsList
-	 *            (List<String>)
+	 * @param combinedTagsList (List<String>)
 	 ***************************************/
 	public void setCombinedTagsList(List<String> combinedTagsList) {
 		this.combinedTagsList = combinedTagsList;
@@ -231,8 +171,7 @@ public class POSContainer {
 	/**************************************
 	 * Adds token to wordTokenList.
 	 * 
-	 * @param token
-	 *            (String)
+	 * @param token (String)
 	 ***************************************/
 	public void addToTokenList(String token) {
 		wordTokenList.add(token);
@@ -241,8 +180,7 @@ public class POSContainer {
 	/**************************************
 	 * Creates a wordTokenList from a sentence string.
 	 * 
-	 * @param sentence
-	 *            (String)
+	 * @param sentence (String)
 	 ***************************************/
 	public void createWordTokenListFromSentence(String sentence) {
 		for (String token : sentence.split(" ")) {
@@ -250,90 +188,41 @@ public class POSContainer {
 		}
 	}
 
-	/**************************************
-	 * Adds tags to oscarTagList.
-	 * 
-	 * @param oscarTag
-	 *            (String)
-	 ***************************************/
-	public void addToOSCARList(String oscarTag) {
-		oscarTagList.add("OSCAR-" + oscarTag);
-	}
-
-	/**************************************
-	 * Adds tags to regexTagList.
-	 * 
-	 * @param regexTag
-	 *            (String)
-	 ***************************************/
-	public void addToRegexTagList(String regexTag) {
-		regexTagList.add(regexTag);
-
-	}
-
-	/**************************************
-	 * Creates the posTagList from the openNLP string Array format.
-	 * 
-	 * @param posTags
-	 *            (String[])
-	 ***************************************/
-	public void createPosTagListFromStringArray(String[] posTags) {
-		for (String posTag : posTags) {
-			if (StringUtils.isEmpty(posTag)) {
-				posTagList.add("NN");
-			} else if (posTag.equals(".")) {
-				posTagList.add("STOP");
-			} else if (posTag.equals(",")) {
-				posTagList.add("COMMA");
-			} else if (posTag.equals(":")) {
-				posTagList.add("COLON");
-			} else if (posTag.equals("#")) {
-				posTagList.add("NN");
-			} else {
-				posTagList.add(posTag);
-			}
-		}
-	}
-
 	/***************************************
-	 * Combines the output of all 3 taggers.
+	 * Combines the output of all the taggers.
 	 ***************************************/
 	public void combineTaggers() {
-		List<List<String>> tagOrder = new ArrayList<List<String>>();
-		if (prioritiseOscar) {
-			tagOrder.add(oscarTagList);
-			tagOrder.add(regexTagList);
-		} else {
-			tagOrder.add(regexTagList);
-			tagOrder.add(oscarTagList);
-		}
-		tagOrder.add(posTagList);
-
-		List<String> firstTagger = tagOrder.get(0);
-		for (int i = 0; i < firstTagger.size(); i++) {
-			if (!firstTagger.get(i).toLowerCase().equals("nil")) {
-
-				combinedTagsList.add(firstTagger.get(i));
-
-			} else {
-				for (int taggedIndex = 1; taggedIndex < tagOrder.size(); taggedIndex++) {
-					List<String> backOffTagger = tagOrder.get(taggedIndex);
-					if (!backOffTagger.get(i).equals("nil")) {
-						
-						if (backOffTagger.get(i).toLowerCase().equals("oscar-ont") && posTagList.get(i).startsWith("VB")) {
-							combinedTagsList.add(posTagList.get(i));
-						}
-						else {
-							combinedTagsList.add(backOffTagger.get(i));
-						}
-							taggedIndex = tagOrder.size();
-						
+		int size = tagListContainer.get(0).size();
+		
+			for (int i = 0; i < size; i++) {
+				for (List<String> tagList : tagListContainer) {
+					if (tagList.get(i).equals("nil")) continue;
+					else if (tagList.get(i).equalsIgnoreCase("oscar-ont") && findTaginOtherTagLists(i, "VB")!= null) continue;
+					else {
+						  combinedTagsList.add(tagList.get(i));
+						  break;
 					}
 				}
 			}
-
+			
+		
+	}
+	
+	/***********************************************
+	 * Checks if the other taggers contain a specified tag
+	 * @param index (int)
+	 * @param tag (String)
+	 * @return otherTag (String)
+	 ***********************************************/
+	private String findTaginOtherTagLists(int index, String tag) {
+		String otherTag = null;
+		for (List<String> tagList : tagListContainer) {
+			if (tagList.get(index).startsWith(tag)) {
+				otherTag = tagList.get(index);
+				break;
+			}
 		}
-
+		return otherTag;
 	}
 
 	/*********************************************
@@ -356,6 +245,15 @@ public class POSContainer {
 
 		return tokenTagTupleString.toString().trim();
 
+	}
+
+	/********************************************
+	 * Adds tagLists to the tagListContainer
+	 * @param tagList
+	 */
+	public void registerTagList(List<String> tagList) {
+		tagListContainer.add(tagList);
+		
 	}
 
 }

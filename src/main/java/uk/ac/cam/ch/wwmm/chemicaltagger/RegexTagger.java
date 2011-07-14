@@ -34,7 +34,7 @@ import org.apache.log4j.Logger;
  * 
  * @author lh359, dl387, pm286
  *****************************************************/
-public class RegexTagger {
+public class RegexTagger implements Tagger{
 
 	private List<Rule> rules;
     private String tagFilePath = "/uk/ac/cam/ch/wwmm/chemicaltagger/regexTagger/regexTags.txt";
@@ -118,6 +118,7 @@ public class RegexTagger {
 	public POSContainer runTagger(POSContainer posContainer) {
 
 		List<String> tokenList = posContainer.getWordTokenList();
+		List<String> regexTagList = new ArrayList<String>();
 		for (String token : tokenList) {
 			try {
 				Matcher m = Pattern.compile("dummy").matcher(token);
@@ -129,13 +130,14 @@ public class RegexTagger {
 						break;
 					}
 				}
-				posContainer.addToRegexTagList(tag);
+				regexTagList.add(tag);
 
 			} catch (Exception e) {
 				LOG.debug("Null pointer right there" + tokenList);
 
 			}
 		}
+		posContainer.registerTagList(regexTagList);
 		return posContainer;
 	}
 

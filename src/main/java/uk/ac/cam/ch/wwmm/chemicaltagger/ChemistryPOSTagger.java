@@ -16,6 +16,9 @@
 
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import uk.ac.cam.ch.wwmm.oscar.Oscar;
 
 
@@ -41,6 +44,7 @@ public class ChemistryPOSTagger {
 	private OscarTagger oscarTagger;
 	private RegexTagger regexTagger;
 	private OpenNLPTagger openNLPTagger;
+	private List<Tagger> chemistryTaggers;
 	private ChemicalTaggerTokeniser ctTokeniser;
 	
 	/**************************************
@@ -69,15 +73,32 @@ public class ChemistryPOSTagger {
 	 * @param regexTagger (RegexTagger)
 	 * @param openNLPTagger (OpenNLPTagger)
 	 */
-	
+	@Deprecated
 	public ChemistryPOSTagger (ChemicalTaggerTokeniser ctTokeniser, OscarTagger oscarTagger, RegexTagger regexTagger, OpenNLPTagger openNLPTagger) {
 		
 		this.ctTokeniser = ctTokeniser;
 		this.oscarTagger = oscarTagger;
 		this.regexTagger = regexTagger;
 		this.openNLPTagger = openNLPTagger;
+		chemistryTaggers = new ArrayList<Tagger>();
+		chemistryTaggers.add(regexTagger);
+		chemistryTaggers.add(oscarTagger);
+		chemistryTaggers.add(OpenNLPTagger.getInstance());
 	}
 	
+
+	/*********************
+	 * Custom constructor for setting up non-standard ChemicalTagger operations.
+	 * Takes a tokeniser and a list of taggers .
+	 * @param ctTokeniser (ChemicalTaggerTokeniser)
+	 * @param taggers (List<Tagger>)
+	 */
+	public ChemistryPOSTagger (ChemicalTaggerTokeniser ctTokeniser, List<Tagger> taggers) {
+		
+		this.ctTokeniser = ctTokeniser;
+		chemistryTaggers = taggers;
+
+	}
 	/**************************
 	 * Default constructor. 
 	 * Initialises all the fields.
@@ -85,9 +106,15 @@ public class ChemistryPOSTagger {
 	private ChemistryPOSTagger() {
 		Oscar oscar = new Oscar();
 		ctTokeniser = new OscarTokeniser(oscar);
-		oscarTagger = new OscarTagger(oscar);
+
 		regexTagger = new RegexTagger();
+		oscarTagger = new OscarTagger(oscar);
 		openNLPTagger = OpenNLPTagger.getInstance();
+
+		chemistryTaggers = new ArrayList<Tagger>();
+		chemistryTaggers.add(regexTagger);
+		chemistryTaggers.add(oscarTagger);
+		chemistryTaggers.add(OpenNLPTagger.getInstance());
 	}
 
 
@@ -151,14 +178,17 @@ public class ChemistryPOSTagger {
 	public POSContainer runTaggers(String inputSentence, boolean prioritiseOscar, boolean useSpectraTagger) {
 		
 		POSContainer posContainer = new POSContainer();
+		List<String> ignoredTags = new ArrayList<String>();
 		posContainer = normaliseAndTokeniseInput(inputSentence, posContainer, useSpectraTagger);		
-		posContainer = oscarTagger.runTagger(posContainer);
-		posContainer = regexTagger.runTagger(posContainer);
-		posContainer = openNLPTagger.runTagger(posContainer);
-		posContainer.setPrioritiseOscar(prioritiseOscar);
+		for (Tagger tagger : chemistryTaggers){
+			posContainer = tagger.runTagger(posContainer);
+			if (tagger.getIgnoredTags() != null)
+		       	ignoredTags.addAll(tagger.getIgnoredTags());
+		}
+
 		posContainer.combineTaggers();	
 		posContainer = RecombineTokens.recombineTokens(posContainer);
-		posContainer =  new PostProcessTags().correctCombinedTagsList(posContainer,regexTagger.getIgnoredTags());
+		posContainer =  new PostProcessTags().correctCombinedTagsList(posContainer,ignoredTags);
 		return posContainer;
 	}
 	

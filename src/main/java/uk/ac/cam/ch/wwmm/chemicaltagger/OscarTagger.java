@@ -30,7 +30,7 @@ import uk.ac.cam.ch.wwmm.oscar.document.Token;
  * @author lh359, dmj30
  *****************************************************/
 
-public class OscarTagger {
+public class OscarTagger implements Tagger {
 
 	protected Oscar oscar;
 
@@ -69,7 +69,10 @@ public class OscarTagger {
 				}
 			}
 		}
-		posContainer.setOscarTagList(oscarList);
+		posContainer.registerTagList(oscarList);
 		return posContainer;
+	}
+	public List<String> getIgnoredTags() {
+		return null;
 	}
 }

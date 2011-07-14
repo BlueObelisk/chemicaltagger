@@ -35,8 +35,8 @@ public class POSContainerTest {
 	public void testCreatePosTagListFromStringArray() {
 		POSContainer posContainer = new POSContainer();
 		String[] posTags = new String[]{"#","NNP",":", "PRP$",",", "VBD", "", "VBG", "."};
-		posContainer.createPosTagListFromStringArray(posTags);
-		List<String> posTagList =posContainer.getPosTagList();
+		posContainer.registerTagList(OpenNLPTagger.getInstance().createPosTagListFromStringArray(posTags));
+		List<String> posTagList =posContainer.getTagListContainer().get(0);
 		assertEquals(9, posTagList.size());
 		assertEquals("NN", posTagList.get(0));
 		assertEquals("NNP", posTagList.get(1));
@@ -53,9 +53,9 @@ public class POSContainerTest {
 	public void testCombineTaggersPrioritiseOscar() {
 		POSContainer posContainer = new POSContainer();
 		posContainer.setPrioritiseOscar(true);
-		posContainer.setOscarTagList(Arrays.asList(new String[]{"nil", "OSCAR-CM", "OSCAR-ASE","nil"}));
-		posContainer.setRegexTagList(Arrays.asList(new String[]{"nil", "NN-TIME", "nil","nil"}));
-		posContainer.setPosTagList(Arrays.asList(new String[]{"CC", "NN", "NN","RBR"}));
+		posContainer.registerTagList(Arrays.asList(new String[]{"nil", "OSCAR-CM", "OSCAR-ASE","nil"}));
+		posContainer.registerTagList(Arrays.asList(new String[]{"nil", "NN-TIME", "nil","nil"}));
+		posContainer.registerTagList(Arrays.asList(new String[]{"CC", "NN", "NN","RBR"}));
 		posContainer.combineTaggers();
 		List<String> combinedTagList =posContainer.getCombinedTagsList();
 		assertEquals(4, combinedTagList.size());
@@ -69,9 +69,9 @@ public class POSContainerTest {
 	public void testCombineTaggersDontPrioritiseOscar() {
 		POSContainer posContainer = new POSContainer();
 		posContainer.setPrioritiseOscar(false);
-		posContainer.setOscarTagList(Arrays.asList(new String[]{"nil", "OSCAR-CM", "OSCAR-ASE","nil"}));
-		posContainer.setRegexTagList(Arrays.asList(new String[]{"nil", "NN-TIME", "nil","nil"}));
-		posContainer.setPosTagList(Arrays.asList(new String[]{"CC", "NN", "NN","RBR"}));
+		posContainer.registerTagList(Arrays.asList(new String[]{"nil", "NN-TIME", "nil","nil"}));
+		posContainer.registerTagList(Arrays.asList(new String[]{"nil", "OSCAR-CM", "OSCAR-ASE","nil"}));
+		posContainer.registerTagList(Arrays.asList(new String[]{"CC", "NN", "NN","RBR"}));
 		posContainer.combineTaggers();
 		List<String> combinedTagList =posContainer.getCombinedTagsList();
 		assertEquals(4, combinedTagList.size());

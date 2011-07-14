@@ -18,6 +18,8 @@ package uk.ac.cam.ch.wwmm.chemicaltagger;
 
 import static uk.ac.cam.ch.wwmm.chemicaltagger.Utils.readSentence;
 
+import java.util.List;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -128,12 +130,11 @@ public class ChemistryPOSTaggerTest {
 	}
 
 	private void checkLengthofTags() {
-		Assert.assertEquals(posContainer.getRegexTagList().size(),
-				posContainer.getOscarTagList().size());
-		Assert.assertEquals(posContainer.getOscarTagList().size(),
-				posContainer.getRegexTagList().size());
-		Assert.assertEquals(posContainer.getRegexTagList().size(),
-				posContainer.getPosTagList().size());
+		int size = posContainer.getTagListContainer().get(0).size();
+		for (List<String> tagList : posContainer.getTagListContainer()) {
+			Assert.assertEquals(tagList.size(),size);	
+		}
+		
 	}
 
 }
