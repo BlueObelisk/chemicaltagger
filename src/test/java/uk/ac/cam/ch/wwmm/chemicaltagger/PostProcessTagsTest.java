@@ -167,4 +167,15 @@ public class PostProcessTagsTest {
         new PostProcessTags().correctCombinedTagsList(posContainer);
         Assert.assertEquals("-LRB- ( NN-IDENTIFIER i -RRB- )", posContainer.getTokenTagTupleAsString());
     }
+	
+	@Test
+	public void testNounUsedAsAnAdjectiveColour() {
+        POSContainer posContainer = new POSContainer();
+        List<String> tags = Arrays.asList("NN", "NN-STATE");
+        List<String> tokens = Arrays.asList("amber", "oil");
+        posContainer.setCombinedTagsList(tags);
+        posContainer.setWordTokenList(tokens);
+        new PostProcessTags().correctCombinedTagsList(posContainer);
+        Assert.assertEquals("JJ amber NN-STATE oil", posContainer.getTokenTagTupleAsString());
+    }
 }
