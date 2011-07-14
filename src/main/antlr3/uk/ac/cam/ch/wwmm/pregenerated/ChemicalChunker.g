@@ -180,7 +180,7 @@ bracketedOscarCompoundStructure :	lrb  oscarcm+ rrb;
 molecule
 	:  moleculeamount-> ^(MOLECULE  moleculeamount );
 
-moleculeamount : moleculeamount3|moleculeamount1 | moleculeamount2 ;
+moleculeamount : (moleculeamount3| moleculeamount1 | moleculeamount2) asAstate? ;
 
 moleculeamount3
 	:(quantity|mixture) inof (dtTHE | dt)? mixtureRatio mixture? oscarCompound ;
@@ -194,7 +194,7 @@ moleculeamount2
 afterCompoundCitationOrQuantity: (citation|quantity|comma (quantity1Node|citationStructure)|mixture)*;
 
 unnamedmolecule
-	: (unnamedmoleculeamount|referenceToCompound) -> ^(UNNAMEDMOLECULE unnamedmoleculeamount? referenceToCompound?);
+	: (unnamedmoleculeamount|referenceToCompound) asAstate? -> ^(UNNAMEDMOLECULE unnamedmoleculeamount? referenceToCompound? asAstate?);
 
 unnamedmoleculeamount
 	:(unnamedmoleculeamount1|unnamedmoleculeamount2|unnamedmoleculeamount3|unnamedmoleculeamount4|unnamedmoleculeamount5|unnamedmoleculeamount6) ;
@@ -222,6 +222,9 @@ unnamedmoleculeamount5
 
 unnamedmoleculeamount6
 	:(quantity|mixture) nnchementity;
+
+asAstate
+	: inas dt (jj|jjchem)* nnstate quantity*;
 
 referenceToCompound
 	: (nnchementity | {numberLooksLikeAReferenceToACompound(input)}?) numericOrIdentifierCompoundReference;
