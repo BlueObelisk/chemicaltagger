@@ -17,6 +17,10 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 import static uk.ac.cam.ch.wwmm.chemicaltagger.ChemistryPOSTagger.DEFAULT_PRIORITISE_OSCAR;
 import static uk.ac.cam.ch.wwmm.chemicaltagger.ChemistryPOSTagger.DEFAULT_USE_SPECTRA_TAGGER;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import junit.framework.Assert;
 
 import org.junit.AfterClass;
@@ -33,7 +37,11 @@ public class WhiteSpaceTokeniserTest {
 	private static ChemistryPOSTagger posTagger; 
 	@BeforeClass
 	public static void setup(){
-		posTagger = new ChemistryPOSTagger(new WhiteSpaceTokeniser(), new OscarTagger(new Oscar()), new RegexTagger(), OpenNLPTagger.getInstance());
+		List<Tagger> chemistryTaggers = new ArrayList<Tagger>();
+		chemistryTaggers.add(new RegexTagger());
+		chemistryTaggers.add(new OscarTagger(new Oscar()));
+		chemistryTaggers.add(OpenNLPTagger.getInstance());
+		posTagger = new ChemistryPOSTagger(new WhiteSpaceTokeniser(), chemistryTaggers);
 	}
 	
 	@AfterClass

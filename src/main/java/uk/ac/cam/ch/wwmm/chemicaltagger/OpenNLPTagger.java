@@ -18,7 +18,10 @@ package uk.ac.cam.ch.wwmm.chemicaltagger;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
+
+import org.apache.commons.lang.StringUtils;
 
 import opennlp.tools.postag.POSModel;
 import opennlp.tools.postag.POSTagger;
@@ -29,7 +32,7 @@ import opennlp.tools.postag.POSTaggerME;
  * 
  * @author lh359, dmj30,jat45
  *****************************************************/
-public class OpenNLPTagger {
+public class OpenNLPTagger implements Tagger{
 	/**************************************
 	 * Private Singleton holder.
 	 ***************************************/
@@ -93,8 +96,38 @@ public class OpenNLPTagger {
 		List<String> tokenList = posContainer.getWordTokenList();
 		String[] tokens = tokenList.toArray(new String[tokenList.size()]);
 		String[] tags = posTagger.tag(tokens);
-		posContainer.createPosTagListFromStringArray(tags);
+		List<String> tagList = createPosTagListFromStringArray(tags);
+		posContainer.registerTagList(tagList);
 		return posContainer;
 	}
 
+
+	/**************************************
+	 * Creates the posTagList from the openNLP string Array format.
+	 * 
+	 * @param posTags (String[])
+	 ***************************************/
+	public List<String> createPosTagListFromStringArray(String[] posTags) {
+		List<String> posTagList = new ArrayList<String>();
+		for (String posTag : posTags) {
+			if (StringUtils.isEmpty(posTag)) {
+				posTagList.add("NN");
+			} else if (posTag.equals(".")) {
+				posTagList.add("STOP");
+			} else if (posTag.equals(",")) {
+				posTagList.add("COMMA");
+			} else if (posTag.equals(":")) {
+				posTagList.add("COLON");
+			} else if (posTag.equals("#")) {
+				posTagList.add("NN");
+			} else {
+				posTagList.add(posTag);
+			}
+		}
+		return posTagList;
+	}
+
+	public List<String> getIgnoredTags() {
+		return null;
+	}
 }

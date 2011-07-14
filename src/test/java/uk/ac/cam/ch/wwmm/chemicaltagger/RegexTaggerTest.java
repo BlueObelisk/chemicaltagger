@@ -18,6 +18,8 @@ package uk.ac.cam.ch.wwmm.chemicaltagger;
 
 import static uk.ac.cam.ch.wwmm.chemicaltagger.Utils.readSentence;
 
+import java.util.List;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -56,21 +58,23 @@ public class RegexTaggerTest {
         POSContainer posContainer = new POSContainer();
         posContainer.createWordTokenListFromSentence(cleanSentence);
         posContainer = regexTagger.runTagger(posContainer);
-        
+       
+        List<String> regexTagList = posContainer.getTagListContainer().get(0);
+		
         /****************************
          * Check that lengths of 
          * token and tags are the same
          ****************************/
-        Assert.assertEquals(posContainer.getWordTokenList().size(), posContainer.getRegexTagList().size());
+        Assert.assertEquals(posContainer.getWordTokenList().size(), regexTagList.size());
         
         /************************
          * Append the tokens recoginesed
          * by the regexTagger to regexTaggedSentence
          ***********************/
-        
-		for (int i = 0; i < posContainer.getRegexTagList().size(); i++) {
-			if (!posContainer.getRegexTagList().get(i).equals("nil")){
-				regexTaggedSentence.append(posContainer.getRegexTagList().get(i));
+       for (int i = 0; i < regexTagList.size(); i++) {
+			
+			if (!regexTagList.get(i).equals("nil")){
+				regexTaggedSentence.append(regexTagList.get(i));
 				regexTaggedSentence.append(SPACE);
 				regexTaggedSentence.append(posContainer.getWordTokenList().get(i));
 				regexTaggedSentence.append(SPACE);
