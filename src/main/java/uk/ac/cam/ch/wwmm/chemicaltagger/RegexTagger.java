@@ -115,7 +115,7 @@ public class RegexTagger implements Tagger{
 	 * @param posContainer (POSContainer)
 	 * @return posContainer (POSContainer)
 	/*********************************************************/
-	public POSContainer runTagger(POSContainer posContainer) {
+	public List<String> runTagger(POSContainer posContainer) {
 
 		List<String> tokenList = posContainer.getWordTokenList();
 		List<String> regexTagList = new ArrayList<String>();
@@ -138,7 +138,7 @@ public class RegexTagger implements Tagger{
 			}
 		}
 		posContainer.registerTagList(regexTagList);
-		return posContainer;
+		return regexTagList;
 	}
 
 	public List<String> getIgnoredTags() {
