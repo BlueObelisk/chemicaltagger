@@ -21,8 +21,6 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.apache.commons.lang.StringUtils;
-
 import uk.ac.cam.ch.wwmm.oscar.Oscar;
 import uk.ac.cam.ch.wwmm.oscar.document.NamedEntity;
 import uk.ac.cam.ch.wwmm.oscar.document.Token;
@@ -53,8 +51,7 @@ public class OscarTagger implements Tagger {
 	 ***********************************************/
 	public List<String> runTagger(List<String> tokenList, String inputSentence) {
 
-		List<TokenSequence> tokenSequenceList = convertToOscarTokenSequences(tokenList, StringUtils.join(tokenList.iterator()," "));		
-		
+		List<TokenSequence> tokenSequenceList = convertToOscarTokenSequences(tokenList, inputSentence);
 		List<NamedEntity> neList = oscar.recogniseNamedEntities(tokenSequenceList);
         List<String> ignoreOscarList = Arrays.asList("cpr");
 		List<String> tagList = new ArrayList<String>();
@@ -86,34 +83,37 @@ public class OscarTagger implements Tagger {
 	 * @return tokenSequenceList (List<TokenSequence>)
 	 ********************************************/
 	private  List<TokenSequence> convertToOscarTokenSequences(List<String> wordTokenList, String inputText) {
-		List<Token> oscarTokens = convertWordlistToOscarTokens(wordTokenList);
+		List<Token> oscarTokens = convertWordlistToOscarTokens(wordTokenList,inputText);
 		List<TokenSequence> tokenSequenceList = makeTokenSequences(inputText, oscarTokens);
 		return tokenSequenceList;
 	}
 
-
 	/*************************************************
 	 * Converts a list of words into a list of Oscar Tokens.
 	 * @param wordTokenList (List<String>)
+	 * @param inputSentence 
 	 * @return oscarTokens (List<Token>)
 	 ***********************************************/
-	private List<Token> convertWordlistToOscarTokens(List<String> wordTokenList) {
+	private List<Token> convertWordlistToOscarTokens(List<String> wordTokenList, String inputSentence) {
 
 		int index = 0;
-		int sentenceIndex = 0;
 		List<Token> oscarTokens = new LinkedList<Token>();
+		String subSentence = inputSentence;
+		int endIndex = 0;
+		int startIndex = 0;
+		int offSet = 0;
 		boolean endFlag = true;
 
 		for (String word : wordTokenList)  {
-			int startIndex = sentenceIndex;
-			int endIndex = sentenceIndex+word.length();
-			Token oscarToken = new Token(word, startIndex, endIndex, null, null, null);
-			
-			
+			startIndex = subSentence.indexOf(word);
+			offSet = offSet + endIndex;
+			endIndex = startIndex + word.length();
+			Token oscarToken = new Token(word, startIndex+ offSet, endIndex+ offSet, null, null, null);
 			oscarToken.setIndex(index);
 			oscarTokens.add(oscarToken);
-			sentenceIndex = endIndex+1;
+			subSentence = subSentence.substring(endIndex);
 			index++;
+			
 			if (word.equals(".") & !endFlag) {
 				index = 0;
 				endFlag = true;
@@ -121,7 +121,7 @@ public class OscarTagger implements Tagger {
 		}
 		return oscarTokens;
 	}
-	
+
     /***************************************************
      * Creates a list of tokenSequences from the Oscar tokens. 
      * @param surfaceText (String)
