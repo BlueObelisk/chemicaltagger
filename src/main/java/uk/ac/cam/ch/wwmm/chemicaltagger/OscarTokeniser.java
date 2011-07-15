@@ -60,6 +60,7 @@ public class OscarTokeniser implements ChemicalTaggerTokeniser {
 
 			}
 		}
+		inputSentence = tokSequenceList.get(0).getSurface();
 		return wordTokenList;
 	}
 

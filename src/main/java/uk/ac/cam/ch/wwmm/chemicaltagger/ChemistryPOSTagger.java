@@ -19,6 +19,8 @@ package uk.ac.cam.ch.wwmm.chemicaltagger;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.lang.StringUtils;
+
 import uk.ac.cam.ch.wwmm.oscar.Oscar;
 
 
@@ -212,8 +214,8 @@ public class ChemistryPOSTagger {
 		    posContainer = SpectraTagger.runTagger(posContainer);
 		}
 		List<String> wordTokenList = ctTokeniser.tokenise(inputSentence);
-
-		return wordTokenList;
+        posContainer.setInputText(inputSentence);
+        return wordTokenList;
 	}
 		
 		
