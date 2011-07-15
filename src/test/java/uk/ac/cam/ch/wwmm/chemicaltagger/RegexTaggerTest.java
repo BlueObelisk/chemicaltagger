@@ -57,7 +57,7 @@ public class RegexTaggerTest {
         String cleanSentence = Formatter.normaliseText(sentence);
         POSContainer posContainer = new POSContainer();
         posContainer.createWordTokenListFromSentence(cleanSentence);
-        posContainer = regexTagger.runTagger(posContainer);
+        regexTagger.runTagger(posContainer);
        
         List<String> regexTagList = posContainer.getTagListContainer().get(0);
 		

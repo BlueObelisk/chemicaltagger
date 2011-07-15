@@ -44,7 +44,7 @@ public class ChemistryPOSTagger {
 	private OscarTagger oscarTagger;
 	private RegexTagger regexTagger;
 	private OpenNLPTagger openNLPTagger;
-	private List<Tagger> chemistryTaggers;
+	private List<Tagger> taggersOrderedInDescendingPriority;
 	private ChemicalTaggerTokeniser ctTokeniser;
 	
 	/**************************************
@@ -80,10 +80,10 @@ public class ChemistryPOSTagger {
 		this.oscarTagger = oscarTagger;
 		this.regexTagger = regexTagger;
 		this.openNLPTagger = openNLPTagger;
-		chemistryTaggers = new ArrayList<Tagger>();
-		chemistryTaggers.add(regexTagger);
-		chemistryTaggers.add(oscarTagger);
-		chemistryTaggers.add(OpenNLPTagger.getInstance());
+		taggersOrderedInDescendingPriority = new ArrayList<Tagger>();
+		taggersOrderedInDescendingPriority.add(regexTagger);
+		taggersOrderedInDescendingPriority.add(oscarTagger);
+		taggersOrderedInDescendingPriority.add(OpenNLPTagger.getInstance());
 	}
 	
 
@@ -96,7 +96,7 @@ public class ChemistryPOSTagger {
 	public ChemistryPOSTagger (ChemicalTaggerTokeniser ctTokeniser, List<Tagger> taggers) {
 		
 		this.ctTokeniser = ctTokeniser;
-		chemistryTaggers = taggers;
+		taggersOrderedInDescendingPriority = taggers;
 
 	}
 	/**************************
@@ -111,10 +111,10 @@ public class ChemistryPOSTagger {
 		oscarTagger = new OscarTagger(oscar);
 		openNLPTagger = OpenNLPTagger.getInstance();
 
-		chemistryTaggers = new ArrayList<Tagger>();
-		chemistryTaggers.add(regexTagger);
-		chemistryTaggers.add(oscarTagger);
-		chemistryTaggers.add(OpenNLPTagger.getInstance());
+		taggersOrderedInDescendingPriority = new ArrayList<Tagger>();
+		taggersOrderedInDescendingPriority.add(regexTagger);
+		taggersOrderedInDescendingPriority.add(oscarTagger);
+		taggersOrderedInDescendingPriority.add(OpenNLPTagger.getInstance());
 	}
 
 
@@ -180,8 +180,8 @@ public class ChemistryPOSTagger {
 		POSContainer posContainer = new POSContainer();
 		List<String> ignoredTags = new ArrayList<String>();
 		posContainer = normaliseAndTokeniseInput(inputSentence, posContainer, useSpectraTagger);		
-		for (Tagger tagger : chemistryTaggers){
-			posContainer = tagger.runTagger(posContainer);
+		for (Tagger tagger : taggersOrderedInDescendingPriority){
+			tagger.runTagger(posContainer);
 			if (tagger.getIgnoredTags() != null)
 		       	ignoredTags.addAll(tagger.getIgnoredTags());
 		}

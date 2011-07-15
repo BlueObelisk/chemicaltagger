@@ -48,7 +48,7 @@ public class OscarTagger implements Tagger {
 	 * @param posContainer  (POSContainer)
 	 * @return posContainer (POSContainer)
 	 ***********************************************/
-	public POSContainer runTagger(POSContainer posContainer) {
+	public List<String> runTagger(POSContainer posContainer) {
 
 		List<NamedEntity> neList = oscar.recogniseNamedEntities(posContainer.getTokenSequenceList());
         List<String> ignoreOscarList = Arrays.asList("cpr");
@@ -70,7 +70,7 @@ public class OscarTagger implements Tagger {
 			}
 		}
 		posContainer.registerTagList(oscarList);
-		return posContainer;
+		return oscarList;
 	}
 	public List<String> getIgnoredTags() {
 		return null;

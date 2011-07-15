@@ -92,13 +92,13 @@ public class OpenNLPTagger implements Tagger{
 	 * @param posContainer (POSContainer)
 	 * @return posContainer (POSContainer) 
 	 *****************************************************/
-	public POSContainer runTagger(POSContainer posContainer) {
+	public List<String> runTagger(POSContainer posContainer) {
 		List<String> tokenList = posContainer.getWordTokenList();
 		String[] tokens = tokenList.toArray(new String[tokenList.size()]);
 		String[] tags = posTagger.tag(tokens);
 		List<String> tagList = createPosTagListFromStringArray(tags);
 		posContainer.registerTagList(tagList);
-		return posContainer;
+		return tagList;
 	}
 
 

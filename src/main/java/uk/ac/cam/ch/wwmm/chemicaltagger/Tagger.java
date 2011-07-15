@@ -24,7 +24,7 @@ import java.util.List;
  * 
  * @author lh359, dmj30,jat45
  *****************************************************/
-public abstract interface Tagger {
+public interface Tagger {
 	
 
 	
@@ -34,7 +34,7 @@ public abstract interface Tagger {
 	 * @param posContainer (POSContainer)
 	 * @return posContainer (POSContainer) 
 	 *****************************************************/
-	public POSContainer runTagger(POSContainer posContainer);
+	public List<String> runTagger(POSContainer posContainer);
 
 	public List<String> getIgnoredTags() ;
 }
