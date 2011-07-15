@@ -23,8 +23,6 @@ import nu.xom.Element;
 
 import org.apache.commons.lang.StringUtils;
 
-import uk.ac.cam.ch.wwmm.oscar.document.TokenSequence;
-
 /********************************************
  * A container class that stores the grammatical structure of the text .
  * 
@@ -44,7 +42,6 @@ public class POSContainer {
 	}
 
 	private Element spectrumElementList;
-	private List<TokenSequence> tokenSequenceList;
 
 	/******************************
 	 * Default constructor method.
@@ -105,25 +102,6 @@ public class POSContainer {
 	 ***************************************/
 	public List<String> getWordTokenList() {
 		return wordTokenList;
-	}
-
-	/**************************************
-	 * Setter method for TokenSequenceList.
-	 * 
-	 * @param tokenSequenceList (List<TokenSequence>)
-	 ***************************************/
-	public void setTokenSequenceList(List<TokenSequence> tokenSequenceList) {
-		this.tokenSequenceList = tokenSequenceList;
-
-	}
-
-	/**************************************
-	 * Getter method for TokenSequenceList.
-	 * 
-	 * @return tokenSequenceList (List<TokenSequence>)
-	 ***************************************/
-	public List<TokenSequence> getTokenSequenceList() {
-		return tokenSequenceList;
 	}
 
 	

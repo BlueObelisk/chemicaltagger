@@ -18,11 +18,15 @@ package uk.ac.cam.ch.wwmm.chemicaltagger;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
+
+import org.apache.commons.lang.StringUtils;
 
 import uk.ac.cam.ch.wwmm.oscar.Oscar;
 import uk.ac.cam.ch.wwmm.oscar.document.NamedEntity;
 import uk.ac.cam.ch.wwmm.oscar.document.Token;
+import uk.ac.cam.ch.wwmm.oscar.document.TokenSequence;
 
 /*****************************************************
  * Runs the OSCAR tagger .
@@ -43,20 +47,20 @@ public class OscarTagger implements Tagger {
 	}
 
 	/***********************************************
-	 * Runs OSCAR over a list of tokens.
-	 * 
-	 * @param posContainer  (POSContainer)
-	 * @return posContainer (POSContainer)
+	 * Runs OSCAR over a list of tokens and returns a list of tags
+	 * @param tokenList (List<String>)
+	 * @return tagList (List<String>)
 	 ***********************************************/
-	public List<String> runTagger(POSContainer posContainer) {
+	public List<String> runTagger(List<String> tokenList, String inputSentence) {
 
-		List<NamedEntity> neList = oscar.recogniseNamedEntities(posContainer.getTokenSequenceList());
+		List<TokenSequence> tokenSequenceList = convertToOscarTokenSequences(tokenList, StringUtils.join(tokenList.iterator()," "));		
+		
+		List<NamedEntity> neList = oscar.recogniseNamedEntities(tokenSequenceList);
         List<String> ignoreOscarList = Arrays.asList("cpr");
-		List<String> tokenList = posContainer.getWordTokenList();
-		List<String> oscarList = new ArrayList<String>();
+		List<String> tagList = new ArrayList<String>();
 		String tag = "nil";
 		for (int i = 0; i < tokenList.size(); i++) {
-			oscarList.add(tag);
+			tagList.add(tag);
 		}
 		for (NamedEntity ne : neList) {
 			if (!ignoreOscarList.contains(ne.getType().getName().toLowerCase())) {
@@ -64,15 +68,94 @@ public class OscarTagger implements Tagger {
                  
 				for (Token token : tokens) {
 					if (tokenList.get(token.getIndex()).contains(token.getSurface())) {
-						oscarList.set(token.getIndex(), "OSCAR-"+ne.getType().getName());
+						tagList.set(token.getIndex(), "OSCAR-"+ne.getType().getName());
 					}
 				}
 			}
 		}
-		posContainer.registerTagList(oscarList);
-		return oscarList;
+		return tagList;
 	}
 	public List<String> getIgnoredTags() {
 		return null;
 	}
+	
+	/*********************************************
+	 * Converts a list of words into a list of Oscar TokenSequences.
+	 * @param wordTokenList (List<String>)
+	 * @param inputText (String)
+	 * @return tokenSequenceList (List<TokenSequence>)
+	 ********************************************/
+	private  List<TokenSequence> convertToOscarTokenSequences(List<String> wordTokenList, String inputText) {
+		List<Token> oscarTokens = convertWordlistToOscarTokens(wordTokenList);
+		List<TokenSequence> tokenSequenceList = makeTokenSequences(inputText, oscarTokens);
+		return tokenSequenceList;
+	}
+
+
+	/*************************************************
+	 * Converts a list of words into a list of Oscar Tokens.
+	 * @param wordTokenList (List<String>)
+	 * @return oscarTokens (List<Token>)
+	 ***********************************************/
+	private List<Token> convertWordlistToOscarTokens(List<String> wordTokenList) {
+
+		int index = 0;
+		int sentenceIndex = 0;
+		List<Token> oscarTokens = new LinkedList<Token>();
+		boolean endFlag = true;
+
+		for (String word : wordTokenList)  {
+			int startIndex = sentenceIndex;
+			int endIndex = sentenceIndex+word.length();
+			Token oscarToken = new Token(word, startIndex, endIndex, null, null, null);
+			
+			
+			oscarToken.setIndex(index);
+			oscarTokens.add(oscarToken);
+			sentenceIndex = endIndex+1;
+			index++;
+			if (word.equals(".") & !endFlag) {
+				index = 0;
+				endFlag = true;
+			}
+		}
+		return oscarTokens;
+	}
+	
+    /***************************************************
+     * Creates a list of tokenSequences from the Oscar tokens. 
+     * @param surfaceText (String)
+     * @param oscarTokens (List<IToken>)
+     * @return tokSequenceList (List<TokenSequence>)
+     *****************************************************/
+	private List<TokenSequence> makeTokenSequences(String surfaceText,	List<Token> oscarTokens) {
+
+		TokenSequence tokSeq = new TokenSequence(surfaceText, 0, null, oscarTokens);
+		List<TokenSequence> tokSequenceList = new ArrayList<TokenSequence>();
+		tokSequenceList.add(tokSeq);
+		tokSequenceList = postProcess(tokSequenceList);
+
+		return tokSequenceList;
+	}
+	
+	/***************************************************
+     * PostProcessing the tokenSequenceList by adding tokenSequences to each token within the tokenList.
+     * The TokenSequences are used by the Oscar Tokens for lookahead.
+     * @param  tokSequenceList    (List<TokenSequence>)
+     * @return newTokSequenceList (List<TokenSequence>)
+     *****************************************************/
+	private List<TokenSequence> postProcess(List<TokenSequence> tokSequenceList) {
+		List<TokenSequence> newTokSequenceList = new ArrayList<TokenSequence>();
+		for (TokenSequence tokenSequence : tokSequenceList) {
+			for (Token token : tokenSequence.getTokens()) {
+				token.setTokenSequence(tokenSequence);
+			}
+			TokenSequence newTokenSequence = new TokenSequence(
+					tokenSequence.getSurface(), tokenSequence.getOffset(),
+					tokenSequence.getDoc(), tokenSequence.getTokens());
+			newTokSequenceList.add(newTokenSequence);
+		}
+		return newTokSequenceList;
+	}
+
 }

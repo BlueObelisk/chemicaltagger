@@ -16,6 +16,8 @@
 
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
+import java.util.List;
+
 /**************************************
  * An interface for tokenisers.
  * @author lh359
@@ -27,6 +29,6 @@ public interface ChemicalTaggerTokeniser {
      * @param posContainer (POSContainer)
      * @return posContainer  (POSContainer)
      */
-	POSContainer tokenise(POSContainer posContainer) ;
+	List<String> tokenise(String inputSentence) ;
 	
 }

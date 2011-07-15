@@ -179,9 +179,13 @@ public class ChemistryPOSTagger {
 		
 		POSContainer posContainer = new POSContainer();
 		List<String> ignoredTags = new ArrayList<String>();
-		posContainer = normaliseAndTokeniseInput(inputSentence, posContainer, useSpectraTagger);		
+		List<String> wordTokenList = normaliseAndTokeniseInput(inputSentence, posContainer, useSpectraTagger);		
+		posContainer.setWordTokenList(wordTokenList);
+		
 		for (Tagger tagger : taggersOrderedInDescendingPriority){
-			tagger.runTagger(posContainer);
+			List<String> tagList = tagger.runTagger(wordTokenList,posContainer.getInputText());
+			posContainer.registerTagList(tagList);
+
 			if (tagger.getIgnoredTags() != null)
 		       	ignoredTags.addAll(tagger.getIgnoredTags());
 		}
@@ -200,14 +204,16 @@ public class ChemistryPOSTagger {
 	 * @param useSpectraTagger (boolean)
 	 * @return posContainer (POSContainer)
 	 */
-	private POSContainer normaliseAndTokeniseInput(String inputSentence, POSContainer posContainer, boolean useSpectraTagger) {
+	private List<String> normaliseAndTokeniseInput(String inputSentence, POSContainer posContainer, boolean useSpectraTagger) {
 		inputSentence = Formatter.normaliseText(inputSentence);
 		posContainer.setInputText(inputSentence);
+
 		if (useSpectraTagger){
 		    posContainer = SpectraTagger.runTagger(posContainer);
 		}
-		posContainer = ctTokeniser.tokenise(posContainer);
-		return posContainer;
+		List<String> wordTokenList = ctTokeniser.tokenise(inputSentence);
+
+		return wordTokenList;
 	}
 		
 		
