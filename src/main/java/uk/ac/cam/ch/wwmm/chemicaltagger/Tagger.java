@@ -31,10 +31,11 @@ public interface Tagger {
 	/*****************************************************
 	 * Runs the tagger against the text and stores the tags in
 	 * POSContainer.
+	 * @param inputSentence TODO
 	 * @param posContainer (POSContainer)
 	 * @return posContainer (POSContainer) 
 	 *****************************************************/
-	public List<String> runTagger(POSContainer posContainer);
+	public List<String> runTagger(List<String> tokenList, String inputSentence);
 
 	public List<String> getIgnoredTags() ;
 }

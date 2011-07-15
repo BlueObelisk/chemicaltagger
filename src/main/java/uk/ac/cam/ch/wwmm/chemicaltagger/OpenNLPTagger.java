@@ -87,17 +87,14 @@ public class OpenNLPTagger implements Tagger{
 	}
 
 	/*****************************************************
-	 * Runs the OpenNLP POS tagger against the text and stores the tags in
-	 * POSContainer.
-	 * @param posContainer (POSContainer)
-	 * @return posContainer (POSContainer) 
+	 * Runs the OpenNLP POS tagger against a list of tokens and returns a list of tags
+	 * @param tokenList (List<String>)
+	 * @return tagList (List<String>) 
 	 *****************************************************/
-	public List<String> runTagger(POSContainer posContainer) {
-		List<String> tokenList = posContainer.getWordTokenList();
+	public List<String> runTagger(List<String> tokenList, String inputSentence) {
 		String[] tokens = tokenList.toArray(new String[tokenList.size()]);
 		String[] tags = posTagger.tag(tokens);
 		List<String> tagList = createPosTagListFromStringArray(tags);
-		posContainer.registerTagList(tagList);
 		return tagList;
 	}
 

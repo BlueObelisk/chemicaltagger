@@ -111,14 +111,13 @@ public class RegexTagger implements Tagger{
 	}
 
 	/*********************************************************
-	 * Runs the regular expression tagger against the tokens.
-	 * @param posContainer (POSContainer)
-	 * @return posContainer (POSContainer)
+	 * Runs the regular expression tagger against a list of tokens and returns a list of tags
+	 * @param tokenList (List<String>)
+	 * @return tagList (List<String>)
 	/*********************************************************/
-	public List<String> runTagger(POSContainer posContainer) {
+	public List<String> runTagger(List<String> tokenList, String inputSentence) {
 
-		List<String> tokenList = posContainer.getWordTokenList();
-		List<String> regexTagList = new ArrayList<String>();
+		List<String> tagList = new ArrayList<String>();
 		for (String token : tokenList) {
 			try {
 				Matcher m = Pattern.compile("dummy").matcher(token);
@@ -130,15 +129,14 @@ public class RegexTagger implements Tagger{
 						break;
 					}
 				}
-				regexTagList.add(tag);
+				tagList.add(tag);
 
 			} catch (Exception e) {
 				LOG.debug("Null pointer right there" + tokenList);
 
 			}
 		}
-		posContainer.registerTagList(regexTagList);
-		return regexTagList;
+		return tagList;
 	}
 
 	public List<String> getIgnoredTags() {

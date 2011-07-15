@@ -39,18 +39,16 @@ public class OscarTokeniser implements ChemicalTaggerTokeniser {
 
 	/*****************************************************
 	 * Tokenises an inputText using OSCAR tokeniser. 
-	 * Sets the tokens to POSContainer's wordTokenList and
-	 * tokenSequenceList.
-	 * @param posContainer (POSContainer)
-	 * @return posContainer (POSContainer)
+	 * Returns a wordTokenList .
+	 * @param inputSentence (String)
+	 * @return List<String> 
 	 *****************************************************/
-	public POSContainer tokenise(POSContainer posContainer) {
+	public List<String> tokenise(String inputSentence) {
 		List<String> wordTokenList = new ArrayList<String>();
-		String sentence = posContainer.getInputText();
 		// Oscar doesn't do normalisation just yet
 		// sentence = oscar.normalise(sentence);
 
-		List<TokenSequence>  tokSequenceList = oscar.tokenise(sentence);
+		List<TokenSequence>  tokSequenceList = oscar.tokenise(inputSentence);
 		for (TokenSequence tokenSequence : tokSequenceList) {
 			for (Token token : tokenSequence.getTokens()) {
 
@@ -62,9 +60,7 @@ public class OscarTokeniser implements ChemicalTaggerTokeniser {
 
 			}
 		}
-		posContainer.setTokenSequenceList(tokSequenceList);
-		posContainer.setWordTokenList(wordTokenList);
-		return posContainer;
+		return wordTokenList;
 	}
 
 }
