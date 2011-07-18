@@ -82,7 +82,7 @@ public class OscarTagger implements Tagger {
 	 * @param inputText (String)
 	 * @return tokenSequenceList (List<TokenSequence>)
 	 ********************************************/
-	private  List<TokenSequence> convertToOscarTokenSequences(List<String> wordTokenList, String inputText) {
+	protected  List<TokenSequence> convertToOscarTokenSequences(List<String> wordTokenList, String inputText) {
 		List<Token> oscarTokens = convertWordlistToOscarTokens(wordTokenList,inputText);
 		List<TokenSequence> tokenSequenceList = makeTokenSequences(inputText, oscarTokens);
 		return tokenSequenceList;
