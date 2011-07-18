@@ -224,7 +224,7 @@ unnamedmoleculeamount6
 	:(quantity|mixture) jjcomp? nnchementity (quantity|mixture)*;
 
 asAstate
-	: inas dt (jj|jjchem)* nnstate quantity*;
+	: inas dt? (jj|jjchem)* nnstate quantity*;
 
 referenceToCompound
 	: (nnchementity | {numberLooksLikeAReferenceToACompound(input)}?) numericOrIdentifierCompoundReference;
@@ -257,7 +257,7 @@ molar	: cd+ nnmolar -> ^(MOLAR   cd+ nnmolar );
 amount	: cd+ nnamount -> ^(AMOUNT   cd+ nnamount );
 mass	: cd+ nnmass-> ^(MASS   cd+ nnmass );
 volume	: cd+ nnvol -> ^(VOLUME   cd+ nnvol );
-logHydrogenActivity	: nnph cd -> ^(PH   nnph cd );
+logHydrogenActivity	: nnph sym? cd -> ^(PH nnph sym? cd );
 equivalent: cd+ nneq -> ^(EQUIVALENT cd+ nneq );
 yield: percent nnyield -> ^(YIELD percent nnyield );
 percent	: numeric nn? nnpercent -> ^(PERCENT   numeric nn? nnpercent );
