@@ -85,7 +85,7 @@ sentenceStructure:  (nounphrase|verbphrase|prepphrase|prepphraseAfter)+ (advAdj|
 unmatchedPhrase
 	:	 unmatchedToken -> ^(Unmatched unmatchedToken);
 
-unmatchedToken //all base tokens other than comma and stop
+unmatchedToken //all base tokens other than stop
 	:	(numeric|advAdj|tmunicode|cdunicode|jjcomp|inAll|
 	nnexample|nnstate|nntime|nnmass|nnmolar|nnamount|nnatmosphere|nneq|nnvol|nnchementity|nntemp|nnph|nnflash|nngeneral|nnmethod|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|
 	oscarcm|oscaronts|oscarase|verb|nnadd|nnmixture|nnapparatus|nnconcentrate|nndry|nnextract|nnfilter|nnprecipitate|nnpurify|nnremove|nnsynthesize|nnyield|colon|apost|neg|dash|nnpercent|lsqb|rsqb|lrb|rrb|
@@ -248,7 +248,7 @@ quantity2
 	:  measurements (comma  measurements)*  ;
 
 measurements
-	:(cd nn)? (multiple|measurementtypes)    dt?;
+	:(cd nn)? (multiple|measurementtypes) dt?;
 multiple	: cd cdunicode measurementtypes? -> ^(MULTIPLE   cd cdunicode measurementtypes? );
 measurementtypes
 	: molar|amount|mass|volume|logHydrogenActivity|equivalent|yield|percent;
@@ -270,7 +270,7 @@ mixtureStructure3
 
 mixtureRatio
 	:	cd colon numeric;
-mixtureContent:   (fw|verb|nn|quantity2Node|md|nnpercent|stop|oscarCompound|molecule|unnamedmolecule|dash|sym|cd|noun|inAll|cd|comma|adj|colon|stop) (minimixture|fw|verb|quantity2Node|nnyield|md|nnpercent|stop|oscarCompound|molecule|unnamedmolecule|dash|sym|cd|noun|inAll|cd|comma|adj|colon|stop)+ ;
+mixtureContent:   (fw|verb|nn|quantity2Node|md|nnpercent|oscarCompound|molecule|unnamedmolecule|dash|sym|noun|inAll|cd|comma|adj|colon|stop) (minimixture|fw|verb|quantity2Node|nnyield|md|nnpercent|oscarCompound|molecule|unnamedmolecule|dash|sym|noun|inAll|cd|comma|adj|colon|stop)+ ;
 
 minimixture: (mixtureStructure2|mixtureStructure1) -> ^(MIXTURE  mixtureStructure2? mixtureStructure1?);
 
