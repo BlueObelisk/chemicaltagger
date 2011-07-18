@@ -194,34 +194,34 @@ moleculeamount2
 afterCompoundCitationOrQuantity: (citation|quantity|comma (quantity1Node|citationStructure)|mixture)*;
 
 unnamedmolecule
-	: (unnamedmoleculeamount|referenceToCompound) asAstate? -> ^(UNNAMEDMOLECULE unnamedmoleculeamount? referenceToCompound? asAstate?);
+	: unnamedmoleculeDescription asAstate? -> ^(UNNAMEDMOLECULE unnamedmoleculeDescription asAstate?);
 
-unnamedmoleculeamount
-	:(unnamedmoleculeamount1|unnamedmoleculeamount2|unnamedmoleculeamount3|unnamedmoleculeamount4|unnamedmoleculeamount5|unnamedmoleculeamount6) ;
+unnamedmoleculeDescription
+	:(quantity inof (unnamedmoleculeamount1|unnamedmoleculeamount2 numericOrIdentifierCompoundReference? (quantity|mixture)*) |unnamedmoleculeamount3|unnamedmoleculeamount4|unnamedmoleculeamount5|unnamedmoleculeamount6|referenceToCompound) ;
 
-unnamedmoleculeamount1	:
-          jjcomp nnchementity numericOrIdentifierCompoundReference? (quantity|mixture)* ;
+unnamedmoleculeamount1
+	:  numericOrIdentifierCompoundReference (quantity|mixture)*;
 
 unnamedmoleculeamount2
-	: quantity inof nnchementity? numericOrIdentifierCompoundReference;
+	: (dtTHE | dt)? (jj|jjchem|jjcomp)* (nnstate|nn|nns|nnp|referenceToExampleCompound|nnexample|oscaronts|nnatmosphere|nnchementity|nnmixture|fw|nnps|oscarase);
 
 unnamedmoleculeamount3
+	: jjcomp nnchementity numericOrIdentifierCompoundReference? (quantity|mixture)* ;
+
+unnamedmoleculeamount4
 	: alphanumericOrIdentifierCompoundReference (citation|quantity|mixture)*;
 
 alphanumericOrIdentifierCompoundReference
   : (squareBracketedReference|identifierOrBracketedIdentifier|cdAlphanum|bracketedNumeric) -> ^(REFERENCETOCOMPOUND squareBracketedReference? identifierOrBracketedIdentifier? cdAlphanum? bracketedNumeric?);
 
-unnamedmoleculeamount4
+unnamedmoleculeamount5
 	: numberCompoundReference citation? quantity (citation|quantity|mixture)*;
 
 numberCompoundReference
   : cd -> ^(REFERENCETOCOMPOUND cd);
 
-unnamedmoleculeamount5
-	:quantity inof (jj? noun)+;
-
 unnamedmoleculeamount6
-	:(quantity|mixture) nnchementity;
+	:(quantity|mixture) jjcomp? nnchementity (quantity|mixture)*;
 
 asAstate
 	: inas dt (jj|jjchem)* nnstate quantity*;
@@ -278,6 +278,9 @@ procedureNode: method -> ^(PROCEDURE method);
 
 method:
     (nngeneral|nn)? nnmethod (identifierOrBracketedIdentifier|numeric)? | nnexample (identifierOrBracketedIdentifier|numeric) ;
+
+referenceToExampleCompound :
+	nnexample (identifierOrBracketedIdentifier|numeric) -> ^(REFERENCETOCOMPOUND nnexample identifierOrBracketedIdentifier? numeric?);
 
 advAdj
 	:adv|adj;
