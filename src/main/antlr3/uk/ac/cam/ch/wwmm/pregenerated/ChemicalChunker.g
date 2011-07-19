@@ -99,7 +99,11 @@ nounphraseStructure
 nounphraseStructure1
 	:	 multiApparatus ->  ^(MultipleApparatus multiApparatus);
 nounphraseStructure2
-	:	dtTHE? dt? advAdj*  (dissolvePhrase|ratio|noun|numeric)+    (conjunction* advAdj* (dissolvePhrase|ratio|noun|numeric) )*   ((prepphraseOf| prepphraseIN) dissolvePhrase?)*  ;
+	:	dtTHE? dt? nounphraseContent  (conjunction* nounphraseContent)* (prepphraseOf| prepphraseIN)? ;
+
+nounphraseContent
+	: advAdj*  (dissolvePhrase|ratio|noun|numeric)+;
+
 dissolvePhrase
 	:	(dissolveStructure|lrb dissolveStructure rrb) ->  ^(DissolvePhrase lrb? dissolveStructure rrb?);
 
