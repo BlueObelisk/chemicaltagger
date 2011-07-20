@@ -41,7 +41,7 @@ NN-ATMOSPHERE---(a|A)tmosphere(s)?$---Atmosphere
 NN-EQ---^([m]?eq[\.]?|(pico|nano|micro|milli|centi|deci|kilo|mega)?equiv(alent[s]?|\.)?)$---Equivalence
 NN-VOL---^([mkµ]?l|[cd]m3|(µ|pico|nano|micro|milli|centi|deci|kilo|mega)?lit(re|er)[s]?)$---Volume
 NN-VOL---^cm(-)?3$---Volume
-NN-CHEMENTITY---^precipitate$|^resin$|^adduct$|^phase(s)?$|^salt$|^material$|^retrievals$|^product$|^oligomers$|^macroinitiator(s)?$|^nanotubes$|^septum$|^initiator$|monomer$|^ice$|^petroleum|metal|^eluent$|(co)?polymer(s)?$|^ligand[s]?$|generation|solution|solvent|complex|layer|residue|gel|plug|catalyst|compound(s)?|.+®|^Å$---Chemical entities not marked up by OSCAR
+NN-CHEMENTITY---^precipitate$|^resin$|^adduct$|^phase(s)?$|^salt$|^material$|^retrievals$|^(by[\-]?)?product$|^oligomers$|^macroinitiator(s)?$|^nanotubes$|^septum$|^initiator$|monomer$|^ice$|^petroleum|metal|^eluent$|(co)?polymer(s)?$|^ligand[s]?$|generation|solution|solvent|complex|layer|residue|gel|plug|catalyst|compound(s)?|.+®|^Å$---Chemical entities not marked up by OSCAR
 NN-TEMP---(o|°|º)[cCfF]\.?$|room$|temperature$|^rt$|^RT$|^deg$|^degrees$---Temperature Token
 NN-TEMP---^K$---Temperature Token
 NN-PH---^ph$---pH Token
@@ -136,8 +136,8 @@ VB-QUENCH---(quench|terminat)(e|ed|ing)?$---Quench Verb
 VB-RECOVER---(recover|collect)(ed)?$---Recover Verb
 
 #Remove Tokens
-VB-REMOVE---(pre|re)?((decant|absorb|destroy)(s|es|ed|ing)?|(remov|evaporat)(e|s|es|ed|ing)?|withdr(aw([ns]?|ing)?|ew)|azeotrop(ed|ing))$---Remove Verb
-NN-REMOVE---(pre|re)?(removal|evaporation|evaporator)$---Remove Noun
+VB-REMOVE---(pre|re)?((decant|absorb|destroy)(s|es|ed|ing)?|(remov|consum|evaporat)(e|s|es|ed|ing)?|withdr(aw([ns]?|ing)?|ew)|azeotrop(ed|ing))$---Remove Verb
+NN-REMOVE---(pre|re)?(absor[bp]tion|destruction|removal|consumption|evaporation|evaporator)$---Remove Noun
 
 #Stir Tokens
 VB-STIR---(pre|re)?(stir)(red|ring)?---Stir Verb
