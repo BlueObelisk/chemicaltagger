@@ -406,17 +406,6 @@ public class PostProcessTags {
 
 		}
 
-		if (i != 0	&& (currentTagLC.startsWith("vb") || currentTagLC.startsWith("nn-"))) {
-
-			List<String> beforeList = Arrays.asList("stop", "rrb", "comma");
-			List<String> afterList = Arrays.asList("nnp", "nns", "nn", "nnp-acronym");
-			if (Character.isUpperCase(currentToken.charAt(0))
-					&& !stringBefore(beforeList, i, combinedTags)
-					&& stringAfter(afterList, i, combinedTags)){
-				newTag = "JJ-CHEM";
-			}
-
-		}
 		if (currentToken.equals("M")) {
 
 			List<String> beforeList = Arrays.asList("cd");

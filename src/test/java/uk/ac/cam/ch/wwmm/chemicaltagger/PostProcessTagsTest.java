@@ -200,4 +200,16 @@ public class PostProcessTagsTest {
         new PostProcessTags().correctCombinedTagsList(posContainer);
         Assert.assertEquals("JJ amber NN-STATE oil", posContainer.getTokenTagTupleAsString());
     }
+
+	//Cases where post process tags was making erroneous corrections
+	@Test
+	public void testNNMethodIsNotaJJ() {
+        POSContainer posContainer = new POSContainer();
+        List<String> tags = Arrays.asList("TO", "NN-METHOD", "NNP" , "IN-OF");
+        List<String> tokens = Arrays.asList("to", "Step", "C", "of");
+        posContainer.setCombinedTagsList(tags);
+        posContainer.setWordTokenList(tokens);
+        new PostProcessTags().correctCombinedTagsList(posContainer);
+        Assert.assertEquals("TO to NN-METHOD Step NN-IDENTIFIER C IN-OF of", posContainer.getTokenTagTupleAsString());
+    }
 }
