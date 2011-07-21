@@ -41,7 +41,7 @@ NN-ATMOSPHERE---(a|A)tmosphere(s)?$---Atmosphere
 NN-EQ---^([m]?eq[\.]?|(pico|nano|micro|milli|centi|deci|kilo|mega)?equiv(alent[s]?|\.)?)$---Equivalence
 NN-VOL---^([mkµ]?l|[cd]m3|(µ|pico|nano|micro|milli|centi|deci|kilo|mega)?lit(re|er)[s]?)$---Volume
 NN-VOL---^cm(-)?3$---Volume
-NN-CHEMENTITY---^precipitate$|^resin$|^adduct$|^phase(s)?$|^salt$|^material$|^retrievals$|^(by[\-]?)?product$|^oligomers$|^macroinitiator(s)?$|^nanotubes$|^septum$|^initiator$|monomer$|^ice$|^petroleum|metal|^eluent$|(co)?polymer(s)?$|^ligand[s]?$|generation|solution|solvent|complex|layer|residue|gel|plug|catalyst|compound(s)?|.+®|^Å$---Chemical entities not marked up by OSCAR
+NN-CHEMENTITY---^precipitate$|^reagent$|^reactant$|^resin$|^adduct$|^phase(s)?$|^salt$|^material$|^retrievals$|^(by[\-]?)?product$|^oligomers$|^macroinitiator(s)?$|^nanotubes$|^septum$|^initiator$|monomer$|^ice$|^petroleum|metal|^eluent$|(co)?polymer(s)?$|^ligand[s]?$|generation|solution|solvent|complex|layer|residue|gel|plug|catalyst|compound(s)?|.+®|^Å$---Chemical entities not marked up by OSCAR
 NN-TEMP---(o|°|º)[cCfF]\.?$|room$|temperature$|^rt$|^RT$|^deg$|^degrees$---Temperature Token
 NN-TEMP---^K$---Temperature Token
 NN-PH---^ph$---pH Token
@@ -69,7 +69,7 @@ VB-SUBJECT---^subject(ed)?---Subject Verb in past form
 #Adjective
 JJ---^round$|^bottom|^thaw$---Adjectives
 JJ---^(beige|brown|crimson|cyan|green|grey|magenta|orange|purple|violet|yellow)$---Colours that are assigned by openNLP as nouns. Some other colours that are often nouns are special cased by PostProcessTags
-JJ-CHEM---^Merrifield$|^crude$|^buffer$|^mono$|^fritted$|^glacial$|^(E|e)xcess|(A|a)mphiphilic$|(f|F)unctionalized$|(p|P)ot$|^cyclic$|(H|h)yperbranched$|^insoluble$|^(p|P)ropargyl$|Arm$|^(s|S)tar$|^anhydrous$|^aq\.?$|^organic|^(s|S)at(\.|urated)$|^(Di|Tri|di|tri|poly)block$---Chemical Adjectives
+JJ-CHEM---^Merrifield$|^crude$|^vicinal$|^buffer$|^mono$|^fritted$|^glacial$|^(E|e)xcess|(A|a)mphiphilic$|(f|F)unctionalized$|(p|P)ot$|^cyclic$|(H|h)yperbranched$|^insoluble$|^(p|P)ropargyl$|Arm$|^(s|S)tar$|^anhydrous$|^aq\.?$|^organic|^(s|S)at(\.|urated)$|^(Di|Tri|di|tri|poly)block$---Chemical Adjectives
 JJ-COMPOUND---^(resultant|title|final|initial)$---Adjectives that define unnamed compound
 #Add Tokens
 NN-ADD---^addition$---Add Noun
