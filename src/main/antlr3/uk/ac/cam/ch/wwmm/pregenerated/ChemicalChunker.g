@@ -123,7 +123,7 @@ degassMultiVerb
 
 noun 	:	nounStructure (dash nounStructure)*;
 
-nounStructure :  prp|prp_poss|citation|cycles|molecule|apparatus|mixture|unnamedmolecule|nnyield|nnstate|procedureNode|nn|nns|nnp|nnadd|preparationphrase|nnexample|range|oscaronts|nntime|nnatmosphere|tmunicode|quantity|nnchementity|nntemp|nnph|nnflash|nngeneral|nnamount|nneq|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|nnvol|nnpurify|nnsynthesize|nnmixture|squareBracketedReference|nndry|numeric|nnextract|nnfilter|nnprecipitate|nnremove|fw|sym|clause|ls|nnps|pos|oscarase;
+nounStructure :  prp|prp_poss|citation|cycles|molecule|apparatus|mixture|unnamedmolecule|nnstate|procedureNode|nn|nns|nnp|nnadd|preparationphrase|nnexample|range|oscaronts|nntime|nnatmosphere|tmunicode|quantity|nnchementity|nntemp|nnph|nnflash|nngeneral|nnamount|nneq|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|nnvol|nnpurify|nnsynthesize|nnmixture|squareBracketedReference|nndry|numeric|nnextract|nnfilter|nnprecipitate|nnremove|nnyield|fw|sym|clause|ls|nnps|pos|oscarase;
 
 // Different PrepPhrases
 
@@ -215,7 +215,7 @@ unnamedmoleculeamount3
 	: jjcomp nnchementity optionalUnnamedMoleculeEnding? ;
 
 optionalUnnamedMoleculeEnding
-	:  numericOrIdentifierCompoundReference? (quantity|mixture)*;
+	: quantity* numericOrIdentifierCompoundReference? (quantity|mixture)*;
 
 unnamedmoleculeamount4
 	: alphanumericOrIdentifierCompoundReference (citation|quantity|mixture)*;
@@ -268,7 +268,9 @@ mass	: cd+ nnmass-> ^(MASS   cd+ nnmass );
 volume	: cd+ nnvol -> ^(VOLUME   cd+ nnvol );
 logHydrogenActivity	: nnph sym? cd -> ^(PH nnph sym? cd );
 equivalent: cd+ nneq -> ^(EQUIVALENT cd+ nneq );
-yield: percent nnyield -> ^(YIELD percent nnyield );
+yield: yield1 -> ^(YIELD yield1)| yield2 -> ^(YIELD yield2);
+yield1: nnyield inof percent;
+yield2: percent nnyield ;
 percent	: numeric nn? nnpercent -> ^(PERCENT   numeric nn? nnpercent );
 
 mixture: mixtureRatio?  (mixtureStructure3|mixtureStructure2|mixtureStructure1) -> ^(MIXTURE   mixtureRatio? mixtureStructure3? mixtureStructure2? mixtureStructure1?);

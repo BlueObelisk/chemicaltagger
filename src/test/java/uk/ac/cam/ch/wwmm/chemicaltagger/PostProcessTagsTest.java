@@ -70,6 +70,28 @@ public class PostProcessTagsTest {
 	}
 	
 	@Test
+	public void testYieldAsANoun1() {
+        POSContainer posContainer = new POSContainer();
+        List<String> tags = Arrays.asList("CD", "NN-PERCENT", "VB-YIELD");
+        List<String> tokens = Arrays.asList("30", "%", "yield");
+        posContainer.setCombinedTagsList(tags);
+        posContainer.setWordTokenList(tokens);
+        new PostProcessTags().correctCombinedTagsList(posContainer);
+        Assert.assertEquals("CD 30 NN-PERCENT % NN-YIELD yield", posContainer.getTokenTagTupleAsString());
+	}
+	
+	@Test
+	public void testYieldAsANoun2() {
+        POSContainer posContainer = new POSContainer();
+        List<String> tags = Arrays.asList("VB-YIELD", "IN-OF", "CD", "NN-PERCENT");
+        List<String> tokens = Arrays.asList("yield", "of", "30", "%");
+        posContainer.setCombinedTagsList(tags);
+        posContainer.setWordTokenList(tokens);
+        new PostProcessTags().correctCombinedTagsList(posContainer);
+        Assert.assertEquals("NN-YIELD yield IN-OF of CD 30 NN-PERCENT %" , posContainer.getTokenTagTupleAsString());
+	}
+	
+	@Test
 	public void testFormAsAVerb() {
         POSContainer posContainer = new POSContainer();
         List<String> tags = Arrays.asList("VB");

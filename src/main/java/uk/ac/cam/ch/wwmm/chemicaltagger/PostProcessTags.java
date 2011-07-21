@@ -292,10 +292,11 @@ public class PostProcessTags {
 	 */
 	private String correctTaggingOfVbYield(List<String> combinedTags, int i, String currentTag) {
 		List<String> beforeList = Arrays.asList("nn-percent");
-		if (stringBefore(beforeList, i, combinedTags)) {
+		List<String> afterList = Arrays.asList("in-of");
+		if (stringBefore(beforeList, i, combinedTags) || stringAfter(afterList, i, combinedTags)) {
 			return  "NN-YIELD";
 		}
-		List<String> afterList = Arrays.asList("nn-chementity");
+		afterList = Arrays.asList("nn-chementity");
 		beforeList = Arrays.asList("dt", "dt-the");
 		if (stringAfter(afterList, i, combinedTags) && stringBefore(beforeList, i, combinedTags)){
 			return "JJ-COMPOUND";
