@@ -203,7 +203,7 @@ unnamedmolecule
 	: unnamedmoleculeDescription asAstate? -> ^(UNNAMEDMOLECULE unnamedmoleculeDescription asAstate?);
 
 unnamedmoleculeDescription
-	:(quantity inof (unnamedmoleculeamount1|unnamedmoleculeamount2 optionalUnnamedMoleculeEnding?) |unnamedmoleculeamount3|unnamedmoleculeamount4|unnamedmoleculeamount5|unnamedmoleculeamount6|referenceToCompound) ;
+	:(quantity inof (unnamedmoleculeamount1|unnamedmoleculeamount2 optionalUnnamedMoleculeEnding?) |unnamedmoleculeamount3|unnamedmoleculeamount4|unnamedmoleculeamount5|unnamedmoleculeamount6|unnamedmoleculeamount7) ;
 
 unnamedmoleculeamount1
 	:  numericOrIdentifierCompoundReference (quantity|mixture)*;
@@ -235,8 +235,8 @@ unnamedmoleculeamount6
 asAstate
 	: inas dt? (jj|jjchem)* nnstate quantity*;
 
-referenceToCompound
-	: (nnchementity | {numberLooksLikeAReferenceToACompound(input)}?) numericOrIdentifierCompoundReference;
+unnamedmoleculeamount7
+	: (nnchementity | {numberLooksLikeAReferenceToACompound(input)}?) numericOrIdentifierCompoundReference (quantity|mixture)*;
 
 numericOrIdentifierCompoundReference
   : (squareBracketedReference|identifierOrBracketedIdentifier|numericOrBracketedNumeric) -> ^(REFERENCETOCOMPOUND squareBracketedReference? identifierOrBracketedIdentifier? numericOrBracketedNumeric? );
