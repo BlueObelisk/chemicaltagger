@@ -206,7 +206,7 @@ unnamedmoleculeDescription
 	:(quantity inof (unnamedmoleculeamount1|unnamedmoleculeamount2 optionalUnnamedMoleculeEnding?) |unnamedmoleculeamount3|unnamedmoleculeamount4|unnamedmoleculeamount5|unnamedmoleculeamount6|unnamedmoleculeamount7) ;
 
 unnamedmoleculeamount1
-	:  numericOrIdentifierCompoundReference (quantity|mixture)*;
+	:  {!followedByNumberWhichIsNotAReference(input)}? numericOrIdentifierCompoundReference (quantity|mixture)*;
 
 unnamedmoleculeamount2
 	: (dtTHE | dt)? (jj|jjchem|jjcomp)* (nnstate|nn|nns|nnp|referenceToExampleCompound|nnexample|oscaronts|nnatmosphere|nnchementity|nnmixture|fw|nnps|oscarase);
@@ -215,7 +215,7 @@ unnamedmoleculeamount3
 	: jjcomp nnchementity optionalUnnamedMoleculeEnding? ;
 
 optionalUnnamedMoleculeEnding
-	: quantity* numericOrIdentifierCompoundReference? (quantity|mixture)*;
+	: quantity* ({!followedByNumberWhichIsNotAReference(input)}? numericOrIdentifierCompoundReference?) (quantity|mixture)*;
 
 unnamedmoleculeamount4
 	: alphanumericOrIdentifierCompoundReference (citation|quantity|mixture)*;
