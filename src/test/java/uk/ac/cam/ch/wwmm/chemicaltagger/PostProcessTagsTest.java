@@ -200,6 +200,28 @@ public class PostProcessTagsTest {
         new PostProcessTags().correctCombinedTagsList(posContainer);
         Assert.assertEquals("JJ amber NN-STATE oil", posContainer.getTokenTagTupleAsString());
     }
+	
+	@Test
+	public void testPrecipitateNN() {
+        POSContainer posContainer = new POSContainer();
+        List<String> tags = Arrays.asList("NN");
+        List<String> tokens = Arrays.asList("precipitate");
+        posContainer.setCombinedTagsList(tags);
+        posContainer.setWordTokenList(tokens);
+        new PostProcessTags().correctCombinedTagsList(posContainer);
+        Assert.assertEquals("NN-CHEMENTITY precipitate", posContainer.getTokenTagTupleAsString());
+    }
+	
+	@Test
+	public void testPrecipitateVB() {
+        POSContainer posContainer = new POSContainer();
+        List<String> tags = Arrays.asList("VB");
+        List<String> tokens = Arrays.asList("precipitate");
+        posContainer.setCombinedTagsList(tags);
+        posContainer.setWordTokenList(tokens);
+        new PostProcessTags().correctCombinedTagsList(posContainer);
+        Assert.assertEquals("VB-PRECIPITATE precipitate", posContainer.getTokenTagTupleAsString());
+    }
 
 	//Cases where post process tags was making erroneous corrections
 	@Test
