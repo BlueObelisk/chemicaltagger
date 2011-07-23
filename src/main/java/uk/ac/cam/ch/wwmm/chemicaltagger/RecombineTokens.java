@@ -115,7 +115,8 @@ public class RecombineTokens {
 						String previousWord = wordTokenList.get(currentIndex - 1);
 						if (Character.isDigit(previousWord.charAt(previousWord.length()-1))){
 							String wordAfterStop = wordTokenList.get(currentIndex + 2);
-							if (!Character.isUpperCase(wordAfterStop.charAt(0))){
+							//if appears to be the start of a new sentence
+							if (!Character.isUpperCase(wordAfterStop.charAt(0)) && !Character.isDigit(wordAfterStop.charAt(0))){
 								indexList = new ArrayList<Integer>();
 								indexList.add(currentIndex);
 								indexList.add(currentIndex + 1);
