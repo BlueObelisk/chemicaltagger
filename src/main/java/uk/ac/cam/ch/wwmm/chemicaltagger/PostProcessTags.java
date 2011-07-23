@@ -511,6 +511,16 @@ public class PostProcessTags {
 				newTag = "NN-IDENTIFIER";
 			}
 		}
+		
+		if (currentToken.equalsIgnoreCase("precipitate")){
+			if (currentTagLC.startsWith("nn")){
+				newTag = "NN-CHEMENTITY";
+			}
+			else if (currentTagLC.startsWith("vb")){
+				newTag = "VB-PRECIPITATE";
+			}
+			//Precipitate can also, rarely, be an adjective
+		}
 		return newTag;
 
 	}
