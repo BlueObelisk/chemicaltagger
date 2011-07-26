@@ -3,7 +3,7 @@ None: 70 % H2SO4 ( 30 mL )
 None: nitrogen 
 None: acrolein ( 1.1 mL , 13.6 mmol ) 
 None: water ( 50 mL ) 
-None: ( 500 mL ) of Na2CO3 ( 60 g ) 
+None: solution ( 500 mL ) of Na2CO3 ( 60 g ) 
 None: chloroform ( 3x200 mL ) 
 None: Na2SO4 
 None: hexanes / ethyl acetate 
