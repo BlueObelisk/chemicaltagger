@@ -189,7 +189,7 @@ molecule
 moleculeamount : (moleculeamount3| moleculeamount1 | moleculeamount2) asAstate? ;
 
 moleculeamount3
-	:(quantity|mixture) inof (dtTHE | dt)? cdRatioNode mixture? oscarCompound ;
+	:(quantity|mixture)+ inof (dtTHE | dt)? cdRatioNode mixture? oscarCompound ;
 
 moleculeamount1
 	:(nnchementity | nnstate)? (quantity|mixture)+ inof (quantity inof?)? (dtTHE | dt)? oscarCompound+ afterCompoundCitationOrQuantity;
@@ -203,7 +203,7 @@ unnamedmolecule
 	: unnamedmoleculeDescription asAstate? -> ^(UNNAMEDMOLECULE unnamedmoleculeDescription asAstate?);
 
 unnamedmoleculeDescription
-	:(quantity inof (unnamedmoleculeamount1|unnamedmoleculeamount2 optionalUnnamedMoleculeEnding?) |unnamedmoleculeamount3|unnamedmoleculeamount4|unnamedmoleculeamount5|unnamedmoleculeamount6|unnamedmoleculeamount7|unnamedmoleculeamount8) ;
+	:(quantity+ inof (unnamedmoleculeamount1|unnamedmoleculeamount2 optionalUnnamedMoleculeEnding?) |unnamedmoleculeamount3|unnamedmoleculeamount4|unnamedmoleculeamount5|unnamedmoleculeamount6|unnamedmoleculeamount7|unnamedmoleculeamount8) ;
 
 unnamedmoleculeamount1
 	:  {!followedByNumberWhichIsNotAReference(input)}? numericOrIdentifierCompoundReference (quantity|mixture)*;
@@ -230,7 +230,7 @@ numberCompoundReference
   : cd -> ^(REFERENCETOCOMPOUND cd);
 
 unnamedmoleculeamount6
-	:(quantity|mixture) jjcomp? nnchementity (quantity|mixture)*;
+	:(quantity|mixture)+ jjcomp? nnchementity (quantity|mixture)*;
 
 asAstate
 	: inas dt? (jj|jjchem)* nnstate quantity*;
@@ -239,7 +239,7 @@ unnamedmoleculeamount7
 	: (nnchementity | {numberLooksLikeAReferenceToACompound(input)}?) numericOrIdentifierCompoundReference (quantity|mixture)*;
 
 unnamedmoleculeamount8
-	: (nnchementity | nnstate) quantity+ (quantity|mixture)*;
+	: (nnchementity | nnstate) (inas dt? (jj|jjchem)* nnstate)? quantity+ (quantity|mixture)*;
 
 numericOrIdentifierCompoundReference
   : (squareBracketedReference|identifierOrBracketedIdentifier|numericOrBracketedNumeric) -> ^(REFERENCETOCOMPOUND squareBracketedReference? identifierOrBracketedIdentifier? numericOrBracketedNumeric? );
