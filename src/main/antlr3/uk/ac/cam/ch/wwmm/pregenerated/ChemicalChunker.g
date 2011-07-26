@@ -177,7 +177,7 @@ preapparatus
 
 oscaronts
 	: oscaront+ -> ^(OSCARONT   oscaront+);
-oscarCompound :  adj* oscarCompoundStructure adj? (quantity | nnchementity | {!followedByNumberWhichIsNotAReference(input)}? numericOrIdentifierCompoundReference)? quantity*;
+oscarCompound :  adj* oscarCompoundStructure adj? (quantity | nnchementity | {!followedByNumberWhichIsNotAReference(input)}? numericOrIdentifierCompoundReference)? quantity* fromProcedure?;
 
 oscarCompoundStructure: (oscarcm afterOscarCompoundStructure? | bracketedOscarCompoundStructure) -> ^(OSCARCM oscarcm? afterOscarCompoundStructure? bracketedOscarCompoundStructure?);
 afterOscarCompoundStructure: oscarcm+|(dash oscarcm+)+ dash?|(dash|apost)+;
@@ -203,7 +203,7 @@ unnamedmolecule
 	: unnamedmoleculeDescription asAstate? -> ^(UNNAMEDMOLECULE unnamedmoleculeDescription asAstate?);
 
 unnamedmoleculeDescription
-	:(quantity+ inof (unnamedmoleculeamount1|unnamedmoleculeamount2 optionalUnnamedMoleculeEnding?) |unnamedmoleculeamount3|unnamedmoleculeamount4|unnamedmoleculeamount5|unnamedmoleculeamount6|unnamedmoleculeamount7|unnamedmoleculeamount8) ;
+	:(quantity+ inof (unnamedmoleculeamount1|unnamedmoleculeamount2 optionalUnnamedMoleculeEnding?) |unnamedmoleculeamount3|unnamedmoleculeamount4|unnamedmoleculeamount5|unnamedmoleculeamount6|unnamedmoleculeamount7|unnamedmoleculeamount8) fromProcedure?;
 
 unnamedmoleculeamount1
 	:  {!followedByNumberWhichIsNotAReference(input)}? numericOrIdentifierCompoundReference (quantity|mixture)*;
@@ -286,10 +286,14 @@ mixtureContent:   (fw|verb|nn|quantity2Node|md|nnpercent|oscarCompound|molecule|
 
 minimixture: (mixtureStructure2|mixtureStructure1) -> ^(MIXTURE  mixtureStructure2? mixtureStructure1?);
 
+fromProcedure: infrom procedureNode;
+
 procedureNode: method -> ^(PROCEDURE method);
 
 method:
-    (nngeneral|nn)? nnmethod (identifierOrBracketedIdentifier|numeric)? | nnexample (identifierOrBracketedIdentifier|numeric) ;
+    ((nngeneral|nn)? nnmethod (identifierOrBracketedIdentifier|numeric)? | nnexample (identifierOrBracketedIdentifier|numeric)) (submethod | lrb submethod rrb)*;
+
+submethod : (nnmethod|nnexample) (identifierOrBracketedIdentifier|numeric);
 
 referenceToExampleCompound :
 	nnexample (identifierOrBracketedIdentifier|numeric) -> ^(REFERENCETOCOMPOUND nnexample identifierOrBracketedIdentifier? numeric?);
