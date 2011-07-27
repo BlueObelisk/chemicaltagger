@@ -586,14 +586,21 @@ public class PostProcessTrees {
 	private void findMixtureSolvents(Element actionElement) {
 		Element mixtureElement = (Element) actionElement.query(".//MIXTURE")
 				.get(0);
-		Nodes moleculeNodes = mixtureElement.query(".//OSCARCM");
-		for (int i = 0; i < moleculeNodes.size(); i++) {
+		Nodes oscarCMNodes = mixtureElement.query(".//OSCARCM");
+		for (int i = 0; i < oscarCMNodes.size(); i++) {
 
-			Element moleculeElement = (Element) moleculeNodes.get(i);
-			Element newElement = (Element) moleculeElement.copy();
-			moleculeElement.setLocalName("MOLECULE");
-			moleculeElement.removeChildren();
-			moleculeElement.appendChild(newElement);
+			Element oscarCMElement = (Element) oscarCMNodes.get(i);
+			Element moleculeElement;
+			if (((Element)oscarCMElement.getParent()).getLocalName().equals("MOLECULE")){
+				moleculeElement = (Element) oscarCMElement.getParent();
+			}
+			else{
+				Element newElement = (Element) oscarCMElement.copy();
+				oscarCMElement.setLocalName("MOLECULE");
+				oscarCMElement.removeChildren();
+				oscarCMElement.appendChild(newElement);
+				moleculeElement = oscarCMElement;
+			}
 			moleculeElement.addAttribute(new Attribute("role", "Solvent"));
 		}
 	}
