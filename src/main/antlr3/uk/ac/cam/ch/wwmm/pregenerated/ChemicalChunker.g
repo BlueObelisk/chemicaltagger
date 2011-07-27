@@ -220,26 +220,26 @@ optionalUnnamedMoleculeEnding
 unnamedmoleculeamount4
 	: alphanumericOrIdentifierCompoundReference (citation|quantity|mixture)*;
 
-alphanumericOrIdentifierCompoundReference
-  : (squareBracketedReference|identifierOrBracketedIdentifier|cdAlphanum|bracketedNumeric) -> ^(REFERENCETOCOMPOUND squareBracketedReference? identifierOrBracketedIdentifier? cdAlphanum? bracketedNumeric?);
-
 unnamedmoleculeamount5
 	: numberCompoundReference citation? quantity (citation|quantity|mixture)*;
 
-numberCompoundReference
-  : cd -> ^(REFERENCETOCOMPOUND cd);
-
 unnamedmoleculeamount6
 	:(quantity|mixture)+ jjcomp? nnchementity (quantity|mixture)*;
-
-asAstate
-	: inas dt? (jj|jjchem)* nnstate quantity*;
 
 unnamedmoleculeamount7
 	: (nnchementity | {numberLooksLikeAReferenceToACompound(input)}?) numericOrIdentifierCompoundReference (quantity|mixture)*;
 
 unnamedmoleculeamount8
 	: (nnchementity | nnstate) (inas dt? (jj|jjchem)* nnstate)? quantity+ (quantity|mixture)*;
+
+asAstate
+	: inas dt? (jj|jjchem)* nnstate quantity*;
+
+alphanumericOrIdentifierCompoundReference
+  : (squareBracketedReference|identifierOrBracketedIdentifier|cdAlphanum|bracketedNumeric) -> ^(REFERENCETOCOMPOUND squareBracketedReference? identifierOrBracketedIdentifier? cdAlphanum? bracketedNumeric?);
+
+numberCompoundReference
+  : cd -> ^(REFERENCETOCOMPOUND cd);
 
 numericOrIdentifierCompoundReference
   : (squareBracketedReference|identifierOrBracketedIdentifier|numericOrBracketedNumeric) -> ^(REFERENCETOCOMPOUND squareBracketedReference? identifierOrBracketedIdentifier? numericOrBracketedNumeric? );
