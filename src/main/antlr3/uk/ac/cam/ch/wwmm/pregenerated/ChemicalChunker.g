@@ -192,13 +192,13 @@ unnamedmolecule
 	: unnamedmoleculeDescription -> ^(UNNAMEDMOLECULE unnamedmoleculeDescription);
 
 unnamedmoleculeDescription
-	:	(quantityOf potentialUnnamedMoleculeAmount1 | quantityOf? unnamedMoleculeNotRequiringQuantityOf) afterCompoundCitationOrQuantity asAstate?;
+	:	unnamedmoleculeDescriptionStart afterCompoundCitationOrQuantity asAstate?;
+
+unnamedmoleculeDescriptionStart
+	:	quantityOf (potentialUnnamedMoleculeAmount1 | potentialUnnamedMoleculeAmount2 | definiteUnnamedMolecule ) | potentialUnnamedMoleculeAmount2 | definiteUnnamedMolecule;
 
 quantityOf
 	:	quantity+ inof? (dtTHE | dt)?;
-
-unnamedMoleculeNotRequiringQuantityOf
-	:	potentialUnnamedMoleculeAmount2 | definiteUnnamedMolecule;
 
 potentialUnnamedMoleculeAmount1
 	: potentialUnnamedMolecule quantity* asAstate? fromProcedure?;
