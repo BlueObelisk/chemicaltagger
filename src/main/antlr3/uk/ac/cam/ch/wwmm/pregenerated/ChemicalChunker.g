@@ -49,17 +49,6 @@ REFERENCETOCOMPOUND;
 
 
 @members {
-public boolean numberLooksLikeAReferenceToACompound(TokenStream stream){
-	Token previousTokenType = stream.LT(-2);
-	if (previousTokenType !=null && previousTokenType.getText().equals("IN-OF")){
-		String nextTokenText= stream.LT(3).getText();
-		if ("-LRB-".equals(nextTokenText) || "STOP".equals(nextTokenText) || "COMMA".equals(nextTokenText)){
-			return true;
-		}
-	}
-	return false;
-}
-
 public boolean followedByNumberWhichIsNotAReference(TokenStream stream){
 	if ("CD".equals(input.LT(1).getText())){
 		String tokenTypeFollowingTheCD = stream.LT(3).getText();
@@ -177,7 +166,7 @@ preapparatus
 
 oscaronts
 	: oscaront+ -> ^(OSCARONT   oscaront+);
-oscarCompound :  adj* oscarCompoundStructure adj? (quantity | nnchementity | {!followedByNumberWhichIsNotAReference(input)}? numericOrIdentifierCompoundReference)? quantity* fromProcedure?;
+oscarCompound :  adj* oscarCompoundStructure adj? (numericReferenceOrQuantity | nnchementity )? quantity* fromProcedure?;
 
 oscarCompoundStructure: (oscarcm afterOscarCompoundStructure? | bracketedOscarCompoundStructure) -> ^(OSCARCM oscarcm? afterOscarCompoundStructure? bracketedOscarCompoundStructure?);
 afterOscarCompoundStructure: oscarcm+|(dash oscarcm+)+ dash?|(dash|apost)+;
@@ -200,37 +189,38 @@ moleculeamount2
 afterCompoundCitationOrQuantity: (citation|quantity|comma (quantity1Node|citationStructure)|mixture)*;
 
 unnamedmolecule
-	: unnamedmoleculeDescription asAstate? -> ^(UNNAMEDMOLECULE unnamedmoleculeDescription asAstate?);
+	: unnamedmoleculeDescription -> ^(UNNAMEDMOLECULE unnamedmoleculeDescription);
 
 unnamedmoleculeDescription
-	:(quantity+ inof (unnamedmoleculeamount1|unnamedmoleculeamount2 optionalUnnamedMoleculeEnding?) |unnamedmoleculeamount3|unnamedmoleculeamount4|unnamedmoleculeamount5|unnamedmoleculeamount6|unnamedmoleculeamount7|unnamedmoleculeamount8) fromProcedure?;
+	:	(quantityOf potentialUnnamedMoleculeAmount1 | quantityOf? unnamedMoleculeNotRequiringQuantityOf) afterCompoundCitationOrQuantity asAstate?;
 
-unnamedmoleculeamount1
-	:  {!followedByNumberWhichIsNotAReference(input)}? numericOrIdentifierCompoundReference (quantity|mixture)*;
+quantityOf
+	:	quantity+ inof? (dtTHE | dt)?;
 
-unnamedmoleculeamount2
-	: (dtTHE | dt)? (jj|jjchem|jjcomp)* (nnstate|nn|nns|nnp|referenceToExampleCompound|nnexample|oscaronts|nnatmosphere|nnchementity|nnmixture|fw|nnps|oscarase);
+unnamedMoleculeNotRequiringQuantityOf
+	:	potentialUnnamedMoleculeAmount2 | definiteUnnamedMolecule;
 
-unnamedmoleculeamount3
-	: jjcomp nnchementity optionalUnnamedMoleculeEnding? ;
+potentialUnnamedMoleculeAmount1
+	: potentialUnnamedMolecule quantity* asAstate? fromProcedure?;
 
-optionalUnnamedMoleculeEnding
-	: quantity* ({!followedByNumberWhichIsNotAReference(input)}? numericOrIdentifierCompoundReference?) (quantity|mixture)*;
+potentialUnnamedMoleculeAmount2
+	: (numberCompoundReference quantity+ | potentialUnnamedMoleculeStructureNN numericReferenceOrQuantity quantity*) asAstate? fromProcedure?;
 
-unnamedmoleculeamount4
-	: alphanumericOrIdentifierCompoundReference (citation|quantity|mixture)*;
+definiteUnnamedMolecule
+	:	adj* definiteUnnamedMoleculeStructure quantity* asAstate? fromProcedure?;
 
-unnamedmoleculeamount5
-	: numberCompoundReference citation? quantity (citation|quantity|mixture)*;
+definiteUnnamedMoleculeStructure
+	: nnchementity numericOrIdentifierCompoundReference | alphanumericOrIdentifierCompoundReference | jjcomp nnchementity numericReferenceOrQuantity?;
 
-unnamedmoleculeamount6
-	:(quantity|mixture)+ jjcomp? nnchementity (quantity|mixture)*;
+potentialUnnamedMolecule
+	: numberCompoundReference | potentialUnnamedMoleculeStructureNN numericReferenceOrQuantity?  ;
 
-unnamedmoleculeamount7
-	: (nnchementity | {numberLooksLikeAReferenceToACompound(input)}?) numericOrIdentifierCompoundReference (quantity|mixture)*;
+potentialUnnamedMoleculeStructureNN
+	:	(jj|jjchem|jjcomp)* (nnstate|nn|nns|nnp|referenceToExampleCompound|nnexample|oscaronts|nnatmosphere|nnmixture|nnps|oscarase) | (jj|jjchem)* nnchementity;
 
-unnamedmoleculeamount8
-	: (nnchementity | nnstate) (inas dt? (jj|jjchem)* nnstate)? quantity+ (quantity|mixture)*;
+//This rule is neccesary as otherwise the parser will greedily split up a quantity into a reference and unmatched unit
+numericReferenceOrQuantity
+	:	quantity | {!followedByNumberWhichIsNotAReference(input)}? numericOrIdentifierCompoundReference;
 
 asAstate
 	: inas dt? (jj|jjchem)* nnstate quantity*;
@@ -265,12 +255,12 @@ multiple	: cd cdunicode measurementtypes? -> ^(MULTIPLE   cd cdunicode measureme
 measurementtypes
 	: molar|amount|mass|volume|logHydrogenActivity|equivalent|yield|percent;
 
-molar	: cd+ nnmolar -> ^(MOLAR   cd+ nnmolar );
-amount	: cd+ nnamount -> ^(AMOUNT   cd+ nnamount );
-mass	: cd+ nnmass-> ^(MASS   cd+ nnmass );
-volume	: cd+ nnvol -> ^(VOLUME   cd+ nnvol );
+molar	: cd nnmolar -> ^(MOLAR   cd nnmolar );
+amount	: cd nnamount -> ^(AMOUNT   cd nnamount );
+mass	: cd nnmass-> ^(MASS   cd nnmass );
+volume	: cd nnvol -> ^(VOLUME   cd nnvol );
 logHydrogenActivity	: nnph sym? cd -> ^(PH nnph sym? cd );
-equivalent: cd+ nneq -> ^(EQUIVALENT cd+ nneq );
+equivalent: cd nneq -> ^(EQUIVALENT cd nneq );
 yield: yield1 -> ^(YIELD yield1)| yield2 -> ^(YIELD yield2);
 yield1: nnyield inof percent;
 yield2: percent nnyield ;
