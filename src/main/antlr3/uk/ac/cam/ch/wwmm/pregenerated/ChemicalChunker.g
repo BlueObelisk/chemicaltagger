@@ -204,7 +204,7 @@ potentialUnnamedMoleculeAmount1
 	: potentialUnnamedMolecule quantity* asAstate? fromProcedure?;
 
 potentialUnnamedMoleculeAmount2
-	: (numberCompoundReference quantity+ | potentialUnnamedMoleculeStructureNN numericReferenceOrQuantity quantity*) asAstate? fromProcedure?;
+	: (numberCompoundReference (quantity | asAstate) | potentialUnnamedMoleculeStructureNN (numericReferenceOrQuantity | asAstate) ) quantity* asAstate? fromProcedure?;
 
 definiteUnnamedMolecule
 	:	adj* definiteUnnamedMoleculeStructure quantity* asAstate? fromProcedure?;
@@ -272,7 +272,7 @@ mixtureStructure1: lrb mixtureContent rrb;
 mixtureStructure3
 	:	lrb  nnpercent rrb;
 
-mixtureContent:   (fw|verb|nn|quantity2Node|md|nnpercent|oscarCompound|molecule|unnamedmolecule|dash|sym|noun|inAll|cd|comma|adj|colon|stop) (minimixture|fw|verb|quantity2Node|nnyield|md|nnpercent|oscarCompound|molecule|unnamedmolecule|dash|sym|noun|inAll|cd|comma|adj|colon|stop)+ ;
+mixtureContent:   (verb|nn|quantity2Node|md|nnpercent|oscarCompound|molecule|unnamedmolecule|dash|sym|noun|inAll|cd|comma|adj|colon|stop) (minimixture|verb|quantity2Node|nnyield|md|nnpercent|oscarCompound|molecule|unnamedmolecule|dash|sym|noun|inAll|cd|comma|adj|colon|stop)+ ;
 
 minimixture: (mixtureStructure2|mixtureStructure1) -> ^(MIXTURE  mixtureStructure2? mixtureStructure1?);
 
