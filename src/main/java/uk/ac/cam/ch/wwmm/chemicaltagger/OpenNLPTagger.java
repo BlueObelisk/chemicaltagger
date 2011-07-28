@@ -117,6 +117,8 @@ public class OpenNLPTagger implements Tagger{
 				posTagList.add("COLON");
 			} else if (posTag.equals("#")) {
 				posTagList.add("NN");
+			} else if (posTag.equals("``")) {
+				posTagList.add("FW");
 			} else {
 				posTagList.add(posTag);
 			}
