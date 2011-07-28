@@ -19,8 +19,6 @@ package uk.ac.cam.ch.wwmm.chemicaltagger;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.commons.lang.StringUtils;
-
 import uk.ac.cam.ch.wwmm.oscar.Oscar;
 
 

@@ -188,6 +188,15 @@ public class GrammarRecognitionTest {
 		assertEquals("Exactly one sentence was expected", true, hasOneSentence(doc));
 		assertEquals("An unnamedMolecule child was expected", true, hasOneUnnamedMoleculeInNounPhrase(doc));
 	}
+	
+	@Test
+	public void unnamedMoleculeP8() {
+		ChemistrySentenceParser sentenceParser =  new ChemistrySentenceParser("CD 5 IN-AS as DT an JJ-CHEM off-white NN-STATE solid ");
+		sentenceParser.parseTags();
+		Document doc = sentenceParser.makeXMLDocument();
+		assertEquals("Exactly one sentence was expected", true, hasOneSentence(doc));
+		assertEquals("An unnamedMolecule child was expected", true, hasOneUnnamedMoleculeInNounPhrase(doc));
+	}
 
 	private boolean hasOneSentence(Document doc) {
 		Elements children = doc.getRootElement().getChildElements();
