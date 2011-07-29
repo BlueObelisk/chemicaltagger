@@ -197,6 +197,24 @@ public class GrammarRecognitionTest {
 		assertEquals("Exactly one sentence was expected", true, hasOneSentence(doc));
 		assertEquals("An unnamedMolecule child was expected", true, hasOneUnnamedMoleculeInNounPhrase(doc));
 	}
+	
+	@Test
+	public void unnamedMoleculeP9() {
+		ChemistrySentenceParser sentenceParser =  new ChemistrySentenceParser("NN-CHEMENTITY product IN-OF of NN-EXAMPLE example CD 5");
+		sentenceParser.parseTags();
+		Document doc = sentenceParser.makeXMLDocument();
+		assertEquals("Exactly one sentence was expected", true, hasOneSentence(doc));
+		assertEquals("An unnamedMolecule child was expected", true, hasOneUnnamedMoleculeInNounPhrase(doc));
+	}
+	
+	@Test
+	public void unnamedMoleculeP10() {
+		ChemistrySentenceParser sentenceParser =  new ChemistrySentenceParser("NN-STATE oil IN-FROM from NN-EXAMPLE example CD 5");
+		sentenceParser.parseTags();
+		Document doc = sentenceParser.makeXMLDocument();
+		assertEquals("Exactly one sentence was expected", true, hasOneSentence(doc));
+		assertEquals("An unnamedMolecule child was expected", true, hasOneUnnamedMoleculeInNounPhrase(doc));
+	}
 
 	private boolean hasOneSentence(Document doc) {
 		Elements children = doc.getRootElement().getChildElements();

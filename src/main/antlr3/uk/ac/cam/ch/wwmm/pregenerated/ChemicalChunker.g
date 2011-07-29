@@ -58,6 +58,14 @@ public boolean followedByNumberWhichIsNotAReference(TokenStream stream){
 	}
 	return false;
 }
+
+public boolean precededByProduct(TokenStream stream){
+	Token previousToken = stream.LT(-1);
+	if (previousToken !=null && previousToken.getText().equalsIgnoreCase("product")){
+		return true;
+	}
+	return false;
+}
 }
 
 WS :  (' ')+ {skip();};
@@ -204,7 +212,7 @@ potentialUnnamedMoleculeAmount1
 	: potentialUnnamedMolecule quantity* asAstate? fromProcedure?;
 
 potentialUnnamedMoleculeAmount2
-	: (numberCompoundReference (quantity | asAstate) | potentialUnnamedMoleculeStructureNN (numericReferenceOrQuantity | asAstate) ) quantity* asAstate? fromProcedure?;
+	: (numberCompoundReference (quantity | asAstate ) | potentialUnnamedMoleculeStructureNN (numericReferenceOrQuantity | asAstate | fromProcedure) ) quantity* asAstate? fromProcedure?;
 
 definiteUnnamedMolecule
 	:	adj* definiteUnnamedMoleculeStructure quantity* asAstate? fromProcedure?;
@@ -264,7 +272,7 @@ equivalent: cd nneq -> ^(EQUIVALENT cd nneq );
 yield: yield1 -> ^(YIELD yield1)| yield2 -> ^(YIELD yield2);
 yield1: nnyield inof percent;
 yield2: percent nnyield ;
-percent	: numeric nn? nnpercent -> ^(PERCENT   numeric nn? nnpercent );
+percent	: cd nn? nnpercent ( dash cd nnpercent)? -> ^(PERCENT   cd nn? nnpercent dash? cd? nnpercent?);
 
 mixture: cdRatioNode?  (mixtureStructure3|mixtureStructure2|mixtureStructure1) -> ^(MIXTURE cdRatioNode? mixtureStructure3? mixtureStructure2? mixtureStructure1?);
 mixtureStructure2: comma lrb mixtureContent rrb comma;
@@ -276,12 +284,12 @@ mixtureContent:   (verb|nn|quantity2Node|md|nnpercent|oscarCompound|molecule|unn
 
 minimixture: (mixtureStructure2|mixtureStructure1) -> ^(MIXTURE  mixtureStructure2? mixtureStructure1?);
 
-fromProcedure: infrom procedureNode;
+fromProcedure: (infrom | {precededByProduct(input)}? inof) procedureNode;
 
 procedureNode: method -> ^(PROCEDURE method);
 
 method:
-    ((nngeneral|nn)? nnmethod (identifierOrBracketedIdentifier|numeric)? | nnexample (identifierOrBracketedIdentifier|numeric)) (submethod | lrb submethod rrb)*;
+    ((nngeneral|nn)? nnmethod (identifierOrBracketedIdentifier|numeric)? | nnexample (identifierOrBracketedIdentifier|numeric)) ( (comma |colon)? submethod | lrb submethod rrb)*;
 
 submethod : (nnmethod|nnexample) (identifierOrBracketedIdentifier|numeric);
 
