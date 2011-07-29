@@ -138,4 +138,16 @@ public class NormaliseTest {
 		String normalisedText = Formatter.normaliseText("235-238\u00b0 C.)");
 		assertEquals("235-238 \u00b0C. )", normalisedText);
 	}
+	
+	@Test	
+	public void testSplitPercentSign1() {
+		String normalisedText = Formatter.normaliseText("30%");
+		assertEquals("30 %", normalisedText);
+	}
+	
+	@Test	
+	public void testSplitPercentSign2() {
+		String normalisedText = Formatter.normaliseText("25%-30%");
+		assertEquals("25 % - 30 %", normalisedText);
+	}
 }
