@@ -31,11 +31,11 @@ import org.xmlcml.euclid.Util;
  */
 public class Formatter {
 	
-	private static List<String> ABV_LIST = Arrays.asList("et.", "al.", "etc.", "e.g.", "i.e.", "vol.", "ca.", "wt.", "aq.", "mt.", "e.g.:", "eq.", "equiv.", "mp.");
+	private static List<String> ABV_LIST = Arrays.asList("et.", "al.", "etc.", "e.g.", "i.e.", "vol.", "ca.", "wt.", "aq.", "mt.", "e.g.:", "eq.", "equiv.", "mp.", "conc.");
 	private static Pattern WHITESPACE_PATTERN = Pattern.compile("\\s+");
 	private static Pattern ABBREVIATION_PATTERN = Pattern.compile("-?[A-Z]+[a-z]*\\.");
 	//Note \d[gl] are intentionally excluded to avoid ambiguity with compound references
-	private static Pattern CONCAT_AMOUNT_PATTERN = Pattern.compile("[~]?\\d*\\.?(\\d(\\d+|\\.\\d+|\\d*[mk\u00b5])(g|l|hPa)[s]?|(\\d+[mnk\u00b5]?([LMN]|[eE][qQ][\\.]?|[cCdD][mM]3|[gG][rR][aA][mM][mM]?[eE]?|[mM][oO][lL][eE]?)[sS]?))$");
+	private static Pattern CONCAT_AMOUNT_PATTERN = Pattern.compile("[~]?\\d*\\.?(\\d(\\d+|\\.\\d+|\\d*[mk\u00b5u])(g|l|hPa)[s]?|(\\d+[mnk\u00b5u]?([LMN]|[eE][qQ][\\.]?|[cCdD][mM]3|[gG][rR][aA][mM][mM]?[eE]?|[mM][oO][lL][eE]?)[sS]?))$");
 	private static Pattern CONCAT_PH_PATTERN = Pattern.compile("^pH-?\\d+");
 	private static Pattern CONCAT_TEMP_PATTERN = Pattern.compile("\\d+(o|\u00b0|\u00ba)[cCfF][\\.]?");
 	private static Pattern CONCAT_HYPHENED_DIRECTION_PATTERN = Pattern.compile("^[A-Z]\\-\\d+");
