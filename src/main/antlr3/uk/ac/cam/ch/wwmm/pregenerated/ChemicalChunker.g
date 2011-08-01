@@ -66,6 +66,17 @@ public boolean precededByProduct(TokenStream stream){
 	}
 	return false;
 }
+
+public boolean suitableVbYieldOrSynthesizeForReference(TokenStream stream){
+	Token nextTokenType = stream.LT(1);
+	if ("VB-YIELD".equals(nextTokenType.getText()) || "VB-SYNTHESIZE".equals(nextTokenType.getText())){
+		String nextTokenText = stream.LT(2).getText();
+		if (nextTokenText !=null && nextTokenText.toLowerCase().endsWith("ed")){
+			return true;
+		}
+	}
+	return false;
+}
 }
 
 WS :  (' ')+ {skip();};
@@ -284,7 +295,7 @@ mixtureContent:   (verb|nn|quantity2Node|md|nnpercent|oscarCompound|molecule|unn
 
 minimixture: (mixtureStructure2|mixtureStructure1) -> ^(MIXTURE  mixtureStructure2? mixtureStructure1?);
 
-fromProcedure: (infrom | {precededByProduct(input)}? inof) procedureNode;
+fromProcedure: (infrom | {precededByProduct(input)}? inof | {suitableVbYieldOrSynthesizeForReference(input)}? (vbyield|vbsynthesize) (inin|inby|infrom)) procedureNode;
 
 procedureNode: method -> ^(PROCEDURE method);
 
