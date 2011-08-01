@@ -281,7 +281,7 @@ volume	: cd nnvol -> ^(VOLUME   cd nnvol );
 logHydrogenActivity	: nnph sym? cd -> ^(PH nnph sym? cd );
 equivalent: cd nneq -> ^(EQUIVALENT cd nneq );
 yield: yield1 -> ^(YIELD yield1)| yield2 -> ^(YIELD yield2);
-yield1: nnyield inof percent;
+yield1: nnyield (inof|colon) percent;
 yield2: percent nnyield ;
 percent	: cd nn? nnpercent ( dash cd nnpercent)? -> ^(PERCENT   cd nn? nnpercent dash? cd? nnpercent?);
 

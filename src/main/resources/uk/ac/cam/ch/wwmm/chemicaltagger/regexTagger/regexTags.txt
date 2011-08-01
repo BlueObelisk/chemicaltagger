@@ -57,7 +57,7 @@ NN-TIMES---^(t|T)imes$---Times Token
 NN-EXAMPLE---^example[s]?$---Example Token
 NN-IDENTIFIER---^(X{2,3}(IX|IV|V?I{0,3})|II|III|IV|VI|VII|VIII|IX|XI|XII|XIII|XIV|XV|XVI|XVII|XVIII|XIX)$---Non words that are believed to be identifiers. Single letter roman digits are assigned by PostProcessTags
 NN-IDENTIFIER---^(\d+[a-z]\-\d*[a-z])$---Identifiers for a range of compounds e.g. 12a-12e or 12a-e
-NN-IDENTIFIER---^\d+\(a-z\)$---e.g. 81(d)
+NN-IDENTIFIER---^\d+\([a-z]\)$---e.g. 81(d)
 
 CD-ALPHANUM---^\d+[A-Za-z]$-----A number followed by a letter. Could be used as an anaphora
 
@@ -86,7 +86,7 @@ VB-TREAT---^treat(e|s|ed|ing)?$---Treat Verb
                     
 #Apparatus Tokens
 VB-APPARATUS---(^equip|^seal|clos|^cap|^fitt)(ped|ed|e)?$---Apparatus Verb
-NN-APPARATUS---^trap$|^neck$|^valve$|^adapter$|^inlet|^outlet|^condenser$|^stirrer$|^reactor$|^syringe$|^bath$|^oven$|^vessel$|^glove|^box$|^bar$|^tube$|^(S|s)chlenk$|^(F|f)lask(s)?$|^(F|f)unnel?$|^desiccator(s)?$---Apparatus Nouns
+NN-APPARATUS---^rotavap$|^trap$|^neck$|^valve$|^adapter$|^inlet|^outlet|^condenser$|^stirrer$|^reactor$|^syringe$|^bath$|^oven$|^vessel$|^glove|^box$|^bar$|^tube$|^(S|s)chlenk$|^(F|f)lask(s)?$|^(F|f)unnel?$|^desiccator(s)?$---Apparatus Nouns
 #Concentrate Tokens
 VB-CONCENTRATE---(^concentrat|^saturat)(ed|e|ing)?$---Concentrate Verb
 NN-CONCENTRATE---^concentration---Concentrate Noun
