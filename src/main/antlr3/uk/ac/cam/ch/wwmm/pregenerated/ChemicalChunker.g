@@ -235,7 +235,7 @@ potentialUnnamedMolecule
 	: numberCompoundReference | potentialUnnamedMoleculeStructureNN numericReferenceOrQuantity?  ;
 
 potentialUnnamedMoleculeStructureNN
-	:	(jj|jjchem|jjcomp)* (nnstate|nn|nns|nnp|referenceToExampleCompound|nnexample|oscaronts|nnatmosphere|nnmixture|nnps|oscarase) | (jj|jjchem)* nnchementity;
+	:	(jj|jjchem|jjcomp)* (nnstate|referenceToExampleCompound|nnexample|oscaronts|nnatmosphere|nnmixture|oscarase) | (jj|jjchem)* nnchementity;
 
 //This rule is neccesary as otherwise the parser will greedily split up a quantity into a reference and unmatched unit
 numericReferenceOrQuantity
