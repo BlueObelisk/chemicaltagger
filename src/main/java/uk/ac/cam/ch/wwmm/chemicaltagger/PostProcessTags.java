@@ -293,9 +293,7 @@ public class PostProcessTags {
 	private String correctTaggingOfVbYield(List<String> combinedTags, int i, String currentTag) {
 		List<String> beforeList = Arrays.asList("nn-percent");//e.g. 30% yield
 		List<String> afterList = Arrays.asList("in-of", "colon");//e.g. yield of 30% /yield :30%
-		List<String> twoAfterList = Arrays.asList("cd");
-		if (stringBefore(beforeList, i, combinedTags)
-				|| ( stringAfter(afterList, i, combinedTags) && string2after(twoAfterList, i, combinedTags))) {
+		if (stringBefore(beforeList, i, combinedTags) || ( stringAfter(afterList, i, combinedTags))) {
 			return  "NN-YIELD";
 		}
 
