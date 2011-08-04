@@ -248,7 +248,8 @@ alphanumericOrIdentifierCompoundReference
   : (squareBracketedReference|identifierOrBracketedIdentifier|cdAlphanum|bracketedNumeric) -> ^(REFERENCETOCOMPOUND squareBracketedReference? identifierOrBracketedIdentifier? cdAlphanum? bracketedNumeric?);
 
 numberCompoundReference
-  : cd -> ^(REFERENCETOCOMPOUND cd);
+  : ((quantity) => identifierOrBracketedIdentifier | cd) -> ^(REFERENCETOCOMPOUND identifierOrBracketedIdentifier? cd?);
+//antlr is unable to determine that identifierOrBracketedIdentifier will fail and hence will not try the cd alternative unless the quantity syntactic predicate failed (this behaviour seems inconsistent with the idea of backtracking...)
 
 numericOrIdentifierCompoundReference
   : (squareBracketedReference|identifierOrBracketedIdentifier|numericOrBracketedNumeric) -> ^(REFERENCETOCOMPOUND squareBracketedReference? identifierOrBracketedIdentifier? numericOrBracketedNumeric? );
