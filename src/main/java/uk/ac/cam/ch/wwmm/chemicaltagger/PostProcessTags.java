@@ -113,6 +113,14 @@ public class PostProcessTags {
 				newTag = "NN-CHEMENTITY";
 			}
 		}
+		
+		if (currentToken.equalsIgnoreCase("formula")){
+			List<String> afterList = Arrays.asList("cd", "cd-alphanum", "nn-identifier");
+			if (stringAfter(afterList, i, combinedTags)){
+				newTag = "NN-CHEMENTITY";
+			}
+		}
+		
 		List<String> colours = Arrays.asList("amber", "bronze", "cream", "fawn", "gold", "ivory", "lavender", "tan");
 		if (colours.contains(currentToken.toLowerCase())){
 			if (stringAfter(Arrays.asList("nn-state"), i, combinedTags)){

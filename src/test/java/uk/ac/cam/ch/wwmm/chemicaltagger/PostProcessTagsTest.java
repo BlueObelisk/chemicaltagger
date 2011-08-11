@@ -222,6 +222,17 @@ public class PostProcessTagsTest {
         new PostProcessTags().correctCombinedTagsList(posContainer);
         Assert.assertEquals("VB-PRECIPITATE precipitate", posContainer.getTokenTagTupleAsString());
     }
+	
+	@Test
+	public void testFormulasAsAChementity() {
+        POSContainer posContainer = new POSContainer();
+        List<String> tags = Arrays.asList("NN", "CD");
+        List<String> tokens = Arrays.asList("formula", "5");
+        posContainer.setCombinedTagsList(tags);
+        posContainer.setWordTokenList(tokens);
+        new PostProcessTags().correctCombinedTagsList(posContainer);
+        Assert.assertEquals("NN-CHEMENTITY formula CD 5", posContainer.getTokenTagTupleAsString());
+    }
 
 	//Cases where post process tags was making erroneous corrections
 	@Test
