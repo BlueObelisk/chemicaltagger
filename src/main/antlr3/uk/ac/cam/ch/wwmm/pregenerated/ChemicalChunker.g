@@ -197,7 +197,7 @@ molecule
 moleculeamount : (moleculeamount3| moleculeamount1 | moleculeamount2) asAstate? ;
 
 moleculeamount3
-	:(quantity|mixture)+ inof (dtTHE | dt)? cdRatioNode mixture? oscarCompound ;
+	:(quantity|mixture)+ inof (dtTHE | dt)? ratio mixture? oscarCompound ;
 
 moleculeamount1
 	:(nnchementity | nnstate)? (quantity|mixture)+ inof (quantity inof?)? (dtTHE | dt)? oscarCompound+ afterCompoundCitationOrQuantity;
@@ -286,7 +286,7 @@ yield1: nnyield (inof|colon) percent;
 yield2: percent nnyield ;
 percent	: cd nn? nnpercent ( dash cd nnpercent)? -> ^(PERCENT   cd nn? nnpercent dash? cd? nnpercent?);
 
-mixture: cdRatioNode?  (mixtureStructure3|mixtureStructure2|mixtureStructure1) -> ^(MIXTURE cdRatioNode? mixtureStructure3? mixtureStructure2? mixtureStructure1?);
+mixture: ratio?  (mixtureStructure3|mixtureStructure2|mixtureStructure1) -> ^(MIXTURE ratio? mixtureStructure3? mixtureStructure2? mixtureStructure1?);
 mixtureStructure2: comma lrb mixtureContent rrb comma;
 mixtureStructure1: lrb mixtureContent rrb;
 mixtureStructure3
@@ -315,12 +315,9 @@ range: numeric dash numeric;
 cycles	:	cycleStructure -> ^(CYCLES cycleStructure)  ;
 cycleStructure	:	cd dashNN? nncycle;
 dashNN	:	(adj|nn|cd) (dash (adj|nn|cd))*;
-ratio : cdRatioNode | nounratio -> ^(RATIO nounratio);
 
-cdRatioNode : cdRatio -> ^(RATIO cdRatio);
+ratio : cdRatio -> ^(RATIO cdRatio);
 cdRatio : cd (colon cd)+;
-nounratio
-	:	 noun  (colon noun)+  ;
 
 citation:  citationStructure|comma citationContent comma;
 
