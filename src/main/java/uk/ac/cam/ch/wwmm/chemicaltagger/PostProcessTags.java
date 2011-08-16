@@ -512,11 +512,14 @@ public class PostProcessTags {
 		}
 		
 		//Identifies a capital letter or single character roman number that is likely to be an identifier
-		if (currentToken.length()==1 && 
-				(Character.isUpperCase(currentToken.charAt(0)) || isValidSingleLetterRomanNumber(currentToken.charAt(0)))){
-			List<String> beforeList = Arrays.asList("nn-example", "nn-method");
-			if (stringBefore(beforeList, i, combinedTags) ||
-					(stringBefore(Arrays.asList("-lrb-"), i, combinedTags) &&  stringAfter(Arrays.asList("-rrb-"), i, combinedTags))){
+		if (currentToken.length()==1 && Character.isLetter(currentToken.charAt(0))){
+			List<String> beforeBracket = Arrays.asList("-lrb-");
+			List<String> afterBracket = Arrays.asList("-rrb-");
+			if ((stringBefore(beforeBracket, i, combinedTags) || i==0) && stringAfter(afterBracket, i, combinedTags)){
+				newTag = "NN-IDENTIFIER";
+			}
+			List<String> beforeList = Arrays.asList("nn-example", "nn-method", "nn-chementity", "in-of" );
+			if (stringBefore(beforeList, i, combinedTags) && !isEnglishUseOfAorI(currentToken.charAt(0), i, combinedTags) ){
 				newTag = "NN-IDENTIFIER";
 			}
 		}
@@ -535,12 +538,25 @@ public class PostProcessTags {
 	}
 
 	/**
-	 * Is this the roman for 1, 5 or 10
+	 * Does this appear to be a valid use of a/A/I
 	 * @param charac
+	 * @param i
+	 * @param combinedTags
 	 * @return
 	 */
-	private boolean isValidSingleLetterRomanNumber(char charac) {
-		return (charac == 'i' || charac == 'I' || charac == 'v' || charac == 'V' || charac == 'x' || charac == 'X');
+	private boolean isEnglishUseOfAorI(char charac, int i, List<String> combinedTags) {
+		List<String> stopOrColon = Arrays.asList("stop", "colon");
+		if (charac =='A' || charac =='I'){
+			if (i==0 || stringBefore(stopOrColon, i, combinedTags)){
+				return true;
+			}
+		}
+		else if (charac =='a'){
+			if (i!=0 && !stringBefore(stopOrColon, i, combinedTags) && !stringAfter(stopOrColon, i, combinedTags)){
+				return true;
+			}
+		}
+		return false;
 	}
 
 	/******************************************
