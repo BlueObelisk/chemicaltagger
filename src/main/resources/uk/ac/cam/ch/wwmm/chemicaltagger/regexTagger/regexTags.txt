@@ -31,7 +31,7 @@ TO---^to$|^To$---The preposition 'TO'
 FW---^et(.)?$|^al(.)?$
 #Nouns
 NN---^wt\.$---Weight
-NN-STATE---powder|glass|liquid|oil|solid|gas|syrup|crystal|gum|needle|prisms---Physical States
+NN-STATE---powder|foam|glass|liquid|oil|solid|gas|syrup|crystal|gum|needle|prisms---Physical States
 NN-TIME---^period[s]?$|^min(utes|s|\.)?$|^hour[s]?|^month[s]?|^week(s|end)?$|^seconds$|^d$|^(?-i:h)$|^days$|.*night|hr[s]?|^time$---Time Token
 #In cases where the number directly precedes the quantity the Formatter will insert a space
 NN-MASS---^([mkµu]?(g|gram[m]?[e]?)|(pico|nano|micro|milli|centi|deci|kilo|mega)gram[m]?[e]?)[s]?$---Grams
