@@ -84,9 +84,9 @@ TOKEN : (~' ')+;
 
 
 
-document: sentences+-> ^(Sentence  sentences )+ ;
+document: sentence+-> ^(Sentence  sentence )+ ;
 
-sentences:  (sentenceStructure|unmatchedPhrase)+ stop*;
+sentence:  (procedureNounPhrase|sentenceStructure|unmatchedPhrase) (sentenceStructure|unmatchedPhrase)* stop*;
 
 sentenceStructure:  (nounphrase|verbphrase|prepphrase|prepphraseAfter)+ (advAdj|colon)* (conjunction|rbconj|comma)*;
 
@@ -98,6 +98,21 @@ unmatchedToken //all base tokens other than stop
 	nnexample|nnstate|nntime|nnmass|nnmolar|nnamount|nnatmosphere|nneq|nnvol|nnchementity|nntemp|nnph|nnflash|nngeneral|nnmethod|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|
 	oscarcm|oscaronts|oscarase|verb|nnadd|nnmixture|nnapparatus|nnconcentrate|nndry|nnextract|nnfilter|nnprecipitate|nnpurify|nnremove|nnsynthesize|nnyield|colon|apost|neg|dash|nnpercent|lsqb|rsqb|lrb|rrb|
 	cc|dt|dtTHE|fw|md|nn|nns|nnp|prp|prp_poss|rbconj|sym|uh|clause|comma|ls|nnps|pos|nnidentifier);
+
+procedureNounPhrase
+	: headingProcedure  -> ^(NounPhrase  headingProcedure);
+
+headingProcedure
+	: headingProcedureRequiringTerminator headingProcedureTerminators | bracketedHeadingProcedure headingProcedureTerminators?;
+
+headingProcedureRequiringTerminator
+	: (nnidentifier|numeric) -> ^(PROCEDURE nnidentifier? numeric?);
+
+bracketedHeadingProcedure
+	: (bracketedIdentifier | bracketedNumeric | squareBracketedReference) -> ^(PROCEDURE bracketedIdentifier? bracketedNumeric? squareBracketedReference?);
+
+headingProcedureTerminators
+	: rrb|stop|colon;
 
 nounphrase
 	:	nounphraseStructure ->  ^(NounPhrase  nounphraseStructure);
