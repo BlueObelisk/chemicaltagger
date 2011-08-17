@@ -268,6 +268,17 @@ public class PostProcessTagsTest {
     }
 	
 	@Test
+	public void testLetterAbbreviation() {
+        POSContainer posContainer = new POSContainer();
+        List<String> tags = Arrays.asList("NN-TIME", "-LRB-", "DT", "-RRB-");
+        List<String> tokens = Arrays.asList("hours", "(", "h", ")");
+        posContainer.setCombinedTagsList(tags);
+        posContainer.setWordTokenList(tokens);
+        new PostProcessTags().correctCombinedTagsList(posContainer);
+        Assert.assertEquals("NN-TIME hours -LRB- ( NN-TIME h -RRB- )", posContainer.getTokenTagTupleAsString());
+    }
+	
+	@Test
 	public void testNounUsedAsAnAdjectiveColour() {
         POSContainer posContainer = new POSContainer();
         List<String> tags = Arrays.asList("NN", "NN-STATE");

@@ -465,7 +465,7 @@ public class PostProcessTags {
 		if (currentTagLC.startsWith("jj")
 				|| currentTagLC.startsWith("nnp")) {
 			List<String> afterList = Arrays.asList("nn-campaign");
-			if ((stringAfter(afterList, i, combinedTags) || string2after(
+			if ((stringAfter(afterList, i, combinedTags) || string2After(
 					afterList, i, combinedTags))
 					&& Character.isUpperCase(currentToken.charAt(0))) {
 				newTag = "NNP";
@@ -487,7 +487,7 @@ public class PostProcessTags {
 
 			List<String> after2List = Arrays.asList("nnp");
 			if (stringAfter(afterList, i, combinedTags)
-					&& (string2after(after2List, i, combinedTags))) {
+					&& (string2After(after2List, i, combinedTags))) {
 				newTag = "VB";
 			}
 		}
@@ -513,13 +513,32 @@ public class PostProcessTags {
 		
 		//Identifies a capital letter or single character roman number that is likely to be an identifier
 		if (currentToken.length()==1 && Character.isLetter(currentToken.charAt(0))){
+			char charac = currentToken.charAt(0);
 			List<String> beforeBracket = Arrays.asList("-lrb-");
 			List<String> afterBracket = Arrays.asList("-rrb-");
 			if ((stringBefore(beforeBracket, i, combinedTags) || i==0) && stringAfter(afterBracket, i, combinedTags)){
-				newTag = "NN-IDENTIFIER";
+				//could be an abbreviation
+				if ((charac =='d' || charac =='D' || charac =='h' || charac =='s') && string2Before(Arrays.asList("nn-time"), i, combinedTags)){
+					newTag = "NN-TIME";
+				}
+				else if (charac =='g' && string2Before(Arrays.asList("nn-mass"), i, combinedTags)){
+					newTag = "NN-MASS";
+				}
+				else if (charac =='K' && string2Before(Arrays.asList("nn-temp"), i, combinedTags)){
+					newTag = "NN-TEMP";
+				}
+				else if ((charac =='l' || charac =='L') && string2Before(Arrays.asList("nn-vol"), i, combinedTags)){
+					newTag = "NN-VOL";
+				}
+				else if ((charac =='g' || charac =='l' || charac =='s') && string2Before(Arrays.asList("oscar-cm"), i, combinedTags)){
+					newTag = "NN-STATE";//state symbol i.e. gas/liquid/solid
+				}
+				else{
+					newTag = "NN-IDENTIFIER";
+				}
 			}
 			List<String> beforeList = Arrays.asList("nn-example", "nn-method", "nn-chementity", "in-of" );
-			if (stringBefore(beforeList, i, combinedTags) && !isEnglishUseOfAorI(currentToken.charAt(0), i, combinedTags) ){
+			if (stringBefore(beforeList, i, combinedTags) && !isEnglishUseOfAorI(charac, i, combinedTags) ){
 				newTag = "NN-IDENTIFIER";
 			}
 		}
@@ -581,7 +600,7 @@ public class PostProcessTags {
 	}
 
 	/***********************************
-	 * A boolean function that checks for the tokens before the current token.
+	 * A boolean function that checks for the token before the current token.
 	 * 
 	 * @param beforeList (List<String>)
 	 * @param index (Integer)
@@ -599,9 +618,29 @@ public class PostProcessTags {
 		}
 		return false;
 	}
+	
+	/***********************************
+	 * A boolean function that checks for the token two before the current token.
+	 * 
+	 * @param beforeList (List<String>)
+	 * @param index (Integer)
+	 * @param combinedTags (List<String>)
+	 * @return boolean
+	 ***********************************/
+	private boolean string2Before(List<String> beforeList, int index,
+			List<String> combinedTags) {
+		
+		if (index > 1) {
+			int before2Index = index - 2;
+			if (beforeList.contains(combinedTags.get(before2Index).toLowerCase())) {
+				return true;
+			}
+		}
+		return false;
+	}
 
 	/**********************************
-	 * A boolean function that checks for the tokens after the current token.
+	 * A boolean function that checks for the token after the current token.
 	 * 
 	 * @param afterList (List<String>)
 	 * @param index (Integer)
@@ -621,7 +660,7 @@ public class PostProcessTags {
 	}
 
 	/**********************************
-	 * A boolean function that checks for what the tokens after the current
+	 * A boolean function that checks for what the token after the current
 	 * token starts with.
 	 * 
 	 * @param afterList (List<String>)
@@ -644,14 +683,14 @@ public class PostProcessTags {
 	}
 
 	/**********************************
-	 * A boolean function that checks for the tokens after the current token.
+	 * A boolean function that checks for the token two after the current token.
 	 * 
 	 * @param afterList (List<String>)
 	 * @param index (Integer)
 	 * @param combinedTags (List<String>)
 	 * @return boolean
 	 **********************************/
-	private boolean string2after(List<String> afterList, int index,
+	private boolean string2After(List<String> afterList, int index,
 			List<String> combinedTags) {
 
 		int after2Index = index + 2;
