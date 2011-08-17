@@ -49,8 +49,12 @@ REFERENCETOCOMPOUND;
 
 
 @members {
+public boolean isAtTokenPositionZero(TokenStream stream){
+	return stream.index()==0;
+}
+
 public boolean followedByNumberWhichIsNotAReference(TokenStream stream){
-	if ("CD".equals(input.LT(1).getText())){
+	if ("CD".equals(stream.LT(1).getText())){
 		String tokenTypeFollowingTheCD = stream.LT(3).getText();
 		if ("NN-TIMES".equals(tokenTypeFollowingTheCD) || "COLON".equals(tokenTypeFollowingTheCD)){
 			return true;
@@ -86,7 +90,7 @@ TOKEN : (~' ')+;
 
 document: sentence+-> ^(Sentence  sentence )+ ;
 
-sentence:  (procedureNounPhrase|sentenceStructure|unmatchedPhrase) (sentenceStructure|unmatchedPhrase)* stop*;
+sentence: procedureNounPhrase | (sentenceStructure|unmatchedPhrase)+ stop*;
 
 sentenceStructure:  (nounphrase|verbphrase|prepphrase|prepphraseAfter)+ (advAdj|colon)* (conjunction|rbconj|comma)*;
 
@@ -99,8 +103,8 @@ unmatchedToken //all base tokens other than stop
 	oscarcm|oscaronts|oscarase|verb|nnadd|nnmixture|nnapparatus|nnconcentrate|nndry|nnextract|nnfilter|nnprecipitate|nnpurify|nnremove|nnsynthesize|nnyield|colon|apost|neg|dash|nnpercent|lsqb|rsqb|lrb|rrb|
 	cc|dt|dtTHE|fw|md|nn|nns|nnp|prp|prp_poss|rbconj|sym|uh|clause|comma|ls|nnps|pos|nnidentifier);
 
-procedureNounPhrase
-	: headingProcedure  -> ^(NounPhrase  headingProcedure);
+procedureNounPhrase //only allowed at the start of the document
+	: {isAtTokenPositionZero(input)}? headingProcedure  -> ^(NounPhrase  headingProcedure);
 
 headingProcedure
 	: headingProcedureRequiringTerminator headingProcedureTerminators | bracketedHeadingProcedure headingProcedureTerminators?;
