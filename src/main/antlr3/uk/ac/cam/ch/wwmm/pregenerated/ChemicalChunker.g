@@ -110,7 +110,7 @@ nounphraseStructure2
 	:	dtTHE? dt? nounphraseContent  (conjunction* nounphraseContent)* (prepphraseOf| prepphraseIN)? ;
 
 nounphraseContent
-	: advAdj*  (dissolvePhrase|ratio|noun|numeric)+;
+	: advAdj*  (dissolvePhrase|ratioOrBracketedRatio|noun|numeric)+;
 
 dissolvePhrase
 	:	(dissolveStructure|lrb dissolveStructure rrb) ->  ^(DissolvePhrase lrb? dissolveStructure rrb?);
@@ -188,7 +188,7 @@ oscaronts
 oscarCompound :  adj* oscarCompoundStructure adj? (numericReferenceOrQuantity | nnchementity )? quantity* fromProcedure?;
 
 oscarCompoundStructure: (oscarcm afterOscarCompoundStructure? | bracketedOscarCompoundStructure) -> ^(OSCARCM oscarcm? afterOscarCompoundStructure? bracketedOscarCompoundStructure?);
-afterOscarCompoundStructure: oscarcm+|(dash oscarcm+)+ dash?|(dash|apost)+;
+afterOscarCompoundStructure: oscarcm+|(dash oscarcm+)+ dash?|((colon oscarcm+)+ ratioOrBracketedRatio)=>(colon oscarcm+)+|(dash|apost)+;
 bracketedOscarCompoundStructure :	lrb  oscarcm+ rrb;
 
 molecule
@@ -197,7 +197,7 @@ molecule
 moleculeamount : (moleculeamount3| moleculeamount1 | moleculeamount2) asAstate? ;
 
 moleculeamount3
-	:(quantity|mixture)+ inof (dtTHE | dt)? ratio mixture? oscarCompound ;
+	:(quantity|mixture)+ inof (dtTHE | dt)? ratioOrBracketedRatio mixture? oscarCompound ;
 
 moleculeamount1
 	:(nnchementity | nnstate)? (quantity|mixture)+ inof (quantity inof?)? (dtTHE | dt)? oscarCompound+ afterCompoundCitationOrQuantity;
@@ -286,15 +286,14 @@ yield1: nnyield (inof|colon) percent;
 yield2: percent nnyield ;
 percent	: cd nn? nnpercent ( dash cd nnpercent)? -> ^(PERCENT   cd nn? nnpercent dash? cd? nnpercent?);
 
-mixture: ratio?  (mixtureStructure3|mixtureStructure2|mixtureStructure1) -> ^(MIXTURE ratio? mixtureStructure3? mixtureStructure2? mixtureStructure1?);
+mixture: ratio?  (mixtureStructure1|mixtureStructure2|mixtureStructure3) -> ^(MIXTURE ratio? mixtureStructure1? mixtureStructure2? mixtureStructure3?);
+mixtureStructure1: lrb (nnpercent|ratio) rrb;
 mixtureStructure2: comma lrb mixtureContent rrb comma;
-mixtureStructure1: lrb mixtureContent rrb;
-mixtureStructure3
-	:	lrb  nnpercent rrb;
+mixtureStructure3: lrb mixtureContent rrb;
 
 mixtureContent:   (verb|nn|quantity2Node|md|nnpercent|oscarCompound|molecule|unnamedmolecule|dash|sym|noun|inAll|cd|comma|adj|colon|stop) (minimixture|verb|quantity2Node|nnyield|md|nnpercent|oscarCompound|molecule|unnamedmolecule|dash|sym|noun|inAll|cd|comma|adj|colon|stop)+ ;
 
-minimixture: (mixtureStructure2|mixtureStructure1) -> ^(MIXTURE  mixtureStructure2? mixtureStructure1?);
+minimixture: (mixtureStructure2|mixtureStructure3) -> ^(MIXTURE  mixtureStructure2? mixtureStructure3?);
 
 fromProcedure: (infrom | {precededByProduct(input)}? inof | {suitableVbYieldOrSynthesizeForReference(input)}? (vbyield|vbsynthesize) (inin|inby|infrom)) procedureNode;
 
@@ -316,6 +315,7 @@ cycles	:	cycleStructure -> ^(CYCLES cycleStructure)  ;
 cycleStructure	:	cd dashNN? nncycle;
 dashNN	:	(adj|nn|cd) (dash (adj|nn|cd))*;
 
+ratioOrBracketedRatio : lrb ratio rrb | ratio;
 ratio : cdRatio -> ^(RATIO cdRatio);
 cdRatio : cd (colon cd)+;
 
