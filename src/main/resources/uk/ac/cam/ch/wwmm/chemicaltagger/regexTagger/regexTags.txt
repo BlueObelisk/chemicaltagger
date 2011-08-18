@@ -57,6 +57,7 @@ NN-TIMES---^(t|T)imes$---Times Token
 NN-EXAMPLE---^example[s]?$---Example Token
 NN-IDENTIFIER---^(X{2,3}(IX|IV|V?I{0,3})|II|III|IV|VI|VII|VIII|IX|XI|XII|XIII|XIV|XV|XVI|XVII|XVIII|XIX)$---Non words that are believed to be identifiers. Single letter roman digits are assigned by PostProcessTags
 NN-IDENTIFIER---^(\d+[a-z]\-\d*[a-z])$---Identifiers for a range of compounds e.g. 12a-12e or 12a-e
+NN-IDENTIFIER---^\d+\.(\d+[\.]?[a-z]|[a-z])$---e.g. 4.3a or 4.3.a or 4.b
 NN-IDENTIFIER---^\d+\(([a-z]|X{2,3}(IX|IV|V?I{0,3})|II|III|IV|VI|VII|VIII|IX|XI|XII|XIII|XIV|XV|XVI|XVII|XVIII|XIX)\)$---e.g. 81(d) or 3(iii)
 
 CD-ALPHANUM---^\d+[A-Za-z]$-----A number followed by a letter. Could be used as an anaphora
