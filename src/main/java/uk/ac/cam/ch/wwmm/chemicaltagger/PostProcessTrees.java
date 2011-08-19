@@ -233,11 +233,11 @@ public class PostProcessTrees {
 		boolean seenVerbOrAtionNoun = false;// a verb or a noun like
 											// purification
 		Element actionPhrase = null;
-		for (int i = 0; i < sentenceNode.getChildCount(); i++) {
+		Elements sentenceChildren = sentenceNode.getChildElements();
+		for (int i = 0; i < sentenceChildren.size(); i++) {
+			Element phraseElement = sentenceChildren.get(i);
 
-			Element phraseElement = (Element) sentenceNode.getChild(i);
-
-			String actionElementName = findFirstActionElementName(phraseElement);
+			String actionElementName = findFirstActionElementNameOutsideOfAMolecule(phraseElement);
 			if (actionElementName != null
 					|| phraseElement.getLocalName().equals("VerbPhrase")) {
 				if (seenVerbOrAtionNoun) {
@@ -663,11 +663,14 @@ public class PostProcessTrees {
 	 * the actionMap or null if none of their names are present in the
 	 * actionMap.
 	 * 
+	 * Molecule and UnnamedMolecule elements are not recursively investigated to prevent
+	 * mistakes such as "Compound obtained from example 4" which is not a yield
+	 * 
 	 * @param startingElement
 	 *            (Element)
 	 * @return elementName (String)
 	 **********************************************************************/
-	private String findFirstActionElementName(Element startingElement) {
+	private String findFirstActionElementNameOutsideOfAMolecule(Element startingElement) {
 		LinkedList<Element> stack = new LinkedList<Element>();
 		Elements children = startingElement.getChildElements();
 		for (int i = children.size() - 1; i >= 0; i--) {
@@ -678,6 +681,9 @@ public class PostProcessTrees {
 			String elementName = currentElement.getLocalName();
 			if (actionMap.containsKey(elementName)) {
 				return elementName;
+			}
+			if (elementName.equals("UNNAMEDMOLECULE")|| elementName.equals("MOLECULE")){
+				continue;
 			}
 			children = currentElement.getChildElements();
 			for (int i = children.size() - 1; i >= 0; i--) {

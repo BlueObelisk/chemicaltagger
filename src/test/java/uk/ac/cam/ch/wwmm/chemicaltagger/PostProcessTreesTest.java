@@ -189,6 +189,18 @@ public class PostProcessTreesTest {
 		Document doc = Utils.runChemicalTagger(sentence);
 		Assert.assertEquals(1,doc.query(".//ActionPhrase[@type='ApparatusAction']").size());
 	}
-
-
+	
+	@Test
+	public void testVbYieldButNotAYieldPhrase1(){
+		String sentence = "The pyridine obtained in step 1";
+		Document doc = Utils.runChemicalTagger(sentence);
+		Assert.assertEquals(0,doc.query(".//ActionPhrase[@type='Yield']").size());
+	}
+	
+	@Test
+	public void testVbYieldButNotAYieldPhrase2(){
+		String sentence = "The compound obtained in step 1";
+		Document doc = Utils.runChemicalTagger(sentence);
+		Assert.assertEquals(0,doc.query(".//ActionPhrase[@type='Yield']").size());
+	}
 }
