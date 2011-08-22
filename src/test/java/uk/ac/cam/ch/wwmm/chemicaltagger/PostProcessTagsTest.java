@@ -333,4 +333,15 @@ public class PostProcessTagsTest {
         new PostProcessTags().correctCombinedTagsList(posContainer);
         Assert.assertEquals("TO to NN-METHOD Step NN-IDENTIFIER C IN-OF of", posContainer.getTokenTagTupleAsString());
     }
+	
+	@Test
+	public void testVBYieldIsNotaJJ() {
+        POSContainer posContainer = new POSContainer();
+        List<String> tags = Arrays.asList("OSCAR-CM", "VB-YIELD", "OSCAR-CM");
+        List<String> tokens = Arrays.asList("hexane", "provided", "2-chloropyridine");
+        posContainer.setCombinedTagsList(tags);
+        posContainer.setWordTokenList(tokens);
+        new PostProcessTags().correctCombinedTagsList(posContainer);
+        Assert.assertEquals("OSCAR-CM hexane VB-YIELD provided OSCAR-CM 2-chloropyridine", posContainer.getTokenTagTupleAsString());
+    }
 }

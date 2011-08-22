@@ -319,7 +319,7 @@ fromProcedure: (infrom | {precededByProduct(input)}? inof | {suitableVbYieldOrSy
 procedureNode: method -> ^(PROCEDURE method);
 
 method:
-    ((nngeneral|nn)? nnmethod (identifierOrBracketedIdentifier|numeric)? | nnexample (identifierOrBracketedIdentifier|numeric)) ( (comma |colon)? submethod | lrb submethod rrb)*;
+    ((nngeneral|nn)? nnmethod (identifierOrBracketedIdentifier|numeric)? | nnexample (identifierOrBracketedIdentifier|numeric)) ( (comma |colon |inof | infrom)? submethod | lrb submethod rrb)*;
 
 submethod : (nnmethod|nnexample) (identifierOrBracketedIdentifier|numeric);
 

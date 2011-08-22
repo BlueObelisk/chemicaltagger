@@ -253,7 +253,11 @@ public class PostProcessTags {
 			List<String> beforeList = Arrays.asList("dt", "dt-the", "cd", "oscar-cm");
 	
 			List<String> notList = Arrays.asList("in-of");
-			if (stringAfter(afterList, i, combinedTags) && stringBefore(beforeList, i, combinedTags)) {
+			if(currentTagLC.equals("vb-yield") && stringAfter(Arrays.asList("oscar-cm"), i, combinedTags) 
+					&& stringBefore(Arrays.asList("oscar-cm"), i, combinedTags)){
+				//special case to avoid a known mistag. This function should probably be reduced in scope
+			}
+			else if (stringAfter(afterList, i, combinedTags) && stringBefore(beforeList, i, combinedTags)) {
 				newTag = "JJ";
 			}
 			else if (currentToken.toLowerCase().endsWith("ing") && stringBefore(beforeList, i, combinedTags) && !stringAfter(notList, i, combinedTags)) {
