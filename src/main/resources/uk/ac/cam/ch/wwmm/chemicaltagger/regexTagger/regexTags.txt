@@ -47,7 +47,7 @@ NN-TEMP---^K$---Temperature Token
 NN-PH---^ph$---pH Token
 NN-FLASH---^flash$---Flash
 NN-GENERAL---^general$---General term
-NN-METHOD---^(instructions|procedure|technique|method|scheme|step)[s]?$---Method token       
+NN-METHOD---^(instructions|procedure|technique|method|scheme|step|stage)[s]?$---Method token       
 NN-PRESSURE---^pressure$---Pressure Token
 NN-COLUMN---^(c|C)?olumn$---Column Token 
 NN-CHROMATOGRAPHY---^(c|C)?hromatography$---Chromatography Token 
