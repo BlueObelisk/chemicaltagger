@@ -486,7 +486,8 @@ public class PostProcessTags {
 			char charac = currentToken.charAt(0);
 			List<String> beforeBracket = Arrays.asList("-lrb-");
 			List<String> afterBracket = Arrays.asList("-rrb-");
-			if ((stringBefore(beforeBracket, i, combinedTags) || i==0) && stringAfter(afterBracket, i, combinedTags)){
+			if ((stringBefore(beforeBracket, i, combinedTags) || i==0) && stringAfter(afterBracket, i, combinedTags)
+					|| (i==0 && stringAfter(Arrays.asList(".", ":"), i, tokenList))){
 				//could be an abbreviation
 				if ((charac =='d' || charac =='D' || charac =='h' || charac =='s') && string2Before(Arrays.asList("nn-time"), i, combinedTags)){
 					return "NN-TIME";
