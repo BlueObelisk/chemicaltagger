@@ -54,7 +54,7 @@ public class PostProcessTagsTest {
         List<String> tokens = Arrays.asList("44\u00B011'");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
-        new PostProcessTags().correctCombinedTagsList(posContainer);
+        new PostProcessTags(posContainer).correctCombinedTagsList();
         Assert.assertEquals("NN 44\u00B011'", posContainer.getTokenTagTupleAsString());
 	}
 	
@@ -65,7 +65,7 @@ public class PostProcessTagsTest {
         List<String> tokens = Arrays.asList("The", "yielded", "product");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
-        new PostProcessTags().correctCombinedTagsList(posContainer);
+        new PostProcessTags(posContainer).correctCombinedTagsList();
         Assert.assertEquals("DT-THE The JJ-CHEM yielded NN-CHEMENTITY product", posContainer.getTokenTagTupleAsString());
 	}
 	
@@ -76,7 +76,7 @@ public class PostProcessTagsTest {
         List<String> tokens = Arrays.asList("30", "%", "yield");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
-        new PostProcessTags().correctCombinedTagsList(posContainer);
+        new PostProcessTags(posContainer).correctCombinedTagsList();
         Assert.assertEquals("CD 30 NN-PERCENT % NN-YIELD yield", posContainer.getTokenTagTupleAsString());
 	}
 	
@@ -87,7 +87,7 @@ public class PostProcessTagsTest {
         List<String> tokens = Arrays.asList("yield", "of", "30", "%");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
-        new PostProcessTags().correctCombinedTagsList(posContainer);
+        new PostProcessTags(posContainer).correctCombinedTagsList();
         Assert.assertEquals("NN-YIELD yield IN-OF of CD 30 NN-PERCENT %" , posContainer.getTokenTagTupleAsString());
 	}
 	
@@ -98,7 +98,7 @@ public class PostProcessTagsTest {
         List<String> tokens = Arrays.asList("form");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
-        new PostProcessTags().correctCombinedTagsList(posContainer);
+        new PostProcessTags(posContainer).correctCombinedTagsList();
         Assert.assertEquals("VB-YIELD form", posContainer.getTokenTagTupleAsString());
 	}
 	
@@ -109,7 +109,7 @@ public class PostProcessTagsTest {
         List<String> tokens = Arrays.asList("example", "A");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
-        new PostProcessTags().correctCombinedTagsList(posContainer);
+        new PostProcessTags(posContainer).correctCombinedTagsList();
         Assert.assertEquals("NN-EXAMPLE example NN-IDENTIFIER A", posContainer.getTokenTagTupleAsString());
 	}
 	
@@ -120,7 +120,7 @@ public class PostProcessTagsTest {
         List<String> tokens = Arrays.asList("In", "this", "example", "a", "flask");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
-        new PostProcessTags().correctCombinedTagsList(posContainer);
+        new PostProcessTags(posContainer).correctCombinedTagsList();
         Assert.assertEquals("IN-IN In DT this NN-EXAMPLE example DT a NN-APPARATUS flask", posContainer.getTokenTagTupleAsString());
 	}
 	
@@ -131,7 +131,7 @@ public class PostProcessTagsTest {
         List<String> tokens = Arrays.asList("step", "B");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
-        new PostProcessTags().correctCombinedTagsList(posContainer);
+        new PostProcessTags(posContainer).correctCombinedTagsList();
         Assert.assertEquals("NN-METHOD step NN-IDENTIFIER B", posContainer.getTokenTagTupleAsString());
     }
 	
@@ -142,7 +142,7 @@ public class PostProcessTagsTest {
         List<String> tokens = Arrays.asList("step", "b");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
-        new PostProcessTags().correctCombinedTagsList(posContainer);
+        new PostProcessTags(posContainer).correctCombinedTagsList();
         Assert.assertEquals("NN-METHOD step NN-IDENTIFIER b", posContainer.getTokenTagTupleAsString());
     }
 	
@@ -153,7 +153,7 @@ public class PostProcessTagsTest {
         List<String> tokens = Arrays.asList("procedure", "E");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
-        new PostProcessTags().correctCombinedTagsList(posContainer);
+        new PostProcessTags(posContainer).correctCombinedTagsList();
         Assert.assertEquals("NN-METHOD procedure NN-IDENTIFIER E", posContainer.getTokenTagTupleAsString());
     }
 	
@@ -164,9 +164,31 @@ public class PostProcessTagsTest {
         List<String> tokens = Arrays.asList("(", "A", ")");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
-        new PostProcessTags().correctCombinedTagsList(posContainer);
+        new PostProcessTags(posContainer).correctCombinedTagsList();
         Assert.assertEquals("-LRB- ( NN-IDENTIFIER A -RRB- )", posContainer.getTokenTagTupleAsString());
     }
+	
+//	@Test
+//	public void testLetterLabelledProcedure5() {
+//        POSContainer posContainer = new POSContainer();
+//        List<String> tags = Arrays.asList("DT", "STOP");
+//        List<String> tokens = Arrays.asList("a", ".");
+//        posContainer.setCombinedTagsList(tags);
+//        posContainer.setWordTokenList(tokens);
+//        new PostProcessTags(posContainer).correctCombinedTagsList();
+//        Assert.assertEquals("NN-IDENTIFIER a STOP .", posContainer.getTokenTagTupleAsString());
+//    }
+//	
+//	@Test
+//	public void testLetterLabelledProcedure6() {
+//        POSContainer posContainer = new POSContainer();
+//        List<String> tags = Arrays.asList("DT", "COLON");
+//        List<String> tokens = Arrays.asList("a", ":");
+//        posContainer.setCombinedTagsList(tags);
+//        posContainer.setWordTokenList(tokens);
+//        new PostProcessTags(posContainer).correctCombinedTagsList();
+//        Assert.assertEquals("NN-IDENTIFIER a COLON :", posContainer.getTokenTagTupleAsString());
+//    }
 	
 	@Test
 	public void testRomanNumberLabelledProcedure1() {
@@ -175,7 +197,7 @@ public class PostProcessTagsTest {
         List<String> tokens = Arrays.asList("procedure", "i");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
-        new PostProcessTags().correctCombinedTagsList(posContainer);
+        new PostProcessTags(posContainer).correctCombinedTagsList();
         Assert.assertEquals("NN-METHOD procedure NN-IDENTIFIER i", posContainer.getTokenTagTupleAsString());
     }
 	
@@ -186,7 +208,7 @@ public class PostProcessTagsTest {
         List<String> tokens = Arrays.asList("procedure", "X");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
-        new PostProcessTags().correctCombinedTagsList(posContainer);
+        new PostProcessTags(posContainer).correctCombinedTagsList();
         Assert.assertEquals("NN-METHOD procedure NN-IDENTIFIER X", posContainer.getTokenTagTupleAsString());
     }
 	
@@ -197,7 +219,7 @@ public class PostProcessTagsTest {
         List<String> tokens = Arrays.asList("(", "i", ")");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
-        new PostProcessTags().correctCombinedTagsList(posContainer);
+        new PostProcessTags(posContainer).correctCombinedTagsList();
         Assert.assertEquals("-LRB- ( NN-IDENTIFIER i -RRB- )", posContainer.getTokenTagTupleAsString());
     }
 	
@@ -208,7 +230,7 @@ public class PostProcessTagsTest {
         List<String> tokens = Arrays.asList("i", ")");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
-        new PostProcessTags().correctCombinedTagsList(posContainer);
+        new PostProcessTags(posContainer).correctCombinedTagsList();
         Assert.assertEquals("NN-IDENTIFIER i -RRB- )", posContainer.getTokenTagTupleAsString());
     }
 	
@@ -219,7 +241,7 @@ public class PostProcessTagsTest {
         List<String> tokens = Arrays.asList("compound", "X");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
-        new PostProcessTags().correctCombinedTagsList(posContainer);
+        new PostProcessTags(posContainer).correctCombinedTagsList();
         Assert.assertEquals("NN-CHEMENTITY compound NN-IDENTIFIER X", posContainer.getTokenTagTupleAsString());
     }
 	
@@ -230,7 +252,7 @@ public class PostProcessTagsTest {
         List<String> tokens = Arrays.asList("50", "g", "of", "a", ".");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
-        new PostProcessTags().correctCombinedTagsList(posContainer);
+        new PostProcessTags(posContainer).correctCombinedTagsList();
         Assert.assertEquals("CD 50 NN-MASS g IN-OF of NN-IDENTIFIER a STOP .", posContainer.getTokenTagTupleAsString());
      }
 	
@@ -241,7 +263,7 @@ public class PostProcessTagsTest {
         List<String> tokens = Arrays.asList("50", "g", "of", "a", "brown", "liquid");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
-        new PostProcessTags().correctCombinedTagsList(posContainer);
+        new PostProcessTags(posContainer).correctCombinedTagsList();
         Assert.assertEquals("CD 50 NN-MASS g IN-OF of DT a JJ brown NN-STATE liquid", posContainer.getTokenTagTupleAsString());
     }
 	
@@ -252,7 +274,7 @@ public class PostProcessTagsTest {
         List<String> tokens = Arrays.asList("a", ")");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
-        new PostProcessTags().correctCombinedTagsList(posContainer);
+        new PostProcessTags(posContainer).correctCombinedTagsList();
         Assert.assertEquals("NN-IDENTIFIER a -RRB- )", posContainer.getTokenTagTupleAsString());
     }
 	
@@ -263,7 +285,7 @@ public class PostProcessTagsTest {
         List<String> tokens = Arrays.asList("(", "a", ")");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
-        new PostProcessTags().correctCombinedTagsList(posContainer);
+        new PostProcessTags(posContainer).correctCombinedTagsList();
         Assert.assertEquals("-LRB- ( NN-IDENTIFIER a -RRB- )", posContainer.getTokenTagTupleAsString());
     }
 	
@@ -274,7 +296,7 @@ public class PostProcessTagsTest {
         List<String> tokens = Arrays.asList("hours", "(", "h", ")");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
-        new PostProcessTags().correctCombinedTagsList(posContainer);
+        new PostProcessTags(posContainer).correctCombinedTagsList();
         Assert.assertEquals("NN-TIME hours -LRB- ( NN-TIME h -RRB- )", posContainer.getTokenTagTupleAsString());
     }
 	
@@ -285,7 +307,7 @@ public class PostProcessTagsTest {
         List<String> tokens = Arrays.asList("amber", "oil");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
-        new PostProcessTags().correctCombinedTagsList(posContainer);
+        new PostProcessTags(posContainer).correctCombinedTagsList();
         Assert.assertEquals("JJ amber NN-STATE oil", posContainer.getTokenTagTupleAsString());
     }
 	
@@ -296,7 +318,7 @@ public class PostProcessTagsTest {
         List<String> tokens = Arrays.asList("precipitate");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
-        new PostProcessTags().correctCombinedTagsList(posContainer);
+        new PostProcessTags(posContainer).correctCombinedTagsList();
         Assert.assertEquals("NN-CHEMENTITY precipitate", posContainer.getTokenTagTupleAsString());
     }
 	
@@ -307,7 +329,7 @@ public class PostProcessTagsTest {
         List<String> tokens = Arrays.asList("precipitate");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
-        new PostProcessTags().correctCombinedTagsList(posContainer);
+        new PostProcessTags(posContainer).correctCombinedTagsList();
         Assert.assertEquals("VB-PRECIPITATE precipitate", posContainer.getTokenTagTupleAsString());
     }
 	
@@ -318,7 +340,7 @@ public class PostProcessTagsTest {
         List<String> tokens = Arrays.asList("formula", "5");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
-        new PostProcessTags().correctCombinedTagsList(posContainer);
+        new PostProcessTags(posContainer).correctCombinedTagsList();
         Assert.assertEquals("NN-CHEMENTITY formula CD 5", posContainer.getTokenTagTupleAsString());
     }
 
@@ -330,7 +352,7 @@ public class PostProcessTagsTest {
         List<String> tokens = Arrays.asList("to", "Step", "C", "of");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
-        new PostProcessTags().correctCombinedTagsList(posContainer);
+        new PostProcessTags(posContainer).correctCombinedTagsList();
         Assert.assertEquals("TO to NN-METHOD Step NN-IDENTIFIER C IN-OF of", posContainer.getTokenTagTupleAsString());
     }
 	
@@ -341,7 +363,7 @@ public class PostProcessTagsTest {
         List<String> tokens = Arrays.asList("hexane", "provided", "2-chloropyridine");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
-        new PostProcessTags().correctCombinedTagsList(posContainer);
+        new PostProcessTags(posContainer).correctCombinedTagsList();
         Assert.assertEquals("OSCAR-CM hexane VB-YIELD provided OSCAR-CM 2-chloropyridine", posContainer.getTokenTagTupleAsString());
     }
 }

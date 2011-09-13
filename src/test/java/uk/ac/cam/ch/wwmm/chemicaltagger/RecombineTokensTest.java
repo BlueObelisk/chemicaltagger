@@ -88,7 +88,7 @@ public class RecombineTokensTest {
 		posContainer = RecombineTokens.recombineTokens(posContainer);
 		int afterRecombined = posContainer.getCombinedTagsList().size();
 		Assert.assertNotSame(beforeRecombined, afterRecombined);
-		posContainer =  new PostProcessTags().correctCombinedTagsList(posContainer);
+		new PostProcessTags(posContainer).correctCombinedTagsList();
 		Assert.assertEquals("Combined all the hyphenated words",expectedOutput, posContainer.getTokenTagTupleAsString());
 	}
 	
@@ -108,7 +108,7 @@ public class RecombineTokensTest {
 		posContainer = RecombineTokens.recombineTokens(posContainer);
 		int afterRecombined = posContainer.getCombinedTagsList().size();
 		Assert.assertNotSame(beforeRecombined, afterRecombined);
-		posContainer =  new PostProcessTags().correctCombinedTagsList(posContainer);
+		new PostProcessTags(posContainer).correctCombinedTagsList();
 		Assert.assertEquals("Combined all the hyphenated words",expectedOutput, posContainer.getTokenTagTupleAsString());
 	}
 
@@ -130,7 +130,7 @@ public class RecombineTokensTest {
 		posContainer = RecombineTokens.recombineTokens(posContainer);
 		int afterRecombined = posContainer.getCombinedTagsList().size();
 		Assert.assertNotSame(beforeRecombined, afterRecombined);
-		posContainer =  new PostProcessTags().correctCombinedTagsList(posContainer);
+		new PostProcessTags(posContainer).correctCombinedTagsList();
 		Assert.assertEquals("Combined all the hyphenated words",expectedOutput, posContainer.getTokenTagTupleAsString());
 	}
 
@@ -150,7 +150,7 @@ public class RecombineTokensTest {
 		posContainer = RecombineTokens.recombineTokens(posContainer);
 		int afterRecombined = posContainer.getCombinedTagsList().size();
 		Assert.assertNotSame(beforeRecombined, afterRecombined);
-		posContainer =  new PostProcessTags().correctCombinedTagsList(posContainer);
+		new PostProcessTags(posContainer).correctCombinedTagsList();
 		Assert.assertEquals("Combined all the hyphenated words",expectedOutput, posContainer.getTokenTagTupleAsString());
 	}
 	
@@ -172,7 +172,7 @@ public class RecombineTokensTest {
 		posContainer = RecombineTokens.recombineTokens(posContainer);
 		int afterRecombined = posContainer.getCombinedTagsList().size();
 		Assert.assertNotSame(beforeRecombined, afterRecombined);
-		posContainer =  new PostProcessTags().correctCombinedTagsList(posContainer);
+		new PostProcessTags(posContainer).correctCombinedTagsList();
 		Assert.assertEquals("Combined all the hyphenated words",expectedOutput, posContainer.getTokenTagTupleAsString());
 	}
 	
@@ -189,7 +189,7 @@ public class RecombineTokensTest {
 		posContainer.registerTagList(regexTagger.runTagger(posContainer.getWordTokenList(), inputSentence));
 		posContainer.registerTagList(openNLPTagger.runTagger(posContainer.getWordTokenList(), inputSentence));
 		posContainer.combineTaggers();
-		posContainer =  new PostProcessTags().correctCombinedTagsList(posContainer);
+		new PostProcessTags(posContainer).correctCombinedTagsList();
 		Assert.assertEquals("Combined all the hyphenated words",expectedOutput, posContainer.getTokenTagTupleAsString());
 	}
 	
@@ -208,7 +208,7 @@ public class RecombineTokensTest {
 		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""),StringUtils.join(posContainer.getWordTokenList().listIterator(),"").toLowerCase());
 		posContainer.combineTaggers();
 		posContainer = RecombineTokens.recombineTokens(posContainer);
-		posContainer =  new PostProcessTags().correctCombinedTagsList(posContainer);
+		new PostProcessTags(posContainer).correctCombinedTagsList();
 		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""),StringUtils.join(posContainer.getWordTokenList().listIterator(),"").toLowerCase());
 	
 
@@ -230,7 +230,7 @@ public class RecombineTokensTest {
 		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""),StringUtils.join(posContainer.getWordTokenList().listIterator(),"").toLowerCase());
 		posContainer.combineTaggers();
 		posContainer = RecombineTokens.recombineTokens(posContainer);
-		posContainer =  new PostProcessTags().correctCombinedTagsList(posContainer);
+		new PostProcessTags(posContainer).correctCombinedTagsList();
 		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""),StringUtils.join(posContainer.getWordTokenList().listIterator(),"").toLowerCase());
 	}
 }
