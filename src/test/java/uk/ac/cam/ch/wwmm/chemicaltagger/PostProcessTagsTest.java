@@ -168,27 +168,27 @@ public class PostProcessTagsTest {
         Assert.assertEquals("-LRB- ( NN-IDENTIFIER A -RRB- )", posContainer.getTokenTagTupleAsString());
     }
 	
-//	@Test
-//	public void testLetterLabelledProcedure5() {
-//        POSContainer posContainer = new POSContainer();
-//        List<String> tags = Arrays.asList("DT", "STOP");
-//        List<String> tokens = Arrays.asList("a", ".");
-//        posContainer.setCombinedTagsList(tags);
-//        posContainer.setWordTokenList(tokens);
-//        new PostProcessTags(posContainer).correctCombinedTagsList();
-//        Assert.assertEquals("NN-IDENTIFIER a STOP .", posContainer.getTokenTagTupleAsString());
-//    }
-//	
-//	@Test
-//	public void testLetterLabelledProcedure6() {
-//        POSContainer posContainer = new POSContainer();
-//        List<String> tags = Arrays.asList("DT", "COLON");
-//        List<String> tokens = Arrays.asList("a", ":");
-//        posContainer.setCombinedTagsList(tags);
-//        posContainer.setWordTokenList(tokens);
-//        new PostProcessTags(posContainer).correctCombinedTagsList();
-//        Assert.assertEquals("NN-IDENTIFIER a COLON :", posContainer.getTokenTagTupleAsString());
-//    }
+	@Test
+	public void testLetterLabelledProcedure5() {
+        POSContainer posContainer = new POSContainer();
+        List<String> tags = Arrays.asList("DT", "STOP");
+        List<String> tokens = Arrays.asList("a", ".");
+        posContainer.setCombinedTagsList(tags);
+        posContainer.setWordTokenList(tokens);
+        new PostProcessTags(posContainer).correctCombinedTagsList();
+        Assert.assertEquals("NN-IDENTIFIER a STOP .", posContainer.getTokenTagTupleAsString());
+    }
+	
+	@Test
+	public void testLetterLabelledProcedure6() {
+        POSContainer posContainer = new POSContainer();
+        List<String> tags = Arrays.asList("DT", "COLON");
+        List<String> tokens = Arrays.asList("a", ":");
+        posContainer.setCombinedTagsList(tags);
+        posContainer.setWordTokenList(tokens);
+        new PostProcessTags(posContainer).correctCombinedTagsList();
+        Assert.assertEquals("NN-IDENTIFIER a COLON :", posContainer.getTokenTagTupleAsString());
+    }
 	
 	@Test
 	public void testRomanNumberLabelledProcedure1() {
