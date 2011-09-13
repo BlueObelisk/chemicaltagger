@@ -245,10 +245,10 @@ potentialUnnamedMoleculeAmount2
 	: (numberCompoundReference (quantity | asAstate ) | potentialUnnamedMoleculeStructureNN (numericReferenceOrQuantity | asAstate | fromProcedure) ) quantity* asAstate? fromProcedure?;
 
 definiteUnnamedMolecule
-	:	adj* definiteUnnamedMoleculeStructure quantity* asAstate? fromProcedure?;
+	:	definiteUnnamedMoleculeStructure quantity* asAstate? fromProcedure?;
 
 definiteUnnamedMoleculeStructure
-	: nnchementity numericOrIdentifierCompoundReference | alphanumericOrIdentifierCompoundReference | jjcomp nnchementity numericReferenceOrQuantity?;
+	: adj* (nnchementity numericOrIdentifierCompoundReference | jjcomp nnchementity numericReferenceOrQuantity?) | alphanumericOrIdentifierCompoundReference;
 
 potentialUnnamedMolecule
 	: numberCompoundReference | potentialUnnamedMoleculeStructureNN numericReferenceOrQuantity?  ;
