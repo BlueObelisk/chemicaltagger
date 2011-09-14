@@ -28,7 +28,7 @@ IN-OFF---^off$---The preposition 'OFF'
 TO---^to$|^To$---The preposition 'TO'
 
 #Foreign Words
-FW---^et(.)?$|^al(.)?$
+FW---^et[\.]?$|^al[\.]?$
 #Nouns
 NN---^wt\.$---Weight
 NN-STATE---powder|foam|glass|liquid|oil|solid|gas|syrup|crystal|gum|needle|prisms---Physical States
