@@ -26,7 +26,7 @@ import org.junit.Test;
  * @author lh359
  ***********************************************/
 
-public class NormaliseTest {
+public class FormatterTest {
 	
 	
 	@Test	
@@ -149,5 +149,11 @@ public class NormaliseTest {
 	public void testSplitPercentSign2() {
 		String normalisedText = Formatter.normaliseText("25%-30%");
 		assertEquals("25 % - 30 %", normalisedText);
+	}
+
+	@Test	
+	public void testHyphenedDirectionPattern() {
+		String normalisedText = Formatter.normaliseText("60\u00b0 N-60\u00b0");
+		assertEquals("60\u00b0 N - 60\u00b0", normalisedText);
 	}
 }
