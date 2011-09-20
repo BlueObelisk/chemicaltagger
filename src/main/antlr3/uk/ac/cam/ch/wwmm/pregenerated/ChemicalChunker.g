@@ -100,7 +100,7 @@ unmatchedPhrase
 unmatchedToken //all base tokens other than stop
 	:	(numeric|advAdj|tmunicode|cdunicode|jjcomp|inAll|
 	nnexample|nnstate|nntime|nnmass|nnmolar|nnamount|nnatmosphere|nneq|nnvol|nnchementity|nntemp|nnph|nnflash|nngeneral|nnmethod|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|
-	oscarcm|oscaronts|oscarase|verb|nnadd|nnmixture|nnapparatus|nnconcentrate|nndry|nnextract|nnfilter|nnprecipitate|nnpurify|nnremove|nnsynthesize|nnyield|colon|apost|neg|dash|nnpercent|lsqb|rsqb|lrb|rrb|
+	oscarcm|oscaronts|oscarase|verb|nnadd|nnmixture|nnapparatus|nnconcentrate|nndry|nnextract|nnfilter|nnprecipitate|nnpurify|nnremove|nnsynthesize|nnyield|colon|apost|neg|dash|percentsign|lsqb|rsqb|lrb|rrb|
 	cc|dt|dtTHE|fw|md|nn|nns|nnp|prp|prp_poss|rbconj|sym|uh|clause|comma|ls|nnps|pos|nnidentifier);
 
 procedureNounPhrase //only allowed at the start of the document
@@ -303,15 +303,15 @@ equivalent: cd nneq -> ^(EQUIVALENT cd nneq );
 yield: yield1 -> ^(YIELD yield1)| yield2 -> ^(YIELD yield2);
 yield1: nnyield (inof|colon) percent;
 yield2: percent nnyield ;
-percent	: cd nn? nnpercent ( dash cd nnpercent)? -> ^(PERCENT   cd nn? nnpercent dash? cd? nnpercent?);
+percent	: cd nn? percentsign ( dash cd percentsign)? -> ^(PERCENT   cd nn? percentsign dash? cd? percentsign?);
 
 mixture: ratio?  (mixtureStructure1|mixtureStructure2|mixtureStructure3|mixtureStructure4) -> ^(MIXTURE ratio? mixtureStructure1? mixtureStructure2? mixtureStructure3? mixtureStructure4?);
-mixtureStructure1: lrb (nnpercent|ratio) rrb;
+mixtureStructure1: lrb (percentsign|ratio) rrb;
 mixtureStructure2: comma lrb mixtureContent rrb comma;
 mixtureStructure3: lrb mixtureContent rrb;
 mixtureStructure4: lsqb mixtureContent rsqb;
 
-mixtureContent:   (verb|quantity2Node|oscarCompound|alphanumericOrIdentifierCompoundReference|numberCompoundReference comma|md|dash|inAll|cd|comma|adj|colon|stop|noun) (verb|quantity2Node|oscarCompound|alphanumericOrIdentifierCompoundReference|md|dash|inAll|cd|conjunction|adj|colon|stop|noun)+ ;
+mixtureContent:   (verb|quantity2Node|oscarCompound|alphanumericOrIdentifierCompoundReference|numberCompoundReference comma|md|percentsign|dash|inAll|cd|comma|adj|colon|stop|noun) (verb|quantity2Node|oscarCompound|alphanumericOrIdentifierCompoundReference|md|percentsign|dash|inAll|cd|conjunction|adj|colon|stop|noun)+ ;
 
 fromProcedure: (infrom | {precededByProduct(input)}? inof | {suitableVbYieldOrSynthesizeForReference(input)}? (vbyield|vbsynthesize) (inin|inby|infrom)) procedureNode;
 
@@ -513,7 +513,7 @@ apost:'APOST' TOKEN -> ^('APOST' TOKEN);
 neg:'NEG' TOKEN -> ^('NEG' TOKEN);
 dash:'DASH' TOKEN -> ^('DASH' TOKEN);
 stop:'STOP' TOKEN -> ^('STOP' TOKEN);
-nnpercent:'NN-PERCENT' TOKEN -> ^('NN-PERCENT' TOKEN);
+percentsign:'NN-PERCENT' TOKEN -> ^('NN-PERCENT' TOKEN);
 lsqb:'LSQB' TOKEN -> ^('LSQB' TOKEN);
 rsqb:'RSQB' TOKEN -> ^('RSQB' TOKEN);
 
