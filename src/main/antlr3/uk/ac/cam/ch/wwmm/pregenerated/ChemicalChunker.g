@@ -305,10 +305,11 @@ yield1: nnyield (inof|colon) percent;
 yield2: percent nnyield ;
 percent	: cd nn? nnpercent ( dash cd nnpercent)? -> ^(PERCENT   cd nn? nnpercent dash? cd? nnpercent?);
 
-mixture: ratio?  (mixtureStructure1|mixtureStructure2|mixtureStructure3) -> ^(MIXTURE ratio? mixtureStructure1? mixtureStructure2? mixtureStructure3?);
+mixture: ratio?  (mixtureStructure1|mixtureStructure2|mixtureStructure3|mixtureStructure4) -> ^(MIXTURE ratio? mixtureStructure1? mixtureStructure2? mixtureStructure3? mixtureStructure4?);
 mixtureStructure1: lrb (nnpercent|ratio) rrb;
 mixtureStructure2: comma lrb mixtureContent rrb comma;
 mixtureStructure3: lrb mixtureContent rrb;
+mixtureStructure4: lsqb mixtureContent rsqb;
 
 mixtureContent:   (verb|quantity2Node|oscarCompound|alphanumericOrIdentifierCompoundReference|numberCompoundReference comma|md|dash|inAll|cd|comma|adj|colon|stop|noun) (verb|quantity2Node|oscarCompound|alphanumericOrIdentifierCompoundReference|md|dash|inAll|cd|conjunction|adj|colon|stop|noun)+ ;
 
