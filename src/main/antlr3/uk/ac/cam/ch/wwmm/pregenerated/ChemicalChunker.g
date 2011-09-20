@@ -310,9 +310,7 @@ mixtureStructure1: lrb (nnpercent|ratio) rrb;
 mixtureStructure2: comma lrb mixtureContent rrb comma;
 mixtureStructure3: lrb mixtureContent rrb;
 
-mixtureContent:   (verb|nn|quantity2Node|md|nnpercent|oscarCompound|molecule|unnamedmolecule|dash|sym|noun|inAll|cd|comma|adj|colon|stop) (minimixture|verb|quantity2Node|nnyield|md|nnpercent|oscarCompound|molecule|unnamedmolecule|dash|sym|noun|inAll|cd|comma|adj|colon|stop)+ ;
-
-minimixture: (mixtureStructure2|mixtureStructure3) -> ^(MIXTURE  mixtureStructure2? mixtureStructure3?);
+mixtureContent:   (verb|quantity2Node|oscarCompound|alphanumericOrIdentifierCompoundReference|numberCompoundReference comma|md|dash|inAll|cd|comma|adj|colon|stop|noun) (verb|quantity2Node|oscarCompound|alphanumericOrIdentifierCompoundReference|md|dash|inAll|cd|conjunction|adj|colon|stop|noun)+ ;
 
 fromProcedure: (infrom | {precededByProduct(input)}? inof | {suitableVbYieldOrSynthesizeForReference(input)}? (vbyield|vbsynthesize) (inin|inby|infrom)) procedureNode;
 
