@@ -1,2 +1,2 @@
-None: silica gel  was found but was not expected
-None: 0-5 % methanol / methylene chloride  was found but was not expected
+None: silica gel 
+None: 0-5 % methanol / methylene chloride 
