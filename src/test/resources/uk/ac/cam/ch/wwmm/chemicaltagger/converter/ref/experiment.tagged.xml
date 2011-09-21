@@ -209,9 +209,11 @@
 								</VOLUME>
 							</QUANTITY>
 							<COMMA>,</COMMA>
-							<CD>1</CD>
-							<COLON>:</COLON>
-							<CD>1</CD>
+							<RATIO>
+								<CD>1</CD>
+								<COLON>:</COLON>
+								<CD>1</CD>
+							</RATIO>
 							<NN>v/v</NN>
 							<_-RRB->)</_-RRB->
 						</MIXTURE>

@@ -150,7 +150,7 @@ degassMultiVerb
 
 noun 	:	nounStructure (dash nounStructure)*;
 
-nounStructure :  prp|prp_poss|citation|cycles|molecule|apparatus|mixture|unnamedmolecule|nnstate|procedureNode|nn|nns|nnp|nnadd|preparationphrase|nnexample|range|oscaronts|nntime|nnatmosphere|tmunicode|quantity|nnchementity|nntemp|nnph|nnflash|nngeneral|nnamount|nneq|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|nnvol|nnpurify|nnsynthesize|nnmixture|squareBracketedReference|nndry|numeric|nnextract|nnfilter|nnprecipitate|nnremove|nnyield|fw|sym|clause|ls|nnps|pos|oscarase;
+nounStructure :  prp|prp_poss|citation|cycles|molecule|apparatus|bracketedContent|unnamedmolecule|nnstate|procedureNode|nn|nns|nnp|nnadd|preparationphrase|nnexample|range|oscaronts|nntime|nnatmosphere|tmunicode|quantity|nnchementity|nntemp|nnph|nnflash|nngeneral|nnamount|nneq|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|nnvol|nnpurify|nnsynthesize|nnmixture|squareBracketedReference|nndry|nnextract|nnfilter|nnprecipitate|nnremove|nnyield|fw|sym|clause|ls|nnps|pos|oscarase;
 
 // Different PrepPhrases
 
@@ -216,15 +216,15 @@ molecule
 moleculeamount : (moleculeamount3| moleculeamount1 | moleculeamount2) asAstate? ;
 
 moleculeamount3
-	:(quantity|mixture)+ inof (dtTHE | dt)? ratioOrBracketedRatio mixture? oscarCompound ;
+	:(quantity|bracketedContentInMol)+ inof (dtTHE | dt)? ratioOrBracketedRatio bracketedContentInMol? oscarCompound ;
 
 moleculeamount1
-	:(nnchementity | nnstate)? (quantity|mixture)+ inof (quantity inof?)? (dtTHE | dt)? oscarCompound+ afterCompoundCitationOrQuantity;
+	:(nnchementity | nnstate)? (quantity|bracketedContentInMol)+ inof (quantity inof?)? (dtTHE | dt)? oscarCompound+ afterCompoundCitationOrQuantity;
 
 moleculeamount2
-	:(quantity|mixture)* oscarCompound+ afterCompoundCitationOrQuantity;
+	:(quantity|bracketedContentInMol)* oscarCompound+ afterCompoundCitationOrQuantity;
 
-afterCompoundCitationOrQuantity: (citation|quantity|comma (quantity1Node|citationStructure)|mixture)*;
+afterCompoundCitationOrQuantity: (citation|quantity|comma (quantity1Node|citationStructure)|bracketedContentInMol)*;
 
 unnamedmolecule
 	: unnamedmoleculeDescription -> ^(UNNAMEDMOLECULE unnamedmoleculeDescription);
@@ -305,13 +305,18 @@ yield1: nnyield (inof|colon) percent;
 yield2: percent nnyield ;
 percent	: cd nn? percentsign ( dash cd percentsign)? -> ^(PERCENT   cd nn? percentsign dash? cd? percentsign?);
 
-mixture: ratio?  (mixtureStructure1|mixtureStructure2|mixtureStructure3|mixtureStructure4) -> ^(MIXTURE ratio? mixtureStructure1? mixtureStructure2? mixtureStructure3? mixtureStructure4?);
-mixtureStructure1: lrb (percentsign|ratio) rrb;
-mixtureStructure2: comma lrb mixtureContent rrb comma;
-mixtureStructure3: lrb mixtureContent rrb;
-mixtureStructure4: lsqb mixtureContent rsqb;
+//Different expressions are needed in and outside molecules as within a molecule other "molecules" are likely to be synoymns rather than entities in their own right
+bracketedContent: ratio?  (bracketedContent1|bracketedContent2|bracketedContent3) -> ^(MIXTURE ratio? bracketedContent1? bracketedContent2? bracketedContent3?);
+bracketedContent1: comma lrb bracketedContentContents rrb comma;
+bracketedContent2: lrb bracketedContentContents rrb;
+bracketedContent3: lsqb bracketedContentContents rsqb;
+bracketedContentContents: (verb|noun|md|percentsign|dash|inAll|ratio|conjunction|adj|colon|stop|numeric)+;
 
-mixtureContent:   (verb|quantity2Node|oscarCompound|alphanumericOrIdentifierCompoundReference|numberCompoundReference comma|md|percentsign|dash|inAll|cd|comma|adj|colon|stop|noun) (verb|quantity2Node|oscarCompound|alphanumericOrIdentifierCompoundReference|md|percentsign|dash|inAll|cd|conjunction|adj|colon|stop|noun)+ ;
+bracketedContentInMol: ratio?  (bracketedContentInMolStructure1|bracketedContentInMolStructure2|bracketedContentInMolStructure3) -> ^(MIXTURE ratio? bracketedContentInMolStructure1? bracketedContentInMolStructure2? bracketedContentInMolStructure3?);
+bracketedContentInMolStructure1: comma lrb bracketedContentInMolContents rrb comma;
+bracketedContentInMolStructure2: lrb bracketedContentInMolContents rrb;
+bracketedContentInMolStructure3: lsqb bracketedContentInMolContents rsqb;
+bracketedContentInMolContents: (verb|quantity2Node|oscarCompound|alphanumericOrIdentifierCompoundReference|numberCompoundReference comma|md|percentsign|dash|inAll|ratio|cd|comma|adj|colon|stop|noun) (verb|quantity2Node|oscarCompound|alphanumericOrIdentifierCompoundReference|md|percentsign|dash|inAll|ratio|cd|conjunction|adj|colon|stop|noun)* ;
 
 fromProcedure: (infrom | {precededByProduct(input)}? inof | {suitableVbYieldOrSynthesizeForReference(input)}? (vbyield|vbsynthesize) (inin|inby|infrom)) procedureNode;
 
