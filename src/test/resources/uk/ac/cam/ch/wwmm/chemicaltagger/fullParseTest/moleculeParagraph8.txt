@@ -2,5 +2,6 @@ None: 0.1 g ( .266 mmol ) 5-bromo-N-(4-fluorobenzyl)-8-hydroxy-1,6-naphthyridine
 None: 0.031 g ( .27 mmol ) N,N-dimethyl-2-(methylamino)acetamide 
 None: .726 mL ( .8 mmol ) N,N-diisopropylethylamine 
 None: 5 mL DMF 
+None: C18 
 None: acetonitrile / water 
 None: 5-[[2-(dimethylamino)-2-oxoethyl](methyl)amino]-N-(4-fluorobenzyl)-8-hydroxy-1,6-naphthyridine-7-carboxamide 

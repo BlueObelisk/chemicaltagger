@@ -229,7 +229,7 @@ public class FullParseTest {
 		UtilityMethods.compareParsedToExpectedOutput(actionNodes, "/uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/actionsParagraph8.txt");
 		Assert.assertEquals("Sentence node size",4, sentenceNodes.size());
 		Assert.assertEquals("Action node size",7, actionNodes.size());
-		Assert.assertEquals("Molecule node size",6, moleculeNodes.size());
+		Assert.assertEquals("Molecule node size",7, moleculeNodes.size());
 		Assert.assertEquals("Spectra List size", 0, posContainer.getSpectrumElementList().getChildCount());
 		Assert.assertEquals("Input string is equal to output content", text.replace(" ", "").toLowerCase(), doc.getValue().toLowerCase());
 	}
