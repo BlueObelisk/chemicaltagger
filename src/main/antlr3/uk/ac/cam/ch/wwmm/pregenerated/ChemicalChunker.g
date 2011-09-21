@@ -81,6 +81,27 @@ public boolean suitableVbYieldOrSynthesizeForReference(TokenStream stream){
 	}
 	return false;
 }
+
+public boolean followedByQuantityUnits(TokenStream stream){
+	String nextTokenTypeStr = stream.LT(1).getText();
+	if ("NN-MOLAR".equals(nextTokenTypeStr) || "NN-AMOUNT".equals(nextTokenTypeStr) ||
+		"NN-MASS".equals(nextTokenTypeStr) || "NN-VOL".equals(nextTokenTypeStr) ||
+		"NN-EQ".equals(nextTokenTypeStr) || "NN-PERCENT".equals(nextTokenTypeStr)){
+		return true;
+	}
+	return false;
+}
+
+public boolean nextIsSemiColon(TokenStream stream){
+	Token nextTokenType = stream.LT(1);
+	if ("STOP".equals(nextTokenType.getText())){
+		String nextTokenText = stream.LT(2).getText();
+		if (nextTokenText !=null && nextTokenText.equals(";")){
+			return true;
+		}
+	}
+	return false;
+}
 }
 
 WS :  (' ')+ {skip();};
@@ -266,9 +287,9 @@ asAstate
 alphanumericOrIdentifierCompoundReference
   : (squareBracketedReference|identifierOrBracketedIdentifier|cdAlphanum|bracketedNumeric) -> ^(REFERENCETOCOMPOUND squareBracketedReference? identifierOrBracketedIdentifier? cdAlphanum? bracketedNumeric?);
 
+//a negative predicate would be neater... but these do not appear to exist
 numberCompoundReference
-  : ((quantity) => identifierOrBracketedIdentifier | cd) -> ^(REFERENCETOCOMPOUND identifierOrBracketedIdentifier? cd?);
-//antlr is unable to determine that identifierOrBracketedIdentifier will fail and hence will not try the cd alternative unless the quantity syntactic predicate failed (this behaviour seems inconsistent with the idea of backtracking...)
+  : ({!followedByQuantityUnits(input)}? cd) -> ^(REFERENCETOCOMPOUND cd?);
 
 numericOrIdentifierCompoundReference
   : (squareBracketedReference|identifierOrBracketedIdentifier|numericOrBracketedNumeric) -> ^(REFERENCETOCOMPOUND squareBracketedReference? identifierOrBracketedIdentifier? numericOrBracketedNumeric? );
@@ -316,7 +337,7 @@ bracketedContentInMol: ratio?  (bracketedContentInMolStructure1|bracketedContent
 bracketedContentInMolStructure1: comma lrb bracketedContentInMolContents rrb comma;
 bracketedContentInMolStructure2: lrb bracketedContentInMolContents rrb;
 bracketedContentInMolStructure3: lsqb bracketedContentInMolContents rsqb;
-bracketedContentInMolContents: (verb|quantity2Node|oscarCompound|alphanumericOrIdentifierCompoundReference|numberCompoundReference comma|md|percentsign|dash|inAll|ratio|cd|comma|adj|colon|stop|noun) (verb|quantity2Node|oscarCompound|alphanumericOrIdentifierCompoundReference|md|percentsign|dash|inAll|ratio|cd|conjunction|adj|colon|stop|noun)* ;
+bracketedContentInMolContents: (verb|quantity2Node|oscarCompound|alphanumericOrIdentifierCompoundReference|ratio|numberCompoundReference (comma | colon | {nextIsSemiColon(input)}? stop)|cd|md|percentsign|dash|inAll|comma|adj|colon|stop|noun) (verb|quantity2Node|oscarCompound|alphanumericOrIdentifierCompoundReference|ratio|cd|md|percentsign|dash|inAll|conjunction|adj|colon|stop|noun)* ;
 
 fromProcedure: (infrom | {precededByProduct(input)}? inof | {suitableVbYieldOrSynthesizeForReference(input)}? (vbyield|vbsynthesize) (inin|inby|infrom)) procedureNode;
 
@@ -340,7 +361,7 @@ dashNN	:	(adj|nn|cd) (dash (adj|nn|cd))*;
 
 ratioOrBracketedRatio : lrb ratio rrb | ratio;
 ratio : cdRatio -> ^(RATIO cdRatio);
-cdRatio : cd (colon cd)+;
+cdRatio : cd (colon cd {!followedByQuantityUnits(input)}?)+;
 
 citation:  citationStructure|comma citationContent comma;
 
