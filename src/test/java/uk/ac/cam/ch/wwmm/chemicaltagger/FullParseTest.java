@@ -429,6 +429,7 @@ public class FullParseTest {
 		Nodes sentenceNodes = doc.query("//Sentence");
 		Nodes actionNodes = doc.query("//ActionPhrase");
 		Nodes moleculeNodes = doc.query("//MOLECULE");
+		System.out.println(doc.toXML());
 		UtilityMethods.compareParsedToExpectedOutput(moleculeNodes, "/uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/moleculeParagraph16.txt");
 		UtilityMethods.compareParsedToExpectedOutput(actionNodes, "/uk/ac/cam/ch/wwmm/chemicaltagger/fullParseTest/actionsParagraph16.txt");
 		Assert.assertEquals("Sentence node size",1, sentenceNodes.size());
