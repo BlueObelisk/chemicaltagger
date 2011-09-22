@@ -150,7 +150,7 @@ nounphraseStructure2
 	:	dtTHE? dt? nounphraseContent  (conjunction* nounphraseContent)* (prepphraseOf| prepphraseIN)? ;
 
 nounphraseContent
-	: advAdj*  (dissolvePhrase|ratioOrBracketedRatio|noun|numeric)+;
+	: advAdj*  (dissolvePhrase|ratioOrBracketedRatio|noun|numeric|bracketedContent)+;
 
 dissolvePhrase
 	:	(dissolveStructure|lrb dissolveStructure rrb) ->  ^(DissolvePhrase lrb? dissolveStructure rrb?);
@@ -171,7 +171,7 @@ degassMultiVerb
 
 noun 	:	nounStructure (dash nounStructure)*;
 
-nounStructure :  prp|prp_poss|citation|cycles|molecule|apparatus|bracketedContent|unnamedmolecule|nnstate|procedureNode|nn|nns|nnp|nnadd|preparationphrase|nnexample|range|oscaronts|nntime|nnatmosphere|tmunicode|quantity|nnchementity|nntemp|nnph|nnflash|nngeneral|nnamount|nneq|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|nnvol|nnpurify|nnsynthesize|nnmixture|squareBracketedReference|nndry|nnextract|nnfilter|nnprecipitate|nnremove|nnyield|fw|sym|clause|ls|nnps|pos|oscarase;
+nounStructure :  prp|prp_poss|citation|cycles|molecule|apparatus|unnamedmolecule|nnstate|procedureNode|nn|nns|nnp|nnadd|preparationphrase|nnexample|range|oscaronts|nntime|nnatmosphere|tmunicode|quantity|nnchementity|nntemp|nnph|nnflash|nngeneral|nnamount|nneq|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|nnvol|nnpurify|nnsynthesize|nnmixture|squareBracketedReference|nndry|nnextract|nnfilter|nnprecipitate|nnremove|nnyield|fw|sym|clause|ls|nnps|pos|oscarase;
 
 // Different PrepPhrases
 
@@ -289,7 +289,7 @@ alphanumericOrIdentifierCompoundReference
 
 //a negative predicate would be neater... but these do not appear to exist
 numberCompoundReference
-  : ({!followedByQuantityUnits(input)}? cd) -> ^(REFERENCETOCOMPOUND cd?);
+  : (cd {!followedByQuantityUnits(input)}?) -> ^(REFERENCETOCOMPOUND cd);
 
 numericOrIdentifierCompoundReference
   : (squareBracketedReference|identifierOrBracketedIdentifier|numericOrBracketedNumeric) -> ^(REFERENCETOCOMPOUND squareBracketedReference? identifierOrBracketedIdentifier? numericOrBracketedNumeric? );
@@ -331,13 +331,13 @@ bracketedContent: ratio?  (bracketedContent1|bracketedContent2|bracketedContent3
 bracketedContent1: comma lrb bracketedContentContents rrb comma;
 bracketedContent2: lrb bracketedContentContents rrb;
 bracketedContent3: lsqb bracketedContentContents rsqb;
-bracketedContentContents: (verb|noun|md|percentsign|dash|inAll|ratio|conjunction|adj|colon|stop|numeric)+;
+bracketedContentContents: (verb|noun|bracketedContent|md|percentsign|dash|inAll|ratio|conjunction|adj|colon|stop|numeric)+;
 
 bracketedContentInMol: ratio?  (bracketedContentInMolStructure1|bracketedContentInMolStructure2|bracketedContentInMolStructure3) -> ^(MIXTURE ratio? bracketedContentInMolStructure1? bracketedContentInMolStructure2? bracketedContentInMolStructure3?);
 bracketedContentInMolStructure1: comma lrb bracketedContentInMolContents rrb comma;
 bracketedContentInMolStructure2: lrb bracketedContentInMolContents rrb;
 bracketedContentInMolStructure3: lsqb bracketedContentInMolContents rsqb;
-bracketedContentInMolContents: (verb|quantity2Node|oscarCompound|alphanumericOrIdentifierCompoundReference|ratio|numberCompoundReference (comma | colon | {nextIsSemiColon(input)}? stop)|cd|md|percentsign|dash|inAll|comma|adj|colon|stop|noun) (verb|quantity2Node|oscarCompound|alphanumericOrIdentifierCompoundReference|ratio|cd|md|percentsign|dash|inAll|conjunction|adj|colon|stop|noun)* ;
+bracketedContentInMolContents: (verb|quantity2Node|oscarCompound|alphanumericOrIdentifierCompoundReference|ratio|numberCompoundReference (comma | colon | {nextIsSemiColon(input)}? stop)|cd|md|percentsign|dash|inAll|comma|adj|colon|stop|noun|bracketedContentInMol) (verb|quantity2Node|oscarCompound|alphanumericOrIdentifierCompoundReference|ratio|cd|md|percentsign|dash|inAll|conjunction|adj|colon|stop|noun|bracketedContentInMol)* ;
 
 fromProcedure: (infrom | {precededByProduct(input)}? inof | {suitableVbYieldOrSynthesizeForReference(input)}? (vbyield|vbsynthesize) (inin|inby|infrom)) procedureNode;
 
