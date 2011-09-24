@@ -53,14 +53,35 @@ public boolean isAtTokenPositionZero(TokenStream stream){
 	return stream.index()==0;
 }
 
-public boolean followedByNumberWhichIsNotAReference(TokenStream stream){
-	if ("CD".equals(stream.LT(1).getText())){
-		String tokenTypeFollowingTheCD = stream.LT(3).getText();
-		if ("NN-TIMES".equals(tokenTypeFollowingTheCD) || "COLON".equals(tokenTypeFollowingTheCD)){
-			return true;
+public boolean cdHasRoleOtherThanIdentifier(TokenStream stream){
+	String nextTokenTypeStr = stream.LT(1).getText();
+	if (isQuantityUnit(nextTokenTypeStr)){
+		return true;//quantity
+	}
+	if ("NN-TIMES".equals(nextTokenTypeStr)){
+		return true;//e.g. washed with the compound 3 times
+	}
+	if ("COLON".equals(nextTokenTypeStr)){
+		String twoAheadTypeStr = stream.LT(3).getText();
+		if ("CD".equals(twoAheadTypeStr)){
+			String threeAheadTypeStr = stream.LT(5).getText();
+			if (!isQuantityUnit(threeAheadTypeStr)){
+				return true;//ratio
+			}
 		}
 	}
 	return false;
+}
+
+public boolean followedByQuantityUnits(TokenStream stream){
+	String nextTokenTypeStr = stream.LT(1).getText();
+	return isQuantityUnit(nextTokenTypeStr);
+}
+
+public boolean isQuantityUnit(String tokenType){
+	return ("NN-MOLAR".equals(tokenType) || "NN-AMOUNT".equals(tokenType) ||
+			"NN-MASS".equals(tokenType) || "NN-VOL".equals(tokenType) ||
+			"NN-EQ".equals(tokenType) || "NN-PERCENT".equals(tokenType));
 }
 
 public boolean precededByProduct(TokenStream stream){
@@ -82,16 +103,6 @@ public boolean suitableVbYieldOrSynthesizeForReference(TokenStream stream){
 	return false;
 }
 
-public boolean followedByQuantityUnits(TokenStream stream){
-	String nextTokenTypeStr = stream.LT(1).getText();
-	if ("NN-MOLAR".equals(nextTokenTypeStr) || "NN-AMOUNT".equals(nextTokenTypeStr) ||
-		"NN-MASS".equals(nextTokenTypeStr) || "NN-VOL".equals(nextTokenTypeStr) ||
-		"NN-EQ".equals(nextTokenTypeStr) || "NN-PERCENT".equals(nextTokenTypeStr)){
-		return true;
-	}
-	return false;
-}
-
 public boolean nextIsSemiColon(TokenStream stream){
 	Token nextTokenType = stream.LT(1);
 	if ("STOP".equals(nextTokenType.getText())){
@@ -101,6 +112,27 @@ public boolean nextIsSemiColon(TokenStream stream){
 		}
 	}
 	return false;
+}
+
+public boolean notFollowedByBracketedYear(TokenStream stream){
+	Token nextTokenType = stream.LT(1);
+	if ("-LRB-".equals(nextTokenType.getText())){
+		Token nextNextTokenType = stream.LT(3);
+		if ("CD".equals(nextNextTokenType.getText())){
+			String nextNextTokenText = stream.LT(4).getText();
+			if (nextNextTokenText !=null){
+				try{
+					int i = Integer.parseInt(nextNextTokenText);
+					if (i >1000){
+						return false;
+					}
+				}
+				catch (NumberFormatException e) {
+				}
+			}
+		}
+	}
+	return true;
 }
 }
 
@@ -275,27 +307,23 @@ potentialUnnamedMolecule
 	: numberCompoundReference | potentialUnnamedMoleculeStructureNN numericReferenceOrQuantity?  ;
 
 potentialUnnamedMoleculeStructureNN
-	:	(jj|jjchem|jjcomp)* (nnstate|referenceToExampleCompound|nnexample|oscaronts|nnatmosphere|nnmixture|oscarase) | (jj|jjchem)* nnchementity;
+	:	(jj|jjchem|jjcomp)* (nnstate|referenceToExampleCompound|oscaronts|nnatmosphere|nnmixture|oscarase) | (jj|jjchem)* nnchementity;
 
 //This rule is neccesary as otherwise the parser will greedily split up a quantity into a reference and unmatched unit
 numericReferenceOrQuantity
-	:	quantity | {!followedByNumberWhichIsNotAReference(input)}? numericOrIdentifierCompoundReference;
+	:	quantity | numericOrIdentifierCompoundReference;
 
 asAstate
 	: inas dt? (jj|jjchem)* nnstate quantity*;
 
 alphanumericOrIdentifierCompoundReference
-  : (squareBracketedReference|identifierOrBracketedIdentifier|cdAlphanum|bracketedNumeric) -> ^(REFERENCETOCOMPOUND squareBracketedReference? identifierOrBracketedIdentifier? cdAlphanum? bracketedNumeric?);
+  : allIdentifierTypesOtherThanCD -> ^(REFERENCETOCOMPOUND allIdentifierTypesOtherThanCD);
 
-//a negative predicate would be neater... but these do not appear to exist
 numberCompoundReference
-  : (cd {!followedByQuantityUnits(input)}?) -> ^(REFERENCETOCOMPOUND cd);
+  : (cd {!cdHasRoleOtherThanIdentifier(input)}?) -> ^(REFERENCETOCOMPOUND cd);
 
 numericOrIdentifierCompoundReference
-  : (squareBracketedReference|identifierOrBracketedIdentifier|numericOrBracketedNumeric) -> ^(REFERENCETOCOMPOUND squareBracketedReference? identifierOrBracketedIdentifier? numericOrBracketedNumeric? );
-
-squareBracketedReference
-	:	lsqb numeric rsqb;
+  : allIdentifierTypes -> ^(REFERENCETOCOMPOUND allIdentifierTypes );
 
 quantity 	:  (quantity1Node|quantity2Node);
 
@@ -344,12 +372,12 @@ fromProcedure: (infrom | {precededByProduct(input)}? inof | {suitableVbYieldOrSy
 procedureNode: method -> ^(PROCEDURE method);
 
 method:
-    ((nngeneral|nn)? nnmethod (identifierOrBracketedIdentifier|numeric)? | nnexample (identifierOrBracketedIdentifier|numeric)) ( (comma |colon |inof | infrom)? submethod | lrb submethod rrb)*;
+    ((nngeneral|nn)? nnmethod allIdentifierTypes? | nnexample allIdentifierTypes) ( (comma |colon |inof | infrom)? submethod | lrb submethod rrb)*;
 
-submethod : (nnmethod|nnexample) (identifierOrBracketedIdentifier|numeric);
+submethod : (nnmethod|nnexample) allIdentifierTypes;
 
 referenceToExampleCompound :
-	nnexample (identifierOrBracketedIdentifier|numeric) -> ^(REFERENCETOCOMPOUND nnexample identifierOrBracketedIdentifier? numeric?);
+	nnexample allIdentifierTypes -> ^(REFERENCETOCOMPOUND nnexample allIdentifierTypes);
 
 advAdj
 	:adv|adj;
@@ -368,8 +396,12 @@ citation:  citationStructure|comma citationContent comma;
 citationStructure:  citationContent -> ^(CITATION citationContent);
 citationContent:   lrb (nnp|fw|cd|conjunction) (nnp|fw|cd|conjunction)+ rrb ;
 
+
+allIdentifierTypes : allIdentifierTypesOtherThanCD | cd {!cdHasRoleOtherThanIdentifier(input)}?;
+allIdentifierTypesOtherThanCD : squareBracketedReference|identifierOrBracketedIdentifier|cdAlphanum|{notFollowedByBracketedYear(input)}?bracketedNumeric;
 numericOrBracketedNumeric	:  numeric | bracketedNumeric;
 bracketedNumeric	:  lrb numeric rrb;
+squareBracketedReference :	lsqb numeric rsqb;
 identifierOrBracketedIdentifier : cd? nnidentifier | bracketedIdentifier;
 bracketedIdentifier	:  lrb cd? nnidentifier rrb;
 
