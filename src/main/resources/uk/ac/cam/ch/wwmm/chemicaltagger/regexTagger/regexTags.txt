@@ -73,7 +73,7 @@ VB-SUBJECT---^subject(ed)?---Subject Verb in past form
 JJ---^round$|^bottom|^thaw$---Adjectives
 JJ---^(beige|brown|crimson|cyan|green|grey|magenta|orange|purple|violet|yellow)$---Colours that are assigned by openNLP as nouns. Some other colours that are often nouns are special cased by PostProcessTags
 JJ-CHEM---^acidic$|^conc[.]?$|^Merrifield$|^crude$|^vicinal$|^buffer$|^mono$|^fritted$|^glacial$|^(E|e)xcess|(A|a)mphiphilic$|(f|F)unctionalized$|(p|P)ot$|^cyclic$|(H|h)yperbranched$|^insoluble$|^(p|P)ropargyl$|Arm$|^(s|S)tar$|^anh(\.|ydrous)?$|^aq\.?$|^organic|^(s|S)at(\.|urated)$|^(Di|Tri|di|tri|poly)block$---Chemical Adjectives
-JJ-COMPOUND---^(desired|resultant|title[d]?|final|initial|aimed)$---Adjectives that define unnamed compound
+JJ-COMPOUND---^(desired|resultant|title[d]?|final|initial|aimed|expected|anticipated)$---Adjectives that define unnamed compound
 #Add Tokens
 NN-ADD---^addition$---Add Noun
 NN-MIXTURE---^mixture$|^(s|S)uspension$---Mixture Noun
@@ -97,7 +97,7 @@ NN-CONCENTRATE---^concentration---Concentrate Noun
 VB-COOL---^(cool|chill|frozen)(ed|e|ing)?---Cool Verb
 
 #Degass Tokens
-VB-DEGASS---(de)?(gass|oxginat|evacuat|under|purg|bubbl|flush)(ed|e|d|ing)?---Degass Verb
+VB-DEGASS---(de)?(gass|degas|oxginat|evacuat|under|purg|bubbl|flush)(ed|e|d|ing)?---Degass Verb
 
 #Dissolve Tokens
 VB-DISSOLVE---^(re)?dissolv(ed|e|ing)?---Dissolve Verb
