@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 14:05:07 uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g 2011-09-26 15:16:52
+// $ANTLR 3.2 Sep 23, 2009 14:05:07 uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g 2011-09-26 21:27:51
 package uk.ac.cam.ch.wwmm.pregenerated;
 
 import org.antlr.runtime.*;
@@ -3207,10 +3207,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:139:4: ( ( ' ' )+ )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:139:7: ( ' ' )+
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:153:4: ( ( ' ' )+ )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:153:7: ( ' ' )+
             {
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:139:7: ( ' ' )+
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:153:7: ( ' ' )+
             int cnt1=0;
             loop1:
             do {
@@ -3226,7 +3226,7 @@ public class ChemicalChunkerLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:139:8: ' '
+            	    // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:153:8: ' '
             	    {
             	    match(' '); 
 
@@ -3259,10 +3259,10 @@ public class ChemicalChunkerLexer extends Lexer {
         try {
             int _type = TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:140:7: ( (~ ' ' )+ )
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:140:9: (~ ' ' )+
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:154:7: ( (~ ' ' )+ )
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:154:9: (~ ' ' )+
             {
-            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:140:9: (~ ' ' )+
+            // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:154:9: (~ ' ' )+
             int cnt2=0;
             loop2:
             do {
@@ -3276,7 +3276,7 @@ public class ChemicalChunkerLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:140:10: ~ ' '
+            	    // uk\\ac\\cam\\ch\\wwmm\\pregenerated\\ChemicalChunker.g:154:10: ~ ' '
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\u001F')||(input.LA(1)>='!' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();

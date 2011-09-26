@@ -53,6 +53,20 @@ public boolean isAtTokenPositionZero(TokenStream stream){
 	return stream.index()==0;
 }
 
+public boolean followedByVBDorVBZthenVBYIELDed(TokenStream stream){
+	String nextTokenTypeStr = stream.LT(1).getText();
+	if ("VBD".equals(nextTokenTypeStr) || "VBZ".equals(nextTokenTypeStr)){
+		String twoAheadTypeStr = stream.LT(3).getText();
+		if ("VB-YIELD".equals(twoAheadTypeStr)){
+			String twoAheadTokenText = stream.LT(4).getText();
+			if (twoAheadTokenText !=null && twoAheadTokenText.toLowerCase().endsWith("ed")){
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
 public boolean cdHasRoleOtherThanIdentifier(TokenStream stream){
 	String nextTokenTypeStr = stream.LT(1).getText();
 	if (isQuantityUnit(nextTokenTypeStr)){
@@ -179,7 +193,7 @@ nounphraseStructure
 nounphraseStructure1
 	:	 multiApparatus ->  ^(MultipleApparatus multiApparatus);
 nounphraseStructure2
-	:	dtTHE? dt? nounphraseContent  (conjunction* nounphraseContent)* (prepphraseOf| prepphraseIN)? ;
+	:	dtTHE? dt? nounphraseContent  (conjunction* nounphraseContent {!followedByVBDorVBZthenVBYIELDed(input)}?)* (prepphraseOf| prepphraseIN)? ;
 
 nounphraseContent
 	: advAdj*  (dissolvePhrase|ratioOrBracketedRatio|noun|numeric|bracketedContent)+;
@@ -352,7 +366,7 @@ equivalent: cd nneq -> ^(EQUIVALENT cd nneq );
 yield: yield1 -> ^(YIELD yield1)| yield2 -> ^(YIELD yield2);
 yield1: nnyield (inof|colon) percent;
 yield2: percent nnyield ;
-percent	: cd nn? percentsign ( dash cd percentsign)? -> ^(PERCENT   cd nn? percentsign dash? cd? percentsign?);
+percent	: cd nn? percentsign ( dash cd percentsign)? -> ^(PERCENT   cd nn? percentsign dash? cd? percentsign?);//the nn? allows "10 wt %"
 
 //Different expressions are needed in and outside molecules as within a molecule other "molecules" are likely to be synoymns rather than entities in their own right
 bracketedContent: ratio?  (bracketedContent1|bracketedContent2|bracketedContent3) -> ^(MIXTURE ratio? bracketedContent1? bracketedContent2? bracketedContent3?);
