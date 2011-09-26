@@ -1,4 +1,5 @@
 Dissolve: 4-fluorobenzylamine ( 0.243 g , 1.94 mmol ) in toluene ( 2 mL ) 
+Heat: A slurry of the ester from example 113 step 1 ( 0.50 g , 0.177 mmol ) and 4-fluorobenzylamine ( 0.243 g , 1.94 mmol ) in toluene ( 2 mL ) were heated 
 Heat: at reflux for 20 hrs 
 Cool: Upon cooling to room temperature 
 Recover: the resulting solids were collected by filtration 
