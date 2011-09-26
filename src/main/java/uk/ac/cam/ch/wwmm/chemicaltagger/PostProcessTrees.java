@@ -256,39 +256,36 @@ public class PostProcessTrees {
 				seenVerbOrAtionNoun = true;
 
 				elementList.add(phraseElement);
-				List<String> elementNames = elementListToSelfAndDescendentElementNames(elementList);
-				if (!elementNames.contains("NN-EXAMPLE")) {// prevents
-															// "example of synthesis"
-															// like phrases
-															// being
-															// misidentified as
-															// action phrases
+				//TODO is this condition a good idea?
+				if (!hasNNExampleOutsideOfProcedure(elementList)) {//not something like "example of synthesis"
 					if (actionElementName != null) {
 						actionPhrase = new Element("ActionPhrase");
 						Attribute attribute = new Attribute("type",
 								actionMap.get(actionElementName));
-						// System.out.println("* I contain keyword:: " +
-						// actionName);
 						actionPhrase.addAttribute(attribute);
-					} else if (elementNames.contains("TimePhrase")
-							&& includeWaitPhrase) {
-						Attribute attribute = new Attribute("type", "Wait");
-						actionPhrase = createActionPhrase(elementList,
-								attribute);
-						appendActionPhrase(newSentence, actionPhrase);
-						actionPhrase = null;
-
-						elementList = new ArrayList<Element>();
-						seenVerbOrAtionNoun = false;
-					} else if (elementNames.contains("MultipleApparatus")) {
-						Attribute attribute = new Attribute("type",
-								"ApparatusAction");
-						actionPhrase = createActionPhrase(elementList,
-								attribute);
-						appendActionPhrase(newSentence, actionPhrase);
-						actionPhrase = null;
-						elementList = new ArrayList<Element>();
-						seenVerbOrAtionNoun = false;
+					}
+					else{
+						List<String> elementNames = elementListToSelfAndDescendentElementNames(elementList);
+						if (elementNames.contains("TimePhrase")
+								&& includeWaitPhrase) {
+							Attribute attribute = new Attribute("type", "Wait");
+							actionPhrase = createActionPhrase(elementList,
+									attribute);
+							appendActionPhrase(newSentence, actionPhrase);
+							actionPhrase = null;
+	
+							elementList = new ArrayList<Element>();
+							seenVerbOrAtionNoun = false;
+						} else if (elementNames.contains("MultipleApparatus")) {
+							Attribute attribute = new Attribute("type",
+									"ApparatusAction");
+							actionPhrase = createActionPhrase(elementList,
+									attribute);
+							appendActionPhrase(newSentence, actionPhrase);
+							actionPhrase = null;
+							elementList = new ArrayList<Element>();
+							seenVerbOrAtionNoun = false;
+						}
 					}
 				}
 			} else if (splitList.contains(phraseElement.getLocalName()
@@ -341,6 +338,24 @@ public class PostProcessTrees {
 		newSentence = checkForRolePrepPhrase(newSentence);
 
 		return newSentence;
+	}
+
+	/**
+	 * Are any of the given elements or their descendants NN-EXAMPLE nodes outside of a PROCEDURE node
+	 * @param elementList
+	 * @return
+	 */
+	private boolean hasNNExampleOutsideOfProcedure(List<Element> elementList) {
+		for (Element element : elementList) {
+			Nodes exampleNodes = element.query(".//NN-EXAMPLE");
+			for (int i = 0; i < exampleNodes.size(); i++) {
+				Element exampleEl = (Element) exampleNodes.get(i);
+				if (!((Element)exampleEl.getParent()).getLocalName().equals("PROCEDURE")){
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 
 	/****************************************
