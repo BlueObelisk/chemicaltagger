@@ -215,6 +215,159 @@ public class GrammarRecognitionTest {
 		assertEquals("Exactly one sentence was expected", true, hasOneSentence(doc));
 		assertEquals("An unnamedMolecule child was expected", true, hasOneUnnamedMoleculeInNounPhrase(doc));
 	}
+	
+	@Test
+	public void molecule1() {
+		ChemistrySentenceParser sentenceParser =  new ChemistrySentenceParser("OSCAR-CM benzene");
+		sentenceParser.parseTags();
+		Document doc = sentenceParser.makeXMLDocument();
+		assertEquals("Exactly one sentence was expected", true, hasOneSentence(doc));
+		assertEquals("A molecule child was expected", true, hasOneMoleculeInNounPhrase(doc));
+	}
+	
+	@Test
+	public void molecule2() {
+		ChemistrySentenceParser sentenceParser =  new ChemistrySentenceParser("CD 50 NN-VOL ml OSCAR-CM benzene");
+		sentenceParser.parseTags();
+		Document doc = sentenceParser.makeXMLDocument();
+		assertEquals("Exactly one sentence was expected", true, hasOneSentence(doc));
+		assertEquals("A molecule child was expected", true, hasOneMoleculeInNounPhrase(doc));
+	}
+	
+	@Test
+	public void molecule3() {
+		ChemistrySentenceParser sentenceParser =  new ChemistrySentenceParser("CD 50 NN-VOL ml IN-OF of OSCAR-CM benzene");
+		sentenceParser.parseTags();
+		Document doc = sentenceParser.makeXMLDocument();
+		assertEquals("Exactly one sentence was expected", true, hasOneSentence(doc));
+		assertEquals("A molecule child was expected", true, hasOneMoleculeInNounPhrase(doc));
+	}
+	
+	@Test
+	public void molecule4() {
+		ChemistrySentenceParser sentenceParser =  new ChemistrySentenceParser("CD 50 NN-MASS g IN-OF of DT an OSCAR-CM oxime");
+		sentenceParser.parseTags();
+		Document doc = sentenceParser.makeXMLDocument();
+		assertEquals("Exactly one sentence was expected", true, hasOneSentence(doc));
+		assertEquals("A molecule child was expected", true, hasOneMoleculeInNounPhrase(doc));
+	}
+	
+	@Test
+	public void molecule5() {
+		ChemistrySentenceParser sentenceParser =  new ChemistrySentenceParser("CD 50 NN-VOL ml IN-OF of DT-THE the OSCAR-CM hydroiodide");
+		sentenceParser.parseTags();
+		Document doc = sentenceParser.makeXMLDocument();
+		assertEquals("Exactly one sentence was expected", true, hasOneSentence(doc));
+		assertEquals("A molecule child was expected", true, hasOneMoleculeInNounPhrase(doc));
+	}
+	
+	@Test
+	public void molecule6() {
+		ChemistrySentenceParser sentenceParser =  new ChemistrySentenceParser("CD 50 NN-VOL ml IN-OF of CD 1 COLON : CD 1 OSCAR-CM octanol DASH / OSCAR-CM water");
+		sentenceParser.parseTags();
+		Document doc = sentenceParser.makeXMLDocument();
+		assertEquals("Exactly one sentence was expected", true, hasOneSentence(doc));
+		assertEquals("A molecule child was expected", true, hasOneMoleculeInNounPhrase(doc));
+	}
+	
+	@Test
+	public void molecule7() {
+		ChemistrySentenceParser sentenceParser =  new ChemistrySentenceParser("-LRB- ( CD 30 NN-VOL ml COMMA , CD 5 NN-AMOUNT mmol -RRB- ) OSCAR-CM 2-methylpropane");
+		sentenceParser.parseTags();
+		Document doc = sentenceParser.makeXMLDocument();
+		assertEquals("Exactly one sentence was expected", true, hasOneSentence(doc));
+		assertEquals("A molecule child was expected", true, hasOneMoleculeInNounPhrase(doc));
+	}
+	
+	@Test
+	public void molecule8() {
+		ChemistrySentenceParser sentenceParser =  new ChemistrySentenceParser("OSCAR-CM benzene -LRB- ( CD 5 -RRB- )");
+		sentenceParser.parseTags();
+		Document doc = sentenceParser.makeXMLDocument();
+		assertEquals("Exactly one sentence was expected", true, hasOneSentence(doc));
+		assertEquals("A molecule child was expected", true, hasOneMoleculeInNounPhrase(doc));
+	}
+	
+	@Test
+	public void molecule9() {
+		ChemistrySentenceParser sentenceParser =  new ChemistrySentenceParser("OSCAR-CM benzene CD 5");
+		sentenceParser.parseTags();
+		Document doc = sentenceParser.makeXMLDocument();
+		assertEquals("Exactly one sentence was expected", true, hasOneSentence(doc));
+		assertEquals("A molecule child was expected", true, hasOneMoleculeInNounPhrase(doc));
+	}
+	
+	@Test
+	public void molecule10() {
+		ChemistrySentenceParser sentenceParser =  new ChemistrySentenceParser("OSCAR-CM benzene -LRB- ( NNP Sigma NNP Aldrich -RRB- )");
+		sentenceParser.parseTags();
+		Document doc = sentenceParser.makeXMLDocument();
+		assertEquals("Exactly one sentence was expected", true, hasOneSentence(doc));
+		assertEquals("A molecule child was expected", true, hasOneMoleculeInNounPhrase(doc));
+	}
+	
+	@Test
+	public void molecule11() {
+		ChemistrySentenceParser sentenceParser =  new ChemistrySentenceParser("OSCAR-CM benzene -LRB- ( CD 50 NN-AMOUNT mmol -RRB- )");
+		sentenceParser.parseTags();
+		Document doc = sentenceParser.makeXMLDocument();
+		assertEquals("Exactly one sentence was expected", true, hasOneSentence(doc));
+		assertEquals("A molecule child was expected", true, hasOneMoleculeInNounPhrase(doc));
+	}
+	
+	@Test
+	public void molecule12() {
+		ChemistrySentenceParser sentenceParser =  new ChemistrySentenceParser("OSCAR-CM benzene -LRB- ( CD 20 NN-MASS kg COMMA , CD 93 NN-PERCENT % NN-YIELD yield -RRB- )");
+		sentenceParser.parseTags();
+		Document doc = sentenceParser.makeXMLDocument();
+		assertEquals("Exactly one sentence was expected", true, hasOneSentence(doc));
+		assertEquals("A molecule child was expected", true, hasOneMoleculeInNounPhrase(doc));
+	}
+	
+	@Test
+	public void molecule13() {
+		ChemistrySentenceParser sentenceParser =  new ChemistrySentenceParser("OSCAR-CM benzene IN-FROM from NN-EXAMPLE example CD 3");
+		sentenceParser.parseTags();
+		Document doc = sentenceParser.makeXMLDocument();
+		assertEquals("Exactly one sentence was expected", true, hasOneSentence(doc));
+		assertEquals("A molecule child was expected", true, hasOneMoleculeInNounPhrase(doc));
+	}
+
+	@Test
+	public void molecule14() {
+		ChemistrySentenceParser sentenceParser =  new ChemistrySentenceParser("OSCAR-CM benzene IN-FROM from NN-METHOD method CD-ALPHANUM 2b -LRB- ( CD 3.7 NN-MASS g -RRB- )");
+		sentenceParser.parseTags();
+		Document doc = sentenceParser.makeXMLDocument();
+		assertEquals("Exactly one sentence was expected", true, hasOneSentence(doc));
+		assertEquals("A molecule child was expected", true, hasOneMoleculeInNounPhrase(doc));
+	}
+	
+	@Test
+	public void molecule15() {
+		ChemistrySentenceParser sentenceParser =  new ChemistrySentenceParser("OSCAR-CM tin NN-STATE powder -LRB- ( CD 50 NN-MASS g -RRB- )");
+		sentenceParser.parseTags();
+		Document doc = sentenceParser.makeXMLDocument();
+		assertEquals("Exactly one sentence was expected", true, hasOneSentence(doc));
+		assertEquals("A molecule child was expected", true, hasOneMoleculeInNounPhrase(doc));
+	}
+	
+	@Test
+	public void molecule16() {
+		ChemistrySentenceParser sentenceParser =  new ChemistrySentenceParser("OSCAR-CM benzene -LRB- ( CD 30 NN-AMOUNT mmol -RRB- ) COMMA , -LRB- ( CD 35 NN-PERCENT % NN-YIELD yield -RRB- )");
+		sentenceParser.parseTags();
+		Document doc = sentenceParser.makeXMLDocument();
+		assertEquals("Exactly one sentence was expected", true, hasOneSentence(doc));
+		assertEquals("A molecule child was expected", true, hasOneMoleculeInNounPhrase(doc));
+	}
+	
+	@Test
+	public void molecule17() {
+		ChemistrySentenceParser sentenceParser =  new ChemistrySentenceParser("CD -200 NN-VOL ml IN-OF of JJ-CHEM anhydrous OSCAR-CM ether");
+		sentenceParser.parseTags();
+		Document doc = sentenceParser.makeXMLDocument();
+		assertEquals("Exactly one sentence was expected", true, hasOneSentence(doc));
+		assertEquals("A molecule child was expected", true, hasOneMoleculeInNounPhrase(doc));
+	}
 
 	private boolean hasOneSentence(Document doc) {
 		Elements children = doc.getRootElement().getChildElements();
@@ -240,6 +393,24 @@ public class GrammarRecognitionTest {
 			return false;
 		}
 		if (!els.get(0).getLocalName().equals("UNNAMEDMOLECULE")){
+			return false;
+		}
+		return true;
+	}
+	
+	private boolean hasOneMoleculeInNounPhrase(Document doc) {
+		Elements phrases = doc.getRootElement().getChildElements().get(0).getChildElements();
+		if (phrases.size() !=1 ){
+			return false;
+		}
+		if (!phrases.get(0).getLocalName().equals("NounPhrase")){
+			return false;
+		}
+		Elements els = phrases.get(0).getChildElements();
+		if (els.size() !=1 ){
+			return false;
+		}
+		if (!els.get(0).getLocalName().equals("MOLECULE")){
 			return false;
 		}
 		return true;

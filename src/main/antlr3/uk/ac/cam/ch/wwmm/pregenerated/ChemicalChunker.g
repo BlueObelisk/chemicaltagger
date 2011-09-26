@@ -257,7 +257,7 @@ preapparatus
 
 oscaronts
 	: oscaront+ -> ^(OSCARONT   oscaront+);
-oscarCompound :  adj* oscarCompoundStructure adj? (numericReferenceOrQuantity | nnchementity )? quantity* fromProcedure?;
+oscarCompound :  (jjcomp|adj)* oscarCompoundStructure adj? nnstate? (numericReferenceOrQuantity | nnchementity )? quantity* fromProcedure?;
 
 oscarCompoundStructure: (oscarcm afterOscarCompoundStructure? | bracketedOscarCompoundStructure) -> ^(OSCARCM oscarcm? afterOscarCompoundStructure? bracketedOscarCompoundStructure?);
 afterOscarCompoundStructure: oscarcm+|(dash oscarcm+)+ dash?|((colon oscarcm+)+ ratioOrBracketedRatio)=>(colon oscarcm+)+|(dash|apost)+;
