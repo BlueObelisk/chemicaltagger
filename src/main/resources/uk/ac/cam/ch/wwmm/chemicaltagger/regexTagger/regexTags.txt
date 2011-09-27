@@ -72,7 +72,7 @@ VB-SUBJECT---^subject(ed)?---Subject Verb in past form
 #Adjective
 JJ---^round$|^bottom|^thaw$---Adjectives
 JJ---^(beige|brown|crimson|cyan|green|grey|magenta|orange|purple|violet|yellow)$---Colours that are assigned by openNLP as nouns. Some other colours that are often nouns are special cased by PostProcessTags
-JJ-CHEM---^acidic$|^conc[.]?$|^Merrifield$|^crude$|^vicinal$|^buffer$|^mono$|^fritted$|^glacial$|^(E|e)xcess|(A|a)mphiphilic$|(f|F)unctionalized$|(p|P)ot$|^cyclic$|(H|h)yperbranched$|^insoluble$|^(p|P)ropargyl$|Arm$|^(s|S)tar$|^anh(\.|ydrous)?$|^aq\.?$|^organic|^(s|S)at(\.|urated)$|^(Di|Tri|di|tri|poly)block$---Chemical Adjectives
+JJ-CHEM---^acidic$|^conc[.]?$|^Merrifield$|^crude$|^vicinal$|^buffer$|^mono$|^fritted$|^glacial$|^excess|amphiphilic$|functionalized$|pot$|^cyclic$|hyperbranched$|^insoluble$|^propargyl$|Arm$|^star$|^anh(\.|ydrous)?$|^aq\.?$|^organic|^sat(\.|urated)$|^(Di|Tri|di|tri|poly)block$---Chemical Adjectives
 JJ-COMPOUND---^(desired|resultant|title[d]?|final|initial|aimed|expected|anticipated)$---Adjectives that define unnamed compound
 #Add Tokens
 NN-ADD---^addition$---Add Noun
@@ -90,7 +90,7 @@ VB-TREAT---^treat(e|s|ed|ing)?$---Treat Verb
 VB-APPARATUS---(^equip|^seal|clos|^cap|^fitt)(ped|ed|e)?$---Apparatus Verb
 NN-APPARATUS---^rotavap$|^trap$|^neck$|^valve$|^adapter$|^inlet|^outlet|^condenser$|^stirrer$|^reactor$|^syringe$|^bath$|^oven$|^vessel$|^glove|^box$|^bar$|^tube$|^(S|s)chlenk$|^(F|f)lask(s)?$|^(F|f)unnel?$|^desiccator(s)?$---Apparatus Nouns
 #Concentrate Tokens
-VB-CONCENTRATE---(^concentrat|^saturat)(ed|e|ing)?$---Concentrate Verb
+VB-CONCENTRATE---^(concentrat(ed|e|ing)?|saturat(e|ing)?)$---Concentrate Verb
 NN-CONCENTRATE---^concentration---Concentrate Noun
 
 #Cool Tokens
