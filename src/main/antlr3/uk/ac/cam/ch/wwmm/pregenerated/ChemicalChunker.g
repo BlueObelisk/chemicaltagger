@@ -157,7 +157,7 @@ TOKEN : (~' ')+;
 
 document: sentence+-> ^(Sentence  sentence )+ ;
 
-sentence: procedureNounPhrase | (sentenceStructure|unmatchedPhrase)+ stop*;
+sentence: (procedureNounPhrase | (sentenceStructure|unmatchedPhrase)+) stop*;
 
 sentenceStructure:  (nounphrase|verbphrase|prepphrase|prepphraseAfter)+ (advAdj|colon)* (conjunction|rbconj|comma)*;
 
