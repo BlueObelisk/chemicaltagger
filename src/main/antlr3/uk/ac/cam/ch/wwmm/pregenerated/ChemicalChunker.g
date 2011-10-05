@@ -274,7 +274,7 @@ oscaronts
 oscarCompound :  (jjcomp|adj)* oscarCompoundStructure adj? nnstate? (numericReferenceOrQuantity | nnchementity )? quantity* fromProcedure?;
 
 oscarCompoundStructure: (oscarcm afterOscarCompoundStructure? | bracketedOscarCompoundStructure) -> ^(OSCARCM oscarcm? afterOscarCompoundStructure? bracketedOscarCompoundStructure?);
-afterOscarCompoundStructure: oscarcm+|(dash oscarcm+)+ dash?|((colon oscarcm+)+ ratioOrBracketedRatio)=>(colon oscarcm+)+|(dash|apost)+;
+afterOscarCompoundStructure: oscarcm+|(dash oscarcm+)+ dash?|((colon oscarcm+)+ lrb? ratio)=>(colon oscarcm+)+|(dash|apost)+;
 bracketedOscarCompoundStructure :	lrb  oscarcm+ rrb;
 
 molecule
