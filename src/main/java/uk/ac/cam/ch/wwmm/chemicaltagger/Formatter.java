@@ -17,7 +17,8 @@
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
 import java.util.Arrays;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -31,7 +32,7 @@ import org.xmlcml.euclid.Util;
  */
 public class Formatter {
 	
-	private static List<String> ABV_LIST = Arrays.asList("et.", "al.", "etc.", "e.g.", "i.e.", "vol.", "ca.", "wt.", "aq.", "mt.", "e.g.:", "eq.", "equiv.", "mp.", "conc.", "approx.", "anh.", "sat.");
+	private static Set<String> ABV_LIST = new HashSet<String>(Arrays.asList("et.", "al.", "etc.", "e.g.", "i.e.", "vol.", "ca.", "wt.", "aq.", "mt.", "e.g.:", "eq.", "equiv.", "mp.", "conc.", "approx.", "anh.", "sat.", "lit.", "m.p."));
 	private static Pattern WHITESPACE_PATTERN = Pattern.compile("\\s+");
 	private static Pattern ABBREVIATION_PATTERN = Pattern.compile("-?[A-Z]+[a-z]*\\.");
 	//Note \d[gl] are intentionally excluded to avoid ambiguity with compound references
