@@ -21,6 +21,8 @@ import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.List;
 
+import uk.ac.cam.ch.wwmm.oscar.document.Token;
+
 /******************************************
  * Combines tokens that have been erroneously split by OSCAR.
  * @author lh359
@@ -33,6 +35,7 @@ public class RecombineTokens {
 	private RecombineTokens(){
 		
 	}
+
 	/*********************************************
 	 * Indexes the tokens that need combining and then calls combineTokens.
 	 * @param posContainer (POSContainer) .
@@ -43,7 +46,7 @@ public class RecombineTokens {
 		List<String> nonHyphenTags = Arrays.asList(new String[] { "dash",
 				"comma", "cc", "stop" });
 		List<Integer> indexList = new ArrayList<Integer>();
-		List<String> wordTokenList = posContainer.getWordTokenList();
+		List<Token> wordTokenList = posContainer.getWordTokenList();
 		List<String> combinedTagList = posContainer.getCombinedTagsList();
 		LinkedHashMap<Integer, List<Integer>> indexMap = new LinkedHashMap<Integer, List<Integer>>();
 		for (int currentIndex = 0; currentIndex < wordTokenList.size(); currentIndex++) {
@@ -69,8 +72,8 @@ public class RecombineTokens {
 					String nextTag = combinedTagList.get(currentIndex + 1);
 
 					if (!(previousTag.startsWith("OSCAR-CM")
-							& nextTag.startsWith("OSCAR-CM") & !wordTokenList
-							.get(currentIndex + 1).startsWith("-")) && !(nextTag.startsWith("CD") && previousTag.startsWith("NN")) &&  !isAHyphenedUnit(previousTag,nextTag)) {
+							& nextTag.startsWith("OSCAR-CM") & !wordTokenList.get(currentIndex + 1).getSurface().startsWith("-")) 
+							&& !(nextTag.startsWith("CD") && previousTag.startsWith("NN")) &&  !isAHyphenedUnit(previousTag,nextTag)) {
 						
 						if (totalIndexList.contains(currentIndex - 1)) {
 
@@ -109,12 +112,12 @@ public class RecombineTokens {
 				}
 			}
 			else if (currentTagLc.equals("nn-temp")) {//Identifies cases such as "50C . was" and corrects them to "50C. was"
-				if (wordTokenList.get(currentIndex).toLowerCase().endsWith("c") && currentIndex >0 && currentIndex + 2 < wordTokenList.size()){
+				if (wordTokenList.get(currentIndex).getSurface().toLowerCase().endsWith("c") && currentIndex >0 && currentIndex + 2 < wordTokenList.size()){
 					String nextTag = combinedTagList.get(currentIndex + 1);
 					if (nextTag.equalsIgnoreCase("stop")){
-						String previousWord = wordTokenList.get(currentIndex - 1);
+						String previousWord = wordTokenList.get(currentIndex - 1).getSurface();
 						if (Character.isDigit(previousWord.charAt(previousWord.length()-1))){
-							String wordAfterStop = wordTokenList.get(currentIndex + 2);
+							String wordAfterStop = wordTokenList.get(currentIndex + 2).getSurface();
 							//if appears to be the start of a new sentence
 							if (!Character.isUpperCase(wordAfterStop.charAt(0)) && !Character.isDigit(wordAfterStop.charAt(0))){
 								indexList = new ArrayList<Integer>();
@@ -127,10 +130,10 @@ public class RecombineTokens {
 				}
 			}
 			else if (currentTagLc.equals("nn-time")) {//Identifies cases such as "min . and" and corrects them to "min. and"
-				if (wordTokenList.get(currentIndex).equalsIgnoreCase("min") && currentIndex >0 && currentIndex + 2 < wordTokenList.size()){
+				if (wordTokenList.get(currentIndex).getSurface().equalsIgnoreCase("min") && currentIndex >0 && currentIndex + 2 < wordTokenList.size()){
 					String nextTag = combinedTagList.get(currentIndex + 1);
 					if (nextTag.equalsIgnoreCase("stop")){
-						String wordAfterStop = wordTokenList.get(currentIndex + 2);
+						String wordAfterStop = wordTokenList.get(currentIndex + 2).getSurface();
 						if (!Character.isUpperCase(wordAfterStop.charAt(0))){
 							indexList = new ArrayList<Integer>();
 							indexList.add(currentIndex);
@@ -160,6 +163,7 @@ public class RecombineTokens {
 		else
 		return false;
 	}
+
 	/*****************************************
 	 * Combines the tokens based on the indices in indexMap.
 	 * @param posContainer (POSContainer)
@@ -169,26 +173,30 @@ public class RecombineTokens {
 	private static POSContainer combineTokens(POSContainer posContainer, LinkedHashMap<Integer, List<Integer>> indexMap) {
 		if (indexMap.size() > 0) {
 
-			List<String> newWordTokenList = new ArrayList<String>();
+			List<Token> newWordTokenList = new ArrayList<Token>();
 			List<String> newCombinedTagsList = new ArrayList<String>();
 
+			int tokenIndex = 0;
 			for (int i = 0; i < posContainer.getWordTokenList().size(); i++) {
-				StringBuilder multiTokenWord = new StringBuilder();
-				String tagName;
-
+				Token newToken;
 				if (!indexMap.keySet().contains(i)) {
-					newWordTokenList.add(posContainer.getWordTokenList().get(i));
+					newToken = posContainer.getWordTokenList().get(i);
 					newCombinedTagsList.add(posContainer.getCombinedTagsList().get(i));
 				} else {
 					List<Integer> indexList = indexMap.get(i);
-					tagName = getTagName(posContainer,indexList);
+					String tagName = getTagName(posContainer,indexList);
+					StringBuilder multiTokenWord = new StringBuilder();
 					for (Integer integer : indexList) {
-						multiTokenWord.append(posContainer.getWordTokenList().get(integer));
+						multiTokenWord.append(posContainer.getWordTokenList().get(integer).getSurface());
 					}
-					newWordTokenList.add(multiTokenWord.toString());
+					int start = posContainer.getWordTokenList().get(indexList.get(0)).getStart();
+					int end = posContainer.getWordTokenList().get(indexList.get(indexList.size()-1)).getEnd();
+					newToken = new Token(multiTokenWord.toString(), start, end, null, posContainer.getWordTokenList().get(indexList.get(indexList.size()-1)).getBioType(), null);
 					newCombinedTagsList.add(tagName);
 					i = i + indexList.size() - 1;
 				}
+				newToken.setIndex(tokenIndex++);
+				newWordTokenList.add(newToken);
 			}
 			posContainer.setWordTokenList(newWordTokenList);
 			posContainer.setCombinedTagsList(newCombinedTagsList);

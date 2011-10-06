@@ -16,12 +16,17 @@
 
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import junit.framework.Assert;
 
 import org.junit.Test;
+
+import uk.ac.cam.ch.wwmm.oscar.document.Token;
+import uk.ac.cam.ch.wwmm.oscar.types.BioTag;
+import uk.ac.cam.ch.wwmm.oscar.types.BioType;
 
 /************************************
  * Tests the PostProcessingTags Class.
@@ -51,7 +56,7 @@ public class PostProcessTagsTest {
 	public void testVerbWithDigits() {
         POSContainer posContainer = new POSContainer();
         List<String> tags = Arrays.asList("VB");
-        List<String> tokens = Arrays.asList("44\u00B011'");
+        List<Token> tokens = toTokens("44\u00B011'");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
         new PostProcessTags(posContainer).correctCombinedTagsList();
@@ -62,7 +67,7 @@ public class PostProcessTagsTest {
 	public void testYieldAsAnAdjective() {
         POSContainer posContainer = new POSContainer();
         List<String> tags = Arrays.asList("DT-THE", "VB-YIELD", "NN-CHEMENTITY");
-        List<String> tokens = Arrays.asList("The", "yielded", "product");
+        List<Token> tokens = toTokens("The", "yielded", "product");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
         new PostProcessTags(posContainer).correctCombinedTagsList();
@@ -73,7 +78,7 @@ public class PostProcessTagsTest {
 	public void testYieldAsANoun1() {
         POSContainer posContainer = new POSContainer();
         List<String> tags = Arrays.asList("CD", "NN-PERCENT", "VB-YIELD");
-        List<String> tokens = Arrays.asList("30", "%", "yield");
+        List<Token> tokens = toTokens("30", "%", "yield");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
         new PostProcessTags(posContainer).correctCombinedTagsList();
@@ -84,7 +89,7 @@ public class PostProcessTagsTest {
 	public void testYieldAsANoun2() {
         POSContainer posContainer = new POSContainer();
         List<String> tags = Arrays.asList("VB-YIELD", "IN-OF", "CD", "NN-PERCENT");
-        List<String> tokens = Arrays.asList("yield", "of", "30", "%");
+        List<Token> tokens = toTokens("yield", "of", "30", "%");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
         new PostProcessTags(posContainer).correctCombinedTagsList();
@@ -95,7 +100,7 @@ public class PostProcessTagsTest {
 	public void testFormAsAVerb() {
         POSContainer posContainer = new POSContainer();
         List<String> tags = Arrays.asList("VB");
-        List<String> tokens = Arrays.asList("form");
+        List<Token> tokens = toTokens("form");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
         new PostProcessTags(posContainer).correctCombinedTagsList();
@@ -106,7 +111,7 @@ public class PostProcessTagsTest {
 	public void testLetterLabelledExample() {
         POSContainer posContainer = new POSContainer();
         List<String> tags = Arrays.asList("NN-EXAMPLE", "NNP");
-        List<String> tokens = Arrays.asList("example", "A");
+        List<Token> tokens = toTokens("example", "A");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
         new PostProcessTags(posContainer).correctCombinedTagsList();
@@ -117,7 +122,7 @@ public class PostProcessTagsTest {
 	public void testNotALetterLabelledExample() {
         POSContainer posContainer = new POSContainer();
         List<String> tags = Arrays.asList("IN-IN", "DT", "NN-EXAMPLE", "DT", "NN-APPARATUS");
-        List<String> tokens = Arrays.asList("In", "this", "example", "a", "flask");
+        List<Token> tokens = toTokens("In", "this", "example", "a", "flask");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
         new PostProcessTags(posContainer).correctCombinedTagsList();
@@ -128,7 +133,7 @@ public class PostProcessTagsTest {
 	public void testLetterLabelledProcedure() {
         POSContainer posContainer = new POSContainer();
         List<String> tags = Arrays.asList("NN-METHOD", "OSCAR-CM");
-        List<String> tokens = Arrays.asList("step", "B");
+        List<Token> tokens = toTokens("step", "B");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
         new PostProcessTags(posContainer).correctCombinedTagsList();
@@ -139,7 +144,7 @@ public class PostProcessTagsTest {
 	public void testLetterLabelledProcedure2() {
         POSContainer posContainer = new POSContainer();
         List<String> tags = Arrays.asList("NN-METHOD", "NN");
-        List<String> tokens = Arrays.asList("step", "b");
+        List<Token> tokens = toTokens("step", "b");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
         new PostProcessTags(posContainer).correctCombinedTagsList();
@@ -150,7 +155,7 @@ public class PostProcessTagsTest {
 	public void testLetterLabelledProcedure3() {
         POSContainer posContainer = new POSContainer();
         List<String> tags = Arrays.asList("NN-METHOD", "NNP");
-        List<String> tokens = Arrays.asList("procedure", "E");
+        List<Token> tokens = toTokens("procedure", "E");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
         new PostProcessTags(posContainer).correctCombinedTagsList();
@@ -161,7 +166,7 @@ public class PostProcessTagsTest {
 	public void testLetterLabelledProcedure4() {
         POSContainer posContainer = new POSContainer();
         List<String> tags = Arrays.asList("-LRB-", "DT", "-RRB-");
-        List<String> tokens = Arrays.asList("(", "A", ")");
+        List<Token> tokens = toTokens("(", "A", ")");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
         new PostProcessTags(posContainer).correctCombinedTagsList();
@@ -172,7 +177,7 @@ public class PostProcessTagsTest {
 	public void testLetterLabelledProcedure5() {
         POSContainer posContainer = new POSContainer();
         List<String> tags = Arrays.asList("DT", "STOP");
-        List<String> tokens = Arrays.asList("a", ".");
+        List<Token> tokens = toTokens("a", ".");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
         new PostProcessTags(posContainer).correctCombinedTagsList();
@@ -183,7 +188,7 @@ public class PostProcessTagsTest {
 	public void testLetterLabelledProcedure6() {
         POSContainer posContainer = new POSContainer();
         List<String> tags = Arrays.asList("DT", "COLON");
-        List<String> tokens = Arrays.asList("a", ":");
+        List<Token> tokens = toTokens("a", ":");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
         new PostProcessTags(posContainer).correctCombinedTagsList();
@@ -194,7 +199,7 @@ public class PostProcessTagsTest {
 	public void testRomanNumberLabelledProcedure1() {
         POSContainer posContainer = new POSContainer();
         List<String> tags = Arrays.asList("NN-METHOD", "PRP");
-        List<String> tokens = Arrays.asList("procedure", "i");
+        List<Token> tokens = toTokens("procedure", "i");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
         new PostProcessTags(posContainer).correctCombinedTagsList();
@@ -205,7 +210,7 @@ public class PostProcessTagsTest {
 	public void testRomanNumberLabelledProcedure2() {
         POSContainer posContainer = new POSContainer();
         List<String> tags = Arrays.asList("NN-METHOD", "NNP");
-        List<String> tokens = Arrays.asList("procedure", "X");
+        List<Token> tokens = toTokens("procedure", "X");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
         new PostProcessTags(posContainer).correctCombinedTagsList();
@@ -216,7 +221,7 @@ public class PostProcessTagsTest {
 	public void testRomanNumberLabelledProcedure3() {
         POSContainer posContainer = new POSContainer();
         List<String> tags = Arrays.asList("-LRB-", "PRP", "-RRB-");
-        List<String> tokens = Arrays.asList("(", "i", ")");
+        List<Token> tokens = toTokens("(", "i", ")");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
         new PostProcessTags(posContainer).correctCombinedTagsList();
@@ -227,7 +232,7 @@ public class PostProcessTagsTest {
 	public void testRomanNumberLabelledProcedureHeading() {
         POSContainer posContainer = new POSContainer();
         List<String> tags = Arrays.asList("NN", "-RRB-");
-        List<String> tokens = Arrays.asList("i", ")");
+        List<Token> tokens = toTokens("i", ")");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
         new PostProcessTags(posContainer).correctCombinedTagsList();
@@ -238,7 +243,7 @@ public class PostProcessTagsTest {
 	public void testRomanNumberLabelledCompound() {
         POSContainer posContainer = new POSContainer();
         List<String> tags = Arrays.asList("NN-CHEMENTITY", "NN");
-        List<String> tokens = Arrays.asList("compound", "X");
+        List<Token> tokens = toTokens("compound", "X");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
         new PostProcessTags(posContainer).correctCombinedTagsList();
@@ -249,7 +254,7 @@ public class PostProcessTagsTest {
 	public void testLetteraLabelledCompound() {
         POSContainer posContainer = new POSContainer();
         List<String> tags = Arrays.asList("CD", "NN-MASS", "IN-OF", "DT", "STOP");
-        List<String> tokens = Arrays.asList("50", "g", "of", "a", ".");
+        List<Token> tokens = toTokens("50", "g", "of", "a", ".");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
         new PostProcessTags(posContainer).correctCombinedTagsList();
@@ -260,7 +265,7 @@ public class PostProcessTagsTest {
 	public void testNotLetteraLabelledCompound() {
         POSContainer posContainer = new POSContainer();
         List<String> tags = Arrays.asList("CD", "NN-MASS", "IN-OF", "DT", "JJ", "NN-STATE");
-        List<String> tokens = Arrays.asList("50", "g", "of", "a", "brown", "liquid");
+        List<Token> tokens = toTokens("50", "g", "of", "a", "brown", "liquid");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
         new PostProcessTags(posContainer).correctCombinedTagsList();
@@ -271,7 +276,7 @@ public class PostProcessTagsTest {
 	public void testLetterLabelledProcedureHeading1() {
         POSContainer posContainer = new POSContainer();
         List<String> tags = Arrays.asList("DT", "-RRB-");
-        List<String> tokens = Arrays.asList("a", ")");
+        List<Token> tokens = toTokens("a", ")");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
         new PostProcessTags(posContainer).correctCombinedTagsList();
@@ -282,7 +287,7 @@ public class PostProcessTagsTest {
 	public void testLetterLabelledProcedureHeading2() {
         POSContainer posContainer = new POSContainer();
         List<String> tags = Arrays.asList("-LRB-", "DT", "-RRB-");
-        List<String> tokens = Arrays.asList("(", "a", ")");
+        List<Token> tokens = toTokens("(", "a", ")");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
         new PostProcessTags(posContainer).correctCombinedTagsList();
@@ -293,7 +298,7 @@ public class PostProcessTagsTest {
 	public void testLetterAbbreviation() {
         POSContainer posContainer = new POSContainer();
         List<String> tags = Arrays.asList("NN-TIME", "-LRB-", "DT", "-RRB-");
-        List<String> tokens = Arrays.asList("hours", "(", "h", ")");
+        List<Token> tokens = toTokens("hours", "(", "h", ")");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
         new PostProcessTags(posContainer).correctCombinedTagsList();
@@ -304,7 +309,7 @@ public class PostProcessTagsTest {
 	public void testNounUsedAsAnAdjectiveColour() {
         POSContainer posContainer = new POSContainer();
         List<String> tags = Arrays.asList("NN", "NN-STATE");
-        List<String> tokens = Arrays.asList("amber", "oil");
+        List<Token> tokens = toTokens("amber", "oil");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
         new PostProcessTags(posContainer).correctCombinedTagsList();
@@ -315,7 +320,7 @@ public class PostProcessTagsTest {
 	public void testPrecipitateNN() {
         POSContainer posContainer = new POSContainer();
         List<String> tags = Arrays.asList("NN");
-        List<String> tokens = Arrays.asList("precipitate");
+        List<Token> tokens = toTokens("precipitate");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
         new PostProcessTags(posContainer).correctCombinedTagsList();
@@ -326,7 +331,7 @@ public class PostProcessTagsTest {
 	public void testPrecipitateVB() {
         POSContainer posContainer = new POSContainer();
         List<String> tags = Arrays.asList("VB");
-        List<String> tokens = Arrays.asList("precipitate");
+        List<Token> tokens = toTokens("precipitate");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
         new PostProcessTags(posContainer).correctCombinedTagsList();
@@ -337,7 +342,7 @@ public class PostProcessTagsTest {
 	public void testFormulasAsAChementity() {
         POSContainer posContainer = new POSContainer();
         List<String> tags = Arrays.asList("NN", "CD");
-        List<String> tokens = Arrays.asList("formula", "5");
+        List<Token> tokens = toTokens("formula", "5");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
         new PostProcessTags(posContainer).correctCombinedTagsList();
@@ -349,7 +354,7 @@ public class PostProcessTagsTest {
 	public void testNNMethodIsNotaJJ() {
         POSContainer posContainer = new POSContainer();
         List<String> tags = Arrays.asList("TO", "NN-METHOD", "NNP" , "IN-OF");
-        List<String> tokens = Arrays.asList("to", "Step", "C", "of");
+        List<Token> tokens = toTokens("to", "Step", "C", "of");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
         new PostProcessTags(posContainer).correctCombinedTagsList();
@@ -360,10 +365,20 @@ public class PostProcessTagsTest {
 	public void testVBYieldIsNotaJJ() {
         POSContainer posContainer = new POSContainer();
         List<String> tags = Arrays.asList("OSCAR-CM", "VB-YIELD", "OSCAR-CM");
-        List<String> tokens = Arrays.asList("hexane", "provided", "2-chloropyridine");
+        List<Token> tokens = toTokens("hexane", "provided", "2-chloropyridine");
         posContainer.setCombinedTagsList(tags);
         posContainer.setWordTokenList(tokens);
         new PostProcessTags(posContainer).correctCombinedTagsList();
         Assert.assertEquals("OSCAR-CM hexane VB-YIELD provided OSCAR-CM 2-chloropyridine", posContainer.getTokenTagTupleAsString());
     }
+	
+	private List<Token> toTokens(String... tokenSurfaces){
+		List<Token> tokens = new ArrayList<Token>();
+		int pos = 0;
+		for (String surface : tokenSurfaces) {
+			tokens.add(new Token(surface, pos, pos +surface.length(), null, new BioType(BioTag.O), null));
+			pos+=surface.length() +1;
+		}
+		return tokens;
+	}
 }

@@ -16,12 +16,15 @@
 
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
+import java.util.List;
+
 import junit.framework.Assert;
 
-import org.apache.commons.lang.StringUtils;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import uk.ac.cam.ch.wwmm.oscar.document.Token;
 
 /************************************
  * Tests the RecombineTokens Class.
@@ -201,15 +204,15 @@ public class RecombineTokensTest {
         posContainer.setInputText(inputSentence);
 		posContainer.setWordTokenList(oscarTokeniser.tokenise(inputSentence));
 		posContainer.registerTagList(oscarTagger.runTagger(posContainer.getWordTokenList(), inputSentence));
-		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""),StringUtils.join(posContainer.getWordTokenList().listIterator(),"").toLowerCase());
+		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""), tokenListToConcatenatedString(posContainer.getWordTokenList()).toLowerCase());
 		posContainer.registerTagList(regexTagger.runTagger(posContainer.getWordTokenList(), inputSentence));
-		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""),StringUtils.join(posContainer.getWordTokenList().listIterator(),"").toLowerCase());
+		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""), tokenListToConcatenatedString(posContainer.getWordTokenList()).toLowerCase());
 		posContainer.registerTagList(openNLPTagger.runTagger(posContainer.getWordTokenList(), inputSentence));
-		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""),StringUtils.join(posContainer.getWordTokenList().listIterator(),"").toLowerCase());
+		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""), tokenListToConcatenatedString(posContainer.getWordTokenList()).toLowerCase());
 		posContainer.combineTaggers();
 		posContainer = RecombineTokens.recombineTokens(posContainer);
 		new PostProcessTags(posContainer).correctCombinedTagsList();
-		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""),StringUtils.join(posContainer.getWordTokenList().listIterator(),"").toLowerCase());
+		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""), tokenListToConcatenatedString(posContainer.getWordTokenList()).toLowerCase());
 	
 
 	}
@@ -223,14 +226,22 @@ public class RecombineTokensTest {
         
 		posContainer.setWordTokenList(oscarTokeniser.tokenise(inputSentence));
 		posContainer.registerTagList(oscarTagger.runTagger(posContainer.getWordTokenList(), inputSentence));
-		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""),StringUtils.join(posContainer.getWordTokenList().listIterator(),"").toLowerCase());
+		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""), tokenListToConcatenatedString(posContainer.getWordTokenList()).toLowerCase());
 		posContainer.registerTagList(regexTagger.runTagger(posContainer.getWordTokenList(), inputSentence));
-		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""),StringUtils.join(posContainer.getWordTokenList().listIterator(),"").toLowerCase());
+		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""), tokenListToConcatenatedString(posContainer.getWordTokenList()).toLowerCase());
 		posContainer.registerTagList(openNLPTagger.runTagger(posContainer.getWordTokenList(), inputSentence));
-		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""),StringUtils.join(posContainer.getWordTokenList().listIterator(),"").toLowerCase());
+		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""), tokenListToConcatenatedString(posContainer.getWordTokenList()).toLowerCase());
 		posContainer.combineTaggers();
 		posContainer = RecombineTokens.recombineTokens(posContainer);
 		new PostProcessTags(posContainer).correctCombinedTagsList();
-		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""),StringUtils.join(posContainer.getWordTokenList().listIterator(),"").toLowerCase());
+		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""), tokenListToConcatenatedString(posContainer.getWordTokenList()).toLowerCase());
+	}
+	
+	private String tokenListToConcatenatedString(List<Token> tokens){
+		StringBuilder sb = new StringBuilder();
+		for (Token token : tokens) {
+			sb.append(token.getSurface());
+		}
+		return sb.toString();
 	}
 }

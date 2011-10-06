@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import uk.ac.cam.ch.wwmm.oscar.Oscar;
+import uk.ac.cam.ch.wwmm.oscar.document.Token;
 
 
 /**************************************************************
@@ -105,7 +106,7 @@ public class ChemistryPOSTagger {
 	 */
 	private ChemistryPOSTagger() {
 		Oscar oscar = new Oscar();
-		ctTokeniser = new OscarTokeniser(oscar);
+		ctTokeniser = new OscarTokeniser();
 
 		regexTagger = new RegexTagger();
 		oscarTagger = new OscarTagger(oscar);
@@ -179,15 +180,16 @@ public class ChemistryPOSTagger {
 		
 		POSContainer posContainer = new POSContainer();
 		List<String> ignoredTags = new ArrayList<String>();
-		List<String> wordTokenList = normaliseAndTokeniseInput(inputSentence, posContainer, useSpectraTagger);		
+		List<Token> wordTokenList = normaliseAndTokeniseInput(inputSentence, posContainer, useSpectraTagger);
 		posContainer.setWordTokenList(wordTokenList);
 		
 		for (Tagger tagger : taggersOrderedInDescendingPriority){
-			List<String> tagList = tagger.runTagger(wordTokenList,posContainer.getInputText());
+			List<String> tagList = tagger.runTagger(wordTokenList, posContainer.getInputText());
 			posContainer.registerTagList(tagList);
 
-			if (tagger.getIgnoredTags() != null)
+			if (tagger.getIgnoredTags() != null){
 		       	ignoredTags.addAll(tagger.getIgnoredTags());
+			}
 		}
 
 		posContainer.combineTaggers();	
@@ -204,14 +206,14 @@ public class ChemistryPOSTagger {
 	 * @param useSpectraTagger (boolean)
 	 * @return posContainer (POSContainer)
 	 */
-	private List<String> normaliseAndTokeniseInput(String inputSentence, POSContainer posContainer, boolean useSpectraTagger) {
+	private List<Token> normaliseAndTokeniseInput(String inputSentence, POSContainer posContainer, boolean useSpectraTagger) {
 		inputSentence = Formatter.normaliseText(inputSentence);
 		posContainer.setInputText(inputSentence);
 
 		if (useSpectraTagger){
 		    posContainer = SpectraTagger.runTagger(posContainer);
 		}
-		List<String> wordTokenList = ctTokeniser.tokenise(inputSentence);
+		List<Token> wordTokenList = ctTokeniser.tokenise(inputSentence);
         posContainer.setInputText(inputSentence);
         return wordTokenList;
 	}

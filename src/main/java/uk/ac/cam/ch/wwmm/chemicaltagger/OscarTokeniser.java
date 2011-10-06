@@ -16,52 +16,29 @@
 
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.commons.lang.StringUtils;
-
-import uk.ac.cam.ch.wwmm.oscar.Oscar;
 import uk.ac.cam.ch.wwmm.oscar.document.Token;
-import uk.ac.cam.ch.wwmm.oscar.document.TokenSequence;
+import uk.ac.cam.ch.wwmm.oscartokeniser.Tokeniser;
 
 public class OscarTokeniser implements ChemicalTaggerTokeniser {
 
-	private Oscar oscar;
+	private Tokeniser oscarTokeniser;
 
 	/*********************
 	 * Public Constructor method.
-	 * @param oscar (Oscar)
 	 */
-	public OscarTokeniser(Oscar oscar) {
-		this.oscar = oscar;
+	public OscarTokeniser() {
+		this.oscarTokeniser = Tokeniser.getDefaultInstance();
 	}
 
 	/*****************************************************
-	 * Tokenises an inputText using OSCAR tokeniser. 
-	 * Returns a wordTokenList .
+	 * Tokenises input text using the OSCAR4 tokeniser. 
+	 * Returns a list of tokens
 	 * @param inputSentence (String)
-	 * @return List<String> 
+	 * @return List<Token> 
 	 *****************************************************/
-	public List<String> tokenise(String inputSentence) {
-		List<String> wordTokenList = new ArrayList<String>();
-		// Oscar doesn't do normalisation just yet
-		// sentence = oscar.normalise(sentence);
-
-		List<TokenSequence>  tokSequenceList = oscar.tokenise(inputSentence);
-		for (TokenSequence tokenSequence : tokSequenceList) {
-			for (Token token : tokenSequence.getTokens()) {
-
-				for (String subWord : token.getSurface().trim().split(" ")) {
-					if (StringUtils.isNotEmpty(subWord)){
-						wordTokenList.add(subWord);
-					}
-				}
-
-			}
-		}
-		inputSentence = tokSequenceList.get(0).getSurface();
-		return wordTokenList;
+	public List<Token> tokenise(String inputSentence) {
+		return oscarTokeniser.tokenise(inputSentence).getTokens();
 	}
-
 }
