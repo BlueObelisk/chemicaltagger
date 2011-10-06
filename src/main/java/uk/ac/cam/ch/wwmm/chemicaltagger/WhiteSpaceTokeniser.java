@@ -16,18 +16,25 @@
 
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import uk.ac.cam.ch.wwmm.oscar.document.Token;
+import uk.ac.cam.ch.wwmm.oscar.types.BioTag;
+import uk.ac.cam.ch.wwmm.oscar.types.BioType;
 
 /****************************************
  * A whitespace tokeniser to be used as a 
  * substitute to the OSCAR tokeniser.
- * Can be converted into OSCAR tokens.
  * @author lh359
+ * @author dl387
  *
  *****************************************/
 public class WhiteSpaceTokeniser implements ChemicalTaggerTokeniser {
 	
+	private static Pattern tokenPattern = Pattern.compile("\\S+");
 	
 	/*****************************
 	 * Default constructor method.
@@ -39,10 +46,21 @@ public class WhiteSpaceTokeniser implements ChemicalTaggerTokeniser {
 	/********************************************
 	 * Tokenises a String on white space.
 	 * @param  inputSentence (String)
-	 * @return List<String>
+	 * @return List<Token>
 	 *****************************************/
-	public List<String> tokenise(String inputSentence){
-		return Arrays.asList(inputSentence.split("\\s+"));
+	public List<Token> tokenise(String inputSentence){
+		List<Token> tokens = new ArrayList<Token>();
+		Matcher m = tokenPattern.matcher(inputSentence);
+		int tokenIndex = 0;
+		while (m.find()) {
+			int start = m.start();
+			int end = m.end();
+			String value = m.group();
+			Token t = new Token(value, start, end, null, new BioType(BioTag.O), null);
+			t.setIndex(tokenIndex++);
+			tokens.add(t);
+		}
+		return tokens;
 	}
 
 }

@@ -23,6 +23,8 @@ import nu.xom.Element;
 
 import org.apache.commons.lang.StringUtils;
 
+import uk.ac.cam.ch.wwmm.oscar.document.Token;
+
 /********************************************
  * A container class that stores the grammatical structure of the text .
  * 
@@ -34,7 +36,7 @@ public class POSContainer {
 
 	private String inputText;
 	private boolean prioritiseOscar = true;
-	private List<String> wordTokenList = new ArrayList<String>();
+	private List<Token> wordTokenList = new ArrayList<Token>();
 	private List<String> combinedTagsList = new ArrayList<String>();
 	private List<List<String>> tagListContainer = new ArrayList<List<String>>();
 	public List<List<String>> getTagListContainer() {
@@ -89,22 +91,20 @@ public class POSContainer {
 	/**************************************
 	 * Setter method for WordTokenList.
 	 * 
-	 * @param wordTokenList (List<String>)
+	 * @param wordTokenList (List<Token>)
 	 ***************************************/
-	public void setWordTokenList(List<String> wordTokenList) {
+	public void setWordTokenList(List<Token> wordTokenList) {
 		this.wordTokenList = wordTokenList;
 	}
 
 	/**************************************
 	 * Getter method for WordTokenList.
 	 * 
-	 * @return wordTokenList (List<String>)
+	 * @return wordTokenList (List<Token>)
 	 ***************************************/
-	public List<String> getWordTokenList() {
+	public List<Token> getWordTokenList() {
 		return wordTokenList;
 	}
-
-	
 
 	/**************************************
 	 * Setter method for SpectrumList.
@@ -149,21 +149,10 @@ public class POSContainer {
 	/**************************************
 	 * Adds token to wordTokenList.
 	 * 
-	 * @param token (String)
+	 * @param token (Token)
 	 ***************************************/
-	public void addToTokenList(String token) {
+	public void addToTokenList(Token token) {
 		wordTokenList.add(token);
-	}
-
-	/**************************************
-	 * Creates a wordTokenList from a sentence string.
-	 * 
-	 * @param sentence (String)
-	 ***************************************/
-	public void createWordTokenListFromSentence(String sentence) {
-		for (String token : sentence.split(" ")) {
-			wordTokenList.add(token);
-		}
 	}
 
 	/***************************************
@@ -213,16 +202,14 @@ public class POSContainer {
 
 		for (int i = 0; i < wordTokenList.size(); i++) {
 			if (StringUtils.isNotEmpty(combinedTagsList.get(i))
-					&& StringUtils.isNotEmpty(wordTokenList.get(i))) {
+					&& StringUtils.isNotEmpty(wordTokenList.get(i).getSurface())) {
 				tokenTagTupleString.append(combinedTagsList.get(i));
 				tokenTagTupleString.append(SPACE);
-				tokenTagTupleString.append(wordTokenList.get(i));
+				tokenTagTupleString.append(wordTokenList.get(i).getSurface());
 				tokenTagTupleString.append(SPACE);
 			}
 		}
-
 		return tokenTagTupleString.toString().trim();
-
 	}
 
 	/********************************************

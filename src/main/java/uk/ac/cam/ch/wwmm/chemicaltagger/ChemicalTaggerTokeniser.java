@@ -18,17 +18,20 @@ package uk.ac.cam.ch.wwmm.chemicaltagger;
 
 import java.util.List;
 
+import uk.ac.cam.ch.wwmm.oscar.document.Token;
+
 /**************************************
  * An interface for tokenisers.
  * @author lh359
  *
  */
 public interface ChemicalTaggerTokeniser {
+
     /****************************
      * Tokeniser method.
      * @param posContainer (POSContainer)
-     * @return posContainer  (POSContainer)
+     * @return tokens  (List<Token>)
      */
-	List<String> tokenise(String inputSentence) ;
+	List<Token> tokenise(String inputSentence) ;
 	
 }

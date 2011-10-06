@@ -29,6 +29,8 @@ import java.util.regex.Pattern;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
+import uk.ac.cam.ch.wwmm.oscar.document.Token;
+
 /*****************************************************
  * Runs the regular expression tagger .
  * 
@@ -40,14 +42,13 @@ public class RegexTagger implements Tagger{
     private String tagFilePath = "/uk/ac/cam/ch/wwmm/chemicaltagger/regexTagger/regexTags.txt";
 	private static Logger LOG = Logger.getLogger(RegexTagger.class);
     private List<String> ignoredTags;
+
 	/****************************
 	 * Public Constructor.
 	 ***************************/
 	public RegexTagger() {
 		ignoredTags = new ArrayList<String>();
 		initializeRules();
-		
-		
 	}
 
 	/**********************
@@ -107,20 +108,20 @@ public class RegexTagger implements Tagger{
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	/*********************************************************
 	 * Runs the regular expression tagger against a list of tokens and returns a list of tags
-	 * @param tokenList (List<String>)
+	 * @param tokenList (List<Token>)
+	 * @param inputSentence (String)
 	 * @return tagList (List<String>)
 	/*********************************************************/
-	public List<String> runTagger(List<String> tokenList, String inputSentence) {
+	public List<String> runTagger(List<Token> tokenList, String inputSentence) {
 
 		List<String> tagList = new ArrayList<String>();
-		for (String token : tokenList) {
+		for (Token token : tokenList) {
 			try {
-				Matcher m = Pattern.compile("dummy").matcher(token);
+				Matcher m = Pattern.compile("dummy").matcher(token.getSurface());
 
 				String tag = "nil";
 				for (Rule r : rules) {
@@ -141,11 +142,10 @@ public class RegexTagger implements Tagger{
 
 	public List<String> getIgnoredTags() {
         return ignoredTags;      
- 		
 	}
+
 	public void setIgnoredTags(List<String> ignoredTags) {
-        this.ignoredTags = ignoredTags;      
- 		
+        this.ignoredTags = ignoredTags;
 	}
 
 }

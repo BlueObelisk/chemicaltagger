@@ -26,6 +26,7 @@ import org.apache.commons.lang.StringUtils;
 import opennlp.tools.postag.POSModel;
 import opennlp.tools.postag.POSTagger;
 import opennlp.tools.postag.POSTaggerME;
+import uk.ac.cam.ch.wwmm.oscar.document.Token;
 
 /*****************************************************
  * Runs the OpenNLP tagger .
@@ -40,7 +41,6 @@ public class OpenNLPTagger implements Tagger{
 		private static OpenNLPTagger myInstance = new OpenNLPTagger();
 	}
 	POSTagger posTagger;
-//	private static Logger LOG = Logger.getLogger(OpenNLPTagger.class);
 
 	/**************************************
 	 * Private Constructor Class.
@@ -88,11 +88,15 @@ public class OpenNLPTagger implements Tagger{
 
 	/*****************************************************
 	 * Runs the OpenNLP POS tagger against a list of tokens and returns a list of tags
-	 * @param tokenList (List<String>)
+	 * @param tokenList (List<Token>)
+	 * @param inputSentence (String)
 	 * @return tagList (List<String>) 
 	 *****************************************************/
-	public List<String> runTagger(List<String> tokenList, String inputSentence) {
-		String[] tokens = tokenList.toArray(new String[tokenList.size()]);
+	public List<String> runTagger(List<Token> tokenList, String inputSentence) {
+		String[] tokens = new String[tokenList.size()];
+		for (int i = 0; i < tokens.length; i++) {
+			tokens[i] = tokenList.get(i).getSurface();
+		}
 		String[] tags = posTagger.tag(tokens);
 		List<String> tagList = createPosTagListFromStringArray(tags);
 		return tagList;

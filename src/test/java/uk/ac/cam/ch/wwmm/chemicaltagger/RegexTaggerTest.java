@@ -56,7 +56,7 @@ public class RegexTaggerTest {
 		StringBuilder regexTaggedSentence = new StringBuilder(); 
         String cleanSentence = Formatter.normaliseText(sentence);
         POSContainer posContainer = new POSContainer();
-        posContainer.createWordTokenListFromSentence(cleanSentence);
+        posContainer.setWordTokenList(new WhiteSpaceTokeniser().tokenise(cleanSentence));
         posContainer.registerTagList(regexTagger.runTagger(posContainer.getWordTokenList(), null));
         
         List<String> regexTagList = posContainer.getTagListContainer().get(0);
@@ -76,7 +76,7 @@ public class RegexTaggerTest {
 			if (!regexTagList.get(i).equals("nil")){
 				regexTaggedSentence.append(regexTagList.get(i));
 				regexTaggedSentence.append(SPACE);
-				regexTaggedSentence.append(posContainer.getWordTokenList().get(i));
+				regexTaggedSentence.append(posContainer.getWordTokenList().get(i).getSurface());
 				regexTaggedSentence.append(SPACE);
 
 			}

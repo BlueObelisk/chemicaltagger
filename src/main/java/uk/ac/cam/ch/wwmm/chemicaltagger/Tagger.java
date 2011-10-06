@@ -18,24 +18,25 @@ package uk.ac.cam.ch.wwmm.chemicaltagger;
 
 import java.util.List;
 
+import uk.ac.cam.ch.wwmm.oscar.document.Token;
+
 
 /*****************************************************
- * Runs the OpenNLP tagger .
+ * An interface for a tagger.
+ * The tagger given a list of tokens should return a tag for each token
  * 
- * @author lh359, dmj30,jat45
+ * @author lh359
  *****************************************************/
 public interface Tagger {
 	
 
-	
 	/*****************************************************
-	 * Runs the tagger against the text and stores the tags in
-	 * POSContainer.
-	 * @param inputSentence TODO
-	 * @param posContainer (POSContainer)
+	 * Runs the tagger against the tokens and returns the tags as a list
+	 * @param inputSentence
+	 * @param tokenList (List<Token>)
 	 * @return posContainer (POSContainer) 
 	 *****************************************************/
-	public List<String> runTagger(List<String> tokenList, String inputSentence);
+	public List<String> runTagger(List<Token> tokenList, String inputSentence);
 
 	public List<String> getIgnoredTags() ;
 }
