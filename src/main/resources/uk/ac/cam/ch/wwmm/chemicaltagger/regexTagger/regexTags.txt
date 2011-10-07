@@ -25,7 +25,7 @@ IN-FROM---^from$---The preposition 'FROM'
 IN-UNDER---^under$---The preposition 'UNDER'
 IN-OVER---^over$---The preposition 'UNDER'
 IN-OFF---^off$---The preposition 'OFF'
-TO---^to$|^To$---The preposition 'TO'
+TO---^to$---The preposition 'TO'
 
 #Foreign Words
 FW---^et[\.]?$|^al[\.]?$
@@ -37,7 +37,7 @@ NN-TIME---^period[s]?$|^min(utes|s|\.)?$|^hour[s]?|^month[s]?|^week(s|end)?$|^se
 NN-MASS---^([mkµu]?(g|gram[m]?[e]?)|(pico|nano|micro|milli|centi|deci|kilo|mega)gram[m]?[e]?)[s]?$---Grams
 NN-AMOUNT---^([mnµu]|pico|nano|micro|milli)?mol[e]?[s]?$---Mols (hopefully animal moles will not occur in chemistry)
 NN-MOLAR---^([mnµu]?(?-i:M)|(?-i:N)|(pico|nano|micro|milli)?molar)$---Molar
-NN-ATMOSPHERE---(a|A)tmosphere(s)?$---Atmosphere
+NN-ATMOSPHERE---atmosphere[s]?$---Atmosphere
 NN-EQ---^([m]?eq[\.]?|(pico|nano|micro|milli|centi|deci|kilo|mega)?equiv(alent[s]?|\.)?)$---Equivalence
 NN-VOL---^([mkµu]?l|[cd]m3|(µ|pico|nano|micro|milli|centi|deci|kilo|mega)?lit(re|er|\.)[s]?)$---Volume
 NN-VOL---^(cm(-)?3|drop[s]?)$---Volume
@@ -53,7 +53,7 @@ NN-COLUMN---^(c|C)?olumn$---Column Token
 NN-CHROMATOGRAPHY---^(c|C)?hromatography$---Chromatography Token 
 NN-VACUUM---^(v|V)?acuum$|^(v|V)?acuo$---Vacuum Token                   
 NN-CYCLE---^(c|C)?ycle(s)?$---Column Token                    
-NN-TIMES---^(t|T)imes$---Times Token
+NN-TIMES---^times$---Times Token
 NN-EXAMPLE---^example[s]?$---Example Token
 NN-IDENTIFIER---^(X{2,3}(IX|IV|V?I{0,3})|II|III|IV|VI|VII|VIII|IX|XI|XII|XIII|XIV|XV|XVI|XVII|XVIII|XIX)$---Non words that are believed to be identifiers. Single letter roman digits are assigned by PostProcessTags
 NN-IDENTIFIER---^(\d+[a-z]\-\d*[a-z])$---Identifiers for a range of compounds e.g. 12a-12e or 12a-e
@@ -72,11 +72,11 @@ VB-SUBJECT---^subject(ed)?---Subject Verb in past form
 #Adjective
 JJ---^round$|^bottom|^thaw$---Adjectives
 JJ---^(beige|brown|crimson|cyan|green|grey|magenta|orange|purple|violet|yellow)$---Colours that are assigned by openNLP as nouns. Some other colours that are often nouns are special cased by PostProcessTags
-JJ-CHEM---^acidic$|^conc[.]?$|^Merrifield$|^crude$|^vicinal$|^buffer$|^mono$|^fritted$|^glacial$|^excess|amphiphilic$|functionalized$|pot$|^cyclic$|hyperbranched$|^insoluble$|^propargyl$|Arm$|^star$|^anh(\.|ydrous)?$|^aq\.?$|^organic|^sat(\.|urated)$|^(Di|Tri|di|tri|poly)block$---Chemical Adjectives
+JJ-CHEM---^acidic$|^conc[.]?$|^Merrifield$|^crude$|^vicinal$|^buffer$|^mono$|^fritted$|^glacial$|^excess|amphiphilic$|functionalized$|pot$|^cyclic$|hyperbranched$|^insoluble$|Arm$|^star$|^anh(\.|ydrous)?$|^aq\.?$|^organic|^sat(\.|urated)$|^(Di|Tri|di|tri|poly)block$---Chemical Adjectives
 JJ-COMPOUND---^(desired|resultant|title[d]?|final|initial|aimed|expected|anticipated)$---Adjectives that define unnamed compound
 #Add Tokens
 NN-ADD---^addition$---Add Noun
-NN-MIXTURE---^mixture$|^(s|S)uspension$---Mixture Noun
+NN-MIXTURE---^mixture$|^suspension$---Mixture Noun
 VB-DILUTE---^(pre|re)?(dilut)(e|s|ed|ing)?$---Dilute Verb
 VB-ADD---^(pre|re)?(add|mix|pour|dispers|introduc)(e|s|ed|ing)?$---Add Verb
 VB-CHARGE---^charge(d)?$---Charge Verb
@@ -88,7 +88,7 @@ VB-TREAT---^treat(e|s|ed|ing)?$---Treat Verb
                     
 #Apparatus Tokens
 VB-APPARATUS---(^equip|^seal|clos|^cap|^fitt)(ped|ed|e)?$---Apparatus Verb
-NN-APPARATUS---^rotavap$|^trap$|^neck$|^valve$|^adapter$|^inlet|^outlet|^condenser$|^stirrer$|^reactor$|^syringe$|^bath$|^oven$|^vessel$|^glove|^box$|^bar$|^tube$|^(S|s)chlenk$|^(F|f)lask(s)?$|^(F|f)unnel?$|^desiccator(s)?$---Apparatus Nouns
+NN-APPARATUS---^rotavap$|^trap$|^neck$|^valve$|^adapter$|^inlet|^outlet|^condenser$|^stirrer$|^reactor$|^syringe$|^bath$|^oven$|^vessel$|^glove|^box$|^bar$|^tube$|^schlenk$|^flask(s)?$|^funnel?$|^desiccator(s)?$---Apparatus Nouns
 #Concentrate Tokens
 VB-CONCENTRATE---^(concentrat(ed|e|ing)?|saturat(e|ing)?)$---Concentrate Verb
 NN-CONCENTRATE---^concentration---Concentrate Noun
@@ -162,7 +162,7 @@ VB-YIELD---^((afford|furnish|obtain|result|yield)(s|es|ed|ing)?|(isolat|leav|pro
 
 #Misc Tokens mainly to replace characters that are not markup friendly
 RB---.*wise$|.*ly$---Adverbs like dropwise
-RB-CONJ---^there[a-z]+|indeed|moreover|^(T|t)hen$|^prior|(s|S)ubsequently$---Conjunctive adverbs like: Thereof, therefrom etc.
+RB-CONJ---^there[a-z]+|indeed|moreover|^then$|^prior|subsequently$---Conjunctive adverbs like: Thereof, therefrom etc.
 COLON---^:---Colon           
 COMMA---^,---Comma           
 APOST---^\'|^\'\'$---Apostrophe          
