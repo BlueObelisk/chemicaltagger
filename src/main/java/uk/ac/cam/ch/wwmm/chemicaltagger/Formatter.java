@@ -36,14 +36,14 @@ public class Formatter {
 	private static Pattern WHITESPACE_PATTERN = Pattern.compile("\\s+");
 	private static Pattern ABBREVIATION_PATTERN = Pattern.compile("-?[A-Z]+[a-z]*\\.");
 	//Note \d[gl] are intentionally excluded to avoid ambiguity with compound references
-	private static Pattern CONCAT_AMOUNT_PATTERN = Pattern.compile("[~]?\\d*\\.?(\\d(\\d+|\\.\\d+|\\d*[mk\u00b5u])(g|l|hPa)[s]?|(\\d+[mnk\u00b5u]?([LMN]|[eE][qQ][\\.]?|[cCdD][mM]3|[gG][rR][aA][mM][mM]?[eE]?|[mM][oO][lL][eE]?)[sS]?))$");
+	private static Pattern CONCAT_AMOUNT_PATTERN = Pattern.compile("[~]?\\d*\\.?(\\d(\\d+|\\.\\d+|\\d*[mk\u00b5u])(g|l|hPa)[s]?|(\\d+[mnk\u00b5u]?([LMN]|[eE][qQ][\\.]?|[cCdD][mM]3|[gG][rR][aA][mM][mM]?[eE]?|[mM][oO][lL][eE]?(/.*)?|[mM][oO][lL][aA][rR])[sS]?))$");
 	private static Pattern CONCAT_PH_PATTERN = Pattern.compile("^pH-?\\d+");
 	private static Pattern CONCAT_TEMP_PATTERN = Pattern.compile("\\d+(o|\u00b0|\u00ba)[cCfF][\\.]?");
 	private static Pattern CONCAT_HYPHENED_DIRECTION_PATTERN = Pattern.compile("^[A-Z]\\-\\d+[\u00b0\u00ba]");
-	private static Pattern CONCAT_SLASH_DIRECTION_PATTERN = Pattern.compile("^[A-Z]\\/\\d*$");
 	private static Pattern CONCAT_EQUATION_PATTERN = Pattern.compile("([a-z]*)([=\\u00d7])(\\d+)");
 	private static Pattern TIME_EXPRESSION = Pattern.compile("^([01]?[1-9]|2[123]):[0-5]\\d([ap]m)?$", Pattern.CASE_INSENSITIVE);
 	private static Pattern TEMPERATURE_UNITS = Pattern.compile("[cCfF]([.,;:()\\[\\]{}]|$)");
+	private static Pattern SLASH_NOT_FOLLOWED_BY_UNIT = Pattern.compile("/(?!(([mkµu]|pico|nano|micro|milli|centi|deci|kilo|mega)?(g|gram[m]?[e]?|mol[e]?|eq[\\.]?|equiv(alent|\\.)|l|lit(re|er|\\.)|drop)$|[cd]?m[\\^]?3$))", Pattern.CASE_INSENSITIVE);
 	private static Pattern MATCH_SULPH = Pattern.compile("sulph", Pattern.CASE_INSENSITIVE);
 
 	/**************************
@@ -63,7 +63,7 @@ public class Formatter {
 		sentence = sentence.replace("%", " %").replace("%-", "% - ").replace(";", " ;");
   	    sentence = sentence.replace("\u2010", "-").replace("\u2011", "-").replace("\u2012", "-").replace("\u2013", "-").replace("\u2014", "-").replace("\u2015", "-").replace("\u002d", "-").replace("\u2212", "-");//normalise hyphens
   	    sentence = sentence.replace("\u03BC", "\u00B5");//normalise mu to micro
-  	    sentence = sentence.replace("<"," < ").replace(">"," > ").replace("/", " / ");
+  	    sentence = sentence.replace("<"," < ").replace(">"," > ");
   	    
   	    String[] words = WHITESPACE_PATTERN.split(sentence);
 
@@ -159,10 +159,8 @@ public class Formatter {
 			if (!concatTimeColonMatcher.find()) {
 				string = string.replace(":"," : ");
 			}
-			Matcher concatSlashDirectionMatcher = CONCAT_SLASH_DIRECTION_PATTERN.matcher(string);//splits mistokenised direction ranges like 78°55'19" N/  11°56'33" E
-			if (concatSlashDirectionMatcher.find()) {
-				string = string.replace("/"," / ");
-			}
+
+			string = SLASH_NOT_FOLLOWED_BY_UNIT.matcher(string).replaceAll(" / ");
 			string = MATCH_SULPH.matcher(string).replaceAll("sulf");//correct British spelling to the IUPAC spelling to assist OSCAR
 			index++;
 
