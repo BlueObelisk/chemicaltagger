@@ -72,7 +72,7 @@ public class RecombineTokens {
 					String nextTag = combinedTagList.get(currentIndex + 1);
 
 					if (!(previousTag.startsWith("OSCAR-CM")
-							& nextTag.startsWith("OSCAR-CM") & !wordTokenList.get(currentIndex + 1).getSurface().startsWith("-")) 
+							&& nextTag.startsWith("OSCAR-CM") && !wordTokenList.get(currentIndex + 1).getSurface().startsWith("-")) 
 							&& !(nextTag.startsWith("CD") && previousTag.startsWith("NN")) &&  !isAHyphenedUnit(previousTag,nextTag)) {
 						
 						if (totalIndexList.contains(currentIndex - 1)) {
@@ -101,13 +101,20 @@ public class RecombineTokens {
 							indexList.add(currentIndex);
 							indexMap.put(indexList.get(0), indexList);
 						} else {
-
 							indexList.add(currentIndex - 1);
 							indexList.add(currentIndex);
 							indexList.add(currentIndex + 1);
 							indexMap.put(indexList.get(0), indexList);
-
 						}
+					}
+					else if (wordTokenList.get(currentIndex).getSurface().equals("/")
+							&& previousTag.equals("NN-AMOUNT") && nextTag.equals("NN-VOL")){
+						indexList.add(currentIndex - 1);
+						indexList.add(currentIndex);
+						indexList.add(currentIndex + 1);
+						indexMap.put(indexList.get(0), indexList);
+						combinedTagList.set(currentIndex - 1, "NN-MOLAR");
+						combinedTagList.set(currentIndex + 1, "NN-MOLAR");
 					}
 				}
 			}

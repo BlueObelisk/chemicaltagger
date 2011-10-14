@@ -81,12 +81,6 @@ public class FormatterTest {
 		assertEquals("( compound 5 )", Formatter.normaliseText("(compound 5)"));
 		assertEquals("( solid )", Formatter.normaliseText("(solid)"));
 	}
-	
-	@Test	
-	public void testDontSplitSlashInConcentration() {
-		//assertEquals("5 mol/m3", Formatter.normaliseText("5 mol/m3"));
-		assertEquals("ethanol / methanol", Formatter.normaliseText("ethanol/methanol"));
-	}
 
 	@Test	
 	public void testDontSplitBracketsOffInChemicalNames() {
@@ -107,7 +101,6 @@ public class FormatterTest {
 		assertEquals("5l", Formatter.normaliseText("5l"));//could be an identifier
 		assertEquals("5 mol", Formatter.normaliseText("5mol"));
 		assertEquals("2 mmolar", Formatter.normaliseText("2mmolar"));
-		assertEquals("5 mol/L", Formatter.normaliseText("5mol/L"));
 	}
 	
 	@Test	

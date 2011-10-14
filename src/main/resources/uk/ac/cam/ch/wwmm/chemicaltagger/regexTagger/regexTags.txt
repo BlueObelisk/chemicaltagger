@@ -36,7 +36,7 @@ NN-TIME---^period[s]?$|^min(utes|s|\.)?$|^hour[s]?|^month[s]?|^week(s|end)?$|^se
 #In cases where the number directly precedes the quantity the Formatter will insert a space
 NN-MASS---^([mkµu]?(g|gram[m]?[e]?)|(pico|nano|micro|milli|centi|deci|kilo|mega)gram[m]?[e]?)[s]?$---Grams
 NN-AMOUNT---^([mnµu]|pico|nano|micro|milli)?mol[e]?[s]?$---Mols (hopefully animal moles will not occur in chemistry)
-NN-MOLAR---^([mnµu]?(?-i:M)|(?-i:N)|(pico|nano|micro|milli|[mnµu])?(molar|mol[e]?/([mkµu]?l|[cd]?m[\^]?3|(µ|pico|nano|micro|milli|centi|deci|kilo|mega)?lit(re|er|\.))))$---Molar or mol/volume
+NN-MOLAR---^([mnµu]?(?-i:M)|(?-i:N)|(pico|nano|micro|milli|[mnµu])?molar)$---Molar
 NN-ATMOSPHERE---atmosphere[s]?$---Atmosphere
 NN-EQ---^([m]?eq[\.]?|(pico|nano|micro|milli|centi|deci|kilo|mega)?equiv(alent[s]?|\.)?)$---Equivalence
 NN-VOL---^([mkµu]?l|[cd]?m[\^]?3|(µ|pico|nano|micro|milli|centi|deci|kilo|mega)?lit(re|er|\.)[s]?)$---Volume

@@ -16,6 +16,7 @@
 
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
+import java.util.Arrays;
 import java.util.List;
 
 import junit.framework.Assert;
@@ -235,6 +236,17 @@ public class RecombineTokensTest {
 		posContainer = RecombineTokens.recombineTokens(posContainer);
 		new PostProcessTags(posContainer).correctCombinedTagsList();
 		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""), tokenListToConcatenatedString(posContainer.getWordTokenList()).toLowerCase());
+	}
+	
+	
+	@Test
+	public void testMolPerVolumeRecombination() {//e.g. recombine mol / L
+		POSContainer posContainer = new POSContainer();
+        posContainer.setInputText("5 mol/L");
+		posContainer.setWordTokenList(oscarTokeniser.tokenise("5 mol / L"));
+		posContainer.setCombinedTagsList(Arrays.asList("CD", "NN-AMOUNT", "DASH", "NN-VOL"));
+		posContainer = RecombineTokens.recombineTokens(posContainer);
+		Assert.assertEquals("CD 5 NN-MOLAR mol/L", posContainer.getTokenTagTupleAsString());
 	}
 	
 	private String tokenListToConcatenatedString(List<Token> tokens){
