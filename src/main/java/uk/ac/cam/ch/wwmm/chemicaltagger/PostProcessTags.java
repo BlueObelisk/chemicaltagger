@@ -170,9 +170,12 @@ public class PostProcessTags {
 			}
 		}
 		
-		if (currentTagLC.startsWith("vb-dilute")) {//correct cases where dilute and the like are actually adjectives e.g. dilute sulfuric acid
-			
-			List<String> afterList = Arrays.asList("oscar-cm");
+		if (endsWithCaseInsensitive(currentTokenStr, "dilute")//correct cases where dilute and the like are actually adjectives e.g. dilute sulfuric acid
+				|| endsWithCaseInsensitive(currentTokenStr, "diluted")
+				|| endsWithCaseInsensitive(currentTokenStr, "concentrated")
+				|| endsWithCaseInsensitive(currentTokenStr, "dry")
+				|| endsWithCaseInsensitive(currentTokenStr, "dried")){
+			List<String> afterList = Arrays.asList("oscar-cm", "nn-chementity", "oscar-cj", "jj-chem");
 	
 			if (stringAfter(afterList, i, combinedTags)) {
 				return "JJ-CHEM";
@@ -696,6 +699,21 @@ public class PostProcessTags {
 			}
 		}
 		return false;
+	}
+	
+	
+	/**
+	 * Tests if this string ends with the specified suffix ignoring case.
+	 * @param str
+	 * @param suffix
+	 * @return
+	 */
+	private boolean endsWithCaseInsensitive(String str, String suffix) {
+		if (suffix.length() > str.length()) {
+			return false;
+		}
+		int strOffset = str.length() - suffix.length();
+		return str.regionMatches(true, strOffset, suffix, 0, suffix.length());
 	}
 
 }
