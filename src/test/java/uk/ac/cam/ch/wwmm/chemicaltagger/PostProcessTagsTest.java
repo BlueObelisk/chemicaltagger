@@ -372,6 +372,17 @@ public class PostProcessTagsTest {
         Assert.assertEquals("OSCAR-CM hexane VB-YIELD provided OSCAR-CM 2-chloropyridine", posContainer.getTokenTagTupleAsString());
     }
 	
+	@Test
+	public void testVBUseIsNotaJJ() {
+        POSContainer posContainer = new POSContainer();
+        List<String> tags = Arrays.asList("OSCAR-CM", "VB-USE", "OSCAR-CM");
+        List<Token> tokens = toTokens("ethanol", "using", "palladium");
+        posContainer.setCombinedTagsList(tags);
+        posContainer.setWordTokenList(tokens);
+        new PostProcessTags(posContainer).correctCombinedTagsList();
+        Assert.assertEquals("OSCAR-CM ethanol VB-USE using OSCAR-CM palladium", posContainer.getTokenTagTupleAsString());
+    }
+	
 	private List<Token> toTokens(String... tokenSurfaces){
 		List<Token> tokens = new ArrayList<Token>();
 		int pos = 0;

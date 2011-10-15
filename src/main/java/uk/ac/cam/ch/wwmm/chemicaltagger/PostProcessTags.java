@@ -263,9 +263,9 @@ public class PostProcessTags {
 			List<String> beforeList = Arrays.asList("dt", "dt-the", "cd", "oscar-cm");
 	
 			List<String> notList = Arrays.asList("in-of");
-			if(currentTagLC.equals("vb-yield") && stringAfter(Arrays.asList("oscar-cm"), i, combinedTags) 
-					&& stringBefore(Arrays.asList("oscar-cm"), i, combinedTags)){
-				//special case to avoid a known mistag. This function should probably be reduced in scope
+			if(stringAfter(Arrays.asList("oscar-cm"), i, combinedTags) 
+					&& stringBefore(Arrays.asList("oscar-cm", "nn-chementity"), i, combinedTags)){
+				//special case to avoid a few known mistags. This function should probably be reduced in scope
 			}
 			else if (stringAfter(afterList, i, combinedTags) && stringBefore(beforeList, i, combinedTags)) {
 				return "JJ";
