@@ -32,7 +32,7 @@ import org.xmlcml.euclid.Util;
  */
 public class Formatter {
 	
-	private static Set<String> ABV_LIST = new HashSet<String>(Arrays.asList("et.", "al.", "etc.", "e.g.", "i.e.", "vol.", "ca.", "wt.", "aq.", "mt.", "e.g.:", "eq.", "equiv.", "mp.", "conc.", "approx.", "anh.", "sat.", "lit.", "m.p."));
+	private static Set<String> ABV_LIST = new HashSet<String>(Arrays.asList("et.", "al.", "etc.", "e.g.", "i.e.", "vol.", "ca.", "wt.", "aq.", "mt.", "e.g.:", "eq.", "equiv.", "mp.", "conc.", "approx.", "anh.", "sat.", "lit.", "m.p.", "dil."));
 	private static Pattern WHITESPACE_PATTERN = Pattern.compile("\\s+");
 	private static Pattern ABBREVIATION_PATTERN = Pattern.compile("-?[A-Z]+[a-z]*\\.");
 	//Note \d[gl] are intentionally excluded to avoid ambiguity with compound references
