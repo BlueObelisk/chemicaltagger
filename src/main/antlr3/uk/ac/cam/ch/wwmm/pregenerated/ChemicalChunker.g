@@ -321,14 +321,14 @@ potentialUnnamedMolecule
 	: numberCompoundReference | potentialUnnamedMoleculeStructureNN numericReferenceOrQuantity?  ;
 
 potentialUnnamedMoleculeStructureNN
-	:	(jj|jjchem|jjcomp)* (nnstate|referenceToExampleCompound|oscaronts|nnatmosphere|nnmixture|oscarase) | (jj|jjchem)* nnchementity;
+	:	(jj|jjchem|oscarcj|jjcomp)* (nnstate|referenceToExampleCompound|oscaronts|nnatmosphere|nnmixture|oscarase) | (jj|jjchem|oscarcj)* nnchementity;
 
 //This rule is neccesary as otherwise the parser will greedily split up a quantity into a reference and unmatched unit
 numericReferenceOrQuantity
 	:	quantity | numericOrIdentifierCompoundReference;
 
 asAstate
-	: inas dt? (jj|jjchem)* nnstate quantity*;
+	: inas dt? (jj|jjchem|oscarcj)* nnstate quantity*;
 
 alphanumericOrIdentifierCompoundReference
   : allIdentifierTypesOtherThanCD -> ^(REFERENCETOCOMPOUND allIdentifierTypesOtherThanCD);
@@ -419,7 +419,7 @@ squareBracketedReference :	lsqb numeric rsqb;
 identifierOrBracketedIdentifier : cd? nnidentifier | bracketedIdentifier;
 bracketedIdentifier	:  lrb cd? nnidentifier rrb;
 
-adj	:	jj|jjr|jjs|oscarcj|jjchem|oscarrn;
+adj	:	jj|jjr|jjs|jjchem|oscarcj|oscarrn;
 adv	:	rb|rbr|rp|rbs;
 clause	:	wdt|wp_poss|wrb|ex|pdt|wp;
 conjunction :	cc|comma;
