@@ -72,7 +72,7 @@ VB-SUBJECT---^subject(ed)?---Subject Verb in past form
 #Adjective
 JJ---^round$|^bottom|^thaw$---Adjectives
 JJ---^(beige|brown|crimson|cyan|green|grey|magenta|orange|purple|violet|yellow)$---Colours that are assigned by openNLP as nouns. Some other colours that are often nouns are special cased by PostProcessTags
-JJ-CHEM---^acidic$|^conc[.]?$|^Merrifield$|^crude$|^vicinal$|^buffer$|^mono$|^fritted$|^glacial$|^excess|amphiphilic$|functionalized$|pot$|^cyclic$|hyperbranched$|^insoluble$|Arm$|^star$|^anh(\.|ydrous)?$|^aq\.?$|^organic|^sat(\.|urated)$|^(Di|Tri|di|tri|poly)block$---Chemical Adjectives
+JJ-CHEM---^acidic$|^conc[.]?$|^dil[.]?$|^Merrifield$|^crude$|^vicinal$|^buffer$|^mono$|^fritted$|^glacial$|^excess|amphiphilic$|functionalized$|pot$|^cyclic$|hyperbranched$|^insoluble$|Arm$|^star$|^anh(\.|ydrous)?$|^aq\.?$|^organic|^sat(\.|urated)$|^(Di|Tri|di|tri|poly)block$---Chemical Adjectives
 JJ-COMPOUND---^(desired|resultant|title[d]?|final|initial|aimed|expected|anticipated)$---Adjectives that define unnamed compound
 #Add Tokens
 NN-ADD---^addition$---Add Noun
