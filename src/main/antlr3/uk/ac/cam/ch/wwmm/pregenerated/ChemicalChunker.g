@@ -36,7 +36,6 @@ OSCARCM;
 MOLECULE;
 UNNAMEDMOLECULE;
 QUANTITY;
-OSCARONT;
 PROCEDURE;
 REFERENCETOCOMPOUND;
 }
@@ -167,7 +166,7 @@ unmatchedPhrase
 unmatchedToken //all base tokens other than stop
 	:	(numeric|advAdj|tmunicode|cdunicode|jjcomp|inAll|
 	nnexample|nnstate|nntime|nnmass|nnmolar|nnamount|nnatmosphere|nneq|nnvol|nnchementity|nntemp|nnph|nnflash|nngeneral|nnmethod|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|
-	oscarcm|oscaronts|oscarase|verb|nnadd|nnmixture|nnapparatus|nnconcentrate|nndry|nnextract|nnfilter|nnprecipitate|nnpurify|nnremove|nnsynthesize|nnyield|colon|apost|neg|dash|percentsign|lsqb|rsqb|lrb|rrb|
+	oscarcm|oscarase|verb|nnadd|nnmixture|nnapparatus|nnconcentrate|nndry|nnextract|nnfilter|nnprecipitate|nnpurify|nnremove|nnsynthesize|nnyield|colon|apost|neg|dash|percentsign|lsqb|rsqb|lrb|rrb|
 	cc|dt|dtTHE|fw|md|nn|nns|nnp|prp|prp_poss|rbconj|sym|uh|clause|comma|ls|nnps|pos|nnidentifier);
 
 procedureNounPhrase //only allowed at the start of the document
@@ -217,7 +216,7 @@ degassMultiVerb
 
 noun 	:	nounStructure (dash nounStructure)*;
 
-nounStructure :  prp|prp_poss|citation|cycles|molecule|apparatus|unnamedmolecule|nnstate|procedureNode|nn|nns|nnp|nnadd|preparationphrase|nnexample|range|oscaronts|nntime|nnatmosphere|tmunicode|quantity|nnchementity|nntemp|nnph|nnflash|nngeneral|nnamount|nneq|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|nnvol|nnpurify|nnsynthesize|nnmixture|squareBracketedReference|nndry|nnextract|nnfilter|nnprecipitate|nnremove|nnyield|fw|sym|clause|ls|nnps|pos|oscarase;
+nounStructure :  prp|prp_poss|citation|cycles|molecule|apparatus|unnamedmolecule|nnstate|procedureNode|nn|nns|nnp|nnadd|preparationphrase|nnexample|range|nntime|nnatmosphere|tmunicode|quantity|nnchementity|nntemp|nnph|nnflash|nngeneral|nnamount|nneq|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|nnvol|nnpurify|nnsynthesize|nnmixture|squareBracketedReference|nndry|nnextract|nnfilter|nnprecipitate|nnremove|nnyield|fw|sym|clause|ls|nnps|pos|oscarase;
 
 // Different PrepPhrases
 
@@ -269,8 +268,6 @@ nnApp
 preapparatus
 	:    (quantity|adj|nnpressure|nnadd|molecule|nnchementity|nnstate|nn)+ ;
 
-oscaronts
-	: oscaront+ -> ^(OSCARONT   oscaront+);
 oscarCompound :  (jjcomp|adj)* oscarCompoundStructure adj? nnstate? (numericReferenceOrQuantity | nnchementity )? quantity* fromProcedure?;
 
 oscarCompoundStructure: (oscarcm+ afterOscarCompoundStructure? | bracketedOscarCompoundStructure) -> ^(OSCARCM oscarcm* afterOscarCompoundStructure? bracketedOscarCompoundStructure?);
@@ -321,7 +318,7 @@ potentialUnnamedMolecule
 	: numberCompoundReference | potentialUnnamedMoleculeStructureNN numericReferenceOrQuantity?  ;
 
 potentialUnnamedMoleculeStructureNN
-	:	(jj|jjchem|oscarcj|jjcomp)* (nnstate|referenceToExampleCompound|oscaronts|nnatmosphere|nnmixture|oscarase) | (jj|jjchem|oscarcj)* nnchementity;
+	:	(jj|jjchem|oscarcj|jjcomp)* (nnstate|referenceToExampleCompound|nnatmosphere|nnmixture|oscarase) | (jj|jjchem|oscarcj)* nnchementity;
 
 //This rule is neccesary as otherwise the parser will greedily split up a quantity into a reference and unmatched unit
 numericReferenceOrQuantity
@@ -433,7 +430,6 @@ cdAlphanum:'CD-ALPHANUM' TOKEN -> ^('CD-ALPHANUM' TOKEN);
 oscarcj:'OSCAR-CJ' TOKEN -> ^('OSCAR-CJ' TOKEN);
 oscarrn:'OSCAR-RN' TOKEN -> ^('OSCAR-RN' TOKEN);
 oscarase:'OSCAR-ASE' TOKEN -> ^('OSCAR-ASE' TOKEN);
-oscaront:'OSCAR-ONT' TOKEN -> ^('OSCAR-ONT' TOKEN);
 tmunicode:'TM-UNICODE' TOKEN -> ^('TM-UNICODE' TOKEN);
 cdunicode:'CD-UNICODE' TOKEN -> ^('CD-UNICODE' TOKEN);
 jjchem:'JJ-CHEM' TOKEN -> ^('JJ-CHEM' TOKEN);

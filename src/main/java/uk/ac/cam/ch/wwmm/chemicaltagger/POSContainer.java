@@ -160,36 +160,17 @@ public class POSContainer {
 	 ***************************************/
 	public void combineTaggers() {
 		int size = tagListContainer.get(0).size();
-		
-			for (int i = 0; i < size; i++) {
-				for (List<String> tagList : tagListContainer) {
-					if (tagList.get(i).equals("nil")) continue;
-					else if (tagList.get(i).equalsIgnoreCase("oscar-ont") && findTaginOtherTagLists(i, "VB")!= null) continue;
-					else {
-						  combinedTagsList.add(tagList.get(i));
-						  break;
-					}
+		for (int i = 0; i < size; i++) {
+			for (List<String> tagList : tagListContainer) {
+				if (tagList.get(i).equals("nil")) {
+					continue;
+				}
+				else {
+					combinedTagsList.add(tagList.get(i));
+					break;
 				}
 			}
-			
-		
-	}
-	
-	/***********************************************
-	 * Checks if the other taggers contain a specified tag
-	 * @param index (int)
-	 * @param tag (String)
-	 * @return otherTag (String)
-	 ***********************************************/
-	private String findTaginOtherTagLists(int index, String tag) {
-		String otherTag = null;
-		for (List<String> tagList : tagListContainer) {
-			if (tagList.get(index).startsWith(tag)) {
-				otherTag = tagList.get(index);
-				break;
-			}
 		}
-		return otherTag;
 	}
 
 	/*********************************************
