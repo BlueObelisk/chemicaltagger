@@ -24,6 +24,9 @@ import uk.ac.cam.ch.wwmm.oscar.Oscar;
 import uk.ac.cam.ch.wwmm.oscar.document.NamedEntity;
 import uk.ac.cam.ch.wwmm.oscar.document.Token;
 import uk.ac.cam.ch.wwmm.oscar.document.TokenSequence;
+import uk.ac.cam.ch.wwmm.oscarMEMM.MEMMRecogniser;
+import uk.ac.cam.ch.wwmm.oscarrecogniser.interfaces.ChemicalEntityRecogniser;
+import uk.ac.cam.ch.wwmm.oscarrecogniser.saf.StandoffResolver.ResolutionMode;
 
 /*****************************************************
  * Runs the OSCAR tagger .
@@ -41,6 +44,11 @@ public class OscarTagger implements Tagger {
 	 ***************************/
 	public OscarTagger(Oscar oscar) {
 		this.oscar = oscar;
+		MEMMRecogniser recogniser = new MEMMRecogniser();
+		recogniser.setDeprioritiseOnts(true);
+		recogniser.setCprPseudoConfidence(0);
+		recogniser.setOntPseudoConfidence(0);
+		oscar.setRecogniser(recogniser);
 	}
 
 	/***********************************************
@@ -51,11 +59,11 @@ public class OscarTagger implements Tagger {
 	public List<String> runTagger(List<Token> tokenList, String inputSentence) {
 		List<TokenSequence> tokenSequences = Arrays.asList(generateOscarTokenSequence(tokenList, inputSentence));
 		List<NamedEntity> neList = oscar.recogniseNamedEntities(tokenSequences);
-        List<String> ignoreOscarList = Arrays.asList("cpr");
+        List<String> ignoreOscarList = Arrays.asList("cpr", "ont");
 		List<String> tagList = new ArrayList<String>();
-		String tag = "nil";
+		String nilTag = "nil";
 		for (int i = 0; i < tokenList.size(); i++) {
-			tagList.add(tag);
+			tagList.add(nilTag);
 		}
 		for (NamedEntity ne : neList) {
 			if (!ignoreOscarList.contains(ne.getType().getName().toLowerCase())) {
