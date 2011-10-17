@@ -3,7 +3,7 @@ Add: Imidazole ( 40 mg , 0.60 mmol ) was added
 Dissolve: to dissolve followed by a solution of TIPSCl ( 0.08 mL , 0.36 mmol ) and DMAP ( 2.0 mg , 20 ?mol ) in DMF ( 1 mL ) 
 Dissolve: DMAP ( 2.0 mg , 20 ?mol ) in DMF ( 1 mL ) 
 Heat: The reaction mixture was heated at 50 ºC for 18 hrs 
-Quench: then quenched by addition of saturated NH4Cl(aq) ( 2 mL ) 
+Quench: then quenched by addition of saturated NH4Cl ( aq ) ( 2 mL ) 
 Add: diluted with ( 3 mL ) 
 Extract: The aqueous layer was extracted with EtOAc ( 3 x 10 mL ) 
 Wash: the combined organic layers washed with 10 % aqueous LiCl ( 5 x 10 mL ) , saturated brine ( 5 mL ) 
@@ -20,7 +20,7 @@ Wait: After 1 h
 Add: PMBBr ( 0.15 mL , 1.0 mmol ) and TBAI ( 11 mg , 30 ?mol)were added sequentially 
 Stir: the reaction mixture was stirred for 18 h at ambient temperature 
 Cool: The reaction was then cooled to 0 ºC 
-Quench: quenched by addition of saturated NH4Cl(aq) ( 5 mL ) 
+Quench: quenched by addition of saturated NH4Cl ( aq ) ( 5 mL ) 
 Add: diluted with ( 5 mL ) 
 Extract: The aqueous layer was extracted with EtOAc ( 3 x 30 mL ) 
 Wash: the combined organic layers washed with 10 % aqueous LiCl ( 3 x 30 mL ) , saturated brine ( 30 mL ) 
