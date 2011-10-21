@@ -64,8 +64,6 @@ public class Formatter {
 		sentence = sentence.replace("%", " %").replace("%-", "% - ").replace(";", " ;");
   	    sentence = sentence.replace("\u2010", "-").replace("\u2011", "-").replace("\u2012", "-").replace("\u2013", "-").replace("\u2014", "-").replace("\u2015", "-").replace("\u002d", "-").replace("\u2212", "-");//normalise hyphens
   	    sentence = sentence.replace("\u03BC", "\u00B5");//normalise mu to micro
-//  	    sentence = sentence.replace("<"," < ").replace(">"," > ").replace("/", " / ");
-
 
 		Matcher ratiobracketsMatcher = PRESERVE_RATIO_WITHIN_BRACKETS_PATTERN.matcher(sentence);
 		if (ratiobracketsMatcher.find()) {
@@ -102,11 +100,6 @@ public class Formatter {
 			while (equationMatcher.find() && !hydrocarbonMatcher.find() ) {
 				string = string.replace(equationMatcher.group(2), " " + equationMatcher.group(2)+" ");					
 			}
-			
-//			Matcher equationMatcher = CONCAT_EQUATION_PATTERN.matcher(string);
-//			while (equationMatcher.find()) {
-//				string = string.replace(equationMatcher.group(2), " " + equationMatcher.group(2)+" ");
-//			}
 			
 			if (string.endsWith(".") && (string.contains("\u00b0") || string.contains("\u00ba"))) {//splits period after degrees e.g. 50oC. This period may be reattached in RecombineTokens
 				string = string.substring(0, string.length() - 1);
