@@ -45,7 +45,7 @@ public class Formatter {
 	private static Pattern TEMPERATURE_UNITS = Pattern.compile("[cCfF]([.,;:()\\[\\]{}]|$)");
 	private static Pattern MATCH_SULPH = Pattern.compile("sulph", Pattern.CASE_INSENSITIVE);
 	private static Pattern CONCAT_HYDROCARBON_PATTERN = Pattern.compile("CH?[0-9]*([=\\u00d7])(.*[CO]+)");
-   private static Pattern PRESERVE_RATIO_WITHIN_BRACKETS_PATTERN = Pattern.compile("([^(]+[(]\\S+?)([/])(\\S+[)])|([(]\\S+?)([/])\\S+[)][^)]+");
+    private static Pattern PRESERVE_RATIO_WITHIN_BRACKETS_PATTERN = Pattern.compile("([(]\\S+?)([/])(\\S+[)])");
 
 	/**************************
 	 * Hides Utility Class Constructor.
@@ -64,12 +64,8 @@ public class Formatter {
 		sentence = sentence.replace("%", " %").replace("%-", "% - ").replace(";", " ;");
   	    sentence = sentence.replace("\u2010", "-").replace("\u2011", "-").replace("\u2012", "-").replace("\u2013", "-").replace("\u2014", "-").replace("\u2015", "-").replace("\u002d", "-").replace("\u2212", "-");//normalise hyphens
   	    sentence = sentence.replace("\u03BC", "\u00B5");//normalise mu to micro
-       sentence = sentence.replace("<"," < ").replace(">"," > ");
-
-		Matcher ratiobracketsMatcher = PRESERVE_RATIO_WITHIN_BRACKETS_PATTERN.matcher(sentence);
-		if (ratiobracketsMatcher.find()) {
-			sentence = sentence.replace(ratiobracketsMatcher.group(2), "__FSLASH__");
-		}		
+        sentence = sentence.replace("<"," < ").replace(">"," > ");
+	    sentence = PRESERVE_RATIO_WITHIN_BRACKETS_PATTERN.matcher(sentence).replaceAll("$1__FSLASH__$3");
  	    sentence = sentence.replace("/", " / ");
  	    sentence = sentence.replace("__FSLASH__", "/"); 	    
   	    String[] words = WHITESPACE_PATTERN.split(sentence);
