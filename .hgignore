@@ -6,6 +6,7 @@ glob:.target
 glob:bin
 glob:classes
 glob:target
+glob:*DS_Store*
 glob:.hgignore~
 glob:Properties.dat
 glob:cInChI-1

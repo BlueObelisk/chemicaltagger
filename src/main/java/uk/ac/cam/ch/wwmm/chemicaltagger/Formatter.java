@@ -35,17 +35,15 @@ public class Formatter {
 	private static Set<String> ABV_LIST = new HashSet<String>(Arrays.asList("et.", "al.", "etc.", "e.g.", "i.e.", "vol.", "ca.", "wt.", "aq.", "mt.", "e.g.:", "eq.", "equiv.", "mp.", "conc.", "approx.", "anh.", "sat.", "lit.", "m.p.", "dil."));
 	private static Pattern WHITESPACE_PATTERN = Pattern.compile("\\s+");
 	private static Pattern ABBREVIATION_PATTERN = Pattern.compile("-?[A-Z]+[a-z]{0,2}\\.");
-	//Note \d[gl] are intentionally excluded to avoid ambiguity with compound references
 	private static Pattern CONCAT_AMOUNT_PATTERN = Pattern.compile("[~]?\\d*\\.?(\\d(\\d+|\\.\\d+|\\d*[mk\u00b5u])(g|l|hPa)[s]?|(\\d+[mnk\u00b5u]?([LMN]|[eE][qQ][\\.]?|[cCdD][mM]3|[gG][rR][aA][mM][mM]?[eE]?|[mM][oO][lL][eE]?|[mM][oO][lL][aA][rR])[sS]?))$");
 	private static Pattern CONCAT_PH_PATTERN = Pattern.compile("^pH-?\\d+");
 	private static Pattern CONCAT_TEMP_PATTERN = Pattern.compile("\\d+(o|\u00b0|\u00ba)[cCfF][\\.]?");
 	private static Pattern CONCAT_HYPHENED_DIRECTION_PATTERN = Pattern.compile("^[A-Z]\\-\\d+[\u00b0\u00ba]");
-	private static Pattern CONCAT_EQUATION_PATTERN = Pattern.compile("([a-z]*)([=\\u00d7])(\\d+)");
 	private static Pattern TIME_EXPRESSION = Pattern.compile("^([01]?[1-9]|2[123]):[0-5]\\d([ap]m)?$", Pattern.CASE_INSENSITIVE);
 	private static Pattern TEMPERATURE_UNITS = Pattern.compile("[cCfF]([.,;:()\\[\\]{}]|$)");
 	private static Pattern MATCH_SULPH = Pattern.compile("sulph", Pattern.CASE_INSENSITIVE);
-	private static Pattern CONCAT_HYDROCARBON_PATTERN = Pattern.compile("CH?[0-9]*([=\\u00d7])(.*[CO]+)");
-    private static Pattern PRESERVE_RATIO_WITHIN_BRACKETS_PATTERN = Pattern.compile("([(]\\S+?)([/])(\\S+[)])");
+	private static Pattern PRESERVE_HYDROCARBON_PATTERN = Pattern.compile("([CNHOPI]+[0-9]*)([=\\u00d7])([COPIN]+)");
+	private static Pattern PRESERVE_RATIO_WITHIN_BRACKETS_PATTERN = Pattern.compile("([(]\\S+?)([/])(\\S+[)])");
 
 	/**************************
 	 * Hides Utility Class Constructor.
@@ -64,10 +62,13 @@ public class Formatter {
 		sentence = sentence.replace("%", " %").replace("%-", "% - ").replace(";", " ;");
   	    sentence = sentence.replace("\u2010", "-").replace("\u2011", "-").replace("\u2012", "-").replace("\u2013", "-").replace("\u2014", "-").replace("\u2015", "-").replace("\u002d", "-").replace("\u2212", "-");//normalise hyphens
   	    sentence = sentence.replace("\u03BC", "\u00B5");//normalise mu to micro
-        sentence = sentence.replace("<"," < ").replace(">"," > ");
+       sentence = sentence.replace("<"," < ").replace(">"," > ");
 	    sentence = PRESERVE_RATIO_WITHIN_BRACKETS_PATTERN.matcher(sentence).replaceAll("$1__FSLASH__$3");
  	    sentence = sentence.replace("/", " / ");
  	    sentence = sentence.replace("__FSLASH__", "/"); 	    
+	    sentence = PRESERVE_HYDROCARBON_PATTERN.matcher(sentence).replaceAll("$1__EQUALS__$3");
+ 	    sentence = sentence.replace("=", " = ");
+ 	    sentence = sentence.replace("__EQUALS__", "="); 	    
   	    String[] words = WHITESPACE_PATTERN.split(sentence);
 
 		int index = 0;
@@ -92,11 +93,11 @@ public class Formatter {
 					suffix = " ." + suffix;
 			}
 
-			Matcher equationMatcher = CONCAT_EQUATION_PATTERN.matcher(string);
-			Matcher hydrocarbonMatcher = CONCAT_HYDROCARBON_PATTERN.matcher(string);
-			while (equationMatcher.find() && !hydrocarbonMatcher.find() ) {
-				string = string.replace(equationMatcher.group(2), " " + equationMatcher.group(2)+" ");					
-			}
+//			Matcher equationMatcher = CONCAT_EQUATION_PATTERN.matcher(string);
+//			Matcher hydrocarbonMatcher = CONCAT_HYDROCARBON_PATTERN.matcher(string);
+//			while (equationMatcher.find() && !hydrocarbonMatcher.find() ) {
+//				string = string.replace(equationMatcher.group(2), " " + equationMatcher.group(2)+" ");					
+//			}
 			
 			if (string.endsWith(".") && (string.contains("\u00b0") || string.contains("\u00ba"))) {//splits period after degrees e.g. 50oC. This period may be reattached in RecombineTokens
 				string = string.substring(0, string.length() - 1);
