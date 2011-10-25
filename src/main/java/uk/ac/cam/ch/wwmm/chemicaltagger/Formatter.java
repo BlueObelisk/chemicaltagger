@@ -42,7 +42,7 @@ public class Formatter {
 	private static Pattern TIME_EXPRESSION = Pattern.compile("^([01]?[1-9]|2[123]):[0-5]\\d([ap]m)?$", Pattern.CASE_INSENSITIVE);
 	private static Pattern TEMPERATURE_UNITS = Pattern.compile("[cCfF]([.,;:()\\[\\]{}]|$)");
 	private static Pattern MATCH_SULPH = Pattern.compile("sulph", Pattern.CASE_INSENSITIVE);
-	private static Pattern PRESERVE_HYDROCARBON_PATTERN = Pattern.compile("([CNHOPI]+[0-9]*)([=\\u00d7])([COPIN]+)");
+	private static Pattern PRESERVE_HYDROCARBON_PATTERN = Pattern.compile("([CNHOPI]+[0-9]*)([=\u00d7])([COPIN]+)");
 	private static Pattern PRESERVE_RATIO_WITHIN_BRACKETS_PATTERN = Pattern.compile("([(]\\S+?)([/])(\\S+[)])");
 
 	/**************************
@@ -67,7 +67,7 @@ public class Formatter {
  	    sentence = sentence.replace("/", " / ");
  	    sentence = sentence.replace("__FSLASH__", "/"); 	    
 	    sentence = PRESERVE_HYDROCARBON_PATTERN.matcher(sentence).replaceAll("$1__EQUALS__$3");
- 	    sentence = sentence.replace("=", " = ");
+ 	    sentence = sentence.replace("=", " = ").replace("\u00d7", " = ");
  	    sentence = sentence.replace("__EQUALS__", "="); 	    
   	    String[] words = WHITESPACE_PATTERN.split(sentence);
 
