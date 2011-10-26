@@ -97,7 +97,6 @@
 	</pluginRepositories>
 	<build>
 		<plugins>
-
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
@@ -144,10 +143,8 @@
 					<excludes>
 					<exclude>**/resources/**</exclude>
 					</excludes>
-					
 				</configuration>
 			</plugin>
-
 		</plugins>
 		<resources>
 			<resource>
@@ -173,11 +170,6 @@
 			<groupId>uk.ac.cam.ch.wwmm.oscar</groupId>
 			<artifactId>oscar4-data</artifactId>
 			<version>4.1-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>cml</groupId>
-			<artifactId>cmlxom</artifactId>
-			<version>3.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>cml</groupId>
@@ -219,11 +211,6 @@
 			<version>2.1</version>
 		</dependency>
 		<dependency>
-			<groupId>xml-apis</groupId>
-			<artifactId>xml-apis</artifactId>
-			<version>1.0.b2</version>
-		</dependency>
-		<dependency>
 			<groupId>commons-lang</groupId>
 			<artifactId>commons-lang</artifactId>
 			<version>2.1</version>
@@ -238,7 +225,6 @@
 	<profiles>
 		<profile>
 			<id>rebuildGrammar</id>
-
 			<build>
 				<plugins>
 					<plugin>
@@ -262,7 +248,6 @@
 							</execution>
 						</executions>
 					</plugin>
-
 				</plugins>
 			</build>
 		</profile>
@@ -308,11 +293,8 @@
 					<excludes>
 						<exclude>**/pregenerated/**</exclude>
 					</excludes>
-
 				</configuration>
-
 			</plugin>
-			
 		</plugins>
 	</reporting>
 </project>
