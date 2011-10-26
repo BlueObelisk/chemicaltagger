@@ -39,7 +39,6 @@ import nu.xom.Serializer;
 import org.apache.commons.io.IOUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.safety.Whitelist;
-import org.xmlcml.cml.base.CMLConstants;
 
 /********************************************
  * A Utils class.
@@ -74,7 +73,7 @@ public class Utils {
 			if (!Character.isLetter(c) && c != '_') {
 				ncName = '_' + ncName;
 			}
-			ncName = ncName.replaceAll("[^A-Za-z0-9_.-]", CMLConstants.S_UNDER);
+			ncName = ncName.replaceAll("[^A-Za-z0-9_.-]", "_");
 		}
 		return ncName;
 	}
@@ -244,7 +243,6 @@ public class Utils {
 	 * @param contextClass 
 	 * @return HashSet
 	 */
-	@SuppressWarnings("unchecked")
 	public static HashSet<String> loadsTagsFromFile(Class<?> contextClass) {
 		HashSet<String> tagSet = new HashSet<String>();
 		String pathName = "ChemicalChunker.tokens";

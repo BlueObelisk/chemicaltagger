@@ -100,8 +100,6 @@ public class UtilityMethods {
 	 * @param parsedNodes
 	 * @param fileName
 	 **************************************************/
-	
-	@SuppressWarnings("unchecked")
 	static void compareParsedToExpectedOutput(Nodes parsedNodes, String fileName) {
 
 		List<String> expectedList = new ArrayList<String>();
