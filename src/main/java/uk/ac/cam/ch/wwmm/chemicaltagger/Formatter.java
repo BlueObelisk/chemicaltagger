@@ -23,7 +23,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.commons.lang.StringUtils;
-import org.xmlcml.euclid.Util;
 
 /*********************************************
  * Preprocesses text before it gets passed to tokenisation and tagging classes.
@@ -92,12 +91,6 @@ public class Formatter {
 					string = string.substring(0, string.length() - 1);
 					suffix = " ." + suffix;
 			}
-
-//			Matcher equationMatcher = CONCAT_EQUATION_PATTERN.matcher(string);
-//			Matcher hydrocarbonMatcher = CONCAT_HYDROCARBON_PATTERN.matcher(string);
-//			while (equationMatcher.find() && !hydrocarbonMatcher.find() ) {
-//				string = string.replace(equationMatcher.group(2), " " + equationMatcher.group(2)+" ");					
-//			}
 			
 			if (string.endsWith(".") && (string.contains("\u00b0") || string.contains("\u00ba"))) {//splits period after degrees e.g. 50oC. This period may be reattached in RecombineTokens
 				string = string.substring(0, string.length() - 1);
@@ -117,7 +110,7 @@ public class Formatter {
 			}
 
 			if (string.startsWith("(")) {//split bracket off word with unbalanced starting or terminal bracket
-				int i = Util.indexOfBalancedBracket('(', string);
+				int i = indexOfBalancedRoundBracket(string);
 
 				if (i < 0) {
 					string = string.substring(1, string.length());
@@ -173,7 +166,28 @@ public class Formatter {
 		return WHITESPACE_PATTERN.matcher(newSentence.toString()).replaceAll(" ").trim();
 	}
 
-
+	/**
+	 * Return the indice of the round bracket that brings the
+	 * bracket nesting depth to 0
+	 * else returns -1
+	 * @param s
+	 * @return
+	 */
+	private static int indexOfBalancedRoundBracket(String s) {
+		int l = s.length();
+		int level = 0;
+		for (int i = 0; i < l; i++) {
+			if (s.charAt(i) == '(') {
+				level++;
+			} else if (s.charAt(i) == ')') {
+				level--;
+				if (level == 0) {
+					return i;
+				}
+			}
+		}
+		return -1;
+	}
 
 	/************************************
 	 * Adds spaces between amounts.
@@ -210,9 +224,5 @@ public class Formatter {
 		newTemperatureString = temperatureString.replace(numbers, numbers + " ");
 		return newTemperatureString;
 	}
-	
-
-
-	
 
 }
