@@ -66,7 +66,7 @@ public class Formatter {
  	    sentence = sentence.replace("/", " / ");
  	    sentence = sentence.replace("__FSLASH__", "/"); 	    
 	    sentence = PRESERVE_HYDROCARBON_PATTERN.matcher(sentence).replaceAll("$1__EQUALS__$3");
- 	    sentence = sentence.replace("=", " = ").replace("\u00d7", " = ");
+ 	    sentence = sentence.replace("=", " = ").replace("\u00d7", " \u00d7 ");
  	    sentence = sentence.replace("__EQUALS__", "="); 	    
   	    String[] words = WHITESPACE_PATTERN.split(sentence);
 
