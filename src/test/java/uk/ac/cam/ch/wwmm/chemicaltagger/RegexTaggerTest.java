@@ -24,6 +24,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import uk.ac.cam.ch.wwmm.oscar.document.Token;
+
 
 /***********************************************
  * Tests the RegexTagger Class
@@ -34,7 +36,7 @@ public class RegexTaggerTest {
 	
 	
     private RegexTagger regexTagger;
-	private final static String SPACE = " ";
+
 	@Before
 	public void setUp() {
 		if (regexTagger == null) {
@@ -47,40 +49,31 @@ public class RegexTaggerTest {
 		String sentence = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/regexTest/sentence1.txt");
         String regexTaggedSentence = regexTag(sentence);
 		String ref = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/regexTest/ref1.txt");
-		Assert.assertEquals(ref,regexTaggedSentence);
-
-
+		Assert.assertEquals(ref, regexTaggedSentence);
 	}
 	
 	private String regexTag(String sentence) {
-		StringBuilder regexTaggedSentence = new StringBuilder(); 
-        String cleanSentence = Formatter.normaliseText(sentence);
-        POSContainer posContainer = new POSContainer();
-        posContainer.setWordTokenList(new WhiteSpaceTokeniser().tokenise(cleanSentence));
-        posContainer.registerTagList(regexTagger.runTagger(posContainer.getWordTokenList(), null));
-        
-        List<String> regexTagList = posContainer.getTagListContainer().get(0);
+		List<Token> tokens = new WhiteSpaceTokeniser().tokenise(sentence);
+        List<String> regexTagList = regexTagger.runTagger(tokens, sentence);
 		
         /****************************
          * Check that lengths of 
          * token and tags are the same
          ****************************/
-        Assert.assertEquals(posContainer.getWordTokenList().size(), regexTagList.size());
-        
+        Assert.assertEquals(tokens.size(), regexTagList.size());
+
         /************************
-         * Append the tokens recoginesed
+         * Append the tokens recognised
          * by the regexTagger to regexTaggedSentence
          ***********************/
-       for (int i = 0; i < regexTagList.size(); i++) {
-			
+		StringBuilder regexTaggedSentence = new StringBuilder();
+		for (int i = 0; i < regexTagList.size(); i++) {
 			if (!regexTagList.get(i).equals("nil")){
 				regexTaggedSentence.append(regexTagList.get(i));
-				regexTaggedSentence.append(SPACE);
-				regexTaggedSentence.append(posContainer.getWordTokenList().get(i).getSurface());
-				regexTaggedSentence.append(SPACE);
-
+				regexTaggedSentence.append(' ');
+				regexTaggedSentence.append(tokens.get(i).getSurface());
+				regexTaggedSentence.append(' ');
 			}
-			
 		}
         
 		return regexTaggedSentence.toString().trim();
