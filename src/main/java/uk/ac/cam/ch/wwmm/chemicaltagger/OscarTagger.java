@@ -87,8 +87,10 @@ public class OscarTagger implements Tagger {
 	 ********************************************/
 	protected  TokenSequence generateOscarTokenSequence(List<Token> oscarTokens, String inputText) {
 		TokenSequence tokSeq = new TokenSequence(inputText, 0, null, oscarTokens);
+		int id = 0;
 		for (Token token : tokSeq.getTokens()) {
 			token.setTokenSequence(tokSeq);
+			token.setIndex(id++);
 		}
 		return tokSeq;
 	}

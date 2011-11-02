@@ -16,13 +16,14 @@
 
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.commons.lang.StringUtils;
+import uk.ac.cam.ch.wwmm.opsin.StringTools;
+import uk.ac.cam.ch.wwmm.oscar.document.Token;
 
 /*********************************************
  * Preprocesses text before it gets passed to tokenisation and tagging classes.
@@ -30,19 +31,17 @@ import org.apache.commons.lang.StringUtils;
  *
  */
 public class Formatter {
-	
-	private static Set<String> ABV_LIST = new HashSet<String>(Arrays.asList("et.", "al.", "etc.", "e.g.", "i.e.", "vol.", "ca.", "wt.", "aq.", "mt.", "e.g.:", "eq.", "equiv.", "mp.", "conc.", "approx.", "anh.", "sat.", "lit.", "m.p.", "dil."));
+
+	private static Pattern MATCH_SULPH = Pattern.compile("sulph", Pattern.CASE_INSENSITIVE);
+	private static Pattern MATCH_DEGREES_WHITESPACE = Pattern.compile("([\u00b0\u00ba])(\\s+)([cCfF]([.,;:()\\[\\]{}\\s]|$))");
 	private static Pattern WHITESPACE_PATTERN = Pattern.compile("\\s+");
-	private static Pattern ABBREVIATION_PATTERN = Pattern.compile("-?[A-Z]+[a-z]{0,2}\\.");
+	private final static Pattern matchSpaceChargeOrOxidationSpecifier = Pattern.compile(" \\((\\d[+\\-]|[+\\-]\\d|0|I{1,3}|IV|VI{1,3}|IX)\\)", Pattern.CASE_INSENSITIVE);
+	private final static List<String> elements = Arrays.asList("hydrogen", "lithium", "sodium", "natrium", "potassium", "kalium", "rubidium", "caesium", "cesium", "francium", "beryllium", "magnesium", "calcium", "strontium", "barium", "radium", "aluminium", "aluminum", "gallium", "indium", "thallium", "tin", "stannum", "lead", "plumbum", "bismuth", "polonium", "scandium", "titanium", "vanadium", "chromium", "manganese", "iron", "cobalt", "nickel", "copper", "zinc", "yttrium", "zirconium", "niobium", "molybdenum", "technetium", "ruthenium", "rhodium", "palladium", "silver", "cadmium", "lanthanum", "cerium", "praseodymium", "neodymium", "promethium", "samarium", "europium", "gadolinium", "terbium", "dysprosium", "holmium", "erbium", "thulium", "ytterbium", "lutetium", "hafnium", "tantalum", "tungsten", "wolfram", "rhenium", "osmium", "iridium", "platinum", "gold", "mercury", "hydrargyrum", "actinium", "thorium", "protactinium", "uranium", "neptunium", "plutonium", "americium", "curium", "berkelium", "californium", "einsteinium", "fermium", "mendelevium", "nobelium", "lawrencium", "rutherfordium", "boron", "carbon", "silicon", "germanium", "nitrogen", "phosphorus", "arsenic", "antimony", "stibium", "oxygen", "sulfur", "selenium", "tellurium", "polonium", "fluorine", "chlorine", "bromine", "iodine", "astatine", "helium", "neon", "argon", "krypton", "xenon", "radon");
+	
 	private static Pattern CONCAT_AMOUNT_PATTERN = Pattern.compile("[~]?\\d*\\.?(\\d(\\d+|\\.\\d+|\\d*[mk\u00b5u])(g|l|hPa)[s]?|(\\d+[mnk\u00b5u]?([LMN]|[eE][qQ][\\.]?|[cCdD][mM]3|[gG][rR][aA][mM][mM]?[eE]?|[mM][oO][lL][eE]?|[mM][oO][lL][aA][rR])[sS]?))$");
 	private static Pattern CONCAT_PH_PATTERN = Pattern.compile("^pH-?\\d+");
 	private static Pattern CONCAT_TEMP_PATTERN = Pattern.compile("\\d+(o|\u00b0|\u00ba)[cCfF][\\.]?");
-	private static Pattern CONCAT_HYPHENED_DIRECTION_PATTERN = Pattern.compile("^[A-Z]\\-\\d+[\u00b0\u00ba]");
-	private static Pattern TIME_EXPRESSION = Pattern.compile("^([01]?[1-9]|2[123]):[0-5]\\d([ap]m)?$", Pattern.CASE_INSENSITIVE);
-	private static Pattern TEMPERATURE_UNITS = Pattern.compile("[cCfF]([.,;:()\\[\\]{}]|$)");
-	private static Pattern MATCH_SULPH = Pattern.compile("sulph", Pattern.CASE_INSENSITIVE);
-	private static Pattern PRESERVE_HYDROCARBON_PATTERN = Pattern.compile("([CNHOPI]+[0-9]*)([=\u00d7])([COPIN]+)");
-	private static Pattern PRESERVE_RATIO_WITHIN_BRACKETS_PATTERN = Pattern.compile("([(]\\S+?)([/])(\\S+[)])");
+	private static Pattern CONCAT_PERCENTAGE_PATTERN = Pattern.compile("([^%]*)(%)([^%]*)");
 
 	/**************************
 	 * Hides Utility Class Constructor.
@@ -50,151 +49,109 @@ public class Formatter {
 	private Formatter(){
 		
 	}
+
 	/************************************
-	 * Normalises sentences.
-	 * Adds spaces between characters where required.
+	 * Normalises sentences e.g. replaces characters with equivalent characters
+	 * also does some minor rearrangements
 	 * @param sentence (String)
 	 * @return newSentence (String)
 	 *************************************/
 	public static String normaliseText(String sentence){
-		StringBuilder newSentence = new StringBuilder();
-		sentence = sentence.replace("%", " %").replace("%-", "% - ").replace(";", " ;");
-  	    sentence = sentence.replace("\u2010", "-").replace("\u2011", "-").replace("\u2012", "-").replace("\u2013", "-").replace("\u2014", "-").replace("\u2015", "-").replace("\u002d", "-").replace("\u2212", "-");//normalise hyphens
+		sentence = sentence.replace("\u2010", "-").replace("\u2011", "-").replace("\u2012", "-").replace("\u2013", "-").replace("\u2014", "-").replace("\u2015", "-").replace("\u002d", "-").replace("\u2212", "-");//normalise hyphens
   	    sentence = sentence.replace("\u03BC", "\u00B5");//normalise mu to micro
-       sentence = sentence.replace("<"," < ").replace(">"," > ");
-	    sentence = PRESERVE_RATIO_WITHIN_BRACKETS_PATTERN.matcher(sentence).replaceAll("$1__FSLASH__$3");
- 	    sentence = sentence.replace("/", " / ");
- 	    sentence = sentence.replace("__FSLASH__", "/"); 	    
-	    sentence = PRESERVE_HYDROCARBON_PATTERN.matcher(sentence).replaceAll("$1__EQUALS__$3");
- 	    sentence = sentence.replace("=", " = ").replace("\u00d7", " \u00d7 ");
- 	    sentence = sentence.replace("__EQUALS__", "="); 	    
-  	    String[] words = WHITESPACE_PATTERN.split(sentence);
-
-		int index = 0;
-		for (String string : words) {
-			
-			String prefix = " ";
-			String suffix = " ";
-	
-			if (string.endsWith("\u00b0") || string.endsWith("\u00ba)")){//ends with degrees symbol
-				if (index+1 < words.length && TEMPERATURE_UNITS.matcher(words[index+1]).lookingAt()){//next word is something like "C"
-					char lastChar = string.charAt(string.length()-1);
-					string = string.substring(0, string.length()-1);
-					words[index+1] = lastChar + words[index+1];
-				}
-			}
-			
-			Matcher abbreviationMatcher = ABBREVIATION_PATTERN.matcher(string);
-			if ((string.endsWith(".")) && 
-					(Utils.containsNumber(string) || !abbreviationMatcher.find()) &&
-					!ABV_LIST.contains(string.toLowerCase())) {
-					string = string.substring(0, string.length() - 1);
-					suffix = " ." + suffix;
-			}
-			
-			if (string.endsWith(".") && (string.contains("\u00b0") || string.contains("\u00ba"))) {//splits period after degrees e.g. 50oC. This period may be reattached in RecombineTokens
-				string = string.substring(0, string.length() - 1);
-				suffix = " ." + suffix;
-			}
-			if (string.equals("K.") && index > 0) {///splits period after temperature in Kelvin 
-				if (StringUtils.isNumeric(words[index - 1].replace(".", ""))) {
-					string = "K .";
-				}
-			}
-
-
-
-			if (string.endsWith(",")) {//splits commas off
-				string = string.substring(0, string.length() - 1);
-				suffix = " ," + suffix;
-			}
-
-			if (string.startsWith("(")) {//split bracket off word with unbalanced starting or terminal bracket
-				int i = indexOfBalancedRoundBracket(string);
-
-				if (i < 0) {
-					string = string.substring(1, string.length());
-					prefix = prefix + "( ";
-				}
-			} else if (string.trim().endsWith(")")) {
-				String subString = string.substring(0, string.length()-1);
-
-				if (subString.indexOf('(') < 0) {
-					string = subString;
-					suffix = " )" + suffix;
-				}
-			}
-
-			if (string.startsWith("(") && string.endsWith(")")) {// splits brackets off a word enclosed by brackets
-				String subString = string.substring(1, string.length() - 1);
-
-				string = subString;
-				prefix = prefix + "( ";
-				suffix = " )" + suffix;
-			}
-
-			Matcher concatAmountMatcher = CONCAT_AMOUNT_PATTERN.matcher(string);//split values from units e.g. 4.5g --> 4.5 g
-			if (concatAmountMatcher.matches()) {
-				string = splitAmounts(string);
-			}
-
-			Matcher concatPhMatcher = CONCAT_PH_PATTERN.matcher(string);//e.g. pH7 --> pH 7
-			if (concatPhMatcher.find()) {
-				string = string.substring(0, 2) + " " + string.substring(2) ;
-			}
-
-			Matcher concatTempMatcher = CONCAT_TEMP_PATTERN.matcher(string);//e.g. 50oC --> 50 oC
-			if (concatTempMatcher.find()) {
-				string = splitTemperature(string);
-			}
-			Matcher concatHyphenDirectionMatcher = CONCAT_HYPHENED_DIRECTION_PATTERN.matcher(string);//splits mistokenised direction coordinates  like  60° N-60°
-			if (concatHyphenDirectionMatcher.find()) {
-				string = string.replace("-"," - ");
-			}
-
-			Matcher concatTimeColonMatcher = TIME_EXPRESSION.matcher(string);//split on colons except in times
-			if (!concatTimeColonMatcher.find()) {
-				string = string.replace(":"," : ");
-			}
-
-			string = MATCH_SULPH.matcher(string).replaceAll("sulf");//correct British spelling to the IUPAC spelling to assist OSCAR
-			index++;
-
-			newSentence.append(prefix + string + suffix);
-		}
-		
-		return WHITESPACE_PATTERN.matcher(newSentence.toString()).replaceAll(" ").trim();
+  	    sentence = MATCH_SULPH.matcher(sentence).replaceAll("sulf");//correct British spelling to the IUPAC spelling to assist OSCAR
+  	    sentence = MATCH_DEGREES_WHITESPACE.matcher(sentence).replaceAll("$2$1$3");//correct [degree symbol, space, temperature unit] to [space, degree symbol, temperature unit]
+  	    sentence = WHITESPACE_PATTERN.matcher(sentence).replaceAll(" ");
+  	    sentence = removeSpaceBetweenElementsAndChargeOrOxidationStateSpecifier(sentence);
+		return sentence;
 	}
-
+	
 	/**
-	 * Return the indice of the round bracket that brings the
-	 * bracket nesting depth to 0
-	 * else returns -1
-	 * @param s
+	 * e.g. palladium (II) --> palladium(II)
+	 * @param sentence
 	 * @return
 	 */
-	private static int indexOfBalancedRoundBracket(String s) {
-		int l = s.length();
-		int level = 0;
-		for (int i = 0; i < l; i++) {
-			if (s.charAt(i) == '(') {
-				level++;
-			} else if (s.charAt(i) == ')') {
-				level--;
-				if (level == 0) {
-					return i;
+	private static String removeSpaceBetweenElementsAndChargeOrOxidationStateSpecifier(String sentence) {
+		StringBuffer sb = new StringBuffer();
+		Matcher m = matchSpaceChargeOrOxidationSpecifier.matcher(sentence);
+		while (m.find()){
+			String beforeSpecifier = sentence.substring(0, m.start());
+			for (String chemicalElement : elements) {
+				if (StringTools.endsWithCaseInsensitive(beforeSpecifier, chemicalElement)){
+					m.appendReplacement(sb, m.group().substring(1));
+					break;
 				}
 			}
 		}
-		return -1;
+		m.appendTail(sb);
+		return sb.toString();
 	}
 
 	/************************************
-	 * Adds spaces between amounts.
-	 * @param amountString (String)
-	 * @return newAmountString (String)
+	 * Returns the list of tokens with tokens divided into further tokens in cases where this improves tagging
+	 * e.g. ['4.5kg'] --> ['4.5', 'kg']
+	 * 
+	 * @param tokens (List<Token>)
+	 * @return tokens (List<Token>)
 	 *************************************/
-	private static String splitAmounts(String amountString) {
+	public static List<Token> subTokeniseTokens(List<Token> tokens){
+		int i = 0;
+		while (i < tokens.size()) {
+			Token token = tokens.get(i);
+			String[] subTokens = subTokenize(token.getSurface());
+			if (subTokens!=null){
+				int start = token.getStart();
+				List<Token> newTokens = new ArrayList<Token>();
+				for (String newTokenSurface : subTokens) {
+					int end = start + newTokenSurface.length();
+					newTokens.add(new Token(newTokenSurface, start, end, token.getDoc(), token.getBioType(), token.getNeElem()));
+					start = end;
+				}
+				tokens.remove(i);
+				tokens.addAll(i, newTokens);
+			}
+			else{
+				i++;
+			}
+		}
+		int id =0;
+		for (Token token : tokens) {
+			token.setIndex(id++);
+		}
+		return tokens;
+	}
+
+	private static String[] subTokenize(String tokenSurface) {
+		if (tokenSurface.length() >1 ){
+			Matcher concatAmountMatcher = CONCAT_AMOUNT_PATTERN.matcher(tokenSurface);//split values from units e.g. 4.5g --> 4.5 g
+			if (concatAmountMatcher.matches()) {
+				return splitAmounts(tokenSurface);
+			}
+			Matcher concatPhMatcher = CONCAT_PH_PATTERN.matcher(tokenSurface);//e.g. pH7 --> pH 7
+			if (concatPhMatcher.find()) {
+				return new String[]{tokenSurface.substring(0, 2), tokenSurface.substring(2)};
+			}
+			Matcher concatTempMatcher = CONCAT_TEMP_PATTERN.matcher(tokenSurface);//e.g. 50oC --> 50 oC
+			if (concatTempMatcher.find()) {
+				int startOfDegreesSign = concatTempMatcher.start(1);
+				return new String[]{tokenSurface.substring(0, startOfDegreesSign), tokenSurface.substring(startOfDegreesSign)};
+			}
+			if (tokenSurface.contains("%")){
+				return splitPercentageSign(tokenSurface);
+			}
+			if (tokenSurface.startsWith("(") && tokenSurface.endsWith(")")) {// splits brackets off a word enclosed by brackets. Needed to fix OSCAR not tokenising oxidation states
+				return new String[]{tokenSurface.substring(0,1), tokenSurface.substring(1, tokenSurface.length()-1), tokenSurface.substring(tokenSurface.length()-1)};
+			}
+		}
+		return null;
+	}
+
+	/************************************
+	 * Returns the string split into value and unit
+	 * @param amountString (String)
+	 * @return valueUnitArray (String[])
+	 *************************************/
+	private static String[] splitAmounts(String amountString) {
 		int splitIndex = amountString.length();
 		for (int i = 0; i < amountString.length(); i++) {
 			if (Character.isLetter(amountString.charAt(i))) {
@@ -202,27 +159,33 @@ public class Formatter {
 				break;
 			}
 		}
-		return amountString.substring(0, splitIndex) + " " + amountString.substring(splitIndex);
+		return new String[]{amountString.substring(0, splitIndex), amountString.substring(splitIndex)};
 	}
 
-	/**********************************************
-	 * Adds spaces between temperatures.
-	 * @param temperatureString (String)
-	 * @return newTemperatureString (String)
-	 **********************************************/
-	private static String splitTemperature(String temperatureString) {
-		String newTemperatureString = temperatureString;
-		String numbers = "";
-
-		for (char ch : temperatureString.toCharArray()) {
-
-			if (Character.isDigit(ch)) {
-				numbers = numbers + ch;
+	/************************************
+	 * Returns the string with percentage sign and percentage sign followed by hyphen split up
+	 * @param amountString (String)
+	 * @return valueUnitArray (String[])
+	 *************************************/
+	private static String[] splitPercentageSign(String tokenSuface) {
+		List<String> subTokens  = new ArrayList<String>();
+		Matcher concatPercentageMatcher = CONCAT_PERCENTAGE_PATTERN.matcher(tokenSuface);
+		while (concatPercentageMatcher.find()){
+			if (concatPercentageMatcher.group(1).length() > 0){
+				subTokens.add(concatPercentageMatcher.group(1));
 			}
-
+			subTokens.add(concatPercentageMatcher.group(2));
+			String afterPercentageSign = concatPercentageMatcher.group(3);
+			if (afterPercentageSign.length() > 0){
+				if (afterPercentageSign.startsWith("-") && afterPercentageSign.length() >1){
+					subTokens.add("-");
+					subTokens.add(afterPercentageSign.substring(1));
+				}
+				else {
+					subTokens.add(afterPercentageSign);
+				}
+			}
 		}
-		newTemperatureString = temperatureString.replace(numbers, numbers + " ");
-		return newTemperatureString;
+		return subTokens.toArray(new String[subTokens.size()]);
 	}
-
 }
