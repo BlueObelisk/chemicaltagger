@@ -62,7 +62,7 @@ public class RecombineTokensTest {
 		String expectedOutput = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/recombineTokens/ref1.txt");
 		inputSentence = Formatter.normaliseText(inputSentence);
         posContainer.setInputText(inputSentence);
-		posContainer.setWordTokenList(oscarTokeniser.tokenise(inputSentence));
+		posContainer.setWordTokenList(Formatter.subTokeniseTokens(oscarTokeniser.tokenise(inputSentence)));
 		posContainer.registerTagList(oscarTagger.runTagger(posContainer.getWordTokenList(), inputSentence));
 		posContainer.registerTagList(regexTagger.runTagger(posContainer.getWordTokenList(), inputSentence));
 		posContainer.registerTagList(openNLPTagger.runTagger(posContainer.getWordTokenList(), inputSentence));
@@ -83,7 +83,7 @@ public class RecombineTokensTest {
 		String expectedOutput = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/recombineTokens/ref2.txt");
 		inputSentence = Formatter.normaliseText(inputSentence);
         posContainer.setInputText(inputSentence);
-		posContainer.setWordTokenList(oscarTokeniser.tokenise(inputSentence));
+		posContainer.setWordTokenList(Formatter.subTokeniseTokens(oscarTokeniser.tokenise(inputSentence)));
 		posContainer.registerTagList(oscarTagger.runTagger(posContainer.getWordTokenList(), inputSentence));
 		posContainer.registerTagList(regexTagger.runTagger(posContainer.getWordTokenList(), inputSentence));
 		posContainer.registerTagList(openNLPTagger.runTagger(posContainer.getWordTokenList(), inputSentence));
@@ -103,7 +103,7 @@ public class RecombineTokensTest {
 		String expectedOutput = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/recombineTokens/ref3.txt");
 		inputSentence = Formatter.normaliseText(inputSentence);
         posContainer.setInputText(inputSentence);
-		posContainer.setWordTokenList(oscarTokeniser.tokenise(inputSentence));
+		posContainer.setWordTokenList(Formatter.subTokeniseTokens(oscarTokeniser.tokenise(inputSentence)));
 		posContainer.registerTagList(oscarTagger.runTagger(posContainer.getWordTokenList(), inputSentence));
 		posContainer.registerTagList(regexTagger.runTagger(posContainer.getWordTokenList(), inputSentence));
 		posContainer.registerTagList(openNLPTagger.runTagger(posContainer.getWordTokenList(), inputSentence));
@@ -125,7 +125,7 @@ public class RecombineTokensTest {
 		String expectedOutput = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/recombineTokens/ref4.txt");
 		inputSentence = Formatter.normaliseText(inputSentence);
         posContainer.setInputText(inputSentence);
-		posContainer.setWordTokenList(oscarTokeniser.tokenise(inputSentence));
+		posContainer.setWordTokenList(Formatter.subTokeniseTokens(oscarTokeniser.tokenise(inputSentence)));
 		posContainer.registerTagList(oscarTagger.runTagger(posContainer.getWordTokenList(), inputSentence));
 		posContainer.registerTagList(regexTagger.runTagger(posContainer.getWordTokenList(), inputSentence));
 		posContainer.registerTagList(openNLPTagger.runTagger(posContainer.getWordTokenList(), inputSentence));
@@ -145,7 +145,7 @@ public class RecombineTokensTest {
 		String expectedOutput = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/recombineTokens/ref5.txt");
 		inputSentence = Formatter.normaliseText(inputSentence);
         posContainer.setInputText(inputSentence);
-		posContainer.setWordTokenList(oscarTokeniser.tokenise(inputSentence));
+		posContainer.setWordTokenList(Formatter.subTokeniseTokens(oscarTokeniser.tokenise(inputSentence)));
 		posContainer.registerTagList(oscarTagger.runTagger(posContainer.getWordTokenList(), inputSentence));
 		posContainer.registerTagList(regexTagger.runTagger(posContainer.getWordTokenList(), inputSentence));
 		posContainer.registerTagList(openNLPTagger.runTagger(posContainer.getWordTokenList(), inputSentence));
@@ -167,7 +167,7 @@ public class RecombineTokensTest {
 		String expectedOutput = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/recombineTokens/celciusDotRef.txt");
 		inputSentence = Formatter.normaliseText(inputSentence);
         posContainer.setInputText(inputSentence);
-		posContainer.setWordTokenList(oscarTokeniser.tokenise(inputSentence));
+		posContainer.setWordTokenList(Formatter.subTokeniseTokens(oscarTokeniser.tokenise(inputSentence)));
 		posContainer.registerTagList(oscarTagger.runTagger(posContainer.getWordTokenList(), inputSentence));
 		posContainer.registerTagList(regexTagger.runTagger(posContainer.getWordTokenList(), inputSentence));
 		posContainer.registerTagList(openNLPTagger.runTagger(posContainer.getWordTokenList(), inputSentence));
@@ -188,7 +188,7 @@ public class RecombineTokensTest {
 		String expectedOutput = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/recombineTokens/oxidationRef.txt");
 		inputSentence = Formatter.normaliseText(inputSentence);
         posContainer.setInputText(inputSentence);
-		posContainer.setWordTokenList(oscarTokeniser.tokenise(inputSentence));
+		posContainer.setWordTokenList(Formatter.subTokeniseTokens(oscarTokeniser.tokenise(inputSentence)));
 		posContainer.registerTagList(oscarTagger.runTagger(posContainer.getWordTokenList(), inputSentence));
 		posContainer.registerTagList(regexTagger.runTagger(posContainer.getWordTokenList(), inputSentence));
 		posContainer.registerTagList(openNLPTagger.runTagger(posContainer.getWordTokenList(), inputSentence));
@@ -203,7 +203,7 @@ public class RecombineTokensTest {
 		String inputSentence = Utils.readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/recombineTokens/missingInput1.txt");
 		inputSentence = Formatter.normaliseText(inputSentence);
         posContainer.setInputText(inputSentence);
-		posContainer.setWordTokenList(oscarTokeniser.tokenise(inputSentence));
+		posContainer.setWordTokenList(Formatter.subTokeniseTokens(oscarTokeniser.tokenise(inputSentence)));
 		posContainer.registerTagList(oscarTagger.runTagger(posContainer.getWordTokenList(), inputSentence));
 		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""), tokenListToConcatenatedString(posContainer.getWordTokenList()).toLowerCase());
 		posContainer.registerTagList(regexTagger.runTagger(posContainer.getWordTokenList(), inputSentence));
@@ -225,7 +225,7 @@ public class RecombineTokensTest {
 		inputSentence = Formatter.normaliseText(inputSentence);
         posContainer.setInputText(inputSentence);
         
-		posContainer.setWordTokenList(oscarTokeniser.tokenise(inputSentence));
+		posContainer.setWordTokenList(Formatter.subTokeniseTokens(oscarTokeniser.tokenise(inputSentence)));
 		posContainer.registerTagList(oscarTagger.runTagger(posContainer.getWordTokenList(), inputSentence));
 		Assert.assertEquals(inputSentence.toLowerCase().replace(" ", ""), tokenListToConcatenatedString(posContainer.getWordTokenList()).toLowerCase());
 		posContainer.registerTagList(regexTagger.runTagger(posContainer.getWordTokenList(), inputSentence));

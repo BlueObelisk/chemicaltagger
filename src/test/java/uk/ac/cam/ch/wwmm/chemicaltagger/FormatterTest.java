@@ -16,10 +16,14 @@
 
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
-import static org.junit.Assert.assertEquals;
+import static junit.framework.Assert.assertEquals;
 import static uk.ac.cam.ch.wwmm.chemicaltagger.Utils.readSentence;
 
+import java.util.List;
+
 import org.junit.Test;
+
+import uk.ac.cam.ch.wwmm.oscar.document.Token;
 
 /***********************************************
  * Tests the Formatter Class
@@ -27,15 +31,29 @@ import org.junit.Test;
  ***********************************************/
 
 public class FormatterTest {
-	
-	
+
 	@Test	
 	public void testNormaliseSentence() {
 		String sentence = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/formatTest/sentence1.txt");
-		
         String cleanSentence = Formatter.normaliseText(Utils.cleanHTMLText(sentence));
+        List<Token> tokens = new OscarTokeniser().tokenise(cleanSentence);
+        tokens = Formatter.subTokeniseTokens(tokens);
 		String ref = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/formatTest/ref1.txt");
-		assertEquals(ref,cleanSentence);
+		assertEquals(ref, Utils.tokensToSpaceDelimitedStr(tokens));
+	}
+
+	@Test	
+	public void testCelciusTokenisation1() {
+		List<Token> tokens = new OscarTokeniser().tokenise("100 \u00b0C.,");
+		tokens = Formatter.subTokeniseTokens(tokens);
+		assertEquals("100 \u00b0C . ,",  Utils.tokensToSpaceDelimitedStr(tokens));
+	}
+	
+	@Test	
+	public void testCelciusTokenisation2() {
+		List<Token> tokens = new OscarTokeniser().tokenise("235-238\u00b0C.)");
+		tokens = Formatter.subTokeniseTokens(tokens);
+		assertEquals("235-238 \u00b0C . )",  Utils.tokensToSpaceDelimitedStr(tokens));
 	}
 	
 	@Test	
@@ -44,117 +62,91 @@ public class FormatterTest {
 	}
 
 	@Test	
-	public void testWhiteSpaceRemoval() {
-		assertEquals("foo bar baz foo bar", Formatter.normaliseText("foo\rbar\nbaz\tfoo  \n bar"));
-	}
-	
-	@Test	
 	public void testCelciusJoining() {
 		String normalisedText = Formatter.normaliseText("100 \u00b0 C");
 		assertEquals("100 \u00b0C", normalisedText);
 	}
-	
-	
-	@Test	
-	public void testSplitFullStop() {
-		assertEquals("reaction .", Formatter.normaliseText("reaction."));
-	}
-	
-	@Test	
-	public void testDontSplitAbbreviations() {
-		assertEquals("e.g.", Formatter.normaliseText("e.g."));
-		assertEquals("A.M.", Formatter.normaliseText("A.M."));
-	}
-	
-	@Test	
-	public void testSplitPeriodAfterDegrees() {
-		assertEquals("After heating to 50 \u00b0C . the mixture was stired .", Formatter.normaliseText("After heating to 50 \u00b0C. the mixture was stired."));
-	}
-	
-	@Test
-	public void testSplitKelvin() {
-		assertEquals("273.15 K .", Formatter.normaliseText("273.15 K."));
-	}
-	
-	@Test	
-	public void testSplitBracketsOff() {
-		assertEquals("( compound 5 )", Formatter.normaliseText("(compound 5)"));
-		assertEquals("( solid )", Formatter.normaliseText("(solid)"));
-	}
 
-	@Test	
-	public void testDontSplitBracketsOffInChemicalNames() {
-		assertEquals("(ethyl)benzene", Formatter.normaliseText("(ethyl)benzene"));
-	}
-
-	@Test
-	public void testAmountSplitting() {
-		assertEquals("5 gram", Formatter.normaliseText("5gram"));
-		assertEquals("5 M", Formatter.normaliseText("5M"));
-		assertEquals("5 ml", Formatter.normaliseText("5ml"));
-		assertEquals("3 dm3", Formatter.normaliseText("3dm3"));
-		assertEquals("7 cm3", Formatter.normaliseText("7cm3"));
-		assertEquals("4.5 eq", Formatter.normaliseText("4.5eq"));
-		assertEquals("5.3 g", Formatter.normaliseText("5.3g"));
-		assertEquals("5g", Formatter.normaliseText("5g"));//could be an identifier
-		assertEquals("5 L", Formatter.normaliseText("5L"));
-		assertEquals("5l", Formatter.normaliseText("5l"));//could be an identifier
-		assertEquals("5 mol", Formatter.normaliseText("5mol"));
-		assertEquals("2 mmolar", Formatter.normaliseText("2mmolar"));
-	}
-	
-	@Test	
-	public void testpHSplitting() {
-		String normalisedText = Formatter.normaliseText("pH6.5");
-		assertEquals("pH 6.5", normalisedText);
-		assertEquals("pHenyl", Formatter.normaliseText("pHenyl"));
-	}
-	
-	@Test	
-	public void testTemperatureSplitting() {
-		assertEquals("50 \u00b0C", Formatter.normaliseText("50\u00b0C"));
-	}
-	
-	@Test	
-	public void testColonSplittingExceptinTimes() {
-		assertEquals("Example 1 :", Formatter.normaliseText("Example 1:"));
-		assertEquals("octanol : water", Formatter.normaliseText("octanol:water"));
-		assertEquals("14:00", Formatter.normaliseText("14:00"));
-		assertEquals("6:00pm", Formatter.normaliseText("6:00pm"));
-	}
-	
 	@Test	
 	public void testSulphCorrection() {
 		assertEquals("sulfide", Formatter.normaliseText("sulphide"));
 	}
-	
+
 	@Test	
-	public void testCelciusJoining2() {
-		String normalisedText = Formatter.normaliseText("100 \u00b0 C.,");
-		assertEquals("100 \u00b0C. ,", normalisedText);
+	public void testWhiteSpaceRemoval() {
+		assertEquals("foo bar baz foo bar", Formatter.normaliseText("foo\rbar\nbaz\tfoo  \n bar"));
+	}
+
+	@Test
+	public void testOxidationStateErroneousSpace(){
+		String normalisedText = Formatter.normaliseText("The compound copper (I) chloride is normally misrecognised.");
+		assertEquals("The compound copper(I) chloride is normally misrecognised.", normalisedText);
+	}
+
+	@Test
+	public void testChargeErroneousSpace(){
+		String normalisedText = Formatter.normaliseText("The compound copper (1+) chloride is normally misrecognised.");
+		assertEquals("The compound copper(1+) chloride is normally misrecognised.", normalisedText);
+	}
+
+	@Test
+	public void testCompoundReference(){
+		String normalisedText = Formatter.normaliseText("This reference to compound (I) should be untouched.");
+		assertEquals("This reference to compound (I) should be untouched.", normalisedText);
 	}
 	
-	@Test	
-	public void testCelciusJoining3() {
-		String normalisedText = Formatter.normaliseText("235-238\u00b0 C.)");
-		assertEquals("235-238 \u00b0C. )", normalisedText);
-	}
 	
+	
+	
+	@Test
+	public void testAmountSplitting() {
+		assertEquals("5 gram", whiteSpaceTokeniseAndSubtokenise("5gram"));
+		assertEquals("5 M", whiteSpaceTokeniseAndSubtokenise("5M"));
+		assertEquals("5 ml", whiteSpaceTokeniseAndSubtokenise("5ml"));
+		assertEquals("3 dm3", whiteSpaceTokeniseAndSubtokenise("3dm3"));
+		assertEquals("7 cm3", whiteSpaceTokeniseAndSubtokenise("7cm3"));
+		assertEquals("4.5 eq", whiteSpaceTokeniseAndSubtokenise("4.5eq"));
+		assertEquals("5.3 g", whiteSpaceTokeniseAndSubtokenise("5.3g"));
+		assertEquals("5g", whiteSpaceTokeniseAndSubtokenise("5g"));//could be an identifier
+		assertEquals("5 L", whiteSpaceTokeniseAndSubtokenise("5L"));
+		assertEquals("5l", whiteSpaceTokeniseAndSubtokenise("5l"));//could be an identifier
+		assertEquals("5 mol", whiteSpaceTokeniseAndSubtokenise("5mol"));
+		assertEquals("2 mmolar", whiteSpaceTokeniseAndSubtokenise("2mmolar"));
+	}
+
+	@Test	
+	public void testpHSplitting() {
+		String normalisedText = whiteSpaceTokeniseAndSubtokenise("pH6.5");
+		assertEquals("pH 6.5", normalisedText);
+		assertEquals("pHenyl", whiteSpaceTokeniseAndSubtokenise("pHenyl"));
+	}
+
+	@Test	
+	public void testTemperatureSplitting() {
+		assertEquals("50 \u00b0C", whiteSpaceTokeniseAndSubtokenise("50\u00b0C"));
+		assertEquals("50-100 \u00b0C", whiteSpaceTokeniseAndSubtokenise("50-100\u00b0C"));
+	}
+
 	@Test	
 	public void testSplitPercentSign1() {
-		String normalisedText = Formatter.normaliseText("30%");
+		String normalisedText = whiteSpaceTokeniseAndSubtokenise("30%");
 		assertEquals("30 %", normalisedText);
 	}
 	
 	@Test	
 	public void testSplitPercentSign2() {
-		String normalisedText = Formatter.normaliseText("25%-30%");
+		String normalisedText = whiteSpaceTokeniseAndSubtokenise("25%-30%");
 		assertEquals("25 % - 30 %", normalisedText);
 	}
-
+	
 	@Test	
-	public void testHyphenedDirectionPattern() {
-		String normalisedText = Formatter.normaliseText("60\u00b0 N-60\u00b0");
-		assertEquals("60\u00b0 N - 60\u00b0", normalisedText);
+	public void testSplitBracketsOffOxidationState() {
+		assertEquals("( V )", whiteSpaceTokeniseAndSubtokenise("(V)"));
+	}
+
+	private static String whiteSpaceTokeniseAndSubtokenise(String str) {
+		List<Token> tokens = new WhiteSpaceTokeniser().tokenise(str);
+		tokens = Formatter.subTokeniseTokens(tokens);
+		return Utils.tokensToSpaceDelimitedStr(tokens);
 	}
 }

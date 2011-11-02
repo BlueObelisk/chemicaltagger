@@ -215,6 +215,7 @@ public class ChemistryPOSTagger {
 		}
 		List<Token> wordTokenList = ctTokeniser.tokenise(inputSentence);
         posContainer.setInputText(inputSentence);
+        wordTokenList = Formatter.subTokeniseTokens(wordTokenList);
         return wordTokenList;
 	}
 		

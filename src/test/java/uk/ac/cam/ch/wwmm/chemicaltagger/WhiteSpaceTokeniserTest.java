@@ -15,54 +15,28 @@
  */
 
 package uk.ac.cam.ch.wwmm.chemicaltagger;
-import static uk.ac.cam.ch.wwmm.chemicaltagger.ChemistryPOSTagger.DEFAULT_PRIORITISE_OSCAR;
-import static uk.ac.cam.ch.wwmm.chemicaltagger.ChemistryPOSTagger.DEFAULT_USE_SPECTRA_TAGGER;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import junit.framework.Assert;
 
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
 import org.junit.Test;
-
-import uk.ac.cam.ch.wwmm.oscar.Oscar;
 
 /************************************
  * Tests the WhiteSpaceTokeniser Class.
  * @author lh359
  ************************************/
 public class WhiteSpaceTokeniserTest {
-	private static ChemistryPOSTagger posTagger; 
-	@BeforeClass
-	public static void setup(){
-		List<Tagger> chemistryTaggers = new ArrayList<Tagger>();
-		chemistryTaggers.add(new RegexTagger());
-		chemistryTaggers.add(new OscarTagger(new Oscar()));
-		chemistryTaggers.add(OpenNLPTagger.getInstance());
-		posTagger = new ChemistryPOSTagger(new WhiteSpaceTokeniser(), chemistryTaggers);
-	}
-	
-	@AfterClass
-	public static void cleanUp(){
-		posTagger = null;
-	}
-	
+
 	@Test
 	public void testWhiteSpaceTokenisation() {
 		String sentence = "It was at Mt. xyz station (44\u00b011' N-10\u00b042' E) .";
-		String expected = "PRP It VBD was IN at NNP Mt. NN xyz NN station -LRB- ( NN 44\u00b011' JJ-CHEM N-10\u00b042' NNP E -RRB- ) STOP .";
-		POSContainer posContainer = posTagger.runTaggers(sentence, DEFAULT_PRIORITISE_OSCAR, DEFAULT_USE_SPECTRA_TAGGER);
-        Assert.assertEquals("WhiteSpace Tokenisation result",expected, posContainer.getTokenTagTupleAsString());
+		String spaceDelimitedTokens = Utils.tokensToSpaceDelimitedStr(new WhiteSpaceTokeniser().tokenise(sentence));
+        Assert.assertEquals("WhiteSpace Tokenisation result", sentence, spaceDelimitedTokens);
 	}
 	
 	@Test
 	public void testWhiteSpaceTokenisationWithChemicals() {
 		String sentence = "Water samples were collected from Mt. xyz .";
-		String expected = "OSCAR-CM Water NNS samples VBD were VB-RECOVER collected IN-FROM from NNP Mt. NNP xyz STOP .";
-		POSContainer posContainer = posTagger.runTaggers(sentence,DEFAULT_PRIORITISE_OSCAR, DEFAULT_USE_SPECTRA_TAGGER);
-		Assert.assertEquals("WhiteSpace Tokenisation result",expected, posContainer.getTokenTagTupleAsString());
+		String spaceDelimitedTokens = Utils.tokensToSpaceDelimitedStr(new WhiteSpaceTokeniser().tokenise(sentence));
+        Assert.assertEquals("WhiteSpace Tokenisation result", sentence, spaceDelimitedTokens);
 	}
 
 

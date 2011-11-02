@@ -40,6 +40,8 @@ import org.apache.commons.io.IOUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.safety.Whitelist;
 
+import uk.ac.cam.ch.wwmm.oscar.document.Token;
+
 /********************************************
  * A Utils class.
  * 
@@ -349,6 +351,20 @@ public class Utils {
 		OutputStream os = new FileOutputStream(new File(filename));
 		IOUtils.writeLines(sentenceList, null, os, "UTF-8");
 		IOUtils.closeQuietly(os);
+	}
+	
+	/**
+	 * Concatenates token surfaces adding a space between them
+	 * @param tokens
+	 * @return
+	 */
+	public static String tokensToSpaceDelimitedStr(List<Token> tokens){
+	    StringBuilder sb = new StringBuilder();
+	    for (Token token : tokens) {
+	    	sb.append(token.getSurface());
+	    	sb.append(" ");
+		}
+	    return sb.toString().trim();
 	}
 	
 }
