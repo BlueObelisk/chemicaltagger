@@ -28,18 +28,17 @@ import uk.ac.cam.ch.wwmm.oscar.document.Token;
  * 
  * Runs a tokenisers 4 taggers against the input:
  * - Spectra: recognises and pulls out spectra information. 
- * - OSCAR  : recognises chemical entities. 
  * - Regex  : recognises chemistry related words that are not
  * recognised by OSCAR . 
+ * - OSCAR  : recognises chemical entities. 
  * - OpenNLP: recognises common english parts of speech .
- * It then combines the output of OSCAR, Regex and OpenNLP
+ * It then combines the output of Regex, OSCAR and OpenNLP
  * taggers and then performs postprocessing on tags
  * 
  * @author lh359, dmj30, dl387
  ***************************************************************/
 public class ChemistryPOSTagger {
 
-	static boolean DEFAULT_PRIORITISE_OSCAR = false;
 	static boolean DEFAULT_USE_SPECTRA_TAGGER = false;
 		
 	private OscarTagger oscarTagger;
@@ -154,29 +153,26 @@ public class ChemistryPOSTagger {
 	
 	/*****************************************************
 	 * Overloading method for runTaggers passing the default 
-	 * flags for prioritiseOscar and useSpectraTagger to {@link ChemistryPOSTagger#runTaggers(String, boolean, boolean)} .
+	 * flag for useSpectraTagger to {@link ChemistryPOSTagger#runTaggers(String, boolean)} .
 	 * 
 	 * @param inputSentence (String)
 	 * @return POSContainer (POSContainer)
 	 *****************************************************/
 	public POSContainer runTaggers(String inputSentence) {
-		return runTaggers(inputSentence, DEFAULT_PRIORITISE_OSCAR, DEFAULT_USE_SPECTRA_TAGGER);
+		return runTaggers(inputSentence, DEFAULT_USE_SPECTRA_TAGGER);
 	}
 	
 	
 	/*****************************************************
-	 * 
-	 * Normalises the inputSentence then runs the Tokeniser and Taggers against it.
-	 * Prioritises OSCAR tags if prioritiseOscar is True
-	 * else it prioritises regexTagger.
+	 * Normalises the inputSentence 
+	 * Optionally removes spectra
+	 * Then tokenises the input and runs the taggers over the tokens
 	 * 
 	 * @param inputSentence (String)
-	 * @param prioritiseOscar (boolean)
 	 * @param useSpectraTagger (boolean)
 	 * @return posContainer (POSContainer)
 	 *****************************************************/
-	
-	public POSContainer runTaggers(String inputSentence, boolean prioritiseOscar, boolean useSpectraTagger) {
+	public POSContainer runTaggers(String inputSentence, boolean useSpectraTagger) {
 		
 		POSContainer posContainer = new POSContainer();
 		List<String> ignoredTags = new ArrayList<String>();
