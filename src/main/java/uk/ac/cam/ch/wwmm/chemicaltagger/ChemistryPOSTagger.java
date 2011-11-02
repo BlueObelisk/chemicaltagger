@@ -209,8 +209,7 @@ public class ChemistryPOSTagger {
 		if (useSpectraTagger){
 		    posContainer = SpectraTagger.runTagger(posContainer);
 		}
-		List<Token> wordTokenList = ctTokeniser.tokenise(inputSentence);
-        posContainer.setInputText(inputSentence);
+		List<Token> wordTokenList = ctTokeniser.tokenise(posContainer.getInputText());
         wordTokenList = Formatter.subTokeniseTokens(wordTokenList);
         return wordTokenList;
 	}

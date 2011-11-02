@@ -54,7 +54,7 @@ public class SpectraTagger {
 		StringBuilder newInputText = new StringBuilder();
 		String sentence = posContainer.getInputText();
 		int offset = 0;
-        List<String> spectraKeywords = Arrays.asList("spectrum hrms rf".split(" "));
+        List<String> spectraKeywords = Arrays.asList("spectrum", "hrms", "rf");
 		List<Element> spectraList = new ArrayList<Element>();
 		for (DataAnnotation dataAnnotation : annotations) {
 			if (spectraKeywords.contains(dataAnnotation.getAnnotatedElement().getLocalName()) || (dataAnnotation.getAnnotatedElement().getLocalName().equals("property") && spectraKeywords.contains(dataAnnotation.getAnnotatedElement().getAttribute("type"))))  {
