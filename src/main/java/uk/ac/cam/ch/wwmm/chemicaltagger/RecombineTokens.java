@@ -18,17 +18,22 @@ package uk.ac.cam.ch.wwmm.chemicaltagger;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Set;
 
 import uk.ac.cam.ch.wwmm.oscar.document.Token;
 
 /******************************************
- * Combines tokens that have been erroneously split by OSCAR.
+ * Combines tokens that have been erroneously split
  * @author lh359
  *******************************************/
 public class RecombineTokens {
 	
+	private static Set<String> nonHyphenTags = new HashSet<String>(Arrays.asList("dash", "comma", "cc", "stop"));
+	private static Set<String> quantityUnitTags = new HashSet<String>(Arrays.asList("nn-vol", "nn-area", "nn-perarea", "nn-pressure", "nn-parts", "nn-moles", "nn-persecond", "nn-timeunit", "nn-mass", "nn-pertimeunit", "nn-vol", "nn-amount", "nn-units"));
+
 	/****************************
 	 * Hides Utility Class Constructor.
 	 ***************************/
@@ -42,18 +47,12 @@ public class RecombineTokens {
 	 * @return posContainer (POSContainer) .
 	 *********************************************/
 	public static POSContainer recombineTokens(POSContainer posContainer) {
-		List<Integer> totalIndexList = new ArrayList<Integer>();
-		List<String> nonHyphenTags = Arrays.asList(new String[] { "dash",
-				"comma", "cc", "stop" });
-		List<Integer> indexList = new ArrayList<Integer>();
+		List<Integer> previousIndexList = new ArrayList<Integer>();
 		List<Token> wordTokenList = posContainer.getWordTokenList();
 		List<String> combinedTagList = posContainer.getCombinedTagsList();
 		LinkedHashMap<Integer, List<Integer>> indexMap = new LinkedHashMap<Integer, List<Integer>>();
 		for (int currentIndex = 0; currentIndex < wordTokenList.size(); currentIndex++) {
-			if (indexList.size() > 0){
-				totalIndexList.addAll(indexList);
-			}	
-			indexList = new ArrayList<Integer>();
+			List<Integer> indexList = new ArrayList<Integer>();
 
 			String currentTagLc = combinedTagList.get(currentIndex).toLowerCase();
 			if (currentTagLc.equals("dash")) {
@@ -75,28 +74,17 @@ public class RecombineTokens {
 							&& nextTag.startsWith("OSCAR-CM") && !wordTokenList.get(currentIndex + 1).getSurface().startsWith("-")) 
 							&& !(nextTag.startsWith("CD") && previousTag.startsWith("NN")) &&  !isAHyphenedUnit(previousTag,nextTag)) {
 						
-						if (totalIndexList.contains(currentIndex - 1)) {
-
-							List<Integer> keySet = new ArrayList<Integer>(
-									indexMap.keySet());
-							indexList = new ArrayList<Integer>();
-							indexList = indexMap
-									.get(keySet.get(keySet.size() - 1));
-							indexList.add(currentIndex);
-							if (currentIndex + 1 < wordTokenList.size()){
-								indexList.add(currentIndex + 1);
-							}	
-							indexMap.put(indexList.get(0), indexList);
-
-						} else if (nonHyphenTags.contains(previousTag
-								.toLowerCase())) {
+						if (previousIndexList.contains(currentIndex - 1)) {
+							//previous token was involved in a recombination, hence need to append to its indexList
+							indexList = previousIndexList;
 							indexList.add(currentIndex);
 							indexList.add(currentIndex + 1);
 							indexMap.put(indexList.get(0), indexList);
-
-						} else if (nonHyphenTags
-								.contains(nextTag.toLowerCase())) {
-
+						} else if (nonHyphenTags.contains(previousTag.toLowerCase())) {
+							indexList.add(currentIndex);
+							indexList.add(currentIndex + 1);
+							indexMap.put(indexList.get(0), indexList);
+						} else if (nonHyphenTags.contains(nextTag.toLowerCase())) {
 							indexList.add(currentIndex - 1);
 							indexList.add(currentIndex);
 							indexMap.put(indexList.get(0), indexList);
@@ -150,6 +138,9 @@ public class RecombineTokens {
 					}
 				}
 			}
+			if (!indexList.isEmpty()){
+				previousIndexList = indexList;
+			}
 		}
 
 		return combineTokens(posContainer, indexMap);
@@ -163,12 +154,7 @@ public class RecombineTokens {
 	 * @return boolean
 	 */
 	private static boolean isAHyphenedUnit(String previousTag, String nextTag) {
-		List<String> quantityUnits = Arrays.asList("nn-vol", "nn-area", "nn-perarea", "nn-pressure","nn-parts", "nn-moles", "nn-persecond", "nn-timeunit", "nn-mass", "nn-pertimeunit","nn-vol","nn-amount","nn-units" );
-		
-		if (quantityUnits.contains(previousTag.toLowerCase()) && quantityUnits.contains(nextTag.toLowerCase()))
-			return true;
-		else
-		return false;
+		return quantityUnitTags.contains(previousTag.toLowerCase()) && quantityUnitTags.contains(nextTag.toLowerCase());
 	}
 
 	/*****************************************
@@ -222,7 +208,7 @@ public class RecombineTokens {
 	*****************************************/
 	private static String getTagName(POSContainer posContainer,List<Integer> indexList) {
 		String tagName = "";
-		List<String> jjChemList = Arrays.asList(new String[] { "jj", "vbn","jj-chem" });
+		List<String> jjChemList = Arrays.asList("jj", "vbn", "jj-chem");
 		for (Integer integer : indexList) {
 			String tag = posContainer.getCombinedTagsList().get(integer);
 			if (!tagName.toLowerCase().startsWith("oscar") & tag.contains("-")){
