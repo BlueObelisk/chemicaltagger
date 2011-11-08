@@ -43,7 +43,7 @@ NN-VOL---^([mkµu]?l|[cd]?m[\^]?3|(µ|pico|nano|micro|milli|centi|deci|kilo|mega
 NN-VOL---^drop[s]?$---Volume
 NN-CHEMENTITY---^(adduct|by[\-]?product|catalyst|compound|complex[e]?|eluent|gel|ice|generator|initiator|intermediate|ligand|macroinitiator|material|metal|monomer|nanotube|oligomer|petroleum|phase|plug|(co)?polymer|product|reactant|reagent|residue|resin|retrievals|salt|septum|sol(\.|ution)|solvent)[s]?$|layer[s]?$|.+®---Chemical entities not marked up by OSCAR
 NN-TEMP---(o|°|º)[cCfF]\.?$|room$|temperature$|^rt$|^RT$|^deg$|^degrees$|^celsius$|^fahrenheit$|^kelvin$---Temperature Token
-NN-TEMP---^K$---Temperature Token
+NN-TEMP---^(?-i:K)$---Temperature Token
 NN-PH---^ph$---pH Token
 NN-FLASH---^flash$---Flash
 NN-GENERAL---^general$---General term
