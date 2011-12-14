@@ -22,8 +22,8 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import uk.ac.cam.ch.wwmm.opsin.StringTools;
 import uk.ac.cam.ch.wwmm.oscar.document.Token;
+import uk.ac.cam.ch.wwmm.oscar.tools.StringTools;
 
 /*********************************************
  * Preprocesses text before it gets passed to tokenisation and tagging classes.
