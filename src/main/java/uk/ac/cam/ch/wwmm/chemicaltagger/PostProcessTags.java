@@ -114,6 +114,11 @@ public class PostProcessTags {
 				return "NN-CHEMENTITY";
 			}
 		}
+		if (currentTokenStr.equalsIgnoreCase("acid") || currentTokenStr.equalsIgnoreCase("base")){
+			if (currentTag.startsWith("NN")){
+				return "NN-CHEMENTITY";
+			}
+		}
 		
 		if (currentTokenStr.equalsIgnoreCase("formula")){
 			List<String> afterList = Arrays.asList("cd", "cd-alphanum", "nn-identifier");
