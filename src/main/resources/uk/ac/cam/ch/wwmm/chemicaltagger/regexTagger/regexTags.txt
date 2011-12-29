@@ -31,7 +31,7 @@ TO---^to$---The preposition 'TO'
 FW---^et[.]?$|^al[.]?$
 #Nouns
 NN---^wt\.$---Weight
-NN-STATE---powder|foam|glass|liquid|oil|solid|gas|syrup|crystal|gum|needle|prisms---Physical States
+NN-STATE---powder|foam|glass|liquid|oil|solid|gas|syrup|crystal|gum|needle|prisms|dust---Physical States
 NN-TIME---^period[s]?$|^min(utes|s|\.)?$|^hour[s]?|^month[s]?|^week(s|end)?$|^sec(ond)?s$|^d$|^(?-i:h)$|^day[s]?$|.*night|hr[s]?|^time$---Time Token
 #In cases where the number directly precedes the quantity the Formatter will insert a space
 NN-MASS---^([mkµu]?(g|gram[m]?[e]?)|(pico|nano|micro|milli|centi|deci|kilo|mega)gram[m]?[e]?)[s]?$---Grams
@@ -41,7 +41,7 @@ NN-ATMOSPHERE---atmosphere[s]?$---Atmosphere
 NN-EQ---^([m]?eq[.]?|(pico|nano|micro|milli|centi|deci|kilo|mega)?equiv(alent[s]?|\.)?)$---Equivalence
 NN-VOL---^([mkµu]?l|[cd]?m[\^]?3|(µ|pico|nano|micro|milli|centi|deci|kilo|mega)?lit(re|er|\.)[s]?)$---Volume
 NN-VOL---^drop[s]?$---Volume
-NN-CHEMENTITY---^(adduct|by[\-]?product|catalyst|compound|complex[e]?|eluent|gel|ice|generator|initiator|intermediate|ligand|macroinitiator|material|metal|monomer|nanotube|oligomer|petroleum|phase|plug|(co)?polymer|product|reactant|reagent|residue|resin|retrievals|salt|septum|sol(\.|ution)|solvent)[s]?$|layer[s]?$|.+®---Chemical entities not marked up by OSCAR
+NN-CHEMENTITY---^(adduct|by[\-]?product|catalyst|compound|complex[e]?|elu[ae]nt|gel|ice|generator|initiator|intermediate|ligand|macroinitiator|material|metal|monomer|nanotube|oligomer|petroleum|phase|plug|(co)?polymer|product|reactant|reagent|residue|resin|retrievals|salt|septum|sol(\.|ution)|solvent)[s]?$|layer[s]?$|.+®---Chemical entities not marked up by OSCAR
 NN-TEMP---(o|°|º)[cCfF]\.?$|room$|temperature$|^rt$|^RT$|^deg$|^degrees$|^celsius$|^fahrenheit$|^kelvin$---Temperature Token
 NN-TEMP---^(?-i:K)$---Temperature Token
 NN-PH---^ph$---pH Token
