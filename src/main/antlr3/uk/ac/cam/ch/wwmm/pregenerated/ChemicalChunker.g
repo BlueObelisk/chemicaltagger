@@ -208,8 +208,15 @@ inMolecule
 
 verbphrase
 	:	verbphraseStructure ->  ^(VerbPhrase  verbphraseStructure);
-verbphraseStructure :  dt? to? inAll? inafter? (md* rbconj? adv* adj? verb+ md* adv* adj? neg? )+ inoff? (cc? comma? prepphrase)*   ;
-verb : vb|vbp|vbg|vbd|vbz|vbn|vbuse|vbsubmerge|vbimmerse|degassMultiVerb|vbsubject|vbadd|vbdilute|vbcharge|vbcontain|vbdrop|vbfill|vbsuspend|vbtreat|vbapparatus|vbconcentrate|vbcool|vbdegass|vbdissolve|vbdry|vbextract|vbfilter |vbheat|vbincrease|vbpartition|vbprecipitate|vbpurify|vbquench|vbrecover|vbremove|vbstir|vbsynthesize|vbwait|vbwash|vbyield|vbchange;
+//Would this be better written in terms of auxillary verbs and normal verbs? e.g. auxillary+ verb?
+verbphraseStructure :  dt? to? inAll? inafter? md* rbconj? adv* adj? (actionVerb md* adv* adj? neg?  | otherVerb md* adv* adj? neg? otherVerbStructure* actionVerbStructure?) inoff? (cc? comma? prepphrase)* ;
+
+actionVerbStructure: md* rbconj? adv* adj? actionVerb md* adv* adj? neg? ;
+otherVerbStructure: md* rbconj? adv* adj? otherVerb md* adv* adj? neg? ;
+
+verb: actionVerb | otherVerb;
+actionVerb : vbadd|vbcharge|vbcontain|vbdilute|vbdrop|vbfill|vbtreat|vbapparatus|vbconcentrate|vbcool|vbdegass|degassMultiVerb|vbsubject|vbdissolve|vbdry|vbextract|vbfilter|vbheat|vbincrease|vbsubmerge|vbpartition|vbprecipitate|vbpurify|vbquench|vbrecover|vbremove|vbstir|vbsynthesize|vbwait|vbwash|vbyield;
+otherVerb : vb|vbd|vbg|vbn|vbp|vbz|vbchange|vbimmerse|vbsuspend|vbuse;
 
 degassMultiVerb
 	:	vbdegass cc vbfill;

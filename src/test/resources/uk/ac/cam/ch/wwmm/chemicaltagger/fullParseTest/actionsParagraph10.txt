@@ -1,6 +1,6 @@
 Cool: cooled to 0 ºC 
 Add: Imidazole ( 40 mg , 0.60 mmol ) was added 
-Dissolve: to dissolve followed by a solution of TIPSCl ( 0.08 mL , 0.36 mmol ) and DMAP ( 2.0 mg , 20 ?mol ) in DMF ( 1 mL ) 
+Dissolve: to dissolve 
 Dissolve: DMAP ( 2.0 mg , 20 ?mol ) in DMF ( 1 mL ) 
 Heat: The reaction mixture was heated at 50 ºC for 18 hrs 
 Quench: then quenched by addition of saturated NH4Cl ( aq ) ( 2 mL ) 
