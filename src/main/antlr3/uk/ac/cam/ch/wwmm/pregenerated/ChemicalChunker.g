@@ -379,11 +379,12 @@ bracketedContent2: lrb bracketedContentContents rrb;
 bracketedContent3: lsqb bracketedContentContents rsqb;
 bracketedContentContents: (verb|noun|bracketedContent|md|percentsign|dash|inAll|ratio|conjunction|adj|colon|stop|numeric)+;
 
-bracketedContentInMol: ratio?  (bracketedContentInMolStructure1|bracketedContentInMolStructure2|bracketedContentInMolStructure3) -> ^(MIXTURE ratio? bracketedContentInMolStructure1? bracketedContentInMolStructure2? bracketedContentInMolStructure3?);
-bracketedContentInMolStructure1: comma lrb bracketedContentInMolContents rrb comma;
-bracketedContentInMolStructure2: lrb bracketedContentInMolContents rrb;
-bracketedContentInMolStructure3: lsqb bracketedContentInMolContents rsqb;
-bracketedContentInMolContents: (verb|quantity2Node|oscarCompound|alphanumericOrIdentifierCompoundReference|ratio|numberCompoundReference (comma | colon | {nextIsSemiColon(input)}? stop)|cd|md|percentsign|dash|inAll|comma|adj|colon|stop|noun|bracketedContentInMol) (verb|quantity2Node|oscarCompound|alphanumericOrIdentifierCompoundReference|ratio|cd|md|percentsign|dash|inAll|conjunction|adj|colon|stop|noun|bracketedContentInMol)* ;
+bracketedContentInMol: ratio?  (bracketedContentInMolStructure1|bracketedContentInMolStructure2) -> ^(MIXTURE ratio? bracketedContentInMolStructure1? bracketedContentInMolStructure2?);
+bracketedContentInMolStructure1: comma bracketedContentInMolStructure2 comma;
+bracketedContentInMolStructure2: lrb bracketedContentInMolContents1 bracketedContentInMolContents2* rrb|lsqb bracketedContentInMolContents1 bracketedContentInMolContents2* rsqb;
+bracketedContentInMolContents1: numberCompoundReference (comma | colon | {nextIsSemiColon(input)}? stop)|bracketedContentInMolContentsAlwaysAllowed;
+bracketedContentInMolContents2: cc | bracketedContentInMolContentsAlwaysAllowed ;
+bracketedContentInMolContentsAlwaysAllowed: verb|quantity2Node|oscarCompound|alphanumericOrIdentifierCompoundReference|ratio|cd|md|percentsign|dash|inAll|comma|adj|colon|stop|noun|bracketedContentInMol;
 
 fromProcedure: (infrom | {precededByProduct(input)}? inof | {suitableVbYieldOrSynthesizeForReference(input)}? (vbyield|vbsynthesize) (inin|inby|infrom)) procedureNode;
 
