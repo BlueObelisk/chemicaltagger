@@ -79,17 +79,6 @@
 			<name>UCC Repository</name>
 			<url>https://maven.ch.cam.ac.uk/m2repo</url>
 		</pluginRepository>
-		<pluginRepository>
-			<id>mc-release</id>
-			<name>Local Maven repository of releases</name>
-			<url>http://mc-repo.googlecode.com/svn/maven2/releases</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-		</pluginRepository>
 	</pluginRepositories>
 	<build>
 		<plugins>
@@ -137,7 +126,8 @@
 				<configuration>
 					<header>src/main/resources/header.txt</header>
 					<excludes>
-					<exclude>**/resources/**</exclude>
+						<exclude>LICENSE.txt</exclude>
+						<exclude>**/resources/**</exclude>
 					</excludes>
 				</configuration>
 			</plugin>
