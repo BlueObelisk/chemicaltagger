@@ -25,10 +25,10 @@
 	<scm>
 		<url>http://bitbucket.org/wwmm/chemicaltagger/</url>
 		<connection>
-      scm:hg:https://bitbucket.org/wwmm/chemicaltagger/
+      scm:hg:https://bitbucket.org/wwmm/chemicaltagger
     </connection>
 		<developerConnection>
-      scm:hg:https://bitbucket.org/wwmm/chemicaltagger/
+      scm:hg:https://bitbucket.org/wwmm/chemicaltagger
     </developerConnection>
 	</scm>
 	<developers>
