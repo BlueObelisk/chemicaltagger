@@ -138,7 +138,7 @@ public class Formatter {
 			if (tokenSurface.contains("%")){
 				return splitPercentageSign(tokenSurface);
 			}
-			if (tokenSurface.startsWith("(") && tokenSurface.endsWith(")")) {// splits brackets off a word enclosed by brackets. Needed to fix OSCAR not tokenising oxidation states
+			if (tokenSurface.length() >2 && tokenSurface.startsWith("(") && tokenSurface.endsWith(")")) {// splits brackets off a word enclosed by brackets. Needed to fix OSCAR not tokenising oxidation states
 				return new String[]{tokenSurface.substring(0,1), tokenSurface.substring(1, tokenSurface.length()-1), tokenSurface.substring(tokenSurface.length()-1)};
 			}
 		}
