@@ -122,6 +122,8 @@ public class OpenNLPTagger implements Tagger{
 				posTagList.add("NN");
 			} else if (posTag.equals("``")) {
 				posTagList.add("FW");
+			} else if (posTag.equals("$")) {//used for currency symbols
+				posTagList.add("FW");
 			} else {
 				posTagList.add(posTag);
 			}
