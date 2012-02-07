@@ -32,7 +32,7 @@ FW---^et[.]?$|^al[.]?$
 #Nouns
 NN---^wt\.$---Weight
 NN-STATE---powder|foam|glass|liquid|oil|solid|gas|syrup|crystal|gum|needle|prisms|dust---Physical States
-NN-TIME---^period[s]?$|^min(utes|s|\.)?$|^hour[s]?|^month[s]?|^week(s|end)?$|^sec(ond)?s$|^d$|^(?-i:h)$|^day[s]?$|.*night|hr[s]?|^time$---Time Token
+NN-TIME---^period[s]?$|^min(utes|s|\.)?$|^hour[s]?|^month[s]?|^week(s|end)?$|^sec(ond)?s$|^d$|^(?-i:h)$|^day[s]?$|^(fort|over)?night(s|falls|long)?$|^hr[s]?$|^time$---Time Token
 #In cases where the number directly precedes the quantity the Formatter will insert a space
 NN-MASS---^([mkµu]?(g|gram[m]?[e]?)|(pico|nano|micro|milli|centi|deci|kilo|mega)gram[m]?[e]?)[s]?$---Grams
 NN-AMOUNT---^([mnµu]|pico|nano|micro|milli)?mol[e]?[s]?$---Mols (hopefully animal moles will not occur in chemistry)
