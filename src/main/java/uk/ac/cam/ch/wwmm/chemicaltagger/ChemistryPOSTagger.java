@@ -44,7 +44,10 @@ public class ChemistryPOSTagger {
 	private RegexTagger regexTagger;
 	private OpenNLPTagger openNLPTagger;
 	private List<Tagger> taggersOrderedInDescendingPriority;
-	private ChemicalTaggerTokeniser ctTokeniser;
+
+
+
+  private ChemicalTaggerTokeniser ctTokeniser;
 	
 	/**************************************
 	 * Private Singleton holder.
@@ -149,6 +152,13 @@ public class ChemistryPOSTagger {
 		return openNLPTagger;
 	}
 	
+	 /**************************************
+   * Getter method for taggersOrderedInDescendingPriority.
+   * @return taggersOrderedInDescendingPriority (List<Tagger>)
+   ***************************************/
+	public List<Tagger> getTaggersOrderedInDescendingPriority() {
+	    return taggersOrderedInDescendingPriority;
+	}
 	
 	/*****************************************************
 	 * Overloading method for runTaggers passing the default 
