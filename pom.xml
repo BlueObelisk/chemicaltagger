@@ -160,6 +160,7 @@
   			<groupId>org.xml-cml</groupId>
  			<artifactId>jumbo-testutil</artifactId>
 			<version>1.0.1</version>
+      <scope>test</scope>
 		</dependency>
 		<!-- non-UCC projects -->
 		<dependency>
