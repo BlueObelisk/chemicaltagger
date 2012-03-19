@@ -12,7 +12,7 @@
 	<groupId>uk.ac.cam.ch</groupId>
 	<artifactId>chemicalTagger</artifactId>
 	<name>chemicalTagger</name>
-	<version>1.3.1</version>
+	<version>1.4-SNAPSHOT</version>
 	<description>ChemicalTagger</description>
 	<url>http://chemicaltagger.ch.cam.ac.uk</url>
 	<licenses>
