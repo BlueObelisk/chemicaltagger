@@ -71,6 +71,11 @@
 			<name>UCC Repository</name>
 			<url>https://maven.ch.cam.ac.uk/m2repo</url>
 		</repository>
+    <repository>
+      <id>openlp-repo</id>
+      <name>OpenNLP Repository</name>
+      <url>  http://opennlp.sourceforge.net/maven2</url>
+    </repository>
 	</repositories>
 	<pluginRepositories>
 		<pluginRepository>

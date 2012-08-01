@@ -23,7 +23,6 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
@@ -40,16 +39,22 @@ public class RegexTagger implements Tagger{
 	private List<Rule> rules;
     private String tagFilePath = "/uk/ac/cam/ch/wwmm/chemicaltagger/regexTagger/regexTags.txt";
 	private static Logger LOG = Logger.getLogger(RegexTagger.class);
-    private List<String> ignoredTags;
+   private List<String> ignoredTags = new ArrayList<String>();
 
 	/****************************
 	 * Public Constructor.
 	 ***************************/
 	public RegexTagger() {
-		ignoredTags = new ArrayList<String>();
-		initializeRules();
+	  initializeRules();
 	}
 
+	 /****************************
+   * Public Constructor.
+   ***************************/
+  public RegexTagger(List<String> ignoredTags) {
+    this.ignoredTags = ignoredTags;
+    initializeRules();
+  }
 	/**********************
 	 * Public Constructor.
 	 * Sets a tagFile.
@@ -95,7 +100,7 @@ public class RegexTagger implements Tagger{
 			while ((line = in.readLine()) != null) {
 				if (!line.startsWith("#") && !StringUtils.isEmpty(line)) {
 					String[] lineTokens = line.split("---");
-					if (lineTokens.length > 1 ) {
+					if (lineTokens.length > 1 && !ignoredTags.contains(lineTokens[0])) {
 						rules.add(new Rule(lineTokens[0], lineTokens[1]));
 					}
 
@@ -120,11 +125,11 @@ public class RegexTagger implements Tagger{
 		List<String> tagList = new ArrayList<String>();
 		for (Token token : tokenList) {
 			try {
-				Matcher m = Pattern.compile("dummy").matcher(token.getSurface());
 
 				String tag = "nil";
 				for (Rule r : rules) {
-					if (m.usePattern(r.getPattern()).lookingAt()&& ! (ignoredTags.contains(r.getName()))) {
+	        Matcher m = r.getPattern().matcher(token.getSurface());
+					if (m.lookingAt()) {
 						tag = r.getName();
 						break;
 					}
@@ -143,8 +148,5 @@ public class RegexTagger implements Tagger{
         return ignoredTags;      
 	}
 
-	public void setIgnoredTags(List<String> ignoredTags) {
-        this.ignoredTags = ignoredTags;
-	}
 
 }
