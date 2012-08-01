@@ -23,6 +23,7 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
@@ -121,15 +122,15 @@ public class RegexTagger implements Tagger{
 	 * @return tagList (List<String>)
 	/*********************************************************/
 	public List<String> runTagger(List<Token> tokenList, String inputSentence) {
+    Pattern p = Pattern.compile("");
 
 		List<String> tagList = new ArrayList<String>();
 		for (Token token : tokenList) {
 			try {
-
+			  Matcher m = p.matcher(token.getSurface());
 				String tag = "nil";
 				for (Rule r : rules) {
-	        Matcher m = r.getPattern().matcher(token.getSurface());
-					if (m.lookingAt()) {
+					if (m.usePattern(r.getPattern()).lookingAt()) {
 						tag = r.getName();
 						break;
 					}
