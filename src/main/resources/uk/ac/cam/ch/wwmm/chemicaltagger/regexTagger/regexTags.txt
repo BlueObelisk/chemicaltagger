@@ -8,6 +8,8 @@ CD---half|third|quarter|fifth|sixth|seventh|eigth|ninth|tenth---misc
 
 DT-THE---^the$---The determiner 'THE';
 
+NNP-LABEL---^Fig\.|(Table|Figure|Chart|Diagram|Illustration|Graph|Schematic)(s)?$---;
+
 # Prepositions
 IN-AS---^as$---The preposition 'AS'
 IN-BEFORE---^before$---The preposition 'BEFORE'
@@ -60,6 +62,7 @@ NN-IDENTIFIER---^(\d+[a-z]\-\d*[a-z])$---Identifiers for a range of compounds e.
 NN-IDENTIFIER---^\d+\.(\d+[.]?[a-z]|[a-z])$---e.g. 4.3a or 4.3.a or 4.b
 NN-IDENTIFIER---^[a-f]\d$---e.g. A2, B3 etc.
 NN-IDENTIFIER---^\d+\(([a-z]|X{2,3}(IX|IV|V?I{0,3})|II|III|IV|VI|VII|VIII|IX|XI|XII|XIII|XIV|XV|XVI|XVII|XVIII|XIX)\)$---e.g. 81(d) or 3(iii)
+NN-IDENTIFIER---^[a-z]\.$---e.g. a. , b.  etc.
 
 CD-ALPHANUM---^\d+[A-Za-z]$-----A number followed by a letter. Could be used as an anaphora
 

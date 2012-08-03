@@ -38,6 +38,7 @@ UNNAMEDMOLECULE;
 QUANTITY;
 PROCEDURE;
 REFERENCETOCOMPOUND;
+CaptionLabel;
 }
 
 
@@ -180,6 +181,8 @@ headingProcedureRequiringTerminator
 
 bracketedHeadingProcedure
 	: (bracketedIdentifier | bracketedNumeric | squareBracketedReference) -> ^(PROCEDURE bracketedIdentifier? bracketedNumeric? squareBracketedReference?);
+	
+	
 
 headingProcedureTerminators
 	: rrb|stop|colon;
@@ -223,7 +226,7 @@ degassMultiVerb
 
 noun 	:	nounStructure (dash nounStructure)*;
 
-nounStructure :  prp|prp_poss|citation|cycles|molecule|apparatus|unnamedmolecule|nnstate|procedureNode|nn|nns|nnp|nnadd|preparationphrase|nnexample|range|nntime|nnatmosphere|tmunicode|quantity|nnchementity|nntemp|nnph|nnflash|nngeneral|nnamount|nneq|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|nnvol|nnpurify|nnsynthesize|nnmixture|squareBracketedReference|nndry|nnextract|nnfilter|nnprecipitate|nnremove|nnyield|fw|sym|clause|ls|nnps|pos|oscarase;
+nounStructure :  prp|prp_poss|captionLabel|nnplabel|citation|cycles|molecule|apparatus|unnamedmolecule|nnstate|procedureNode|nn|nns|nnp|nnadd|preparationphrase|nnexample|range|nntime|nnatmosphere|tmunicode|quantity|nnchementity|nntemp|nnph|nnflash|nngeneral|nnamount|nneq|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|nnconcentrate|nnvol|nnpurify|nnsynthesize|nnmixture|squareBracketedReference|nndry|nnextract|nnfilter|nnprecipitate|nnremove|nnyield|fw|sym|clause|ls|nnps|pos|oscarase;
 
 // Different PrepPhrases
 
@@ -343,6 +346,11 @@ numberCompoundReference
 numericOrIdentifierCompoundReference
   : allIdentifierTypes -> ^(REFERENCETOCOMPOUND allIdentifierTypes );
 
+captionLabel
+   : captionLabelContent+ -> ^(CaptionLabel captionLabelContent+);
+captionLabelContent
+   : (nnplabel allIdentifierTypes (conjunction allIdentifierTypes)*);
+
 quantity 	:  (quantity1Node|quantity2Node);
 
 quantity1Node : quantity1 ->   ^(QUANTITY  quantity1);
@@ -434,6 +442,9 @@ numeric : cd|cdAlphanum;
 
 
 //Tags---Pattern---Description
+
+nnplabel:'NNP-LABEL' TOKEN -> ^('NNP-LABEL' TOKEN);
+
 cdAlphanum:'CD-ALPHANUM' TOKEN -> ^('CD-ALPHANUM' TOKEN);
 oscarcj:'OSCAR-CJ' TOKEN -> ^('OSCAR-CJ' TOKEN);
 oscarrn:'OSCAR-RN' TOKEN -> ^('OSCAR-RN' TOKEN);
