@@ -7,6 +7,7 @@ glob:bin
 glob:classes
 glob:target
 glob:*DS_Store*
+glob:.metadata
 glob:.hgignore~
 glob:Properties.dat
 glob:cInChI-1
