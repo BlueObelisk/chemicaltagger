@@ -2,7 +2,7 @@
 
 TM-UNICODE---[®™]---Unicode Characters
 CD---^[~#]?[\-]?(\d+\.?\d*|\.\d+)$--- Cardinal Digits
-CD---^[\-±\+]?\d+(\.?\d)*x?\d+([\-±\+/\^]*\d+(\.\d)?)*$---Unparsed equations that sometimes are passed off as CD (to avoid them being marked up as NN or Oscar-CM)
+CD---^[\-±\+]?\d+(\.?\d)*+x?\d+([\-±\+/\^]*\d+(\.\d)?)*$---Unparsed equations that sometimes are passed off as CD (to avoid them being marked up as NN or Oscar-CM)
 CD---(^[~]?[\-]?(\d+\.)?\d+[\-|±][\-]?(\d+\.)?\d+)---non-year range numbers;
 CD---half|third|quarter|fifth|sixth|seventh|eigth|ninth|tenth---misc
 
