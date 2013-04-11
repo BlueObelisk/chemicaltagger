@@ -32,8 +32,6 @@ import uk.ac.cam.ch.wwmm.oscar.document.Token;
  ***********************************************/
 
 public class RegexTaggerTest {
-	
-	
     private RegexTagger regexTagger;
 
 	@Before
@@ -42,7 +40,7 @@ public class RegexTaggerTest {
 			regexTagger = new RegexTagger();
 		}
 	}
-	
+
 	@Test
 	public void sentence1() {
 		String sentence = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/regexTest/sentence1.txt");
@@ -50,11 +48,19 @@ public class RegexTaggerTest {
 		String ref = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/regexTest/ref1.txt");
 		Assert.assertEquals(ref, regexTaggedSentence);
 	}
-	
+
+    @Test
+    public void sentence2() { // lets make sure this does not take forever
+        String sentence = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/regexTest/sentence2.txt");
+        String regexTaggedSentence = regexTag(sentence);
+        String ref = readSentence("uk/ac/cam/ch/wwmm/chemicaltagger/regexTest/ref2.txt");
+        Assert.assertEquals(ref, regexTaggedSentence);
+    }
+
 	private String regexTag(String sentence) {
 		List<Token> tokens = new WhiteSpaceTokeniser().tokenise(sentence);
         List<String> regexTagList = regexTagger.runTagger(tokens, sentence);
-		
+
         /****************************
          * Check that lengths of 
          * token and tags are the same
@@ -74,7 +80,7 @@ public class RegexTaggerTest {
 				regexTaggedSentence.append(' ');
 			}
 		}
-        
+
 		return regexTaggedSentence.toString().trim();
 	}
 
