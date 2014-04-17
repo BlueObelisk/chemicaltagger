@@ -1,28 +1,22 @@
-A. ChemicalTagger Components:
------------------------------
-
+#A. ChemicalTagger Components:
     This package is used for marking up experimental sections in chemistry papers:
     It has 3 main classes:
 
-        I. ChemistryPOSTagger:
-        ---------------------
+        ##I. ChemistryPOSTagger:
         This class takes a sentence and runs it against (by default) three taggers:
              -OSCAR4 (for chemical entities)
              -Regex (for recognising key words)
              -OpenNLP (for English parts of speech)
 
-        II. ChemistrySentenceParser:
-        ---------------------------
+        ##II. ChemistrySentenceParser:
            This class converts a tagged sentence into a parseTree. It uses a lexer and parser generated
         by the Antlr grammar.
 
-        III. ASTtoXML:
-        ---------------------------
+        ##III. ASTtoXML:
         This class converts a parseTree into an XML document.
 
 
-B. Running chemicalTagger:
--------------------------
+#B. Running chemicalTagger:
 
 public void parseChemicalSentence(){
 
