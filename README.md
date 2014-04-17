@@ -1,4 +1,8 @@
-#A. ChemicalTagger Components:
+#ChemicalTagger Overview
+
+ChemicalTagger is a tool for semantic text-mining in chemistry; the associated publication can be found [here](http://dx.doi.org/10.1186/1758-2946-3-17).
+
+#A. Components:
 This package is used for marking up experimental sections in chemistry papers:
 It has 3 main classes:
 
@@ -16,7 +20,7 @@ by the Antlr grammar.
 This class converts a parseTree into an XML document.
 
 
-#B. Running chemicalTagger:
+#B. Running ChemicalTagger:
 
     :::java
     public void parseChemicalSentence(){
