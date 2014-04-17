@@ -1,6 +1,7 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<!-- NOTE: the antlr3 build is best done on the COMMANDLINE and requires 
-		set MAVEN_OPTS=-Xmx7024m (or thereabouts)-->
+		set MAVEN_OPTS=-Xmx7024m (or thereabouts) -->
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
@@ -23,12 +24,8 @@
 	</licenses>
 	<scm>
 		<url>http://bitbucket.org/wwmm/chemicaltagger/</url>
-		<connection>
-      scm:hg:https://bitbucket.org/wwmm/chemicaltagger
-    </connection>
-		<developerConnection>
-      scm:hg:https://bitbucket.org/wwmm/chemicaltagger
-    </developerConnection>
+		<connection>scm:hg:https://bitbucket.org/wwmm/chemicaltagger</connection>
+		<developerConnection>scm:hg:https://bitbucket.org/wwmm/chemicaltagger</developerConnection>
 	</scm>
 	<developers>
 		<developer>
@@ -160,10 +157,10 @@
 			<version>4.2-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-  			<groupId>org.xml-cml</groupId>
- 			<artifactId>jumbo-testutil</artifactId>
+			<groupId>org.xml-cml</groupId>
+			<artifactId>jumbo-testutil</artifactId>
 			<version>1.0.1</version>
-      <scope>test</scope>
+			<scope>test</scope>
 		</dependency>
 		<!-- non-UCC projects -->
 		<dependency>
