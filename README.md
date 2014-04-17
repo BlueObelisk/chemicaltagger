@@ -8,9 +8,10 @@ It has 3 main classes:
 
 ##I. ChemistryPOSTagger:
 This class takes a sentence and runs it against (by default) three taggers:
-    * OSCAR4 (for chemical entities)
-    * Regex (for recognising key words)
-    * OpenNLP (for English parts of speech)
+
+* OSCAR4 (for chemical entities)
+* Regex (for recognising key words)
+* OpenNLP (for English parts of speech)
 
 ##II. ChemistrySentenceParser:
 This class converts a tagged sentence into a parseTree. It uses a lexer and parser generated
