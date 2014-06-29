@@ -15,7 +15,7 @@
  */
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
-import static junit.framework.Assert.assertEquals;
+import static org.junit.Assert.assertEquals;
 import static uk.ac.cam.ch.wwmm.chemicaltagger.Utils.readSentence;
 
 import java.util.List;

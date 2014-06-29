@@ -18,7 +18,7 @@ package uk.ac.cam.ch.wwmm.chemicaltagger;
 import java.util.Arrays;
 import java.util.List;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
