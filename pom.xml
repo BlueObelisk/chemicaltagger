@@ -145,16 +145,15 @@
 		</resources>
 	</build>
 	<dependencies>
-		<!-- UCC projects -->
 		<dependency>
 			<groupId>uk.ac.cam.ch.wwmm.oscar</groupId>
 			<artifactId>oscar4-api</artifactId>
-			<version>4.2-SNAPSHOT</version>
+			<version>4.2.0</version>
 		</dependency>
 		<dependency>
 			<groupId>uk.ac.cam.ch.wwmm.oscar</groupId>
 			<artifactId>oscar4-data</artifactId>
-			<version>4.2-SNAPSHOT</version>
+			<version>4.2.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.xml-cml</groupId>
@@ -162,7 +161,6 @@
 			<version>1.0.1</version>
 			<scope>test</scope>
 		</dependency>
-		<!-- non-UCC projects -->
 		<dependency>
 			<groupId>org.antlr</groupId>
 			<artifactId>antlr-runtime</artifactId>
