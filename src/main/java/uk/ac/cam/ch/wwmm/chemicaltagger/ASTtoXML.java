@@ -140,7 +140,7 @@ public class ASTtoXML {
 			Tree astChild = astTree.getChild(i);
 			String text = astChild.getText();
 			int type = astChild.getType();
-			if (type != Token.INVALID_TOKEN_TYPE) {
+			if (type != Token.INVALID_TYPE) {
 				if (astChild.getChildCount() == 0) {
 					node.appendChild(text);
 				} else {
