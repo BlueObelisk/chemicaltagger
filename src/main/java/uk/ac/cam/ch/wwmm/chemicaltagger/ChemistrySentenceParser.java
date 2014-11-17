@@ -20,9 +20,9 @@ import java.io.InputStream;
 
 import nu.xom.Document;
 
-import org.antlr.runtime.ANTLRInputStream;
-import org.antlr.runtime.CommonTokenStream;
-import org.antlr.runtime.tree.Tree;
+import org.antlr.v4.runtime.ANTLRInputStream;
+import org.antlr.v4.runtime.CommonTokenStream;
+import org.antlr.v4.runtime.tree.Tree;
 
 import uk.ac.cam.ch.wwmm.pregenerated.ChemicalChunkerLexer;
 import uk.ac.cam.ch.wwmm.pregenerated.ChemicalChunkerParser;
@@ -78,7 +78,7 @@ public class ChemistrySentenceParser extends SentenceParser {
          else {
                  ANTLRInputStream input;
                  try {
-                         input = new ANTLRInputStream(getTaggedTokenInStream(), "UTF-8");
+                         input = new ANTLRInputStream(getTaggedTokenInStream());
                  } catch (IOException ioexception) {
                          throw new RuntimeException("Antlr input Stream Error: "
                                          + ioexception.getMessage());
@@ -87,13 +87,13 @@ public class ChemistrySentenceParser extends SentenceParser {
                  lexer = new ChemicalChunkerLexer(input);
                  CommonTokenStream tokens = new CommonTokenStream(lexer);
                  ChemicalChunkerParser parser = new ChemicalChunkerParser(tokens);
-                 ChemicalChunkerParser.document_return result = null;
+                 ChemicalChunkerParser.DocumentContext result = null;
                  try {
                          result = parser.document();
-                 } catch (org.antlr.runtime.RecognitionException e) {
+                 } catch (org.antlr.v4.runtime.RecognitionException e) {
 					e.printStackTrace();
 				}
-                 setParseTree((Tree) result.getTree());
+                 //setParseTree((Tree) result.getTree());
          }
 		
 	}

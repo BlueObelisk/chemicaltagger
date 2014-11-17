@@ -22,7 +22,7 @@ import nu.xom.Document;
 import nu.xom.Element;
 import nu.xom.Text;
 
-import org.antlr.runtime.tree.ParseTree;
+import org.antlr.v4.runtime.tree.ParseTree;
 
 /*****************************
  * Converts ANTLR ASTTrees into XML Documents.

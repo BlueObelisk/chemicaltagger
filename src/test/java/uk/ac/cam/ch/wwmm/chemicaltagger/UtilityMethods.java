@@ -24,7 +24,7 @@ import org.junit.Assert;
 import nu.xom.Element;
 import nu.xom.Nodes;
 
-import org.antlr.runtime.tree.Tree;
+import org.antlr.v4.runtime.tree.Tree;
 import org.apache.commons.io.IOUtils;
 
 /*****************************
