@@ -73,7 +73,7 @@
 			</plugin>
 			<plugin>
 				<artifactId>maven-surefire-plugin</artifactId>
-                                <version>2.17</version>
+				<version>2.17</version>
 				<configuration>
 					<argLine>-Xms512m -Xmx1024m</argLine>
 				</configuration>
@@ -117,7 +117,32 @@
 					</excludes>
 				</configuration>
 			</plugin>
+
+                                        <plugin>
+                                                <groupId>org.antlr</groupId>
+                                                <artifactId>antlr4-maven-plugin</artifactId>
+                                                <version>4.3</version>
+                                                <executions>
+                                                        <execution>
+                                                                <goals>
+                                                                        <goal>antlr4</goal>
+                                                                </goals>
+                                                                <configuration>
+                                                                        <sourceDirectory>src/main/antlr4/</sourceDirectory>
+                                                                        <conversionTimeout>10000</conversionTimeout>
+                                                                        <libDirectory>src/main/antlr4/</libDirectory>
+                                                                        <messageFormat>antlr</messageFormat>
+                                                                        <outputDirectory>src/main/java/</outputDirectory>
+                                                                        <verbose>true</verbose>
+                                                                        <grammars>*.g4</grammars>
+                                                                </configuration>
+                                                        </execution>
+                                                </executions>
+                                        </plugin>
+
+
 		</plugins>
+                <!--
 		<resources>
 			<resource>
 				<directory>src/main/resources</directory>
@@ -127,9 +152,11 @@
 				<directory>src/main/java</directory>
 				<includes>
 					<include>ChemicalChunker.tokens</include>
+					<include>ChemicalChunkerLexer.tokens</include>
 				</includes>
 			</resource>
 		</resources>
+                -->
 	</build>
 	<dependencies>
 		<dependency>
@@ -150,9 +177,19 @@
 		</dependency>
 		<dependency>
 			<groupId>org.antlr</groupId>
-			<artifactId>antlr-runtime</artifactId>
-			<version>3.2</version>
+			<artifactId>antlr4-runtime</artifactId>
+			<version>4.3</version>
 		</dependency>
+                <dependency>
+                        <groupId>org.antlr</groupId>
+                        <artifactId>antlr4</artifactId>
+                        <version>4.3</version>
+                </dependency>
+                <dependency>
+                        <groupId>org.antlr</groupId>
+                        <artifactId>antlr4-annotations</artifactId>
+                        <version>4.3</version>
+                </dependency>
 		<dependency>
 			<groupId>org.apache.opennlp</groupId>
 			<artifactId>opennlp-tools</artifactId>
@@ -191,42 +228,6 @@
 		</dependency>
 	</dependencies>
 
-	<profiles>
-		<profile>
-			<id>rebuildGrammar</id>
-			<build>
-				<plugins>
-					<plugin>
-                                                <!-- Invoke grammar rebuild with
-                                                     mvn org.antlr:antlr3-maven-plugin:antlr -P rebuildGrammar
-                                                -->
-						<groupId>org.antlr</groupId>
-						<artifactId>antlr3-maven-plugin</artifactId>
-						<version>3.2</version>
-                                                <configuration>
-                                                    <argLine>-Xmx8g</argLine>
-                                                </configuration>
-						<executions>
-							<execution>
-								<goals>
-									<goal>antlr</goal>
-								</goals>
-								<configuration>
-									<sourceDirectory>src/main/antlr3/</sourceDirectory>
-									<conversionTimeout>10000</conversionTimeout>
-									<libDirectory>src/main/antlr3/</libDirectory>
-									<messageFormat>antlr</messageFormat>
-									<outputDirectory>src/main/java/</outputDirectory>
-									<verbose>true</verbose>
-									<grammars>*.g</grammars>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
 	<reporting>
 		<plugins>
 			<plugin>

@@ -2,53 +2,45 @@ grammar ChemicalChunker;
 
 options {
     language=Java;
-    output = AST;
-   backtrack= true;
-   memoize = true;
 }
 tokens{
-Sentence;
-Unmatched;
-NounPhrase;
-MultipleApparatus;
-DissolvePhrase;
-VerbPhrase;
-CYCLES;
-RATIO;
-CITATION;
-MIXTURE;
-PrepPhrase;
-TimePhrase;
-RolePrepPhrase;
-AtmospherePhrase;
-TempPhrase;
-AMOUNT;
-MASS;
-PERCENT;
-VOLUME;
-MOLAR;
-PH;
-EQUIVALENT;
-YIELD;
-APPARATUS;
-MULTIPLE;
-OSCARCM;
-MOLECULE;
-UNNAMEDMOLECULE;
-QUANTITY;
-PROCEDURE;
-REFERENCETOCOMPOUND;
-CaptionLabel;
+Sentence,
+Unmatched,
+NounPhrase,
+MultipleApparatus,
+DissolvePhrase,
+VerbPhrase,
+CYCLES,
+RATIO,
+CITATION,
+MIXTURE,
+PrepPhrase,
+TimePhrase,
+RolePrepPhrase,
+AtmospherePhrase,
+TempPhrase,
+AMOUNT,
+MASS,
+PERCENT,
+VOLUME,
+MOLAR,
+PH,
+EQUIVALENT,
+YIELD,
+APPARATUS,
+MULTIPLE,
+OSCARCM,
+MOLECULE,
+UNNAMEDMOLECULE,
+QUANTITY,
+PROCEDURE,
+REFERENCETOCOMPOUND,
+CaptionLabel
 }
 
 
-@header {
-    package uk.ac.cam.ch.wwmm.pregenerated;
- }
-@lexer::header {package uk.ac.cam.ch.wwmm.pregenerated;}
 
-
-@members {
+@parser::members {
 public boolean isAtTokenPositionZero(TokenStream stream){
 	return stream.index()==0;
 }
@@ -155,14 +147,14 @@ TOKEN : (~' ')+;
 
 
 
-document: sentence+-> ^(Sentence  sentence )+ ;
+document: sentence+;
 
 sentence: (procedureNounPhrase | (sentenceStructure|unmatchedPhrase)+) stop*;
 
 sentenceStructure:  (nounphrase|verbphrase|prepphrase|prepphraseAfter)+ (advAdj|colon)* (conjunction|rbconj|comma)*;
 
 unmatchedPhrase
-	:	 unmatchedToken -> ^(Unmatched unmatchedToken);
+	:	 unmatchedToken;
 
 unmatchedToken //all base tokens other than stop
 	:	(numeric|advAdj|tmunicode|cdunicode|jjcomp|inAll|
@@ -171,16 +163,16 @@ unmatchedToken //all base tokens other than stop
 	cc|dt|dtTHE|fw|md|nn|nns|nnp|prp|prp_poss|rbconj|sym|uh|clause|comma|ls|nnps|pos|nnidentifier);
 
 procedureNounPhrase //only allowed at the start of the document
-	: {isAtTokenPositionZero(input)}? headingProcedure  -> ^(NounPhrase  headingProcedure);
+	: {isAtTokenPositionZero(_input)}? headingProcedure;
 
 headingProcedure
 	: headingProcedureRequiringTerminator headingProcedureTerminators | bracketedHeadingProcedure headingProcedureTerminators?;
 
 headingProcedureRequiringTerminator
-	: (nnidentifier|numeric) -> ^(PROCEDURE nnidentifier? numeric?);
+	: (nnidentifier|numeric);
 
 bracketedHeadingProcedure
-	: (bracketedIdentifier | bracketedNumeric | squareBracketedReference) -> ^(PROCEDURE bracketedIdentifier? bracketedNumeric? squareBracketedReference?);
+	: (bracketedIdentifier | bracketedNumeric | squareBracketedReference);
 	
 	
 
@@ -188,20 +180,20 @@ headingProcedureTerminators
 	: rrb|stop|colon;
 
 nounphrase
-	:	nounphraseStructure ->  ^(NounPhrase  nounphraseStructure);
+	:	nounphraseStructure;
 
 nounphraseStructure
 	:	nounphraseStructure1|nounphraseStructure2;
 nounphraseStructure1
-	:	 multiApparatus ->  ^(MultipleApparatus multiApparatus);
+	:	 multiApparatus;
 nounphraseStructure2
-	:	dtTHE? dt? nounphraseContent  (conjunction* nounphraseContent {!followedByVBDorVBZthenVBYIELDed(input)}?)* (prepphraseOf| prepphraseIN)? ;
+	:	dtTHE? dt? nounphraseContent  (conjunction* nounphraseContent {!followedByVBDorVBZthenVBYIELDed(_input)}?)* (prepphraseOf| prepphraseIN)? ;
 
 nounphraseContent
 	: advAdj*  (dissolvePhrase|ratioOrBracketedRatio|noun|numeric|bracketedContent)+;
 
 dissolvePhrase
-	:	(dissolveStructure|lrb dissolveStructure rrb) ->  ^(DissolvePhrase lrb? dissolveStructure rrb?);
+	:	(dissolveStructure|lrb dissolveStructure rrb);
 
 dissolveStructure
 	:	adj? (nnp nnchementity |nnp?(molecule|unnamedmolecule)) inMolecule (conjunction molecule)* ;
@@ -210,7 +202,7 @@ inMolecule
 	: inin dtTHE? adj? nnp? (molecule|unnamedmolecule);
 
 verbphrase
-	:	verbphraseStructure ->  ^(VerbPhrase  verbphraseStructure);
+	:	verbphraseStructure;
 //Would this be better written in terms of auxillary verbs and normal verbs? e.g. auxillary+ verb?
 verbphraseStructure :  dt? to? inAll? inafter? md* rbconj? adv* adj? (actionVerb md* adv* adj? neg?  | otherVerb md* adv* adj? neg? otherVerbStructure* actionVerbStructure?) inoff? (cc? comma? prepphrase)* ;
 
@@ -234,36 +226,36 @@ prepphrase
 	: 	neg? (prepphraseAtmosphere|prepphraseTime|prepphraseTemp|prepphraseIN|prepphraseRole|prepphraseOther)  ;
 
 prepphraseAtmosphere
-	: prepphraseAtmosphereContent ->  ^(AtmospherePhrase  prepphraseAtmosphereContent ) ;
+	: prepphraseAtmosphereContent;
 
 prepphraseAtmosphereContent
 	:inunder  dt? advAdj* molecule nnatmosphere?	;
 
 prepphraseTime
-	:prepPhraseTimeStructure ->  ^(TimePhrase  prepPhraseTimeStructure);
+	:prepPhraseTimeStructure;
 
 prepPhraseTimeStructure
 	:advAdj* inAll?  dt? advAdj* cd? nntime+	;
 
-prepphraseTemp:  prepphraseTempContent ->  ^(TempPhrase   prepphraseTempContent);
+prepphraseTemp:  prepphraseTempContent;
 
 prepphraseTempContent
 	:  advAdj? inAll? dt? advAdj? cd? nntemp+;
 
 prepphraseIN
-	:inin molecule ->  ^(PrepPhrase  inin  molecule);
+	:inin molecule;
 
 prepphraseRole
-	:inas dt? nnchementity ->	^(RolePrepPhrase  inas dt? nnchementity);
+	:inas dt? nnchementity;
 
 prepphraseOther
-	: advAdj* inMost+  nounphrase ->  ^(PrepPhrase  advAdj* inMost+  nounphrase);
+	: advAdj* inMost+  nounphrase;
 
 prepphraseOf
-	: inof  nounphrase->  ^(PrepPhrase  inof  nounphrase);
+	: inof  nounphrase;
 
 prepphraseAfter
-	:  advAdj? inafter  nounphrase ->  ^(PrepPhrase  advAdj* inafter  nounphrase);
+	:  advAdj? inafter  nounphrase ;
 
 preparationphrase
 	: vbsynthesize inas (nnexample cd| prepphrase)	;
@@ -271,7 +263,7 @@ preparationphrase
 multiApparatus
 	:	apparatus (conjunction* apparatus )*;
 apparatus
-	:	dt? preapparatus* nnApp+-> ^(APPARATUS   dt? preapparatus* nnApp+ );
+	:	dt? preapparatus* nnApp+;
 
 nnApp
 	:	nnapparatus+ (dash nnapparatus)*;
@@ -280,12 +272,12 @@ preapparatus
 
 oscarCompound :  (jjcomp|adj)* oscarCompoundStructure adj? nnstate? (numericReferenceOrQuantity | nnchementity )? quantity* fromProcedure?;
 
-oscarCompoundStructure: (oscarcm+ afterOscarCompoundStructure? | bracketedOscarCompoundStructure) -> ^(OSCARCM oscarcm* afterOscarCompoundStructure? bracketedOscarCompoundStructure?);
-afterOscarCompoundStructure: (dash oscarcm+)+ dash?|((colon oscarcm+)+ lrb? ratio)=>(colon oscarcm+)+|(dash|apost)+;
+oscarCompoundStructure: (oscarcm+ afterOscarCompoundStructure? | bracketedOscarCompoundStructure); 
+afterOscarCompoundStructure: (dash oscarcm+)+ dash?|(colon oscarcm+)+ (colon oscarcm+)+|(dash|apost)+;
 bracketedOscarCompoundStructure :	lrb  oscarcm+ rrb;
 
 molecule
-	:  moleculeamount-> ^(MOLECULE  moleculeamount );
+	:  moleculeamount;
 
 moleculeamount : (moleculeamount3| moleculeamount1 | moleculeamount2) asAstate? ;
 
@@ -301,7 +293,7 @@ moleculeamount2
 afterCompoundCitationOrQuantity: (citation|quantity|comma (quantity1Node|citationStructure)|bracketedContentInMol)*;
 
 unnamedmolecule
-	: unnamedmoleculeDescription -> ^(UNNAMEDMOLECULE unnamedmoleculeDescription);
+	: unnamedmoleculeDescription ;
 
 unnamedmoleculeDescription
 	:	unnamedmoleculeDescriptionStart afterCompoundCitationOrQuantity asAstate?;
@@ -338,65 +330,65 @@ asAstate
 	: inas dt? (jj|jjchem|oscarcj)* nnstate quantity*;
 
 alphanumericOrIdentifierCompoundReference
-  : allIdentifierTypesOtherThanCD -> ^(REFERENCETOCOMPOUND allIdentifierTypesOtherThanCD);
+  : allIdentifierTypesOtherThanCD; 
 
 numberCompoundReference
-  : (cd {!cdHasRoleOtherThanIdentifier(input)}?) -> ^(REFERENCETOCOMPOUND cd);
+  : (cd {!cdHasRoleOtherThanIdentifier(_input)}?) ;
 
 numericOrIdentifierCompoundReference
-  : allIdentifierTypes -> ^(REFERENCETOCOMPOUND allIdentifierTypes );
+  : allIdentifierTypes ;
 
 captionLabel
-   : captionLabelContent+ -> ^(CaptionLabel captionLabelContent+);
+   : captionLabelContent+ ;
 captionLabelContent
    : (nnplabel allIdentifierTypes (conjunction allIdentifierTypes)*);
 
 quantity 	:  (quantity1Node|quantity2Node);
 
-quantity1Node : quantity1 ->   ^(QUANTITY  quantity1);
+quantity1Node : quantity1 ;
 
 quantity1
 	: lrb measurements (comma  measurements)* (comma preparationphrase)* (stop preparationphrase)*  rrb;
 
-quantity2Node : quantity2 ->   ^(QUANTITY  quantity2);
+quantity2Node : quantity2 ;
 
 quantity2
 	:  measurements (comma  measurements)*  ;
 
 measurements
 	:(cd nn)? (multiple|measurementtypes) dt?;
-multiple	: cd cdunicode measurementtypes? -> ^(MULTIPLE   cd cdunicode measurementtypes? );
+multiple	: cd cdunicode measurementtypes? ;
 measurementtypes
 	: molar|amount|mass|volume|logHydrogenActivity|equivalent|yield|percent;
 
-molar	: cd nnmolar -> ^(MOLAR   cd nnmolar );
-amount	: cd nnamount -> ^(AMOUNT   cd nnamount );
-mass	: cd nnmass-> ^(MASS   cd nnmass );
-volume	: cd nnvol -> ^(VOLUME   cd nnvol );
-logHydrogenActivity	: nnph sym? cd -> ^(PH nnph sym? cd );
-equivalent: cd nneq -> ^(EQUIVALENT cd nneq );
-yield: yield1 -> ^(YIELD yield1)| yield2 -> ^(YIELD yield2);
+molar	: cd nnmolar ;
+amount	: cd nnamount; 
+mass	: cd nnmass;
+volume	: cd nnvol ;
+logHydrogenActivity	: nnph sym? cd ;
+equivalent: cd nneq ;
+yield: yield1 ;
 yield1: nnyield (inof|colon) percent;
 yield2: percent nnyield ;
-percent	: cd nn? percentsign ( dash cd percentsign)? -> ^(PERCENT   cd nn? percentsign dash? cd? percentsign?);//the nn? allows "10 wt %"
+percent	: cd nn? percentsign ( dash cd percentsign)? ;
 
 //Different expressions are needed in and outside molecules as within a molecule other "molecules" are likely to be synoymns rather than entities in their own right
-bracketedContent: ratio?  (bracketedContent1|bracketedContent2|bracketedContent3) -> ^(MIXTURE ratio? bracketedContent1? bracketedContent2? bracketedContent3?);
+bracketedContent: ratio?  (bracketedContent1|bracketedContent2|bracketedContent3) ;
 bracketedContent1: comma lrb bracketedContentContents rrb comma;
 bracketedContent2: lrb bracketedContentContents rrb;
 bracketedContent3: lsqb bracketedContentContents rsqb;
 bracketedContentContents: (verb|noun|bracketedContent|md|percentsign|dash|inAll|ratio|conjunction|adj|colon|stop|numeric)+;
 
-bracketedContentInMol: ratio?  (bracketedContentInMolStructure1|bracketedContentInMolStructure2) -> ^(MIXTURE ratio? bracketedContentInMolStructure1? bracketedContentInMolStructure2?);
+bracketedContentInMol: ratio?  (bracketedContentInMolStructure1|bracketedContentInMolStructure2); 
 bracketedContentInMolStructure1: comma bracketedContentInMolStructure2 comma;
 bracketedContentInMolStructure2: lrb bracketedContentInMolContents1 bracketedContentInMolContents2* rrb|lsqb bracketedContentInMolContents1 bracketedContentInMolContents2* rsqb;
-bracketedContentInMolContents1: numberCompoundReference (comma | colon | {nextIsSemiColon(input)}? stop)|bracketedContentInMolContentsAlwaysAllowed;
+bracketedContentInMolContents1: numberCompoundReference (comma | colon | {nextIsSemiColon(_input)}? stop)|bracketedContentInMolContentsAlwaysAllowed;
 bracketedContentInMolContents2: cc | bracketedContentInMolContentsAlwaysAllowed ;
 bracketedContentInMolContentsAlwaysAllowed: verb|quantity2Node|oscarCompound|alphanumericOrIdentifierCompoundReference|ratio|cd|md|percentsign|dash|inAll|comma|adj|colon|stop|noun|bracketedContentInMol;
 
-fromProcedure: (infrom | {precededByProduct(input)}? inof | {suitableVbYieldOrSynthesizeForReference(input)}? (vbyield|vbsynthesize) (inin|inby|infrom)) procedureNode;
+fromProcedure: (infrom | {precededByProduct(_input)}? inof | {suitableVbYieldOrSynthesizeForReference(_input)}? (vbyield|vbsynthesize) (inin|inby|infrom)) procedureNode;
 
-procedureNode: method -> ^(PROCEDURE method);
+procedureNode: method ;
 
 method:
     ((nngeneral|nn)? nnmethod allIdentifierTypes? | nnexample allIdentifierTypes) ( (comma |colon |inof | infrom)? submethod | lrb submethod rrb)*;
@@ -404,28 +396,28 @@ method:
 submethod : (nnmethod|nnexample) allIdentifierTypes;
 
 referenceToExampleCompound :
-	nnexample allIdentifierTypes -> ^(REFERENCETOCOMPOUND nnexample allIdentifierTypes);
+	nnexample allIdentifierTypes ;
 
 advAdj
 	:adv|adj;
 
 range: numeric dash numeric;
-cycles	:	cycleStructure -> ^(CYCLES cycleStructure)  ;
+cycles	:	cycleStructure ;
 cycleStructure	:	cd dashNN? nncycle;
 dashNN	:	(adj|nn|cd) (dash (adj|nn|cd))*;
 
 ratioOrBracketedRatio : lrb ratio rrb | ratio;
-ratio : cdRatio -> ^(RATIO cdRatio);
-cdRatio : cd (colon cd {!followedByQuantityUnits(input)}?)+;
+ratio : cdRatio ;
+cdRatio : cd (colon cd {!followedByQuantityUnits(_input)}?)+;
 
 citation:  citationStructure|comma citationContent comma;
 
-citationStructure:  citationContent -> ^(CITATION citationContent);
+citationStructure:  citationContent ;
 citationContent:   lrb (nnp|fw|cd|conjunction) (nnp|fw|cd|conjunction)+ rrb ;
 
 
-allIdentifierTypes : allIdentifierTypesOtherThanCD | cd {!cdHasRoleOtherThanIdentifier(input)}?;
-allIdentifierTypesOtherThanCD : squareBracketedReference|identifierOrBracketedIdentifier|cdAlphanum|{notFollowedByBracketedYear(input)}?bracketedNumeric;
+allIdentifierTypes : allIdentifierTypesOtherThanCD | cd {!cdHasRoleOtherThanIdentifier(_input)}?;
+allIdentifierTypesOtherThanCD : squareBracketedReference|identifierOrBracketedIdentifier|cdAlphanum|{notFollowedByBracketedYear(_input)}?bracketedNumeric;
 numericOrBracketedNumeric	:  numeric | bracketedNumeric;
 bracketedNumeric	:  lrb numeric rrb;
 squareBracketedReference :	lsqb numeric rsqb;
@@ -443,281 +435,281 @@ numeric : cd|cdAlphanum;
 
 //Tags---Pattern---Description
 
-nnplabel:'NNP-LABEL' TOKEN -> ^('NNP-LABEL' TOKEN);
+nnplabel:'NNP-LABEL' TOKEN ;
 
-cdAlphanum:'CD-ALPHANUM' TOKEN -> ^('CD-ALPHANUM' TOKEN);
-oscarcj:'OSCAR-CJ' TOKEN -> ^('OSCAR-CJ' TOKEN);
-oscarrn:'OSCAR-RN' TOKEN -> ^('OSCAR-RN' TOKEN);
-oscarase:'OSCAR-ASE' TOKEN -> ^('OSCAR-ASE' TOKEN);
-tmunicode:'TM-UNICODE' TOKEN -> ^('TM-UNICODE' TOKEN);
-cdunicode:'CD-UNICODE' TOKEN -> ^('CD-UNICODE' TOKEN);
-jjchem:'JJ-CHEM' TOKEN -> ^('JJ-CHEM' TOKEN);
-jjcomp:'JJ-COMPOUND' TOKEN -> ^('JJ-COMPOUND' TOKEN);
+cdAlphanum:'CD-ALPHANUM' TOKEN ;
+oscarcj:'OSCAR-CJ' TOKEN ;
+oscarrn:'OSCAR-RN' TOKEN ;
+oscarase:'OSCAR-ASE' TOKEN ;
+tmunicode:'TM-UNICODE' TOKEN ;
+cdunicode:'CD-UNICODE' TOKEN ;
+jjchem:'JJ-CHEM' TOKEN ;
+jjcomp:'JJ-COMPOUND' TOKEN ;
 // Prepositions
-inas:'IN-AS' TOKEN -> ^('IN-AS' TOKEN);
-inbefore:'IN-BEFORE' TOKEN -> ^('IN-BEFORE' TOKEN);
-inafter:'IN-AFTER' TOKEN -> ^('IN-AFTER' TOKEN);
-inin:'IN-IN' TOKEN -> ^('IN-IN' TOKEN);
-ininto:'IN-INTO' TOKEN -> ^('IN-INTO' TOKEN);
-inwith:'IN-WITH' TOKEN -> ^('IN-WITH' TOKEN);
-inwithout:'IN-WITHOUT' TOKEN -> ^('IN-WITHOUT' TOKEN);
-inby:'IN-BY' TOKEN -> ^('IN-BY' TOKEN);
-invia:'IN-VIA' TOKEN -> ^('IN-VIA' TOKEN);
-inof:'IN-OF' TOKEN -> ^('IN-OF' TOKEN);
-inon:'IN-ON' TOKEN -> ^('IN-ON' TOKEN);
-infor:'IN-FOR' TOKEN -> ^('IN-FOR' TOKEN);
-infrom:'IN-FROM' TOKEN -> ^('IN-FROM' TOKEN);
-inunder:'IN-UNDER' TOKEN -> ^('IN-UNDER' TOKEN);
-inover:'IN-OVER' TOKEN -> ^('IN-OVER' TOKEN);
-inoff:'IN-OFF' TOKEN -> ^('IN-OFF' TOKEN);
+inas:'IN-AS' TOKEN; 
+inbefore:'IN-BEFORE' TOKEN ;
+inafter:'IN-AFTER' TOKEN ; 
+inin:'IN-IN' TOKEN ;
+ininto:'IN-INTO' TOKEN ;
+inwith:'IN-WITH' TOKEN ;
+inwithout:'IN-WITHOUT' TOKEN ;
+inby:'IN-BY' TOKEN ;
+invia:'IN-VIA' TOKEN ;
+inof:'IN-OF' TOKEN ;
+inon:'IN-ON' TOKEN ;
+infor:'IN-FOR' TOKEN ;
+infrom:'IN-FROM' TOKEN ;
+inunder:'IN-UNDER' TOKEN ; 
+inover:'IN-OVER' TOKEN ;
+inoff:'IN-OFF' TOKEN ;
 
 //Modified Nouns
-nnstate:'NN-STATE' TOKEN -> ^('NN-STATE' TOKEN);
-nntime:'NN-TIME' TOKEN -> ^('NN-TIME' TOKEN);
-nnmass:'NN-MASS' TOKEN -> ^('NN-MASS' TOKEN);
-nnamount:'NN-AMOUNT' TOKEN -> ^('NN-AMOUNT' TOKEN);
-nnmolar:'NN-MOLAR' TOKEN -> ^('NN-MOLAR' TOKEN);
-nnatmosphere:'NN-ATMOSPHERE' TOKEN -> ^('NN-ATMOSPHERE' TOKEN);
-nneq:'NN-EQ' TOKEN -> ^('NN-EQ' TOKEN);
-nnvol:'NN-VOL' TOKEN -> ^('NN-VOL' TOKEN);
-nnchementity:'NN-CHEMENTITY' TOKEN -> ^('NN-CHEMENTITY' TOKEN);
-nntemp:'NN-TEMP' TOKEN -> ^('NN-TEMP' TOKEN);
-nnph:'NN-PH' TOKEN -> ^('NN-PH' TOKEN);
-nnflash:'NN-FLASH' TOKEN -> ^('NN-FLASH' TOKEN);
-nngeneral:'NN-GENERAL' TOKEN -> ^('NN-GENERAL' TOKEN);
-nnmethod:'NN-METHOD' TOKEN -> ^('NN-METHOD' TOKEN);
-nnpressure:'NN-PRESSURE' TOKEN -> ^('NN-PRESSURE' TOKEN);
-nncolumn:'NN-COLUMN' TOKEN -> ^('NN-COLUMN' TOKEN);
-nnchromatography:'NN-CHROMATOGRAPHY' TOKEN -> ^('NN-CHROMATOGRAPHY' TOKEN);
-nnvacuum:'NN-VACUUM' TOKEN -> ^('NN-VACUUM' TOKEN);
-nncycle:'NN-CYCLE' TOKEN -> ^('NN-CYCLE' TOKEN);
-nntimes:'NN-TIMES' TOKEN -> ^('NN-TIMES' TOKEN);
-nnexample:'NN-EXAMPLE' TOKEN -> ^('NN-EXAMPLE' TOKEN);
+nnstate:'NN-STATE' TOKEN ;
+nntime:'NN-TIME' TOKEN ;
+nnmass:'NN-MASS' TOKEN ;
+nnamount:'NN-AMOUNT' TOKEN ;
+nnmolar:'NN-MOLAR' TOKEN ;
+nnatmosphere:'NN-ATMOSPHERE' TOKEN ;
+nneq:'NN-EQ' TOKEN ;
+nnvol:'NN-VOL' TOKEN ;
+nnchementity:'NN-CHEMENTITY' TOKEN ;
+nntemp:'NN-TEMP' TOKEN ;
+nnph:'NN-PH' TOKEN ;
+nnflash:'NN-FLASH' TOKEN ; 
+nngeneral:'NN-GENERAL' TOKEN ;
+nnmethod:'NN-METHOD' TOKEN ;
+nnpressure:'NN-PRESSURE' TOKEN ;
+nncolumn:'NN-COLUMN' TOKEN ;
+nnchromatography:'NN-CHROMATOGRAPHY' TOKEN ;
+nnvacuum:'NN-VACUUM' TOKEN ;
+nncycle:'NN-CYCLE' TOKEN ;
+nntimes:'NN-TIMES' TOKEN ;
+nnexample:'NN-EXAMPLE' TOKEN ; 
 
 //A word of a chemical identified by OSCAR
-oscarcm:'OSCAR-CM' TOKEN -> ^('OSCAR-CM' TOKEN);
+oscarcm:'OSCAR-CM' TOKEN ;
 
 //Verbs
-vbuse:'VB-USE' TOKEN -> ^('VB-USE' TOKEN);
-vbchange:'VB-CHANGE' TOKEN -> ^('VB-CHANGE' TOKEN);
-vbsubmerge:'VB-SUBMERGE' TOKEN -> ^('VB-SUBMERGE' TOKEN);
-vbsubject:'VB-SUBJECT' TOKEN -> ^('VB-SUBJECT' TOKEN);
+vbuse:'VB-USE' TOKEN ;
+vbchange:'VB-CHANGE' TOKEN ;
+vbsubmerge:'VB-SUBMERGE' TOKEN ;
+vbsubject:'VB-SUBJECT' TOKEN ;
 
 //Add Tokens
-nnadd:'NN-ADD' TOKEN -> ^('NN-ADD' TOKEN);
-nnmixture:'NN-MIXTURE' TOKEN -> ^('NN-MIXTURE' TOKEN);
-vbdilute:'VB-DILUTE' TOKEN -> ^('VB-DILUTE' TOKEN);
-vbadd:'VB-ADD' TOKEN -> ^('VB-ADD' TOKEN);
-vbcharge:'VB-CHARGE' TOKEN -> ^('VB-CHARGE' TOKEN);
-vbcontain:'VB-CONTAIN' TOKEN -> ^('VB-CONTAIN' TOKEN);
-vbdrop:'VB-DROP' TOKEN -> ^('VB-DROP' TOKEN);
-vbfill:'VB-FILL' TOKEN -> ^('VB-FILL' TOKEN);
-vbsuspend:'VB-SUSPEND' TOKEN -> ^('VB-SUSPEND' TOKEN);
-vbtreat:'VB-TREAT' TOKEN -> ^('VB-TREAT' TOKEN);
+nnadd:'NN-ADD' TOKEN ;
+nnmixture:'NN-MIXTURE' TOKEN ;
+vbdilute:'VB-DILUTE' TOKEN ;
+vbadd:'VB-ADD' TOKEN ;
+vbcharge:'VB-CHARGE' TOKEN ;
+vbcontain:'VB-CONTAIN' TOKEN ;
+vbdrop:'VB-DROP' TOKEN ;
+vbfill:'VB-FILL' TOKEN ;
+vbsuspend:'VB-SUSPEND' TOKEN ;
+vbtreat:'VB-TREAT' TOKEN ;
 
 //Apparatus Tokens
-vbapparatus:'VB-APPARATUS' TOKEN -> ^('VB-APPARATUS' TOKEN);
-nnapparatus:'NN-APPARATUS' TOKEN -> ^('NN-APPARATUS' TOKEN);
+vbapparatus:'VB-APPARATUS' TOKEN ;
+nnapparatus:'NN-APPARATUS' TOKEN ;
 
 //Concentrate Tokens
-vbconcentrate:'VB-CONCENTRATE' TOKEN -> ^('VB-CONCENTRATE' TOKEN);
-nnconcentrate:'NN-CONCENTRATE' TOKEN -> ^('NN-CONCENTRATE' TOKEN);
+vbconcentrate:'VB-CONCENTRATE' TOKEN ;
+nnconcentrate:'NN-CONCENTRATE' TOKEN ;
 
 //Cool Tokens
-vbcool:'VB-COOL' TOKEN -> ^('VB-COOL' TOKEN);
+vbcool:'VB-COOL' TOKEN ;
 
 //Degass Tokens
-vbdegass:'VB-DEGASS' TOKEN -> ^('VB-DEGASS' TOKEN);
+vbdegass:'VB-DEGASS' TOKEN ;
 
 //Dissolve Tokens
-vbdissolve:'VB-DISSOLVE' TOKEN -> ^('VB-DISSOLVE' TOKEN);
+vbdissolve:'VB-DISSOLVE' TOKEN ;
 
 //Dry Tokens
-vbdry:'VB-DRY' TOKEN -> ^('VB-DRY' TOKEN);
-nndry:'NN-DRY' TOKEN -> ^('NN-DRY' TOKEN);
+vbdry:'VB-DRY' TOKEN ;
+nndry:'NN-DRY' TOKEN ;
 
 //Extract Tokens
-vbextract:'VB-EXTRACT' TOKEN -> ^('VB-EXTRACT' TOKEN);
-nnextract:'NN-EXTRACT' TOKEN -> ^('NN-EXTRACT' TOKEN);
+vbextract:'VB-EXTRACT' TOKEN ;
+nnextract:'NN-EXTRACT' TOKEN ;
 
 //Filter Tokens
-vbfilter:'VB-FILTER' TOKEN -> ^('VB-FILTER' TOKEN);
-nnfilter:'NN-FILTER' TOKEN -> ^('NN-FILTER' TOKEN);
+vbfilter:'VB-FILTER' TOKEN ; 
+nnfilter:'NN-FILTER' TOKEN ;
 
 //Heat Tokens
-vbheat:'VB-HEAT' TOKEN -> ^('VB-HEAT' TOKEN);
-vbincrease:'VB-INCREASE' TOKEN -> ^('VB-INCREASE' TOKEN);
+vbheat:'VB-HEAT' TOKEN ;
+vbincrease:'VB-INCREASE' TOKEN ;
 
 //Immerse tokens
-vbimmerse:'VB-IMMERSE' TOKEN -> ^('VB-IMMERSE' TOKEN);
+vbimmerse:'VB-IMMERSE' TOKEN ;
 
 //Partition Tokens
-vbpartition:'VB-PARTITION' TOKEN -> ^('VB-PARTITION' TOKEN);
+vbpartition:'VB-PARTITION' TOKEN ;
 
 //Precipitate Tokens
-vbprecipitate:'VB-PRECIPITATE' TOKEN -> ^('VB-PRECIPITATE' TOKEN);
-nnprecipitate:'NN-PRECIPITATE' TOKEN -> ^('NN-PRECIPITATE' TOKEN);
+vbprecipitate:'VB-PRECIPITATE' TOKEN ;
+nnprecipitate:'NN-PRECIPITATE' TOKEN ;
 
 //Purify Tokens
-vbpurify:'VB-PURIFY' TOKEN -> ^('VB-PURIFY' TOKEN);
-nnpurify:'NN-PURIFY' TOKEN -> ^('NN-PURIFY' TOKEN);
+vbpurify:'VB-PURIFY' TOKEN ;
+nnpurify:'NN-PURIFY' TOKEN ;
 
 //Quench Tokens
-vbquench:'VB-QUENCH' TOKEN -> ^('VB-QUENCH' TOKEN);
+vbquench:'VB-QUENCH' TOKEN ;
 
 //Recover Tokens
-vbrecover:'VB-RECOVER' TOKEN -> ^('VB-RECOVER' TOKEN);
+vbrecover:'VB-RECOVER' TOKEN ;
 
 //Remove Tokens
-vbremove:'VB-REMOVE' TOKEN -> ^('VB-REMOVE' TOKEN);
-nnremove:'NN-REMOVE' TOKEN -> ^('NN-REMOVE' TOKEN);
+vbremove:'VB-REMOVE' TOKEN ;
+nnremove:'NN-REMOVE' TOKEN ;
 
 //Stir Tokens
-vbstir:'VB-STIR' TOKEN -> ^('VB-STIR' TOKEN);
+vbstir:'VB-STIR' TOKEN ;
 
 //Synthesize Tokens
-vbsynthesize:'VB-SYNTHESIZE' TOKEN -> ^('VB-SYNTHESIZE' TOKEN);
-nnsynthesize:'NN-SYNTHESIZE' TOKEN -> ^('NN-SYNTHESIZE' TOKEN);
+vbsynthesize:'VB-SYNTHESIZE' TOKEN ; 
+nnsynthesize:'NN-SYNTHESIZE' TOKEN ;
 
 //Wait Tokens
-vbwait:'VB-WAIT' TOKEN -> ^('VB-WAIT' TOKEN);
+vbwait:'VB-WAIT' TOKEN ;
 
 //Wash Tokens
-vbwash:'VB-WASH' TOKEN -> ^('VB-WASH' TOKEN);
+vbwash:'VB-WASH' TOKEN ;
 
 //Yield Tokens
-vbyield:'VB-YIELD' TOKEN -> ^('VB-YIELD' TOKEN);
+vbyield:'VB-YIELD' TOKEN ;
 
 //Yield Tokens
-nnyield:'NN-YIELD' TOKEN -> ^('NN-YIELD' TOKEN);
+nnyield:'NN-YIELD' TOKEN ;
 
 //Misc Tokens mainly to replace characters that are not markup friendly
 // Conjunctive Adverbs
-rbconj:'RB-CONJ' TOKEN -> ^('RB-CONJ' TOKEN);
-colon:'COLON' TOKEN -> ^('COLON' TOKEN);
-comma:'COMMA' TOKEN -> ^('COMMA' TOKEN);
-apost:'APOST' TOKEN -> ^('APOST' TOKEN);
-neg:'NEG' TOKEN -> ^('NEG' TOKEN);
-dash:'DASH' TOKEN -> ^('DASH' TOKEN);
-stop:'STOP' TOKEN -> ^('STOP' TOKEN);
-percentsign:'NN-PERCENT' TOKEN -> ^('NN-PERCENT' TOKEN);
-lsqb:'LSQB' TOKEN -> ^('LSQB' TOKEN);
-rsqb:'RSQB' TOKEN -> ^('RSQB' TOKEN);
+rbconj:'RB-CONJ' TOKEN  ;
+colon:'COLON' TOKEN ;
+comma:'COMMA' TOKEN ;
+apost:'APOST' TOKEN ;
+neg:'NEG' TOKEN ;
+dash:'DASH' TOKEN ;
+stop:'STOP' TOKEN ;
+percentsign:'NN-PERCENT' TOKEN ;
+lsqb:'LSQB' TOKEN ;
+rsqb:'RSQB' TOKEN ;
 
-nnidentifier:'NN-IDENTIFIER' TOKEN -> ^('NN-IDENTIFIER' TOKEN);
+nnidentifier:'NN-IDENTIFIER' TOKEN ;
 
 //The determiner 'the';
-dtTHE:'DT-THE' TOKEN -> ^('DT-THE' TOKEN);
+dtTHE:'DT-THE' TOKEN ;
 
-lrb:'-LRB-' TOKEN -> ^('-LRB-' TOKEN);
-rrb:'-RRB-' TOKEN -> ^('-RRB-' TOKEN);
+lrb:'-LRB-' TOKEN ;
+rrb:'-RRB-' TOKEN ;
 
 //Penn Treebank Tokens
 
 // Coordinating conjunction (and, or)
-cc:'CC' TOKEN -> ^('CC' TOKEN);
+cc:'CC' TOKEN ;
 
 // Cardinal numeral (one, two, 2, etc.)
-cd:'CD' TOKEN -> ^('CD' TOKEN);
+cd:'CD' TOKEN ;
 
 // Singular determiner/quantifier (this, that)
-dt:'DT' TOKEN -> ^('DT' TOKEN);
+dt:'DT' TOKEN ;
 
 // Existential there
-ex:'EX' TOKEN -> ^('EX' TOKEN);
+ex:'EX' TOKEN ;
 
 // Foreign word (hyphenated before regular tag)
-fw:'FW' TOKEN -> ^('FW' TOKEN);
+fw:'FW' TOKEN ;
 
 // Preposition
-in:'IN' TOKEN -> ^('IN' TOKEN);
+in:'IN' TOKEN ;
 
 // Adjective
-jj:'JJ' TOKEN -> ^('JJ' TOKEN);
+jj:'JJ' TOKEN ;
 
 // Comparative adjective
-jjr:'JJR' TOKEN -> ^('JJR' TOKEN);
+jjr:'JJR' TOKEN ;
 
 // Semantically superlative adjective (chief, top)
-jjs:'JJS' TOKEN -> ^('JJS' TOKEN);
+jjs:'JJS' TOKEN ;
 
 // List item marker
-ls:'LS' TOKEN -> ^('LS' TOKEN);
+ls:'LS' TOKEN ;
 
 // Modal auxiliary (can, should, will)
-md:'MD' TOKEN -> ^('MD' TOKEN);
+md:'MD' TOKEN ;
 
 // Singular or mass noun
-nn:'NN' TOKEN -> ^('NN' TOKEN);
+nn:'NN' TOKEN ;
 
 // Plural noun
-nns:'NNS' TOKEN -> ^('NNS' TOKEN);
+nns:'NNS' TOKEN ;
 
 // Proper noun or part of name phrase
-nnp:'NNP' TOKEN -> ^('NNP' TOKEN);
+nnp:'NNP' TOKEN ;
 
 // Proper noun, plural
-nnps:'NNPS' TOKEN -> ^('NNPS' TOKEN);
+nnps:'NNPS' TOKEN ;
 
 //Predeterminer
-pdt:'PDT' TOKEN -> ^('PDT' TOKEN);
+pdt:'PDT' TOKEN ;
 
 // Possessive ending
-pos:'POS' TOKEN -> ^('POS' TOKEN);
+pos:'POS' TOKEN  ;
 
 //Personal pronoun
-prp:'PRP' TOKEN -> ^('PRP' TOKEN);
+prp:'PRP' TOKEN  ;
 
 //Possessive pronoun
-prp_poss:'PRP$' TOKEN -> ^('PRP$' TOKEN);
+prp_poss:'PRP$' TOKEN ;
 
 // Adverb
-rb:'RB' TOKEN -> ^('RB' TOKEN);
+rb:'RB' TOKEN ;
 
 // Comparative adverb
-rbr:'RBR' TOKEN -> ^('RBR' TOKEN);
+rbr:'RBR' TOKEN ;
 
 // Superlative adverb
-rbs:'RBS' TOKEN -> ^('RBS' TOKEN);
+rbs:'RBS' TOKEN ;
 
 // Adverb/particle (about, off, up)
-rp:'RP' TOKEN -> ^('RP' TOKEN);
+rp:'RP' TOKEN ;
 
 // Symbol
-sym:'SYM' TOKEN -> ^('SYM' TOKEN);
+sym:'SYM' TOKEN ;
 
 // Infinitive marker to
-to:'TO' TOKEN -> ^('TO' TOKEN);
+to:'TO' TOKEN  ;
 
 // Interjection, exclamation
-uh:'UH' TOKEN -> ^('UH' TOKEN);
+uh:'UH' TOKEN ;
 
 // Verb, base form
-vb:'VB' TOKEN -> ^('VB' TOKEN);
+vb:'VB' TOKEN ;
 
 // Verb, past tense
-vbd:'VBD' TOKEN -> ^('VBD' TOKEN);
+vbd:'VBD' TOKEN ;
 
 // Verb, present participle/gerund
-vbg:'VBG' TOKEN -> ^('VBG' TOKEN);
+vbg:'VBG' TOKEN ;
 
 // Verb, past participle
-vbn:'VBN' TOKEN -> ^('VBN' TOKEN);
+vbn:'VBN' TOKEN ;
 
 // Verb, non-3rd person singular present
-vbp:'VBP' TOKEN -> ^('VBP' TOKEN);
+vbp:'VBP' TOKEN ;
 
 // Verb, 3rd. singular present
-vbz:'VBZ' TOKEN -> ^('VBZ' TOKEN);
+vbz:'VBZ' TOKEN ;
 
 // Wh- determiner (which, that)
-wdt:'WDT' TOKEN -> ^('WDT' TOKEN);
+wdt:'WDT' TOKEN ;
 
 // wh- pronoun (what, who, whom)
-wp:'WP' TOKEN -> ^('WP' TOKEN);
+wp:'WP' TOKEN ;
 
 // Possessive wh- pronoun (whose)
-wp_poss:'WP$' TOKEN -> ^('WP$' TOKEN);
+wp_poss:'WP$' TOKEN ;
 
 // Wh- adverb (how, where, when)
-wrb:'WRB' TOKEN -> ^('WRB' TOKEN);
+wrb:'WRB' TOKEN ;

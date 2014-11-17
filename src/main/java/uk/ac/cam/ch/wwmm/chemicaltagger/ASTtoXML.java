@@ -20,8 +20,8 @@ import java.util.HashMap;
 import nu.xom.Document;
 import nu.xom.Element;
 
-import org.antlr.runtime.Token;
-import org.antlr.runtime.tree.Tree;
+import org.antlr.v4.runtime.Token;
+import org.antlr.v4.runtime.tree.Tree;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 

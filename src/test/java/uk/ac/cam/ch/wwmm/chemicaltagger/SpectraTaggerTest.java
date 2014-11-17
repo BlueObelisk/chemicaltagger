@@ -18,7 +18,7 @@ package uk.ac.cam.ch.wwmm.chemicaltagger;
 import org.junit.Assert;
 import nu.xom.Document;
 
-import org.antlr.runtime.tree.Tree;
+import org.antlr.v4.runtime.tree.Tree;
 import org.junit.Test;
 
 /***********************************************
