@@ -22,7 +22,8 @@ import nu.xom.Document;
 import nu.xom.Element;
 import nu.xom.Text;
 
-import org.antlr.v4.runtime.tree.ParseTree;
+import org.antlr.v4.runtime.ParserRuleContext;
+
 
 /*****************************
  * Converts ANTLR ASTTrees into XML Documents.
@@ -33,7 +34,7 @@ import org.antlr.v4.runtime.tree.ParseTree;
 public class XMLtoAST {
 
 	private List<String> SentenceList;
-	private ParseTree parseTree;
+	private ParserRuleContext parseTree;	
 
 	public XMLtoAST() {
 		SentenceList = new ArrayList<String>();
@@ -49,7 +50,8 @@ public class XMLtoAST {
 	 * @return doc (Document)
 	 *******************************************/
 	public Document convert(Document doc) {
-		parseTree = new ParseTree("Document");
+		
+	 	parseTree = new ParserRuleContext();
 		SentenceList = new ArrayList<String>();
 		getNodes(doc.getRootElement(), parseTree);
 
@@ -74,14 +76,14 @@ public class XMLtoAST {
 	 *            (Element)
 	 * @return node (Element)
 	 **********************************************/
-	public void getNodes(Element docElement, ParseTree treeNode) {
+	public void getNodes(Element docElement, ParserRuleContext treeNode) {
 
 		int nodeCount = docElement.getChildCount();
 
 		for (int i = 0; i < nodeCount; i++) {
 			if (docElement.getChild(i) instanceof Text) {
-				treeNode.addChild(new ParseTree(docElement.getChild(i)
-						.getValue()));
+				//treeNode.addChild(new ParserRuleContext(docElement.getChild(i).getValue()));
+				treeNode.addChild(new ParserRuleContext());
 			}
 
 			else {
@@ -92,7 +94,7 @@ public class XMLtoAST {
 					name = docChild.getLocalName() + "_"
 							+ docChild.getAttributeValue("type");
 				}
-				ParseTree subTree = new ParseTree(name);
+				ParserRuleContext subTree = new ParserRuleContext();
 				treeNode.addChild(subTree);
 
 				getNodes(docChild, subTree);

@@ -20,14 +20,13 @@ import java.util.HashMap;
 import nu.xom.Document;
 import nu.xom.Element;
 
+import org.antlr.v4.runtime.RuleContext;
 import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.tree.Tree;
-import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
 /*****************************
- * Converts ANTLR ASTTrees into
- *  XML Documents.
+ * Converts ANTLR ASTTrees into XML Documents.
  * 
  * @author lh359
  *****************************/
@@ -43,11 +42,12 @@ public class ASTtoXML {
 	}
 
 	/********************************************
-	 * Overloading Method that converts astTree 
-	 * to XML Document with ActionPhrases Included.
+	 * Overloading Method that converts astTree to XML Document with
+	 * ActionPhrases Included.
 	 * 
-	 * @param astTree (Tree)
-	 *            
+	 * @param astTree
+	 *            (Tree)
+	 * 
 	 * @return doc (Document)
 	 *******************************************/
 	public Document convert(Tree astTree) {
@@ -58,16 +58,18 @@ public class ASTtoXML {
 	/********************************************
 	 * Converts AST Trees to XML Document.
 	 * 
-	 * @param astTree (Tree)
-	 * @param annotateActionPhrases (boolean)
+	 * @param astTree
+	 *            (Tree)
+	 * @param annotateActionPhrases
+	 *            (boolean)
 	 * @return doc (Document)
 	 *******************************************/
 	public Document convert(Tree astTree, boolean annotateActionPhrases) {
 		Element root = new Element("Document");
 		Document doc;
-		
+
 		if (astTree.getChildCount() > 0) {
-			if (StringUtils.isNotEmpty(astTree.getText())) {
+			if (astTree.getPayload() != null) {
 				Element sentenceNode = new Element("Sentence");
 				root.appendChild(getNodes(astTree, sentenceNode));
 				doc = new Document(root);
@@ -75,8 +77,7 @@ public class ASTtoXML {
 			} else {
 				doc = new Document(getNodes(astTree, root));
 			}
-		}
-		else{
+		} else {
 			doc = new Document(root);
 		}
 		if (annotateActionPhrases) {
@@ -86,24 +87,26 @@ public class ASTtoXML {
 		return doc;
 	}
 
-	
 	/********************************************
-	 * Converts astTree to XML Document.
-	 * Postprocesses the treenodes with a userdefined 
-	 * hashmap. 
+	 * Converts astTree to XML Document. Postprocesses the treenodes with a
+	 * userdefined hashmap.
 	 * 
-	 * @param astTree (Tree)
-	 * @param annotateActionPhrases (boolean)
-	 * @param actionPhraseDictionary (HashMap)
+	 * @param astTree
+	 *            (Tree)
+	 * @param annotateActionPhrases
+	 *            (boolean)
+	 * @param actionPhraseDictionary
+	 *            (HashMap)
 	 * @return doc (Document)
 	 *******************************************/
 	public Document convert(Tree astTree, boolean annotateActionPhrases,
 			HashMap<String, String> actionPhraseDictionary) {
-		
+
 		Element root = new Element("Document");
 		Document doc;
+
 		if (astTree.getChildCount() > 0) {
-			if (StringUtils.isNotEmpty(astTree.getText())) {
+			if (astTree.getPayload() != null) {
 				Element sentenceNode = new Element("Sentence");
 				root.appendChild(getNodes(astTree, sentenceNode));
 				doc = new Document(root);
@@ -111,36 +114,65 @@ public class ASTtoXML {
 			} else {
 				doc = new Document(getNodes(astTree, root));
 			}
-		}
-		else{
+		} else {
 			doc = new Document(root);
 		}
 		if (annotateActionPhrases) {
 			PostProcessTrees procTree = new PostProcessTrees();
 			procTree.setActionMap(actionPhraseDictionary);
-			
+
 			doc = procTree.process(doc);
 		}
 		return doc;
 	}
 
 	/**********************************************
-	 * A recursive function that goes through the 
-	 * leaves of the tree to create XML nodes.
+	 * A recursive function that goes through the leaves of the tree to create
+	 * XML nodes.
 	 * 
-	 * @param astTree (Tree)
-	 * @param node (Element)
+	 * @param astTree
+	 *            (Tree)
+	 * @param node
+	 *            (Element)
 	 * @return node (Element)
 	 **********************************************/
 	public Element getNodes(Tree astTree, Element node) {
 
+		boolean isValid = false;
+		
 		int nodeCount = astTree.getChildCount();
 
 		for (int i = 0; i < nodeCount; i++) {
 			Tree astChild = astTree.getChild(i);
-			String text = astChild.getText();
-			int type = astChild.getType();
-			if (type != Token.INVALID_TOKEN_TYPE) {
+
+			String text = null;
+
+			try {
+				Token token = (Token) astChild.getPayload();
+				text = token.getText();
+				int type = token.getType();
+				if (type != Token.INVALID_TYPE) {
+					isValid = true;
+				}
+						
+			}
+
+			catch (Exception e) {
+				// TODO: handle exception
+			}
+
+			try {
+				RuleContext ruleContext = (RuleContext) astChild.getPayload();
+				text = ruleContext.getText();
+			}
+
+			catch (Exception e) {
+				// TODO: handle exception
+			}
+
+			// int type = token.getType();
+			//if (type != Token.INVALID_TYPE) {
+			if (isValid) {
 				if (astChild.getChildCount() == 0) {
 					node.appendChild(text);
 				} else {

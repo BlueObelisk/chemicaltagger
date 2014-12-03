@@ -22,6 +22,9 @@ import nu.xom.Document;
 
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
+import org.antlr.v4.runtime.ParserRuleContext;
+import org.antlr.v4.runtime.tree.ParseTree;
+import org.antlr.v4.runtime.tree.ParseTreeWalker;
 import org.antlr.v4.runtime.tree.Tree;
 
 import uk.ac.cam.ch.wwmm.pregenerated.ChemicalChunkerLexer;
@@ -86,14 +89,25 @@ public class ChemistrySentenceParser extends SentenceParser {
 
                  lexer = new ChemicalChunkerLexer(input);
                  CommonTokenStream tokens = new CommonTokenStream(lexer);
+          
                  ChemicalChunkerParser parser = new ChemicalChunkerParser(tokens);
+                 
+                 //
+                 ParseTree tree = parser.document();
+                 ParseTreeWalker walker = new ParseTreeWalker();
+                 walker.walk(new ChemicalChunkerWalker(), tree);
+                 //
+                 
                  ChemicalChunkerParser.DocumentContext result = null;
                  try {
-                         result = parser.document();
+                	 	result = parser.document();
+                        
                  } catch (org.antlr.v4.runtime.RecognitionException e) {
 					e.printStackTrace();
-				}
-                 //setParseTree((Tree) result.getTree());
+				}             
+              
+                setParseTree((Tree) result);
+                
          }
 		
 	}

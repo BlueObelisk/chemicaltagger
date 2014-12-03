@@ -24,6 +24,7 @@ import org.junit.Assert;
 import nu.xom.Element;
 import nu.xom.Nodes;
 
+import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.tree.Tree;
 import org.apache.commons.io.IOUtils;
 
@@ -59,6 +60,8 @@ public class UtilityMethods {
 	}
 
 	/*****************************************************************************
+	 
+	 * ls
 	 * Goes through the nodes of a tree and checks for unexpected tokens(when
 	 * type=0).
 	 * 
@@ -68,8 +71,9 @@ public class UtilityMethods {
 	static void checkForErrorNodes(Tree astTree) {
 		int nodeCount = astTree.getChildCount();
 		for (int i = 0; i < nodeCount; i++) {
-			String text = astTree.getChild(i).getText();
-			int type = astTree.getChild(i).getType();
+			Token token = (Token) astTree.getChild(i).getPayload();
+			String text = token.getText();
+			int type = token.getType();
 			Assert.assertNotSame("Antlr Parse Fails for the for the text '"
 					+ text + "'", 0, type);
 			checkForErrorNodes(astTree.getChild(i));
@@ -90,7 +94,8 @@ public class UtilityMethods {
 			getTextChildrenFromAst(child, textChildren);
 		}
 		if (nodeCount == 0) {
-			textChildren.add(astTree.getText());
+			Token token = (Token) astTree.getPayload();
+			textChildren.add(token.getText());
 		}
 	}
 
