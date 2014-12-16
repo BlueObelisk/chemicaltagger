@@ -147,7 +147,7 @@ TOKEN : (~' ')+;
 
 
 
-document: sentence* EOF;
+document: sentence+ EOF;
 
 sentence: (procedureNounPhrase | (sentenceStructure|unmatchedPhrase)+) stop*;
 
