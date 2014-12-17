@@ -145,7 +145,7 @@ WS :  (' ')+ {skip();};
 TOKEN : (~' ')+;
 
 
-document: sentence+ EOF;
+document: sentence+ ;
 
 sentence: (procedureNounPhrase | (sentenceStructure|unmatchedPhrase)+) stop* # SENTENCE_EXPR;
 

@@ -37,6 +37,8 @@ import uk.ac.cam.ch.wwmm.pregenerated.ChemicalChunkerParser;
  * @author pm286, dl387, lh359
  **********************************************/
 public class ChemistrySentenceParser extends SentenceParser {
+		
+	Document doc = null;
 
 	/**********************************************
 	 * Constructor method for inputStream objects.
@@ -90,11 +92,8 @@ public class ChemistrySentenceParser extends SentenceParser {
                  lexer = new ChemicalChunkerLexer(input);
                  CommonTokenStream tokens = new CommonTokenStream(lexer);
                  
-                 ChemicalChunkerParser parser = new ChemicalChunkerParser(tokens);
-                 
-                 // New ANTLR4 Walker approach
-                 
-                 // Parser Rule entry point
+                 ChemicalChunkerParser parser = new ChemicalChunkerParser(tokens);                
+
                  ParseTree documentContext = parser.document();
                  
                  ParseTreeWalker walker = new ParseTreeWalker();
@@ -102,20 +101,12 @@ public class ChemistrySentenceParser extends SentenceParser {
                  XMLChemicalChunkerBaseListener xcl = new XMLChemicalChunkerBaseListener(parser);
                  
                  walker.walk(xcl, documentContext);
+                                  
+                 //xcl.printXML();
                  
-                 xcl.printXML();
+                 doc = xcl.GetDocument();  
                  
-                 //
                  
-                 ChemicalChunkerParser.DocumentContext result = null;
-                 try {
-                	 	result = parser.document();
-                        
-                 } catch (org.antlr.v4.runtime.RecognitionException e) {
-					e.printStackTrace();
-				}             
-              
-                setParseTree((Tree) result);
                 
          }
 		
@@ -127,7 +118,8 @@ public class ChemistrySentenceParser extends SentenceParser {
 	 * @return document (Document)
 	 *******************************************/
 	public Document makeXMLDocument() {
-		return new ASTtoXML().convert(getParseTree());
+		
+		return doc;
 	}
 
 

@@ -7,13 +7,13 @@ import nu.xom.Element;
 import nu.xom.Serializer;
 
 import org.antlr.v4.runtime.ParserRuleContext;
-import org.antlr.v4.runtime.RuleContext;
-import org.antlr.v4.runtime.Token;
+
 import org.antlr.v4.runtime.misc.NotNull;
-import org.antlr.v4.runtime.tree.ParseTree;
+
 import org.antlr.v4.runtime.tree.TerminalNode;
 
 import uk.ac.cam.ch.wwmm.pregenerated.ChemicalChunkerBaseListener;
+
 import uk.ac.cam.ch.wwmm.pregenerated.ChemicalChunkerParser;
 
 //http://stackoverflow.com/questions/14565794/antlr-4-tree-inject-rewrite-operator
@@ -24,12 +24,16 @@ public class XMLChemicalChunkerBaseListener extends ChemicalChunkerBaseListener 
 	private Element root = new Element("Document");
 	private Document doc = new Document(root);
 
-	private Element CurrentParentElement = root;
+	private Element currentParentElement = root;
+
+	private Element currentTokenElement = null;
 
 	private String[] ruleNames = null;
+	private String[] tokenNames = null;
 
 	XMLChemicalChunkerBaseListener(ChemicalChunkerParser parser) {
 		ruleNames = parser.getRuleNames();
+		tokenNames = parser.getTokenNames();
 
 	}
 
@@ -52,12 +56,12 @@ public class XMLChemicalChunkerBaseListener extends ChemicalChunkerBaseListener 
 
 	}
 
-	private void addElementFromContext(ParserRuleContext ctx) {
+	private void addElementFromContext(ParserRuleContext ctx, String name) {
 
-		Element element = new Element(ruleNames[ctx.getRuleIndex()]);
-		CurrentParentElement.appendChild(element);
+		Element element = new Element(name);
+		currentParentElement.appendChild(element);
 
-		CurrentParentElement = element;
+		currentParentElement = element;
 
 	}
 
@@ -65,7 +69,7 @@ public class XMLChemicalChunkerBaseListener extends ChemicalChunkerBaseListener 
 	public void enterSENTENCE_EXPR(
 			@NotNull ChemicalChunkerParser.SENTENCE_EXPRContext ctx) {
 
-		addElementFromContext(ctx);
+		addElementFromContext(ctx, "Sentence");
 
 	}
 
@@ -73,7 +77,7 @@ public class XMLChemicalChunkerBaseListener extends ChemicalChunkerBaseListener 
 	public void enterNOUNPHRASE_EXPR(
 			@NotNull ChemicalChunkerParser.NOUNPHRASE_EXPRContext ctx) {
 
-		addElementFromContext(ctx);
+		addElementFromContext(ctx, "NounPhrase");
 
 	}
 
@@ -81,7 +85,7 @@ public class XMLChemicalChunkerBaseListener extends ChemicalChunkerBaseListener 
 	public void enterMULTIPLE_APPARATUS_EXPR(
 			@NotNull ChemicalChunkerParser.MULTIPLE_APPARATUS_EXPRContext ctx) {
 
-		addElementFromContext(ctx);
+		addElementFromContext(ctx, "MultipleApparatus");
 
 	}
 
@@ -89,7 +93,7 @@ public class XMLChemicalChunkerBaseListener extends ChemicalChunkerBaseListener 
 	public void enterDISSOLVE_PHRASE_EXPR(
 			@NotNull ChemicalChunkerParser.DISSOLVE_PHRASE_EXPRContext ctx) {
 
-		addElementFromContext(ctx);
+		addElementFromContext(ctx, "DissolvePhrase");
 
 	}
 
@@ -97,7 +101,7 @@ public class XMLChemicalChunkerBaseListener extends ChemicalChunkerBaseListener 
 	public void enterVERB_PHRASE_EXPR(
 			@NotNull ChemicalChunkerParser.VERB_PHRASE_EXPRContext ctx) {
 
-		addElementFromContext(ctx);
+		addElementFromContext(ctx, "VerbPhrase");
 
 	}
 
@@ -105,7 +109,7 @@ public class XMLChemicalChunkerBaseListener extends ChemicalChunkerBaseListener 
 	public void enterCYCLES_EXPR(
 			@NotNull ChemicalChunkerParser.CYCLES_EXPRContext ctx) {
 
-		addElementFromContext(ctx);
+		addElementFromContext(ctx, "CYCLES");
 
 	}
 
@@ -113,23 +117,7 @@ public class XMLChemicalChunkerBaseListener extends ChemicalChunkerBaseListener 
 	public void enterRATIO_EXPR(
 			@NotNull ChemicalChunkerParser.RATIO_EXPRContext ctx) {
 
-		addElementFromContext(ctx);
-
-	}
-
-	@Override
-	public void enterMIXTURE_EXPR(
-			@NotNull ChemicalChunkerParser.MIXTURE_EXPRContext ctx) {
-
-		addElementFromContext(ctx);
-
-	}
-
-	@Override
-	public void enterPREP_PHRASE_EXPR(
-			@NotNull ChemicalChunkerParser.PREP_PHRASE_EXPRContext ctx) {
-
-		addElementFromContext(ctx);
+		addElementFromContext(ctx, "RATIO");
 
 	}
 
@@ -137,7 +125,23 @@ public class XMLChemicalChunkerBaseListener extends ChemicalChunkerBaseListener 
 	public void enterCITATION_EXPR(
 			@NotNull ChemicalChunkerParser.CITATION_EXPRContext ctx) {
 
-		addElementFromContext(ctx);
+		addElementFromContext(ctx, "CITATION");
+
+	}
+
+	@Override
+	public void enterMIXTURE_EXPR(
+			@NotNull ChemicalChunkerParser.MIXTURE_EXPRContext ctx) {
+
+		addElementFromContext(ctx, "MIXTURE");
+
+	}
+
+	@Override
+	public void enterPREP_PHRASE_EXPR(
+			@NotNull ChemicalChunkerParser.PREP_PHRASE_EXPRContext ctx) {
+
+		addElementFromContext(ctx, "PrepPhrase");
 
 	}
 
@@ -145,7 +149,7 @@ public class XMLChemicalChunkerBaseListener extends ChemicalChunkerBaseListener 
 	public void enterTIME_PHRASE_EXPR(
 			@NotNull ChemicalChunkerParser.TIME_PHRASE_EXPRContext ctx) {
 
-		addElementFromContext(ctx);
+		addElementFromContext(ctx, "TimePhrase");
 
 	}
 
@@ -153,7 +157,7 @@ public class XMLChemicalChunkerBaseListener extends ChemicalChunkerBaseListener 
 	public void enterROLE_PREP_PHRASE_EXPR(
 			@NotNull ChemicalChunkerParser.ROLE_PREP_PHRASE_EXPRContext ctx) {
 
-		addElementFromContext(ctx);
+		addElementFromContext(ctx, "RolePrepPhrase");
 
 	}
 
@@ -161,7 +165,7 @@ public class XMLChemicalChunkerBaseListener extends ChemicalChunkerBaseListener 
 	public void enterATMOSPHERE_PHRASE_EXPR(
 			@NotNull ChemicalChunkerParser.ATMOSPHERE_PHRASE_EXPRContext ctx) {
 
-		addElementFromContext(ctx);
+		addElementFromContext(ctx, "AtmospherePhrase");
 
 	}
 
@@ -169,7 +173,7 @@ public class XMLChemicalChunkerBaseListener extends ChemicalChunkerBaseListener 
 	public void enterTEMP_PHRASE_EXPR(
 			@NotNull ChemicalChunkerParser.TEMP_PHRASE_EXPRContext ctx) {
 
-		addElementFromContext(ctx);
+		addElementFromContext(ctx, "TempPhrase");
 
 	}
 
@@ -177,7 +181,7 @@ public class XMLChemicalChunkerBaseListener extends ChemicalChunkerBaseListener 
 	public void enterAMOUNT_EXPR(
 			@NotNull ChemicalChunkerParser.AMOUNT_EXPRContext ctx) {
 
-		addElementFromContext(ctx);
+		addElementFromContext(ctx, "AMOUNT");
 
 	}
 
@@ -185,7 +189,7 @@ public class XMLChemicalChunkerBaseListener extends ChemicalChunkerBaseListener 
 	public void enterMASS_EXPR(
 			@NotNull ChemicalChunkerParser.MASS_EXPRContext ctx) {
 
-		addElementFromContext(ctx);
+		addElementFromContext(ctx, "MASS");
 
 	}
 
@@ -193,7 +197,7 @@ public class XMLChemicalChunkerBaseListener extends ChemicalChunkerBaseListener 
 	public void enterPERCENT_EXPR(
 			@NotNull ChemicalChunkerParser.PERCENT_EXPRContext ctx) {
 
-		addElementFromContext(ctx);
+		addElementFromContext(ctx, "PERCENT");
 
 	}
 
@@ -201,7 +205,7 @@ public class XMLChemicalChunkerBaseListener extends ChemicalChunkerBaseListener 
 	public void enterVOLUME_EXPR(
 			@NotNull ChemicalChunkerParser.VOLUME_EXPRContext ctx) {
 
-		addElementFromContext(ctx);
+		addElementFromContext(ctx, "VOLUME");
 
 	}
 
@@ -209,14 +213,14 @@ public class XMLChemicalChunkerBaseListener extends ChemicalChunkerBaseListener 
 	public void enterMOLAR_EXPR(
 			@NotNull ChemicalChunkerParser.MOLAR_EXPRContext ctx) {
 
-		addElementFromContext(ctx);
+		addElementFromContext(ctx, "MOLAR");
 
 	}
 
 	@Override
 	public void enterPH_EXPR(@NotNull ChemicalChunkerParser.PH_EXPRContext ctx) {
 
-		addElementFromContext(ctx);
+		addElementFromContext(ctx, "PH");
 
 	}
 
@@ -224,7 +228,7 @@ public class XMLChemicalChunkerBaseListener extends ChemicalChunkerBaseListener 
 	public void enterEQUIVALENT_EXPR(
 			@NotNull ChemicalChunkerParser.EQUIVALENT_EXPRContext ctx) {
 
-		addElementFromContext(ctx);
+		addElementFromContext(ctx, "EQUIVALENT");
 
 	}
 
@@ -232,7 +236,7 @@ public class XMLChemicalChunkerBaseListener extends ChemicalChunkerBaseListener 
 	public void enterYIELD_EXPR(
 			@NotNull ChemicalChunkerParser.YIELD_EXPRContext ctx) {
 
-		addElementFromContext(ctx);
+		addElementFromContext(ctx, "YIELD");
 
 	}
 
@@ -240,7 +244,7 @@ public class XMLChemicalChunkerBaseListener extends ChemicalChunkerBaseListener 
 	public void enterAPPARATUS_EXPR(
 			@NotNull ChemicalChunkerParser.APPARATUS_EXPRContext ctx) {
 
-		addElementFromContext(ctx);
+		addElementFromContext(ctx, "APPARATUS");
 
 	}
 
@@ -248,7 +252,7 @@ public class XMLChemicalChunkerBaseListener extends ChemicalChunkerBaseListener 
 	public void enterMULTIPLE_EXPR(
 			@NotNull ChemicalChunkerParser.MULTIPLE_EXPRContext ctx) {
 
-		addElementFromContext(ctx);
+		addElementFromContext(ctx, "MULTIPLE");
 
 	}
 
@@ -256,16 +260,7 @@ public class XMLChemicalChunkerBaseListener extends ChemicalChunkerBaseListener 
 	public void enterOSCAR_CM_EXPR(
 			@NotNull ChemicalChunkerParser.OSCAR_CM_EXPRContext ctx) {
 
-		Element element = new Element("OSCAR-CM");
-
-		ParserRuleContext parserRuleContext = (ParserRuleContext) ctx;
-
-		Token token = parserRuleContext.getStop();
-
-		element.appendChild(token.getText());
-
-		CurrentParentElement.appendChild(element);
-		CurrentParentElement = element;
+		addElementFromContext(ctx, "OSCARCM");
 
 	}
 
@@ -273,7 +268,7 @@ public class XMLChemicalChunkerBaseListener extends ChemicalChunkerBaseListener 
 	public void enterMOLECULE_EXPR(
 			@NotNull ChemicalChunkerParser.MOLECULE_EXPRContext ctx) {
 
-		addElementFromContext(ctx);
+		addElementFromContext(ctx, "MOLECULE");
 
 	}
 
@@ -281,7 +276,7 @@ public class XMLChemicalChunkerBaseListener extends ChemicalChunkerBaseListener 
 	public void enterUNNAMEDMOLECULE_EXPR(
 			@NotNull ChemicalChunkerParser.UNNAMEDMOLECULE_EXPRContext ctx) {
 
-		addElementFromContext(ctx);
+		addElementFromContext(ctx, "UNNAMEDMOLECULE");
 
 	}
 
@@ -289,7 +284,7 @@ public class XMLChemicalChunkerBaseListener extends ChemicalChunkerBaseListener 
 	public void enterQUANTITY_EXPR(
 			@NotNull ChemicalChunkerParser.QUANTITY_EXPRContext ctx) {
 
-		addElementFromContext(ctx);
+		addElementFromContext(ctx, "QUANTITY");
 
 	}
 
@@ -297,7 +292,7 @@ public class XMLChemicalChunkerBaseListener extends ChemicalChunkerBaseListener 
 	public void enterPROCEDURE_EXPR(
 			@NotNull ChemicalChunkerParser.PROCEDURE_EXPRContext ctx) {
 
-		addElementFromContext(ctx);
+		addElementFromContext(ctx, "PROCEDURE");
 
 	}
 
@@ -305,7 +300,7 @@ public class XMLChemicalChunkerBaseListener extends ChemicalChunkerBaseListener 
 	public void enterREFERENCE_TO_COMPOUND_EXPR(
 			@NotNull ChemicalChunkerParser.REFERENCE_TO_COMPOUND_EXPRContext ctx) {
 
-		addElementFromContext(ctx);
+		addElementFromContext(ctx, "REFERENCETOCOMPOUND");
 
 	}
 
@@ -313,7 +308,28 @@ public class XMLChemicalChunkerBaseListener extends ChemicalChunkerBaseListener 
 	public void enterCAPTIONLABEL_EXPR(
 			@NotNull ChemicalChunkerParser.CAPTIONLABEL_EXPRContext ctx) {
 
-		addElementFromContext(ctx);
+		addElementFromContext(ctx, "CaptionLabel");
+
+	}
+
+	@Override
+	public void visitTerminal(@NotNull TerminalNode node) {
+		
+		//System.out.println(node + " " + tokenNames[node.getSymbol().getType()]);
+
+		if (tokenNames[node.getSymbol().getType()] != "TOKEN") {
+
+			String name = node.getText();
+			// Work around for invalid - chararcter in <-LRB->(</-LRB->
+			currentTokenElement = new Element(name.replace('-', '_'));
+
+		} else {
+
+			currentTokenElement.appendChild(node.getText());
+
+			currentParentElement.appendChild(currentTokenElement);
+
+		}
 
 	}
 
