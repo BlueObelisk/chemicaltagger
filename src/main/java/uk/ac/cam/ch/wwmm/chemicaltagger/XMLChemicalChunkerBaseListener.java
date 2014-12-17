@@ -7,8 +7,10 @@ import nu.xom.Element;
 import nu.xom.Serializer;
 
 import org.antlr.v4.runtime.ParserRuleContext;
+import org.antlr.v4.runtime.RuleContext;
 import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.misc.NotNull;
+import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
 import uk.ac.cam.ch.wwmm.pregenerated.ChemicalChunkerBaseListener;
@@ -24,12 +26,10 @@ public class XMLChemicalChunkerBaseListener extends ChemicalChunkerBaseListener 
 
 	private Element CurrentParentElement = root;
 
-	private String[] tokenNames = null;
 	private String[] ruleNames = null;
 
 	XMLChemicalChunkerBaseListener(ChemicalChunkerParser parser) {
 		ruleNames = parser.getRuleNames();
-		tokenNames = parser.getTokenNames();
 
 	}
 
@@ -52,16 +52,7 @@ public class XMLChemicalChunkerBaseListener extends ChemicalChunkerBaseListener 
 
 	}
 
-	@Override
-	public void enterEveryRule(@NotNull ParserRuleContext ctx) {
-
-//		//OSCAR-CM
-//		Token token = ctx.getStart();
-//		System.out.println(token.getText());
-//		
-//		//benzene
-//		token = ctx.getStop();
-//		System.out.println(token.getText());
+	private void addElementFromContext(ParserRuleContext ctx) {
 
 		Element element = new Element(ruleNames[ctx.getRuleIndex()]);
 		CurrentParentElement.appendChild(element);
@@ -71,16 +62,258 @@ public class XMLChemicalChunkerBaseListener extends ChemicalChunkerBaseListener 
 	}
 
 	@Override
-	public void exitEveryRule(@NotNull ParserRuleContext ctx) {
+	public void enterSENTENCE_EXPR(
+			@NotNull ChemicalChunkerParser.SENTENCE_EXPRContext ctx) {
 
-		// System.out.println(ctx.invokingState);
+		addElementFromContext(ctx);
 
 	}
 
 	@Override
-	public void visitTerminal(@NotNull TerminalNode node) {
+	public void enterNOUNPHRASE_EXPR(
+			@NotNull ChemicalChunkerParser.NOUNPHRASE_EXPRContext ctx) {
 
-		CurrentParentElement.appendChild(node.getSymbol().getText());
+		addElementFromContext(ctx);
+
+	}
+
+	@Override
+	public void enterMULTIPLE_APPARATUS_EXPR(
+			@NotNull ChemicalChunkerParser.MULTIPLE_APPARATUS_EXPRContext ctx) {
+
+		addElementFromContext(ctx);
+
+	}
+
+	@Override
+	public void enterDISSOLVE_PHRASE_EXPR(
+			@NotNull ChemicalChunkerParser.DISSOLVE_PHRASE_EXPRContext ctx) {
+
+		addElementFromContext(ctx);
+
+	}
+
+	@Override
+	public void enterVERB_PHRASE_EXPR(
+			@NotNull ChemicalChunkerParser.VERB_PHRASE_EXPRContext ctx) {
+
+		addElementFromContext(ctx);
+
+	}
+
+	@Override
+	public void enterCYCLES_EXPR(
+			@NotNull ChemicalChunkerParser.CYCLES_EXPRContext ctx) {
+
+		addElementFromContext(ctx);
+
+	}
+
+	@Override
+	public void enterRATIO_EXPR(
+			@NotNull ChemicalChunkerParser.RATIO_EXPRContext ctx) {
+
+		addElementFromContext(ctx);
+
+	}
+
+	@Override
+	public void enterMIXTURE_EXPR(
+			@NotNull ChemicalChunkerParser.MIXTURE_EXPRContext ctx) {
+
+		addElementFromContext(ctx);
+
+	}
+
+	@Override
+	public void enterPREP_PHRASE_EXPR(
+			@NotNull ChemicalChunkerParser.PREP_PHRASE_EXPRContext ctx) {
+
+		addElementFromContext(ctx);
+
+	}
+
+	@Override
+	public void enterCITATION_EXPR(
+			@NotNull ChemicalChunkerParser.CITATION_EXPRContext ctx) {
+
+		addElementFromContext(ctx);
+
+	}
+
+	@Override
+	public void enterTIME_PHRASE_EXPR(
+			@NotNull ChemicalChunkerParser.TIME_PHRASE_EXPRContext ctx) {
+
+		addElementFromContext(ctx);
+
+	}
+
+	@Override
+	public void enterROLE_PREP_PHRASE_EXPR(
+			@NotNull ChemicalChunkerParser.ROLE_PREP_PHRASE_EXPRContext ctx) {
+
+		addElementFromContext(ctx);
+
+	}
+
+	@Override
+	public void enterATMOSPHERE_PHRASE_EXPR(
+			@NotNull ChemicalChunkerParser.ATMOSPHERE_PHRASE_EXPRContext ctx) {
+
+		addElementFromContext(ctx);
+
+	}
+
+	@Override
+	public void enterTEMP_PHRASE_EXPR(
+			@NotNull ChemicalChunkerParser.TEMP_PHRASE_EXPRContext ctx) {
+
+		addElementFromContext(ctx);
+
+	}
+
+	@Override
+	public void enterAMOUNT_EXPR(
+			@NotNull ChemicalChunkerParser.AMOUNT_EXPRContext ctx) {
+
+		addElementFromContext(ctx);
+
+	}
+
+	@Override
+	public void enterMASS_EXPR(
+			@NotNull ChemicalChunkerParser.MASS_EXPRContext ctx) {
+
+		addElementFromContext(ctx);
+
+	}
+
+	@Override
+	public void enterPERCENT_EXPR(
+			@NotNull ChemicalChunkerParser.PERCENT_EXPRContext ctx) {
+
+		addElementFromContext(ctx);
+
+	}
+
+	@Override
+	public void enterVOLUME_EXPR(
+			@NotNull ChemicalChunkerParser.VOLUME_EXPRContext ctx) {
+
+		addElementFromContext(ctx);
+
+	}
+
+	@Override
+	public void enterMOLAR_EXPR(
+			@NotNull ChemicalChunkerParser.MOLAR_EXPRContext ctx) {
+
+		addElementFromContext(ctx);
+
+	}
+
+	@Override
+	public void enterPH_EXPR(@NotNull ChemicalChunkerParser.PH_EXPRContext ctx) {
+
+		addElementFromContext(ctx);
+
+	}
+
+	@Override
+	public void enterEQUIVALENT_EXPR(
+			@NotNull ChemicalChunkerParser.EQUIVALENT_EXPRContext ctx) {
+
+		addElementFromContext(ctx);
+
+	}
+
+	@Override
+	public void enterYIELD_EXPR(
+			@NotNull ChemicalChunkerParser.YIELD_EXPRContext ctx) {
+
+		addElementFromContext(ctx);
+
+	}
+
+	@Override
+	public void enterAPPARATUS_EXPR(
+			@NotNull ChemicalChunkerParser.APPARATUS_EXPRContext ctx) {
+
+		addElementFromContext(ctx);
+
+	}
+
+	@Override
+	public void enterMULTIPLE_EXPR(
+			@NotNull ChemicalChunkerParser.MULTIPLE_EXPRContext ctx) {
+
+		addElementFromContext(ctx);
+
+	}
+
+	@Override
+	public void enterOSCAR_CM_EXPR(
+			@NotNull ChemicalChunkerParser.OSCAR_CM_EXPRContext ctx) {
+
+		Element element = new Element("OSCAR-CM");
+
+		ParserRuleContext parserRuleContext = (ParserRuleContext) ctx;
+
+		Token token = parserRuleContext.getStop();
+
+		element.appendChild(token.getText());
+
+		CurrentParentElement.appendChild(element);
+		CurrentParentElement = element;
+
+	}
+
+	@Override
+	public void enterMOLECULE_EXPR(
+			@NotNull ChemicalChunkerParser.MOLECULE_EXPRContext ctx) {
+
+		addElementFromContext(ctx);
+
+	}
+
+	@Override
+	public void enterUNNAMEDMOLECULE_EXPR(
+			@NotNull ChemicalChunkerParser.UNNAMEDMOLECULE_EXPRContext ctx) {
+
+		addElementFromContext(ctx);
+
+	}
+
+	@Override
+	public void enterQUANTITY_EXPR(
+			@NotNull ChemicalChunkerParser.QUANTITY_EXPRContext ctx) {
+
+		addElementFromContext(ctx);
+
+	}
+
+	@Override
+	public void enterPROCEDURE_EXPR(
+			@NotNull ChemicalChunkerParser.PROCEDURE_EXPRContext ctx) {
+
+		addElementFromContext(ctx);
+
+	}
+
+	@Override
+	public void enterREFERENCE_TO_COMPOUND_EXPR(
+			@NotNull ChemicalChunkerParser.REFERENCE_TO_COMPOUND_EXPRContext ctx) {
+
+		addElementFromContext(ctx);
+
+	}
+
+	@Override
+	public void enterCAPTIONLABEL_EXPR(
+			@NotNull ChemicalChunkerParser.CAPTIONLABEL_EXPRContext ctx) {
+
+		addElementFromContext(ctx);
 
 	}
 
