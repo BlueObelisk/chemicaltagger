@@ -28,13 +28,10 @@ public class XMLChemicalChunkerBaseListener extends ChemicalChunkerBaseListener 
 
 	private Element currentTokenElement = null;
 
-	private String[] ruleNames = null;
 	private String[] tokenNames = null;
 
 	XMLChemicalChunkerBaseListener(ChemicalChunkerParser parser) {
-		ruleNames = parser.getRuleNames();
 		tokenNames = parser.getTokenNames();
-
 	}
 
 	public Document GetDocument() {
@@ -314,14 +311,15 @@ public class XMLChemicalChunkerBaseListener extends ChemicalChunkerBaseListener 
 
 	@Override
 	public void visitTerminal(@NotNull TerminalNode node) {
-		
-		//System.out.println(node + " " + tokenNames[node.getSymbol().getType()]);
 
 		if (tokenNames[node.getSymbol().getType()] != "TOKEN") {
 
 			String name = node.getText();
-			// Work around for invalid - chararcter in <-LRB->(</-LRB->
-			currentTokenElement = new Element(name.replace('-', '_'));
+			
+			// Dealt with -LRB- and -RRB-
+			name = name.replaceFirst("^-", "_-");			
+		
+			currentTokenElement = new Element(name);
 
 		} else {
 

@@ -22,10 +22,8 @@ import nu.xom.Document;
 
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
-import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
-import org.antlr.v4.runtime.tree.Tree;
 
 import uk.ac.cam.ch.wwmm.pregenerated.ChemicalChunkerLexer;
 import uk.ac.cam.ch.wwmm.pregenerated.ChemicalChunkerParser;
@@ -101,27 +99,41 @@ public class ChemistrySentenceParser extends SentenceParser {
                  XMLChemicalChunkerBaseListener xcl = new XMLChemicalChunkerBaseListener(parser);
                  
                  walker.walk(xcl, documentContext);
-                                  
-                 //xcl.printXML();
                  
                  doc = xcl.GetDocument();  
+                 
+                 //xcl.printXML();
                  
                  
                 
          }
 		
 	}
-
+	
+	
+	
 	@Override
 	/*********************************************
 	 * Creates an XML document from the parseTree.
 	 * @return document (Document)
 	 *******************************************/
 	public Document makeXMLDocument() {
-		
-		return doc;
+
+		return makeXMLDocument(true);
+
 	}
 
+	public Document makeXMLDocument(boolean annotateActionPhrases) {
+
+		if (annotateActionPhrases) {
+			PostProcessTrees procTree = new PostProcessTrees();
+			doc = procTree.process(doc);
+		}
+
+		System.out.println(doc.toXML());
+		return doc;
+
+	}
 
 
 }
