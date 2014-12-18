@@ -371,13 +371,13 @@ yield2: percent nnyield ;
 percent	: cd nn? percentsign ( dash cd percentsign)? # PERCENT_EXPR;
 
 //Different expressions are needed in and outside molecules as within a molecule other "molecules" are likely to be synoymns rather than entities in their own right
-bracketedContent: ratio?  (bracketedContent1|bracketedContent2|bracketedContent3) # MIXTURE_EXPR;
+bracketedContent: ratio?  (bracketedContent1|bracketedContent2|bracketedContent3) # MIXTURE_EXPR ;
 bracketedContent1: comma lrb bracketedContentContents rrb comma;
 bracketedContent2: lrb bracketedContentContents rrb;
 bracketedContent3: lsqb bracketedContentContents rsqb;
 bracketedContentContents: (verb|noun|bracketedContent|md|percentsign|dash|inAll|ratio|conjunction|adj|colon|stop|numeric)+;
 
-bracketedContentInMol: ratio?  (bracketedContentInMolStructure1|bracketedContentInMolStructure2) MIXTURE_EXPR; 
+bracketedContentInMol: ratio?  (bracketedContentInMolStructure1|bracketedContentInMolStructure2) ; 
 bracketedContentInMolStructure1: comma bracketedContentInMolStructure2 comma;
 bracketedContentInMolStructure2: lrb bracketedContentInMolContents1 bracketedContentInMolContents2* rrb|lsqb bracketedContentInMolContents1 bracketedContentInMolContents2* rsqb;
 bracketedContentInMolContents1: numberCompoundReference (comma | colon | {nextIsSemiColon(_input)}? stop)|bracketedContentInMolContentsAlwaysAllowed;
