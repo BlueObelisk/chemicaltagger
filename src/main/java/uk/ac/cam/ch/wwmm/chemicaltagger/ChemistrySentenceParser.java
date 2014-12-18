@@ -130,7 +130,7 @@ public class ChemistrySentenceParser extends SentenceParser {
 			doc = procTree.process(doc);
 		}
 
-		System.out.println(doc.toXML());
+		//System.out.println(doc.toXML());
 		return doc;
 
 	}
