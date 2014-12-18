@@ -19,12 +19,12 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import nu.xom.Document;
+import nu.xom.Serializer;
 
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
-import org.antlr.v4.runtime.tree.Tree;
 
 import uk.ac.cam.ch.wwmm.pregenerated.ChemicalChunkerLexer;
 import uk.ac.cam.ch.wwmm.pregenerated.ChemicalChunkerParser;
@@ -102,7 +102,6 @@ public class ChemistrySentenceParser extends SentenceParser {
                  XMLChemicalChunkerBaseListener xcl = new XMLChemicalChunkerBaseListener(parser);
                  
                  walker.walk(xcl, (ParseTree) getParseTree());
-                 //xcl.printXML();
                  
                  doc = xcl.GetDocument();
                                      
@@ -130,10 +129,26 @@ public class ChemistrySentenceParser extends SentenceParser {
 			doc = procTree.process(doc);
 		}
 
-		//System.out.println(doc.toXML());
 		return doc;
 
 	}
+	
+	public void printPrettyXML(Document doc) {
+
+		try {
+
+			Serializer serializer = new Serializer(System.out, "ISO-8859-1");
+			serializer.setIndent(4);
+			serializer.setMaxLength(64);
+			serializer.write(doc);
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
+	
+	
 
 
 }
