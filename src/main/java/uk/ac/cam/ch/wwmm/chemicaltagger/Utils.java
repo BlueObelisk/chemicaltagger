@@ -246,7 +246,7 @@ public class Utils {
 	 */
 	public static HashSet<String> loadsTagsFromFile(Class<?> contextClass) {
 		HashSet<String> tagSet = new HashSet<String>();
-		String pathName = "ChemicalChunkerLexer.tokens";
+		String pathName = "ChemicalChunker.tokens";
 		InputStream inStream = contextClass.getClassLoader().getResourceAsStream(pathName);
 		List<String> readlines = null;
 		try {
