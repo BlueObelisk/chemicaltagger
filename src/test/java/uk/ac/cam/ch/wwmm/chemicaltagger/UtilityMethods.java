@@ -49,9 +49,7 @@ public class UtilityMethods {
 		UtilityMethods.getTextChildrenFromAst(astTree, textChildren);
 		String[] reference = taggedText.split(" ");
 		for (int i = 0; i < reference.length; i++) {
-			if (i % 2 == 1) {
 				referenceChildren.add(reference[i]);
-			}
 		}
 		Assert.assertEquals(referenceChildren.size(), textChildren.size());
 		for (int i = 0; i < referenceChildren.size(); i++) {
@@ -60,8 +58,6 @@ public class UtilityMethods {
 	}
 
 	/*****************************************************************************
-	 
-	 * ls
 	 * Goes through the nodes of a tree and checks for unexpected tokens(when
 	 * type=0).
 	 * 
@@ -71,11 +67,14 @@ public class UtilityMethods {
 	static void checkForErrorNodes(Tree astTree) {
 		int nodeCount = astTree.getChildCount();
 		for (int i = 0; i < nodeCount; i++) {
-			Token token = (Token) astTree.getChild(i).getPayload();
-			String text = token.getText();
-			int type = token.getType();
-			Assert.assertNotSame("Antlr Parse Fails for the for the text '"
-					+ text + "'", 0, type);
+			if (astTree.getChild(i).getPayload() instanceof Token) {
+				Token token = (Token) astTree.getChild(i).getPayload();
+				String text = token.getText();
+				int type = token.getType();
+				Assert.assertNotSame("Antlr Parse Fails for the for the text '"
+						+ text + "'", 0, type);
+			}
+
 			checkForErrorNodes(astTree.getChild(i));
 
 		}
@@ -94,8 +93,10 @@ public class UtilityMethods {
 			getTextChildrenFromAst(child, textChildren);
 		}
 		if (nodeCount == 0) {
-			Token token = (Token) astTree.getPayload();
-			textChildren.add(token.getText());
+			if (astTree.getPayload() instanceof Token) {
+				Token token = (Token) astTree.getPayload();
+				textChildren.add(token.getText());
+			}
 		}
 	}
 

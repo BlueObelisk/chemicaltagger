@@ -20,6 +20,7 @@ import java.io.InputStream;
 
 import nu.xom.Document;
 
+import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.Tree;
 import org.apache.commons.io.IOUtils;
 
@@ -101,7 +102,7 @@ public abstract class SentenceParser extends Thread {
 	 * Setter method for parseTree.
 	 * @param parseTree (Tree)
 	 **************************************/
-	public void setParseTree(Tree parseTree) {
+	public void setParseTree(ParseTree parseTree) {
 		this.parseTree = parseTree;
 	}
 
