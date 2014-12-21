@@ -137,7 +137,7 @@ public class ChemistrySentenceParser extends SentenceParser {
 
 		try {
 
-			Serializer serializer = new Serializer(System.out, "ISO-8859-1");
+			Serializer serializer = new Serializer(System.out, "UTF-8");
 			serializer.setIndent(4);
 			serializer.setMaxLength(64);
 			serializer.write(doc);
