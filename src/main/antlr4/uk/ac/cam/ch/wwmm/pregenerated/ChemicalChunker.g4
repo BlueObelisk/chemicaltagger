@@ -270,9 +270,8 @@ preapparatus
 
 oscarCompound :  (jjcomp|adj)* oscarCompoundStructure adj? nnstate? (numericReferenceOrQuantity | nnchementity )? quantity* fromProcedure?;
 
-oscarCompoundStructure: (oscarcm+ afterOscarCompoundStructure? | bracketedOscarCompoundStructure) # OSCAR_CM_EXPR; 
+oscarCompoundStructure: (oscarcm+ afterOscarCompoundStructure?) # OSCAR_CM_EXPR; 
 afterOscarCompoundStructure: (dash oscarcm+)+ dash?|(colon oscarcm+)+ (colon oscarcm+)+|(dash|apost)+;
-bracketedOscarCompoundStructure :	lrb  oscarcm+ rrb;
 
 molecule
 	:  moleculeamount # MOLECULE_EXPR;
