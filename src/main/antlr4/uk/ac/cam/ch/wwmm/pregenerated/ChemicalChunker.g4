@@ -82,9 +82,16 @@ public boolean isCdThatCouldBeAnIdentifier(TokenStream stream){
 	return false;
 }
 
-public boolean followedByQuantityUnits(TokenStream stream){
-	String nextTokenTypeStr = stream.LT(1).getText();
-	return isQuantityUnit(nextTokenTypeStr);
+public boolean isCdNotfollowedByQuantityUnits(TokenStream stream){
+	String tokenTypeStr = stream.LT(1).getText();
+	if ("CD".equals(tokenTypeStr)){
+		String nextTokenTypeStr = stream.LT(3).getText();
+		if (isQuantityUnit(nextTokenTypeStr)){
+			return false;//quantity
+		}
+		return true;
+	}
+	return false;
 }
 
 public boolean isQuantityUnit(String tokenType){
@@ -409,7 +416,8 @@ dashNN	:	(adj|nn|cd) (dash (adj|nn|cd))*;
 
 ratioOrBracketedRatio : lrb ratio rrb | ratio;
 ratio : cdRatio # RATIO_EXPR ;
-cdRatio : cd (colon cd {!followedByQuantityUnits(_input)}?)+;
+cdRatio : (cd colon)+ cdNotFollowedByQuantityUnits;
+cdNotFollowedByQuantityUnits: {isCdNotfollowedByQuantityUnits(_input)}? cd;
 
 citation:  citationStructure|comma citationContent comma;
 
