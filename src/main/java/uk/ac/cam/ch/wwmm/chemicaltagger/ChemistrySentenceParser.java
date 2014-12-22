@@ -94,16 +94,17 @@ public class ChemistrySentenceParser extends SentenceParser {
                  ChemicalChunkerParser parser = new ChemicalChunkerParser(tokens);                
 
                  ParseTree documentContext = parser.document();
+                 doc = new ASTtoXML().convert(documentContext, false);
                  
                  setParseTree(documentContext);        
                  
-                 ParseTreeWalker walker = new ParseTreeWalker();
-                 
-                 XMLChemicalChunkerBaseListener xcl = new XMLChemicalChunkerBaseListener(parser);
-                 
-                 walker.walk(xcl, (ParseTree) getParseTree());
-                 
-                 doc = xcl.GetDocument();
+//                 ParseTreeWalker walker = new ParseTreeWalker();
+//                 
+//                 XMLChemicalChunkerBaseListener xcl = new XMLChemicalChunkerBaseListener(parser);
+//                 
+//                 walker.walk(xcl, (ParseTree) getParseTree());
+//                 
+//                 doc = xcl.GetDocument();
                                      
          }
 		
