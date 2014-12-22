@@ -340,7 +340,7 @@ mass	: cd nnmass # MASS_EXPR;
 volume	: cd nnvol # VOLUME_EXPR;
 logHydrogenActivity	: nnph sym? cd # PH_EXPR;
 equivalent: cd nneq # EQUIVALENT_EXPR;
-yield: yield1 # YIELD_EXPR;
+yield: (yield1|yield2) # YIELD_EXPR;
 yield1: nnyield (inof|colon) percent;
 yield2: percent nnyield ;
 percent	: cd nn? percentsign ( dash cd percentsign)? # PERCENT_EXPR;
