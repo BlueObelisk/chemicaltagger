@@ -4,41 +4,6 @@ options {
     language=Java;
 }
 
-tokens{
-Sentence,
-Unmatched,
-NounPhrase,
-MultipleApparatus,
-DissolvePhrase,
-VerbPhrase,
-CYCLES,
-RATIO,
-CITATION,
-MIXTURE,
-PrepPhrase,
-TimePhrase,
-RolePrepPhrase,
-AtmospherePhrase,
-TempPhrase,
-AMOUNT,
-MASS,
-PERCENT,
-VOLUME,
-MOLAR,
-PH,
-EQUIVALENT,
-YIELD,
-APPARATUS,
-MULTIPLE,
-OSCARCM,
-MOLECULE,
-UNNAMEDMOLECULE,
-QUANTITY,
-PROCEDURE,
-REFERENCETOCOMPOUND,
-CaptionLabel
-}
-
 @parser::members {
 public boolean isAtTokenPositionZero(TokenStream stream){
 	return stream.index()==0;

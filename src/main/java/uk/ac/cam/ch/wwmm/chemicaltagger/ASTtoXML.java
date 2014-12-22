@@ -25,6 +25,8 @@ import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.tree.Tree;
 import org.apache.log4j.Logger;
 
+import uk.ac.cam.ch.wwmm.pregenerated.ChemicalChunkerParser;
+
 /*****************************
  * Converts ANTLR ASTTrees into XML Documents.
  * 
@@ -34,6 +36,54 @@ import org.apache.log4j.Logger;
 public class ASTtoXML {
 
 	private static Logger LOG = Logger.getLogger(ASTtoXML.class);
+
+	private final static String[] tokenNames = ChemicalChunkerParser.tokenNames;
+	private final static String[] nestingTagname = new String[ChemicalChunkerParser.ruleNames.length];
+	
+	static {
+		nestingTagname[ChemicalChunkerParser.RULE_sentence] = "Sentence";
+		nestingTagname[ChemicalChunkerParser.RULE_unmatchedPhrase] = "Unmatched";
+		nestingTagname[ChemicalChunkerParser.RULE_procedureNounPhrase] = "NounPhrase";
+		nestingTagname[ChemicalChunkerParser.RULE_nounphrase] = "NounPhrase";
+		nestingTagname[ChemicalChunkerParser.RULE_multiApparatus] = "MultipleApparatus";
+		nestingTagname[ChemicalChunkerParser.RULE_dissolvePhrase] = "DissolvePhrase";
+		nestingTagname[ChemicalChunkerParser.RULE_verbphrase] = "VerbPhrase";
+		nestingTagname[ChemicalChunkerParser.RULE_cycles] = "CYCLES";
+		nestingTagname[ChemicalChunkerParser.RULE_ratio] = "RATIO";
+		nestingTagname[ChemicalChunkerParser.RULE_citationStructure] = "CITATION";
+		nestingTagname[ChemicalChunkerParser.RULE_bracketedContent] = "MIXTURE";
+		nestingTagname[ChemicalChunkerParser.RULE_bracketedContentInMol] = "MIXTURE";
+		nestingTagname[ChemicalChunkerParser.RULE_prepphraseIN] = "PrepPhrase";
+		nestingTagname[ChemicalChunkerParser.RULE_prepphraseOther] = "PrepPhrase";
+		nestingTagname[ChemicalChunkerParser.RULE_prepphraseOf] = "PrepPhrase";
+		nestingTagname[ChemicalChunkerParser.RULE_prepphraseAfter] = "PrepPhrase";
+		nestingTagname[ChemicalChunkerParser.RULE_prepphraseTime] = "TimePhrase";
+		nestingTagname[ChemicalChunkerParser.RULE_prepphraseRole] = "RolePrepPhrase";
+		nestingTagname[ChemicalChunkerParser.RULE_prepphraseAtmosphere] = "AtmospherePhrase";
+		nestingTagname[ChemicalChunkerParser.RULE_prepphraseTemp] = "TempPhrase";
+		nestingTagname[ChemicalChunkerParser.RULE_amount] = "AMOUNT";
+		nestingTagname[ChemicalChunkerParser.RULE_mass] = "MASS";
+		nestingTagname[ChemicalChunkerParser.RULE_percent] = "PERCENT";
+		nestingTagname[ChemicalChunkerParser.RULE_volume] = "VOLUME";
+		nestingTagname[ChemicalChunkerParser.RULE_molar] = "MOLAR";
+		nestingTagname[ChemicalChunkerParser.RULE_logHydrogenActivity] = "PH";
+		nestingTagname[ChemicalChunkerParser.RULE_equivalent] = "EQUIVALENT";
+		nestingTagname[ChemicalChunkerParser.RULE_yield] = "YIELD";
+		nestingTagname[ChemicalChunkerParser.RULE_apparatus] = "APPARATUS";
+		nestingTagname[ChemicalChunkerParser.RULE_multiple] = "MULTIPLE";
+		nestingTagname[ChemicalChunkerParser.RULE_oscarCompoundStructure] = "OSCARCM";
+		nestingTagname[ChemicalChunkerParser.RULE_molecule] = "MOLECULE";
+		nestingTagname[ChemicalChunkerParser.RULE_unnamedmolecule] = "UNNAMEDMOLECULE";
+		nestingTagname[ChemicalChunkerParser.RULE_quantity] = "QUANTITY";
+		nestingTagname[ChemicalChunkerParser.RULE_headingProcedureRequiringTerminator] = "PROCEDURE";
+		nestingTagname[ChemicalChunkerParser.RULE_bracketedHeadingProcedure] = "PROCEDURE";
+		nestingTagname[ChemicalChunkerParser.RULE_procedureNode] = "PROCEDURE";
+		nestingTagname[ChemicalChunkerParser.RULE_alphanumericOrIdentifierCompoundReference] = "REFERENCETOCOMPOUND";
+		nestingTagname[ChemicalChunkerParser.RULE_numberCompoundReference] = "REFERENCETOCOMPOUND";
+		nestingTagname[ChemicalChunkerParser.RULE_numericOrIdentifierCompoundReference] = "REFERENCETOCOMPOUND";
+		nestingTagname[ChemicalChunkerParser.RULE_referenceToExampleCompound] = "REFERENCETOCOMPOUND";
+		nestingTagname[ChemicalChunkerParser.RULE_captionLabel] = "CaptionLabel";
+	}
 
 	/********************************************
 	 * Default constructor method.
@@ -69,14 +119,7 @@ public class ASTtoXML {
 		Document doc;
 
 		if (astTree.getChildCount() > 0) {
-			if (astTree.getPayload() != null) {
-				Element sentenceNode = new Element("Sentence");
-				root.appendChild(getNodes(astTree, sentenceNode));
-				doc = new Document(root);
-
-			} else {
-				doc = new Document(getNodes(astTree, root));
-			}
+			doc = new Document(getNodes(astTree, root));
 		} else {
 			doc = new Document(root);
 		}
@@ -106,14 +149,7 @@ public class ASTtoXML {
 		Document doc;
 
 		if (astTree.getChildCount() > 0) {
-			if (astTree.getPayload() != null) {
-				Element sentenceNode = new Element("Sentence");
-				root.appendChild(getNodes(astTree, sentenceNode));
-				doc = new Document(root);
-
-			} else {
-				doc = new Document(getNodes(astTree, root));
-			}
+			doc = new Document(getNodes(astTree, root));
 		} else {
 			doc = new Document(root);
 		}
@@ -137,58 +173,56 @@ public class ASTtoXML {
 	 * @return node (Element)
 	 **********************************************/
 	public Element getNodes(Tree astTree, Element node) {
-
-		boolean isValid = false;
-		
-		int nodeCount = astTree.getChildCount();
+	    int nodeCount = astTree.getChildCount();
+	    
+	    Element lastTerminalNode = null;
 
 		for (int i = 0; i < nodeCount; i++) {
 			Tree astChild = astTree.getChild(i);
-
-			String text = null;
-
-			try {
+			Object payload = astChild.getPayload();
+			if (payload instanceof Token) {
 				Token token = (Token) astChild.getPayload();
-				text = token.getText();
+				String text = token.getText();
 				int type = token.getType();
 				if (type != Token.INVALID_TYPE) {
-					isValid = true;
-				}
-						
-			}
-
-			catch (Exception e) {
-				// TODO: handle exception
-			}
-
-			try {
-				RuleContext ruleContext = (RuleContext) astChild.getPayload();
-				text = ruleContext.getText();
-			}
-
-			catch (Exception e) {
-				// TODO: handle exception
-			}
-
-			// int type = token.getType();
-			//if (type != Token.INVALID_TYPE) {
-			if (isValid) {
-				if (astChild.getChildCount() == 0) {
-					node.appendChild(text);
-				} else {
-					text = Utils.makeNCName(text);
-					try {
+					if (tokenNames[type].equals("TOKEN")) {
+						if (nodeCount !=2 || lastTerminalNode == null){
+							throw new RuntimeException("Bug in ChemicalTagger grammar: Terminal token rules expected to have 2 nodes of the form: 'TokenType' TOKEN");
+						}
+						lastTerminalNode.appendChild(text);
+					} else {
+						text = Utils.makeNCName(text);
 						Element newNode = new Element(text);
 						node.appendChild(newNode);
-						getNodes(astChild, newNode);
-					} catch (Exception e) {
-						LOG.debug("Can't Parse " + e.getMessage());
+						lastTerminalNode = newNode;
 					}
 				}
-			} else {
-				Element unmatched = new Element("UnmatchedPhrase");
-				unmatched.appendChild(text);
-				node.appendChild(unmatched);
+				else{
+					Element unmatched = new Element("UnmatchedPhrase");
+					unmatched.appendChild(text);
+					node.appendChild(unmatched);
+				}
+			}
+			else if (payload instanceof RuleContext) {
+				RuleContext ruleContext = (RuleContext) astChild.getPayload();
+				/*
+				 * Child count can be 0 if the entire contents of a rule is optional
+				 * If this occurs current behaviour is to ignore that it matched to avoid the case of a rule element having no child tokens
+				 */
+				if (astChild.getChildCount() > 0) { 
+					String nestingElementName = nestingTagname[ruleContext.getRuleIndex()];
+					if (nestingElementName != null){
+						Element newNode = new Element(nestingElementName);
+						node.appendChild(newNode);
+						getNodes(astChild, newNode);
+					}
+					else{
+						getNodes(astChild, node);
+					}
+				}
+			}
+			else{
+				throw new IllegalArgumentException("Unexpected tree data: " + payload.getClass().toString() +" was neither a Token or a RuleContext");
 			}
 		}
 		return node;
