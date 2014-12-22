@@ -58,22 +58,26 @@ public boolean followedByVBDorVBZthenVBYIELDed(TokenStream stream){
 	return false;
 }
 
-public boolean cdHasRoleOtherThanIdentifier(TokenStream stream){
-	String nextTokenTypeStr = stream.LT(1).getText();
-	if (isQuantityUnit(nextTokenTypeStr)){
-		return true;//quantity
-	}
-	if ("NN-TIMES".equals(nextTokenTypeStr)){
-		return true;//e.g. washed with the compound 3 times
-	}
-	if ("COLON".equals(nextTokenTypeStr)){
-		String twoAheadTypeStr = stream.LT(3).getText();
-		if ("CD".equals(twoAheadTypeStr)){
-			String threeAheadTypeStr = stream.LT(5).getText();
-			if (!isQuantityUnit(threeAheadTypeStr)){
-				return true;//ratio
+public boolean isCdThatCouldBeAnIdentifier(TokenStream stream){
+	String tokenTypeStr = stream.LT(1).getText();
+	if ("CD".equals(tokenTypeStr)){
+		String nextTokenTypeStr = stream.LT(3).getText();
+		if (isQuantityUnit(nextTokenTypeStr)){
+			return false;//quantity
+		}
+		if ("NN-TIMES".equals(nextTokenTypeStr)){
+			return false;//e.g. washed with the compound 3 times
+		}
+		if ("COLON".equals(nextTokenTypeStr)){
+			String twoAheadTypeStr = stream.LT(5).getText();
+			if ("CD".equals(twoAheadTypeStr)){
+				String threeAheadTypeStr = stream.LT(7).getText();
+				if (!isQuantityUnit(threeAheadTypeStr)){
+					return false;//ratio
+				}
 			}
 		}
+		return true;
 	}
 	return false;
 }
@@ -330,7 +334,7 @@ alphanumericOrIdentifierCompoundReference
   : allIdentifierTypesOtherThanCD; 
 
 numberCompoundReference
-  : (cd {!cdHasRoleOtherThanIdentifier(_input)}?) ;
+  : ({isCdThatCouldBeAnIdentifier(_input)}? cd) ;
 
 numericOrIdentifierCompoundReference
   : allIdentifierTypes ;
@@ -413,7 +417,7 @@ citationStructure:  citationContent # CITATION_EXPR;
 citationContent:   lrb (nnp|fw|cd|conjunction) (nnp|fw|cd|conjunction)+ rrb ;
 
 
-allIdentifierTypes : allIdentifierTypesOtherThanCD | cd {!cdHasRoleOtherThanIdentifier(_input)}?;
+allIdentifierTypes : allIdentifierTypesOtherThanCD | {isCdThatCouldBeAnIdentifier(_input)}? cd ;
 allIdentifierTypesOtherThanCD : squareBracketedReference|identifierOrBracketedIdentifier|cdAlphanum|{notFollowedByBracketedYear(_input)}?bracketedNumeric;
 numericOrBracketedNumeric	:  numeric | bracketedNumeric;
 bracketedNumeric	:  lrb numeric rrb;
