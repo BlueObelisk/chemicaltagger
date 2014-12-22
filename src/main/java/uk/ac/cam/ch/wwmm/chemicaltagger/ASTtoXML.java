@@ -74,7 +74,8 @@ public class ASTtoXML {
 		nestingTagname[ChemicalChunkerParser.RULE_oscarCompoundStructure] = "OSCARCM";
 		nestingTagname[ChemicalChunkerParser.RULE_molecule] = "MOLECULE";
 		nestingTagname[ChemicalChunkerParser.RULE_unnamedmolecule] = "UNNAMEDMOLECULE";
-		nestingTagname[ChemicalChunkerParser.RULE_quantity] = "QUANTITY";
+		nestingTagname[ChemicalChunkerParser.RULE_quantity1Node] = "QUANTITY";
+		nestingTagname[ChemicalChunkerParser.RULE_quantity2Node] = "QUANTITY";
 		nestingTagname[ChemicalChunkerParser.RULE_headingProcedureRequiringTerminator] = "PROCEDURE";
 		nestingTagname[ChemicalChunkerParser.RULE_bracketedHeadingProcedure] = "PROCEDURE";
 		nestingTagname[ChemicalChunkerParser.RULE_procedureNode] = "PROCEDURE";
