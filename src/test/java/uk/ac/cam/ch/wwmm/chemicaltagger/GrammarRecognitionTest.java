@@ -236,7 +236,6 @@ public class GrammarRecognitionTest {
 		ChemistrySentenceParser sentenceParser =  new ChemistrySentenceParser("OSCAR-CM benzene");
 		sentenceParser.parseTags();
 		Document doc = sentenceParser.makeXMLDocument();
-		System.out.println(doc.toXML());
 		assertEquals("Exactly one sentence was expected", true, hasOneSentence(doc));
 		assertEquals("A molecule child was expected", true, hasOneMoleculeInNounPhrase(doc));
 	}
