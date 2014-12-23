@@ -35,8 +35,6 @@ import uk.ac.cam.ch.wwmm.pregenerated.ChemicalChunkerParser;
 
 public class ASTtoXML {
 
-	private static Logger LOG = Logger.getLogger(ASTtoXML.class);
-
 	private final static String[] tokenNames = ChemicalChunkerParser.tokenNames;
 	private final static String[] nestingTagname = new String[ChemicalChunkerParser.ruleNames.length];
 	
