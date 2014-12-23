@@ -23,7 +23,6 @@ import nu.xom.Element;
 import org.antlr.v4.runtime.RuleContext;
 import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.tree.Tree;
-import org.apache.log4j.Logger;
 
 import uk.ac.cam.ch.wwmm.pregenerated.ChemicalChunkerParser;
 
