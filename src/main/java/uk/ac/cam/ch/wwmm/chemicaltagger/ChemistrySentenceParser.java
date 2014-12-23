@@ -24,7 +24,6 @@ import nu.xom.Serializer;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
-import org.antlr.v4.runtime.tree.ParseTreeWalker;
 
 import uk.ac.cam.ch.wwmm.pregenerated.ChemicalChunkerLexer;
 import uk.ac.cam.ch.wwmm.pregenerated.ChemicalChunkerParser;
@@ -96,16 +95,8 @@ public class ChemistrySentenceParser extends SentenceParser {
                  ParseTree documentContext = parser.document();
                  doc = new ASTtoXML().convert(documentContext, false);
                  
-                 setParseTree(documentContext);        
-                 
-//                 ParseTreeWalker walker = new ParseTreeWalker();
-//                 
-//                 XMLChemicalChunkerBaseListener xcl = new XMLChemicalChunkerBaseListener(parser);
-//                 
-//                 walker.walk(xcl, (ParseTree) getParseTree());
-//                 
-//                 doc = xcl.GetDocument();
-                                     
+                 setParseTree(documentContext);    
+                                   
          }
 		
 	}
