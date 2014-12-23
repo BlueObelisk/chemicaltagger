@@ -24,7 +24,7 @@ import org.antlr.v4.runtime.RuleContext;
 import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.tree.Tree;
 
-import uk.ac.cam.ch.wwmm.pregenerated.ChemicalChunkerParser;
+import uk.ac.cam.ch.wwmm.chemicaltagger.pregenerated.ChemicalChunkerParser;
 
 /*****************************
  * Converts ANTLR ASTTrees into XML Documents.
