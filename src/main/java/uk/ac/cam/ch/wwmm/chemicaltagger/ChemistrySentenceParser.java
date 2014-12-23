@@ -25,8 +25,8 @@ import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 
-import uk.ac.cam.ch.wwmm.pregenerated.ChemicalChunkerLexer;
-import uk.ac.cam.ch.wwmm.pregenerated.ChemicalChunkerParser;
+import uk.ac.cam.ch.wwmm.chemicaltagger.pregenerated.ChemicalChunkerLexer;
+import uk.ac.cam.ch.wwmm.chemicaltagger.pregenerated.ChemicalChunkerParser;
 
 /***********************************************
  * Passes tagged sentences to the ANTLR grammar. 
