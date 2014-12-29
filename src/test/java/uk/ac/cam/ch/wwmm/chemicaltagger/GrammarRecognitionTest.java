@@ -383,6 +383,15 @@ public class GrammarRecognitionTest {
 		assertEquals("Exactly one sentence was expected", true, hasOneSentence(doc));
 		assertEquals("A molecule child was expected", true, hasOneMoleculeInNounPhrase(doc));
 	}
+	
+	@Test
+	 public void followedByVBDorVBZthenVBYIELDed() {
+	  ChemistrySentenceParser sentenceParser =  new ChemistrySentenceParser("OSCAR-CM ethane COMMA , JJ-COMPOUND title NN-CHEMENTITY compound VBD was VB-YIELD yielded");
+	  sentenceParser.parseTags();
+	  Document doc = sentenceParser.makeXMLDocument();
+	  assertEquals("Exactly one sentence was expected", true, hasOneSentence(doc));
+	  assertEquals("Two NounPhrases were expected", 2, doc.query("//NounPhrase").size());
+	 }
 
 	private boolean hasOneSentence(Document doc) {
 		Elements children = doc.getRootElement().getChildElements();
