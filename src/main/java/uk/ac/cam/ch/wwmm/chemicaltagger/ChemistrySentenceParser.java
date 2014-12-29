@@ -17,6 +17,7 @@ package uk.ac.cam.ch.wwmm.chemicaltagger;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 
 import nu.xom.Document;
 import nu.xom.Serializer;
@@ -73,32 +74,32 @@ public class ChemistrySentenceParser extends SentenceParser {
 	 * 
 	 *******************************************/
 	public void parseTags() {
-	     ChemicalChunkerLexer lexer = null;
+		ChemicalChunkerLexer lexer = null;
 
-         if (getTaggedTokenInStream() == null) {
-                 setParseTree(null);
-         }       
-         else {
-                 ANTLRInputStream input;
-                 try {
-                         input = new ANTLRInputStream(getTaggedTokenInStream());
-                 } catch (IOException ioexception) {
-                         throw new RuntimeException("Antlr input Stream Error: "
-                                         + ioexception.getMessage());
-                 }
+		if (getTaggedTokenInStream() == null) {
+			setParseTree(null);
+		} else {
+			ANTLRInputStream input;
+			try {
+				input = new ANTLRInputStream(new InputStreamReader(
+						getTaggedTokenInStream(), "UTF-8"));
+			} catch (IOException ioexception) {
+				throw new RuntimeException("Antlr input Stream Error: "
+						+ ioexception.getMessage());
+			}
 
-                 lexer = new ChemicalChunkerLexer(input);
-                 CommonTokenStream tokens = new CommonTokenStream(lexer);
-                 
-                 ChemicalChunkerParser parser = new ChemicalChunkerParser(tokens);                
+			lexer = new ChemicalChunkerLexer(input);
+			CommonTokenStream tokens = new CommonTokenStream(lexer);
 
-                 ParseTree documentContext = parser.document();
-                 doc = new ASTtoXML().convert(documentContext, false);
-                 
-                 setParseTree(documentContext);    
-                                   
-         }
-		
+			ChemicalChunkerParser parser = new ChemicalChunkerParser(tokens);
+
+			ParseTree documentContext = parser.document();
+			doc = new ASTtoXML().convert(documentContext, false);
+
+			setParseTree(documentContext);
+
+		}
+
 	}
 	
 	
