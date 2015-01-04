@@ -117,7 +117,7 @@ public boolean notFollowedByBracketedYear(TokenStream stream){
 }
 }
 
-WS :  (' ')+ {skip();};
+WS : [ \r\t\n]+ -> skip ;
 TOKEN : (~' ')+;
 
 
