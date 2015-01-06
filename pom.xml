@@ -1,7 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	<!-- NOTE: the antlr3 build is best done on the COMMANDLINE and requires 
-		set MAVEN_OPTS=-Xmx7024m (or thereabouts) -->
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
@@ -121,27 +119,27 @@
 				</configuration>
 			</plugin>
 
-                                        <plugin>
-                                                <groupId>com.tunnelvisionlabs</groupId>
-                                                <artifactId>antlr4-maven-plugin</artifactId>
-                                                <version>4.4</version>
-                                                <executions>
-                                                        <execution>
-                                                                <goals>
-                                                                        <goal>antlr4</goal>
-                                                                </goals>
-                                                                <configuration>
-                                                                        <sourceDirectory>src/main/antlr4/</sourceDirectory>
-                                                                        <conversionTimeout>10000</conversionTimeout>
-                                                                        <libDirectory>src/main/antlr4/</libDirectory>
-                                                                        <messageFormat>antlr</messageFormat>
-                                                                        <outputDirectory>src/main/java/</outputDirectory>
-                                                                        <verbose>true</verbose>
-                                                                        <grammars>*.g4</grammars>
-                                                                </configuration>
-                                                        </execution>
-                                                </executions>
-                                        </plugin>
+			<plugin>
+				<groupId>com.tunnelvisionlabs</groupId>
+				<artifactId>antlr4-maven-plugin</artifactId>
+				<version>4.4</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>antlr4</goal>
+						</goals>
+						<configuration>
+							<sourceDirectory>src/main/antlr4/</sourceDirectory>
+							<conversionTimeout>10000</conversionTimeout>
+							<libDirectory>src/main/antlr4/</libDirectory>
+							<messageFormat>antlr</messageFormat>
+							<outputDirectory>src/main/java/</outputDirectory>
+							<verbose>true</verbose>
+							<grammars>*.g4</grammars>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 
 
 		</plugins>
@@ -180,16 +178,16 @@
 			<artifactId>antlr4-runtime</artifactId>
 			<version>4.4</version>
 		</dependency>
-                <dependency>
-                        <groupId>com.tunnelvisionlabs</groupId>
-                        <artifactId>antlr4</artifactId>
-                        <version>4.4</version>
-                </dependency>
-                <dependency>
-                        <groupId>com.tunnelvisionlabs</groupId>
-                        <artifactId>antlr4-annotations</artifactId>
-                        <version>4.4</version>
-                </dependency>
+		<dependency>
+			<groupId>com.tunnelvisionlabs</groupId>
+			<artifactId>antlr4</artifactId>
+			<version>4.4</version>
+		</dependency>
+		<dependency>
+			<groupId>com.tunnelvisionlabs</groupId>
+			<artifactId>antlr4-annotations</artifactId>
+			<version>4.4</version>
+		</dependency>
 		<dependency>
 			<groupId>org.apache.opennlp</groupId>
 			<artifactId>opennlp-tools</artifactId>
