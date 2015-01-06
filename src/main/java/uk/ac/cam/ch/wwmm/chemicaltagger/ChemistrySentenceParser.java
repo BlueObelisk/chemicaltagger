@@ -24,6 +24,7 @@ import nu.xom.Serializer;
 
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
+import org.antlr.v4.runtime.atn.PredictionMode;
 import org.antlr.v4.runtime.tree.ParseTree;
 
 import uk.ac.cam.ch.wwmm.chemicaltagger.pregenerated.ChemicalChunkerLexer;
@@ -92,8 +93,19 @@ public class ChemistrySentenceParser extends SentenceParser {
 			CommonTokenStream tokens = new CommonTokenStream(lexer);
 
 			ChemicalChunkerParser parser = new ChemicalChunkerParser(tokens);
+			parser.getInterpreter().setPredictionMode(PredictionMode.SLL);
+						
+			ParseTree documentContext = null;
 
-			ParseTree documentContext = parser.document();
+			try {
+				documentContext = parser.document(); // STAGE 1
+			} catch (Exception ex) {
+				tokens.reset(); // rewind input stream
+				parser.reset();
+				parser.getInterpreter().setPredictionMode(PredictionMode.LL);
+				parser.document(); // STAGE 2
+			}
+			
 			doc = new ASTtoXML().convert(documentContext, false);
 
 			setParseTree(documentContext);
