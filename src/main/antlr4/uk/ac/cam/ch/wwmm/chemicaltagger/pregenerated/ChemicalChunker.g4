@@ -123,7 +123,7 @@ TOKEN : (~' ')+;
 
 document: sentence+ ;
 
-sentence: (procedureNounPhrase | (sentenceStructure|unmatchedPhrase)+) stop* # SENTENCE_EXPR;
+sentence: (procedureNounPhrase | (sentenceStructure|unmatchedPhrase)+) stop* ;
 
 sentenceStructure:  (nounphrase|verbphrase|prepphrase|prepphraseAfter)+ (advAdj|colon)* (conjunction|rbconj|comma)*;
 
@@ -134,7 +134,7 @@ unmatchedToken //all base tokens other than stop
 	:	(numeric|advAdj|tmunicode|cdunicode|jjcomp|inAll|
 	nnexample|nnstate|nntime|nnmass|nnmolar|nnamount|nnatmosphere|nneq|nnvol|nnchementity|nntemp|nnph|nnflash|nngeneral|nnmethod|nnpressure|nncolumn|nnchromatography|nnvacuum|nncycle|nntimes|
 	oscarcm|oscarase|verb|nnadd|nnmixture|nnapparatus|nnconcentrate|nndry|nnextract|nnfilter|nnprecipitate|nnpurify|nnremove|nnsynthesize|nnyield|colon|apost|neg|dash|percentsign|lsqb|rsqb|lrb|rrb|
-	cc|dt|dtTHE|fw|md|nn|nns|nnp|prp|prp_poss|rbconj|sym|uh|clause|comma|ls|nnps|pos|nnidentifier) # UNMATCHED_EXPR;
+	cc|dt|dtTHE|fw|md|nn|nns|nnp|prp|prp_poss|rbconj|sym|uh|clause|comma|ls|nnps|pos|nnidentifier) ;
 
 procedureNounPhrase //only allowed at the start of the document
 	: {isAtTokenPositionZero(_input)}? headingProcedure;
@@ -154,12 +154,12 @@ headingProcedureTerminators
 	: rrb|stop|colon;
 
 nounphrase
-	:	nounphraseStructure # NOUNPHRASE_EXPR;
+	:	nounphraseStructure ;
 
 nounphraseStructure
 	:	nounphraseStructure1|nounphraseStructure2;
 nounphraseStructure1
-	:	 multiApparatus # MULTIPLE_APPARATUS_EXPR;
+	:	 multiApparatus ;
 nounphraseStructure2
 	:	dtTHE? dt? nounphraseContent  (conjunction* nounphraseContent {!followedByVBDorVBZthenVBYIELDed(_input)}?)* (prepphraseOf| prepphraseIN)? ;
 
@@ -167,7 +167,7 @@ nounphraseContent
 	: advAdj*  (dissolvePhrase|ratioOrBracketedRatio|noun|numeric|bracketedContent)+;
 
 dissolvePhrase
-	:	(dissolveStructure|lrb dissolveStructure rrb) # DISSOLVE_PHRASE_EXPR;
+	:	(dissolveStructure|lrb dissolveStructure rrb) ;
 
 dissolveStructure
 	:	adj? (nnp nnchementity |nnp?(molecule|unnamedmolecule)) inMolecule (conjunction molecule)* ;
@@ -176,7 +176,7 @@ inMolecule
 	: inin dtTHE? adj? nnp? (molecule|unnamedmolecule);
 
 verbphrase
-	:	verbphraseStructure # VERB_PHRASE_EXPR;
+	:	verbphraseStructure ;
 //Would this be better written in terms of auxillary verbs and normal verbs? e.g. auxillary+ verb?
 verbphraseStructure :  dt? to? inAll? inafter? md* rbconj? adv* adj? (actionVerb md* adv* adj? neg?  | otherVerb md* adv* adj? neg? otherVerbStructure* actionVerbStructure?) inoff? (cc? comma? prepphrase)* ;
 
@@ -197,21 +197,21 @@ nounStructure :  prp|prp_poss|captionLabel|nnplabel|citation|cycles|molecule|app
 // Different PrepPhrases
 
 prepphrase
-	: 	neg? (prepphraseAtmosphere|prepphraseTime|prepphraseTemp|prepphraseIN|prepphraseRole|prepphraseOther) # PREP_PHRASE_EXPR;
+	: 	neg? (prepphraseAtmosphere|prepphraseTime|prepphraseTemp|prepphraseIN|prepphraseRole|prepphraseOther) ;
 
 prepphraseAtmosphere
-	: prepphraseAtmosphereContent # ATMOSPHERE_PHRASE_EXPR;
+	: prepphraseAtmosphereContent ;
 
 prepphraseAtmosphereContent
 	:inunder  dt? advAdj* molecule nnatmosphere?	;
 
 prepphraseTime
-	:prepPhraseTimeStructure # TIME_PHRASE_EXPR;
+	:prepPhraseTimeStructure ;
 
 prepPhraseTimeStructure
 	:advAdj* inAll?  dt? advAdj* cd? nntime+	;
 
-prepphraseTemp:  prepphraseTempContent # TEMP_PHRASE_EXPR;
+prepphraseTemp:  prepphraseTempContent ;
 
 prepphraseTempContent
 	:  advAdj? inAll? dt? advAdj? cd? nntemp+;
@@ -220,7 +220,7 @@ prepphraseIN
 	:inin molecule ;
 
 prepphraseRole
-	:inas dt? nnchementity # ROLE_PREP_PHRASE_EXPR;
+	:inas dt? nnchementity ;
 
 prepphraseOther
 	: advAdj* inMost+  nounphrase ;
@@ -237,7 +237,7 @@ preparationphrase
 multiApparatus
 	:	apparatus (conjunction* apparatus )*;
 apparatus
-	:	dt? preapparatus* nnApp+ # APPARATUS_EXPR;
+	:	dt? preapparatus* nnApp+ ;
 
 nnApp
 	:	nnapparatus+ (dash nnapparatus)*;
@@ -246,11 +246,11 @@ preapparatus
 
 oscarCompound :  (jjcomp|adj)* oscarCompoundStructure adj? nnstate? (numericReferenceOrQuantity | nnchementity )? quantity* fromProcedure?;
 
-oscarCompoundStructure: (oscarcm+ afterOscarCompoundStructure?) # OSCAR_CM_EXPR; 
+oscarCompoundStructure: (oscarcm+ afterOscarCompoundStructure?) ; 
 afterOscarCompoundStructure: (dash oscarcm+)+ dash?|(colon oscarcm+)+ (colon oscarcm+)+|(dash|apost)+;
 
 molecule
-	:  moleculeamount # MOLECULE_EXPR;
+	:  moleculeamount ;
 
 moleculeamount : (moleculeamount3| moleculeamount1 | moleculeamount2) asAstate? ;
 
@@ -266,7 +266,7 @@ moleculeamount2
 afterCompoundCitationOrQuantity: (citation|quantity|comma (quantity1Node|citationStructure)|bracketedContentInMol)*;
 
 unnamedmolecule
-	: unnamedmoleculeDescription # UNNAMEDMOLECULE_EXPR;
+	: unnamedmoleculeDescription ;
 
 unnamedmoleculeDescription
 	:	unnamedmoleculeDescriptionStart afterCompoundCitationOrQuantity asAstate?;
@@ -312,11 +312,11 @@ numericOrIdentifierCompoundReference
   : allIdentifierTypes ;
 
 captionLabel
-   : captionLabelContent+  # CAPTIONLABEL_EXPR;
+   : captionLabelContent+ ;
 captionLabelContent
    : (nnplabel allIdentifierTypes (conjunction allIdentifierTypes)*);
 
-quantity 	:  (quantity1Node|quantity2Node) # QUANTITY_EXPR;
+quantity 	:  (quantity1Node|quantity2Node) ;
 
 quantity1Node : quantity1 ;
 
@@ -330,23 +330,23 @@ quantity2
 
 measurements
 	:(cd nn)? (multiple|measurementtypes) dt?;
-multiple	: cd cdunicode measurementtypes? # MULTIPLE_EXPR;
+multiple	: cd cdunicode measurementtypes? ;
 measurementtypes
 	: molar|amount|mass|volume|logHydrogenActivity|equivalent|yield|percent;
 
-molar	: cd nnmolar # MOLAR_EXPR;
-amount	: cd nnamount # AMOUNT_EXPR; 
-mass	: cd nnmass # MASS_EXPR;
-volume	: cd nnvol # VOLUME_EXPR;
-logHydrogenActivity	: nnph sym? cd # PH_EXPR;
-equivalent: cd nneq # EQUIVALENT_EXPR;
-yield: (yield1|yield2) # YIELD_EXPR;
+molar	: cd nnmolar ;
+amount	: cd nnamount ; 
+mass	: cd nnmass ;
+volume	: cd nnvol ;
+logHydrogenActivity	: nnph sym? cd ;
+equivalent: cd nneq ;
+yield: (yield1|yield2) ;
 yield1: nnyield (inof|colon) percent;
 yield2: percent nnyield ;
-percent	: cd nn? percentsign ( dash cd percentsign)? # PERCENT_EXPR;
+percent	: cd nn? percentsign ( dash cd percentsign)? ;
 
 //Different expressions are needed in and outside molecules as within a molecule other "molecules" are likely to be synoymns rather than entities in their own right
-bracketedContent: ratio?  (bracketedContent1|bracketedContent2|bracketedContent3) # MIXTURE_EXPR ;
+bracketedContent: ratio?  (bracketedContent1|bracketedContent2|bracketedContent3) ;
 bracketedContent1: comma lrb bracketedContentContents rrb comma;
 bracketedContent2: lrb bracketedContentContents rrb;
 bracketedContent3: lsqb bracketedContentContents rsqb;
@@ -361,7 +361,7 @@ bracketedContentInMolContentsAlwaysAllowed: verb|quantity2Node|oscarCompound|alp
 
 fromProcedure: (infrom | {precededByProduct(_input)}? inof | {suitableVbYieldOrSynthesizeForReference(_input)}? (vbyield|vbsynthesize) (inin|inby|infrom)) procedureNode;
 
-procedureNode: method # PROCEDURE_EXPR ;
+procedureNode: method ;
 
 method:
     ((nngeneral|nn)? nnmethod allIdentifierTypes? | nnexample allIdentifierTypes) ( (comma |colon |inof | infrom)? submethod | lrb submethod rrb)*;
@@ -369,24 +369,24 @@ method:
 submethod : (nnmethod|nnexample) allIdentifierTypes;
 
 referenceToExampleCompound :
-	nnexample allIdentifierTypes # REFERENCE_TO_COMPOUND_EXPR;
+	nnexample allIdentifierTypes ;
 
 advAdj
 	:adv|adj;
 
 range: numeric dash numeric;
-cycles	:	cycleStructure # CYCLES_EXPR;
+cycles	:	cycleStructure ;
 cycleStructure	:	cd dashNN? nncycle;
 dashNN	:	(adj|nn|cd) (dash (adj|nn|cd))*;
 
 ratioOrBracketedRatio : lrb ratio rrb | ratio;
-ratio : cdRatio # RATIO_EXPR ;
+ratio : cdRatio ;
 cdRatio : (cd colon)+ cdNotFollowedByQuantityUnits;
 cdNotFollowedByQuantityUnits: {isCdNotfollowedByQuantityUnits(_input)}? cd;
 
 citation:  citationStructure|comma citationContent comma;
 
-citationStructure:  citationContent # CITATION_EXPR;
+citationStructure:  citationContent ;
 citationContent:   lrb (nnp|fw|cd|conjunction) (nnp|fw|cd|conjunction)+ rrb ;
 
 
