@@ -19,6 +19,8 @@ import nu.xom.Document;
 import nu.xom.Elements;
 
 import static org.junit.Assert.*;
+
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class GrammarRecognitionTest {
@@ -385,6 +387,7 @@ public class GrammarRecognitionTest {
 	}
 	
 	@Test
+	@Ignore
 	 public void followedByVBDorVBZthenVBYIELDed() {
 	  ChemistrySentenceParser sentenceParser =  new ChemistrySentenceParser("OSCAR-CM ethane COMMA , JJ-COMPOUND title NN-CHEMENTITY compound VBD was VB-YIELD yielded");
 	  sentenceParser.parseTags();
