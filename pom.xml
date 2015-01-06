@@ -314,7 +314,7 @@
 				<artifactId>maven-pmd-plugin</artifactId>
 				<version>${maven-pmd-plugin.version}</version>
 				<configuration>
-					<targetJdk>1.5</targetJdk>
+					<targetJdk>1.6</targetJdk>
 					<linkXref>true</linkXref>
 					<excludes>
 						<exclude>**/pregenerated/**</exclude>
