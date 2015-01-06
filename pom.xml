@@ -8,7 +8,7 @@
 		<version>4</version>
 	</parent>
 
-	<groupId>uk.ac.cam.ch</groupId>
+	<groupId>uk.ac.cam.ch.wwmm</groupId>
 	<artifactId>chemicalTagger</artifactId>
 	<name>chemicalTagger</name>
 	<properties>
