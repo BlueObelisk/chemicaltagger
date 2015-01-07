@@ -1,5 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
@@ -44,7 +43,7 @@
 		<maven-jxr-plugin.version>2.4</maven-jxr-plugin.version>
 		<maven-pmd-plugin.version>2.9.1</maven-pmd-plugin.version>
 	</properties>
-	<version>1.4-SNAPSHOT</version>
+	<version>1.4.0</version>
 	<description>ChemicalTagger</description>
 	<url>http://chemicaltagger.ch.cam.ac.uk</url>
 	<licenses>
