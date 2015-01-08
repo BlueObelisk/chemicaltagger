@@ -2,6 +2,21 @@
 
 ChemicalTagger is a tool for semantic text-mining in chemistry; the associated publication can be found [here](http://dx.doi.org/10.1186/1758-2946-3-17).
 
+ChemicalTagger is available via Maven, and is on Maven Central:
+
+
+```
+#!XML
+<dependencies>
+	<dependency>
+		<groupId>uk.ac.cam.ch.wwmm</groupId>
+		<artifactId>chemcialTagger</artifactId>
+		<version>1.4.0</version>
+	</dependency>
+</dependencies>
+
+```
+
 #A. Components:
 This package is used for marking up experimental sections in chemistry papers:
 It has 3 main classes:
@@ -53,4 +68,3 @@ This class converts a parseTree into an XML document.
 
         Utils.writeXMLToFile(doc,"target/file1.xml");
     }
-
