@@ -10,7 +10,7 @@ ChemicalTagger is available via Maven, and is on Maven Central:
 <dependencies>
 	<dependency>
 		<groupId>uk.ac.cam.ch.wwmm</groupId>
-		<artifactId>chemcialTagger</artifactId>
+		<artifactId>chemicalTagger</artifactId>
 		<version>1.4.0</version>
 	</dependency>
 </dependencies>
