@@ -35,9 +35,7 @@ by the Antlr grammar.
 ##III. ASTtoXML:
 This class converts a parseTree into an XML document.
 
-
 #B. Running ChemicalTagger:
-
 
 ```
 #!java
