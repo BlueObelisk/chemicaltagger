@@ -15,7 +15,6 @@
  */
 package uk.ac.cam.ch.wwmm.chemicaltagger;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +29,7 @@ import uk.ac.cam.ch.wwmm.oscar.document.Token;
 /*****************************************************
  * Runs the OpenNLP tagger .
  * 
- * @author lh359, dmj30,jat45
+ * @author lh359, dmj30,jat45,dl387
  *****************************************************/
 public class OpenNLPTagger implements Tagger{
 	/**************************************
@@ -39,18 +38,18 @@ public class OpenNLPTagger implements Tagger{
 	private static class INSTANCE_HOLDER {
 		private static OpenNLPTagger myInstance = new OpenNLPTagger();
 	}
-	POSTagger posTagger;
+
+	private final POSModel posModel;
 
 	/**************************************
 	 * Private Constructor Class.
 	 ***************************************/
 	private OpenNLPTagger() {
-
-		
+		InputStream is = OpenNLPTagger.class.getResourceAsStream("openNLPTagger/en-pos-maxent.bin");
 		try {
-			setUpPosTagger();
-		} catch (IOException e) {
-			e.printStackTrace();
+			posModel = new POSModel(is);
+		} catch (Exception e) {
+			throw new RuntimeException(e);
 		}
 	}
 
@@ -68,21 +67,7 @@ public class OpenNLPTagger implements Tagger{
 	 * @return posTagger(PosTagger).
 	 ***************************************/
 	public POSTagger getTagger() {
-		return posTagger;
-	}
-
-
-
-    
-    /**************************************
-     * Loads the Penn Treebank tagset to POSTagger.
-	 * @throws IOException
-	 * ***************************************/
-	private void setUpPosTagger() throws IOException {
-        InputStream is = getClass().getClassLoader().getResourceAsStream(
-        "uk/ac/cam/ch/wwmm/chemicaltagger/openNLPTagger/en-pos-maxent.bin");
-        POSModel model = new POSModel(is);
-		posTagger = new POSTaggerME(model);
+		return new POSTaggerME(posModel);
 	}
 
 	/*****************************************************
@@ -92,13 +77,19 @@ public class OpenNLPTagger implements Tagger{
 	 * @return tagList (List<String>) 
 	 *****************************************************/
 	public List<String> runTagger(List<Token> tokenList, String inputSentence) {
-		String[] tokens = new String[tokenList.size()];
-		for (int i = 0; i < tokens.length; i++) {
+		int tokenCount = tokenList.size();
+		String[] tokens = new String[tokenCount];
+		for (int i = 0; i < tokenCount; i++) {
 			tokens[i] = tokenList.get(i).getSurface();
 		}
-		String[] tags = posTagger.tag(tokens);
+		String[] tags = tag(tokens);
 		List<String> tagList = createPosTagListFromStringArray(tags);
 		return tagList;
+	}
+	
+	public String[] tag(String[] sentenceTokens){
+		POSTaggerME posTagger = new POSTaggerME(posModel);
+		return posTagger.tag(sentenceTokens);
 	}
 
 
