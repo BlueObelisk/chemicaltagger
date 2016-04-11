@@ -20,7 +20,7 @@
 		to check for updates for these below -->
 		<oscar4.version>4.2.2</oscar4.version>
 		<jumbo-testutil.version>1.0.1</jumbo-testutil.version>
-		<antlr4.version>4.4</antlr4.version>		
+		<antlr4.version>4.5</antlr4.version>		
 		<opennlp.version>1.5.3</opennlp.version>		
 		<xom.version>1.2.5</xom.version>		
 		<junit.version>4.12</junit.version>
