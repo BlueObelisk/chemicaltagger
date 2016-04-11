@@ -41,7 +41,7 @@
 		<maven-project-info-reports-plugin.version>2.8.1</maven-project-info-reports-plugin.version>
 		<maven-surefire-report-plugin.version>2.8.1</maven-surefire-report-plugin.version>
 		<maven-jxr-plugin.version>2.4</maven-jxr-plugin.version>
-		<maven-pmd-plugin.version>2.9.1</maven-pmd-plugin.version>
+		<maven-pmd-plugin.version>3.5</maven-pmd-plugin.version>
 	</properties>
 	<version>1.5.0-SNAPSHOT</version>
 	<description>ChemicalTagger</description>
