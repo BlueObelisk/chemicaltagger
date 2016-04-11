@@ -40,7 +40,7 @@
 		<maven-license-plugin.version>1.10.b1</maven-license-plugin.version>
 		<maven-project-info-reports-plugin.version>2.8.1</maven-project-info-reports-plugin.version>
 		<maven-surefire-report-plugin.version>2.8.1</maven-surefire-report-plugin.version>
-		<maven-jxr-plugin.version>2.4</maven-jxr-plugin.version>
+		<maven-jxr-plugin.version>2.5</maven-jxr-plugin.version>
 		<maven-pmd-plugin.version>3.5</maven-pmd-plugin.version>
 	</properties>
 	<version>1.5.0-SNAPSHOT</version>
