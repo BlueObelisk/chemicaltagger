@@ -24,7 +24,7 @@
 		<opennlp.version>1.5.3</opennlp.version>		
 		<xom.version>1.2.5</xom.version>		
 		<junit.version>4.12</junit.version>
-		<jsoup.version>1.8.1</jsoup.version>
+		<jsoup.version>1.8.3</jsoup.version>
 		<commons-io.version>2.4</commons-io.version>
 		<commons-lang.version>2.6</commons-lang.version>
 		<log4j.version>1.2.17</log4j.version>
