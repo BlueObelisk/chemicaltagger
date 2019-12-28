@@ -1,0 +1,6 @@
+.project
+.settings
+.classpath
+target
+src/main/java/uk/ac/cam/ch/wwmm/chemicaltagger/pregenerated/
+src/main/java/*.tokens
