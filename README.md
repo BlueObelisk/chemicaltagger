@@ -1,9 +1,8 @@
-#ChemicalTagger Overview
+# ChemicalTagger Overview
 
 ChemicalTagger is a tool for semantic text-mining in chemistry; the associated publication can be found [here](http://dx.doi.org/10.1186/1758-2946-3-17). It is available on Maven Central:
 
 ```
-#!XML
 <dependency>
 	<groupId>uk.ac.cam.ch.wwmm</groupId>
 	<artifactId>chemicalTagger</artifactId>
@@ -13,25 +12,25 @@ ChemicalTagger is a tool for semantic text-mining in chemistry; the associated p
 
 ```
 
-#A. Components:
+# A. Components:
 This package is used for marking up experimental sections in chemistry papers:
 It has 3 main classes:
 
-##I. ChemistryPOSTagger:
+## I. ChemistryPOSTagger:
 This class takes a sentence and runs it against (by default) three taggers:
 
 * OSCAR4 (for chemical entities)
 * Regex (for recognising key words)
 * OpenNLP (for English parts of speech)
 
-##II. ChemistrySentenceParser:
+## II. ChemistrySentenceParser:
 This class converts a tagged sentence into a parseTree. It uses a lexer and parser generated
 by the Antlr grammar.
 
-##III. ASTtoXML:
+## III. ASTtoXML:
 This class converts a parseTree into an XML document.
 
-#B. Running ChemicalTagger:
+# B. Running ChemicalTagger:
 
 ```
 #!java
