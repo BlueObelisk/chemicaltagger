@@ -2,7 +2,7 @@
 
 ChemicalTagger is a tool for semantic text-mining in chemistry; the associated publication can be found [here](http://dx.doi.org/10.1186/1758-2946-3-17). It is available on [Maven Central](https://search.maven.org/search?q=a:chemicalTagger):
 
-```
+```xml
 <dependency>
 	<groupId>uk.ac.cam.ch.wwmm</groupId>
 	<artifactId>chemicalTagger</artifactId>
@@ -30,7 +30,7 @@ This class converts a parseTree into an XML document.
 
 # B. Running ChemicalTagger:
 
-```
+```java
 #!java
 import uk.ac.cam.ch.wwmm.chemicaltagger.POSContainer;
 import uk.ac.cam.ch.wwmm.chemicaltagger.ChemistryPOSTagger;
