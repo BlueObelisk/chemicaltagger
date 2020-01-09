@@ -1,4 +1,5 @@
 # ChemicalTagger Overview
+[![Build Status](https://travis-ci.org/BlueObelisk/chemicaltagger.svg?branch=master)](https://travis-ci.org/BlueObelisk/chemicaltagger)
 
 ChemicalTagger is a tool for semantic text-mining in chemistry; the associated publication can be found [here](http://dx.doi.org/10.1186/1758-2946-3-17) and a web based demo of it can be found [here](http://chemicaltagger.ch.cam.ac.uk/). A compiled version is available on [Maven Central](https://search.maven.org/search?q=a:chemicalTagger):
 
