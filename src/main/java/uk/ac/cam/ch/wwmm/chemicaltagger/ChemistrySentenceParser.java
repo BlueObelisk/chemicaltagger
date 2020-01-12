@@ -103,7 +103,7 @@ public class ChemistrySentenceParser extends SentenceParser {
 				tokens.reset(); // rewind input stream
 				parser.reset();
 				parser.getInterpreter().setPredictionMode(PredictionMode.LL);
-				parser.document(); // STAGE 2
+				documentContext = parser.document(); // STAGE 2
 			}
 			
 			doc = new ASTtoXML().convert(documentContext, false);
