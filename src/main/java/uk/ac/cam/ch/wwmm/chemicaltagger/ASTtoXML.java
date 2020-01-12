@@ -34,62 +34,71 @@ import uk.ac.cam.ch.wwmm.chemicaltagger.pregenerated.ChemicalChunkerParser;
 
 public class ASTtoXML {
 
-	private final static String[] tokenNames = ChemicalChunkerParser.tokenNames;
-	private final static String[] nestingTagname = new String[ChemicalChunkerParser.ruleNames.length];
+	private static final String[] defaultTokenNames = ChemicalChunkerParser.tokenNames;
+	private static final String[] defaultNestingTagNames = new String[ChemicalChunkerParser.ruleNames.length];
 	
 	static {
-		nestingTagname[ChemicalChunkerParser.RULE_sentence] = "Sentence";
-		nestingTagname[ChemicalChunkerParser.RULE_unmatchedPhrase] = "Unmatched";
-		nestingTagname[ChemicalChunkerParser.RULE_procedureNounPhrase] = "NounPhrase";
-		nestingTagname[ChemicalChunkerParser.RULE_nounphrase] = "NounPhrase";
-		nestingTagname[ChemicalChunkerParser.RULE_multiApparatus] = "MultipleApparatus";
-		nestingTagname[ChemicalChunkerParser.RULE_dissolvePhrase] = "DissolvePhrase";
-		nestingTagname[ChemicalChunkerParser.RULE_verbphrase] = "VerbPhrase";
-		nestingTagname[ChemicalChunkerParser.RULE_cycles] = "CYCLES";
-		nestingTagname[ChemicalChunkerParser.RULE_ratio] = "RATIO";
-		nestingTagname[ChemicalChunkerParser.RULE_citationStructure] = "CITATION";
-		nestingTagname[ChemicalChunkerParser.RULE_bracketedContent] = "MIXTURE";
-		nestingTagname[ChemicalChunkerParser.RULE_bracketedContentInMol] = "MIXTURE";
-		nestingTagname[ChemicalChunkerParser.RULE_prepphraseIN] = "PrepPhrase";
-		nestingTagname[ChemicalChunkerParser.RULE_prepphraseOther] = "PrepPhrase";
-		nestingTagname[ChemicalChunkerParser.RULE_prepphraseOf] = "PrepPhrase";
-		nestingTagname[ChemicalChunkerParser.RULE_prepphraseAfter] = "PrepPhrase";
-		nestingTagname[ChemicalChunkerParser.RULE_prepphraseTime] = "TimePhrase";
-		nestingTagname[ChemicalChunkerParser.RULE_prepphraseRole] = "RolePrepPhrase";
-		nestingTagname[ChemicalChunkerParser.RULE_prepphraseAtmosphere] = "AtmospherePhrase";
-		nestingTagname[ChemicalChunkerParser.RULE_prepphraseTemp] = "TempPhrase";
-		nestingTagname[ChemicalChunkerParser.RULE_amount] = "AMOUNT";
-		nestingTagname[ChemicalChunkerParser.RULE_mass] = "MASS";
-		nestingTagname[ChemicalChunkerParser.RULE_percent] = "PERCENT";
-		nestingTagname[ChemicalChunkerParser.RULE_volume] = "VOLUME";
-		nestingTagname[ChemicalChunkerParser.RULE_molar] = "MOLAR";
-		nestingTagname[ChemicalChunkerParser.RULE_logHydrogenActivity] = "PH";
-		nestingTagname[ChemicalChunkerParser.RULE_equivalent] = "EQUIVALENT";
-		nestingTagname[ChemicalChunkerParser.RULE_yield] = "YIELD";
-		nestingTagname[ChemicalChunkerParser.RULE_apparatus] = "APPARATUS";
-		nestingTagname[ChemicalChunkerParser.RULE_multiple] = "MULTIPLE";
-		nestingTagname[ChemicalChunkerParser.RULE_oscarCompoundStructure] = "OSCARCM";
-		nestingTagname[ChemicalChunkerParser.RULE_molecule] = "MOLECULE";
-		nestingTagname[ChemicalChunkerParser.RULE_unnamedmolecule] = "UNNAMEDMOLECULE";
-		nestingTagname[ChemicalChunkerParser.RULE_quantity1Node] = "QUANTITY";
-		nestingTagname[ChemicalChunkerParser.RULE_quantity2Node] = "QUANTITY";
-		nestingTagname[ChemicalChunkerParser.RULE_headingProcedureRequiringTerminator] = "PROCEDURE";
-		nestingTagname[ChemicalChunkerParser.RULE_bracketedHeadingProcedure] = "PROCEDURE";
-		nestingTagname[ChemicalChunkerParser.RULE_procedureNode] = "PROCEDURE";
-		nestingTagname[ChemicalChunkerParser.RULE_alphanumericOrIdentifierCompoundReference] = "REFERENCETOCOMPOUND";
-		nestingTagname[ChemicalChunkerParser.RULE_numberCompoundReference] = "REFERENCETOCOMPOUND";
-		nestingTagname[ChemicalChunkerParser.RULE_numericOrIdentifierCompoundReference] = "REFERENCETOCOMPOUND";
-		nestingTagname[ChemicalChunkerParser.RULE_referenceToExampleCompound] = "REFERENCETOCOMPOUND";
-		nestingTagname[ChemicalChunkerParser.RULE_captionLabel] = "CaptionLabel";
+		defaultNestingTagNames[ChemicalChunkerParser.RULE_sentence] = "Sentence";
+		defaultNestingTagNames[ChemicalChunkerParser.RULE_unmatchedPhrase] = "Unmatched";
+		defaultNestingTagNames[ChemicalChunkerParser.RULE_procedureNounPhrase] = "NounPhrase";
+		defaultNestingTagNames[ChemicalChunkerParser.RULE_nounphrase] = "NounPhrase";
+		defaultNestingTagNames[ChemicalChunkerParser.RULE_multiApparatus] = "MultipleApparatus";
+		defaultNestingTagNames[ChemicalChunkerParser.RULE_dissolvePhrase] = "DissolvePhrase";
+		defaultNestingTagNames[ChemicalChunkerParser.RULE_verbphrase] = "VerbPhrase";
+		defaultNestingTagNames[ChemicalChunkerParser.RULE_cycles] = "CYCLES";
+		defaultNestingTagNames[ChemicalChunkerParser.RULE_ratio] = "RATIO";
+		defaultNestingTagNames[ChemicalChunkerParser.RULE_citationStructure] = "CITATION";
+		defaultNestingTagNames[ChemicalChunkerParser.RULE_bracketedContent] = "MIXTURE";
+		defaultNestingTagNames[ChemicalChunkerParser.RULE_bracketedContentInMol] = "MIXTURE";
+		defaultNestingTagNames[ChemicalChunkerParser.RULE_prepphraseIN] = "PrepPhrase";
+		defaultNestingTagNames[ChemicalChunkerParser.RULE_prepphraseOther] = "PrepPhrase";
+		defaultNestingTagNames[ChemicalChunkerParser.RULE_prepphraseOf] = "PrepPhrase";
+		defaultNestingTagNames[ChemicalChunkerParser.RULE_prepphraseAfter] = "PrepPhrase";
+		defaultNestingTagNames[ChemicalChunkerParser.RULE_prepphraseTime] = "TimePhrase";
+		defaultNestingTagNames[ChemicalChunkerParser.RULE_prepphraseRole] = "RolePrepPhrase";
+		defaultNestingTagNames[ChemicalChunkerParser.RULE_prepphraseAtmosphere] = "AtmospherePhrase";
+		defaultNestingTagNames[ChemicalChunkerParser.RULE_prepphraseTemp] = "TempPhrase";
+		defaultNestingTagNames[ChemicalChunkerParser.RULE_amount] = "AMOUNT";
+		defaultNestingTagNames[ChemicalChunkerParser.RULE_mass] = "MASS";
+		defaultNestingTagNames[ChemicalChunkerParser.RULE_percent] = "PERCENT";
+		defaultNestingTagNames[ChemicalChunkerParser.RULE_volume] = "VOLUME";
+		defaultNestingTagNames[ChemicalChunkerParser.RULE_molar] = "MOLAR";
+		defaultNestingTagNames[ChemicalChunkerParser.RULE_logHydrogenActivity] = "PH";
+		defaultNestingTagNames[ChemicalChunkerParser.RULE_equivalent] = "EQUIVALENT";
+		defaultNestingTagNames[ChemicalChunkerParser.RULE_yield] = "YIELD";
+		defaultNestingTagNames[ChemicalChunkerParser.RULE_apparatus] = "APPARATUS";
+		defaultNestingTagNames[ChemicalChunkerParser.RULE_multiple] = "MULTIPLE";
+		defaultNestingTagNames[ChemicalChunkerParser.RULE_oscarCompoundStructure] = "OSCARCM";
+		defaultNestingTagNames[ChemicalChunkerParser.RULE_molecule] = "MOLECULE";
+		defaultNestingTagNames[ChemicalChunkerParser.RULE_unnamedmolecule] = "UNNAMEDMOLECULE";
+		defaultNestingTagNames[ChemicalChunkerParser.RULE_quantity1Node] = "QUANTITY";
+		defaultNestingTagNames[ChemicalChunkerParser.RULE_quantity2Node] = "QUANTITY";
+		defaultNestingTagNames[ChemicalChunkerParser.RULE_headingProcedureRequiringTerminator] = "PROCEDURE";
+		defaultNestingTagNames[ChemicalChunkerParser.RULE_bracketedHeadingProcedure] = "PROCEDURE";
+		defaultNestingTagNames[ChemicalChunkerParser.RULE_procedureNode] = "PROCEDURE";
+		defaultNestingTagNames[ChemicalChunkerParser.RULE_alphanumericOrIdentifierCompoundReference] = "REFERENCETOCOMPOUND";
+		defaultNestingTagNames[ChemicalChunkerParser.RULE_numberCompoundReference] = "REFERENCETOCOMPOUND";
+		defaultNestingTagNames[ChemicalChunkerParser.RULE_numericOrIdentifierCompoundReference] = "REFERENCETOCOMPOUND";
+		defaultNestingTagNames[ChemicalChunkerParser.RULE_referenceToExampleCompound] = "REFERENCETOCOMPOUND";
+		defaultNestingTagNames[ChemicalChunkerParser.RULE_captionLabel] = "CaptionLabel";
 	}
+	
+	private final String[] tokenNames;
+	private final String[] nestingTagNames;
 
 	/********************************************
 	 * Default constructor method.
 	 *******************************************/
 	public ASTtoXML() {
+	  this(defaultTokenNames, defaultNestingTagNames);
 	}
 
-	/********************************************
+	public ASTtoXML(String[] tokenNames, String[] nestingTagNames) {
+		this.tokenNames = tokenNames;
+		this.nestingTagNames = nestingTagNames;
+	}
+
+  /********************************************
 	 * Overloading Method that converts astTree to XML Document with
 	 * ActionPhrases Included.
 	 * 
@@ -208,7 +217,7 @@ public class ASTtoXML {
 				 * If this occurs current behaviour is to ignore that it matched to avoid the case of a rule element having no child tokens
 				 */
 				if (astChild.getChildCount() > 0) { 
-					String nestingElementName = nestingTagname[ruleContext.getRuleIndex()];
+					String nestingElementName = nestingTagNames[ruleContext.getRuleIndex()];
 					if (nestingElementName != null){
 						Element newNode = new Element(nestingElementName);
 						node.appendChild(newNode);
