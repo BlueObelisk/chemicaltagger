@@ -177,7 +177,6 @@
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>${maven-javadoc-plugin.version}</version>
 				<configuration>
-					<javadocExecutable>${java.home}/bin/javadoc</javadocExecutable>
 					<sourceFileExcludes>
 						<sourceFileExclude>**/pregenerated/**</sourceFileExclude>
 					</sourceFileExcludes>
