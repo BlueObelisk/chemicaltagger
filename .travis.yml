@@ -10,4 +10,4 @@ cache:
   - $HOME/.m2
 
 script:
-- mvn -B clean test 
+- mvn -B clean test javadoc:javadoc package
