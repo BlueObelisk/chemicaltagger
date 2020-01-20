@@ -172,8 +172,18 @@
 					</execution>
 				</executions>
 			</plugin>
-
-
+                        <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>${maven-javadoc-plugin.version}</version>
+				<configuration>
+					<javadocExecutable>${java.home}/bin/javadoc</javadocExecutable>
+					<sourceFileExcludes>
+						<sourceFileExclude>**/pregenerated/**</sourceFileExclude>
+					</sourceFileExcludes>
+					<source>8</source>
+                                </configuration>
+                        </plugin>
 		</plugins>
 		<resources>
 			<resource>
@@ -276,11 +286,6 @@
 						</reports>
 					</reportSet>
 				</reportSets>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>${maven-javadoc-plugin.version}</version>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
