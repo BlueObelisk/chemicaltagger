@@ -43,10 +43,7 @@ public class XMLtoAST {
 	/********************************************
 	 * Converts AST Trees to XML Document.
 	 * 
-	 * @param astTree
-	 *            (Tree)
-	 * @param annotateActionPhrases
-	 *            (boolean)
+	 * @param doc (Document)
 	 * @return doc (Document)
 	 *******************************************/
 	public Document convert(Document doc) {
@@ -70,11 +67,8 @@ public class XMLtoAST {
 	 * A recursive function that goes through the leaves of the tree to create
 	 * XML nodes.
 	 * 
-	 * @param astTree
-	 *            (Tree)
-	 * @param node
-	 *            (Element)
-	 * @return node (Element)
+	 * @param docElement (Element)
+	 * @param treeNode (ParserRuleContext)
 	 **********************************************/
 	public void getNodes(Element docElement, ParserRuleContext treeNode) {
 

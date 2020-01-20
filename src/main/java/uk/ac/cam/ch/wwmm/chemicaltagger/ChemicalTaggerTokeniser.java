@@ -28,7 +28,7 @@ public interface ChemicalTaggerTokeniser {
 
     /****************************
      * Tokeniser method.
-     * @param posContainer (POSContainer)
+     * @param inputSentence (String)
      * @return tokens  (List<Token>)
      */
 	List<Token> tokenise(String inputSentence) ;

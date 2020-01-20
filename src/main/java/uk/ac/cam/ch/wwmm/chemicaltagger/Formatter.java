@@ -88,7 +88,7 @@ public class Formatter {
 
 	/************************************
 	 * Returns the list of tokens with tokens divided into further tokens in cases where this improves tagging
-	 * e.g. ['4.5kg'] --> ['4.5', 'kg']
+	 * e.g.  <pre>{@code  ['4.5kg'] --> ['4.5', 'kg']  }</pre>
 	 * 
 	 * @param tokens (List<Token>)
 	 * @return tokens (List<Token>)
