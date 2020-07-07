@@ -25,7 +25,6 @@ This class converts a parseTree into an XML document.
 # B. Running ChemicalTagger:
 
 ```java
-#!java
 import uk.ac.cam.ch.wwmm.chemicaltagger.POSContainer;
 import uk.ac.cam.ch.wwmm.chemicaltagger.ChemistryPOSTagger;
 import uk.ac.cam.ch.wwmm.chemicaltagger.ChemistrySentenceParser;
