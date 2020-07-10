@@ -76,8 +76,12 @@ public class RecombineTokens {
 						if (previousIndexList.contains(currentIndex - 1)) {
 							//previous token was involved in a recombination, hence need to append to its indexList
 							indexList = previousIndexList;
-							indexList.add(currentIndex);
-							indexList.add(currentIndex + 1);
+							if (!indexList.contains(currentIndex)) {
+								indexList.add(currentIndex);
+							}
+							if (!indexList.contains(currentIndex + 1)) {
+								indexList.add(currentIndex + 1);
+							}
 							indexMap.put(indexList.get(0), indexList);
 						} else if (nonHyphenTags.contains(previousTag.toLowerCase())) {
 							indexList.add(currentIndex);

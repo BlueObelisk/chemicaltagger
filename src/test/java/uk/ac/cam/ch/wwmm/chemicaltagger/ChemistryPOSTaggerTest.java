@@ -118,6 +118,14 @@ public class ChemistryPOSTaggerTest {
 		checkLengthofTags();
 	}
 	
+	@Test
+	public void testRecombineTokens() {
+		String sentence = "N(C/-/-3)";
+		posContainer = ChemistryPOSTagger.getDefaultInstance().runTaggers(sentence);
+		String ref = "OSCAR-CM N(C/-/-3 -RRB- )";
+		Assert.assertEquals(ref, posContainer.getTokenTagTupleAsString());
+		checkLengthofTags();
+	}
 
 	@Test
 	public void emptyInput() {
