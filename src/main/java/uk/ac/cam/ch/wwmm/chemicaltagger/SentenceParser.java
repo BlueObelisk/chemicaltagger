@@ -52,11 +52,7 @@ public abstract class SentenceParser extends Thread {
 	 * @param taggedTokenString (String)
 	 *******************************************/
 	public SentenceParser(String taggedTokenString) {
-		try {
-			this.taggedTokenInStream = IOUtils.toInputStream(taggedTokenString,"UTF-8");
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+	    this.taggedTokenInStream = IOUtils.toInputStream(taggedTokenString,"UTF-8");
 	}
 
 	/************************************************
@@ -65,12 +61,8 @@ public abstract class SentenceParser extends Thread {
 	 * @param posContainer  (POSContainer)
 	 *******************************************/
 	public SentenceParser(POSContainer posContainer) {
-		try {
-			this.taggedTokenInStream = IOUtils.toInputStream(
+	    this.taggedTokenInStream = IOUtils.toInputStream(
 					posContainer.getTokenTagTupleAsString(), "UTF-8");
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
 	}
 
 	/********************************************
