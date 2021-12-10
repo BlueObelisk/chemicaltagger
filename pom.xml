@@ -50,7 +50,7 @@
 	<scm>
 		<url>https://github.com/blueobelisk/chemicaltagger</url>
 		<connection>scm:git:https://github.com/blueobelisk/chemicaltagger</connection>
-		<developerConnection>scm:git:https://github.com/blueobelisk/chemicaltagger</developerConnection>
+		<developerConnection>scm:git:git@github.com:BlueObelisk/chemicaltagger.git</developerConnection>
 	  <tag>HEAD</tag>
   </scm>
 
