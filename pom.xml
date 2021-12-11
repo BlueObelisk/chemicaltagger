@@ -38,7 +38,7 @@
 		<maven-pmd-plugin.version>3.5</maven-pmd-plugin.version>
 		<maven-javadoc-plugin.version>3.1.1</maven-javadoc-plugin.version>
 	</properties>
-	<version>1.6.0</version>
+	<version>1.7-SNAPSHOT</version>
 	<description>ChemicalTagger</description>
 	<url>http://chemicaltagger.ch.cam.ac.uk</url>
 	<licenses>
@@ -51,7 +51,7 @@
 		<url>https://github.com/blueobelisk/chemicaltagger</url>
 		<connection>scm:git:https://github.com/blueobelisk/chemicaltagger</connection>
 		<developerConnection>scm:git:git@github.com:BlueObelisk/chemicaltagger.git</developerConnection>
-	  <tag>chemicalTagger-1.6.0</tag>
+	  <tag>HEAD</tag>
   </scm>
 
 	<developers>
