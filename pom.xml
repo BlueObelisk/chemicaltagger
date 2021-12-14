@@ -16,7 +16,7 @@
 		<!-- Use: 
 			mvn versions:display-dependency-updates
 		to check for updates for these below -->
-		<oscar4.version>5.1.0</oscar4.version>
+		<oscar4.version>5.1.1</oscar4.version>
 		<jumbo-testutil.version>1.0.1</jumbo-testutil.version>
 		<antlr4.version>4.5.3</antlr4.version>
 		<opennlp.version>1.9.4</opennlp.version>
@@ -24,7 +24,7 @@
 		<jsoup.version>1.14.3</jsoup.version>
 		<commons-io.version>2.11.0</commons-io.version>
 		<commons-lang.version>2.6</commons-lang.version>
-		<log4j2.version>2.15.0</log4j2.version>
+		<log4j2.version>2.16.0</log4j2.version>
 		
 		<!-- Use:
 			mvn versions:display-plugin-updates
