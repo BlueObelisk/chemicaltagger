@@ -37,7 +37,7 @@ import nu.xom.Serializer;
 
 import org.apache.commons.io.IOUtils;
 import org.jsoup.Jsoup;
-import org.jsoup.safety.Whitelist;
+import org.jsoup.safety.Safelist;
 
 import uk.ac.cam.ch.wwmm.oscar.document.Token;
 
@@ -104,7 +104,7 @@ public class Utils {
 	public static String cleanHTMLText(String paragraph) {
 		String cleanedParagraph = paragraph;	
 		cleanedParagraph = convertExponentials(cleanedParagraph);
-		cleanedParagraph = Jsoup.clean(cleanedParagraph,new Whitelist());
+		cleanedParagraph = Jsoup.clean(cleanedParagraph,new Safelist());
 		cleanedParagraph =Jsoup.parse(cleanedParagraph).text();
 		return cleanedParagraph;
 	}
