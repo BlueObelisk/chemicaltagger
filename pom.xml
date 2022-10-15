@@ -20,7 +20,7 @@
 		<jumbo-testutil.version>1.0.1</jumbo-testutil.version>
 		<antlr4.version>4.5.3</antlr4.version>
 		<opennlp.version>1.9.4</opennlp.version>
-		<xom.version>1.3.7</xom.version>
+		<xom.version>1.3.8</xom.version>
 		<jsoup.version>1.15.3</jsoup.version>
 		<commons-io.version>2.11.0</commons-io.version>
 		<commons-lang.version>2.6</commons-lang.version>
