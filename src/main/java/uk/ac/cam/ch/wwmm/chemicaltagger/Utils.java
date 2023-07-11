@@ -19,6 +19,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.UncheckedIOException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -251,7 +252,7 @@ public class Utils {
 		List<String> readlines = null;
 		try {
 			readlines = IOUtils.readLines(inStream);
-		} catch (IOException e) {
+		} catch (UncheckedIOException e) {
 			throw new RuntimeException("Could not load tokens file",e);
 		}
 		for (String line : readlines) {
