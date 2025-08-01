@@ -20,7 +20,7 @@ import java.util.List;
 
 import nu.xom.Element;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import uk.ac.cam.ch.wwmm.oscar.document.Token;
 

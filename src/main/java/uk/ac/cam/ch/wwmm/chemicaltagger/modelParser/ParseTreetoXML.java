@@ -19,7 +19,7 @@ import nu.xom.Document;
 import nu.xom.Element;
 import opennlp.tools.parser.Parse;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 /*****************************
  * Converts OpenNLP Parse Trees into XML Documents.
