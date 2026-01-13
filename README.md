@@ -1,5 +1,5 @@
 # ChemicalTagger Overview
-![Build Status](https://github.com/BlueObelisk/chemicaltagger/workflows/Java%20CI%20with%20Maven/badge.svg) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/uk.ac.cam.ch.wwmm/chemicalTagger/badge.svg)](https://maven-badges.herokuapp.com/maven-central/uk.ac.cam.ch.wwmm/chemicalTagger)
+![Build Status](https://github.com/BlueObelisk/chemicaltagger/workflows/Java%20CI%20with%20Maven/badge.svg) ![Maven Central](https://img.shields.io/maven-central/v/uk.ac.cam.ch.wwmm/chemicalTagger.svg)
 
 
 ChemicalTagger is a tool for semantic text-mining in chemistry; the associated publication can be found [here](http://dx.doi.org/10.1186/1758-2946-3-17).
