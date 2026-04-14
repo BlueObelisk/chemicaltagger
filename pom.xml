@@ -24,7 +24,7 @@
 		<jsoup.version>1.21.1</jsoup.version>
 		<commons-io.version>2.20.0</commons-io.version>
 		<commons-lang3.version>3.18.0</commons-lang3.version>
-		<log4j2.version>2.25.1</log4j2.version>
+		<log4j2.version>2.25.4</log4j2.version>
 		
 		<!-- Use:
 			mvn versions:display-plugin-updates
