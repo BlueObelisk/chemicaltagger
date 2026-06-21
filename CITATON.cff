@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: Please cite the following works when using this software.
+type: software
+authors:
+  - family-names: Hawizy
+    given-names: Lezan
+  - family-names: Jessop
+    given-names: David M
+  - family-names: Adams
+    given-names: Nico
+  - family-names: Murray-Rust
+    given-names: Peter
+doi: 10.1186/1758-2946-3-17
+identifiers:
+  - type: doi
+    value: 10.1186/1758-2946-3-17
+  - type: other
+    value: urn:issn:1758-2946
+  - type: other
+    value: pmcid:3117806
+  - type: other
+    value: pmid:21575201
+keywords:
+  - text mining
+  - chemistry
+title: 'ChemicalTagger: A tool for semantic text-mining in chemistry'
